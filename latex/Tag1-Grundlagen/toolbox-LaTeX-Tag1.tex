@@ -1,0 +1,142 @@
+\documentclass[9pt, mathserif]{beamer}
+
+\usepackage[utf8]{luainputenc}
+
+\usepackage[ngerman]{babel}
+\setlength{\parindent}{0pt}
+\usepackage[babel,german=quotes]{csquotes}
+\usepackage{eurosym}
+
+\usepackage{amsmath}
+%\usepackage{mathtools}
+\usepackage{amssymb}
+\usepackage{xfrac}
+
+
+\usepackage[locale=DE, separate-uncertainty=true, per-mode=fraction, alsoload=astro]{siunitx}
+
+\usepackage{booktabs}
+\usepackage{tabulary}
+\usepackage{threeparttable}
+
+\usepackage[]{graphicx}
+
+\usepackage[]{hyperref}
+\usepackage{braket}
+\usepackage{xcolor}
+\usepackage{enumerate}
+
+\usepackage{listings}
+\usepackage{lstautogobble}
+
+\lstnewenvironment{lstverbatim}[1][]{
+  \lstset
+  {
+    autogobble,
+    language=TeX,                
+    basicstyle=\ttfamily,
+    commentstyle=\color{blue},
+    columns=fullflexible,
+    breaklines=true,
+    keepspaces=true,
+    aboveskip=-0.2em,
+    belowskip=-0.2em
+  }
+}{}
+
+
+\title{Verfassen wissenschaftlicher Texte mit \LaTeX}
+\author{PeP et Al. toolbox}
+\date{2014}
+\institute[Pep et Al. e.V.]{\includegraphics[width=0.2\textwidth]{peplogo.pdf}}
+\titlegraphic{./latex-vs-word.pdf}
+
+\usetheme{TUDo}
+
+\begin{document}
+
+\begin{frame}
+\setcounter{framenumber}{0}
+    \titlepage
+\end{frame}
+
+\begin{frame}
+    \frametitle{Übersicht}
+    \tableofcontents
+\end{frame}
+
+\section{Zahlen und Einheiten}
+\begin{frame}[fragile]
+    \frametitle{Das SIunitx-Paket}
+    Dieses Paket sollte immer und für jede Zahl mit oder ohne Einheit verwendet werden.
+
+   \begin{block}{benötigte Pakete}
+    \begin{lstverbatim}
+        \usepackage[locale=DE, separate-uncertainty=true, per-mode=fraction]
+                   {siunitx}
+    \end{lstverbatim}
+   \end{block}
+    \begin{columns}[T]
+        \begin{column}{0.6\textwidth}
+            \begin{block}{\LaTeX-Code}
+                \begin{lstverbatim}
+                \num{1.23456} und \num{987654321}
+                \num{1.2e2}
+                \si{\newton} = \si{\kilo\gram\metre\per\second\squared}
+                \SI{1.2}{\metre\per\second}
+                \SI{4,3(12)}{\micro\second}
+                \end{lstverbatim}
+            \end{block}
+        \end{column}
+        \begin{column}{0.35\textwidth}
+            \begin{block}{Ergebnis}
+                \num{1.23456} und \num{987654321} \\
+                \num{1.2e2} \\
+                \si{\newton} = \si{\kilo\gram\metre\per\second\squared} \\
+                \ \\
+                \SI{1.2}{\metre\per\second} \\
+                \SI{4,3(12)}{\micro\second}
+            \end{block}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\section{Formelsatz}
+\subsection{im Fließtext}
+\begin{frame}[fragile]
+   \frametitle{\$ \dots \$-Umgebung}
+   Für mathematische Symbole, Variablen und kleine Formeln im Fließtext. 
+
+   \begin{block}{benötigte Pakete}
+    \begin{lstverbatim}
+        \usepackage{amsmath}
+        \usepackage{mathtools}
+        \usepackage{amssymb}
+    \end{lstverbatim}
+   \end{block}
+    \begin{columns}[T]
+        \begin{column}{0.6\textwidth}
+            \begin{block}{\LaTeX-Code}
+                \begin{lstverbatim}
+                $x$ 
+                $x^i$
+                $x^12$ bzw. $x^{12}$ % Vorsicht
+                $x_\text{max}$
+                $U(t) = U_0 \cdot \cos(\omega t)$
+                \end{lstverbatim}
+            \end{block}
+        \end{column}
+        \begin{column}{0.35\textwidth}
+            \begin{block}{Ergebnis}
+                $x$  \\
+                $x^i$ \\
+                $x^12$ bzw. $x^{12}$ \\ 
+                $x_\text{max}$ \\
+                $U(t) = U_0 \cdot \cos(\omega t)$
+            \end{block}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+
+\end{document}
