@@ -1,0 +1,72 @@
+\section{Text erstellen}
+
+\begin{frame}[fragile]
+    \frametitle{Titelseite und Metadaten}
+    \LaTeX \ erstellt automatisch eine Titelseite aus den Metadaten.
+
+    \begin{block}{Empfehlung fürs Praktikum:}
+        \begin{lstverbatim}
+        \subject{Fakultät Physik, TU Dortmund}
+        \title{Vxxx: Titel des Versuchs}
+        \subtitle{Physikalisches Anfängerpraktikum}
+        \author{Max Mustermann}
+        % Mehrere Autoren mit \and :
+        \author{Max Mustermann \and Maria Musterfrau}
+        \date{Datum der Versuchsdurchführung} 
+        % Zusätzlich möglich:
+        \titlehead{Kopf}
+        \publishers{Verlag}
+        \end{lstverbatim}
+    \end{block}
+
+    \begin{block}{Titelseite generieren}
+        \begin{lstverbatim}
+        \maketitle
+        \end{lstverbatim}
+    \end{block}
+\end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{Inhaltsverzeichnis und Gliederung}
+    \LaTeX \ bietet Befehle zum erstellen von Gliederungsebenen. Diese werden automatisch nummeriert und in entsprechend größerer und fetter Schrift gesetzt. 
+
+    Mit \verb+\tableofcontents+ wird das Inhaltsverzeichnis erstellt.
+    
+    \begin{block}{Gliederungsebenen für \texttt{scrartcl}}
+        \begin{lstverbatim}
+        \section{Überschrift} 
+        \subsection{Überschrift}
+        \subsubsection{Überschrift}
+        \paragraph{Überschrift} % wird nicht nummeriert
+        \subparagraph{Überschrift} % wird nicht nummeriert
+        \end{lstverbatim}
+    \end{block}
+    \begin{block}{höhere Gliederungsebenen für \texttt{scrrepr} und \texttt{scrbook}}
+        \begin{lstverbatim}
+        \part{Überschrift}
+        \chapter{Überschrift}
+        \section{Überschrift}
+        \end{lstverbatim}
+    \end{block}
+\end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{Zusammengefasst:}
+    \begin{lstverbatim}
+        \documentclass{scrartcl}
+        \usepackage[utf]{luainputenc}
+        \usepackage[ngerman]{babel}
+
+        \subject{Fakultät Physik, TU Dortmund}
+        \title{V500: Der Photoeffekt}
+        \subtitle{Physikalisches Anfängerpraktikum}
+        \author{Max Mustermann \and Maria Musterfrau}
+        \date{23.10.2014}
+         
+        \begin{document}
+        \maketitle
+        \newpage
+        \tableofcontents
+        \end{document}
+    \end{lstverbatim}
+\end{frame}

@@ -35,13 +35,14 @@
     autogobble,
     language={[LaTeX]TeX},                
     basicstyle=\ttfamily,
-    texcsstyle=*\color{TUolive},
+    texcsstyle=*\color{TUdarkgreen},
     keywordstyle=\color{TUorange},
     commentstyle=\color{blue},
     morekeywords = {hallo},
     otherkeywords={$,$, \{, \}, \[, \],  ^, _},
-    moretexcs={text, num, SI, si, kilo, gram, befehl,
-                  metre, per, second, squared, micro},
+    moretexcs={text, num, SI, si, kilo, gram, befehl, subject, titlehead, publishers,
+               metre, per, second, squared, micro, subtitle, maketitle, tableofcontents,
+               subsection, subsubsection, part, chapter, paragraph, subparagraph},
     columns=fullflexible,
     breaklines=true,
     keepspaces=true,
@@ -72,6 +73,8 @@
 \end{frame}
 
 \input{./Inhalt/grundlagen.tex}
+\input{./Inhalt/standardpakete.tex}
+\input{./Inhalt/text.tex}
 \input{./Inhalt/siunitx.tex}
 \input{./Inhalt/matheumgebung.tex}
 

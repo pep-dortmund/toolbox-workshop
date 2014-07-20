@@ -1,5 +1,14 @@
 \section{Grundlagen}
 \begin{frame}
+    \frametitle{Was ist \LaTeX?}
+    \begin{itemize}
+        \item \emph{Programmiersprache} zum Setzen von Text
+        \item Kein WYSIWYG, es werden Befehle und Inhalt in normale Text-Dateien geschrieben.
+        \item Kompiler überträgt \LaTeX-Code in ein Ausgabedokument (meist PDF)
+        \item OpenSource mit zahlreichen Erweiterungsmöglichkeit (Pakete)
+    \end{itemize}
+\end{frame}
+\begin{frame}
     \frametitle{Warum \LaTeX \ benutzen?}
     \begin{itemize}
         \item hervorragender Text- und Formelsatz
@@ -8,7 +17,7 @@
               $\Rightarrow$ kleine Datein, gut für Versionskontrolle geeignet
         \item sehr gute Vorlagen für wissenschaftliche Arbeiten 
         \item aber auch: Notensatz, Präsentationen 
-        \item kostenlos, OpenSource, ausgezeichnete Dokumentionen
+        \item ausgezeichnete Dokumentionen
         \item erweiterbar durch zahlreiche und mächtige Pakete
         \item aus allen geläufigen Betriebssystem verfügbar
         \item Ausgabe nach PDF
@@ -63,15 +72,39 @@
                 \documentclass[paper=a4]
                               {scrartcl}
                 \frac{1}{2}
+
+
+                % Kommentar
                 \end{lstverbatim}
+                \vspace{0.4cm}
             \end{block}
         \end{column}
         \begin{column}{0.47\textwidth}
             \begin{block}{Erklärung}
                 Beispiel \\
                 Setzt die Dokumentenklasse auf \emph{scrartcl} und das Papierformat auf DIN\,A4. \\
-                Es gibt auch Befehle mit zwei oder mehr Pflichtargumenten, z.B. der Bruch.
+                Es gibt auch Befehle mit zwei oder mehr Pflichtargumenten, z.B. der Bruch. \\
+                Text oder Befehle nach einem \%-Zeichen werden nicht berücksichtigt.
             \end{block}
         \end{column}
     \end{columns}
+\end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{Das Ausgabedokument erstellen}
+    Es gibt mehrere verschiedene \LaTeX-Kompiler, die verschiedene Ausgabeformate erzeugen können.
+    Der modernste Kompiler, der PDF-Dateien erstellt, ist \alert{lualatex}.
+
+    \begin{block}{\LaTeX-Dakument kompilieren}
+        Konsole öffnen:
+        \begin{lstverbatim}
+        $ lualatex MeinDokument.tex
+        \end{lstverbatim}
+    \end{block}
+    \begin{alertblock}{Vorsicht!}
+        \begin{itemize}
+        \item Es muss fast immer mindestens zweimal kompiliert werden.
+        \item Es werden diverse Hilfs- und Logdateien erzeugt.
+        \end{itemize}
+    \end{alertblock}
 \end{frame}
