@@ -1,0 +1,77 @@
+\section{Grundlagen}
+\begin{frame}
+    \frametitle{Warum \LaTeX \ benutzen?}
+    \begin{itemize}
+        \item hervorragender Text- und Formelsatz
+        \item automatisierte Erstellung von Inhalts- und Literaturverzeichnis
+        \item Tex-Dateien sind reine Text-Dateien \\
+              $\Rightarrow$ kleine Datein, gut für Versionskontrolle geeignet
+        \item sehr gute Vorlagen für wissenschaftliche Arbeiten 
+        \item aber auch: Notensatz, Präsentationen 
+        \item kostenlos, OpenSource, ausgezeichnete Dokumentionen
+        \item erweiterbar durch zahlreiche und mächtige Pakete
+        \item aus allen geläufigen Betriebssystem verfügbar
+        \item Ausgabe nach PDF
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{Das Dokument}
+    Diese drei Zeilen braucht jedes \LaTeX-Dokument:
+    \begin{columns}[T]
+        \begin{column}{0.4\textwidth}
+            \begin{block}{\LaTeX-Code}
+                \begin{lstverbatim}
+                \documentclass{scrartcl}
+                    % Präambel
+                    .
+                    .
+                \begin{document}
+                    % Inhalt des Dokuments
+                    .
+                    .
+                \end{document}
+                \end{lstverbatim}
+            \end{block}
+        \end{column}
+        \begin{column}{0.55\textwidth}
+            \begin{block}{documentclass}
+                Hier wird die Dokumentenklasse definiert. \\
+                Es folgt die \alert{Präambel} des Dokuments. 
+                Hier werden globale Optionen gesetzt und zusätzliche Pakete eingebunden.\\
+            \end{block}
+
+            \vspace{0.55cm}
+
+            \begin{block}{document-Umgebung}
+                Hier wird das eigentliche Dokument erstellt.
+            \end{block}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{Syntax: Befehle}
+    \LaTeX-Befehle beginnen stets mit einem Back-Slash.
+
+    Obligatorische Argumente stehen in \{ \}, optionale Argumente stehen in [ ].
+    \begin{columns}[T]
+        \begin{column}{0.47\textwidth}
+            \begin{block}{\LaTeX-Code}
+                \begin{lstverbatim}
+                \befehl[optional]{obligatorisch}
+                \documentclass[paper=a4]
+                              {scrartcl}
+                \frac{1}{2}
+                \end{lstverbatim}
+            \end{block}
+        \end{column}
+        \begin{column}{0.47\textwidth}
+            \begin{block}{Erklärung}
+                Beispiel \\
+                Setzt die Dokumentenklasse auf \emph{scrartcl} und das Papierformat auf DIN\,A4. \\
+                Es gibt auch Befehle mit zwei oder mehr Pflichtargumenten, z.B. der Bruch.
+            \end{block}
+        \end{column}
+    \end{columns}
+\end{frame}

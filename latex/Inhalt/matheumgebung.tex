@@ -1,0 +1,36 @@
+\section{Formelsatz}
+\subsection{im Fließtext}
+\begin{frame}[fragile]
+   \frametitle{\$ \dots \$-Umgebung}
+   Für mathematische Symbole, Variablen und kleine Formeln im Fließtext. 
+
+   \begin{block}{benötigte Pakete}
+    \begin{lstverbatim}
+        \usepackage{amsmath}
+        \usepackage{mathtools}
+        \usepackage{amssymb}
+    \end{lstverbatim}
+   \end{block}
+    \begin{columns}[T]
+        \begin{column}{0.6\textwidth}
+            \begin{block}{\LaTeX-Code}
+                \begin{lstverbatim}
+                $x$ 
+                $x^i$
+                $x^12$ bzw. $x^{12}$ % Vorsicht
+                $x_\text{max}$
+                $U(t) = U_0 \cdot \cos(\omega t)$
+                \end{lstverbatim}
+            \end{block}
+        \end{column}
+        \begin{column}{0.35\textwidth}
+            \begin{block}{Ergebnis}
+                $x$  \\
+                $x^i$ \\
+                $x^12$ bzw. $x^{12}$ \\ 
+                $x_\text{max}$ \\
+                $U(t) = U_0 \cdot \cos(\omega t)$
+            \end{block}
+        \end{column}
+    \end{columns}
+\end{frame}

@@ -1,0 +1,39 @@
+\section{Zahlen und Einheiten}
+\begin{frame}[fragile]
+    \frametitle{Das SIunitx-Paket}
+    Dieses Paket sollte immer und für jede Zahl mit oder ohne Einheit verwendet werden.
+
+   \begin{block}{benötigte Pakete}
+    \begin{lstverbatim}
+        \usepackage[locale=DE, separate-uncertainty=true, per-mode=fraction]
+                   {siunitx}
+    \end{lstverbatim}
+   \end{block}
+    \begin{columns}[T]
+        \begin{column}{0.6\textwidth}
+            \begin{block}{\LaTeX-Code}
+                \begin{lstverbatim}
+                \num{1.23456} und \num{987654321}
+                \num{1.2e2}
+                \si{\newton} = \si{\kilo\gram\metre\per\second\squared}
+                \SI{1.2}{\metre\per\second}
+                \SI{4,3(12)}{\micro\second}
+                \SI{4,3(12)e-6}{\second}
+                \end{lstverbatim}
+            \end{block}
+        \end{column}
+        \begin{column}{0.35\textwidth}
+            \begin{block}{Ergebnis}
+                \num{1.23456} und \num{987654321} \\
+                \num{1.2e2} \\
+                \smallbreak
+                \si{\newton} = \si{\kilo\gram\metre\per\second\squared} \\
+                \medbreak
+                \SI{1.2}{\metre\per\second} \\
+                \SI{4,3(12)}{\micro\second}
+                \SI{4,3(12)e-6}{\second}
+            \end{block}
+        \end{column}
+    \end{columns}
+\end{frame}
+

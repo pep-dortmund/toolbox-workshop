@@ -1,0 +1,78 @@
+\documentclass[9pt, mathserif]{beamer}
+
+\usepackage[utf8]{luainputenc}
+
+\usepackage[ngerman]{babel}
+\setlength{\parindent}{0pt}
+\usepackage[babel,german=quotes]{csquotes}
+\usepackage{eurosym}
+
+\usepackage{amsmath}
+%\usepackage{mathtools}
+\usepackage{amssymb}
+\usepackage{xfrac}
+
+
+\usepackage[locale=DE, separate-uncertainty=true, per-mode=fraction, alsoload=astro]{siunitx}
+
+\usepackage{booktabs}
+\usepackage{tabulary}
+\usepackage{threeparttable}
+
+\usepackage[]{graphicx}
+
+\usepackage[]{hyperref}
+\usepackage{braket}
+\usepackage{xcolor}
+\usepackage{enumerate}
+
+\usepackage{listings}
+\usepackage{lstautogobble}
+
+\lstnewenvironment{lstverbatim}[1][]{
+  \lstset
+  {
+    autogobble,
+    language={[LaTeX]TeX},                
+    basicstyle=\ttfamily,
+    texcsstyle=*\color{TUolive},
+    keywordstyle=\color{TUorange},
+    commentstyle=\color{blue},
+    morekeywords = {hallo},
+    otherkeywords={$,$, \{, \}, \[, \],  ^, _},
+    moretexcs={text, num, SI, si, kilo, gram, befehl,
+                  metre, per, second, squared, micro},
+    columns=fullflexible,
+    breaklines=true,
+    keepspaces=true,
+    aboveskip=-0.2em,
+    belowskip=-0.2em
+  }
+}{}
+
+
+\title{Verfassen wissenschaftlicher Texte mit \LaTeX}
+\author{PeP et Al. toolbox}
+\date{2014}
+\institute[Pep et Al. e.V.]{\includegraphics[width=0.2\textwidth]{peplogo.pdf}}
+\titlegraphic{./latex-vs-word.pdf}
+
+\usetheme{TUDo}
+
+\begin{document}
+
+\begin{frame}
+\setcounter{framenumber}{0}
+    \titlepage
+\end{frame}
+
+\begin{frame}
+    \frametitle{Übersicht}
+    \tableofcontents
+\end{frame}
+
+\input{./Inhalt/grundlagen.tex}
+\input{./Inhalt/siunitx.tex}
+\input{./Inhalt/matheumgebung.tex}
+
+\end{document}
