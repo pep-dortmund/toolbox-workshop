@@ -51,22 +51,48 @@
 \end{frame}
 
 \begin{frame}[fragile]
-    \frametitle{Zusammengefasst:}
-    \begin{lstverbatim}
-        \documentclass{scrartcl}
-        \usepackage[utf]{luainputenc}
-        \usepackage[ngerman]{babel}
-
-        \subject{Fakultät Physik, TU Dortmund}
-        \title{V500: Der Photoeffekt}
-        \subtitle{Physikalisches Anfängerpraktikum}
-        \author{Max Mustermann \and Maria Musterfrau}
-        \date{23.10.2014}
-         
-        \begin{document}
-        \maketitle
-        \newpage
-        \tableofcontents
-        \end{document}
-    \end{lstverbatim}
+    \frametitle{Konventionen für Text}
+    \begin{itemize}
+        \item höchstens einen Satz pro Code-Zeile
+        \item Absätze werden durch eine Leerzeile markiert
+        \item Im Fließtext sollten keine Umbrüche mit \textbackslash\textbackslash \  erzwungen werden.
+    \end{itemize}
+    \begin{alertblock}{Sonderzeichen}
+        Viele Sonderzeichen sind \LaTeX- Steuerzeichen. Damit diese im Text genutzt werden können,
+        muss meist ein \textbackslash \ vorangestellt oder ein Befehl genutzt werden:
+        \begin{center}
+            \begin{lstlisting}
+            \% \& \_ \textbackslash \$ \{ \}
+            \end{lstlisting}
+            \% \& \_ \textbackslash \ \$ \{ \}
+        \end{center}
+    \end{alertblock}
 \end{frame}
+\begin{frame}
+    \frametitle{Übung: Aufbau des Protokolls}
+    \begin{block}{Aufgabe}
+        Schreibt und kompiliert den groben Rahmen für das Protokoll.
+        Es sollte folgendes enthalten:
+        \begin{enumerate}
+            \item Titelseite mit den wichtigen Informationen
+            \item Inhaltsverzeichnis
+            \item Section Theorie
+                \begin{enumerate}
+                    \item subsection Theorie A
+                    \item subsection Theorie B
+                \end{enumerate}
+            \item Section Aufbau und Durchführung
+                \begin{enumerate}
+                    \item subsection Aufbau
+                    \item subsection Versuchsdurchführung
+                \end{enumerate}
+            \item Section Auswertung
+                \begin{enumerate}
+                    \item subsection Teil 1 der Auswertung
+                    \item subsection Teil 2 der Auswertung
+                \end{enumerate}
+            \item Section Diskussion
+        \end{enumerate}
+    \end{block}
+\end{frame}
+

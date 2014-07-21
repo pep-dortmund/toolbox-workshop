@@ -13,7 +13,7 @@
 \usepackage{xfrac}
 
 
-\usepackage[locale=DE, separate-uncertainty=true, per-mode=fraction, alsoload=astro]{siunitx}
+\usepackage[locale=DE, separate-uncertainty=true, per-mode=fraction]{siunitx}
 
 \usepackage{booktabs}
 \usepackage{tabulary}
@@ -39,10 +39,11 @@
     keywordstyle=\color{TUorange},
     commentstyle=\color{blue},
     morekeywords = {hallo},
-    otherkeywords={$,$, \{, \}, \[, \],  ^, _},
+    otherkeywords={$,$, &, \{, \}, \[, \],  ^, _},
     moretexcs={text, num, SI, si, kilo, gram, befehl, subject, titlehead, publishers,
                metre, per, second, squared, micro, subtitle, maketitle, tableofcontents,
-               subsection, subsubsection, part, chapter, paragraph, subparagraph},
+               subsection, subsubsection, part, chapter, paragraph, subparagraph,
+               iint, iiint},
     columns=fullflexible,
     breaklines=true,
     keepspaces=true,
