@@ -16,7 +16,7 @@
         \item Tex-Dateien sind reine Text-Dateien \\
               $\Rightarrow$ kleine Datein, gut für Versionskontrolle geeignet
         \item sehr gute Vorlagen für wissenschaftliche Arbeiten 
-        \item aber auch: Notensatz, Präsentationen 
+        \item aber auch: Briefe, Notensatz, Präsentationen 
         \item ausgezeichnete Dokumentionen
         \item erweiterbar durch zahlreiche und mächtige Pakete
         \item aus allen geläufigen Betriebssystem verfügbar
@@ -85,6 +85,33 @@
                 Setzt die Dokumentenklasse auf \emph{scrartcl} und das Papierformat auf DIN\,A4. \\
                 Es gibt auch Befehle mit zwei oder mehr Pflichtargumenten, z.B. der Bruch. \\
                 Text oder Befehle nach einem \%-Zeichen werden nicht berücksichtigt.
+            \end{block}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{Syntax: Umgebungen}
+    Das zweite wichtige \LaTeX-Element sind die Umgebungen.
+    \begin{columns}[T]
+        \begin{column}{0.47\textwidth}
+            \begin{block}{Syntax}
+                \begin{lstverbatim}
+                \begin{Umgebung}[optional]
+                                {obligatorisch}
+                    .
+                    .
+                \end{Umgebung}
+                \end{lstverbatim}
+                \vspace{0.4cm}
+            \end{block}
+        \end{column}
+        \begin{column}{0.47\textwidth}
+            \begin{block}{Eigenschaften}
+                \begin{itemize}
+                    \item Umgebungen können verschachtelt werden
+                    \item Umgebungen können \alert{nicht} verschränkt werden
+                \end{itemize}
             \end{block}
         \end{column}
     \end{columns}
