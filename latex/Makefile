@@ -1,10 +1,13 @@
-all: toolbox-LaTeX.pdf
+CONTENT := $(addprefix content/, $(addsuffix .tex, gleitumgebungen grundlagen matheumgebung siunitx standardpakete text))
 
-toolbox-LaTeX.pdf: toolbox-LaTeX.tex *.sty Inhalt/*
-	lualatex -shell-escape toolbox-LaTeX.tex
-	lualatex -shell-escape toolbox-LaTeX.tex
-	mkdir -p logfiles
-	mv *.vrb *.log *.aux *.nav *.out *.snm *.toc logfiles/
+build/slides.pdf: slides.tex $(CONTENT) | build
+	@../common/tex.sh slides.tex
+
+build:
+	mkdir -p build
+
+fast:
+	@../common/tex.sh --fast slides.tex
 
 clean:
-	rm -r logfiles
+	rm -rf build

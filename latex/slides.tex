@@ -2,6 +2,7 @@
 
 
 \usepackage[ngerman]{babel}
+\usepackage[backend=biber,style=ieee,sorting=none]{biblatex}
 
 \usepackage{fontspec}
 
@@ -64,8 +65,8 @@
 \title{Verfassen wissenschaftlicher Texte mit \LaTeX}
 \author{PeP et Al. toolbox}
 \date{2014}
-\institute[Pep et Al. e.V.]{\includegraphics[width=0.2\textwidth]{peplogo.pdf}}
-\titlegraphic{./latex-vs-word.pdf}
+\institute[Pep et Al. e.V.]{\includegraphics[width=0.2\textwidth]{logos/pep.pdf}}
+\titlegraphic{figures/latex-vs-word.pdf}
 
 \usetheme{TUDo}
 
@@ -81,11 +82,11 @@
     \tableofcontents
 \end{frame}
 
-\input{./Inhalt/grundlagen.tex}
-\input{./Inhalt/standardpakete.tex}
-\input{./Inhalt/text.tex}
-\input{./Inhalt/siunitx.tex}
-\input{./Inhalt/matheumgebung.tex}
-\input{./Inhalt/gleitumgebungen.tex}
+\input{content/grundlagen.tex}
+\input{content/standardpakete.tex}
+\input{content/text.tex}
+\input{content/siunitx.tex}
+\input{content/matheumgebung.tex}
+\input{content/gleitumgebungen.tex}
 
 \end{document}
