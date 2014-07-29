@@ -1,0 +1,119 @@
+\newcommand{\mail}{\includegraphics[width=0.2\textwidth]{figures/mail.pdf}}
+\tikzstyle{arr}=[line width=1mm,draw=black,-triangle 45]
+
+\headlineframe{Änderungen verwalten mit \texttt{git}}
+
+\headlineframe{Wie arbeitet man am besten an einem Protokoll zusammen?}
+
+\headlineframe{Idee: Austausch über Mails}
+
+\begin{frame}{Mails: Probleme}
+  \centering
+  \begin{tikzpicture}
+    \node (alice) at (0, 0) {\includegraphics[width=0.2\textwidth]{figures/text.pdf}};
+    \node (bob) at (8, 0) {\includegraphics[width=0.2\textwidth]{figures/text.pdf}};
+    \draw[arr] (alice) -- node {\mail} (bob);
+  \end{tikzpicture}
+  \begin{itemize}
+    \item Risiko, dass Änderungen vergessen werden, ist groß
+    \item Bei jedem Abgleich muss jemand anders aktiv werden
+      \begin{itemize}
+        \item Stört
+        \item Es kommt zu Verzögerungen
+      \end{itemize}
+  \end{itemize}
+  Fazit: Eine sehr unbequeme / riskante Lösung
+\end{frame}
+
+\headlineframe{Idee: Austausch über Dropbox}
+
+\begin{frame}{Dropbox: Probleme}
+  \centering
+  \begin{tikzpicture}
+    \node (alice) at (0, 0) {\includegraphics[width=0.2\textwidth]{figures/text.pdf}};
+    \node[align=center,fill=blue!20,rounded corners=1em] (dropbox) at (4, 0.5) {
+      \includegraphics[width=0.1\textwidth]{logos/dropbox.pdf}\\
+      \includegraphics[width=0.2\textwidth]{figures/text.pdf}
+    };
+    \node (bob) at (8, 0) {\includegraphics[width=0.2\textwidth]{figures/text.pdf}};
+    \draw[arr,triangle 45-triangle 45] (0.8, 0) -- (dropbox);
+    \draw[arr,triangle 45-triangle 45] (dropbox) -- (7.2, 0);
+  \end{tikzpicture}
+  
+  \begin{itemize}
+    \item Man merkt nichts von Änderungen der Anderen
+    \item Gleichzeitige Änderungen gehen verloren
+  \end{itemize}
+  Fazit: Besser, aber hat deutliche Probleme
+\end{frame}
+
+\headlineframe{Lösung: Änderungen verwalten mit \texttt{git}}
+
+\begin{frame}
+    \centering
+    \includegraphics[width=0.7\textwidth]{logos/git.pdf}
+    
+    \vspace{1em}
+
+    \begin{itemize}
+      \item Ein Version Control System
+      \item Ursprünglich entwickelt, um den Programmcode des Linux-Kernels zu verwalten (Linus Torvalds)
+      \item Hat sich gegenüber ähnlichen Programmen (SVN, mercurial) durchgesetzt
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Was bringt \texttt{git} für Vorteile?}
+  \begin{itemize}
+    \item Arbeit wird für andere sichtbar protokolliert
+    \item Erlaubt Zurückspringen an einen früheren Zeitpunkt
+    \item Kann die meisten Änderungen automatisch zusammenfügen
+    \item Wirkt nebenbei auch als Backup
+  \end{itemize}
+  Einziges Problem: Man muss lernen, damit umzugehen
+\end{frame}
+
+\begin{frame}{Zentrales Konzept: Das Repository}
+  \begin{itemize}
+    \item Erzeugen mit \texttt{git init}
+  \end{itemize}
+  \vspace{3em}
+  \centering
+  \begin{tikzpicture}[line width=1.5]
+    \node (wd) at (0, 0) [draw,rounded corners,thick,minimum width=4cm,minimum height=1.2cm,fill=red!20] {Working directory};
+    \node (idx) [below=0.4cm of wd,draw,thick,rounded corners,minimum width=4cm,minimum height=1.2cm,fill=yellow!20] {Index};
+    \node (hist) [below=0.4cm of idx,draw,rounded corners,thick,minimum width=4cm,minimum height=1.2cm,fill=green!20] {History};
+    \draw[thick,->] (wd.east) to[out=0,in=0] node[right] {\texttt{git add}} (idx.east);
+    \draw[thick,->] (idx.west) to[out=180,in=180] node[left] {\texttt{git commit}} (hist.west);
+  \end{tikzpicture}
+\end{frame}
+
+\begin{frame}{Mit anderen Repositories kommunizieren}
+  \begin{itemize}
+    \item Repository kopieren: \texttt{git clone}
+    \item Neue Änderungen holen: \texttt{git pull}
+    \item Eigene Änderungen hochladen: \texttt{git push}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Achtung: Merge conflicts}
+  \begin{center}
+    \huge Don't Panic
+  \end{center}
+  \begin{itemize}
+    \item Entstehen, wenn \texttt{git} nicht automatisch mergen kann (selbe Zeile geändert, etc.)
+  \end{itemize}
+  \begin{enumerate}
+    \item Die betroffenen Dateien öffnen
+    \item Markierungen finden und die Stelle selbst mergen (meist 2,3 Zeilen)
+    \item \texttt{git commit} ausführen um zu bestätigen
+  \end{enumerate}
+\end{frame}
+
+\begin{frame}{Weitere nützliche Befehle}
+  \begin{itemize}
+    \item Änderungen ansehen: \texttt{git diff}
+    \item Vergangenheit betrachten: \texttt{git log}
+    \item Änderungen kurz zur Seite schieben: \texttt{git stash}
+  \end{itemize}
+\end{frame}
+

@@ -1,0 +1,68 @@
+\headlineframe{Auswertungen automatisieren mit \texttt{make}}
+
+\begin{frame}{GNU Make}
+  \begin{center}
+    \includegraphics[scale=0.5]{logos/gnu.png} \\
+    \Huge 30 Jahre GNU!
+  \end{center}
+\end{frame}
+
+\begin{frame}{Automatisierte, reproduzierbare Prozesse}
+
+  {\huge Problem:}
+  \vspace{1em}
+  \begin{itemize}
+    \item kurz vor Abgabe noch neue Korrekturen einpflegen
+      \begin{itemize}
+        \item Tippfehler korrigieren, Plots bearbeiten
+      \end{itemize}
+    \item \TeX{} ausführen, ausdrucken
+    \item vergessen, Plots neu zu erstellen
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Automatisierte, reproduzierbare Prozesse}
+
+  {\huge Lösung: Make!}
+  \vspace{1em}
+  \begin{itemize}
+    \item sieht, welche Dateien geändert wurden
+    \item berechnet nötige Operationen
+    \item führt Python-Skript aus, führt \TeX{} aus
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Makefile}
+  \begin{itemize}
+    \item Datei heißt \texttt{Makefile}, keine Endung!
+      \begin{itemize}
+        \item bei Windows Dateiendungen einschalten! (\url{http://support.microsoft.com/kb/865219/de})
+      \end{itemize}
+    \item besteht aus Rules:
+  \end{itemize}
+  \begin{block}{Rule}
+    \texttt{target: prerequisites\\
+    \hspace{1cm} recipe}
+  \end{block}
+  \begin{description}
+    \item[\texttt{target}] Datei(en), die von dieser Rule erzeugt wird
+    \item[\texttt{prerequisites}] Dateien, von denen diese Rule abhängt
+    \item[\texttt{recipe}] Befehle: \texttt{prerequisites} → \texttt{target} (mit Tab eingerückt)
+  \end{description}
+\end{frame}
+
+\begin{frame}[shrink]{Beispiel}
+  \texttt{\footnotesize
+    all: report.pdf\\[0.3cm]
+    plot.pdf: plot.py daten.txt\\
+    \hspace{1cm} python2 plot.py\\[0.3cm]
+    report.pdf: report.tex plot.pdf\\
+    \hspace{1cm} latex report.tex\\[0.3cm]
+  }
+
+  \begin{itemize}
+    \item wenn nur \texttt{make} gestartet wird, wird der erste Target erstellt, hier \texttt{all}; um ein anderes Target zu erstellen, startet man \texttt{make \textit{target}}
+    \item \texttt{all} braucht \texttt{report.pdf}, also wird \texttt{latex report.tex} ausgeführt
+    \item \texttt{report.pdf} braucht noch \texttt{plot.pdf}, also wird Python ausgeführt
+  \end{itemize}
+\end{frame}

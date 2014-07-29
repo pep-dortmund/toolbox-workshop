@@ -1,0 +1,31 @@
+\documentclass{beamer}
+
+\input{setup/packages.tex}
+\input{setup/options.tex}
+\input{setup/commands.tex}
+
+% --- meta ---
+\titlegraphic{
+    \includegraphics[height=1cm,keepaspectratio]{logos/tu.pdf}
+    \hfill
+    \includegraphics[height=1cm,keepaspectratio]{logos/pep.pdf}
+}
+\subject{PeP et al.}
+\title{\Huge Toolbox Workshop 2013}
+\author[Babuschkin, Dungs, Toijala]{Igor~Babuschkin \and Kevin~Dungs \and Ismo~Toijala}
+
+% --- document ---
+\begin{document}
+
+{
+    \setbeamertemplate{footline}{}  % get rid of page number on first slide
+    \frame{\maketitle}
+}
+
+\input{content/python.tex}
+
+%\begin{frame}[allowframebreaks]{Literatur}
+%    \printbibliography
+%\end{frame}
+
+\end{document}
