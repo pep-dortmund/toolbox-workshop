@@ -1,28 +1,13 @@
-all:
-	make slides
-	make open
+CONTENT := $(addprefix content/, $(addsuffix .tex, make))
 
-slides:
-	make tex
-	make tex
-	biber slides.bcf
-	make tex
+build/slides.pdf: slides.tex $(CONTENT) ../common/header/packages.tex ../common/header/options.tex ../common/header/commands.tex | build
+	@../common/tex.sh slides.tex
 
-tex: slides.tex
-	lualatex slides.tex
+build:
+	mkdir -p build
 
-open:
-	open slides.pdf
+fast:
+	@../common/tex.sh --fast slides.tex
 
 clean:
-	rm -f *.aux
-	rm -f *.bbl
-	rm -f *.bcf
-	rm -f *.blg
-	rm -f *.log
-	rm -f *.nav
-	rm -f *.out
-	rm -f *.run.xml
-	rm -f *.snm
-	rm -f *.toc
-	rm -f slides.pdf
+	rm -rf build
