@@ -1,4 +1,4 @@
-CONTENT := $(addprefix content/, $(addsuffix .tex, gleitumgebungen grundlagen matheumgebung siunitx standardpakete text))
+CONTENT := $(addprefix content/, $(addsuffix .tex, aufzaehlungen gleitumgebungen grundlagen matheumgebung siunitx standardpakete text))
 
 build/latex.pdf: latex.tex $(CONTENT) | build
 	@../common/tex.sh latex.tex
