@@ -15,65 +15,54 @@ usage() {
 fast() {
 	echo '$TEX' --jobname="$2" "$1"
 	if ! eval $TEX --jobname="$2" "$1" > /dev/null ; then
-	    cd build
-	    rubber-info --errors "$2".log
-	    rubber-info --warnings "$2".log
-	    rubber-info --refs "$2".log
-	    rubber-info --boxes "$2".log
-	    rm -f "$2".pdf
-	    exit 1
+		warnings "$2"
+		rm -f build/"$2".pdf
+		exit 1
 	else
-	    cd build
-	    rubber-info --errors "$2".log
-	    rubber-info --warnings "$2".log
-	    rubber-info --refs "$2".log
-	    rubber-info --boxes "$2".log
+		warnings "$2"
 	fi
 }
 
 full() {
 	echo '$TEX' --jobname="$2" "$1"
 	if ! eval $TEX --jobname="$2" "$1" > /dev/null ; then
-		cd build
-		rubber-info --errors "$2".log
-		rubber-info --warnings "$2".log
-		rubber-info --refs "$2".log
-		rubber-info --boxes "$2".log
-		rm -f "$2".pdf
+		warnings "$2"
+		rm -f build/"$2".pdf
 		exit 1
 	fi
 	echo '$BIBER' --logfile build/"$2".blg --outfile build/"$2".bbl build/"$2".bcf
 	eval $BIBER --logfile build/"$2".blg --outfile build/"$2".bbl build/"$2".bcf | grep -E "^(WARN|ERROR)"
 	if ! [ ${PIPESTATUS[0]} -eq 0 ] ; then
-		rm -f "$2".pdf
+		rm -f build/"$2".pdf
 		exit 1
 	fi
 	echo '$TEX' --jobname="$2" "$1"
 	if ! eval $TEX --jobname="$2" "$1" > /dev/null ; then
-		cd build
-		rubber-info --errors "$2".log
-		rubber-info --warnings "$2".log
-		rubber-info --refs "$2".log
-		rubber-info --boxes "$2".log
-		rm -f "$2".pdf
+		warnings "$2"
+		rm -f build/"$2".pdf
 		exit 1
 	fi
 	echo '$TEX' --jobname="$2" "$1"
 	if ! eval $TEX --jobname="$2" "$1" > /dev/null ; then
-		cd build
-		rubber-info --errors "$2".log
-		rubber-info --warnings "$2".log
-		rubber-info --refs "$2".log
-		rubber-info --boxes "$2".log
-		rm -f "$2".pdf
+		warnings "$2"
+		rm -f build/"$2".pdf
 		exit 1
 	else
-		cd build
-		rubber-info --errors "$2".log
-		rubber-info --warnings "$2".log
-		rubber-info --refs "$2".log
-		rubber-info --boxes "$2".log
+		warnings "$2"
 	fi
+}
+
+warnings() {
+	pushd build >/dev/null
+	if hash rubber-info 2>/dev/null ; then
+		rubber-info --errors "$1".log
+		rubber-info --warnings "$1".log
+		rubber-info --refs "$1".log
+		rubber-info --boxes "$1".log
+	else
+		tail -n 30 "$1".log
+	fi
+	popd >/dev/null
 }
 
 case $# in
