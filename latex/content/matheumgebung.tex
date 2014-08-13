@@ -4,13 +4,6 @@
    \frametitle{\$ \dots \$-Umgebung}
    Für mathematische Symbole, Variablen und kleine Formeln im Fließtext. 
 
-   \begin{block}{benötigte Pakete}
-    \begin{lstverbatim}
-        \usepackage{amsmath}
-        \usepackage{mathtools}
-        \usepackage{amssymb}
-    \end{lstverbatim}
-   \end{block}
     \begin{columns}[T]
         \begin{column}{0.6\textwidth}
             \begin{block}{\LaTeX-Code}
@@ -18,7 +11,7 @@
                 $x$ 
                 $x^i$
                 $x^12$ bzw. $x^{12}$ % Vorsicht
-                $x_\text{max}$
+                $x_\mathrm{max}$
                 $U(t) = U_0 \cdot \cos(\omega t)$
                 \end{lstverbatim}
             \end{block}
@@ -28,7 +21,7 @@
                 $x$  \\
                 $x^i$ \\
                 $x^12$ bzw. $x^{12}$ \\ 
-                $x_\text{max}$ \\
+                $x_\mathrm{max}$ \\
                 $U(t) = U_0 \cdot \cos(\omega t)$
             \end{block}
         \end{column}
@@ -36,7 +29,17 @@
 \end{frame}
 \subsection{Mathe-Umgebungen}
 \begin{frame}[fragile]
-    \frametitle{Die \texttt{equation}-Umgebung}
+    \frametitle{Die \texttt{equation}-Umgebung 
+        \hfill\doc{http://ftp.fau.de/ctan/macros/latex/required/amslatex/math/amsldoc.pdf}{amsmath}
+        \doc{http://ftp.uni-erlangen.de/mirrors/CTAN/macros/latex/contrib/mathtools/mathtools.pdf}{mathtools}
+    }
+   \begin{block}{benötigte Pakete}
+    \begin{lstverbatim}
+        \usepackage{amsmath}
+        \usepackage{amssymb}
+        \usepackage{mathtools}
+    \end{lstverbatim}
+   \end{block}
     Für eine abgesetzte Gleichung, die automatisch nummeriert wird.
     \begin{columns}[T]
         \begin{column}{0.6\textwidth}
@@ -62,7 +65,7 @@
     \end{columns}
 \end{frame}
 \begin{frame}[fragile]
-    \frametitle{Die \texttt{align}-Umgebung}
+    \frametitle{Die \texttt{align}-Umgebung \hfill\doc{http://ftp.fau.de/ctan/macros/latex/required/amslatex/math/amsldoc.pdf}{amsmath}}
     \begin{columns}[t]
         \begin{column}{0.35\textwidth}
             \begin{itemize}
@@ -101,6 +104,9 @@
 \end{frame}
 \begin{frame}[fragile]
     \frametitle{Symbol-Sammlung}
+    Praktischer Link: \\
+    \href{http://detexify.kirelabs.org/classify.html}{http://detexify.kirelabs.org/classify.html} \\
+    (Symbol malen und LaTeX-Code angezeigt bekommen)
     \begin{columns}[T]
         \begin{column}{0.7\textwidth}
             \begin{block}{\LaTeX-Code}
@@ -151,7 +157,7 @@
         \begin{align}
             \nabla \cdot \vec{E} &= \frac{\rho} {\epsilon_0} &
             \nabla \cdot \vec{B} &= 0 \\
-            \nabla \times \vec{E} &= \partial_t \vec{B} &
+            \nabla \times \vec{E} &= - \partial_t \vec{B} &
             \nabla \times \vec{B} &= \mu_0 \vec{j} + \mu_0 \epsilon_0 \partial_t \vec{E}
             \label{align}
         \end{align}

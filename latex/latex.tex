@@ -1,10 +1,13 @@
+\PassOptionsToPackage{unicode, pdfusetitle, colorlinks, linkcolor=TUgreen, urlcolor=TUorange}{hyperref}
 \documentclass[9pt, mathserif, professionalfonts]{beamer}
 
 
 \usetheme{TUDo}
 
 
-\usepackage[ngerman]{babel}
+%\usepackage[ngerman]{babel}
+\usepackage{polyglossia}
+\setmainlanguage{german}
 \usepackage[backend=biber,style=ieee,sorting=none]{biblatex}
 
 \usepackage{fontspec}
@@ -13,7 +16,7 @@
 
 
 \setlength{\parindent}{0pt}
-\usepackage[babel,german=quotes]{csquotes}
+\usepackage[german=quotes]{csquotes}
 \usepackage{eurosym}
 
 \usepackage{amsmath}
@@ -24,6 +27,7 @@
 \setmathfont{Tex Gyre Pagella Math}
 
 \usepackage[locale=DE, separate-uncertainty=true, per-mode=fraction]{siunitx}
+\AtBeginDocument{\sisetup{math-rm=\mathrm, text-rm=\rmfamily}}
 
 \usepackage{booktabs}
 \usepackage{tabulary}
@@ -33,8 +37,6 @@
 %\usepackage[labelfont=bf]{caption}
 \setbeamertemplate{caption}[numbered]
 
-\usepackage[]{hyperref}
-\usepackage{braket}
 \usepackage{xcolor}
 \usepackage{enumerate}
 
@@ -52,7 +54,7 @@
     commentstyle=\color{blue},
     morekeywords = {hallo},
     otherkeywords={$,$, &, \{, \}, \[, \],  ^, _},
-    moretexcs={text, num, SI, si, kilo, gram, befehl, subject, titlehead, publishers,
+    moretexcs={setmainlanguage, text, num, SI, si, kilo, gram, befehl, subject, titlehead, publishers,
                metre, per, second, squared, micro, subtitle, maketitle, tableofcontents,
                subsection, subsubsection, part, chapter, paragraph, subparagraph,
                iint, iiint},
@@ -62,7 +64,16 @@
     aboveskip=-0.2em,
     belowskip=-0.2em
   }
-}{}
+}{} 
+
+\usepackage{tikz}
+\usetikzlibrary{shadows}
+
+\tikzstyle{buttonstyle} = [align=center, rectangle, fill = black!10, draw = black!80, drop shadow, font={\bfseries}, text=TUgreen]
+
+\newcommand{\button}[1]{\tikz[baseline={([yshift=-.8ex]current bounding box.center)}]{\node[buttonstyle] {#1};}}
+
+\newcommand{\doc}[2]{\button{\href{#1}{Doku: #2}}}
 
 
 \title{Verfassen wissenschaftlicher Texte mit \LaTeX}

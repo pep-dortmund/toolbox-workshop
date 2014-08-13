@@ -19,8 +19,8 @@
         \item aber auch: Briefe, Notensatz, Präsentationen 
         \item ausgezeichnete Dokumentionen
         \item erweiterbar durch zahlreiche und mächtige Pakete
-        \item aus allen geläufigen Betriebssystem verfügbar
-        \item Ausgabe nach PDF
+        \item auf allen geläufigen Betriebssystemen verfügbar
+        \item Ausgabe direkt als PDF mit Hyperlinks
     \end{itemize}
 \end{frame}
 
@@ -28,10 +28,10 @@
     \frametitle{Das Dokument}
     Diese drei Zeilen braucht jedes \LaTeX-Dokument:
     \begin{columns}[T]
-        \begin{column}{0.4\textwidth}
+        \begin{column}{0.47\textwidth}
             \begin{block}{\LaTeX-Code}
                 \begin{lstverbatim}
-                \documentclass{scrartcl}
+                \documentclass[optionen]{klasse}
                     % Präambel
                     .
                     .
@@ -43,15 +43,13 @@
                 \end{lstverbatim}
             \end{block}
         \end{column}
-        \begin{column}{0.55\textwidth}
+        \begin{column}{0.47\textwidth}
             \begin{block}{documentclass}
-                Hier wird die Dokumentenklasse definiert. \\
-                Es folgt die \alert{Präambel} des Dokuments. 
+                Hier wird die Dokumentenklasse gewählt und mit Optionen angepasst. \\
+            \end{block}
+            \begin{block}{Präambel}
                 Hier werden globale Optionen gesetzt und zusätzliche Pakete eingebunden.\\
             \end{block}
-
-            \vspace{0.55cm}
-
             \begin{block}{document-Umgebung}
                 Hier wird das eigentliche Dokument erstellt.
             \end{block}
@@ -92,7 +90,8 @@
 
 \begin{frame}[fragile]
     \frametitle{Syntax: Umgebungen}
-    Das zweite wichtige \LaTeX-Element sind die Umgebungen.
+    Das zweite wichtige \LaTeX-Element sind die Umgebungen. Umgebungen können extrem vielseitig sein,
+    von einer Änderung der Textausrichtung über mathematische Formel bis hin zu Designelementen.
     \begin{columns}[T]
         \begin{column}{0.47\textwidth}
             \begin{block}{Syntax}
@@ -132,7 +131,7 @@
         \begin{itemize}
         \item Es muss fast immer mindestens zweimal kompiliert werden.
         \item Es werden diverse Hilfs- und Logdateien erzeugt.
-        \item Die Input-Dokumente müssten UTF-8 codiert sein.
+        \item Die Input-Dokumente müssen UTF-8 codiert sein.
         \end{itemize}
     \end{alertblock}
 \end{frame}
