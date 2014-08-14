@@ -94,3 +94,67 @@
         \end{enumerate}
     \end{block}
 \end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{Textauszeichnung}
+    Änderung der Schrifteigenschaften sind mit diesen Befehlen möglich:
+    \begin{columns}[t]
+        \begin{column}{0.6\textwidth}
+            \begin{block}{\LaTeX-Code}
+                \begin{lstverbatim}
+                \textit{kursiv} \emph{kursiv}
+                \textbf{fett}
+                \textbf{\textit{fett-kursiv}}
+                \textrm{Serifen-Schrift}
+                \texttt{Mono-Schrift}
+                \textsf{Sans-Serif-Schrift}
+                \end{lstverbatim}
+            \end{block}
+        \end{column}
+        \begin{column}{0.35\textwidth}
+            \begin{block}{Ergebnis}
+                \textit{kursiv} \emph{kursiv} \\
+                \textbf{fett} \\
+                \textbf{\textit{fett-kursiv}} \\
+                \textrm{Serifen-Schrift} \\
+                \texttt{Mono-Schrift} \\
+                \textsf{Sans-Serif-Schrift}
+            \end{block}
+        \end{column}
+    \end{columns}
+    \vspace{1em}
+In der Matheumgebung statt \verb+\text+ einfach \verb+\math+, z.B.  \verb+\mathrm+.
+\end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{Textgrößen}
+    Gelten immer für den aktuellen Block, z.B. in einer Umgebung oder zwischen \{\dots\} 
+    \begin{columns}[t]
+        \begin{column}{0.47\textwidth}
+            \begin{block}{\LaTeX-Code}
+            \begin{lstverbatim}
+                {\tiny tiny }
+                {\small small}
+                {\normalsize normal}
+                {\large large}
+                {\huge huge}
+            \end{lstverbatim}
+            \end{block}
+        \end{column}
+        \begin{column}{0.47\textwidth}
+            \begin{block}{Ergebnis}
+                {\tiny tiny }
+                {\small small}
+                {\normalsize normal}
+                {\large large}
+                {\huge huge}
+            \end{block}
+        \end{column}
+    \end{columns}
+    \vspace{1em}
+    \begin{block}{alle Größen}
+        \begin{lstverbatim}
+        \tiny, \scriptsize, \footnotesize, \small, \normalsize, \large, \Large, \LARGE, \huge, \Huge
+        \end{lstverbatim}
+    \end{block}
+\end{frame}
