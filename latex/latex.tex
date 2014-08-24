@@ -1,98 +1,16 @@
-\PassOptionsToPackage{unicode, pdfusetitle, colorlinks, linkcolor=TUgreen, urlcolor=TUorange}{hyperref}
-\documentclass[9pt, mathserif, professionalfonts]{beamer}
-
-
-\usetheme{TUDo}
-
-
-%\usepackage[ngerman]{babel}
-\usepackage{polyglossia}
-\setmainlanguage{german}
-\usepackage[backend=biber,style=ieee,sorting=none]{biblatex}
-
-\usepackage{fontspec}
-
-\setsansfont{Tex Gyre Heros}
-
-
-\setlength{\parindent}{0pt}
-\usepackage[german=quotes]{csquotes}
-\usepackage{eurosym}
-
-\usepackage{amsmath}
-\usepackage{mathtools}
-\usepackage{amssymb}
-\usepackage{xfrac}
-\usepackage{unicode-math}
-\setmathfont{Tex Gyre Pagella Math}
-
-\usepackage[locale=DE, separate-uncertainty=true, per-mode=fraction]{siunitx}
-\AtBeginDocument{\sisetup{math-rm=\mathrm, text-rm=\rmfamily}}
-
-\usepackage{booktabs}
-\usepackage{tabulary}
-\usepackage{threeparttable}
-
-\usepackage[]{graphicx}
-%\usepackage[labelfont=bf]{caption}
-\setbeamertemplate{caption}[numbered]
-
-\usepackage{xcolor}
-\usepackage{enumerate}
-
-\usepackage{listings}
-\usepackage{lstautogobble}
-
-\lstnewenvironment{lstverbatim}[1][]{
-  \lstset
-  {
-    autogobble,
-    language={[LaTeX]TeX},                
-    basicstyle=\ttfamily,
-    texcsstyle=*\color{TUdarkgreen},
-    keywordstyle=\color{TUorange},
-    commentstyle=\color{blue},
-    morekeywords = {hallo},
-    otherkeywords={$,$, &, \{, \}, \[, \],  ^, _},
-    moretexcs={setmainlanguage, text, num, SI, si, kilo, gram, befehl, subject, titlehead, publishers,
-               metre, per, second, squared, micro, subtitle, maketitle, tableofcontents,
-               subsection, subsubsection, part, chapter, paragraph, subparagraph,
-               iint, iiint},
-    columns=fullflexible,
-    breaklines=true,
-    keepspaces=true,
-    aboveskip=-0.2em,
-    belowskip=-0.2em
-  }
-}{} 
-
-\usepackage{tikz}
-\usetikzlibrary{shadows}
-
-\tikzstyle{buttonstyle} = [align=center, rectangle, fill = black!10, draw = black!80, drop shadow, font={\bfseries}, text=TUgreen]
-
-\newcommand{\button}[1]{\tikz[baseline={([yshift=-.8ex]current bounding box.center)}]{\node[buttonstyle] {#1};}}
-
-\newcommand{\doc}[2]{\button{\href{#1}{Doku: #2}}}
-
+\input{header.tex}
 
 \title{Verfassen wissenschaftlicher Texte mit \LaTeX}
-\author{PeP et Al. toolbox}
-\date{2014}
-\institute[Pep et Al. e.V.]{\includegraphics[width=0.2\textwidth]{logos/pep.pdf}}
 \titlegraphic{figures/latex-vs-word.pdf}
-
 
 \begin{document}
 
 \begin{frame}
-\setcounter{framenumber}{0}
-    \titlepage
+  \titlepage
 \end{frame}
 
-\begin{frame}
-    \frametitle{Übersicht}
-    \tableofcontents
+\begin{frame}{Übersicht}
+  \tableofcontents
 \end{frame}
 
 \input{content/grundlagen.tex}
