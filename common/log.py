@@ -22,6 +22,8 @@ re_latex_warning_rerun = r'LaTeX Warning: Label(s) may have changed. Rerun to ge
 
 re_latex_info = re.compile(r'^LaTeX ([^ ]+ )?Info: ')
 
+re_package_error = re.compile(r'^! Package ([^ ]+) Error: ')
+
 re_package_warning = re.compile(r'^Package ([^ ]+) Warning: ')
 re_package_rerunfilecheck_warning_rerun = re.compile(r"^Package rerunfilecheck Warning: File `[^']+' has changed.$")
 re_package_biblatex_warning_rerun = re.compile('^Package biblatex Warning: Please \(re\)run Biber on the file:$')
@@ -73,6 +75,7 @@ def print_package(package):
     for line in package[1]:
         print("  " + line)
 
+package_error = None
 package_warning = None
 package_info = None
 
@@ -116,6 +119,8 @@ for lineno, line in enumerate(lines):
             print_file_page()
             print_latex3_error(latex3_error)
             latex3_error = False
+    elif package_error is not None and line.startswith(r'({}) '.format(package_error[0])):
+        package_error[1].append(line)
     elif package_warning is not None and line.startswith(r'({}) '.format(package_warning[0])):
         package_warning[1].append(line)
         if not lines[lineno + 1].startswith(r'({}) '.format(package_warning[0])):
@@ -141,6 +146,9 @@ for lineno, line in enumerate(lines):
                 page = None
             elif match[0] == "[":
                 page = match[1:]
+    elif re_package_error.match(line):
+        match = re_package_error.match(line)
+        package_error = match.groups()[0], [line], []
     elif re_latex_error.match(line):
         latex_error = [line]
         if lineno == len(lines) - 1:
@@ -206,11 +214,25 @@ for lineno, line in enumerate(lines):
             print_file_page(match.groups()[0])
             print_latex_error(latex_error)
             latex_error = None
-        elif len(latex_error) < 4 and lineno < len(lines) - 1:
+        elif len(latex_error) < 7 and lineno < len(lines) - 1:
             latex_error.append(line)
         else:
             print_file_page()
             print("  " + latex_error[0])
             latex_error = None
+    elif package_error is not None:
+        if re_latex_error_line.match(line):
+            package_error[2].append(line)
+            match = re_latex_error_line.match(line)
+            print_file_page(match.groups()[0])
+            print_latex_error(package_error[1])
+            print_latex_error(package_error[2])
+            package_error = None
+        elif len(package_error[2]) < 7 and lineno < len(lines) - 1:
+            package_error[2].append(line)
+        else:
+            print_file_page()
+            print_latex_error(package_error[1])
+            package_error = None
 
 sys.exit(exit_code)
