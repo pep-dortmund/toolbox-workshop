@@ -2,13 +2,13 @@
 \subsection{im Fließtext}
 \begin{frame}[fragile]
    \frametitle{\$ \dots \$-Umgebung}
-   Für mathematische Symbole, Variablen und kleine Formeln im Fließtext. 
+   Für mathematische Symbole, Variablen und kleine Formeln im Fließtext.
 
     \begin{columns}[T]
         \begin{column}{0.6\textwidth}
             \begin{block}{\LaTeX-Code}
                 \begin{lstverbatim}
-                $x$ 
+                $x$
                 $x^i$
                 $x^12$ bzw. $x^{12}$ % Vorsicht
                 $x_\mathrm{max}$
@@ -20,7 +20,7 @@
             \begin{block}{Ergebnis}
                 $x$  \\
                 $x^i$ \\
-                $x^12$ bzw. $x^{12}$ \\ 
+                $x^12$ bzw. $x^{12}$ \\
                 $x_\mathrm{max}$ \\
                 $U(t) = U_0 \cdot \cos(\omega t)$
             \end{block}
@@ -29,7 +29,7 @@
 \end{frame}
 \subsection{Mathe-Umgebungen}
 \begin{frame}[fragile]
-    \frametitle{Die \texttt{equation}-Umgebung 
+    \frametitle{Die \texttt{equation}-Umgebung
         \hfill\doc{http://ftp.fau.de/ctan/macros/latex/required/amslatex/math/amsldoc.pdf}{amsmath}
         \doc{http://ftp.uni-erlangen.de/mirrors/CTAN/macros/latex/contrib/mathtools/mathtools.pdf}{mathtools}
     }
@@ -47,7 +47,7 @@
             \begin{block}{\LaTeX-Code}
                 \begin{lstverbatim}
                 \begin{equation}
-                    \nabla \cdot \vec{E} = 
+                    \nabla \cdot \vec{E} =
                     \frac{\rho} {\epsilon_0}
                     \label{eq:maxwell1}
                 \end{equation}
@@ -57,7 +57,7 @@
         \begin{column}{0.35\textwidth}
             \begin{block}{Ergebnis}
                 \begin{equation}
-                    \nabla \cdot \vec{E} = 
+                    \nabla \cdot \vec{E} =
                     \frac{\rho}{\epsilon_0}
                     \label{eq:maxwell1}
                 \end{equation}
@@ -140,7 +140,7 @@
     \begin{itemize}
         \item Variablen werden kursiv gesetzt. Dies geschieht im Mathematikmodus automatisch.
         \item Einheiten werden aufrecht gesetzt und haben ein kleines Leerzeichen (\verb+\,+) Abstand zu ihrer Zahl. Am besten benutzt man hierfür immer \texttt{siunitx}.
-        \item Die eulersche Zahl e, das imaginäre i und das infinitesimale d werden ebenfalls aufrecht gesetzt. Im Mathematikmodus erreicht man dies mit 
+        \item Die eulersche Zahl e, das imaginäre i und das infinitesimale d werden ebenfalls aufrecht gesetzt. Im Mathematikmodus erreicht man dies mit
             \begin{lstverbatim}
             \mathrm{e}, \mathrm{d}, \mathrm{i}.
             \end{lstverbatim}
