@@ -54,7 +54,7 @@
     moretexcs={setmainlanguage, text, num, SI, si, kilo, gram, befehl, subject, titlehead, publishers,
                metre, per, second, squared, micro, subtitle, maketitle, tableofcontents,
                subsection, subsubsection, part, chapter, paragraph, subparagraph,
-               iint, iiint},
+               iint, iiint, includegraphics, addbibresource, printbibliography},
     columns=fullflexible,
     breaklines=true,
     keepspaces=true,
@@ -107,6 +107,8 @@
 {
   \ensuremath{{#1}}
 }
+
+\setbeamertemplate{bibliography item}[text]
 
 \author{PeP et al. Toolbox}
 \date{2014}

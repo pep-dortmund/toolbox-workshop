@@ -1,5 +1,16 @@
 \section{Literaturverzeichnis}
 
+\begin{frame}{Literaturverzeichnis}
+  \begin{itemize}
+    \item wichtiger Teil vieler Dokumente, für wissenschaftliche Texte zwingend
+    \item Bib\LaTeX\ und biber bieten eine sehr angenehme Arbeitsweise
+    \item auch für sehr große Referenzdatenbanken geeignet
+    \item es gibt viele unterschiedliche Stile
+    \item Standardstil fürs Praktikum geeignet
+    \item Referenzen in .bib-Dateien
+  \end{itemize}
+\end{frame}
+
 \begin{frame}
   \centering
   \includegraphics[height=0.95\textheight]{figures/bibtex-many.pdf}
@@ -20,7 +31,7 @@
 \defverbatim{\bibexamplei}{%
 \begin{verbatim}
 @manual{anleitung01,
-  author = "TU Dortmund",
+  author = "TU Dortmund",    % alternativ ist {…} statt "…" möglich
   title = "Versuchsanleitung zu Versuch Nr. 01
            Lebensdauer der Myonen",
   year = 2004
@@ -111,4 +122,64 @@
 \begin{frame}{.bib-Dateien (V)}
   \bibexamplev
   \fullcite{wingate}
+\end{frame}
+
+\begin{frame}[fragile]{Bib\LaTeX}
+  \begin{block}{Paket einbinden}
+    \begin{lstverbatim}
+    \usepackage{biblatex}
+    \addbibresource{lit.bib}
+    \end{lstverbatim}
+  \end{block}
+  \begin{block}{Zitieren}
+      \begin{minipage}{0.6\linewidth}
+        \begin{lstverbatim}
+        \cite{numpy}
+        \cite{splot,root}
+        \end{lstverbatim}
+      \end{minipage}
+      \begin{minipage}{0.35\linewidth}
+        \cite{numpy}\\
+        \cite{splot,root}
+      \end{minipage}
+  \end{block}
+  \begin{block}{Verzeichnis ausgeben}
+    \begin{lstverbatim}
+    \nocite{anleitung01} % ins Verzeichnis, obwohl nicht explizit zitiert
+    \nocite{*}           % alles aus .bib ins Verzeichnis
+    \printbibliography
+    \end{lstverbatim}
+  \end{block}
+\end{frame}
+
+\begin{frame}{Literaturverzeichnis}
+  \centering
+  \pause
+  \Huge ???
+\end{frame}
+
+\begin{frame}[fragile]{biber}
+  Die Idee ist:
+  \begin{enumerate}
+    \item Bib\LaTeX\ erstellt eine Liste der .bib-Dateien und der benötigten Referenzen\\
+          → .bcf-Datei
+    \item biber liest Anweisungen, liest .bib, sucht und sortiert Referenzen\\
+          → .bbl-Datei
+    \item Bib\LaTeX\ liest .bbl, gibt Verzeichnis aus
+  \end{enumerate}
+
+  \vspace{10pt}
+  Also:
+  \begin{block}{Aufrufe mit Literaturverzeichnis}
+    \begin{lstverbatim}
+    $ lualatex file.tex
+    $ biber file.bcf
+    $ lualatex file.tex
+    \end{lstverbatim}
+  \end{block}
+\end{frame}
+
+\begin{frame}{Literaturverzeichnis}
+  \nocite{*}
+  \printbibliography
 \end{frame}
