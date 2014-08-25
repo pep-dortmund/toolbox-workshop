@@ -16,22 +16,18 @@
 
 \defbeamertemplate*{headline}{TUDo}[1][0]
 {
-    \leftskip=18pt
     \vspace{13.5pt}
-    \begin{beamercolorbox}[wd=4.54in, ht=0.75cm]{header}
-       \begin{beamercolorbox}[ht=0.75cm, wd=0.3\linewidth]{institute}
-            \includegraphics[height=0.75cm]{logos/tu.pdf}
-            \hfill
-        \end{beamercolorbox}
-        \hfill
-        \begin{beamercolorbox}[ht=0.75cm, wd=0.3\linewidth,right]{institute}
-            \vbox to 0.75cm{\vfil\usebeamerfont{institute}\insertinstitute\vfil}
-        \end{beamercolorbox}
-    \end{beamercolorbox}
+    \hspace{18pt}
+    \includegraphics[height=0.75cm]{logos/tu.pdf}
+    \hfill
+    \usebeamerfont{institute}\insertinstitute
+    \hspace{18pt}
+
     \vspace{8pt}
-    \ifnum\insertframenumber>0
-        \hspace{18pt}\usebeamercolor[fg]{headsepline}\rule{4.54in}{0.4pt}
-    \fi
+    \hspace{18pt}
+    \usebeamercolor[fg]{headsepline}\hrulefill
+    \hspace{18pt}
+
     \vspace{10pt}
 }
 
