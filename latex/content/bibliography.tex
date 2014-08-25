@@ -1,4 +1,16 @@
 \begin{frame}
   \centering
   \includegraphics[height=0.95\textheight]{figures/bibtex-many.pdf}
+  \begin{tikzpicture}[remember picture,overlay]
+    \tikzset{shift={(current page.center)}}
+    \node at (-4.3,2.3) {
+      \textsc{Bib}\TeX-Familie
+    };
+    \only<2>{
+      \node (here) at (-4.3,-2.8) {
+        Sie sind hier
+      };
+      \draw [->, >=Stealth] (here.east) -- ++(3.5,0);
+    }
+  \end{tikzpicture}
 \end{frame}
