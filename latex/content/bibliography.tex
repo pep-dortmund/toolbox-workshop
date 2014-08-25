@@ -1,3 +1,5 @@
+\section{Literaturverzeichnis}
+
 \begin{frame}
   \centering
   \includegraphics[height=0.95\textheight]{figures/bibtex-many.pdf}
@@ -13,4 +15,100 @@
       \draw [->, >=Stealth] (here.east) -- ++(3.5,0);
     }
   \end{tikzpicture}
+\end{frame}
+
+\defverbatim{\bibexamplei}{%
+\begin{verbatim}
+@manual{anleitung01,
+  author = "TU Dortmund",
+  title = "Versuchsanleitung zu Versuch Nr. 01
+           Lebensdauer der Myonen",
+  year = 2004
+}
+\end{verbatim}
+}
+
+\begin{frame}{.bib-Dateien (I)}
+  \bibexamplei
+  \fullcite{anleitung01}
+\end{frame}
+
+\defverbatim{\bibexampleii}{%
+\begin{verbatim}
+@article{numpy,
+  author = "Travis E. Oliphant",
+  title = "Python for Scientific Computing",
+  publisher = "IEEE",
+  year = "2007",
+  journal = "Computing in Science \& Engineering",
+  volume = "9",
+  number = "3",
+  pages = "10–20",
+  url = "http://link.aip.org/link/?CSX/9/10/1",
+  addendum = "Version 1.8.1"
+}
+\end{verbatim}
+}
+
+\begin{frame}{.bib-Dateien (II)}
+  \bibexampleii
+  \fullcite{numpy}
+\end{frame}
+
+\defverbatim{\bibexampleiii}{%
+\begin{verbatim}
+@inproceedings{root,
+  author = "Brun, Rene and Rademakers, Fons",
+  booktitle = "AIHENP'96 Workshop, Lausanne",
+  url = "http://root.cern.ch/",
+  journal = "Nucl. Inst. \& Meth. in Phys. Res. A",
+  pages = "81–86",
+  title = "ROOT — An Object Oriented Data Analysis Framework",
+  volume = 389,
+  year = 1996,
+  addendum = "Version 5.34.18"
+}
+\end{verbatim}
+}
+
+\begin{frame}{.bib-Dateien (III)}
+  \bibexampleiii
+  \fullcite{root}
+\end{frame}
+
+\defverbatim{\bibexampleiv}{%
+\begin{verbatim}
+@online{splot,
+  author = "Muriel Pivk and Francois R. Le Diberder",
+  title = "sPlot: a statistical tool to unfold data distributions",
+  date = "2005-09-02",
+  archivePrefix = "arXiv",
+  eprint = "physics/0402083v3"
+}
+\end{verbatim}
+}
+
+\begin{frame}{.bib-Dateien (IV)}
+  \bibexampleiv
+  \fullcite{splot}
+\end{frame}
+
+\defverbatim{\bibexamplev}{%
+\begin{verbatim}
+@online{wingate,
+  author = "Zhaofeng Liu and Stefan Meinel and Alistair Hart and
+            Ron R. Horgan and Eike H. Müller and Matthew Wingate",
+  title = "A lattice calculation of \HepProcess{\PB \to \PK^{(*)}}
+           form factors",
+  date = "2011-01-14",
+  archivePrefix = "arXiv",
+  eprint = "1101.2726v1",
+  primaryClass = "hep-ph"
+}
+\end{verbatim}
+}
+
+\begin{frame}{.bib-Dateien (V)}
+  \bibexamplev
+  \fullcite{wingate}
 \end{frame}

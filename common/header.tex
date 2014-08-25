@@ -4,7 +4,7 @@
 \usetheme{TUDo}
 
 \usepackage[ngerman]{babel}
-\usepackage[backend=biber,sorting=none]{biblatex}
+\usepackage[backend=biber,sorting=nyt,sortlocale=de_DE.UTF-8]{biblatex}
 
 \usepackage{fontspec}
 
@@ -18,6 +18,7 @@
 \usepackage{mathtools}
 \usepackage{amssymb}
 \usepackage{xfrac}
+\usepackage[noss]{hepnicenames} % loads bm, before unicode-math
 \usepackage{unicode-math}
 \setmathfont{Tex Gyre Pagella Math}
 
@@ -83,6 +84,28 @@
             \Huge\color{TUgreen}#1
         \end{center}
     \end{frame}
+}
+
+%patch maybe for hepnames
+\RenewDocumentCommand \maybebm {m}
+{
+  \ensuremath{{{#1}}}
+}
+\RenewDocumentCommand \maybesf {m}
+{
+  \ensuremath{{#1}}
+}
+\RenewDocumentCommand \mayberm {m}
+{
+  \ensuremath{{\mathrm{#1}}}
+}
+\RenewDocumentCommand \maybeitrm {m}
+{
+  \ensuremath{{\mathrm{#1}}}
+}
+\RenewDocumentCommand \maybeitsubscript {m}
+{
+  \ensuremath{{#1}}
 }
 
 \author{PeP et al. Toolbox}
