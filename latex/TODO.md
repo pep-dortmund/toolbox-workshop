@@ -14,3 +14,6 @@
 * \enquote
 * unicode-math
 * IEEEtrantools
+* advanced
+  - TEXINPUTS, BIBINPUTS
+  - --output-directory, --interaction=batchmode, similar for biber
