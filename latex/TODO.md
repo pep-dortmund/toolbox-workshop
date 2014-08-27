@@ -1,6 +1,7 @@
 # TODO
 
 * workflow
+* texdoc
 * \label, \ref, \eqref
 * \input
 * \footnote
