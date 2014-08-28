@@ -1,43 +1,44 @@
-\begin{frame}[fragile]
-    \frametitle{Standardpakete}
-    Die hier aufgezählten Pakete sollten immer geladen werden, da sie wesentliche Funktionen bieten und wichtige Einstellungen vornehmen.
-    \begin{columns}[T]
-        \begin{column}{0.47\textwidth}
-            \begin{block}{Paket}
-                \begin{lstverbatim}
-                \usepackage{polyglossia}
-                \setmainlanguage{german}
-                \usepackage{fontspec}
-
-
-
-                \usepackage[unicode, pdfusetitle]{hyperref}
-                \end{lstverbatim}
-            \end{block}
-        \end{column}
-        \begin{column}{0.47\textwidth}
-            \begin{block}{Funktion}
-                Deutsche Spracheinstellungen für das Dokument. \\
-                Schriftpaket. Wichtig, damit Umlaute korrekt dargestellt werden.
-                Erlaubt einfaches ändern der verschiedenen Schriftarten.\\
-                Für Hyperlinks im Dokument (z.B. Inhaltsverzeichnis $\rightarrow$ Kapitel).
-            \end{block}
-        \end{column}
-    \end{columns}
-\end{frame}
-
-\begin{frame}[fragile]
-    \frametitle{KOMA-Script-Klassen \hfill \doc{http://ftp.fernuni-hagen.de/ftp-dir/pub/mirrors/www.ctan.org/macros/latex/contrib/koma-script/doc/scrguide.pdf}{KOMA-Skript}}
-    Stellt die wichtigen Klassen \texttt{scrartcl}, \texttt{scrreprt} und \texttt{scrbook} zur Verfügung. Sehr gute Vorlagen schon mit den Standardeinstellungen, schnell global mit Klassenoptionen anpassbar.
-    \begin{block}{fürs Praktikum empfohlenene Einstellungen}
+\begin{frame}[fragile]{Standardpakete}
+  Die hier aufgezählten Pakete sollten immer geladen werden, da sie wesentliche Funktionen bieten und wichtige Einstellungen vornehmen.
+  \begin{columns}[T]
+    \begin{column}{0.47\textwidth}
+      \begin{block}{Paket}
         \begin{lstverbatim}
-        \documentclass[
-            parskip=half,          % Absätze durch halbe Leerzeile
-            captions=tableheading, % Spacing für Tabellenüberschriften
-            headsepline,           % Linie zwischen Kopfzeile und Text
-            titlepage=firstiscover % Titleseite ist Deckblatt
-            ]{scrartcl}
+        \usepackage{polyglossia}
+        \setmainlanguage{german}
+        \usepackage{fontspec}
+
+
+
+        \usepackage[unicode, pdfusetitle]{hyperref}
         \end{lstverbatim}
-    \end{block}
+      \end{block}
+    \end{column}
+    \begin{column}{0.47\textwidth}
+      \begin{block}{Funktion}
+        Deutsche Spracheinstellungen für das Dokument. \\
+        Schriftpaket. Wichtig, damit Umlaute korrekt dargestellt werden.
+        Erlaubt einfaches ändern der verschiedenen Schriftarten.\\
+        Für Hyperlinks im Dokument (z.B. Inhaltsverzeichnis $\rightarrow$ Kapitel).
+      \end{block}
+    \end{column}
+  \end{columns}
 \end{frame}
 
+\begin{frame}[fragile]{
+  KOMA-Script-Klassen
+  \hfill\doc{http://mirrors.ctan.org/macros/latex/contrib/koma-script/doc/scrguide.pdf}{KOMA-Skript}
+}
+  Stellt die wichtigen Klassen \texttt{scrartcl}, \texttt{scrreprt} und \texttt{scrbook} zur Verfügung.
+  Sehr gute Vorlagen schon mit den Standardeinstellungen, schnell global mit Klassenoptionen anpassbar.
+  \begin{block}{fürs Praktikum empfohlenene Einstellungen}
+    \begin{lstverbatim}
+    \documentclass[
+      parskip=half,          % Absätze durch halbe Leerzeile
+      captions=tableheading, % Spacing für Tabellenüberschriften
+      headsepline,           % Linie zwischen Kopfzeile und Text
+      titlepage=firstiscover % Titleseite ist Deckblatt
+    ]{scrartcl}
+    \end{lstverbatim}
+  \end{block}
+\end{frame}

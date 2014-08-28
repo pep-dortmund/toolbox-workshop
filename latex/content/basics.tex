@@ -1,113 +1,108 @@
 \section{Grundlagen}
 
-\begin{frame}[fragile]
-    \frametitle{Das Dokument}
-    Diese drei Zeilen braucht jedes \LaTeX-Dokument:
-    \begin{columns}[T]
-        \begin{column}{0.47\textwidth}
-            \begin{block}{\LaTeX-Code}
-                \begin{lstverbatim}
-                \documentclass[optionen]{klasse}
-                    % Präambel
-                    .
-                    .
-                \begin{document}
-                    % Inhalt des Dokuments
-                    .
-                    .
-                \end{document}
-                \end{lstverbatim}
-            \end{block}
-        \end{column}
-        \begin{column}{0.47\textwidth}
-            \begin{block}{documentclass}
-                Hier wird die Dokumentenklasse gewählt und mit Optionen angepasst. \\
-            \end{block}
-            \begin{block}{Präambel}
-                Hier werden globale Optionen gesetzt und zusätzliche Pakete eingebunden.\\
-            \end{block}
-            \begin{block}{document-Umgebung}
-                Hier wird das eigentliche Dokument erstellt.
-            \end{block}
-        \end{column}
-    \end{columns}
-\end{frame}
-
-\begin{frame}[fragile]
-    \frametitle{Syntax: Befehle}
-    \LaTeX-Befehle beginnen stets mit einem Back-Slash.
-
-    Obligatorische Argumente stehen in \{ \}, optionale Argumente stehen in [ ].
-    \begin{columns}[T]
-        \begin{column}{0.47\textwidth}
-            \begin{block}{\LaTeX-Code}
-                \begin{lstverbatim}
-                \befehl[optional]{obligatorisch}
-                \documentclass[paper=a4]
-                              {scrartcl}
-                \frac{1}{2}
-
-
-                % Kommentar
-                \end{lstverbatim}
-                \vspace{0.4cm}
-            \end{block}
-        \end{column}
-        \begin{column}{0.47\textwidth}
-            \begin{block}{Erklärung}
-                Beispiel \\
-                Setzt die Dokumentenklasse auf \emph{scrartcl} und das Papierformat auf DIN\,A4. \\
-                Es gibt auch Befehle mit zwei oder mehr Pflichtargumenten, z.B. der Bruch. \\
-                Text oder Befehle nach einem \%-Zeichen werden nicht berücksichtigt.
-            \end{block}
-        \end{column}
-    \end{columns}
-\end{frame}
-
-\begin{frame}[fragile]
-    \frametitle{Syntax: Umgebungen}
-    Das zweite wichtige \LaTeX-Element sind die Umgebungen. Umgebungen können extrem vielseitig sein,
-    von einer Änderung der Textausrichtung über mathematische Formel bis hin zu Designelementen.
-    \begin{columns}[T]
-        \begin{column}{0.47\textwidth}
-            \begin{block}{Syntax}
-                \begin{lstverbatim}
-                \begin{Umgebung}[optional]
-                                {obligatorisch}
-                    .
-                    .
-                \end{Umgebung}
-                \end{lstverbatim}
-                \vspace{0.4cm}
-            \end{block}
-        \end{column}
-        \begin{column}{0.47\textwidth}
-            \begin{block}{Eigenschaften}
-                \begin{itemize}
-                    \item Umgebungen können verschachtelt werden
-                    \item Umgebungen können \alert{nicht} verschränkt werden
-                \end{itemize}
-            \end{block}
-        \end{column}
-    \end{columns}
-\end{frame}
-
-\begin{frame}[fragile]
-    \frametitle{Das Ausgabedokument erstellen}
-    Es gibt mehrere verschiedene \LaTeX-Kompiler, die verschiedene Ausgabeformate erzeugen können.
-    Der modernste Kompiler, der PDF-Dateien erstellt, ist \alert{lualatex}.
-
-    \begin{block}{\LaTeX-Dakument kompilieren}
-        Konsole öffnen:
+\begin{frame}[fragile]{Das Dokument}
+  Diese drei Zeilen braucht jedes \LaTeX-Dokument:
+  \begin{columns}[T]
+    \begin{column}{0.47\textwidth}
+      \begin{block}{\LaTeX-Code}
         \begin{lstverbatim}
-        $ lualatex MeinDokument.tex
+        \documentclass[optionen]{klasse}
+          % Präambel
+          % .
+          % .
+        \begin{document}
+          % Inhalt des Dokuments
+          % .
+          % .
+        \end{document}
         \end{lstverbatim}
-    \end{block}
-    \begin{alertblock}{Vorsicht!}
+      \end{block}
+    \end{column}
+    \begin{column}{0.47\textwidth}
+      \begin{block}{documentclass}
+        Hier wird die Dokumentenklasse gewählt und mit Optionen angepasst.
+      \end{block}
+      \begin{block}{Präambel}
+        Hier werden globale Optionen gesetzt und zusätzliche Pakete eingebunden.
+      \end{block}
+      \begin{block}{document-Umgebung}
+        Hier wird das eigentliche Dokument erstellt.
+      \end{block}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}[fragile]{Syntax: Befehle}
+  \LaTeX-Befehle beginnen stets mit einem Back-Slash.
+
+  Obligatorische Argumente stehen in \{ \}, optionale Argumente stehen in [ ].
+  \begin{columns}[T]
+    \begin{column}{0.53\textwidth}
+      \begin{block}{\LaTeX-Code}
+        \begin{lstverbatim}
+        \befehl[optional]{obligatorisch}
+        \documentclass[paper=a4]{scrartcl}
+
+
+        \frac{1}{2}
+
+
+        % Kommentar
+        \end{lstverbatim}
+      \end{block}
+    \end{column}
+    \begin{column}{0.41\textwidth}
+      \begin{block}{Erklärung}
+        Beispiel \\
+        Setzt die Dokumentenklasse auf \emph{scrartcl} und das Papierformat auf DIN\,A4. \\
+        Es gibt auch Befehle mit zwei oder mehr Pflichtargumenten, z.B. der Bruch. \\
+        Text oder Befehle nach einem \%-Zeichen werden nicht berücksichtigt.
+      \end{block}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}[fragile]{Syntax: Umgebungen}
+  Das zweite wichtige \LaTeX-Element sind die Umgebungen.
+  Umgebungen können extrem vielseitig sein, von einer Änderung der Textausrichtung über mathematische Formel bis hin zu Designelementen.
+  \begin{columns}[T]
+    \begin{column}{0.47\textwidth}
+      \begin{block}{Syntax}
+        \begin{lstverbatim}
+        \begin{Umgebung}[optional]
+            {obligatorisch}
+          % .
+          % .
+        \end{Umgebung}
+        \end{lstverbatim}
+      \end{block}
+    \end{column}
+    \begin{column}{0.47\textwidth}
+      \begin{block}{Eigenschaften}
         \begin{itemize}
-        \item Es muss fast immer mindestens zweimal kompiliert werden.
-        \item Es werden diverse Hilfs- und Logdateien erzeugt.
-        \item Die Input-Dokumente müssen UTF-8 codiert sein.
+          \item Umgebungen können verschachtelt werden
+          \item Umgebungen können \alert{nicht} verschränkt werden
         \end{itemize}
-    \end{alertblock}
+      \end{block}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}[fragile]{Das Ausgabedokument erstellen}
+  Es gibt mehrere verschiedene \LaTeX-Kompiler, die verschiedene Ausgabeformate erzeugen können.
+  Der modernste Kompiler, der PDF-Dateien erstellt, ist \alert{lualatex}.
+
+  \begin{block}{\LaTeX-Dokument kompilieren}
+    Konsole öffnen:
+    \begin{lstverbatim}
+    $ lualatex MeinDokument.tex
+    \end{lstverbatim}
+  \end{block}
+  \begin{alertblock}{Vorsicht!}
+    \begin{itemize}
+      \item Es muss fast immer mindestens zweimal kompiliert werden.
+      \item Es werden diverse Hilfs- und Logdateien erzeugt.
+      \item Die Input-Dokumente müssen UTF-8 codiert sein.
+    \end{itemize}
+  \end{alertblock}
 \end{frame}

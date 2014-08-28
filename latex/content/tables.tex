@@ -1,26 +1,26 @@
 \section{Tabellen}
-\begin{frame}[fragile]
-  \frametitle{Tabellen}
+
+\begin{frame}[fragile]{Tabellen}
   \begin{columns}[T]
     \column{0.6\textwidth}
     \fontsize{8}{6}
     \begin{block}{Code}
       \begin{lstverbatim}
       \begin{table}
-          \centering
-          \caption{Eine gewöhnliche Tabelle mit Messdaten.}
-          \label{tab:some_data}
-          \begin{tabular}{c c c c c}
-              \hline
-              $f$ & $l_\text{start}$ & $l_1$ & $l_{\text{kor},1}$ & $B_1$ \\
-              \hline
-              100 & 1.14 & 3.51 & 0.00 & 4.30 \\ 
-              200 & 1.30 & 2.99 & 0.06 & 25.98 \\
-              300 & 1.27 & 2.42 & 0.13 & 41.14 \\
-              400 & 1.28 & 1.47 & 0.20 & 53.76 \\ 
-              500 & 1.21 & 1.70 & 0.25 & 168.73 \\
-              \hline
-          \end{tabular}
+        \centering
+        \caption{Eine gewöhnliche Tabelle mit Messdaten.}
+        \label{tab:some_data}
+        \begin{tabular}{c c c c c}
+          \hline
+          $f$ & $l_\text{start}$ & $l_1$ & $l_{\text{kor},1}$ & $B_1$ \\
+          \hline
+          100 & 1.14 & 3.51 & 0.00 &   4.30 \\
+          200 & 1.30 & 2.99 & 0.06 &  25.98 \\
+          300 & 1.27 & 2.42 & 0.13 &  41.14 \\
+          400 & 1.28 & 1.47 & 0.20 &  53.76 \\
+          500 & 1.21 & 1.70 & 0.25 & 168.73 \\
+          \hline
+        \end{tabular}
       \end{table}
       \end{lstverbatim}
     \end{block}
@@ -29,17 +29,16 @@
       \item Äußere \texttt{table}-Umgebung behandelt Tabelle wie ein float
       \item Innere \texttt{tabular}-Umgebung für eigentlichen Tabelleninhalt
       \item \texttt{l},\texttt{c} oder \texttt{r} geben Ausrichtung der einzelnen Spalten an
-      \item 
+      \item
         \begin{lstverbatim}
-        label, caption 
+        label, caption
         \end{lstverbatim}
         oberhalb von \texttt{tabular}
     \end{itemize}
   \end{columns}
 \end{frame}
 
-\begin{frame}
-  \frametitle{Ergebnis}
+\begin{frame}{Ergebnis}
   \begin{table}
     \rmfamily
     \centering
@@ -49,10 +48,10 @@
       \hline
       $f$ & $l_\text{start}$ & $l_1$ & $l_{\text{kor},1}$ & $B_1$ \\
       \hline
-      100 & 1.14 & 3.51 & 0.00 & 4.30 \\ 
-      200 & 1.30 & 2.99 & 0.06 & 25.98 \\
-      300 & 1.27 & 2.42 & 0.13 & 41.14 \\
-      400 & 1.28 & 1.47 & 0.20 & 53.76 \\ 
+      100 & 1.14 & 3.51 & 0.00 &   4.30 \\
+      200 & 1.30 & 2.99 & 0.06 &  25.98 \\
+      300 & 1.27 & 2.42 & 0.13 &  41.14 \\
+      400 & 1.28 & 1.47 & 0.20 &  53.76 \\
       500 & 1.21 & 1.70 & 0.25 & 168.73 \\
       \hline
     \end{tabular}
@@ -64,8 +63,7 @@
   \mbox{$\Rightarrow$} Geht aber noch deutlich schöner \ldots
 \end{frame}
 
-\begin{frame}[fragile]
-  \frametitle{Schönere Tabellen mit \texttt{booktabs} und \texttt{siunitx}}
+\begin{frame}[fragile]{Schönere Tabellen mit \texttt{booktabs} und \texttt{siunitx}}
   \fontsize{7}{5}
   \begin{block}{zusätzlich benötigte Pakete}
     \begin{lstverbatim}
@@ -76,27 +74,26 @@
     \begin{lstverbatim}
     \sisetup{table-format=1.2}
     \begin{table}
-        \centering
-        \caption{Eine gewöhnliche Tabelle mit Messdaten.}
-        \label{tab:some_data}
-        \begin{tabular}{S[table-format=3.0] S S S S[table-format=3.2]}
-            \toprule
-            {$f$} & {$l_\text{start}$} & {$l_1$} & {$l_{\text{kor},1}$} & {$B_1$} \\
-            \midrule
-            100 & 1.14 & 3.51 & 0.00 & 4.30 \\ 
-            200 & 1.30 & 2.99 & 0.06 & 25.98 \\
-            300 & 1.27 & 2.42 & 0.13 & 41.14 \\
-            400 & 1.28 & 1.47 & 0.20 & 53.76 \\ 
-            500 & 1.21 & 1.70 & 0.25 & 168.73 \\
-            \bottomrule
-        \end{tabular}
+      \centering
+      \caption{Eine gewöhnliche Tabelle mit Messdaten.}
+      \label{tab:some_data}
+      \begin{tabular}{S[table-format=3.0] S S S S[table-format=3.2]}
+        \toprule
+        {$f$} & {$l_\text{start}$} & {$l_1$} & {$l_{\text{kor},1}$} & {$B_1$} \\
+        \midrule
+        100 & 1.14 & 3.51 & 0.00 &   4.30 \\
+        200 & 1.30 & 2.99 & 0.06 &  25.98 \\
+        300 & 1.27 & 2.42 & 0.13 &  41.14 \\
+        400 & 1.28 & 1.47 & 0.20 &  53.76 \\
+        500 & 1.21 & 1.70 & 0.25 & 168.73 \\
+        \bottomrule
+      \end{tabular}
     \end{table}
     \end{lstverbatim}
   \end{block}
 \end{frame}
 
-\begin{frame}[fragile]
-  \frametitle{Ergebnis}
+\begin{frame}[fragile]{Ergebnis}
   \sisetup{table-format=1.2}
   \begin{table}
     \centering
@@ -106,10 +103,10 @@
       \toprule
       {$f$} & {$l_\text{start}$} & {$l_1$} & {$l_{\text{kor},1}$} & {$B_1$} \\
       \midrule
-      100 & 1.14 & 3.51 & 0.00 & 4.30 \\ 
-      200 & 1.30 & 2.99 & 0.06 & 25.98 \\
-      300 & 1.27 & 2.42 & 0.13 & 41.14 \\
-      400 & 1.28 & 1.47 & 0.20 & 53.76 \\ 
+      100 & 1.14 & 3.51 & 0.00 &   4.30 \\
+      200 & 1.30 & 2.99 & 0.06 &  25.98 \\
+      300 & 1.27 & 2.42 & 0.13 &  41.14 \\
+      400 & 1.28 & 1.47 & 0.20 &  53.76 \\
       500 & 1.21 & 1.70 & 0.25 & 168.73 \\
       \bottomrule
     \end{tabular}
@@ -122,8 +119,7 @@
   \end{itemize}
 \end{frame}
 
-\begin{frame}[fragile]
-  \frametitle{\texttt{pdflscape}}
+\begin{frame}[fragile]{\texttt{pdflscape}}
   Gelegentlich auftretendes Problem: Die Tabelle ist zu breit für die Seite und kann nicht sinnvoll aufgespalten werden
   \begin{columns}[T]
     \column{0.5\textwidth}
@@ -135,9 +131,9 @@
     \begin{block}{\LaTeX-Code}
       \begin{lstverbatim}
       \begin{landscape}
-          \begin{table}
-            . . .
-          \end{table}
+        \begin{table}
+          . . .
+        \end{table}
       \end{landscape}
       \end{lstverbatim}
     \end{block}
@@ -148,8 +144,8 @@
     \end{itemize}
   \end{columns}
 \end{frame}
-%\begin{frame}[fragile]
-%  \frametitle{Erweiterte Ausrichtungsmöglichkeiten}
+
+%\begin{frame}[fragile]{Erweiterte Ausrichtungsmöglichkeiten}
 %  \begin{columns}[T]
 %    \column{0.5\textwidth}
 %    \begin{block}{Code}
@@ -190,6 +186,7 @@
 %    \end{table}
 %  \end{columns}
 %\end{frame}
+
 %    \begin{tabular}{S S S S S S S S}
 %      \toprule
 %      {$f\:/\:\si{\kilo\hertz}$} & {$l_\text{start}$} &  {$l_1$} & {$l_{\text{kor},1}$} & {$B_1\:/\:\si{\micro\tesla}$} & {$l_2$} &  {$l_{\text{kor},2}$} & {$B_2\:/\:\si{\micro\tesla}$}\\

@@ -1,44 +1,44 @@
 \section{Floating-Umgebungen}
-\begin{frame}
-    \frametitle{Gleitumgebungen}
-    Zum Setzen von Elementen, die nicht zum Fließtext gehören, werden Gleitumgebungen genutzt. Diese werden automatisch an eine passende Stelle gesetzt.
-    \begin{itemize}
-        \item für Abbildungen und Tabellen
-        \item Die Freiheit, die \LaTeX \ beim Setzen hat, kann mit optionalen Argumenten gesteuert werden.
-        \item h  (here), !h (noch strenger), t (top), b (bottom)
-    \end{itemize}
-\end{frame}
-\begin{frame}[fragile]
-    \frametitle{Bilder einbinden}
-    \begin{block}{benötigte Pakete}
-        \begin{lstverbatim}
-        \usepackage{graphicx}
-        \usepackage[labelfont=bf]{caption}
-        \end{lstverbatim}
-    \end{block}
-    \begin{columns}[T]
-        \begin{column}{0.6\textwidth}
-            \begin{block}{\LaTeX-Code}
-                \begin{lstverbatim}
-                \begin{figure}
-                    \centering
-                    \includegraphics[width=\textwidth]{logos/pep.pdf}
-                    \caption{Das Pep-Logo}
-                    \label{fig:peplogo}
-                \end{figure}
-                \end{lstverbatim}
-            \end{block}
-        \end{column}
-        \begin{column}{0.35\textwidth}
-            \begin{block}{Ergebnis}
-                \begin{figure}
-                    \centering
-                    \includegraphics[width=\textwidth]{logos/pep.pdf}
-                    \caption{Das PeP-Logo}
-                    \label{fig:peplogo}
-                \end{figure}
-            \end{block}
-        \end{column}
-    \end{columns}
+
+\begin{frame}{Gleitumgebungen}
+  Zum Setzen von Elementen, die nicht zum Fließtext gehören, werden Gleitumgebungen genutzt.
+  Diese werden automatisch an eine passende Stelle gesetzt.
+  \begin{itemize}
+    \item für Abbildungen und Tabellen
+    \item Die Freiheit, die \LaTeX \ beim Setzen hat, kann mit optionalen Argumenten gesteuert werden.
+    \item h (here), !h (noch strenger), t (top), b (bottom)
+  \end{itemize}
 \end{frame}
 
+\begin{frame}[fragile]{Bilder einbinden}
+  \begin{block}{benötigte Pakete}
+    \begin{lstverbatim}
+    \usepackage{graphicx}
+    \usepackage[labelfont=bf]{caption}
+    \end{lstverbatim}
+  \end{block}
+  \begin{columns}[T]
+    \begin{column}{0.6\textwidth}
+      \begin{block}{\LaTeX-Code}
+        \begin{lstverbatim}
+        \begin{figure}
+          \centering
+          \includegraphics[width=\textwidth]{logos/pep.pdf}
+          \caption{Das Pep-Logo}
+          \label{fig:peplogo}
+        \end{figure}
+        \end{lstverbatim}
+      \end{block}
+    \end{column}
+    \begin{column}{0.35\textwidth}
+      \begin{block}{Ergebnis}
+        \begin{figure}
+          \centering
+          \includegraphics[width=\textwidth]{logos/pep.pdf}
+          \caption{Das PeP-Logo}
+          \label{fig:peplogo}
+        \end{figure}
+      \end{block}
+    \end{column}
+  \end{columns}
+\end{frame}
