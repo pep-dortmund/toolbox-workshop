@@ -9,8 +9,7 @@ warnings() {
 	"$(dirname "$0")/log.py" "build/${JOBNAME}.log"
 }
 
-cleanup() {
-	rm -f "build/${JOBNAME}.pdf"
+error() {
 	exit 2
 }
 
@@ -18,7 +17,7 @@ tex_exec() {
 	echo "\$TEX --jobname=\"${JOBNAME}\" \"${FILE}\""
 	if ! eval $TEX_EXEC > /dev/null ; then
 		warnings
-		cleanup
+		error
 	fi
 }
 
@@ -26,7 +25,7 @@ biber_exec() {
 	echo "\$BIBER \"build/${JOBNAME}.bcf\""
 	eval ${BIBER_EXEC} | grep -E "^(WARN|ERROR)"
 	if ! [ "${PIPESTATUS[0]}" -eq 0 ] ; then
-		cleanup
+		error
 	fi
 }
 
