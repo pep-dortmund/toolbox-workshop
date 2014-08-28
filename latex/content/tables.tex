@@ -40,7 +40,6 @@
 
 \begin{frame}{Ergebnis}
   \begin{table}
-    \rmfamily
     \centering
     \caption{Eine gewöhnliche Tabelle mit Messdaten.}
     \begin{tabular}{l c c c c}
@@ -71,11 +70,11 @@
   \end{block}
   \begin{block}{Code}
     \begin{lstverbatim}
-    \sisetup{table-format=1.2}
     \begin{table}
       \centering
       \caption{Eine gewöhnliche Tabelle mit Messdaten.}
       \label{tab:some_data}
+      \sisetup{table-format=1.2}
       \begin{tabular}{S[table-format=3.0] S S S S[table-format=3.2]}
         \toprule
         {$f$} & {$l_\text{start}$} & {$l_1$} & {$l_{\text{kor},1}$} & {$B_1$} \\
@@ -93,10 +92,10 @@
 \end{frame}
 
 \begin{frame}[fragile]{Ergebnis}
-  \sisetup{table-format=1.2}
   \begin{table}
     \centering
     \caption{Eine gewöhnliche Tabelle mit Messdaten.}
+    \sisetup{table-format=1.2}
     \begin{tabular}{S[table-format=3.0] S S S S[table-format=3.2]}
       \toprule
       {$f$} & {$l_\text{start}$} & {$l_1$} & {$l_{\text{kor},1}$} & {$B_1$} \\
@@ -121,7 +120,7 @@
   \fontsize{7}{5}
   \begin{block}{Kommandostruktur}
     \begin{lstverbatim}
-    \multicolumn{#Spalten}{Ausrichtung}{Name} 
+    \multicolumn{#Spalten}{Ausrichtung}{Inhalt}
     \end{lstverbatim}
   \end{block}
   \begin{block}{Beispiel}
@@ -129,15 +128,17 @@
     \begin{table}
       \centering
       \caption{Messdaten für dubiose Elemente}
-      \begin{tabular}{S S S S S}
+      \sisetup{table-format=2.1}
+      \begin{tabular}{S[table-format=3.1] S S S S}
         \toprule
-         & \multicolumn{2}{c}{Technetium} & \multicolumn{2}{c}{Molybdän} \\
-        {$\lambda$} & {$\phi_1$} & {$\phi_2$} & {$\phi_1$} & {$\phi_2$} \\
+        & \multicolumn{2}{c}{Technetium} & \multicolumn{2}{c}{Molybdän} \\
+        {$\lambda \mathbin{/} \si{\nano\meter}$}
+        & {$\phi_1$} & {$\phi_2$} & {$\phi_1$} & {$\phi_2$} \\
         \midrule
         663.0 & 12.1 & 14.4 & 13.1 & 16.9 \\
         670.0 & 10.9 & 12.9 & 11.8 & 15.7 \\
-        678.0 & 9.1 & 11.4 & 10.3 & 14.6 \\
-        684.0 & 8.2 & 10.2 & 9.5 & 13.5 \\
+        678.0 &  9.1 & 11.4 & 10.3 & 14.6 \\
+        684.0 &  8.2 & 10.2 &  9.5 & 13.5 \\
         \bottomrule
       \end{tabular}
     \end{table}
@@ -149,15 +150,17 @@
   \begin{table}
     \centering
     \caption{Messdaten für dubiose Elemente}
-    \begin{tabular}{S S S S S}
+    \sisetup{table-format=2.1}
+    \begin{tabular}{S[table-format=3.1] S S S S}
       \toprule
-       & \multicolumn{2}{c}{Technetium} & \multicolumn{2}{c}{Molybdän} \\
-      {$\lambda$} & {$\phi_1$} & {$\phi_2$} & {$\phi_1$} & {$\phi_2$} \\
+      & \multicolumn{2}{c}{Technetium} & \multicolumn{2}{c}{Molybdän} \\
+      {$\lambda \mathbin{/} \si{\nano\meter}$}
+      & {$\phi_1$} & {$\phi_2$} & {$\phi_1$} & {$\phi_2$} \\
       \midrule
       663.0 & 12.1 & 14.4 & 13.1 & 16.9 \\
       670.0 & 10.9 & 12.9 & 11.8 & 15.7 \\
-      678.0 & 9.1 & 11.4 & 10.3 & 14.6 \\
-      684.0 & 8.2 & 10.2 & 9.5 & 13.5 \\
+      678.0 &  9.1 & 11.4 & 10.3 & 14.6 \\
+      684.0 &  8.2 & 10.2 &  9.5 & 13.5 \\
       \bottomrule
     \end{tabular}
   \end{table}
@@ -184,7 +187,7 @@
     \column{0.45\textwidth}
     \begin{itemize}
       \item Inhalt der \texttt{landscape}-Umgebung wird horizontal gesetzt (separate Seite)
-      \item Seite wird im PDF-Reader horizontal angezeigt \mbox{\rightarrow} schöner zu lesen
+      \item Seite wird im PDF-Reader horizontal angezeigt → schöner zu lesen
     \end{itemize}
   \end{columns}
 \end{frame}
