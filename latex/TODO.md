@@ -2,14 +2,12 @@
 
 * workflow
 * texdoc
-* \label, \ref, \eqref
-* \input
+* \label, \ref, \eqref (plore)
+* \input (plore)
 * \footnote
-* \tabular, S
-* \NewDocumentCommand, \newcommand
+* \NewDocumentCommand, \newcommand (plore)
 * \OverfullCenter
-* landscape
-* mhchem
+* mhchem (plore)
 * fixltx2e
 * placeins
 * \enquote
