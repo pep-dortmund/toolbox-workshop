@@ -25,7 +25,7 @@ re_latex_info = re.compile(r'^LaTeX ([^ ]+ )?Info: ')
 re_package_error = re.compile(r'^! Package ([^ ]+) Error: ')
 
 re_package_warning = re.compile(r'^Package ([^ ]+) Warning: ')
-re_package_rerunfilecheck_warning_rerun = re.compile(r"^Package rerunfilecheck Warning: File `[^']+' has changed.$")
+re_package_rerunfilecheck_warning_rerun = re.compile(r"^Package rerunfilecheck Warning: File `[^']+' has changed\.( Rerun\.)?$")
 re_package_biblatex_warning_rerun = re.compile('^Package biblatex Warning: Please \(re\)run Biber on the file:$')
 
 re_package_info = re.compile(r'^Package ([^ ]+) Info: ')
