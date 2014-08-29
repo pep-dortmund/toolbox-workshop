@@ -49,6 +49,29 @@
   \end{block}
 \end{frame}
 
+\begin{frame}[fragile]{Referenzen}
+  \begin{block}{Code}
+    \begin{lstverbatim}
+    \section{Messung mit Apparatur 2}
+    \label{sec:apparatur2}
+    . . .
+    \section{Auswertung}
+    Wie in \ref{sec:apparatur2} beschrieben, ...
+    \end{lstverbatim}
+  \end{block}
+  \begin{itemize}
+    \item Auch für Gleichungen, Grafiken, Tabellen \mbox{\rightarrow} später
+    \item Für Übersichtlichkeit sollten Labels den Typ der Referenz nennen:
+      \begin{description}
+        \item[Tabellen] tab:
+        \item[Grafiken] fig:
+        \item[Gleichungen] eq:
+        \item[Sections] sec:
+      \end{description}
+    \item Bei Gleichungen: \verb+\eqref+ statt \verb+\ref+ \mbox{\rightarrow} setzt Klammern
+  \end{itemize}
+\end{frame}
+
 \begin{frame}[fragile]{Konventionen für Text}
   \begin{itemize}
     \item höchstens ein Satz pro Code-Zeile

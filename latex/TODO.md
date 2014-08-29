@@ -2,7 +2,6 @@
 
 * workflow
 * texdoc
-* \label, \ref, \eqref (plore)
 * \input (plore)
 * \footnote
 * \NewDocumentCommand, \newcommand (plore)
