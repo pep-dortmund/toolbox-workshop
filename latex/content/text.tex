@@ -60,15 +60,16 @@
     \end{lstverbatim}
   \end{block}
   \begin{itemize}
-    \item Auch für Gleichungen, Grafiken, Tabellen \mbox{\rightarrow} später
+    \item Auch für Gleichungen, Grafiken, Tabellen → später
     \item Für Übersichtlichkeit sollten Labels den Typ der Referenz nennen:
       \begin{description}
-        \item[Tabellen] tab:
-        \item[Grafiken] fig:
-        \item[Gleichungen] eq:
-        \item[Sections] sec:
+        \item[Tabellen] \texttt{tab:}
+        \item[Grafiken] \texttt{fig:}
+        \item[Gleichungen] \texttt{eqn:}
+        \item[Sections] \texttt{sec:}
       \end{description}
-    \item Bei Gleichungen: \verb+\eqref+ statt \verb+\ref+ \mbox{\rightarrow} setzt Klammern
+    \item Bei Gleichungen: \verb+\eqref+ statt \verb+\ref+ → setzt Klammern: \eqref{eqn:maxwell1}
+    \item \verb+\label+ immer nach dem, worauf verwiesen wird
   \end{itemize}
 \end{frame}
 
@@ -76,7 +77,7 @@
   \begin{itemize}
     \item höchstens ein Satz pro Code-Zeile
     \item Absätze werden durch eine Leerzeile markiert
-    \item Im Fließtext sollten keine Umbrüche mit \textbackslash\textbackslash\  erzwungen werden.
+    \item Im Fließtext sollten keine Umbrüche mit \textbackslash\textbackslash\ erzwungen werden.
   \end{itemize}
   \begin{alertblock}{Sonderzeichen}
     Viele Sonderzeichen sind \LaTeX-Steuerzeichen.
