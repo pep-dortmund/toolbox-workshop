@@ -16,3 +16,5 @@
   - TEXINPUTS, BIBINPUTS
   - --output-directory, --interaction=batchmode, similar for biber
   - \@, ~
+  - reading log
+  - (over|under)full boxes
