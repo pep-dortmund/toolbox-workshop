@@ -6,7 +6,6 @@
 * \NewDocumentCommand, \newcommand (plore)
 * fixltx2e
 * placeins
-* \enquote
 * unicode-math
 * IEEEtrantools
 * advanced

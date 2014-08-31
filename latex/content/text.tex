@@ -198,3 +198,35 @@
     \item Für per Skript erzeugte Tabelleninhalte
   \end{itemize}
 \end{frame}
+
+\begin{frame}[fragile]{Zitate}
+  Die richtigen Anführungszeichen, wo die Satzzeichen hingehören und vieles mehr hängt von der Sprache ab.
+  So macht man es richtig:
+  \begin{block}{Paket}
+    \begin{lstverbatim}
+    \usepackage[autostyle]{csquotes}
+    \end{lstverbatim}
+  \end{block}
+  \begin{columns}[onlytextwidth,t]
+    \begin{column}{0.60\textwidth}
+      \begin{block}{Code}
+        \begin{lstverbatim}
+        foo \enquote{bar} baz
+        \enquote{foo \enquote{bar} baz}
+        \selectlanguage{english} \enquote{foo}
+        \selectlanguage{french} \enquote{foo}
+        \textcquote{root}{foo}
+        \end{lstverbatim}
+      \end{block}
+    \end{column}
+    \begin{column}{0.36\textwidth}
+      \begin{block}{Ergebnis}
+        foo \enquote{bar} baz \\
+        \enquote{foo \enquote{bar} baz} \\
+        \selectlanguage{english} \enquote{foo} \\
+        \selectlanguage{french} \enquote{foo} \\
+        \textcquote{root}{foo}
+      \end{block}
+    \end{column}
+  \end{columns}
+\end{frame}
