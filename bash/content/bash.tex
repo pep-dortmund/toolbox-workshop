@@ -1,4 +1,4 @@
-\headlineframe{Unix Shell}
+\tabulinesep=4pt
 
 \begin{frame}{Dateisystem}
   \begin{itemize}
@@ -20,78 +20,78 @@
 \end{frame}
 
 \begin{frame}{\texttt{man}, \texttt{pwd}, \texttt{cd}}
-  \begin{tabular}{lp{20em}}
-    \texttt{man \textit{topic}} & \enquote{manual}: zeigt die Hilfe für ein Programm \\
-    \texttt{pwd} & \enquote{print working directory}: zeigt das aktuelle Verzeichnis \\
-    \texttt{cd \textit{directory}} & \enquote{change directory}: wechselt in das angegebene Verzeichnis
-  \end{tabular}
+  \begin{tabu}{>{\ttfamily}l X}
+    man \textit{topic}    & \enquote{manual}: zeigt die Hilfe für ein Programm \\
+    pwd                   & \enquote{print working directory}: zeigt das aktuelle Verzeichnis \\
+    cd \textit{directory} & \enquote{change directory}: wechselt in das angegebene Verzeichnis
+  \end{tabu}
 \end{frame}
 
 \begin{frame}{\texttt{ls}}
-  \begin{tabular}{lp{20em}}
-    \texttt{ls [\textit{directory}]} & \enquote{list}: zeigt den Inhalt eines Verzeichnisses an \\
-    \texttt{ls -l} & \enquote{long}: zeigt mehr Informationen über Dateien und Verzeichnisse \\
-    \texttt{ls -a} & \enquote{all}: zeigt auch versteckte Dateien (fangen mit \texttt{.} an)
-  \end{tabular}
+  \begin{tabu}{>{\ttfamily}l X}
+    ls [\textit{directory}] & \enquote{list}: zeigt den Inhalt eines Verzeichnisses an \\
+    ls -l                   & \enquote{long}: zeigt mehr Informationen über Dateien und Verzeichnisse \\
+    ls -a                   & \enquote{all}: zeigt auch versteckte Dateien (fangen mit \texttt{.} an)
+  \end{tabu}
 \end{frame}
 
 \begin{frame}{\texttt{mkdir}, \texttt{touch}}
-  \begin{tabular}{lp{17em}}
-    \texttt{mkdir \textit{directory}} & \enquote{make directory}: erstellt ein neues Verzeichnis \\
-    \texttt{mkdir -p \textit{directory}} & \enquote{parent}: erstellt auch alle notwendigen Oberverzeichnisse \\
-    \texttt{touch \textit{file}} & erstellt eine leere Datei
-  \end{tabular}
+  \begin{tabu}{>{\ttfamily}l X}
+    mkdir \textit{directory}    & \enquote{make directory}: erstellt ein neues Verzeichnis \\
+    mkdir -p \textit{directory} & \enquote{parent}: erstellt auch alle notwendigen Oberverzeichnisse \\
+    touch \textit{file}         & erstellt eine leere Datei
+  \end{tabu}
 \end{frame}
 
 \begin{frame}{\texttt{cp}, \texttt{mv}, \texttt{rm}, \texttt{rmdir}}
-  \begin{tabular}{lp{15em}}
-    \texttt{cp \textit{source} \textit{destination}} & \enquote{copy}: kopiert eine Datei \\
-    \texttt{cp -r \textit{source} \textit{destination}} & \enquote{recursive}: kopiert ein Verzeichnis rekursiv \\
-    \texttt{mv \textit{source} \textit{desination}} & \enquote{move}: verschiebt eine Datei (Umbenennung) \\
-    \texttt{rm \textit{file}} & \enquote{remove}: löscht eine Datei (Es gibt keinen Papierkorb!) \\
-    \texttt{rm -r \textit{directory}} & \enquote{recursive}: löscht ein Verzeichnis rekursiv \\
-    \texttt{rmdir \textit{directory}} & \enquote{remove directory}: löscht ein \emph{leeres} Verzeichnis
-  \end{tabular}
+  \begin{tabu}{>{\ttfamily}l X}
+    cp \textit{source} \textit{destination}    & \enquote{copy}: kopiert eine Datei \\
+    cp -r \textit{source} \textit{destination} & \enquote{recursive}: kopiert ein Verzeichnis rekursiv \\
+    mv \textit{source} \textit{desination}     & \enquote{move}: verschiebt eine Datei (Umbenennung) \\
+    rm \textit{file}                           & \enquote{remove}: löscht eine Datei (Es gibt keinen Papierkorb!) \\
+    rm -r \textit{directory}                   & \enquote{recursive}: löscht ein Verzeichnis rekursiv \\
+    rmdir \textit{directory}                   & \enquote{remove directory}: löscht ein \emph{leeres} Verzeichnis
+  \end{tabu}
 \end{frame}
 
 \begin{frame}{\texttt{cat}, \texttt{less}, \texttt{grep}, \texttt{echo}}
-  \begin{tabular}{lp{15em}}
-    \texttt{cat \textit{file}} & \enquote{concatenate}: gibt Inhalt einer (oder mehr) Datei(en) aus \\
-    \texttt{less \texttt{file}} & (besser als \texttt{more}): wie \texttt{cat}, aber navigabel \\
-    \texttt{grep \textit{pattern} \textit{file}} & \texttt{g/re/p}: sucht in einer Datei nach einem Muster \\
-    \texttt{grep -i \textit{pattern} \textit{file}} & \enquote{case insensitive} \\
-    \texttt{grep -r \textit{pattern} \textit{directory}} & \enquote{recursive}: suche rekursiv in allen Dateien \\
-    \texttt{echo \textit{message}} & gibt einen Text aus
-  \end{tabular}
+  \begin{tabu}{>{\ttfamily}l X}
+    cat \textit{file}                           & \enquote{concatenate}: gibt Inhalt einer (oder mehr) Datei(en) aus \\
+    less \textit{file}                          & (besser als \texttt{more}): wie \texttt{cat}, aber navigabel \\
+    grep \textit{pattern} \textit{file}         & \texttt{g/re/p}: sucht in einer Datei nach einem Muster \\
+    grep -i \textit{pattern} \textit{file}      & \enquote{case insensitive} \\
+    grep -r \textit{pattern} \textit{directory} & \enquote{recursive}: suche rekursiv in allen Dateien \\
+    echo \textit{message}                       & gibt einen Text aus
+  \end{tabu}
 \end{frame}
 
 \begin{frame}{Ein- und Ausgabe}
-  \begin{tabular}{lp{20em}}
-    \texttt{\textit{command} > \textit{file}} & überschreibt Datei mit Ausgabe \\
-    \texttt{\textit{command} >> \textit{file}} & fügt Ausgabe einer Datei hinzu \\
-    \texttt{\textit{command} < \textit{file}} & Datei als Eingabe \\
-    \texttt{\textit{command1} | \textit{command2}} & Ausgabe als Eingabe (Pipe)
-  \end{tabular}
+  \begin{tabu}{>{\ttfamily}l X}
+    \textit{command} > \textit{file}      & überschreibt Datei mit Ausgabe \\
+    \textit{command} >> \textit{file}     & fügt Ausgabe einer Datei hinzu \\
+    \textit{command} < \textit{file}      & Datei als Eingabe \\
+    \textit{command1} | \textit{command2} & Ausgabe als Eingabe (Pipe)
+  \end{tabu}
 \end{frame}
 
 \begin{frame}{Tastaturkürzel}
-  \begin{tabular}{lp{20em}}
-    \texttt{Ctrl-C} & beendet das laufende Programm \\
-    \texttt{Ctrl-D} & EOF (end of file) eingeben, kann Programme beenden \\
-    \texttt{Ctrl-L} & leert den Bildschirm
-  \end{tabular}
+  \begin{tabu}{>{\ttfamily}l X}
+    Ctrl-C & beendet das laufende Programm \\
+    Ctrl-D & EOF (end of file) eingeben, kann Programme beenden \\
+    Ctrl-L & leert den Bildschirm
+  \end{tabu}
 \end{frame}
 
 \begin{frame}{Globbing}
-  \begin{tabular}{lp{20em}}
-    \texttt{*} & wird ersetzt durch alle passenden Dateien \\
-    \texttt{\{\textit{a},\textit{b}\}} & bildet alle Kombinationen
-  \end{tabular}
+  \begin{tabu}{>{\ttfamily}l X}
+    *                         & wird ersetzt durch alle passenden Dateien \\
+    \{\textit{a},\textit{b}\} & bildet alle Kombinationen
+  \end{tabu}
 
   \vspace{2cm}
-  Beispiele:\\
-  \begin{tabular}{lcl}
-    \texttt{*.log} & → & \texttt{foo.log bar.log} \\
-    \texttt{foo.\{tex,pdf\}} & → & \texttt{foo.tex foo.pdf}
-  \end{tabular}
+  Beispiele:\\[10pt]
+  \begin{tabu}{l c l}
+    *.log           & → & \texttt{foo.log bar.log} \\
+    foo.\{tex,pdf\} & → & \texttt{foo.tex foo.pdf}
+  \end{tabu}
 \end{frame}
