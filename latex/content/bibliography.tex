@@ -182,14 +182,14 @@
   Also:
   \begin{block}{Aufrufe mit Literaturverzeichnis}
     \begin{lstverbatim}
-    $ lualatex file.tex
-    $ biber file.bcf
-    $ lualatex file.tex
+     lualatex file.tex
+     biber file.bcf
+     lualatex file.tex
     \end{lstverbatim}
   \end{block}
 \end{frame}
 
 \begin{frame}{Literaturverzeichnis}
   \nocite{*}
-  \printbibliography
+  \printbibliography[heading=none]
 \end{frame}
