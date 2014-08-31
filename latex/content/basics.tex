@@ -19,13 +19,13 @@
       \end{block}
     \end{column}
     \begin{column}{0.47\textwidth}
-      \begin{block}{documentclass}
+      \begin{block}{\texttt{\textbackslash documentclass}}
         Hier wird die Dokumentenklasse gewählt und mit Optionen angepasst.
       \end{block}
       \begin{block}{Präambel}
         Hier werden globale Optionen gesetzt und zusätzliche Pakete eingebunden.
       \end{block}
-      \begin{block}{document-Umgebung}
+      \begin{block}{\texttt{document}-Umgebung}
         Hier wird das eigentliche Dokument erstellt.
       \end{block}
     \end{column}
@@ -54,7 +54,7 @@
     \begin{column}{0.41\textwidth}
       \begin{block}{Erklärung}
         Beispiel \\
-        Setzt die Dokumentenklasse auf \emph{scrartcl} und das Papierformat auf DIN\,A4. \\
+        Setzt die Dokumentenklasse auf \texttt{scrartcl} und das Papierformat auf DIN\,A4. \\
         Es gibt auch Befehle mit zwei oder mehr Pflichtargumenten, z.B. der Bruch. \\
         Text oder Befehle nach einem \%-Zeichen werden nicht berücksichtigt.
       \end{block}
@@ -88,6 +88,102 @@
   \end{columns}
 \end{frame}
 
+\begin{frame}[fragile]{Standardpakete}
+  Die hier aufgezählten Pakete sollten immer geladen werden, da sie wesentliche Funktionen bieten und wichtige Einstellungen vornehmen.
+  \begin{columns}[T]
+    \begin{column}{0.47\textwidth}
+      \begin{block}{Paket}
+        \begin{lstverbatim}
+        \usepackage{fixltx2e}
+        \usepackage[aux]{rerunfilecheck}
+
+        \usepackage[main=ngerman]{babel}
+
+        \usepackage{fontspec}
+        % mehr Pakete hier
+
+        \usepackage[unicode,pdfusetitle]{hyperref}
+        \usepackage{bookmark}
+        \end{lstverbatim}
+      \end{block}
+    \end{column}
+    \begin{column}{0.47\textwidth}
+      \begin{block}{Funktion}
+        \LaTeXe\ korrigieren. \\
+        Warnung, falls nochmal kompiliert werden muss. \\
+        Deutsche Spracheinstellungen für das Dokument. \\
+        Für Fonteinstellungen \\[2\baselineskip]
+        Für Hyperlinks im Dokument (z.B. Inhaltsverzeichnis $\rightarrow$ Kapitel). \\
+        Erweiterte Bookmarks im PDF.
+      \end{block}
+    \end{column}
+  \end{columns}
+
+  \vspace{5pt}
+  Die Reihenfolge ist manchmal wichtig!
+\end{frame}
+
+\begin{frame}[fragile]{
+  KOMA-Script-Klassen
+  \hfill\doc{http://mirrors.ctan.org/macros/latex/contrib/koma-script/doc/scrguide.pdf}{KOMA-Skript}
+}
+  Stellt die wichtigen Klassen \texttt{scrartcl}, \texttt{scrreprt} und \texttt{scrbook} zur Verfügung.
+  Sehr gute Vorlagen schon mit den Standardeinstellungen, schnell global mit Klassenoptionen anpassbar.
+  \begin{block}{fürs Praktikum empfohlenene Einstellungen}
+    \begin{lstverbatim}
+    \documentclass[
+      captions=tableheading,  % Spacing für Tabellenüberschriften
+      titlepage=firstiscover, % Titleseite ist Deckblatt
+    ]{scrartcl}
+    \end{lstverbatim}
+  \end{block}
+\end{frame}
+
+\begin{frame}[fragile]{Fonteinstellungen}
+  \begin{lstverbatim}
+  \setmainfont[
+    SmallCapsFont = {Latin Modern Roman Caps},
+    SlantedFont = {Latin Modern Roman Slanted},
+    ItalicFeatures  = {
+      SmallCapsFont = {LMRomanCaps10-Oblique}
+    },
+    ]{Latin Modern Roman}
+
+  \setsansfont{Latin Modern Sans}
+
+  \setmonofont[
+    SmallCapsFont = {Latin Modern Mono Caps},
+    SlantedFont = {Latin Modern Mono Slanted},
+    ItalicFeatures  = {
+      SmallCapsFont = {LMMonoCaps10-Oblique}
+    },
+    ]{Latin Modern Mono}
+  \end{lstverbatim}
+\end{frame}
+
+\begin{frame}[fragile]{Gerüst}
+  \begin{lstverbatim}
+  \documentclass[
+    captions=tableheading,
+    titlepage=firstiscover,
+  ]{scrartcl}
+
+  \usepackage{fixltx2e}
+  \usepackage[aux]{rerunfilecheck}
+  \usepackage[main=ngerman]{babel}
+  \usepackage{fontspec}
+  % mehr Pakete hier
+
+  \usepackage[unicode,pdfusetitle]{hyperref}
+  \usepackage{bookmark}
+  % Einstellungen hier, z.B. Fonts
+
+  \begin{document}
+    % Text hier
+  \end{document}
+  \end{lstverbatim}
+\end{frame}
+
 \begin{frame}[fragile]{Das Ausgabedokument erstellen}
   Es gibt mehrere verschiedene \LaTeX-Kompiler, die verschiedene Ausgabeformate erzeugen können.
   Der modernste Kompiler, der PDF-Dateien erstellt, ist \alert{lualatex}.
@@ -95,7 +191,7 @@
   \begin{block}{\LaTeX-Dokument kompilieren}
     Konsole öffnen:
     \begin{lstverbatim}
-    $ lualatex MeinDokument.tex
+    lualatex MeinDokument.tex
     \end{lstverbatim}
   \end{block}
   \begin{alertblock}{Vorsicht!}

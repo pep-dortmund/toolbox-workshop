@@ -1,78 +1,5 @@
 \section{Text erstellen}
 
-\begin{frame}[fragile]{Titelseite und Metadaten}
-  \LaTeX\ erstellt automatisch eine Titelseite aus den Metadaten.
-
-  \begin{block}{Empfehlung fürs Praktikum:}
-    \begin{lstverbatim}
-    \subject{Fakultät Physik, TU Dortmund}
-    \title{Vxxx: Titel des Versuchs}
-    \subtitle{Physikalisches Anfängerpraktikum}
-    \author{Max Mustermann}
-    % Mehrere Autoren mit \and :
-    \author{Max Mustermann \and Maria Musterfrau}
-    \date{Datum der Versuchsdurchführung}
-    % Zusätzlich möglich:
-    \titlehead{Kopf}
-    \publishers{Verlag}
-    \end{lstverbatim}
-  \end{block}
-
-  \begin{block}{Titelseite generieren}
-    \begin{lstverbatim}
-    \maketitle
-    \end{lstverbatim}
-  \end{block}
-\end{frame}
-
-\begin{frame}[fragile]{Inhaltsverzeichnis und Gliederung}
-  \LaTeX\ bietet Befehle zum erstellen von Gliederungsebenen.
-  Diese werden automatisch nummeriert und in entsprechend größerer und fetter Schrift gesetzt.
-
-  Mit \verb+\tableofcontents+ wird das Inhaltsverzeichnis erstellt.
-
-  \begin{block}{Gliederungsebenen für \texttt{scrartcl}}
-    \begin{lstverbatim}
-    \section{Überschrift}
-    \subsection{Überschrift}
-    \subsubsection{Überschrift}
-    \paragraph{Überschrift} % wird nicht nummeriert
-    \subparagraph{Überschrift} % wird nicht nummeriert
-    \end{lstverbatim}
-  \end{block}
-  \begin{block}{höhere Gliederungsebenen für \texttt{scrrepr} und \texttt{scrbook}}
-    \begin{lstverbatim}
-    \part{Überschrift}
-    \chapter{Überschrift}
-    \section{Überschrift}
-    \end{lstverbatim}
-  \end{block}
-\end{frame}
-
-\begin{frame}[fragile]{Referenzen}
-  \begin{block}{Code}
-    \begin{lstverbatim}
-    \section{Messung mit Apparatur 2}
-    \label{sec:apparatur2}
-    . . .
-    \section{Auswertung}
-    Wie in \ref{sec:apparatur2} beschrieben, ...
-    \end{lstverbatim}
-  \end{block}
-  \begin{itemize}
-    \item Auch für Gleichungen, Grafiken, Tabellen → später
-    \item Für Übersichtlichkeit sollten Labels den Typ der Referenz nennen:
-      \begin{description}
-        \item[Tabellen] \texttt{tab:}
-        \item[Grafiken] \texttt{fig:}
-        \item[Gleichungen] \texttt{eqn:}
-        \item[Sections] \texttt{sec:}
-      \end{description}
-    \item Bei Gleichungen: \verb+\eqref+ statt \verb+\ref+ → setzt Klammern: \eqref{eqn:maxwell1}
-    \item \verb+\label+ immer nach dem, worauf verwiesen wird
-  \end{itemize}
-\end{frame}
-
 \begin{frame}[fragile]{Konventionen für Text}
   \begin{itemize}
     \item höchstens ein Satz pro Code-Zeile
@@ -89,33 +16,6 @@
       \% \& \_ \textbackslash\ \$ \{ \}
     \end{center}
   \end{alertblock}
-\end{frame}
-
-\begin{frame}{Übung: Aufbau des Protokolls}
-  \begin{block}{Aufgabe}
-    Schreibt und kompiliert den groben Rahmen für das Protokoll.
-    Es sollte enthalten:
-    \begin{enumerate}
-      \item Titelseite mit den wichtigen Informationen
-      \item Inhaltsverzeichnis
-      \item Section Theorie
-        \begin{enumerate}
-          \item subsection Theorie A
-          \item subsection Theorie B
-        \end{enumerate}
-      \item Section Aufbau und Durchführung
-        \begin{enumerate}
-          \item subsection Aufbau
-          \item subsection Versuchsdurchführung
-        \end{enumerate}
-      \item Section Auswertung
-        \begin{enumerate}
-          \item subsection Teil 1 der Auswertung
-          \item subsection Teil 2 der Auswertung
-        \end{enumerate}
-      \item Section Diskussion
-    \end{enumerate}
-  \end{block}
 \end{frame}
 
 \begin{frame}[fragile]{Textauszeichnung}

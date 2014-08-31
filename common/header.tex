@@ -9,7 +9,23 @@
 
 \usepackage{fontspec}
 
+\setmainfont[
+  SmallCapsFont = {Latin Modern Roman Caps},
+  SlantedFont = {Latin Modern Roman Slanted},
+  ItalicFeatures  = {
+    SmallCapsFont = {LMRomanCaps10-Oblique}
+  },
+  ]{Latin Modern Roman}
+
 \setsansfont{Latin Modern Sans}
+
+\setmonofont[
+  SmallCapsFont = {Latin Modern Mono Caps},
+  SlantedFont = {Latin Modern Mono Slanted},
+  ItalicFeatures  = {
+    SmallCapsFont = {LMMonoCaps10-Oblique}
+  },
+  ]{Latin Modern Mono}
 
 \setlength{\parindent}{0pt}
 \usepackage[german=quotes,autostyle]{csquotes}
@@ -63,6 +79,7 @@
                iint, iiint, includegraphics, addbibresource, printbibliography,
                OverfullCenter, ExplSyntaxOn, ExplSyntaxOff, NewDocumentCommand,
                enquote, selectlanguage, textcquote,
+               setmainfont, setsansfont, setmonofont,
              },
     columns=fullflexible,
     breaklines=true,
