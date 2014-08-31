@@ -14,3 +14,4 @@
   - \@, ~
   - reading log
   - (over|under)full boxes
+  - hyphenat, extdash

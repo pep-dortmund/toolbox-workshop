@@ -4,25 +4,31 @@
     \begin{column}{0.47\textwidth}
       \begin{block}{Paket}
         \begin{lstverbatim}
-        \usepackage{polyglossia}
-        \setmainlanguage{german}
-        \usepackage{fontspec}
+        \usepackage{fixltx2e}
+        \usepackage[aux]{rerunfilecheck}
 
+        \usepackage[main=ngerman]{babel}
 
+        % mehr Pakete hier
 
-        \usepackage[unicode, pdfusetitle]{hyperref}
+        \usepackage[unicode,pdfusetitle]{hyperref}
+        \usepackage{bookmark}
         \end{lstverbatim}
       \end{block}
     \end{column}
     \begin{column}{0.47\textwidth}
       \begin{block}{Funktion}
-        Deutsche Spracheinstellungen für das Dokument. \\
-        Schriftpaket. Wichtig, damit Umlaute korrekt dargestellt werden.
-        Erlaubt einfaches ändern der verschiedenen Schriftarten.\\
-        Für Hyperlinks im Dokument (z.B. Inhaltsverzeichnis $\rightarrow$ Kapitel).
+        \LaTeXe\ korrigieren. \\
+        Warnung, falls nochmal kompiliert werden muss. \\
+        Deutsche Spracheinstellungen für das Dokument. \\[2\baselineskip]
+        Für Hyperlinks im Dokument (z.B. Inhaltsverzeichnis $\rightarrow$ Kapitel). \\
+        Erweiterte Bookmarks im PDF.
       \end{block}
     \end{column}
   \end{columns}
+
+  \vspace{5pt}
+  Die Reihenfolge ist manchmal wichtig!
 \end{frame}
 
 \begin{frame}[fragile]{

@@ -4,7 +4,7 @@
 \usetheme{TUDo}
 \usefonttheme{professionalfonts}
 
-\usepackage[ngerman]{babel}
+\usepackage[main=ngerman,english,french]{babel}
 \usepackage[backend=biber,sorting=nyt,sortlocale=de_DE.UTF-8]{biblatex}
 
 \usepackage{fontspec}
@@ -12,7 +12,7 @@
 \setsansfont{Latin Modern Sans}
 
 \setlength{\parindent}{0pt}
-\usepackage[german=quotes]{csquotes}
+\usepackage[german=quotes,autostyle]{csquotes}
 \usepackage{eurosym}
 
 \usepackage{amsmath}
@@ -62,6 +62,7 @@
                subsection, subsubsection, part, chapter, paragraph, subparagraph,
                iint, iiint, includegraphics, addbibresource, printbibliography,
                OverfullCenter, ExplSyntaxOn, ExplSyntaxOff, NewDocumentCommand,
+               enquote, selectlanguage, textcquote,
              },
     columns=fullflexible,
     breaklines=true,
