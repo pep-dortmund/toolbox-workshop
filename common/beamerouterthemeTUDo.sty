@@ -16,18 +16,18 @@
 
 \defbeamertemplate*{headline}{TUDo}[1][0]
 {
-    \vspace{6pt}
-    \hspace{18pt}
-    \rlap{\includegraphics[height=0.5cm]{logos/tu.pdf}}
-    \hfill
-    \Huge\insertshorttitle
-    \hfill
-    \llap{\usebeamerfont{institute}\insertinstitute}
+    \vspace{6pt}%
+    \hspace{18pt}%
+    \rlap{\includegraphics[height=0.5cm]{logos/tu.pdf}}%
+    \hfill%
+    \Huge\insertshorttitle%
+    \hfill%
+    \llap{\insertinstitute}%
     \hspace{18pt}
 
-    \vspace{4pt}
-    \hspace{18pt}
-    \usebeamercolor[fg]{headsepline}\hrulefill
+    \vspace{4pt}%
+    \hspace{18pt}%
+    \usebeamercolor[fg]{headsepline}\hrulefill%
     \hspace{18pt}
 
     \vspace{8pt}
@@ -35,25 +35,30 @@
 
 \defbeamertemplate*{footline}{TUDo}[1][0]
 {
-    \hspace{15pt}
-    \begin{beamercolorbox}[wd=4.54in]{footline}
-        \begin{beamercolorbox}[wd=0.3\linewidth, left]{author}
-            \usebeamerfont{author}\insertauthor, \usebeamerfont{date}\insertdate
-        \end{beamercolorbox}
-        \begin{beamercolorbox}[ wd=0.5\linewidth,center]{section in header}
-            \ifx\insertsubsection\empty
-            \usebeamerfont{section in head/foot}\insertsection
-            \else
-            \usebeamerfont{section in head/foot}\insertsection: \ \usebeamerfont{subsection in head/foot}\insertsubsection
-            \fi
-        \end{beamercolorbox}
-        \begin{beamercolorbox}[wd=0.15\linewidth, right]{frame number}
-            \ifnum\insertframenumber>0
-            \usebeamerfont{page number in head/foot}\insertframenumber /\inserttotalframenumber
-            \fi
-        \end{beamercolorbox}
-    \end{beamercolorbox}
-    \vspace{6pt}
+    \hspace{18pt}%
+    \usebeamercolor[fg]{author}%
+    \usebeamerfont{author}%
+    \rlap{\insertauthor,%
+    \usebeamerfont{date}%
+    \insertdate}%
+    \hfill%
+    \usebeamercolor[fg]{section in header}%
+    \ifx\insertsubsection\empty%
+      \usebeamerfont{section in head/foot}%
+      \insertsection%
+    \else%
+      \usebeamerfont{section in head/foot}%
+      \insertsection:\@%
+      \usebeamerfont{subsection in head/foot}%
+      \insertsubsection%
+    \fi%
+    \hfill%
+    \usebeamercolor[fg]{frame number}%
+    \usebeamerfont{page number in head/foot}%
+    \llap{\insertframenumber /\inserttotalframenumber}%
+    \hspace{18pt}
+
+    \vspace{5pt}
 }
 
 \mode<all>
