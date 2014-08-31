@@ -1,4 +1,4 @@
-DOCUMENTS := bash git latex make python
+DOCUMENTS := git latex make python unix
 
 all:
 	for document in $(DOCUMENTS) ; do \
