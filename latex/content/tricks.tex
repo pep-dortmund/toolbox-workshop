@@ -1,0 +1,67 @@
+\section{Tricks}
+
+\begin{frame}[fragile]{\texttt{\textbackslash OverfullCenter}}
+  \begin{lstverbatim}
+  \rlap{\includegraphics[height=0.3cm,width=\textwidth+25pt]{logos/tu.pdf}}
+  \end{lstverbatim}
+
+  \vspace{5pt}
+  \rlap{\includegraphics[height=0.3cm,width=\textwidth+25pt]{logos/tu.pdf}}
+
+  \vspace{5pt}
+  Bild oder Tabelle ist zu Breit, passt aber auf die Seite.\\
+  Wie kriegt man es in die Mitte?
+
+  \vspace{5pt}
+  \begin{lstverbatim}
+  \OverfullCenter{\includegraphics[height=0.3cm,width=\textwidth+25pt]{logos/tu.pdf}}
+  \end{lstverbatim}
+
+  \vspace{5pt}
+  \OverfullCenter{\includegraphics[height=0.3cm,width=\textwidth+25pt]{logos/tu.pdf}}
+
+  \begin{block}{Code}
+    \begin{lstverbatim}
+    \ExplSyntaxOn
+    \NewDocumentCommand \OverfullCenter {+m}
+    {
+      \noindent
+      \makebox[\linewidth]{#1}
+    }
+    \ExplSyntaxOff
+    \end{lstverbatim}
+  \end{block}
+\end{frame}
+
+\begin{frame}[fragile]{\texttt{pdflscape}}
+  Falls das Bild oder die Tabelle wirklich breiter als die Seite ist, ist vielleicht eine gedrehte Seite die Lösung.
+  \begin{columns}[T]
+    \column{0.5\textwidth}
+    \begin{block}{benötigte Pakete}
+      \begin{lstverbatim}
+      \includepackage{pdflscape}
+      \end{lstverbatim}
+    \end{block}
+    \begin{block}{\LaTeX-Code}
+      \begin{lstverbatim}
+      \begin{landscape}
+        \begin{table}
+          % . . .
+        \end{table}
+      \end{landscape}
+      \end{lstverbatim}
+    \end{block}
+    \column{0.45\textwidth}
+    \begin{itemize}
+      \item Inhalt der \texttt{landscape}-Umgebung wird horizontal gesetzt (separate Seite)
+      \item Seite wird im PDF-Reader horizontal angezeigt → schöner zu lesen
+    \end{itemize}
+  \end{columns}
+\end{frame}
+
+\begin{landscape}
+  \begin{frame}
+    \centering
+    <insert wide table here>
+  \end{frame}
+\end{landscape}

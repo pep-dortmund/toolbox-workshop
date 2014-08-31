@@ -40,6 +40,7 @@
 \usepackage{xcolor}
 \usepackage{enumerate}
 \usepackage{metalogo}
+\usepackage{pdflscape}
 
 \usepackage{fancyvrb}
 \usepackage{listings}
@@ -59,7 +60,9 @@
     moretexcs={setmainlanguage, text, num, SI, si, kilo, gram, befehl, subject, titlehead, publishers,
                metre, per, second, squared, micro, subtitle, maketitle, tableofcontents,
                subsection, subsubsection, part, chapter, paragraph, subparagraph,
-               iint, iiint, includegraphics, addbibresource, printbibliography},
+               iint, iiint, includegraphics, addbibresource, printbibliography,
+               OverfullCenter, ExplSyntaxOn, ExplSyntaxOff, NewDocumentCommand,
+             },
     columns=fullflexible,
     breaklines=true,
     keepspaces=true,
@@ -112,6 +115,16 @@
 {
   \ensuremath{{#1}}
 }
+
+\ExplSyntaxOn
+
+\NewDocumentCommand \OverfullCenter {+m}
+{
+	\noindent
+	\makebox[\linewidth]{#1}
+}
+
+\ExplSyntaxOff
 
 \setbeamertemplate{bibliography item}[text]
 

@@ -4,7 +4,6 @@
 * texdoc
 * \footnote
 * \NewDocumentCommand, \newcommand (plore)
-* \OverfullCenter
 * fixltx2e
 * placeins
 * \enquote

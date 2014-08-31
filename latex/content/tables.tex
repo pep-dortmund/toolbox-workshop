@@ -165,29 +165,3 @@
     \end{tabular}
   \end{table}
 \end{frame}
-
-\begin{frame}[fragile]{\texttt{pdflscape}}
-  Gelegentlich auftretendes Problem: Die Tabelle ist zu breit für die Seite und kann nicht sinnvoll aufgespalten werden
-  \begin{columns}[T]
-    \column{0.5\textwidth}
-    \begin{block}{benötigte Pakete}
-      \begin{lstverbatim}
-      \includepackage{pdflscape}
-      \end{lstverbatim}
-    \end{block}
-    \begin{block}{\LaTeX-Code}
-      \begin{lstverbatim}
-      \begin{landscape}
-        \begin{table}
-          . . .
-        \end{table}
-      \end{landscape}
-      \end{lstverbatim}
-    \end{block}
-    \column{0.45\textwidth}
-    \begin{itemize}
-      \item Inhalt der \texttt{landscape}-Umgebung wird horizontal gesetzt (separate Seite)
-      \item Seite wird im PDF-Reader horizontal angezeigt → schöner zu lesen
-    \end{itemize}
-  \end{columns}
-\end{frame}
