@@ -2,11 +2,9 @@
 
 * workflow
 * texdoc
-* \input (plore)
 * \footnote
 * \NewDocumentCommand, \newcommand (plore)
 * \OverfullCenter
-* mhchem (plore)
 * fixltx2e
 * placeins
 * \enquote
