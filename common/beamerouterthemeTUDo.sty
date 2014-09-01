@@ -37,10 +37,12 @@
 {
     \hspace{18pt}%
     \usebeamercolor[fg]{author}%
-    \usebeamerfont{author}%
-    \rlap{\insertauthor,%
-    \usebeamerfont{date}%
-    \insertdate}%
+    \rlap{%
+      \usebeamerfont{author}%
+      \insertauthor, %
+      \usebeamerfont{date}%
+      \insertdate%
+    }%
     \hfill%
     \usebeamercolor[fg]{section in header}%
     \ifx\insertsubsection\empty%
@@ -48,7 +50,8 @@
       \insertsection%
     \else%
       \usebeamerfont{section in head/foot}%
-      \insertsection:\@%
+      \insertsection%
+      \textcolor{TUgreen}{:\ }%
       \usebeamerfont{subsection in head/foot}%
       \insertsubsection%
     \fi%
