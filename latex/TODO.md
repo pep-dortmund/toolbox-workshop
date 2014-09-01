@@ -1,8 +1,8 @@
 # TODO
 
 * workflow
-* texdoc
 * \footnote
+* installation pflegen, tlmgr
 * \NewDocumentCommand, \newcommand (plore)
   - \TextOrMath, \ensuremath
 * placeins
