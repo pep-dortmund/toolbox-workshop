@@ -17,6 +17,20 @@
   \end{frame}
 }
 
+\setbeamertemplate{subsection page}{
+  \begin{center}
+    \color{TUgreen}
+    \Huge\insertsection \\[10pt]
+    \Large\insertsubsection
+  \end{center}
+}
+
+\AtBeginSubsection{
+  \begin{frame}
+    \subsectionpage
+  \end{frame}
+}
+
 \begin{document}
 
 {
