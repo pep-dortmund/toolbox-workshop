@@ -15,7 +15,9 @@
   - \@, ~
   - reading log
   - (over|under)full boxes
-  - hyphenat, extdash
+  - hyphenat, extdash, hyphenate
+  - selnolig
+  - microtype
   - \texorpdfstring
   - jobname
   - eqn, eqns environments
