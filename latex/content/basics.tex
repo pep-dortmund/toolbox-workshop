@@ -33,14 +33,16 @@
 \end{frame}
 
 \begin{frame}[fragile]{Syntax: Befehle}
-  \LaTeX-Befehle beginnen stets mit einem Back-Slash.
+  \LaTeX-Befehle beginnen stets mit einem \textbackslash\ (Backslash).
 
   Obligatorische Argumente stehen in \{ \}, optionale Argumente stehen in [ ].
+
+  * ruft häufg eine Alternativform des Befehls auf.
   \begin{columns}[T]
     \begin{column}{0.53\textwidth}
       \begin{block}{\LaTeX-Code}
         \begin{lstverbatim}
-        \befehl[optional]{obligatorisch}
+        \befehl*[optional]{obligatorisch}
         \documentclass[paper=a4]{scrartcl}
 
 
@@ -69,11 +71,11 @@
     \begin{column}{0.47\textwidth}
       \begin{block}{Syntax}
         \begin{lstverbatim}
-        \begin{Umgebung}[optional]
+        \begin{Umgebung*}[optional]
             {obligatorisch}
           % .
           % .
-        \end{Umgebung}
+        \end{Umgebung*}
         \end{lstverbatim}
       \end{block}
     \end{column}
@@ -139,7 +141,11 @@
   \end{block}
 \end{frame}
 
-\begin{frame}[fragile]{Fonteinstellungen}
+\begin{frame}{Fonteinstellungen – minimal}
+  Ein Minimalset von Standardfonts ist ohne Einstellungen verfügbar.
+\end{frame}
+
+\begin{frame}[fragile]{Fonteinstellungen – Latin Modern komplett}
   \begin{lstverbatim}
   \setmainfont[
     SmallCapsFont = {Latin Modern Roman Caps},

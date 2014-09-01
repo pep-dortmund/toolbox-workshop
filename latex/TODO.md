@@ -5,11 +5,9 @@
 * \footnote
 * \NewDocumentCommand, \newcommand (plore)
   - \TextOrMath, \ensuremath
-* fixltx2e
 * placeins
 * unicode-math
 * IEEEtrantools
-* syntax *
 * advanced
   - TEXINPUTS, BIBINPUTS
   - --output-directory, --interaction=batchmode, similar for biber
