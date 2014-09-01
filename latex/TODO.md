@@ -6,6 +6,7 @@
 * \NewDocumentCommand, \newcommand (plore)
   - \TextOrMath, \ensuremath
 * placeins
+* math packages at start of section
 * unicode-math
 * IEEEtrantools
 * advanced
@@ -17,3 +18,4 @@
   - hyphenat, extdash
   - \texorpdfstring
   - jobname
+  - eqn, eqns environments
