@@ -123,13 +123,13 @@
     \begin{column}{0.7\textwidth}
       \begin{block}{\LaTeX-Code}
         \begin{lstverbatim}
-        \begin{align}
+        \begin{align*}
           \leq \geq \gg \ll \approx \propto \\
           \cdot \times \bar{x} \vec{x} \vec{\jmath} \\
           \pm \mp \infty \partial \nabla \\
           \int\limits_0^1 \sum\limits_{i=1}^N \\
           \iint \iiint \oint
-        \end{align}
+        \end{align*}
         \end{lstverbatim}
       \end{block}
     \end{column}
@@ -145,6 +145,40 @@
       \end{block}
     \end{column}
   \end{columns}
+\end{frame}
+
+\begin{frame}[fragile]{Mehr Mathematik}
+  \begin{columns}[T]
+    \column{0.7\textwidth}
+    \begin{block}{\LaTeX-Code}
+      \begin{lstverbatim}
+      \begin{align*}
+        \alpha, \beta, \gamma, \delta \\ 
+        \Alpha, \Beta, \Gamma, \Delta \\
+        \frac12 \quad \frac{3x^2 + 2x}{4x - 7} \\
+        \sin(x) \quad \cos(x) \\
+        \lim_{x \to \infty} \exp{-x} = 0 \\
+        \sqrt[n]{a^2 + b^2} = c \\
+        \langle x \rangle \; \text{vs.} \; < x >  \\
+        \left(\frac{x^2}{y^3}\right)
+      \end{align*}
+      \end{lstverbatim}
+    \end{block}
+    \column{0.25\textwidth}
+    \begin{block}{Resultat}
+      \begin{align*}
+        \alpha, \beta, \gamma, \delta \\ 
+        \Alpha, \Beta, \Gamma, \Delta \\
+        \frac12 \quad \frac{3x^2 + 2x}{4x - 7} \\
+        \sin(x) \quad \cos(x) \\
+        \lim_{x \to \infty} \exp{(-x)} = 0 \\
+        \sqrt[n]{a^2 + b^2} = c \\
+        \langle x \rangle \; \text{vs.} \; < x >  \\
+        \left(\frac{x^2}{y^3}\right)
+      \end{align*}
+    \end{block}
+  \end{columns}
+  
 \end{frame}
 
 \begin{frame}[fragile]{Konventionen: Variablen, Zahlen, Einheiten, Indizes}
