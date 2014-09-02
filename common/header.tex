@@ -36,9 +36,36 @@
 \usepackage{amssymb}
 \usepackage{xfrac}
 \usepackage[noss]{hepnicenames} % loads bm, before unicode-math
-\usepackage{unicode-math}
-\usepackage{IEEEtrantools}
+\usepackage[
+  math-style=ISO,
+  bold-style=ISO,
+  sans-style=italic,
+  nabla=upright,
+  partial=upright,
+  vargreek-shape=unicode,
+]{unicode-math}
+\usepackage[retainorgcmds]{IEEEtrantools}
+
 \setmathfont{Latin Modern Math}
+
+\setmathfont[range={\mathscr,\mathbfscr}]{XITS Math}
+%\setmathfont[range={\mathcal,\mathbfcal},StylisticSet=1]{XITS Math}
+\setmathfont[range={\mathcal,\mathbfcal}]{Latin Modern Math}
+
+% much nicer than latin Modern or XITS
+\DeclareSymbolFont{AMSb}{U}{msb}{m}{n}
+\protected\def\mathbb#1{{\mathchar\numexpr256*\symAMSb+`#1\relax}}
+
+% define fallbacks here
+\setmathfont[range=\vDash]{XITS Math}
+\setmathfont[range=\coloneq]{XITS Math}
+\setmathfont[range=\propto]{XITS Math}
+\setmathfont[range={\lblkbrbrak,\rblkbrbrak}]{XITS Math}
+
+% make bar horizontal, use \hslash for slashed h
+\let\hbar\relax
+\DeclareMathSymbol{\hbar}{\mathord}{AMSb}{"7E}
+\DeclareMathSymbol{ℏ}{\mathord}{AMSb}{"7E}
 
 \usepackage[locale=DE, separate-uncertainty=true, per-mode=fraction]{siunitx}
 \AtBeginDocument{\sisetup{math-rm=\mathrm, text-rm=\rmfamily}}
@@ -81,6 +108,9 @@
                OverfullCenter, ExplSyntaxOn, ExplSyntaxOff, NewDocumentCommand,
                enquote, selectlanguage, textcquote,
                setmainfont, setsansfont, setmonofont,
+               setmathfont, mathscr, mathbfscr, mathcal, mathbfcal, DeclareSymbolFont, protected, mathbb, numexpr, symAMSb, vDash, coloneq, lblkbrbrak, rblkbrbrak, DeclareMathSymbol,
+               omicron, varkappa, Alpha, Beta, Epsilon, Zeta, Eta, Iota, Kappa, Mu, Nu, Omicron, Rho, Tau, Chi, beth, gimel, eth,
+               square, increment,
              },
     columns=fullflexible,
     breaklines=true,
@@ -172,6 +202,9 @@
 \ExplSyntaxOff
 
 \setbeamertemplate{bibliography item}[text]
+
+% remove space before eqn in block
+\addtobeamertemplate{block begin}{\setlength\abovedisplayskip{-5pt}}
 
 \author{PeP et al.\ Toolbox}
 \date{2014}

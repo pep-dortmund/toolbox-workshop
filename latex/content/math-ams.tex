@@ -1,0 +1,95 @@
+\subsection{Mathe-Umgebungen – \texttt{amsmath}}
+
+\begin{frame}[fragile]{
+  Die \texttt{equation}-Umgebung
+  \hfill\doc{http://mirrors.ctan.org/macros/latex/required/amslatex/math/amsldoc.pdf}{amsmath}
+  \doc{http://mirrors.ctan.org/macros/latex/contrib/mathtools/mathtools.pdf}{mathtools}
+}
+  \begin{block}{benötigte Pakete}
+    \begin{lstverbatim}
+    \usepackage{amsmath}
+    \usepackage{amssymb}
+    \usepackage{mathtools}
+    \end{lstverbatim}
+  \end{block}
+  Abgesetzte Gleichung, automatische Nummerierung. \\
+  \texttt{equation*} erzeugt unnummerierte Gleichung.
+  \begin{columns}[T]
+    \begin{column}{0.6\textwidth}
+      \begin{block}{\LaTeX-Code}
+        \begin{lstverbatim}
+        \begin{equation}
+          \nabla \cdot \vec{E} =
+          \frac{\rho} {\epsilon_0}
+          \label{eqn:maxwell1}
+        \end{equation}
+        Schon Gauß hatte das Durchflutungsgesetz \eqref{eqn:maxwell1} aufgestellt.
+        \end{lstverbatim}
+      \end{block}
+    \end{column}
+    \begin{column}{0.35\textwidth}
+      \begin{block}{Ergebnis}
+        \begin{equation}
+          \nabla \cdot \vec{E} =
+          \frac{\rho}{\epsilon_0}
+          \label{eqn:maxwell1}
+        \end{equation}
+        Schon Gauß hatte das Durchflutungsgesetz \eqref{eqn:maxwell1} aufgestellt.
+      \end{block}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}[fragile]{
+  Die \texttt{align}-Umgebung
+  \hfill\doc{http://mirrors.ctan.org/macros/latex/required/amslatex/math/amsldoc.pdf}{amsmath}
+}
+  \begin{columns}[t]
+    \begin{column}{0.35\textwidth}
+      \begin{itemize}
+        \item für mehrere Gleichungen
+        \item \texttt{\&} steuert Ausrichtung
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.6\textwidth}
+      \begin{itemize}
+        \item \texttt{\textbackslash\textbackslash} erzeugt neue Zeile
+        \item jede Zeile bekommt eine Gleichungsnummer
+      \end{itemize}
+    \end{column}
+  \end{columns}
+  \vfill
+  \begin{columns}[T]
+    \begin{column}{0.65\textwidth}
+      \begin{block}{\LaTeX-Code}
+        \begin{lstverbatim}
+        \begin{align}
+          a         &= 1 & b           &= 2 \\
+          a \cdot b &= 5 & \frac{a}{b} &= \num{0,5}
+        \end{align}
+        \end{lstverbatim}
+      \end{block}
+    \end{column}
+    \begin{column}{0.3\textwidth}
+      \begin{block}{Ergebnis}
+        \begin{align}
+          a         &= 1 & b           &= 2 \\
+          a \cdot b &= 2 & \frac{a}{b} &= \num{0,5}
+        \end{align}
+      \end{block}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}{Übung: Maxwell-Gleichungen}
+  Erstellt mit Hilfe der \texttt{align}-Umgebung die Maxwellgleichungen:
+  \begin{block}{Ergebnis}
+    \begin{align}
+      \nabla \cdot \vec{E} &= \frac{\rho} {\epsilon_0} &
+      \nabla \cdot \vec{B} &= 0 \\
+      \nabla \times \vec{E} &= - \partial_t \vec{B} &
+      \nabla \times \vec{B} &= \mu_0 \vec{\jmath} + \mu_0 \epsilon_0 \partial_t \vec{E}
+      \label{align}
+    \end{align}
+  \end{block}
+\end{frame}
