@@ -11,22 +11,22 @@
   \end{itemize}
 \end{frame}
 
-\begin{frame}
-  \centering
-  \includegraphics[height=0.95\textheight]{figures/bibtex-many.pdf}
-  \begin{tikzpicture}[remember picture,overlay]
-    \tikzset{shift={(current page.center)}}
-    \node at (-4.3,3) {
-      \textrm{\textsc{Bib}\TeX-Familie}
-    };
-    \only<2>{
-      \node (here) at (-4.3,-2.8) {
-        Sie sind hier
-      };
-      \draw [->, >=Stealth] (here.east) -- ++(3.5,0);
-    }
-  \end{tikzpicture}
-\end{frame}
+% \begin{frame}
+%   \centering
+%   \includegraphics[height=0.95\textheight]{figures/bibtex-many.pdf}
+%   \begin{tikzpicture}[remember picture,overlay]
+%     \tikzset{shift={(current page.center)}}
+%     \node at (-4.3,3) {
+%       \textrm{\textsc{Bib}\TeX-Familie}
+%     };
+%     \only<2>{
+%       \node (here) at (-4.3,-2.8) {
+%         Sie sind hier
+%       };
+%       \draw [->, >=Stealth] (here.east) -- ++(3.5,0);
+%     }
+%   \end{tikzpicture}
+% \end{frame}
 
 \begin{frame}{Warum biber?}
   \begin{itemize}
@@ -145,11 +145,15 @@
       \begin{minipage}{0.6\linewidth}
         \begin{lstverbatim}
         \cite{numpy}
+        \cite[20]{numpy}
+        \cite[1-3]{numpy}
         \cite{splot,root}
         \end{lstverbatim}
       \end{minipage}
       \begin{minipage}{0.35\linewidth}
         \cite{numpy}\\
+        \cite[20]{numpy}\\
+        \cite[1-3]{numpy}\\
         \cite{splot,root}
       \end{minipage}
   \end{block}

@@ -1,51 +1,3 @@
-\begin{frame}[fragile]{Pakete}
-  \begin{lstverbatim}
-  \usepackage{amsmath}      % viele nützliche Mathe-Befehle
-  \usepackage{amssymb}      % viele Mathe-Symbole
-  \usepackage{mathtools}    % nützliche Befehle
-
-  \usepackage{fontspec}     % nach amssymb
-
-  \usepackage[
-    math-style=ISO,         % \
-    bold-style=ISO,         % |
-    sans-style=italic,      % | ISO-Standard folgen
-    nabla=upright,          % |
-    partial=upright,        % /
-    vargreek-shape=unicode, % Unicode-Standard folgen
-  ]{unicode-math}           % "It does exactly what it says on the tin"
-  \end{lstverbatim}
-\end{frame}
-
-\begin{frame}[fragile]{Mathefonts – minimal}
-  Ein Minimalset von Standardfonts ist ohne Einstellungen verfügbar.
-\end{frame}
-
-\begin{frame}[fragile]{Mathefonts – Ismo}
-  \fontsize{9}{7}
-  \begin{lstverbatim}
-  \setmathfont{Latin Modern Math}
-
-  \setmathfont[range={\mathscr,\mathbfscr}]{XITS Math}
-  %\setmathfont[range={\mathcal,\mathbfcal},StylisticSet=1]{XITS Math}
-  \setmathfont[range={\mathcal,\mathbfcal}]{Latin Modern Math}
-
-  % much nicer than Latin Modern or XITS
-  \DeclareSymbolFont{AMSb}{U}{msb}{m}{n}
-  \protected\def\mathbb#1{{\mathchar\numexpr256*\symAMSb+`#1\relax}}
-
-  % define fallbacks here
-  \setmathfont[range=\vDash]{XITS Math}
-  \setmathfont[range=\coloneq]{XITS Math}
-  \setmathfont[range=\propto]{XITS Math}
-  \setmathfont[range={\lblkbrbrak,\rblkbrbrak}]{XITS Math}
-
-  % make bar horizontal, use \hslash for slashed h
-  \let\hbar\relax
-  \DeclareMathSymbol{\hbar}{\mathord}{AMSb}{"7E}
-  \end{lstverbatim}
-\end{frame}
-
 \begin{frame}[fragile]{\$\dots\$-Umgebung}
   Für mathematische Symbole, Variablen und kleine Formeln im Fließtext.
 
@@ -81,40 +33,40 @@
   Mehr Text für den Effekt.
 \end{frame}
 
-\begin{frame}[fragile]{Griechisch und mehr}
-  \begin{columns}[onlytextwidth,T]
-    \begin{column}{0.7\textwidth}
-      \begin{block}{Code}
-        \begin{lstverbatim}
-        \alpha \beta \gamma \delta \epsilon \zeta \eta \theta \iota \kappa \lambda \mu \nu \xi \omicron \pi \rho \sigma \tau \upsilon \phi \chi \psi \omega
-        \varepsilon \vartheta \varkappa \varpi \varrho \varsigma \varphi
-        \Alpha \Beta \Gamma \Delta \Epsilon \Zeta \Eta \Theta \Iota \Kappa \Lambda \Mu \Nu \Xi \Omicron \Pi \Rho \Sigma \Tau \Upsilon \Phi \Chi \Psi \Omega
-        \hbar \imath \jmath \ell \wp
-        \aleph \beth \gimel
-        \partial \eth \nabla \square \increment \infty
-        \end{lstverbatim}
-      \end{block}
-    \end{column}
-    \begin{column}{0.26\textwidth}
-      \begin{block}{Ergebnis}
-        \Umathordordspacing\textstyle=4mu
-        $\alpha \beta \gamma \delta \epsilon \zeta \eta$ \\
-        $\quad \theta \iota \kappa \lambda \mu \nu \xi$ \\
-        $\quad \omicron \pi \rho \sigma \tau \upsilon \phi$ \\
-        $\quad \chi \psi \omega$ \\
-        $\varepsilon \vartheta \varkappa \varpi \varrho$ \\
-        $\quad \varsigma \varphi$ \\
-        $\Alpha \Beta \Gamma \Delta \Epsilon \Zeta \Eta$ \\
-        $\quad \Theta \Iota \Kappa \Lambda \Mu \Nu \Xi$ \\
-        $\quad \Omicron \Pi \Rho \Sigma \Tau \Upsilon \Phi$ \\
-        $\quad \Chi \Psi \Omega$ \\
-        $\hbar \imath \jmath \ell \wp$ \\
-        $\aleph \beth \gimel$ \\
-        $\partial \eth \nabla \square \increment \infty$
-      \end{block}
-    \end{column}
-  \end{columns}
-\end{frame}
+% \begin{frame}[fragile]{Griechisch und mehr}
+%   \begin{columns}[onlytextwidth,T]
+%     \begin{column}{0.7\textwidth}
+%       \begin{block}{Code}
+%         \begin{lstverbatim}
+%         \alpha \beta \gamma \delta \epsilon \zeta \eta \theta \iota \kappa \lambda \mu \nu \xi \omicron \pi \rho \sigma \tau \upsilon \phi \chi \psi \omega
+%         \varepsilon \vartheta \varkappa \varpi \varrho \varsigma \varphi
+%         \Alpha \Beta \Gamma \Delta \Epsilon \Zeta \Eta \Theta \Iota \Kappa \Lambda \Mu \Nu \Xi \Omicron \Pi \Rho \Sigma \Tau \Upsilon \Phi \Chi \Psi \Omega
+%         \hbar \imath \jmath \ell \wp
+%         \aleph \beth \gimel
+%         \partial \eth \nabla \square \increment \infty
+%         \end{lstverbatim}
+%       \end{block}
+%     \end{column}
+%     \begin{column}{0.26\textwidth}
+%       \begin{block}{Ergebnis}
+%         \Umathordordspacing\textstyle=4mu
+%         $\alpha \beta \gamma \delta \epsilon \zeta \eta$ \\
+%         $\quad \theta \iota \kappa \lambda \mu \nu \xi$ \\
+%         $\quad \omicron \pi \rho \sigma \tau \upsilon \phi$ \\
+%         $\quad \chi \psi \omega$ \\
+%         $\varepsilon \vartheta \varkappa \varpi \varrho$ \\
+%         $\quad \varsigma \varphi$ \\
+%         $\Alpha \Beta \Gamma \Delta \Epsilon \Zeta \Eta$ \\
+%         $\quad \Theta \Iota \Kappa \Lambda \Mu \Nu \Xi$ \\
+%         $\quad \Omicron \Pi \Rho \Sigma \Tau \Upsilon \Phi$ \\
+%         $\quad \Chi \Psi \Omega$ \\
+%         $\hbar \imath \jmath \ell \wp$ \\
+%         $\aleph \beth \gimel$ \\
+%         $\partial \eth \nabla \square \increment \infty$
+%       \end{block}
+%     \end{column}
+%   \end{columns}
+% \end{frame}
 
 \begin{frame}{Operatoren}
 \end{frame}
@@ -131,7 +83,28 @@
 \begin{frame}{Große Operatoren}
 \end{frame}
 
-\begin{frame}{Fonts}
+\begin{frame}[fragile]{Fonts}
+    \begin{block}{Pakete}
+        \begin{lstverbatim}
+        \usepackage{unicode-math} % nach Mathe-Paketen und fontspec
+        \end{lstverbatim}
+    \end{block}
+    \begin{columns}[t]
+        \begin{column}{0.47\textwidth}
+            \begin{block}{Latin Modern}
+                \begin{lstverbatim}
+                \setmathfont{Latin Modern Math}
+                \end{lstverbatim}
+            \end{block}
+        \end{column}
+        \begin{column}{0.47\textwidth}
+            \begin{block}{Tex Gyre}
+                \begin{lstverbatim}
+                \setmathfont{Tex Gyre Pagella Math}
+                \end{lstverbatim}
+            \end{block}
+        \end{column}
+    \end{columns}
 \end{frame}
 
 \begin{frame}{Spaces}

@@ -99,8 +99,8 @@
         \usepackage{fixltx2e}
         \usepackage[aux]{rerunfilecheck}
 
-        \usepackage[main=ngerman]{babel}
-
+        \usepackage{polyglossia}
+        \setmainlanguage{german}
         \usepackage{fontspec}
         % mehr Pakete hier
 
@@ -122,7 +122,7 @@
   \end{columns}
 
   \vspace{5pt}
-  Die Reihenfolge ist manchmal wichtig!
+  Die Reihenfolge ist manchmal wichtig, z.B. damit Pakete die Spracheinstellung kennen.
 \end{frame}
 
 \begin{frame}[fragile]{
@@ -141,31 +141,36 @@
   \end{block}
 \end{frame}
 
-\begin{frame}{Fonteinstellungen – minimal}
-  Ein Minimalset von Standardfonts ist ohne Einstellungen verfügbar.
+\begin{frame}[fragile]{Fonteinstellungen}
+    Standardeinstellung sind die Computer-Modern-Fonts. 
+    Bereiten bei manchen PDF-Viewern Probleme (pixelig).
+    \vspace{1em}
+    \begin{columns}[c]
+        \begin{column}{0.47\textwidth}
+            moderne Alternative:
+            \begin{block}{Latin Modern}
+                \begin{lstverbatim}
+                \usepackage{fontspec}
+                \setmainfont{Latin Modern Roman}
+                \setsansfont{Latin Modern Sans}
+                \setmonofont{Latin Modern Mono}
+                \end{lstverbatim}
+            \end{block}
+        \end{column}
+        \begin{column}{0.47\textwidth}
+            Oder auch:
+            \begin{block}{Tex Gyre}
+                \begin{lstverbatim}
+                \usepackage{fontspec}
+                \setmainfont{Tex Gyre Pagella}
+                \setsansfont{Tex Gyre Heros}
+                \setmonofont{Tex Gyre Cursor}
+                \end{lstverbatim}
+            \end{block}
+        \end{column}
+    \end{columns}
 \end{frame}
 
-\begin{frame}[fragile]{Fonteinstellungen – Latin Modern komplett}
-  \begin{lstverbatim}
-  \setmainfont[
-    SmallCapsFont = {Latin Modern Roman Caps},
-    SlantedFont = {Latin Modern Roman Slanted},
-    ItalicFeatures  = {
-      SmallCapsFont = {LMRomanCaps10-Oblique}
-    },
-    ]{Latin Modern Roman}
-
-  \setsansfont{Latin Modern Sans}
-
-  \setmonofont[
-    SmallCapsFont = {Latin Modern Mono Caps},
-    SlantedFont = {Latin Modern Mono Slanted},
-    ItalicFeatures  = {
-      SmallCapsFont = {LMMonoCaps10-Oblique}
-    },
-    ]{Latin Modern Mono}
-  \end{lstverbatim}
-\end{frame}
 
 \begin{frame}[fragile]{Gerüst}
   \begin{lstverbatim}
@@ -176,14 +181,13 @@
 
   \usepackage{fixltx2e}
   \usepackage[aux]{rerunfilecheck}
-  \usepackage[main=ngerman]{babel}
+  \usepackage{polyglossia}
+  \setmainlanguage{german}
   \usepackage{fontspec}
   % mehr Pakete hier
-
   \usepackage[unicode,pdfusetitle]{hyperref}
   \usepackage{bookmark}
   % Einstellungen hier, z.B. Fonts
-
   \begin{document}
     % Text hier
   \end{document}

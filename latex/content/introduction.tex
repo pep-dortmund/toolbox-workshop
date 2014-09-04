@@ -1,18 +1,16 @@
 \section{Einführung}
 
-\begin{frame}{Disclaimer}
+\begin{frame}{Unser Kurs}
   \begin{itemize}
-    \item dieser Kurs ist \enquote{opinionated} (habe keine passende Übesetzung gefunden…)
-    \item in \LaTeX\ gibt es immer viele Möglichkeiten, ein Ziel zu erreichen
-    \item wir zeigen eine der Möglichkeiten, nämlich die, die wir am besten finden
-    \item wir erklären, warum wir diese Möglichkeit gewählt haben
-    \item wir zeigen am Rand einige wichtige Alternativen, damit man sie erkennt
+      \item in \LaTeX{} gibt es immer viele Möglichkeiten, ein Ziel zu erreichen
+    \item wir zeigen einen modernen Ansatz 
+    \item wir erklären, warum wir diesen Ansatz gewählt haben
+    \item weitere Ansätze werden an manchen Stellen kurz erwähnt
   \end{itemize}
 
   \vspace{10pt}
   \begin{itemize}
-    \item Inhalt anders als in früheren Jahren
-    \item Zeit reicht nicht, um alle veralteten Alternativen zu zeigen
+    \item Im Vergleich zu den letzten Jahren deutlich modernisiert
   \end{itemize}
 \end{frame}
 
@@ -30,15 +28,17 @@
     \item hervorragender Text- und Formelsatz
     \item automatisierte Erstellung von Inhalts- und Literaturverzeichnis
       \begin{itemize}
-        \item und anderen Verzeichnissen: Index, Glossar, Abkürzungen, Definitionen, …
+        \item oder auch: Index, Glossar, Abkürzungen, Definitionen, \dots
       \end{itemize}
     \item \TeX-Dateien sind reine Text-Dateien
       \begin{itemize}
         \item[$\Rightarrow$] gut für Versionskontrolle geeignet
       \end{itemize}
     \item sehr gute Vorlagen für wissenschaftliches Arbeiten
-    \item aber auch: Briefe, Notensatz, Präsentationen (auch diese)
-    \item ausgezeichnete Dokumention
+      \begin{itemize}
+      \item aber auch: Briefe, Notensatz, Präsentationen (auch diese)
+      \end{itemize}
+    \item ausgezeichnete Dokumentation
     \item erweiterbar durch zahlreiche und mächtige Pakete
     \item auf allen geläufigen Betriebssystemen verfügbar
     \item Ausgabe direkt als PDF mit Hyperlinks
@@ -60,8 +60,8 @@
       \LaTeX:
       \begin{itemize}
         \item Geschrieben von Leslie Lamport 1984
-        \item Version (1994) \LaTeXe
-        \item \LaTeX3 seit Anfang der Neunziger in Arbeit…
+        \item aktuelle Version: \LaTeXe (1994)
+        \item \LaTeX3 seit Anfang der Neunziger in Arbeit\dots
       \end{itemize}
     \end{column}
     \begin{column}{0.25\textwidth}
@@ -82,30 +82,7 @@
   Beispiel: \texttt{dvilualatex} = \LuaTeX + \LaTeX + DVI-Output (statt PDF)
 \end{frame}
 
-\begin{frame}
-  \centering
-  \only<1>{
-    \includegraphics[height=0.95\textheight]{figures/engines-few.pdf}
-    \hspace{1.15em}
-  }
-  \only<2,3>{
-    \includegraphics[height=0.95\textheight]{figures/engines-many.pdf}
-  }
-  \begin{tikzpicture}[remember picture,overlay]
-    \tikzset{shift={(current page.center)}}
-    \node at (-4.3,1.3) {
-      \TeX-Engines
-    };
-    \only<3>{
-      \node (here) at (-4.3,-2.8) {
-        Sie sind hier
-      };
-      \draw [->, >=Stealth] (here.east) -- ++(1.55,-0.85);
-    }
-  \end{tikzpicture}
-\end{frame}
-
-\begin{frame}[fragile]{Warum \LuaTeX?}
+\begin{frame}[fragile]{In diesem Kurs: \LuaTeX}
   \begin{itemize}
     \item Unicode-Input
       \begin{itemize}
@@ -122,50 +99,11 @@
             \item Code lesbarer, Tippen schneller
             \end{itemize}
         \item Mehr Font-Möglichkeiten
-          \begin{itemize}
-            \item Umsetzung von ISO 80000-1
-          \end{itemize}
       \end{itemize}
     \item Lua-Programmierung
       \begin{itemize}
         \item \TeX-Programmierung ist nicht besonders einfach
-        \item manche Pakete bieten komplizierte Funktionen nur über Lua an
-          \begin{itemize}
-            \item Graph-Layout von Ti\emph{k}Z (übrigens \emph{kein} Zeichenprogramm)
-          \end{itemize}
+        \item manche Pakete bieten weitergehende Funktionen nur über Lua an
       \end{itemize}
-  \end{itemize}
-\end{frame}
-
-\begin{frame}[t]
-  \centering
-  \only<1>{
-    \includegraphics[height=6.1em]{figures/formats-few.pdf}
-    \hspace{0.5em}
-  }
-  \only<2,3>{
-    \includegraphics[height=0.95\textheight]{figures/formats-many.pdf}
-  }
-  \begin{tikzpicture}[remember picture,overlay]
-    \tikzset{shift={(current page.center)}}
-    \node at (-4.3,2.5) {
-      \TeX-Formate
-    };
-    \only<3>{
-      \node (here) at (-4.3,-0.6) {
-        Sie sind hier
-      };
-      \draw [->, >=Stealth] (here.east) -- ++(3.05,0);
-    }
-  \end{tikzpicture}
-\end{frame}
-
-\begin{frame}{Warum \LaTeX3?}
-  \begin{itemize}
-    \item \LaTeX3 existiert (noch) nicht
-    \item \texttt{expl3} ist \LaTeX3 unter \LaTeXe
-    \item \texttt{xpackages} sind Pakete, die auf \texttt{expl3} aufbauen und neue Möglichkeiten bieten
-    \item \texttt{xparse} macht das schreiben neuer (auch komplizierter) Befehle sehr einfach
-    \item viele Pakete benutzen jetzt schon \texttt{expl3} und \texttt{xparse}
   \end{itemize}
 \end{frame}
