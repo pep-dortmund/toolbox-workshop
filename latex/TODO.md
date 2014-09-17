@@ -1,14 +1,10 @@
 # TODO
 
-* workflow
 * \footnote
-* installation pflegen, tlmgr
-* \NewDocumentCommand, \newcommand (plore)
-  - \TextOrMath, \ensuremath
 * placeins
-* math packages at start of section
-* unicode-math
-* IEEEtrantools
+* math (after environments)
+  - matrices
+  - cases
 * advanced
   - TEXINPUTS, BIBINPUTS
   - --output-directory, --interaction=batchmode, similar for biber
@@ -21,3 +17,10 @@
   - \texorpdfstring
   - jobname
   - eqn, eqns environments
+  - \TextOrMath, \ensuremath
+  - IEEEtrantools
+  - xparse
+  - amsmath
+    - multiline
+    - split
+    - gather
