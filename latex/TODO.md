@@ -5,6 +5,9 @@
 * math (after environments)
   - matrices
   - cases
+  - different parens
+  - \big…
+  - \left, \right (spacing important!)
 * advanced
   - TEXINPUTS, BIBINPUTS
   - --output-directory, --interaction=batchmode, similar for biber
