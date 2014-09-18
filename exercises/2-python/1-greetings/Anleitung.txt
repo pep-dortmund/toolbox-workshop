@@ -1,0 +1,19 @@
+
+# Greetings
+
+1. Aufgabe:
+
+Öffne die Datei "greetings.py".
+Eine Liste von Strings wurde bereits vorbereitet.
+Füge deinen Namen in eine beliebige Stelle der Liste ein.
+Prüfe, ob du alles richtig gemacht hast, indem du das Programm
+mit "python greetings.py" laufen lässt.
+Es sollten keine Fehlermeldungen erscheinen.
+
+2. Aufgabe:
+
+Ergänze das Programm so, dass jeder Name in der Liste einzeln begrüßt wird.
+Dazu kannst du eine for-Schleife benutzen.
+Falls du dir nicht sicher bist was du tun musst kannst du im Skript nachsehen,
+wie for-Schleifen in Python funktionieren.
+

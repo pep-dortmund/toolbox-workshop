@@ -1,0 +1,17 @@
+Schreibe eine Funktion linregress, die eine lineare Regression auf gegebene Datenpunkte anwendet.
+Die lineare Regression ist ein analytischer Fit der Daten an die Funktion y = A * x + B
+
+Dabei gilt (Σ = Summe):
+N = Anzahl Datenpunkte
+Δ = N * Σ(x²) - (Σx)²
+A = (N * Σ(x * y) - (Σx) * (Σy)) / Δ
+B = (Σ(x²) * (Σy) - (Σx) * (Σx * y)) / Δ
+σ_y = sqrt(Σ((y - A * x - B)²) / (N - 2))
+A_error = σ_y * sqrt(N / Δ)
+B_error = σ_y * sqrt((Σx²) / Δ)
+
+Nutze folgendes Gerüst:
+
+def linregress(x, y):
+    …
+    return A, A_error, B, B_error

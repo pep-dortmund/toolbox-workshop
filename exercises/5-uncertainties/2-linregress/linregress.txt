@@ -1,0 +1,10 @@
+Schreibe ein Wrapper für linregress (siehe numpy-linregress.py), der die Ausgabe durch Verwendung von uncertainties vereinfacht.
+
+Dabei sollte ein Array aus A und B zurückgegeben werden, wobei A und B ufloats sind.
+
+Nutze folgendes Gerüst:
+
+def ulinregress(x, y):
+    …
+    … = linregress(x, y)
+    …

@@ -1,0 +1,18 @@
+Schreibe ein Wrapper für scipy.optimize.curve_fit, die Ein- und Ausgabe mittels uncertainties vereinfacht.
+
+Die Funktion sollte es erlauben, fehlerbehaftete y-Werte einzugeben.
+Diese Fehler können im Fit berücksichtigt werden, in dem sie als Keyword-Argument sigma an curve_fit übergeben werden.
+Dabei sollten die Fehler nur verwendet werden, falls keins der Fehler 0 ist, da sonst durch 0 geteilt würde.
+Hier könnte die Funktion numpy.any(array) nützlich sein, die True zurückgibt, falls mindestens eins der Elemente des Arrays True ist.
+
+Die Rückgabe sollte als Array von ufloats erfolgen.
+
+Die Dokumentation von curve_fit könnte nützlich sein:
+http://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.curve_fit.html
+
+Nutze dazu folgendes Gerüst:
+
+def ucurve_fit(f, x, y, **kwargs):
+    …
+    … = scipy.optimize.curve_fit(…, **kwargs)
+    …

@@ -1,0 +1,2 @@
+Fitte die Daten aus daten.txt (x, y, y_err) mit der Funktion f(x) = a * sin(b * x + c) + d.
+Benutze dazu scipy.optimize.curve_fit.

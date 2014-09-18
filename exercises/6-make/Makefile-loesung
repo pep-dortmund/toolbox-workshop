@@ -1,0 +1,4 @@
+all: plot.pdf parameter.txt
+
+plot.pdf parameter.txt: auswertung.py lambda.txt L.txt I.txt
+	python2 auswertung.py
