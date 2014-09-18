@@ -3,6 +3,7 @@
 * \footnote
 * placeins
 * math (after environments)
+  - gather
   - matrices
   - cases
   - different parens
@@ -24,6 +25,7 @@
   - IEEEtrantools
   - xparse
   - amsmath
-    - multiline
+    - multline
     - split
-    - gather
+    - intertext
+    - subequations
