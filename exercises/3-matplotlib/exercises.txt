@@ -1,5 +1,0 @@
-Nachdem wir uns jetzt mit Python, Numpy und SciPy beschäftigt haben, wollen wir das erworbene Wissen in einer kleinen Aufgabe vertiefen.
-
-    1. Verwendet einen for-loop um die Funktion x^n für n von 1 bis 10 im Bereich (x) von 0 bis 1 zu plotten. Gebt dabei jedem Plot ein Label, das n anzeigt.
-
-    2. Plottet die Funktion A * cos(x) für A = -1, -.5, .5, 1 in dasselbe Koordinatensystem und denkt an Labels.
