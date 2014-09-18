@@ -1,14 +1,8 @@
-# encoding: utf-8
-from __future__ import (print_function,
-                        division,
-                        unicode_literals,
-                        absolute_import)
-
 import numpy as np
 import uncertainties.unumpy as unp
 
 def linregress(x, y):
-    N = len(y) # Annahme: len(x) == len(y), sonst kommt während der Rechnung eine Fehlermeldung
+    N = len(y)  # Annahme: len(x) == len(y), sonst kommt während der Rechnung eine Fehlermeldung
     Delta = N * np.sum(x**2) - (np.sum(x))**2
 
     A = (N * np.sum(x * y) - np.sum(x) * np.sum(y)) / Delta

@@ -1,4 +1,3 @@
-
 from uncertainties import ufloat
 from uncertainties.unumpy import sin
 
