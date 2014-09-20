@@ -48,6 +48,10 @@
         \item GUI kann versagen
       \end{itemize}
     \item GUIs sind nicht böse oder schlecht, man muss nur wissen, was dahinter steckt
+    \item In der Kommandozeile ist alles automatisierbar
+      \begin{itemize}
+        \item Wenn man etwas zum dritten Mal tut, sollte man ein Skript dafür schreiben
+      \end{itemize}
   \end{itemize}
 \end{frame}
 
@@ -145,4 +149,21 @@
     *.log           & → & \texttt{foo.log bar.log} \\
     foo.\{tex,pdf\} & → & \texttt{foo.tex foo.pdf}
   \end{tabu}
+\end{frame}
+
+\begin{frame}{Shell-Skripte}
+  \begin{itemize}
+    \item Datei enthält Befehle
+    \item Selbe Syntax wie Kommandozeile
+    \item Endung: keine oder \texttt{.sh}
+    \item Ausführung:
+      \begin{itemize}
+        \item \texttt{bash \textit{skript}}
+        \item \texttt{./\textit{skript}} (mit Shebang)
+      \end{itemize}
+    \item Shebang: erste Zeile enthält Pfad des Interpreters (muss absolut sein)
+      \begin{itemize}
+        \item \texttt{\#!/bin/bash}
+      \end{itemize}
+  \end{itemize}
 \end{frame}

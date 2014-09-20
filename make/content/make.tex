@@ -42,18 +42,30 @@
   \end{description}
 \end{frame}
 
-\begin{frame}[shrink]{Beispiel}
-  \texttt{\footnotesize
-    all: report.pdf\\[0.3cm]
-    plot.pdf: plot.py daten.txt\\
-    \hspace{1cm} python2 plot.py\\[0.3cm]
-    report.pdf: report.tex plot.pdf\\
-    \hspace{1cm} latex report.tex\\[0.3cm]
-  }
+\begin{frame}[fragile]{Beispiel}
+  \begin{verbatim}
+    all: report.pdf
+
+    plot.pdf: plot.py daten.txt
+        python plot.py
+
+    report.pdf: report.tex plot.pdf
+        lualatex report.tex
+  \end{verbatim}
 
   \begin{itemize}
     \item wenn nur \texttt{make} gestartet wird, wird der erste Target erstellt, hier \texttt{all}; um ein anderes Target zu erstellen, startet man \texttt{make \textit{target}}
     \item \texttt{all} braucht \texttt{report.pdf}, also wird \texttt{latex report.tex} ausgeführt
     \item \texttt{report.pdf} braucht noch \texttt{plot.pdf}, also wird Python ausgeführt
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Motivation}
+  \begin{itemize}
+    \item Automatisierung verhindert Fehler
+    \item Dient als Dokumentation
+    \item Reproduzierbarkeit unverzichtbar in der Wissenschaft
+    \item Idealfall: Eingabe von \texttt{make} erstellt komplettes Protokoll/Paper aus Daten
+    \item Spart Zeit, da nur nötige Operationen ausgeführt werden
   \end{itemize}
 \end{frame}
