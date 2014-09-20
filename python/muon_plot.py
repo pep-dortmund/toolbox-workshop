@@ -59,8 +59,8 @@ ax.annotate("Fehlerrechnung: uncertainties", xy=(t[20],N[20]),
 
 proxy = Rectangle((0,0),0,0, color='r', alpha=0.3, linewidth=0)
 
-ax.legend([data, fit, proxy], ["Messwerte", "Fit", "$1\sigma$-Umgebung"], loc="best")
-ax.set_xlabel(r"$t/\upmu$s")
+ax.legend([data, fit, proxy], ["Messwerte", "Fit", r"$1\sigma$-Umgebung"], loc="best")
+ax.set_xlabel(r"$t/\si{\micro\second}$")
 ax.set_ylabel(r"Zählrate")
 ax.set_xlim(0,11)
 fig.tight_layout()
