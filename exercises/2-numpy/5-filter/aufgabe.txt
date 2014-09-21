@@ -1,0 +1,9 @@
+
+Aufgabe: Filter
+
+In der Datei "data.txt" befinden sich Datenpunkte (genannt x und y).
+Berechne Mittelwert und Standardabweichung aller y-Werte, deren
+x-Wert größer als 0 ist.
+
+Nutze dazu Funktionen aus Numpy.
+
