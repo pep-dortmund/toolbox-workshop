@@ -1,0 +1,2 @@
+loesung.pdf: loesung.py linregress.py Delta_t.txt Delta_t_0.txt N_0.txt N_g.txt
+	python loesung.py

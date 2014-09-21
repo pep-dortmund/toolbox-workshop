@@ -1,0 +1,2 @@
+loesung-log.pdf loesung-polar.pdf: loesung.py impedanz.txt geraetedaten.txt
+	python loesung.py

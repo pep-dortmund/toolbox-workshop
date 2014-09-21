@@ -1,4 +1,3 @@
-
 # "Fizzbuzz"
 
 Eine Beliebte Aufgabe in Bewerbungs-Interviews für Programmierer.
@@ -12,4 +11,3 @@ Ist eine Zahl sowohl durch 3 als auch durch 5 teilbar, so gebe stattdessen "Fizz
 
 Tipp: Eine Zahl n ist durch eine andere Zahl x teilbar,
 wenn ihr Divisionsrest 0 ist: n % x == 0
-

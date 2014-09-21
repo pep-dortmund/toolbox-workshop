@@ -1,5 +1,4 @@
-
-In den Ordnern 1 bis 7 liegen Plots als PDF-Dateien.
+In den Ordnern 1 bis 5 liegen Plots als PDF-Dateien.
 
 Aufgabe:
 Schreibt in jedem Ordner ein Skript, das den entsprechenden Plots erzeugt.

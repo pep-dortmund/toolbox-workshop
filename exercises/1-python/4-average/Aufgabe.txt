@@ -1,0 +1,4 @@
+Aufgabe: average
+
+In der beiligenden Python-Datei ist eine Liste mit Zahlen vorbereitet.
+Berechne ihren arithmetischen Mittelwert und gebe ihn aus.
