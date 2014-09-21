@@ -2,10 +2,14 @@ DOCUMENTS := exercises git intro latex make python unix
 
 all:
 	for document in $(DOCUMENTS) ; do \
-		make -C "$$document" ; \
+		if [ -e "$$document/Makefile" ] ; then \
+			make -C "$$document" ; \
+		fi ; \
 	done
 
 clean:
 	for document in $(DOCUMENTS) ; do \
-		make -C "$$document" clean ; \
+		if [ -e "$$document/Makefile" ] ; then \
+			make -C "$$document" clean ; \
+		fi ; \
 	done
