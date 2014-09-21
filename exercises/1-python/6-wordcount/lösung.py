@@ -1,6 +1,4 @@
 
-from io import open
-
 words = open('text.txt').read().split()
 
 counts = dict()
