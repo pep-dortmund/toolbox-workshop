@@ -1,5 +1,5 @@
-
-words = open('text.txt').read().split()
+with open('text.txt') as f:
+    words = f.read().split()
 
 counts = dict()
 
@@ -12,6 +12,5 @@ for word in words:
 
 result = sorted(counts.items(), key=lambda x: x[1], reverse=True)
 
-for r in result:
-    print("{}: {}".format(*r))
-
+for key, count in result:
+    print("{}: {}".format(key, count))

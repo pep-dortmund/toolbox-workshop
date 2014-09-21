@@ -6,4 +6,5 @@ for A in (-1, -.5, .5, 1):
     plt.plot(x, A * np.cos(x), label='$A = {}$'.format(A))
 plt.legend()
 plt.xlim(0, 2 * np.pi)
+plt.tight_layout()
 plt.savefig('loesung.pdf')

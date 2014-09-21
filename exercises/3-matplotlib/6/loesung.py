@@ -7,4 +7,5 @@ for n in range(1, 11):
     plt.plot(x, x**n, label='$x^{{{}}}$'.format(n))
 
 plt.legend(loc='upper left')
+plt.tight_layout()
 plt.savefig('loesung.pdf')

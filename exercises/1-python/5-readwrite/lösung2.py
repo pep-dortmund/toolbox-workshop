@@ -1,5 +1,2 @@
-
-f = open('test.txt', 'w')
-f.write(str(42))
-f.close()
-
+with open('test.txt', 'w') as f:
+    f.write(str(42))

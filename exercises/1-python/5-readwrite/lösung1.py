@@ -1,5 +1,2 @@
-
-f = open('test.txt')
-print(f.read())
-f.close()
-
+with open('test.txt') as f:
+    print(f.read())

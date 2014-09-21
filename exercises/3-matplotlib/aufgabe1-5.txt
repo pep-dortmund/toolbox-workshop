@@ -1,7 +1,7 @@
 In den Ordnern 1 bis 5 liegen Plots als PDF-Dateien.
 
 Aufgabe:
-Schreibt in jedem Ordner ein Skript, das den entsprechenden Plots erzeugt.
+Schreibt in jedem Ordner ein Skript, das den entsprechenden Plot erzeugt.
 In der Datei 'loesung.py' liegt die Musterlösung.
 
 Manchmal befinden sich .txt-Dateien im Ordner. Diese enthalten entweder
