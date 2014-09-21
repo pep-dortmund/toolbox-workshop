@@ -23,3 +23,10 @@ Wie kann man die Datei nach Benutzung wieder schließen?
 Warum ist es bei dieser Aufgabe nicht wichtig, ob die Datei geschlossen wird?
 Wann ist es wichtig?
 
+Um nicht zu vergessen, eine Datei zu schließen, bietet Python die folgende Syntax:
+
+with open('test.txt') as f:
+    # f verwenden
+
+Die Datei wird dann geschlossen, sobald der with-Block verlassen wird.
+
