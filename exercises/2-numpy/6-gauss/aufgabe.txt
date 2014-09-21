@@ -1,0 +1,12 @@
+
+Aufgabe: gauss
+
+Erstelle 1000 gaußverteilte Werte mit Mittelwert 1 und Standardabweichung 2.
+Berechne die Summer aller Werte und gebe sie aus.
+
+Informiere dich in der Numpy-Dokumentation
+
+http://docs.scipy.org/doc/numpy/reference/
+
+wie man mit Numpy Zufallszahlen erstellen kann (Tipp: das Modul "random").
+
