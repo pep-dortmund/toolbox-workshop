@@ -1,4 +1,4 @@
-DOCUMENTS := git exercises latex make python unix
+DOCUMENTS := exercises git intro latex make python unix
 
 all:
 	for document in $(DOCUMENTS) ; do \
