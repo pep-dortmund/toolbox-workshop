@@ -8,7 +8,7 @@ https://docs.python.org/3/
 Versuche herauszufinden, wie man eine Datei in Python öffnet.
 Schlage außerdem nach, wie man Text aus einer Datei ausliest oder in eine Datei schreibt.
 
-Tipp: Das Modul "io" enthält die Funktionen zum Zugriff auf Dateien.
+Tipp: Suche nach Informationen zur Funktion "open()".
 
 1. Lesen
 Schreibe ein Python-Skript, welches den Inhalt der Datei "text.txt" ausgibt.
