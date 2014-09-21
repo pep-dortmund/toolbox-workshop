@@ -1,12 +1,16 @@
 CATEGORIES := 1-python 2-numpy 3-matplotlib 4-uncertainties 5-make 6-git 7-all
 
-all:
+all: package
+
+exercises:
 	for category in $(CATEGORIES) ; do \
-		make -C "$$category" ; \
+		if [ -e "$$category/Makefile" ] ; then \
+			make -C "$$category" ; \
+		fi ; \
 	done
 
-package: all
-	rm -rf build/exercises
+package: exercises
+	rm -rf build
 	mkdir -p build/exercises
 	cp -r $(CATEGORIES) build/exercises
 	rm build/exercises/*/Makefile
