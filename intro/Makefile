@@ -2,10 +2,22 @@ include ../common/common.mk
 
 FIGURES := $(addprefix build/figures/, $(addsuffix .pdf, os programming interest))
 
-build/intro.pdf: $(FIGURES) $(addprefix build/figures/, matplotlib.png sympy.png scipy.png numpy.png)
+build/intro.pdf: $(FIGURES) $(addprefix build/figures/, editors.jpg vim.png emacs.png real_programmers.png matplotlib.png sympy.png scipy.png numpy.png)
 
 $(FIGURES): script/answers.py data/answers.tsv
 	python3 $<
+
+build/figures/editors.jpg: | build/figures
+	wget http://www.manuelmagic.me/resources/Geek/Text-editors/text_editors.jpg -O $@ --no-use-server-timestamps
+
+build/figures/vim.png: | build/figures
+	wget https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/Vimlogo.svg/500px-Vimlogo.svg.png -O $@ --no-use-server-timestamps
+
+build/figures/emacs.png: | build/figures
+	wget https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Emacs-logo.svg/500px-Emacs-logo.svg.png -O $@ --no-use-server-timestamps
+
+build/figures/real_programmers.png: | build/figures
+	wget http://imgs.xkcd.com/comics/real_programmers.png -O $@ --no-use-server-timestamps
 
 build/figures/matplotlib.png: | build/figures
 	wget https://upload.wikimedia.org/wikipedia/en/thumb/5/56/Matplotlib_logo.svg/500px-Matplotlib_logo.svg.png -O $@ --no-use-server-timestamps
