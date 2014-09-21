@@ -46,8 +46,8 @@ interest[interest == 'Zusammenarbeit mittels Versionskontrolle (git)'] = 'git'
 interest = interest.value_counts()
 
 fig, ax = plt.subplots(1, 1)
-pos = np.arange(len(interest)) - 0.5
-ax.barh(pos, interest.values)
+pos = np.arange(len(interest))
+ax.barh(pos, interest.values, align='center')
 ax.set_yticklabels([''] + list(interest.keys()))
 fig.tight_layout()
 fig.savefig('build/figures/interest.pdf')
