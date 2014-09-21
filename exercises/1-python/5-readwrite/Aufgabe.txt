@@ -1,0 +1,25 @@
+
+Aufgabe: read write
+
+Öffne die Python-Dokumentation unter
+
+https://docs.python.org/3/
+
+Versuche herauszufinden, wie man eine Datei in Python öffnet.
+Schlage außerdem nach, wie man Text aus einer Datei ausliest oder in eine Datei schreibt.
+
+Tipp: Das Modul "io" enthält die Funktionen zum Zugriff auf Dateien.
+
+1. Lesen
+Schreibe ein Python-Skript, welches den Inhalt der Datei "text.txt" ausgibt.
+Teste dein Skript mit einer Beispieldatei.
+
+2. Schreiben
+Schreibe ein Python-Skript, welches die Zahl "42" in die Datei "text.txt" schreibt
+und nutze das Skript aus 1. um dein Programm zu testen.
+
+Bonus:
+Wie kann man die Datei nach Benutzung wieder schließen?
+Warum ist es bei dieser Aufgabe nicht wichtig, ob die Datei geschlossen wird?
+Wann ist es wichtig?
+
