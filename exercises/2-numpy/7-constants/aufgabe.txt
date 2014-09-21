@@ -1,0 +1,21 @@
+
+Aufgabe: constants
+
+Scipy enthält die CODATA2010-Datenbank mit physikalischen Konstanten.
+Das Modul scipy.constants enthält die Funktion 'find()', die es einem
+erlaubt, alle Konstanten zu finden, die einen gegebenen String als Teil
+ihres Namens haben.
+
+Teste die Funktion, indem du versuchst folgende Konstanten
+zu finden und ihre Werte mit print() auszugeben:
+
+ - Planck-Konstante
+ - Masse des Elektrons
+ - Schwacher Mischungswinkel
+ - Boltzmann-Konstante
+ - G-Faktor des Elektrons
+
+Das Modul scipy.constants ist hier dokumentiert:
+
+    http://docs.scipy.org/doc/scipy/reference/constants.html
+
