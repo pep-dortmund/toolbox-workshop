@@ -19,6 +19,7 @@ package: exercises
 	cp -r 7-all build/exercises-5
 	cp -r 8-latex build/exercises-latex
 	rm -f build/exercises-{1,2,3,4,5,latex}/*/Makefile
+	rm -f build/exercises-{1,2,3,4,5,latex}/*/*/Makefile
 	rm -f build/exercises-{1,2,3,4,5,latex}/*/.gitignore
 	rm -f build/exercises-{1,2,3,4,5,latex}/*/*/.gitignore
 	rm -rf build/exercises-{1,2,3,4,5,latex}/*/*/__pycache__

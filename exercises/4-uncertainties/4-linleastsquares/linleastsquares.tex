@@ -51,28 +51,30 @@ minimal ist, der Funktionsgraph also minimal von den Datenpunkten abweicht.
             \vec{y} = (y_1, y_2, …, y_N)^\mathrm{T} \ ,
         \end{equation}
         der die $y$-Koordinaten unserer Messwerte enthält.
+    \item Die Korrelationsmatrix der Messwerte sei $\mathbf{W}$ und $\mathbf{Z} = \mathbf{W}^{-1}$.
     \item der Parametervektor $\vec{a}$ ergibt sich dann zu:
         \begin{equation}
-            \vec{a} = \left(\mathbf{A}^T \mathbf{A}\right)^{-1} \cdot \mathbf{A}^T \cdot \vec{y}
+            \vec{a} = \left(\mathbf{A}^T \mathbf{Z} \mathbf{A}\right)^{-1} \cdot \mathbf{A}^T \mathbf{Z} \cdot \vec{y}
         \end{equation}
 
-    \item Die Kovarianzmatrix ergibt sich im Falle für gleiche Fehler aller $y_i$ mit dem Wert $\sigma$ zu:
+    \item Die Kovarianzmatrix ergibt sich zu:
         \begin{equation}
-            \mathbf{V} = \sigma^2 \left(\mathbf{A}^T \mathbf{A}\right)^{-1}
+            \mathbf{V} = \left(\mathbf{A}^T \mathbf{Z} \mathbf{A}\right)^{-1}
         \end{equation}
 \end{enumerate}
 Wer sich für die Herleitung interessiert: Blobel-Lohrmann: \enquote{Statistische und numerische Methoden der Datenanalyse} bzw. SMD-Vorlesung.
+Alternativ auch bei Wikipedia: \url{https://en.wikipedia.org/wiki/Linear_least_squares_(mathematics)}
 
 \subsection*{Aufgaben}
 \begin{enumerate}
     \item Implementiert eine Funktion, die eine Liste von Funktionen und die $x$ und $y$ Werte übergeben bekommt und die lineare Methode der kleinsten Quadrate anwendet. 
-        Die Funktion soll den Parametervektor und die Kovarianzmatrix zurückgeben.
+        Die Funktion soll den Parametervektor als Array von korrelierten \texttt{ufloat}s zurückgeben.
     \item Testet eure Funktion indem ihr einen Fit der Form
         \begin{equation}
             \Psi(x) = a_1 \cos(x) + a_2 \sin(x)
         \end{equation}
         an die Daten in der Datei \texttt{daten.txt} durchführt.
-        Der Fehler der $y_i$ soll mit \num{0.1} angenommen werden.
+        Der Fehler der $y_i$ soll als $\sigma = \num{0.1}$ angenommen werden.
 \end{enumerate}
 
 \subsection*{Tipps}
