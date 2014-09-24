@@ -115,6 +115,28 @@
   \end{itemize}
 \end{frame}
 
+\begin{frame}[fragile]{Expert}
+  Mehrere unabhängige Auswertungen: könnte man sie parallel ausführen? \\
+  Ja! \texttt{make -j4} (4 Prozesse gleichzeitig)
+
+  \begin{verbatim}
+    plot1.pdf plot2.pdf: plot.py data.txt
+        python plot.py
+  \end{verbatim}
+
+  Problem: \texttt{make} führt \texttt{plot.py} gleichzeitig zweimal aus
+
+  Lösung: manuell synchronisieren
+
+  \begin{verbatim}
+    plot1.pdf plot2.pdf: plot.sync
+
+    plot.sync: plot.py data.txt
+        python plot.py
+        touch plot.sync
+  \end{verbatim}
+\end{frame}
+
 \begin{frame}{Motivation}
   \begin{itemize}
     \item Automatisierung verhindert Fehler
