@@ -4,14 +4,23 @@
   Das \texttt{siunitx}-Paket
   \hfill\doc{http://mirrors.ctan.org/macros/latex/contrib/siunitx/siunitx.pdf}{siunitx}
 }
-  Dieses Paket sollte immer und für jede Zahl mit oder ohne Einheit verwendet werden.
-
+\begin{itemize}
+    \item Einheiten werden aufrecht gesetzt
+    \item zwischen Zahl und Einheit steht ein kleines Leerzeichen \verb+\,+
+    \item \texttt{siunitx} stellt Befehle zur Verfügung, die das korrekte Setzen von Zahlen und Einheiten stark vereinfachen
+    \item[$\Rightarrow$] Dieses Paket sollte immer und für jede Zahl mit oder ohne Einheit verwendet werden.
+\end{itemize}
   \begin{block}{benötigte Pakete}
     \begin{lstverbatim}
-    \usepackage[locale=DE, separate-uncertainty=true, per-mode=fraction]
-    {siunitx}
+    \usepackage[locale=DE,
+                separate-uncertainty=true,  % Immer Fehler mit ±
+                per-mode=symbol-or-fraction, % m/s im Text, sonst Bruch
+            ]{siunitx}
     \end{lstverbatim}
   \end{block}
+\end{frame}
+
+\begin{frame}[fragile]{ Das \texttt{siunitx}-Paket }
   \begin{columns}[T]
     \begin{column}{0.6\textwidth}
       \begin{block}{\LaTeX-Code}
