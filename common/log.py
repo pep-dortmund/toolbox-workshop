@@ -205,6 +205,11 @@ def filter_biblatex_rerun_biber(message):
         exit_code |= 4
     return message
 
+def filter_csquotes_polyglossia(message):
+    if message["type"] == "latex2/warning" and message["message"][0] == "Package csquotes Warning: Using preliminary 'polyglossia' interface.":
+        return None
+    return message
+
 exit_code = 0
 
 filters = [
@@ -213,6 +218,7 @@ filters = [
         filter_biblatex_footnotes,
         filter_latex2_rerun_tex,
         filter_biblatex_rerun_biber,
+        filter_csquotes_polyglossia,
         ]
 
 messages_copy = list(messages)
