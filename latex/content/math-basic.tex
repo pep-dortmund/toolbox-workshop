@@ -1,72 +1,62 @@
 \begin{frame}[fragile]{\$\dots\$-Umgebung}
-  Für mathematische Symbole, Variablen und kleine Formeln im Fließtext.
+  Aktiviert den Mathematikmodus im Fließtext. 
 
-  \begin{columns}[T]
-    \begin{column}{0.6\textwidth}
-      \begin{block}{\LaTeX-Code}
+  \begin{columns}[t]
+      \begin{column}{0.55\textwidth}
+          \begin{block}{Code}
+              \begin{lstverbatim}
+                Dies ist eine Variable: $x$. 
+                Liste von Variablen $x$, $y$, $z$.
+                Kleine Formel: $a^2 + b^2 = c^2$.
+                Vorsicht Höhe: $x^{2^2}$ $\frac{1}{2}$
+              \end{lstverbatim}
+          \end{block}
+      \end{column}
+      \begin{column}{0.4\textwidth}
+          \begin{block}{Ergebnis}
+                Dies ist eine Variable: $x$. \\
+                Liste von Variablen $x$, $y$, $z$. \\
+                kleine Formel: $a^2 + b^2 = c^2$. \\
+                Vorsicht Höhe: $x^{2^2}$ $\frac{1}{2}$
+          \end{block}
+      \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}[fragile]{Griechisch und mehr}
+  \begin{columns}[onlytextwidth,T]
+    \begin{column}{0.7\textwidth}
+      \begin{block}{Code}
         \begin{lstverbatim}
-        foo $x$ bar
-        $x^i$
-        $x^12$ bzw. $x^{12}$ % Vorsicht
-        $x_\text{max}$
-        $x_\frac{1}{2}$ bzw. $x_{\frac{1}{2}}$
-        $U(t) = U_0 \cdot \cos(\omega t)$
+        \alpha \beta \gamma \delta \epsilon \zeta \eta \theta \iota \kappa \lambda \mu \nu \xi \omicron \pi \rho \sigma \tau \upsilon \phi \chi \psi \omega
+        \varepsilon \vartheta \varkappa \varpi \varrho \varsigma \varphi
+        \Alpha \Beta \Gamma \Delta \Epsilon \Zeta \Eta \Theta \Iota \Kappa \Lambda \Mu \Nu \Xi \Omicron \Pi \Rho \Sigma \Tau \Upsilon \Phi \Chi \Psi \Omega
+        \hbar \imath \jmath \ell \wp
+        \aleph \beth \gimel
+        \partial \eth \nabla \square \increment \infty
         \end{lstverbatim}
       \end{block}
     \end{column}
-    \begin{column}{0.35\textwidth}
+    \begin{column}{0.26\textwidth}
       \begin{block}{Ergebnis}
-        foo $x$ bar \\
-        $x^i$ \\
-        $x^12$ bzw.\ $x^{12}$ \\
-        $x_\text{max}$ \\
-        Fehler! bzw.\ $x_{\frac{1}{2}}$ \\
-        $U(t) = U_0 \cdot \cos(\omega t)$
+        \Umathordordspacing\textstyle=4mu
+        $\alpha \beta \gamma \delta \epsilon \zeta \eta$ \\
+        $\quad \theta \iota \kappa \lambda \mu \nu \xi$ \\
+        $\quad \omicron \pi \rho \sigma \tau \upsilon \phi$ \\
+        $\quad \chi \psi \omega$ \\
+        $\varepsilon \vartheta \varkappa \varpi \varrho$ \\
+        $\quad \varsigma \varphi$ \\
+        $\Alpha \Beta \Gamma \Delta \Epsilon \Zeta \Eta$ \\
+        $\quad \Theta \Iota \Kappa \Lambda \Mu \Nu \Xi$ \\
+        $\quad \Omicron \Pi \Rho \Sigma \Tau \Upsilon \Phi$ \\
+        $\quad \Chi \Psi \Omega$ \\
+        $\hbar \imath \jmath \ell \wp$ \\
+        $\aleph \beth \gimel$ \\
+        $\partial \eth \nabla \square \increment \infty$
       \end{block}
     \end{column}
   \end{columns}
-
-  \vspace{10pt}
-  Aufpassen, dass die Formel nicht zu hoch ist. \\
-  Das sieht nicht gut aus $\frac{1^{\frac{1}{2}}}{2}$. \\
-  Das auch nicht $\smash{\frac{1^{\frac{1}{2}}}{2}}$. Mehr Text für den Effekt. \\
-  Mehr Text für den Effekt.
 \end{frame}
-
-% \begin{frame}[fragile]{Griechisch und mehr}
-%   \begin{columns}[onlytextwidth,T]
-%     \begin{column}{0.7\textwidth}
-%       \begin{block}{Code}
-%         \begin{lstverbatim}
-%         \alpha \beta \gamma \delta \epsilon \zeta \eta \theta \iota \kappa \lambda \mu \nu \xi \omicron \pi \rho \sigma \tau \upsilon \phi \chi \psi \omega
-%         \varepsilon \vartheta \varkappa \varpi \varrho \varsigma \varphi
-%         \Alpha \Beta \Gamma \Delta \Epsilon \Zeta \Eta \Theta \Iota \Kappa \Lambda \Mu \Nu \Xi \Omicron \Pi \Rho \Sigma \Tau \Upsilon \Phi \Chi \Psi \Omega
-%         \hbar \imath \jmath \ell \wp
-%         \aleph \beth \gimel
-%         \partial \eth \nabla \square \increment \infty
-%         \end{lstverbatim}
-%       \end{block}
-%     \end{column}
-%     \begin{column}{0.26\textwidth}
-%       \begin{block}{Ergebnis}
-%         \Umathordordspacing\textstyle=4mu
-%         $\alpha \beta \gamma \delta \epsilon \zeta \eta$ \\
-%         $\quad \theta \iota \kappa \lambda \mu \nu \xi$ \\
-%         $\quad \omicron \pi \rho \sigma \tau \upsilon \phi$ \\
-%         $\quad \chi \psi \omega$ \\
-%         $\varepsilon \vartheta \varkappa \varpi \varrho$ \\
-%         $\quad \varsigma \varphi$ \\
-%         $\Alpha \Beta \Gamma \Delta \Epsilon \Zeta \Eta$ \\
-%         $\quad \Theta \Iota \Kappa \Lambda \Mu \Nu \Xi$ \\
-%         $\quad \Omicron \Pi \Rho \Sigma \Tau \Upsilon \Phi$ \\
-%         $\quad \Chi \Psi \Omega$ \\
-%         $\hbar \imath \jmath \ell \wp$ \\
-%         $\aleph \beth \gimel$ \\
-%         $\partial \eth \nabla \square \increment \infty$
-%       \end{block}
-%     \end{column}
-%   \end{columns}
-% \end{frame}
 
 \begin{frame}{Operatoren}
 \end{frame}
@@ -180,17 +170,19 @@
   \begin{itemize}
     \item Variablen werden kursiv gesetzt.
       Dies geschieht im Mathematikmodus automatisch.
-    \item Einheiten werden aufrecht gesetzt und haben ein kleines Leerzeichen (\verb+\,+) Abstand zu ihrer Zahl.
       Am besten benutzt man hierfür immer \texttt{siunitx}.
-    \item Die eulersche Zahl $\mathrm{e}$, das imaginäre $\mathrm{i}$ und das infinitesimale $\mathrm{d}$ werden ebenfalls aufrecht gesetzt.
+  \item Die eulersche Zahl $\mathup{e}$, das imaginäre $\mathup{i}$, die Kreiszahl $\mathup{\pi}$ und das infinitesimale $\mathup{d}$ werden ebenfalls aufrecht gesetzt.
       Im Mathematikmodus erreicht man dies mit
       \begin{lstverbatim}
-      \mathrm{e}, \mathrm{d}, \mathrm{i}.
+          \mathup{e}, \mathup{d}, \mathup{\pi}, \mathup{i}.
       \end{lstverbatim}
     \item Bestehen Indizes aus Text, wie min oder max, so wird dies ebenfalls aufrecht gesetzt.
       \begin{lstverbatim}
       x_\text{min}
       \end{lstverbatim}
     \item ein $\mathrm{d}x$ sollte durch ein kleines Leerzeichen (\verb+\,+) vom Integranden abgetrennt werden.
+        \begin{equation}
+            \int_0^1 \int_0^{\mathup{\pi}} \int_0^{2\mathup{\pi}} r^2 \sin(\vartheta)\, \mathup{d}\phi\, \mathup{d}\vartheta \, \mathup{d}r = \frac{4}{3}\mathup{\pi}
+        \end{equation}
   \end{itemize}
 \end{frame}
