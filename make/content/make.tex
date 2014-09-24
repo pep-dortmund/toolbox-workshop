@@ -36,9 +36,9 @@
     \hspace{1cm} recipe}
   \end{block}
   \begin{description}
-    \item[\texttt{target}] Datei(en), die von dieser Rule erzeugt wird
-    \item[\texttt{prerequisites}] Dateien, von denen diese Rule abhängt
-    \item[\texttt{recipe}] Befehle: \texttt{prerequisites} → \texttt{target} (mit Tab eingerückt)
+    \item[\texttt{\hphantom{prerequisites}\llap{target}}] Datei(en), die von dieser Rule erzeugt wird
+    \item[\texttt{prerequisites}]                         Dateien, von denen diese Rule abhängt
+    \item[\texttt{\hphantom{prerequisites}\llap{recipe}}] Befehle: \texttt{prerequisites} → \texttt{target} (mit Tab eingerückt)
   \end{description}
 \end{frame}
 
@@ -46,17 +46,47 @@
   \begin{verbatim}
     all: report.pdf
 
-    plot.pdf: plot.py daten.txt
+    plot.pdf: plot.py data.txt
         python plot.py
 
-    report.pdf: report.tex plot.pdf
+    report.pdf: report.tex
         lualatex report.tex
+
+    report.pdf: plot.pdf
   \end{verbatim}
 
   \begin{itemize}
     \item wenn nur \texttt{make} gestartet wird, wird der erste Target erstellt, hier \texttt{all}; um ein anderes Target zu erstellen, startet man \texttt{make \textit{target}}
+      \begin{itemize}
+        \item nützlich, wenn man Plot bearbeitet: \texttt{make plot.pdf}
+      \end{itemize}
     \item \texttt{all} braucht \texttt{report.pdf}, also wird \texttt{latex report.tex} ausgeführt
     \item \texttt{report.pdf} braucht noch \texttt{plot.pdf}, also wird Python ausgeführt
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Funktionsweise}
+  \begin{center}
+    \begin{tikzpicture}
+      \graph [grow down, branch right sep] {
+        "all" -> "report.pdf" -> {
+          "report.tex",
+          "plot.pdf" -> {
+            "plot.py", "data.txt"
+          },
+          "plot2.pdf" -> {
+            "plot2.py", "data.txt", "data2.txt"
+          },
+        },
+      };
+    \end{tikzpicture}
+  \end{center}
+
+  \begin{itemize}
+    \item Abhängigkeiten bilden einen DAG (directed acyclic graph)
+    \item Dateien werden neu erstellt, falls sie nicht existieren oder älter als ihre Prerequisites sind
+    \item Prerequisites werden zuerst erstellt
+    \item top-down Vorgehen
   \end{itemize}
 \end{frame}
 
