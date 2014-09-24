@@ -1,5 +1,25 @@
 \section{Text erstellen}
 
+\begin{frame}[fragile]{Text schreiben}
+    \begin{block}{Beispiel}
+        \begin{lstverbatim}
+            \documentclass[…]{scrartcl}
+            %Präambel
+            \begin{document}
+            Hallo Welt!
+
+            Dies ist ein dummer Beispieltext.
+            Er soll zeigen, dass LaTeX sich nicht für
+            Zeilenumbrüche im Code    oder    zuviele
+            Leerzeichen kümmert.
+
+            Ein Absatz wird mit einer leeren Code-Zeile 
+            markiert.
+            \end{document}
+        \end{lstverbatim}
+    \end{block}
+\end{frame}
+
 \begin{frame}[fragile]{Konventionen für Text}
   \begin{itemize}
     \item höchstens ein Satz pro Code-Zeile
@@ -48,7 +68,7 @@
   In der Matheumgebung statt \verb+\textxx+ einfach \verb+\mathxx+, z.B. \verb+\mathrm+.
 \end{frame}
 
-\begin{frame}[fragile]{Textgrößen}
+\begin{frame}[fragile]{Schriftgrößen}
   Gelten immer für den aktuellen Block, z.B. in einer Umgebung oder zwischen \{\dots\}
   \begin{columns}[t]
     \begin{column}{0.47\textwidth}
@@ -104,7 +124,7 @@
   So macht man es richtig:
   \begin{block}{Paket}
     \begin{lstverbatim}
-    \usepackage[autostyle]{csquotes} % nach babel
+    \usepackage[autostyle]{csquotes} % polyglossia 
     \end{lstverbatim}
   \end{block}
   \begin{columns}[onlytextwidth,t]
@@ -113,8 +133,8 @@
         \begin{lstverbatim}
         foo \enquote{bar} baz
         \enquote{foo \enquote{bar} baz}
-        \selectlanguage{english} \enquote{foo}
-        \selectlanguage{french} \enquote{foo}
+        \textenglish{\enquote{foo}}
+        \textfrench{\enquote{foo}}
         \textcquote{root}{foo}
         \end{lstverbatim}
       \end{block}
@@ -123,8 +143,8 @@
       \begin{block}{Ergebnis}
         foo \enquote{bar} baz \\
         \enquote{foo \enquote{bar} baz} \\
-        \selectlanguage{english} \enquote{foo} \\
-        \selectlanguage{french} \enquote{foo} \\
+        \textenglish{\enquote{foo}} \\
+        \textfrench{ \enquote{foo}} \\
         \textcquote{root}{foo}
       \end{block}
     \end{column}

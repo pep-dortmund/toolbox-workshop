@@ -80,15 +80,47 @@
       \end{block}
     \end{column}
     \begin{column}{0.47\textwidth}
-      \begin{block}{Eigenschaften}
-        \begin{itemize}
-          \item Umgebungen können verschachtelt werden
-          \item Umgebungen können \alert{nicht} verschränkt werden
-        \end{itemize}
+      \begin{block}{Beispiel}
+        \begin{lstverbatim}
+        \begin{flushright}
+            …
+        \end{flushright}
+        \end{lstverbatim}
       \end{block}
     \end{column}
   \end{columns}
 \end{frame}
+
+\begin{frame}[fragile]{Syntax: Umgebungen}
+    Umgebungen können weitere Umgebungen enthalten, diese müssen 
+    aber in dieser Umgebung wieder geschlossen werden.
+    \begin{columns}[t]
+        \begin{column}{0.47\textwidth}
+            \begin{block}{Geht:}
+                \begin{lstverbatim}
+                \begin{document}
+                    \begin{flushright}
+                        …
+                    \end{flushright}
+                \end{document}
+                \end{lstverbatim}
+            \end{block}
+        \end{column}
+        \begin{column}{0.47\textwidth}
+            \begin{alertblock}{Geht nicht:}
+                \begin{lstverbatim}
+                    \begin{itemize}
+                        \begin{enumerate}
+                    \end{itemize}
+                        \end{enumerate}
+                \end{lstverbatim}
+            \end{alertblock}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+
+
 
 \begin{frame}[fragile]{Standardpakete}
   Die hier aufgezählten Pakete sollten immer geladen werden, da sie wesentliche Funktionen bieten und wichtige Einstellungen vornehmen.
@@ -135,19 +167,18 @@
     \begin{lstverbatim}
     \documentclass[
       captions=tableheading,  % Spacing für Tabellenüberschriften
-      titlepage=firstiscover, % Titleseite ist Deckblatt
+      titlepage=firstiscover, % Titelseite ist Deckblatt
+      bibliography=totoc,     % Literatur im Inhaltsverzeichnis
     ]{scrartcl}
     \end{lstverbatim}
   \end{block}
 \end{frame}
 
 \begin{frame}[fragile]{Fonteinstellungen}
-    Standardeinstellung sind die Computer-Modern-Fonts. 
-    Bereiten bei manchen PDF-Viewern Probleme (pixelig).
+    Standardeinstellung sind die Latin-Modern-Fonts. 
     \vspace{1em}
     \begin{columns}[c]
         \begin{column}{0.47\textwidth}
-            moderne Alternative:
             \begin{block}{Latin Modern}
                 \begin{lstverbatim}
                 \usepackage{fontspec}
@@ -158,8 +189,7 @@
             \end{block}
         \end{column}
         \begin{column}{0.47\textwidth}
-            Oder auch:
-            \begin{block}{Tex Gyre}
+            \begin{block}{Alternativ: Tex Gyre}
                 \begin{lstverbatim}
                 \usepackage{fontspec}
                 \setmainfont{Tex Gyre Pagella}
@@ -169,6 +199,12 @@
             \end{block}
         \end{column}
     \end{columns}
+    \begin{itemize}
+        \item jede System-Schriftart kann genutzt
+        \item \alert{das ist i.A. nicht sinnvoll}
+        \item Schriften müssen zueinander passen
+        \item Schriften müssen alle benötigten Sonderzichen enthalten
+    \end{itemize}
 \end{frame}
 
 

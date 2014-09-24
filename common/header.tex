@@ -4,7 +4,9 @@
 \usetheme{TUDo}
 \usefonttheme{professionalfonts}
 
-\usepackage[main=ngerman,english,french]{babel}
+\usepackage{polyglossia}
+\setmainlanguage{german}
+\setotherlanguages{english, french}
 \usepackage[backend=biber,sorting=nyt,sortlocale=de_DE.UTF-8]{biblatex}
 
 \usepackage{fontspec}
@@ -96,12 +98,12 @@
     autogobble,
     language={[LaTeX]TeX},
     basicstyle=\ttfamily,
-    texcsstyle=*\color{TUdarkgreen},
-    keywordstyle=\color{TUorange},
+    texcsstyle=*\color{red},
+    keywordstyle=\color{cyan},
     commentstyle=\color{blue},
     morekeywords = {hallo},
     otherkeywords={$,$, &, \{, \}, \[, \],  ^, _},
-    moretexcs={setmainlanguage, text, num, SI, si, kilo, gram, befehl, subject, titlehead, publishers,
+    moretexcs={setmainlanguage, text, num, SI, si, kilo, gram, befehl, subject, titlehead, publishers, textenglish, textfrench,
                metre, per, second, squared, micro, subtitle, maketitle, tableofcontents,
                subsection, subsubsection, part, chapter, paragraph, subparagraph,
                iint, iiint, includegraphics, addbibresource, printbibliography,
