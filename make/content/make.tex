@@ -90,6 +90,31 @@
   \end{itemize}
 \end{frame}
 
+\begin{frame}[fragile]{Advanced}
+  \begin{itemize}
+    \item \texttt{make clean}
+      \begin{verbatim}
+    clean:
+        # alles löschen, was vom Makefile erzeugt wird
+        rm plot.pdf report.pdf
+      \end{verbatim}
+    \item \texttt{build}-Ordner: Ordner sauber halten
+      \begin{verbatim}
+    build/plot.pdf: plot.py data.txt | build
+        python plot.py # savefig('build/plot.pdf')
+
+    build/report.pdf: report.tex build/plot.pdf | build
+        lualatex --output-directory=build report.tex
+
+    build:
+        mkdir -p build
+    clean:
+        rm -rf build
+      \end{verbatim}
+    \item \texttt{| build} ist ein order-only Prerequisite: Alter wird ignoriert
+  \end{itemize}
+\end{frame}
+
 \begin{frame}{Motivation}
   \begin{itemize}
     \item Automatisierung verhindert Fehler
