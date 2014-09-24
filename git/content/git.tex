@@ -1,5 +1,6 @@
 \newcommand{\mail}{\includegraphics[width=0.2\textwidth]{figures/mail.pdf}}
 \tikzstyle{arr}=[line width=1mm,draw=black,-triangle 45]
+\tabulinesep=4pt
 
 \headlineframe{Wie arbeitet man am besten an einem Protokoll zusammen?}
 
@@ -40,7 +41,7 @@
 
   \begin{itemize}
     \item Man merkt nichts von Änderungen der Anderen
-    \item Gleichzeitige Änderungen führen zu \enquote{In Konflikt sehende Kopie}-Dateien.
+    \item Gleichzeitige Änderungen führen zu \enquote{In Konflikt stehende Kopie}-Dateien.
     \item Änderungen werden nicht zusammengeführt.
   \end{itemize}
   \textbf{\Large Fazit: Besser, aber hat deutliche Probleme}
@@ -79,40 +80,156 @@
   \centering
   \begin{tikzpicture}[line width=1.5]
     \node (wd) at (0, 0) [draw,rounded corners,thick,minimum width=4cm,minimum height=1.2cm,fill=red!20] {Working directory};
-    \node (idx) [below=0.4cm of wd,draw,thick,rounded corners,minimum width=4cm,minimum height=1.2cm,fill=yellow!20] {Index};
+    \node (idx) [below=0.4cm of wd,draw,thick,rounded corners,minimum width=4cm,minimum height=1.2cm,fill=yellow!20] {Staging};
     \node (hist) [below=0.4cm of idx,draw,rounded corners,thick,minimum width=4cm,minimum height=1.2cm,fill=green!20] {History};
     \draw[thick,->] (wd.east) to[out=0,in=0] node[right] {\texttt{git add}} (idx.east);
     \draw[thick,->] (idx.west) to[out=180,in=180] node[left] {\texttt{git commit}} (hist.west);
   \end{tikzpicture}
 \end{frame}
 
-\begin{frame}{Mit anderen Repositories kommunizieren}
+\begin{frame}{History}
+  \begin{tikzpicture}
+    \graph [nodes=blue] {
+      "v1.2" [green, x=4],
+      a <- b <- c <- d <- {e <- f, g [x=0.5]} <- h <- {i <- master [red], j <- foo [red]};
+      "v1.2" -> e;
+    };
+  \end{tikzpicture}
+
+  \vspace{1em}
   \begin{itemize}
-    \item Repository kopieren: \texttt{git clone}
-    \item Neue Änderungen holen: \texttt{git pull}
-    \item Eigene Änderungen hochladen: \texttt{git push}
+    \item \textcolor{blue}{Commit}: Zustand/Inhalt des Arbeitsverzeichnisses zu einem Zeitpunkt
+      \begin{itemize}
+        \item Snapshot, Name ist Hash des Inhalts, enthält Commit-Message (Beschreibung der Änderungen)
+      \end{itemize}
+    \item \textcolor{red}{Branch}: benannter Zeiger auf einen Commit
+      \begin{itemize}
+        \item Entwicklungszweig, im Praktikum nur \texttt{master}
+      \end{itemize}
+    \item \textcolor{green}{Tag}: unveränderbarer Zeiger auf einen Commit
+      \begin{itemize}
+        \item Wichtiges Ereignis, z.B. veröffentlichte Version
+      \end{itemize}
   \end{itemize}
 \end{frame}
 
-\begin{frame}{Achtung: Merge conflicts}
-  \begin{center}
-    \huge Don't Panic
-  \end{center}
-  \begin{itemize}
-    \item Entstehen, wenn \texttt{git} nicht automatisch mergen kann (selbe Zeile geändert, etc.)
-  \end{itemize}
+\begin{frame}{Workflow}
   \begin{enumerate}
-    \item Die betroffenen Dateien öffnen
-    \item Markierungen finden und die Stelle selbst mergen (meist 2,3 Zeilen)
-    \item \texttt{git commit} ausführen um zu bestätigen
+    \item Repo erzeugen/klonen: \texttt{git init}, \texttt{git clone}
+    \item Arbeiten
+      \begin{enumerate}
+        \item Dateien bearbeiten, testen: \texttt{vim}, \texttt{make}
+        \item Änderungen in Staging schieben: \texttt{git add}
+        \item Commit erzeugen: \texttt{git commit}
+      \end{enumerate}
+    \item Commits anderer herunterladen und integrieren: \texttt{git pull}
+    \item Eigene Commits hochladen: \texttt{git push}
   \end{enumerate}
 \end{frame}
 
-\begin{frame}{Weitere nützliche Befehle}
+\begin{frame}{\texttt{git init}, \texttt{git clone}}
+  \begin{tabu}{>{\ttfamily}l X}
+    git init               & initialisiert ein \texttt{git}-Repo im jetzigen Verzeichnis \\
+    git clone \textit{url} & klont das Repo aus \texttt{\textit{url}} \\
+    rm -rf .git            & löscht alle Spuren von \texttt{git} aus dem Repo
+  \end{tabu}
+\end{frame}
+
+\begin{frame}{\texttt{git status}, \texttt{git log}}
+  \begin{tabu}{>{\ttfamily}l X}
+    git status & zeigt Status des Repos (welche Dateien sind neu, gelöscht, verschoben, bearbeitet) \\
+    git log    & listet Commits in aktuellem Branch
+  \end{tabu}
+\end{frame}
+
+\begin{frame}{\texttt{git add}, \texttt{git mv}, \texttt{git rm}, \texttt{git reset}}
+  \begin{tabu}{>{\ttfamily}l X}
+    git add \textit{file} … & fügt Dateien/Verzeichnisse zum Staging-Bereich hinzu \\
+    git add -p …            & fügt Teile einer Datei zum Staging-Bereich hinzu \\
+    git mv                  & wie \texttt{mv} (automatisch in Staging)\\
+    git rm                  & wie \texttt{rm} (automatisch in Staging) \\
+    git reset \textit{file} & entfernt Dateien/Verzeichnisse aus Staging
+  \end{tabu}
+\end{frame}
+
+\begin{frame}{\texttt{git diff}}
+  \begin{tabu}{>{\ttfamily}l X}
+    git diff                                   & zeigt Unterschiede zwischen Staging und Arbeitsverzeichnis \\
+    git diff --staged                          & zeigt Unterschiede zwischen letzten Commit und Staging \\
+    git diff \textit{commit1} \textit{commit2} & zeigt Unterschiede zwischen zwei Commits
+  \end{tabu}
+\end{frame}
+
+\begin{frame}{\texttt{git commit}}
+  \begin{tabu}{>{\ttfamily}l X}
+    git commit                       & erzeugt Commit aus jetzigem Staging-Bereich, öffnet Editor für Commit-Message \\
+    git commit -m "\textit{message}" & Commit mit \texttt{\textit{message}} als Message \\
+    git commit --amend               & letzten Commit ändern (fügt aktuellen Staging hinzu, Message bearbeitbar)
+  \end{tabu}
+
   \begin{itemize}
-    \item Änderungen ansehen: \texttt{git diff}
-    \item Vergangenheit betrachten: \texttt{git log}
-    \item Änderungen kurz zur Seite schieben: \texttt{git stash}
+    \item Sinnvolle Commit-Messages schreiben!
+      \begin{itemize}
+        \item Erster Satz ist Zusammenfassung
+      \end{itemize}
+    \item Logische Commits erstellen, für jede logische Einheit ein Commit
+      \begin{itemize}
+        \item \texttt{git add -p} sehr nützlich
+      \end{itemize}
   \end{itemize}
 \end{frame}
 
+\begin{frame}{\texttt{git pull}, \texttt{git push}}
+  \begin{tabu}{>{\ttfamily}l X}
+    git pull          & Commits herunterladen (mit Merge-Commit) \\
+    git pull --rebase & Commits herunterladen (ohne Merge-Commit) \\
+    git push          & Commits hochladen
+  \end{tabu}
+
+  \begin{itemize}
+    \item (falls gewollt) \texttt{--rebase} standardmäßig: \\
+      \texttt{git config --global pull.rebase true}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Achtung: Merge conflicts}
+  \begin{center}
+    \huge Don't Panic
+  \end{center}
+
+  Entstehen, wenn \texttt{git} nicht automatisch mergen kann (selbe Zeile geändert, etc.)
+
+  \begin{enumerate}
+    \item Die betroffenen Dateien öffnen
+    \item Markierungen finden und die Stelle selbst mergen (meist wenige Zeilen)
+      \begin{verbatim}
+        <<<<<<< HEAD
+        foo
+        ||||||| merged common ancestors
+        bar
+        =======
+        baz
+        >>>>>>> Commit-Message
+\end{verbatim}
+    \item Merge abschließen: \texttt{git add …}
+      \begin{itemize}
+        \item kein \texttt{--rebase}: \texttt{git commit} ausführen, um zu bestätigen
+        \item \texttt{--rebase}: \texttt{git rebase --continue}
+      \end{itemize}
+  \end{enumerate}
+  Nützlich: \texttt{git config --global merge.conflictstyle diff3}
+\end{frame}
+
+\begin{frame}{\texttt{git checkout}}
+  \begin{tabu}{>{\ttfamily}l X}
+    git checkout \textit{commit} & Commit ins Arbeitsverzeichnis laden \\
+    git checkout \textit{file}   & Änderungen an Dateien verwerfen (zum letzten Commit zurückkehren)
+  \end{tabu}
+\end{frame}
+
+\begin{frame}{\texttt{git stash}}
+  \begin{tabu}{>{\ttfamily}l X}
+    git stash     & Änderungen kurz zur Seite schieben \\
+    git stash pop & Änderungen zurückholen aus Stash
+  \end{tabu}
+\end{frame}
