@@ -197,3 +197,17 @@
   \nocite{*}
   \printbibliography[heading=none]
 \end{frame}
+\begin{frame}[fragile]{Stile}
+  \begin{itemize}
+    \item Standardstil ist \enquote{numeric}
+    \item häufig genutzte Alternative: \enquote{alphabetic}
+    \item Kombination aus Autorenname und Jahr: z.B. [Oli07]
+    \item viele weitere Stile $\rightarrow$ Doku
+    \item setzen mit \texttt{style=…} als Option für \texttt{biblatex}
+  \end{itemize}
+  \begin{block}{Code}
+    \begin{lstverbatim}
+      \usepackage[backend=biber, style=alphabetic]{biblatex}
+    \end{lstverbatim}
+  \end{block}
+\end{frame}
