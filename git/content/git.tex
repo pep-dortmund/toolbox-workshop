@@ -176,6 +176,7 @@
       \begin{itemize}
         \item \texttt{git add -p} sehr nützlich
       \end{itemize}
+    \item Hochgeladene Commits nicht mehr ändern!
   \end{itemize}
 \end{frame}
 
@@ -234,19 +235,15 @@
   \end{tabu}
 \end{frame}
 
-\begin{frame}
-    \frametitle{\texttt{.gitignore}}
+\begin{frame}[fragile]{\texttt{.gitignore}}
     \begin{itemize}
     \item Man möchte nicht alle Dateien von \texttt{git} beobachten lassen
-    \item z.B. \texttt{build/}--Ordner
+    \item z.B. \texttt{build}-Ordner
     \end{itemize}
     \begin{center}
-        \Large\textcolor{TUgreen}{Lösung:} \texttt{.gitignore}--Datei
+        \Large\textcolor{TUgreen}{Lösung:} \texttt{.gitignore}-Datei
     \end{center}
-\end{frame}
 
-\begin{frame}[fragile]
-    \frametitle{\texttt{.gitignore}}
     \begin{itemize}
     \item einfache Textdatei
     \item enthält Regeln für Dateien, die nicht beobachtet werden sollen
@@ -259,4 +256,18 @@
     \end{lstlisting}
 \end{frame}
 
+\begin{frame}{SSH-Keys}
+  Git kann auf zwei Arten mit einem Server kommunizieren:
+  \begin{itemize}
+    \item HTTPS: funktioniert immer, keine Einstellungen erforderlich, Passwort muss für jede Kommunikation eingegeben werden
+    \item SSH: Keys müssen erzeugt und eingestellt werden, keine Passwörter mehr erforderlich
+  \end{itemize}
 
+  SSH-Keys:
+  \begin{enumerate}
+    \item \texttt{ssh-keygen}
+    \item Standardeinstellungen ok (kein Passwort!)
+    \item \texttt{cat ~/.ssh/id\_rsa.pub}
+    \item Ausgabe ist Public-Key, beim Server eintragen (im Browser)
+  \end{enumerate}
+\end{frame}
