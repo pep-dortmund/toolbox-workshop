@@ -233,3 +233,30 @@
     git stash pop & Änderungen zurückholen aus Stash
   \end{tabu}
 \end{frame}
+
+\begin{frame}
+    \frametitle{\texttt{.gitignore}}
+    \begin{itemize}
+    \item Man möchte nicht alle Dateien von \texttt{git} beobachten lassen
+    \item z.B. \texttt{build/}--Ordner
+    \end{itemize}
+    \begin{center}
+        \Large\textcolor{TUgreen}{Lösung:} \texttt{.gitignore}--Datei
+    \end{center}
+\end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{\texttt{.gitignore}}
+    \begin{itemize}
+    \item einfache Textdatei
+    \item enthält Regeln für Dateien, die nicht beobachtet werden sollen
+    \end{itemize}
+    Beispiel:
+    \begin{lstlisting}
+    build/
+    *.pdf
+    __pycache__
+    \end{lstlisting}
+\end{frame}
+
+
