@@ -1,0 +1,40 @@
+\input{exercise-header.tex}
+
+\begin{document}
+\begin{question}[subtitle={Hallo Welt!}]
+	\begin{enumerate}
+		\item Erzeugt die Datei \texttt{hallowelt.tex}
+		\item Bindet das Minimalset an Paketen ein
+		\item Erzeugt eine PDF-Datei, in der 
+				\begin{center}
+					Hallo Welt!
+				\end{center}
+			  steht.
+	\end{enumerate}
+\end{question}
+
+\begin{lstsolution}
+		\documentclass[
+				captions=tableheading,
+				titlepage=firstiscover,
+				bibliography
+			]{scrartcl}
+
+		\usepackage{fixltx2e}
+		\usepackage[aux]{rerunfilecheck}
+
+		\usepackage{polyglossia}
+		\setmainlanguage{german}
+
+		\usepackage{fontspec}
+
+		\usepackage[unicode,pdfusetitle]{hyperref}
+		\usepackage{bookmark}
+
+		\begin{document}
+			Hallo Welt!
+		\end{document}
+\end{lstsolution}
+
+
+\end{document}

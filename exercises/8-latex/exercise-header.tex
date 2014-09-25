@@ -1,0 +1,58 @@
+\documentclass{scrartcl}
+
+\usepackage{fontspec}
+\setmainfont{Tex Gyre Pagella}
+\setsansfont{Tex Gyre Heros}
+\setmonofont{Tex Gyre Cursor}
+
+\usepackage{mathtools}
+\usepackage[bold-style=ISO,
+			math-style=ISO,
+			nabla=upright,
+			sans-style=italic,
+			partial=upright,
+		]{unicode-math}
+\setmathfont{Tex Gyre Pagella Math}
+
+\usepackage{polyglossia}
+\setmainlanguage{german}
+
+\usepackage{csquotes}
+\usepackage[locale=DE]{siunitx}
+
+
+\usepackage{listings}
+\usepackage{lstautogobble}
+
+\lstdefinestyle{latex}{
+    autogobble,
+    language={[LaTeX]TeX},
+    basicstyle=\ttfamily,
+    texcsstyle=*\color{red},
+    keywordstyle=\color{cyan},
+    commentstyle=\color{gray},
+    morekeywords = {hallo},
+    otherkeywords={$,$, &, \{, \}, \[, \],  ^, _},
+    moretexcs={text, num, SI, si, kilo,setmainlanguage,
+             },
+    columns=fullflexible,
+    breaklines=true,
+    keepspaces=true,
+    aboveskip=-0.2em,
+    belowskip=-0.2em
+}
+
+\usepackage{exsheets}
+\usepackage{exsheets-listings}
+\SetupExSheets{
+	headings=block-subtitle,
+	headings-format={\large\bfseries},
+	subtitle-format={\large\bfseries},
+	counter-format = qu\IfQuestionSubtitleT{:},
+	solution/listings ={style=latex},
+	question/listings={style=latex},
+	solution/print = true
+}
+
+\usepackage{hyperref}
+\usepackage{bookmark}
