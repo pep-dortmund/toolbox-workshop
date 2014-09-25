@@ -1,6 +1,11 @@
 \section{Tabellen}
 
 \begin{frame}[fragile]{Tabellen}
+  \begin{block}{benötigte Pakete}
+    \begin{lstverbatim}
+    \useludepackage{booktabs}
+    \end{lstverbatim}
+  \end{block}
   \begin{columns}[T]
     \column{0.6\textwidth}
     \fontsize{8}{6}
@@ -11,15 +16,13 @@
         \caption{Eine gewöhnliche Tabelle mit Messdaten.}
         \label{tab:some_data}
         \begin{tabular}{c c c c c}
-          \hline
+          \toprule
           $f$ & $l_\text{start}$ & $l_1$ & $l_{\text{kor},1}$ & $B_1$ \\
-          \hline
+          \midrule
           100 & 1.14 & 3.51 & 0.00 &   4.30 \\
-          200 & 1.30 & 2.99 & 0.06 &  25.98 \\
           300 & 1.27 & 2.42 & 0.13 &  41.14 \\
-          400 & 1.28 & 1.47 & 0.20 &  53.76 \\
           500 & 1.21 & 1.70 & 0.25 & 168.73 \\
-          \hline
+          \bottomrule
         \end{tabular}
       \end{table}
       \end{lstverbatim}
@@ -31,7 +34,7 @@
       \item \texttt{l},\texttt{c} oder \texttt{r} geben Ausrichtung der einzelnen Spalten an
       \item
         \begin{lstverbatim}
-        label, caption
+        \label, \caption
         \end{lstverbatim}
         oberhalb von \texttt{tabular}
     \end{itemize}
@@ -43,36 +46,28 @@
     \centering
     \caption{Eine gewöhnliche Tabelle mit Messdaten.}
     \begin{tabular}{l c c c c}
-      \hline
+      \toprule
       $f$ & $l_\text{start}$ & $l_1$ & $l_{\text{kor},1}$ & $B_1$ \\
-      \hline
+      \midrule
       100 & 1.14 & 3.51 & 0.00 &   4.30 \\
-      200 & 1.30 & 2.99 & 0.06 &  25.98 \\
       300 & 1.27 & 2.42 & 0.13 &  41.14 \\
-      400 & 1.28 & 1.47 & 0.20 &  53.76 \\
       500 & 1.21 & 1.70 & 0.25 & 168.73 \\
-      \hline
+      \toprule
     \end{tabular}
   \end{table}
   \begin{itemize}
     \item Keine vertikalen Linien!
     \item Keine horizontalen Linien zwischen Daten!
   \end{itemize}
-  \mbox{$\Rightarrow$} Geht aber noch deutlich schöner \ldots
 \end{frame}
 
-\begin{frame}[fragile]{Schönere Tabellen mit \texttt{booktabs} und \texttt{siunitx}}
+\begin{frame}[fragile]{Schönere Tabellen mit \texttt{siunitx}}
   \fontsize{7}{5}
-  \begin{block}{zusätzlich benötigte Pakete}
-    \begin{lstverbatim}
-    \useludepackage{booktabs}
-    \end{lstverbatim}
-  \end{block}
   \begin{block}{Code}
     \begin{lstverbatim}
     \begin{table}
       \centering
-      \caption{Eine gewöhnliche Tabelle mit Messdaten.}
+      \caption{Eine schöne Tabelle mit Messdaten.}
       \label{tab:some_data}
       \sisetup{table-format=1.2}
       \begin{tabular}{S[table-format=3.0] S S S S[table-format=3.2]}
@@ -109,8 +104,8 @@
     \end{tabular}
   \end{table}
   \begin{itemize}
-    \item \verb+\toprule+, \verb+\midrule+, \verb+\bottomrule+ ersetzen \verb+\hline+
-    \item \texttt{S}-Spalte eröffnet mehr Ausrichtungsmöglichkeiten mit \verb+\sisetup+
+    \item \texttt{S}-Spalte eröffnet mehr Ausrichtungsmöglichkeiten mit \verb+\sisetup+ und […]
+    \item \texttt{s}-Spalte für Einheiten
     \item Standard: Ausrichtung an Dezimalkomma
     \item Spaltennamen durch Brackets schützen
   \end{itemize}
