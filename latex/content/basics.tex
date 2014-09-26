@@ -182,9 +182,6 @@
             \begin{block}{Latin Modern}
                 \begin{lstverbatim}
                 \usepackage{fontspec}
-                \setmainfont{Latin Modern Roman}
-                \setsansfont{Latin Modern Sans}
-                \setmonofont{Latin Modern Mono}
                 \end{lstverbatim}
             \end{block}
         \end{column}
@@ -201,9 +198,10 @@
     \end{columns}
     \begin{itemize}
         \item jede System-Schriftart kann genutzt
-        \item \alert{das ist i.A. nicht sinnvoll}
+        \item \alert{das ist i.A. nicht sinnvoll: \fontspec{Comic Sans MS} Hallo Welt in Comic Sans MS! }
         \item Schriften müssen zueinander passen
         \item Schriften müssen alle benötigten Sonderzichen enthalten
+        \item Bei Änderung auch Mathefont anpassen $\rightarrow$ später.
     \end{itemize}
 \end{frame}
 
@@ -213,12 +211,13 @@
   \documentclass[
     captions=tableheading,
     titlepage=firstiscover,
+    bibliography=totoc,
   ]{scrartcl}
 
   \usepackage{fixltx2e}
   \usepackage[aux]{rerunfilecheck}
   \usepackage{polyglossia}
-  \setmainlanguage{german}
+    \setmainlanguage{german}
   \usepackage{fontspec}
   % mehr Pakete hier
   \usepackage[unicode,pdfusetitle]{hyperref}
