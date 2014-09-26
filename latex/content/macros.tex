@@ -4,36 +4,29 @@
   Nach 20 Mal \verb+\mathrm{e}+ oder \verb+\mathrm{i}+ schreiben hat man keine Lust mehr
   \begin{block}{Kommandostruktur}
     \begin{lstlisting}
-    \newcommand\Kommandoname[#Argumente]{Code mit #1, #2, ...}
-    \newenvironment{Umgebungsname}[#Argumente]{\begin-Code}{\end-Code}
+      \newcommand\Kommandoname[#Argumente]{Code mit #1, #2, ...}
+      \newenvironment{Umgebungsname}[#Argumente]{\begin-Code}{\end-Code}
     \end{lstlisting}
   \end{block}
-  \begin{columns}[onlytextwidth, t]
-    \begin{column}{0.75\textwidth}
-      \begin{block}{Code}
-        \begin{lstlisting}
-        \newcommand\I{\mathrm{i}}
-        \newcommand\t[1]{\text{#1}}
-        \newcommand\dd[2]{\frac{\mathrm{d}#1}{\mathrm{d}#2}}
-        \renewcommand\v[1]{\vec{#1}} % Überschreiben bereits belegter Kommandos
-        \newenvironment{eqn}{\begin{equation}}{\end{equation}}
-        \end{lstlisting}
-      \end{block}
-    \end{column}
-    \begin{column}{0.21\textwidth}
-      \begin{block}{Ergebnis}
-        \begin{lstlisting}
-        \I
-        \t{foo}
-        \dd{x}{y}
-        \v{u}
-        \begin{eqn}
-          ...
-        \end{eqn}
-        \end{lstlisting}
-      \end{block}
-    \end{column}
-  \end{columns}
+  \begin{CodeExample}{0.75}
+    \begin{lstlisting}
+      \newcommand\I{\mathrm{i}}
+      \newcommand\t[1]{\text{#1}}
+      \newcommand\dd[2]{\frac{\mathrm{d}#1}{\mathrm{d}#2}}
+      \renewcommand\v[1]{\vec{#1}} % Überschreiben bereits belegter Kommandos
+      \newenvironment{eqn}{\begin{equation}}{\end{equation}}
+    \end{lstlisting}
+  \CodeResult
+    \begin{lstlisting}
+      \I
+      \t{foo}
+      \dd{x}{y}
+      \v{u}
+      \begin{eqn}
+        ...
+      \end{eqn}
+    \end{lstlisting}
+  \end{CodeExample}
   \vspace{0.5cm}
   → Okay für simple Kommandos, stößt aber schnell an gewisse Grenzen
 \end{frame}
@@ -41,19 +34,19 @@
 % \begin{frame}[fragile]{\texttt{xparse}}
 %   \begin{Packages}
 %     \begin{lstlisting}
-%     \usepackage{xparse}
+%       \usepackage{xparse}
 %     \end{lstlisting}
 %   \end{Packages}
 %   \begin{block}{Kommandostruktur}
 %     \begin{lstlisting}
-%     \NewDocumentCommand\Kommandoname{m o O{...} ...}{Code mit #1, #2,...}
-%     \NewDocumentEnvironment{Umgebungsname}{m o O{...} ...}
-%     {
-%       \begin-Code
-%     }
-%     {
-%       \end-Code
-%     }
+%       \NewDocumentCommand\Kommandoname{m o O{...} ...}{Code mit #1, #2,...}
+%       \NewDocumentEnvironment{Umgebungsname}{m o O{...} ...}
+%       {
+%         \begin-Code
+%       }
+%       {
+%         \end-Code
+%       }
 %     \end{lstlisting}
 %   \end{block}
 %   Platzhalter legen Anzahl, Typ und Reihenfolge der Argumente fest
@@ -67,53 +60,46 @@
 % \begin{frame}[fragile]{Nützliche eigene Umgebungen}
 %   \begin{block}{Code}
 %     \begin{lstlisting}
-%     \NewDocumentEnvironment{eqns}{O{rCl}}
-%     {
-%       \begin{IEEEeqnarray}{#1}
-%     }
-%     {
-%       \end{IEEEeqnarray}
-%       \ignorespacesafterend % verhindert Einrückung nach end-Block
-%     }
-%     \NewDocumentEnvironment{eqn}{}
-%     {
-%       \begin{eqns}[c]
-%     }
-%     {
-%       \end{eqns}
-%       \ignorespacesafterend
-%     }
-%     \end{lstlisting}
+%       \NewDocumentEnvironment{eqns}{O{rCl}}
+%       {
+%         \begin{IEEEeqnarray}{#1}
+%       }
+%       {
+%         \end{IEEEeqnarray}
+%         \ignorespacesafterend % verhindert Einrückung nach end-Block
+%       }
+%       \NewDocumentEnvironment{eqn}{}
+%       {
+%         \begin{eqns}[c]
+%       }
+%       {
+%         \end{eqns}
+%         \ignorespacesafterend
+%       }
+%       \end{lstlisting}
 %   \end{block}
 % \end{frame}
 
 % \begin{frame}[fragile]{Mehr Beispiele}
 %   \begin{block}{Code}
 %     \begin{lstlisting}
-%     \RenewDocumentCommand\v{m}{\mathbf{#1}}
-%     \NewDocumentCommand\setN{}{\mathbb{N}}
-%     \NewDocumentCommand\grad{}{\operatorname{grad}} % rm-font und passende Abstände im Mathemodus
-%     \AtBeginDocument % wegen unicode-math
-%     {
-%       \RenewDocumentCommand\div{}{\operatorname{div}}
-%     }
-%     \NewDocumentCommmand\til{m}{\ensuremath{\tilde{#1}}} % erzwingt Mathemodus; sparend einsetzen
+%       \RenewDocumentCommand\v{m}{\mathbf{#1}}
+%       \NewDocumentCommand\setN{}{\mathbb{N}}
+%       \NewDocumentCommand\grad{}{\operatorname{grad}} % rm-font und passende Abstände im Mathemodus
+%       \AtBeginDocument % wegen unicode-math
+%       {
+%         \RenewDocumentCommand\div{}{\operatorname{div}}
+%       }
+%       \NewDocumentCommmand\til{m}{\ensuremath{\tilde{#1}}} % erzwingt Mathemodus; sparend einsetzen
 %     \end{lstlisting}
 %   \end{block}
-%   \begin{columns}[onlytextwidth, t]
-%     \begin{column}{0.70\textwidth}
-%       \begin{block}{Test}
-%         \begin{lstlisting}
-%         $ \setN \quad \grad \v{F} \quad \div \v{A} $ \\
-%         \til{x}
-%         \end{lstlisting}
-%       \end{block}
-%     \end{column}
-%     \begin{column}{0.26\textwidth}
-%       \begin{block}{Ergebnis}
-%         $ \setN \quad \grad \v{F} \quad \div \v{A} $ \\
-%         \til{x}
-%       \end{block}
-%     \end{column}
-%   \end{columns}
+%   \begin{CodeExample}{0.70}[Test]
+%     \begin{lstlisting}
+%       $ \setN \quad \grad \v{F} \quad \div \v{A} $ \\
+%       \til{x}
+%     \end{lstlisting}
+%   \CodeResult
+%     $ \setN \quad \grad \v{F} \quad \div \v{A} $ \\
+%     \til{x}
+%   \end{CodeExample}
 % \end{frame}

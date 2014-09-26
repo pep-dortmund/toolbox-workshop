@@ -2,33 +2,33 @@
 
 % \begin{frame}[fragile]{\texttt{\textbackslash OverfullCenter}}
 %   \begin{lstlisting}
-%   \rlap{\includegraphics[height=0.3cm,width=\textwidth+25pt]{logos/tu.pdf}}
+%     \rlap{\includegraphics[height=0.3cm,width=\textwidth+25pt]{logos/tu.pdf}}
 %   \end{lstlisting}
-
+%
 %   \vspace{5pt}
 %   \rlap{\includegraphics[height=0.3cm,width=\textwidth+25pt]{logos/tu.pdf}}
-
+%
 %   \vspace{5pt}
 %   Bild oder Tabelle ist zu Breit, passt aber auf die Seite.\\
 %   Wie kriegt man es in die Mitte?
-
+%
 %   \vspace{5pt}
 %   \begin{lstlisting}
-%   \OverfullCenter{\includegraphics[height=0.3cm,width=\textwidth+25pt]{logos/tu.pdf}}
+%     \OverfullCenter{\includegraphics[height=0.3cm,width=\textwidth+25pt]{logos/tu.pdf}}
 %   \end{lstlisting}
-
+%
 %   \vspace{5pt}
 %   \OverfullCenter{\includegraphics[height=0.3cm,width=\textwidth+25pt]{logos/tu.pdf}}
-
+%
 %   \begin{block}{Code}
 %     \begin{lstlisting}
-%     \ExplSyntaxOn
-%     \NewDocumentCommand \OverfullCenter {+m}
-%     {
-%       \noindent
-%       \makebox[\linewidth]{#1}
-%     }
-%     \ExplSyntaxOff
+%       \ExplSyntaxOn
+%       \NewDocumentCommand \OverfullCenter {+m}
+%       {
+%         \noindent
+%         \makebox[\linewidth]{#1}
+%       }
+%       \ExplSyntaxOff
 %     \end{lstlisting}
 %   \end{block}
 % \end{frame}
@@ -39,16 +39,16 @@
     \begin{column}{0.50\textwidth}
       \begin{Packages}
         \begin{lstlisting}
-        \includepackage{pdflscape}
+          \includepackage{pdflscape}
         \end{lstlisting}
       \end{Packages}
       \begin{block}{Code}
         \begin{lstlisting}
-        \begin{landscape}
-          \begin{table}
-            % .
-          \end{table}
-        \end{landscape}
+          \begin{landscape}
+            \begin{table}
+              % .
+            \end{table}
+          \end{landscape}
         \end{lstlisting}
       \end{block}
     \end{column}

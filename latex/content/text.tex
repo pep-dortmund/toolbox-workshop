@@ -37,30 +37,23 @@
 
 \begin{frame}[fragile]{Textauszeichnung}
   Änderungen der Schrifteigenschaften sind mit diesen Befehlen möglich:
-  \begin{columns}[onlytextwidth, t]
-    \begin{column}{0.60\textwidth}
-      \begin{block}{Code}
-        \begin{lstlisting}
-        \textit{kursiv} \emph{kursiv}
-        \textbf{fett}
-        \textbf{\textit{fett-kursiv}}
-        \textrm{Serifen-Schrift}
-        \texttt{Mono-Schrift}
-        \textsf{Sans-Serif-Schrift}
-        \end{lstlisting}
-      \end{block}
-    \end{column}
-    \begin{column}{0.36\textwidth}
-      \begin{block}{Ergebnis}
-        \textit{kursiv} \emph{kursiv} \\
-        \textbf{fett} \\
-        \textbf{\textit{fett-kursiv}} \\
-        \textrm{Serifen-Schrift} \\
-        \texttt{Mono-Schrift} \\
-        \textsf{Sans-Serif-Schrift}
-      \end{block}
-    \end{column}
-  \end{columns}
+  \begin{CodeExample}{0.60}
+    \begin{lstlisting}
+      \textit{kursiv} \emph{kursiv}
+      \textbf{fett}
+      \textbf{\textit{fett-kursiv}}
+      \textrm{Serifen-Schrift}
+      \texttt{Mono-Schrift}
+      \textsf{Sans-Serif-Schrift}
+    \end{lstlisting}
+  \CodeResult
+    \textit{kursiv} \emph{kursiv} \\
+    \textbf{fett} \\
+    \textbf{\textit{fett-kursiv}} \\
+    \textrm{Serifen-Schrift} \\
+    \texttt{Mono-Schrift} \\
+    \textsf{Sans-Serif-Schrift}
+  \end{CodeExample}
 
   \vspace{1em}
   Diese Befehle sollten sehr selten benutzt werden, semantischer Markup ist besser.
@@ -68,32 +61,25 @@
 
 \begin{frame}[fragile]{Schriftgrößen}
   Gelten immer für den aktuellen Block, z.B. in einer Umgebung oder zwischen \texttt{\{…\}}
-  \begin{columns}[onlytextwidth, t]
-    \begin{column}{0.48\textwidth}
-      \begin{block}{Code}
-        \begin{lstlisting}
-        {\tiny tiny}
-        {\small small}
-        {\normalsize normal}
-        {\large large}
-        {\huge huge}
-        \end{lstlisting}
-      \end{block}
-    \end{column}
-    \begin{column}{0.48\textwidth}
-      \begin{block}{Ergebnis}
-        {\tiny tiny}
-        {\small small}
-        {\normalsize normal}
-        {\large large}
-        {\huge huge}
-      \end{block}
-    \end{column}
-  \end{columns}
+  \begin{CodeExample}{0.48}
+    \begin{lstlisting}
+      {\tiny tiny}
+      {\small small}
+      {\normalsize normal}
+      {\large large}
+      {\huge huge}
+    \end{lstlisting}
+  \CodeResult
+    {\tiny tiny}
+    {\small small}
+    {\normalsize normal}
+    {\large large}
+    {\huge huge}
+  \end{CodeExample}
   \vspace{1em}
   \begin{block}{Alle Größen}
     \begin{lstlisting}
-    \tiny, \scriptsize, \footnotesize, \small, \normalsize, \large, \Large, \LARGE, \huge, \Huge
+      \tiny, \scriptsize, \footnotesize, \small, \normalsize, \large, \Large, \LARGE, \huge, \Huge
     \end{lstlisting}
   \end{block}
   Auch diese Befehle sollten nur über semantischen Markup benutzt werden.
@@ -102,12 +88,12 @@
 \begin{frame}[fragile]{Inhalt auslagern}
   \begin{block}{Code}
     \begin{lstlisting}
-    \input{header.tex}
-    \begin{document}
-      \input{Teil1.tex}
-      \input{Teil2.tex}
-      % .
-    \end{document}
+      \input{header.tex}
+      \begin{document}
+        \input{Teil1.tex}
+        \input{Teil2.tex}
+        % .
+      \end{document}
     \end{lstlisting}
   \end{block}
   \begin{itemize}
@@ -121,34 +107,27 @@
 \begin{frame}[fragile]{Zitate}
   Die richtigen Anführungszeichen, wo die Satzzeichen hingehören und vieles mehr hängt von der Sprache ab.
   So macht man es richtig:
-  \begin{block}{Benötigte Paket}
+  \begin{Packages}
     \begin{lstlisting}
-    \usepackage[autostyle]{csquotes} % polyglossia
-    \setotherlanguages{english, french} % andere Sprachen laden.
+      \usepackage[autostyle]{csquotes} % polyglossia
+      \setotherlanguages{english, french} % andere Sprachen laden.
     \end{lstlisting}
-  \end{block}
-  \begin{columns}[onlytextwidth, t]
-    \begin{column}{0.60\textwidth}
-      \begin{block}{Code}
-        \begin{lstlisting}
-        foo \enquote{bar} baz
-        \enquote{foo \enquote{bar} baz}
-        \textenglish{\enquote{foo}}
-        \textfrench{\enquote{foo}}
-        \textcquote{root}{foo}
-        \end{lstlisting}
-      \end{block}
-    \end{column}
-    \begin{column}{0.36\textwidth}
-      \begin{block}{Ergebnis}
-        foo \enquote{bar} baz \\
-        \enquote{foo \enquote{bar} baz} \\
-        \textenglish{\enquote{foo}} \\
-        \textfrench{ \enquote{foo}} \\
-        \textcquote{root}{foo}
-        % work around polyglossia bug #68
-        \directlua{polyglossia.desactivate_frpt()}
-      \end{block}
-    \end{column}
-  \end{columns}
+  \end{Packages}
+  \begin{CodeExample}{0.60}
+    \begin{lstlisting}
+      foo \enquote{bar} baz
+      \enquote{foo \enquote{bar} baz}
+      \textenglish{\enquote{foo}}
+      \textfrench{\enquote{foo}}
+      \textcquote{root}{foo}
+    \end{lstlisting}
+  \CodeResult
+    foo \enquote{bar} baz \\
+    \enquote{foo \enquote{bar} baz} \\
+    \textenglish{\enquote{foo}} \\
+    \textfrench{ \enquote{foo}} \\
+    \textcquote{root}{foo}
+    % work around polyglossia bug #68
+    \directlua{polyglossia.desactivate_frpt()}
+  \end{CodeExample}
 \end{frame}

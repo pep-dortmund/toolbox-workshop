@@ -8,28 +8,21 @@
 \begin{frame}[fragile]{\texttt{\$…\$}-Umgebung}
   Aktiviert den Mathematikmodus im Fließtext.
 
-  \begin{columns}[onlytextwidth, t]
-    \begin{column}{0.56\textwidth}
-      \begin{block}{Code}
-        \begin{lstlisting}
-          Dies ist eine Variable: $x$.
-          Liste von Variablen $x$, $y$, $z$.
-          Kleine Formel: $a^2 + b^2 = c^2$.
-          Vorsicht Höhe: $x^{2^{2^{2^2}}}$
-              $x_{2_{2_{2_2}}}$
-        \end{lstlisting}
-      \end{block}
-    \end{column}
-    \begin{column}{0.40\textwidth}
-      \begin{block}{Ergebnis}
-        Dies ist eine Variable: $x$. \\
-        Liste von Variablen $x$, $y$, $z$. \\
-        kleine Formel: $a^2 + b^2 = c^2$. \\
-        Vorsicht Höhe: $x^{2^{2^{2^2}}}$ $x_{2_{2_{2_2}}}$ \\
-        Mehr Text. Mehr Text. Mehr
-      \end{block}
-    \end{column}
-  \end{columns}
+  \begin{CodeExample}{0.56}
+    \begin{lstlisting}
+      Dies ist eine Variable: $x$.
+      Liste von Variablen $x$, $y$, $z$.
+      Kleine Formel: $a^2 + b^2 = c^2$.
+      Vorsicht Höhe: $x^{2^{2^{2^2}}}$
+          $x_{2_{2_{2_2}}}$
+    \end{lstlisting}
+  \CodeResult
+    Dies ist eine Variable: $x$. \\
+    Liste von Variablen $x$, $y$, $z$. \\
+    kleine Formel: $a^2 + b^2 = c^2$. \\
+    Vorsicht Höhe: $x^{2^{2^{2^2}}}$ $x_{2_{2_{2_2}}}$ \\
+    Mehr Text. Mehr Text. Mehr
+  \end{CodeExample}
 
   \vspace{1em}
   Leerzeichen werden im Mathe-Modus ignoriert.
@@ -37,38 +30,31 @@
 \end{frame}
 
 \begin{frame}[fragile]{Griechisch und mehr}
-  \begin{columns}[onlytextwidth, t]
-    \begin{column}{0.70\textwidth}
-      \begin{block}{Code}
-        \begin{lstlisting}
-        \alpha \beta \gamma \delta \epsilon \zeta \eta \theta \iota \kappa \lambda \mu \nu \xi \omicron \pi \rho \sigma \tau \upsilon \phi \chi \psi \omega
-        \varepsilon \vartheta \varkappa \varpi \varrho \varsigma \varphi
-        \Alpha \Beta \Gamma \Delta \Epsilon \Zeta \Eta \Theta \Iota \Kappa \Lambda \Mu \Nu \Xi \Omicron \Pi \Rho \Sigma \Tau \Upsilon \Phi \Chi \Psi \Omega
-        \hbar \imath \jmath \ell \wp
-        \aleph \beth \gimel
-        \partial \eth \nabla \square \increment \infty
-        \end{lstlisting}
-      \end{block}
-    \end{column}
-    \begin{column}{0.26\textwidth}
-      \begin{block}{Ergebnis}
-        \Umathordordspacing\textstyle=4mu
-        $\alpha \beta \gamma \delta \epsilon \zeta \eta$ \\
-        $\quad \theta \iota \kappa \lambda \mu \nu \xi$ \\
-        $\quad \omicron \pi \rho \sigma \tau \upsilon \phi$ \\
-        $\quad \chi \psi \omega$ \\
-        $\varepsilon \vartheta \varkappa \varpi \varrho$ \\
-        $\quad \varsigma \varphi$ \\
-        $\Alpha \Beta \Gamma \Delta \Epsilon \Zeta \Eta$ \\
-        $\quad \Theta \Iota \Kappa \Lambda \Mu \Nu \Xi$ \\
-        $\quad \Omicron \Pi \Rho \Sigma \Tau \Upsilon \Phi$ \\
-        $\quad \Chi \Psi \Omega$ \\
-        $\hbar \imath \jmath \ell \wp$ \\
-        $\aleph \beth \gimel$ \\
-        $\partial \eth \nabla \square \increment \infty$
-      \end{block}
-    \end{column}
-  \end{columns}
+  \begin{CodeExample}{0.70}
+    \begin{lstlisting}
+      \alpha \beta \gamma \delta \epsilon \zeta \eta \theta \iota \kappa \lambda \mu \nu \xi \omicron \pi \rho \sigma \tau \upsilon \phi \chi \psi \omega
+      \varepsilon \vartheta \varkappa \varpi \varrho \varsigma \varphi
+      \Alpha \Beta \Gamma \Delta \Epsilon \Zeta \Eta \Theta \Iota \Kappa \Lambda \Mu \Nu \Xi \Omicron \Pi \Rho \Sigma \Tau \Upsilon \Phi \Chi \Psi \Omega
+      \hbar \imath \jmath \ell \wp
+      \aleph \beth \gimel
+      \partial \eth \nabla \square \increment \infty
+    \end{lstlisting}
+  \CodeResult
+    \Umathordordspacing\textstyle=4mu
+    $\alpha \beta \gamma \delta \epsilon \zeta \eta$ \\
+    $\quad \theta \iota \kappa \lambda \mu \nu \xi$ \\
+    $\quad \omicron \pi \rho \sigma \tau \upsilon \phi$ \\
+    $\quad \chi \psi \omega$ \\
+    $\varepsilon \vartheta \varkappa \varpi \varrho$ \\
+    $\quad \varsigma \varphi$ \\
+    $\Alpha \Beta \Gamma \Delta \Epsilon \Zeta \Eta$ \\
+    $\quad \Theta \Iota \Kappa \Lambda \Mu \Nu \Xi$ \\
+    $\quad \Omicron \Pi \Rho \Sigma \Tau \Upsilon \Phi$ \\
+    $\quad \Chi \Psi \Omega$ \\
+    $\hbar \imath \jmath \ell \wp$ \\
+    $\aleph \beth \gimel$ \\
+    $\partial \eth \nabla \square \increment \infty$
+  \end{CodeExample}
 \end{frame}
 
 \begin{frame}{Operatoren und Relationen}
@@ -89,25 +75,18 @@
 \begin{frame}[fragile]{Fonts}
   \begin{Packages}
     \begin{lstlisting}
-    \usepackage{unicode-math} % nach Mathe-Paketen und fontspec
+      \usepackage{unicode-math} % nach Mathe-Paketen und fontspec
     \end{lstlisting}
   \end{Packages}
-  \begin{columns}[onlytextwidth, t]
-    \begin{column}{0.48\textwidth}
-      \begin{block}{Latin Modern}
-        \begin{lstlisting}
-        \setmathfont{Latin Modern Math}
-        \end{lstlisting}
-      \end{block}
-    \end{column}
-    \begin{column}{0.48\textwidth}
-      \begin{block}{Tex Gyre}
-        \begin{lstlisting}
-        \setmathfont{Tex Gyre Pagella Math}
-        \end{lstlisting}
-      \end{block}
-    \end{column}
-  \end{columns}
+  \begin{CodeExample}{0.48}[Latin Modern][Tex Gyre]
+    \begin{lstlisting}
+      \setmathfont{Latin Modern Math}
+    \end{lstlisting}
+  \CodeResult
+    \begin{lstlisting}
+      \setmathfont{Tex Gyre Pagella Math}
+    \end{lstlisting}
+  \end{CodeExample}
 \end{frame}
 
 \begin{frame}{Spaces}
@@ -136,7 +115,7 @@
       \end{lstlisting}
     \item Bestehen Indizes aus Text, wie min oder max, so wird dies ebenfalls aufrecht gesetzt.
       \begin{lstlisting}
-      x_\text{min}
+        x_\text{min}
       \end{lstlisting}
     \item ein $\mathrm{d}x$ sollte durch ein kleines Leerzeichen (\verb+\,+) vom Integranden abgetrennt werden.
 

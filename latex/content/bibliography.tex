@@ -137,31 +137,31 @@
 \begin{frame}[fragile]{Bib\LaTeX\hfill\doc{http://mirrors.ctan.org/macros/latex/contrib/biblatex/doc/biblatex.pdf}{biblatex}}
   \begin{Packages}
     \begin{lstlisting}
-    \usepackage[backend=biber]{biblatex} % nach babel
-    \addbibresource{lit.bib}
+      \usepackage[backend=biber]{biblatex} % nach babel
+      \addbibresource{lit.bib}
     \end{lstlisting}
   \end{Packages}
   \begin{block}{Zitieren}
-      \begin{minipage}{0.6\linewidth}
-        \begin{lstlisting}
+    \begin{minipage}{0.6\linewidth}
+      \begin{lstlisting}
         \cite{numpy}
         \cite[20]{numpy}
         \cite[1-3]{numpy}
-        \cite{splot,root}
-        \end{lstlisting}
-      \end{minipage}
-      \begin{minipage}{0.35\linewidth}
-        \cite{numpy}\\
-        \cite[20]{numpy}\\
-        \cite[1-3]{numpy}\\
-        \cite{splot,root}
-      \end{minipage}
+        \cite{splot, root}
+      \end{lstlisting}
+    \end{minipage}
+    \begin{minipage}{0.35\linewidth}
+      \cite{numpy} \\
+      \cite[20]{numpy} \\
+      \cite[1-3]{numpy} \\
+      \cite{splot, root}
+    \end{minipage}
   \end{block}
   \begin{block}{Verzeichnis ausgeben}
     \begin{lstlisting}
-    \nocite{anleitung01} % ins Verzeichnis, obwohl nicht explizit zitiert
-    \nocite{*}           % alles aus .bib ins Verzeichnis
-    \printbibliography
+      \nocite{anleitung01} % ins Verzeichnis, obwohl nicht explizit zitiert
+      \nocite{*}           % alles aus .bib ins Verzeichnis
+      \printbibliography
     \end{lstlisting}
   \end{block}
 \end{frame}
@@ -186,9 +186,9 @@
   Also:
   \begin{block}{Aufrufe mit Literaturverzeichnis}
     \begin{lstlisting}
-     lualatex file.tex
-     biber file.bcf
-     lualatex file.tex
+       lualatex file.tex
+       biber file.bcf
+       lualatex file.tex
     \end{lstlisting}
   \end{block}
 \end{frame}

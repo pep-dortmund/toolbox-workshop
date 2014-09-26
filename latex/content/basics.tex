@@ -6,15 +6,15 @@
     \begin{column}{0.48\textwidth}
       \begin{block}{Code}
         \begin{lstlisting}
-        \documentclass[optionen]{klasse}
-          % Präambel
-          % .
-          % .
-        \begin{document}
-          % Inhalt des Dokuments
-          % .
-          % .
-        \end{document}
+          \documentclass[optionen]{klasse}
+            % Präambel
+            % .
+            % .
+          \begin{document}
+            % Inhalt des Dokuments
+            % .
+            % .
+          \end{document}
         \end{lstlisting}
       \end{block}
     \end{column}
@@ -35,60 +35,46 @@
 \begin{frame}[fragile]{Syntax: Befehle}
   \LaTeX-Befehle beginnen stets mit einem \verb+\+ (Backslash).
 
-  Obligatorische Argumente stehen in \verb+{ }+, optionale Argumente stehen in \verb+[ ]+.
+  Obligatorische Argumente stehen in \lstinline+{ }+, optionale Argumente stehen in \lstinline+[ ]+.
 
   \verb+*+ ruft häufg eine Alternativform des Befehls auf.
-  \begin{columns}[onlytextwidth, t]
-    \begin{column}{0.53\textwidth}
-      \begin{block}{Code}
-        \begin{lstlisting}
-        \befehl*[optional]{obligatorisch}
-        \documentclass[paper=a4]{scrartcl}
+  \begin{CodeExample}{0.53}[Code][Erklärung]
+    \begin{lstlisting}
+      \befehl*[optional]{obligatorisch}
+      \documentclass[paper=a4]{scrartcl}
 
 
-        \frac{1}{2}
+      \frac{1}{2}
 
 
-        % Kommentar
-        \end{lstlisting}
-      \end{block}
-    \end{column}
-    \begin{column}{0.43\textwidth}
-      \begin{block}{Erklärung}
-        Beispiel \\
-        Setzt die Dokumentenklasse auf \texttt{scrartcl} und das Papierformat auf DIN\,A4. \\
-        Es gibt auch Befehle mit zwei oder mehr Pflichtargumenten, z.B. der Bruch. \\
-        Text oder Befehle nach einem \verb+%+-Zeichen werden nicht berücksichtigt.
-      \end{block}
-    \end{column}
-  \end{columns}
+      % Kommentar
+    \end{lstlisting}
+  \CodeResult
+    Beispiel \\
+    Setzt die Dokumentenklasse auf \texttt{scrartcl} und das Papierformat auf DIN\,A4. \\
+    Es gibt auch Befehle mit zwei oder mehr Pflichtargumenten, z.B. der Bruch. \\
+    Text oder Befehle nach einem \verb+%+-Zeichen werden nicht berücksichtigt.
+  \end{CodeExample}
 \end{frame}
 
 \begin{frame}[fragile]{Syntax: Umgebungen}
   Das zweite wichtige \LaTeX-Element sind die Umgebungen.
   Umgebungen können extrem vielseitig sein, von einer Änderung der Textausrichtung über mathematische Formel bis hin zu Designelementen.
-  \begin{columns}[onlytextwidth, t]
-    \begin{column}{0.48\textwidth}
-      \begin{block}{Syntax}
-        \begin{lstlisting}
-        \begin{Umgebung*}[optional]
-            {obligatorisch}
-          % .
-          % .
-        \end{Umgebung*}
-        \end{lstlisting}
-      \end{block}
-    \end{column}
-    \begin{column}{0.48\textwidth}
-      \begin{block}{Beispiel}
-        \begin{lstlisting}
-        \begin{flushright}
-          % .
-        \end{flushright}
-        \end{lstlisting}
-      \end{block}
-    \end{column}
-  \end{columns}
+  \begin{CodeExample}{0.48}[Syntax][Beispiel]
+    \begin{lstlisting}
+      \begin{Umgebung*}[optional]
+          {obligatorisch}
+        % .
+        % .
+      \end{Umgebung*}
+    \end{lstlisting}
+  \CodeResult
+    \begin{lstlisting}
+      \begin{flushright}
+        % .
+      \end{flushright}
+    \end{lstlisting}
+  \end{CodeExample}
 \end{frame}
 
 \begin{frame}[fragile]{Syntax: Umgebungen}
@@ -97,21 +83,21 @@
     \begin{column}{0.48\textwidth}
       \begin{block}{Geht:}
         \begin{lstlisting}
-        \begin{document}
-          \begin{flushright}
-            % .
-          \end{flushright}
-        \end{document}
+          \begin{document
+            \begin{flushright}
+              % .
+            \end{flushright}
+          \end{document}
         \end{lstlisting}
       \end{block}
     \end{column}
     \begin{column}{0.48\textwidth}
       \begin{alertblock}{Geht nicht:}
         \begin{lstlisting}
-        \begin{itemize}
-          \begin{enumerate}
-        \end{itemize}
-          \end{enumerate}
+          \begin{itemize}
+            \begin{enumerate}
+          \end{itemize}
+            \end{enumerate}
         \end{lstlisting}
       \end{alertblock}
     \end{column}
@@ -120,34 +106,27 @@
 
 \begin{frame}[fragile]{Standardpakete}
   Die hier aufgezählten Pakete sollten immer geladen werden, da sie wesentliche Funktionen bieten und wichtige Einstellungen vornehmen.
-  \begin{columns}[onlytextwidth, t]
-    \begin{column}{0.48\textwidth}
-      \begin{block}{Paket}
-        \begin{lstlisting}
-        \usepackage{fixltx2e}
-        \usepackage[aux]{rerunfilecheck}
+  \begin{CodeExample}{0.48}[Paket][Funktion]
+    \begin{lstlisting}
+      \usepackage{fixltx2e}
+      \usepackage[aux]{rerunfilecheck}
 
-        \usepackage{polyglossia}
-        \setmainlanguage{german}
-        \usepackage{fontspec}
-        % mehr Pakete hier
+      \usepackage{polyglossia}
+      \setmainlanguage{german}
+      \usepackage{fontspec}
+      % mehr Pakete hier
 
-        \usepackage[unicode,pdfusetitle]{hyperref}
-        \usepackage{bookmark}
-        \end{lstlisting}
-      \end{block}
-    \end{column}
-    \begin{column}{0.48\textwidth}
-      \begin{block}{Funktion}
-        \LaTeXe\ korrigieren. \\
-        Warnung, falls nochmal kompiliert werden muss. \\
-        Deutsche Spracheinstellungen für das Dokument. \\
-        Für Fonteinstellungen \\[2\baselineskip]
-        Für Hyperlinks im Dokument (z.B. Inhaltsverzeichnis → Kapitel). \\
-        Erweiterte Bookmarks im PDF.
-      \end{block}
-    \end{column}
-  \end{columns}
+      \usepackage[unicode,pdfusetitle]{hyperref}
+      \usepackage{bookmark}
+    \end{lstlisting}
+  \CodeResult
+    \LaTeXe\ korrigieren. \\
+    Warnung, falls nochmal kompiliert werden muss. \\
+    Deutsche Spracheinstellungen für das Dokument. \\
+    Für Fonteinstellungen \\[2\baselineskip]
+    Für Hyperlinks im Dokument (z.B. Inhaltsverzeichnis → Kapitel). \\
+    Erweiterte Bookmarks im PDF.
+  \end{CodeExample}
 
   \vspace{5pt}
   Die Reihenfolge ist manchmal wichtig, z.B. damit Pakete die Spracheinstellung kennen.
@@ -161,11 +140,11 @@
   Sehr gute Vorlagen schon mit den Standardeinstellungen, schnell global mit Klassenoptionen anpassbar.
   \begin{block}{Fürs Praktikum empfohlenene Einstellungen}
     \begin{lstlisting}
-    \documentclass[
-      captions=tableheading,  % Spacing für Tabellenüberschriften
-      titlepage=firstiscover, % Titelseite ist Deckblatt
-      bibliography=totoc,     % Literatur im Inhaltsverzeichnis
-    ]{scrartcl}
+      \documentclass[
+        captions=tableheading,  % Spacing für Tabellenüberschriften
+        titlepage=firstiscover, % Titelseite ist Deckblatt
+        bibliography=totoc,     % Literatur im Inhaltsverzeichnis
+      ]{scrartcl}
     \end{lstlisting}
   \end{block}
 \end{frame}
@@ -173,25 +152,18 @@
 \begin{frame}[fragile]{Fonteinstellungen}
   Standardeinstellung sind die Latin-Modern-Fonts.
   \vspace{1em}
-  \begin{columns}[onlytextwidth, t]
-    \begin{column}{0.48\textwidth}
-      \begin{block}{Latin Modern}
-        \begin{lstlisting}
-        \usepackage{fontspec}
-        \end{lstlisting}
-      \end{block}
-    \end{column}
-    \begin{column}{0.48\textwidth}
-      \begin{block}{Alternativ: Tex Gyre}
-        \begin{lstlisting}
-        \usepackage{fontspec}
-        \setmainfont{Tex Gyre Pagella}
-        \setsansfont{Tex Gyre Heros}
-        \setmonofont{Tex Gyre Cursor}
-        \end{lstlisting}
-      \end{block}
-    \end{column}
-  \end{columns}
+  \begin{CodeExample}{0.48}[Latin Modern][Alternativ: Tex Gyre]
+    \begin{lstlisting}
+      \usepackage{fontspec}
+    \end{lstlisting}
+  \CodeResult
+    \begin{lstlisting}
+      \usepackage{fontspec}
+      \setmainfont{Tex Gyre Pagella}
+      \setsansfont{Tex Gyre Heros}
+      \setmonofont{Tex Gyre Cursor}
+    \end{lstlisting}
+  \end{CodeExample}
   \begin{itemize}
     \item Jede System-Schriftart kann genutzt
     \item \alert{Das ist i.A. nicht sinnvoll: \fontspec{Comic Sans MS} Hallo Welt in Comic Sans MS!}
@@ -203,24 +175,24 @@
 
 \begin{frame}[fragile]{Gerüst}
   \begin{lstlisting}
-  \documentclass[
-    captions=tableheading,
-    titlepage=firstiscover,
-    bibliography=totoc,
-  ]{scrartcl}
+    \documentclass[
+      captions=tableheading,
+      titlepage=firstiscover,
+      bibliography=totoc,
+    ]{scrartcl}
 
-  \usepackage{fixltx2e}
-  \usepackage[aux]{rerunfilecheck}
-  \usepackage{polyglossia}
-  \setmainlanguage{german}
-  \usepackage{fontspec}
-  % mehr Pakete hier
-  \usepackage[unicode,pdfusetitle]{hyperref}
-  \usepackage{bookmark}
-  % Einstellungen hier, z.B. Fonts
-  \begin{document}
-    % Text hier
-  \end{document}
+    \usepackage{fixltx2e}
+    \usepackage[aux]{rerunfilecheck}
+    \usepackage{polyglossia}
+    \setmainlanguage{german}
+    \usepackage{fontspec}
+    % mehr Pakete hier
+    \usepackage[unicode,pdfusetitle]{hyperref}
+    \usepackage{bookmark}
+    % Einstellungen hier, z.B. Fonts
+    \begin{document}
+      % Text hier
+    \end{document}
   \end{lstlisting}
 \end{frame}
 
@@ -231,7 +203,7 @@
   \begin{block}{\LaTeX-Dokument kompilieren}
     Konsole öffnen:
     \begin{lstlisting}
-    lualatex MeinDokument.tex
+      lualatex MeinDokument.tex
     \end{lstlisting}
   \end{block}
   \begin{alertblock}{Vorsicht!}
