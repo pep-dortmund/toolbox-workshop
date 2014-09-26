@@ -6,35 +6,37 @@
 }
 \begin{itemize}
     \item Einheiten werden aufrecht gesetzt
-    \item zwischen Zahl und Einheit steht ein kleines Leerzeichen \verb+\,+
+    \item Zwischen Zahl und Einheit steht ein kleines Leerzeichen \verb+\,+
     \item \texttt{siunitx} stellt Befehle zur Verfügung, die das korrekte Setzen von Zahlen und Einheiten stark vereinfachen
     \item[$\Rightarrow$] Dieses Paket sollte immer und für jede Zahl mit oder ohne Einheit verwendet werden.
 \end{itemize}
-  \begin{block}{benötigte Pakete}
-    \begin{lstverbatim}
+  \begin{Packages}
+    \begin{lstlisting}
     \usepackage[locale=DE,
                 separate-uncertainty=true,  % Immer Fehler mit ±
                 per-mode=symbol-or-fraction, % m/s im Text, sonst Bruch
             ]{siunitx}
-    \end{lstverbatim}
-  \end{block}
+    \end{lstlisting}
+  \end{Packages}
 \end{frame}
 
-\begin{frame}[fragile]{ Das \texttt{siunitx}-Paket }
-  \begin{columns}[T]
-    \begin{column}{0.6\textwidth}
-      \begin{block}{\LaTeX-Code}
-        \begin{lstverbatim}
+\begin{frame}[fragile]{Das \texttt{siunitx}-Paket}
+  \begin{columns}[onlytextwidth, t]
+    \begin{column}{0.60\textwidth}
+      \begin{block}{Code}
+        \begin{lstlisting}
         \num{1.23456} und \num{987654321}
         \num{1.2e2}
         \si{\newton} = \si{\kilo\gram\metre\per\second\squared}
         \SI{1.2}{\metre\per\second}
         \SI{4.3(12)}{\micro\second}
         \SI{4.3(12)e-6}{\second}
-        \end{lstverbatim}
+        \si[per-mode=reciprocal]{\kilo\gram\meter\per\second\squared}
+        \num[output-decimal-marker=.]{1.2}
+        \end{lstlisting}
       \end{block}
     \end{column}
-    \begin{column}{0.35\textwidth}
+    \begin{column}{0.36\textwidth}
       \begin{block}{Ergebnis}
         \num{1.23456} und \num{987654321} \\
         \num{1.2e2} \\
@@ -42,8 +44,10 @@
         \si{\newton} = \si{\kilo\gram\metre\per\second\squared} \\
         \medbreak
         \SI{1.2}{\metre\per\second} \\
-        \SI{4.3(12)}{\micro\second}
-        \SI{4.3(12)e-6}{\second}
+        \SI{4.3(12)}{\micro\second} \\
+        \SI{4.3(12)e-6}{\second} \\
+        \si[per-mode=reciprocal]{\kilo\gram\meter\per\second\squared} \\[\baselineskip]
+        \num[output-decimal-marker=.]{1.2}
       \end{block}
     \end{column}
   \end{columns}

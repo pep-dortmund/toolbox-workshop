@@ -1,43 +1,45 @@
 \section{Tabellen}
 
 \begin{frame}[fragile]{Tabellen}
-  \begin{block}{benötigte Pakete}
-    \begin{lstverbatim}
-    \useludepackage{booktabs}
-    \end{lstverbatim}
-  \end{block}
-  \begin{columns}[T]
-    \column{0.6\textwidth}
-    \fontsize{8}{6}
-    \begin{block}{Code}
-      \begin{lstverbatim}
-      \begin{table}
-        \centering
-        \caption{Eine gewöhnliche Tabelle mit Messdaten.}
-        \label{tab:some_data}
-        \begin{tabular}{c c c c c}
-          \toprule
-          $f$ & $l_\text{start}$ & $l_1$ & $l_{\text{kor},1}$ & $B_1$ \\
-          \midrule
-          100 & 1.14 & 3.51 & 0.00 &   4.30 \\
-          300 & 1.27 & 2.42 & 0.13 &  41.14 \\
-          500 & 1.21 & 1.70 & 0.25 & 168.73 \\
-          \bottomrule
-        \end{tabular}
-      \end{table}
-      \end{lstverbatim}
-    \end{block}
-    \column{0.35\textwidth}
-    \begin{itemize}
-      \item Äußere \texttt{table}-Umgebung behandelt Tabelle wie ein float
-      \item Innere \texttt{tabular}-Umgebung für eigentlichen Tabelleninhalt
-      \item \texttt{l},\texttt{c} oder \texttt{r} geben Ausrichtung der einzelnen Spalten an
-      \item
-        \begin{lstverbatim}
-        \label, \caption
-        \end{lstverbatim}
-        oberhalb von \texttt{tabular}
-    \end{itemize}
+  \begin{Packages}
+    \begin{lstlisting}
+    \usepackage{booktabs}
+    \end{lstlisting}
+  \end{Packages}
+  \begin{columns}[onlytextwidth, t]
+    \begin{column}{0.60\textwidth}
+      \fontsize{8}{6}
+      \begin{block}{Code}
+        \begin{lstlisting}
+        \begin{table}
+          \centering
+          \caption{Eine gewöhnliche Tabelle mit Messdaten.}
+          \label{tab:some_data}
+          \begin{tabular}{c c c c c}
+            \toprule
+            $f$ & $l_\text{start}$ & $l_1$ & $l_{\text{kor},1}$ & $B_1$ \\
+            \midrule
+            100 & 1.14 & 3.51 & 0.00 &   4.30 \\
+            300 & 1.27 & 2.42 & 0.13 &  41.14 \\
+            500 & 1.21 & 1.70 & 0.25 & 168.73 \\
+            \bottomrule
+          \end{tabular}
+        \end{table}
+        \end{lstlisting}
+      \end{block}
+    \end{column}
+    \begin{column}{0.36\textwidth}
+      \begin{itemize}
+        \item Äußere \texttt{table}-Umgebung behandelt Tabelle wie ein float
+        \item Innere \texttt{tabular}-Umgebung für eigentlichen Tabelleninhalt
+        \item \texttt{l},\texttt{c} oder \texttt{r} geben Ausrichtung der einzelnen Spalten an
+        \item
+          \begin{lstlisting}
+          \label, \caption
+          \end{lstlisting}
+          oberhalb von \texttt{tabular}
+      \end{itemize}
+    \end{column}
   \end{columns}
 \end{frame}
 
@@ -64,7 +66,7 @@
 \begin{frame}[fragile]{Schönere Tabellen mit \texttt{siunitx}}
   \fontsize{7}{5}
   \begin{block}{Code}
-    \begin{lstverbatim}
+    \begin{lstlisting}
     \begin{table}
       \centering
       \caption{Eine schöne Tabelle mit Messdaten.}
@@ -82,7 +84,7 @@
         \bottomrule
       \end{tabular}
     \end{table}
-    \end{lstverbatim}
+    \end{lstlisting}
   \end{block}
 \end{frame}
 
@@ -114,12 +116,12 @@
 \begin{frame}[fragile]{Gruppieren von mehreren Spalten}
   \fontsize{7}{5}
   \begin{block}{Kommandostruktur}
-    \begin{lstverbatim}
+    \begin{lstlisting}
     \multicolumn{#Spalten}{Ausrichtung}{Inhalt}
-    \end{lstverbatim}
+    \end{lstlisting}
   \end{block}
   \begin{block}{Beispiel}
-    \begin{lstverbatim}
+    \begin{lstlisting}
     \begin{table}
       \centering
       \caption{Messdaten für dubiose Elemente}
@@ -137,7 +139,7 @@
         \bottomrule
       \end{tabular}
     \end{table}
-    \end{lstverbatim}
+    \end{lstlisting}
   \end{block}
 \end{frame}
 

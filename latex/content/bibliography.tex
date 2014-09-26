@@ -134,21 +134,21 @@
   \fullcite{wingate}
 \end{frame}
 
-\begin{frame}[fragile]{Bib\LaTeX\hfill\doc{ftp://ftp.rrzn.uni-hannover.de/pub/mirror/tex-archive/macros/latex/contrib/biblatex/doc/biblatex.pdf}{biblatex}}
-  \begin{block}{Paket einbinden}
-    \begin{lstverbatim}
+\begin{frame}[fragile]{Bib\LaTeX\hfill\doc{http://mirrors.ctan.org/macros/latex/contrib/biblatex/doc/biblatex.pdf}{biblatex}}
+  \begin{Packages}
+    \begin{lstlisting}
     \usepackage[backend=biber]{biblatex} % nach babel
     \addbibresource{lit.bib}
-    \end{lstverbatim}
-  \end{block}
+    \end{lstlisting}
+  \end{Packages}
   \begin{block}{Zitieren}
       \begin{minipage}{0.6\linewidth}
-        \begin{lstverbatim}
+        \begin{lstlisting}
         \cite{numpy}
         \cite[20]{numpy}
         \cite[1-3]{numpy}
         \cite{splot,root}
-        \end{lstverbatim}
+        \end{lstlisting}
       \end{minipage}
       \begin{minipage}{0.35\linewidth}
         \cite{numpy}\\
@@ -158,11 +158,11 @@
       \end{minipage}
   \end{block}
   \begin{block}{Verzeichnis ausgeben}
-    \begin{lstverbatim}
+    \begin{lstlisting}
     \nocite{anleitung01} % ins Verzeichnis, obwohl nicht explizit zitiert
     \nocite{*}           % alles aus .bib ins Verzeichnis
     \printbibliography
-    \end{lstverbatim}
+    \end{lstlisting}
   \end{block}
 \end{frame}
 
@@ -185,11 +185,11 @@
   \vspace{10pt}
   Also:
   \begin{block}{Aufrufe mit Literaturverzeichnis}
-    \begin{lstverbatim}
+    \begin{lstlisting}
      lualatex file.tex
      biber file.bcf
      lualatex file.tex
-    \end{lstverbatim}
+    \end{lstlisting}
   \end{block}
 \end{frame}
 
@@ -202,12 +202,12 @@
     \item Standardstil ist \enquote{numeric}
     \item häufig genutzte Alternative: \enquote{alphabetic}
     \item Kombination aus Autorenname und Jahr: z.B. [Oli07]
-    \item viele weitere Stile $\rightarrow$ Doku
+    \item viele weitere Stile → Doku
     \item setzen mit \texttt{style=…} als Option für \texttt{biblatex}
   \end{itemize}
   \begin{block}{Code}
-    \begin{lstverbatim}
+    \begin{lstlisting}
       \usepackage[backend=biber, style=alphabetic]{biblatex}
-    \end{lstverbatim}
+    \end{lstlisting}
   \end{block}
 \end{frame}

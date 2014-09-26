@@ -2,10 +2,10 @@
 
 \begin{frame}{Unser Kurs}
   \begin{itemize}
-      \item in \LaTeX{} gibt es immer viele Möglichkeiten, ein Ziel zu erreichen
-    \item wir zeigen einen modernen Ansatz 
-    \item wir erklären, warum wir diesen Ansatz gewählt haben
-    \item weitere Ansätze werden an manchen Stellen kurz erwähnt
+    \item In \LaTeX\ gibt es immer viele Möglichkeiten, ein Ziel zu erreichen
+    \item Wir zeigen einen modernen Ansatz
+    \item Wir erklären, warum wir diesen Ansatz gewählt haben
+    \item Weitere Ansätze werden an manchen Stellen kurz erwähnt
   \end{itemize}
 \end{frame}
 
@@ -14,52 +14,52 @@
     \item \emph{Programmiersprache} zum Setzen von Text
     \item Kein WYSIWYG, es werden Befehle und Inhalt in normale Text-Dateien geschrieben.
     \item Kompiler überträgt \LaTeX-Code in ein Ausgabedokument (meist PDF)
-    \item open-source mit zahlreichen Erweiterungsmöglichkeit (Pakete)
+    \item Open-source mit zahlreichen Erweiterungsmöglichkeit (Pakete)
   \end{itemize}
 \end{frame}
 
 \begin{frame}{Warum \LaTeX?}
   \begin{itemize}
-    \item hervorragender Text- und Formelsatz
-    \item automatisierte Erstellung von Inhalts- und Literaturverzeichnis
+    \item Hervorragender Text- und Formelsatz
+    \item Automatisierte Erstellung von Inhalts- und Literaturverzeichnis
       \begin{itemize}
-        \item oder auch: Index, Glossar, Abkürzungen, Definitionen, \dots
+        \item Oder auch: Tabellenverzeichnis, Abbildungsverzeichnis, Index, Glossar, Abkürzungen, Definitionen, …
       \end{itemize}
     \item \TeX-Dateien sind reine Text-Dateien
       \begin{itemize}
-        \item[$\Rightarrow$] gut für Versionskontrolle geeignet
+        \item[$\Rightarrow$] Gut für Versionskontrolle geeignet
       \end{itemize}
-    \item sehr gute Vorlagen für wissenschaftliches Arbeiten
+    \item Sehr gute Vorlagen für wissenschaftliches Arbeiten
       \begin{itemize}
-      \item aber auch: Briefe, Notensatz, Präsentationen (auch diese)
+      \item Aber auch: Briefe, Notensatz, Präsentationen (auch diese)
       \end{itemize}
-    \item ausgezeichnete Dokumentation
-    \item erweiterbar durch zahlreiche und mächtige Pakete
-    \item auf allen geläufigen Betriebssystemen verfügbar
+    \item Ausgezeichnete Dokumentation
+    \item Erweiterbar durch zahlreiche und mächtige Pakete
+    \item Auf allen geläufigen Betriebssystemen verfügbar
     \item Ausgabe direkt als PDF mit Hyperlinks
   \end{itemize}
 \end{frame}
 
 \begin{frame}{Geschichte}
   \begin{columns}
-    \begin{column}{0.75\textwidth}
+    \begin{column}{0.73\textwidth}
       \TeX:
       \begin{itemize}
         \item Geschrieben von Donald E. Knuth 1978, um sein Buch \enquote{The Art of Computer Programming} zu setzen
-        \item auf Aussprache achten!
-        \item Version (2014) $3.14159265 → \mathup{π}$
-        \item viele Erweiterungen: \eTeX, pdf\TeX, \XeTeX, \LuaTeX
+        \item Auf Aussprache achten!
+        \item Version (2014): $3.14159265 → \mathup{π}$
+        \item Viele Erweiterungen: \eTeX, pdf\TeX, \XeTeX, \LuaTeX
       \end{itemize}
 
       \vspace{10pt}
       \LaTeX:
       \begin{itemize}
         \item Geschrieben von Leslie Lamport 1984
-        \item aktuelle Version: \LaTeXe (1994)
-        \item \LaTeX3 seit Anfang der Neunziger in Arbeit\dots
+        \item Version (1994): \LaTeXe
+        \item \LaTeX3 seit Anfang der Neunziger in Arbeit…
       \end{itemize}
     \end{column}
-    \begin{column}{0.25\textwidth}
+    \begin{column}{0.23\textwidth}
       \includegraphics[height=0.45\textheight]{figures/knuth.jpg}\\
       \includegraphics[height=0.45\textheight]{figures/lamport.jpg}
     \end{column}
@@ -74,7 +74,7 @@
 
   \vspace{10pt}
   Eine Kombination davon ist oft ein neues Programm.\\[10pt]
-  Beispiel: \texttt{dvilualatex} = \LuaTeX + \LaTeX + DVI-Output (statt PDF)
+  Beispiel: \texttt{dvilualatex} = \LuaTeX\ + \LaTeX\ + DVI-Output (statt PDF)
 \end{frame}
 
 \begin{frame}[fragile]{In diesem Kurs: \LuaTeX}
@@ -85,11 +85,11 @@
       \end{itemize}
     \item OTF-Fonts
       \begin{itemize}
-        \item Alle Fonts benutzen, die man auf dem Rechner hat (nur wenige Fonts wirklich sinnvoll, bitte kene Protokolle in Comic Sans MS)
+        \item Alle Fonts benutzen, die man auf dem Rechner hat (nur wenige Fonts wirklich sinnvoll, bitte keine Protokolle in Comic Sans MS)
       \end{itemize}
     \item Unicode-Math
       \begin{itemize}
-        \item Mathe-Input über Unicode (bei mir: <Caps><Caps>a → $α$)
+        \item Mathe-Input über Unicode (bei mir: $\langle$Caps$\rangle\langle$Caps$\rangle$a → $α$)
           \begin{itemize}
             \item Code lesbarer, Tippen schneller
             \end{itemize}
@@ -98,7 +98,7 @@
     \item Lua-Programmierung
       \begin{itemize}
         \item \TeX-Programmierung ist nicht besonders einfach
-        \item manche Pakete bieten weitergehende Funktionen nur über Lua an
+        \item Manche Pakete bieten weitergehende Funktionen nur über Lua an
       \end{itemize}
   \end{itemize}
 \end{frame}

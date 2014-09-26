@@ -1,13 +1,13 @@
 \section{Aufzählungen}
 
 \begin{frame}[fragile]{Aufzählungen: Itemize}
-  \LaTeX\ bietet verschiedene Umgebungen für Aufzählungen.
+  \LaTeX\ bietet verschiedene: Umgebungen für Aufzählungen.
   Für unnummerierte Listen wird \texttt{itemize} genutzt.
   Wie alle anderen Umgebungen können diese auch verschachtelt werden.
-  \begin{columns}[t]
-    \begin{column}{0.47\textwidth}
-      \begin{block}{\LaTeX-Code}
-        \begin{lstverbatim}
+  \begin{columns}[onlytextwidth, t]
+    \begin{column}{0.48\textwidth}
+      \begin{block}{Code}
+        \begin{lstlisting}
         \begin{itemize}
           \item Punkt 1
           \item Punkt 2
@@ -17,10 +17,10 @@
             \end{itemize}
           \item[→] Punkt 3
         \end{itemize}
-        \end{lstverbatim}
+        \end{lstlisting}
       \end{block}
     \end{column}
-    \begin{column}{0.47\textwidth}
+    \begin{column}{0.48\textwidth}
       \begin{block}{Ergebnis}
         \begin{itemize}
           \item Punkt 1
@@ -38,23 +38,23 @@
 
 \begin{frame}[fragile]{Aufzählungen: Enumerate}
   Für nummerierte Listen wird \texttt{enumerate} genutzt.
-  \begin{columns}[t]
-    \begin{column}{0.47\textwidth}
-      \begin{block}{\LaTeX-Code}
-        \begin{lstverbatim}
+  \begin{columns}[onlytextwidth, t]
+    \begin{column}{0.48\textwidth}
+      \begin{block}{Code}
+        \begin{lstlisting}
         \begin{enumerate}
           \item Punkt 1
           \item Punkt 2
-            \begin{enumerate}[(a)]
+            \begin{enumerate}
               \item Unterpunkt 1
               \item Unterpunkt 2
             \end{enumerate}
           \item Punkt 3
         \end{enumerate}
-        \end{lstverbatim}
+        \end{lstlisting}
       \end{block}
     \end{column}
-    \begin{column}{0.47\textwidth}
+    \begin{column}{0.48\textwidth}
       \begin{block}{Ergebnis}
         \begin{enumerate}
           \item Punkt 1
@@ -66,26 +66,26 @@
           \item Punkt 3
         \end{enumerate}
       \end{block}
-      Anpassung der Listen mit dem Paket \texttt{enumitem}
     \end{column}
   \end{columns}
+  Anpassung der Listen mit dem Paket \texttt{enumitem}.
 \end{frame}
 
 \begin{frame}[fragile]{Aufzählungen: Description}
   Zur Beschreibung von Stichwörtern wird \texttt{description} benutzt, dabei wird das
 Stichwort \verb-\item- als optionales Argument übergeben.
-  \begin{columns}[t]
-    \begin{column}{0.47\textwidth}
-      \begin{block}{\LaTeX-Code}
-        \begin{lstverbatim}
+  \begin{columns}[onlytextwidth, t]
+    \begin{column}{0.48\textwidth}
+      \begin{block}{Code}
+        \begin{lstlisting}
         \begin{description}
           \item[\LaTeX] gut
           \item[Word] böse
         \end{description}
-        \end{lstverbatim}
+        \end{lstlisting}
       \end{block}
     \end{column}
-    \begin{column}{0.47\textwidth}
+    \begin{column}{0.48\textwidth}
       \begin{block}{Ergebnis}
         \begin{description}
           \item[\LaTeX] gut

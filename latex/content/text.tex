@@ -1,38 +1,35 @@
 \section{Text erstellen}
 
 \begin{frame}[fragile]{Text schreiben}
-    \begin{block}{Beispiel}
-        \begin{lstverbatim}
-            \documentclass[…]{scrartcl}
-            %Präambel
-            \begin{document}
-            Hallo Welt!
+  \begin{block}{Beispiel}
+    \begin{lstlisting}
+      % Präambel
+      \begin{document}
+        Hallo, Welt!
 
-            Dies ist ein dummer Beispieltext.
-            Er soll zeigen, dass LaTeX sich nicht für
-            Zeilenumbrüche im Code    oder    zuviele
-            Leerzeichen kümmert.
+        Dies ist ein dummer Beispieltext.
+        Er soll zeigen, dass LaTeX sich nicht um
+        Zeilenumbrüche im Code    oder    zuviele
+        Leerzeichen kümmert.
 
-            Ein Absatz wird mit einer leeren Code-Zeile 
-            markiert.
-            \end{document}
-        \end{lstverbatim}
-    \end{block}
+        Ein Absatz wird mit einer leeren Code-Zeile
+        markiert.
+      \end{document}
+    \end{lstlisting}
+  \end{block}
 \end{frame}
 
 \begin{frame}[fragile]{Konventionen für Text}
   \begin{itemize}
-    \item höchstens ein Satz pro Code-Zeile
+    \item Höchstens ein Satz pro Code-Zeile
     \item Absätze werden durch eine Leerzeile markiert
-    \item Im Fließtext sollten keine Umbrüche mit \textbackslash\textbackslash\ erzwungen werden.
+    \item Im Fließtext sollten keine Umbrüche mit \verb+\\+ erzwungen werden
   \end{itemize}
   \begin{alertblock}{Sonderzeichen}
     Viele Sonderzeichen sind \LaTeX-Steuerzeichen.
-    Damit diese im Text genutzt werden können, muss meist ein \textbackslash\ vorangestellt oder ein Befehl genutzt werden:
+    Damit diese im Text genutzt werden können, muss meist ein \verb+\+ vorangestellt oder ein Befehl genutzt werden:
     \begin{center}
-      \begin{lstlisting}
-      \% \& \_ \textbackslash \$ \{ \}
-      \end{lstlisting}
+      \verb+\% \& \_ \textbackslash \$ \{ \}+ \\
       \% \& \_ \textbackslash\ \$ \{ \}
     \end{center}
   \end{alertblock}
@@ -40,20 +37,20 @@
 
 \begin{frame}[fragile]{Textauszeichnung}
   Änderungen der Schrifteigenschaften sind mit diesen Befehlen möglich:
-  \begin{columns}[t]
-    \begin{column}{0.6\textwidth}
-      \begin{block}{\LaTeX-Code}
-        \begin{lstverbatim}
+  \begin{columns}[onlytextwidth, t]
+    \begin{column}{0.60\textwidth}
+      \begin{block}{Code}
+        \begin{lstlisting}
         \textit{kursiv} \emph{kursiv}
         \textbf{fett}
         \textbf{\textit{fett-kursiv}}
         \textrm{Serifen-Schrift}
         \texttt{Mono-Schrift}
         \textsf{Sans-Serif-Schrift}
-        \end{lstverbatim}
+        \end{lstlisting}
       \end{block}
     \end{column}
-    \begin{column}{0.35\textwidth}
+    \begin{column}{0.36\textwidth}
       \begin{block}{Ergebnis}
         \textit{kursiv} \emph{kursiv} \\
         \textbf{fett} \\
@@ -64,25 +61,26 @@
       \end{block}
     \end{column}
   \end{columns}
+
   \vspace{1em}
-  In der Matheumgebung statt \verb+\textxx+ einfach \verb+\mathxx+, z.B. \verb+\mathrm+.
+  Diese Befehle sollten sehr selten benutzt werden, semantischer Markup ist besser.
 \end{frame}
 
 \begin{frame}[fragile]{Schriftgrößen}
-  Gelten immer für den aktuellen Block, z.B. in einer Umgebung oder zwischen \{\dots\}
-  \begin{columns}[t]
-    \begin{column}{0.47\textwidth}
-      \begin{block}{\LaTeX-Code}
-        \begin{lstverbatim}
+  Gelten immer für den aktuellen Block, z.B. in einer Umgebung oder zwischen \texttt{\{…\}}
+  \begin{columns}[onlytextwidth, t]
+    \begin{column}{0.48\textwidth}
+      \begin{block}{Code}
+        \begin{lstlisting}
         {\tiny tiny}
         {\small small}
         {\normalsize normal}
         {\large large}
         {\huge huge}
-        \end{lstverbatim}
+        \end{lstlisting}
       \end{block}
     \end{column}
-    \begin{column}{0.47\textwidth}
+    \begin{column}{0.48\textwidth}
       \begin{block}{Ergebnis}
         {\tiny tiny}
         {\small small}
@@ -93,28 +91,29 @@
     \end{column}
   \end{columns}
   \vspace{1em}
-  \begin{block}{alle Größen}
-    \begin{lstverbatim}
+  \begin{block}{Alle Größen}
+    \begin{lstlisting}
     \tiny, \scriptsize, \footnotesize, \small, \normalsize, \large, \Large, \LARGE, \huge, \Huge
-    \end{lstverbatim}
+    \end{lstlisting}
   \end{block}
+  Auch diese Befehle sollten nur über semantischen Markup benutzt werden.
 \end{frame}
 
-\begin{frame}[fragile]{Text auslagern}
-  \begin{block}{Beispielcode}
-    \begin{lstverbatim}
+\begin{frame}[fragile]{Inhalt auslagern}
+  \begin{block}{Code}
+    \begin{lstlisting}
     \input{header.tex}
     \begin{document}
-    \input{Teil1.tex}
-    \input{Teil2.tex}
-    ...
+      \input{Teil1.tex}
+      \input{Teil2.tex}
+      % .
     \end{document}
-    \end{lstverbatim}
+    \end{lstlisting}
   \end{block}
   \begin{itemize}
     \item Verschachtelung möglich
     \item Zur Aufteilung größerer Dokumente (z.B. diese Präsentation)
-    \item Für häufig wiederverwendeten \LaTeX-Code (header, Erläuterungen zu Fehlerrechnung, \ldots)
+    \item Für häufig wiederverwendeten \LaTeX-Code (header, Erläuterungen zu Fehlerrechnung, …)
     \item Für per Skript erzeugte Tabelleninhalte
   \end{itemize}
 \end{frame}
@@ -122,22 +121,22 @@
 \begin{frame}[fragile]{Zitate}
   Die richtigen Anführungszeichen, wo die Satzzeichen hingehören und vieles mehr hängt von der Sprache ab.
   So macht man es richtig:
-  \begin{block}{Paket}
-    \begin{lstverbatim}
-    \usepackage[autostyle]{csquotes} % polyglossia 
-    \setotherlanguages{english, french} %andere Sprachen laden.
-    \end{lstverbatim}
+  \begin{block}{Benötigte Paket}
+    \begin{lstlisting}
+    \usepackage[autostyle]{csquotes} % polyglossia
+    \setotherlanguages{english, french} % andere Sprachen laden.
+    \end{lstlisting}
   \end{block}
-  \begin{columns}[onlytextwidth,t]
+  \begin{columns}[onlytextwidth, t]
     \begin{column}{0.60\textwidth}
       \begin{block}{Code}
-        \begin{lstverbatim}
+        \begin{lstlisting}
         foo \enquote{bar} baz
         \enquote{foo \enquote{bar} baz}
         \textenglish{\enquote{foo}}
         \textfrench{\enquote{foo}}
         \textcquote{root}{foo}
-        \end{lstverbatim}
+        \end{lstlisting}
       \end{block}
     \end{column}
     \begin{column}{0.36\textwidth}
@@ -147,6 +146,8 @@
         \textenglish{\enquote{foo}} \\
         \textfrench{ \enquote{foo}} \\
         \textcquote{root}{foo}
+        % work around polyglossia bug #68
+        \directlua{polyglossia.desactivate_frpt()}
       \end{block}
     \end{column}
   \end{columns}

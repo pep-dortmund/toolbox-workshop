@@ -1,40 +1,53 @@
-\begin{frame}[fragile]{\$\dots\$-Umgebung}
-  Aktiviert den Mathematikmodus im Fließtext. 
+\begin{frame}[fragile]{
+  Benötigte Pakete
+  \hfill\doc{http://mirrors.ctan.org/macros/latex/required/amslatex/math/amsldoc.pdf}{amsmath}
+  \doc{http://mirrors.ctan.org/macros/latex/contrib/mathtools/mathtools.pdf}{mathtools}
+}
+\end{frame}
 
-  \begin{columns}[t]
-      \begin{column}{0.55\textwidth}
-          \begin{block}{Code}
-              \begin{lstverbatim}
-                Dies ist eine Variable: $x$. 
-                Liste von Variablen $x$, $y$, $z$.
-                Kleine Formel: $a^2 + b^2 = c^2$.
-                Vorsicht Höhe: $x^{2^2}$ $\frac{1}{2}$
-              \end{lstverbatim}
-          \end{block}
-      \end{column}
-      \begin{column}{0.4\textwidth}
-          \begin{block}{Ergebnis}
-                Dies ist eine Variable: $x$. \\
-                Liste von Variablen $x$, $y$, $z$. \\
-                kleine Formel: $a^2 + b^2 = c^2$. \\
-                Vorsicht Höhe: $x^{2^2}$ $\frac{1}{2}$
-          \end{block}
-      \end{column}
+\begin{frame}[fragile]{\texttt{\$…\$}-Umgebung}
+  Aktiviert den Mathematikmodus im Fließtext.
+
+  \begin{columns}[onlytextwidth, t]
+    \begin{column}{0.56\textwidth}
+      \begin{block}{Code}
+        \begin{lstlisting}
+          Dies ist eine Variable: $x$.
+          Liste von Variablen $x$, $y$, $z$.
+          Kleine Formel: $a^2 + b^2 = c^2$.
+          Vorsicht Höhe: $x^{2^{2^{2^2}}}$
+              $x_{2_{2_{2_2}}}$
+        \end{lstlisting}
+      \end{block}
+    \end{column}
+    \begin{column}{0.40\textwidth}
+      \begin{block}{Ergebnis}
+        Dies ist eine Variable: $x$. \\
+        Liste von Variablen $x$, $y$, $z$. \\
+        kleine Formel: $a^2 + b^2 = c^2$. \\
+        Vorsicht Höhe: $x^{2^{2^{2^2}}}$ $x_{2_{2_{2_2}}}$ \\
+        Mehr Text. Mehr Text. Mehr
+      \end{block}
+    \end{column}
   \end{columns}
+
+  \vspace{1em}
+  Leerzeichen werden im Mathe-Modus ignoriert.
+  \TeX\ hat Algorithmen für das richtige Spacing.
 \end{frame}
 
 \begin{frame}[fragile]{Griechisch und mehr}
-  \begin{columns}[onlytextwidth,T]
-    \begin{column}{0.7\textwidth}
+  \begin{columns}[onlytextwidth, t]
+    \begin{column}{0.70\textwidth}
       \begin{block}{Code}
-        \begin{lstverbatim}
+        \begin{lstlisting}
         \alpha \beta \gamma \delta \epsilon \zeta \eta \theta \iota \kappa \lambda \mu \nu \xi \omicron \pi \rho \sigma \tau \upsilon \phi \chi \psi \omega
         \varepsilon \vartheta \varkappa \varpi \varrho \varsigma \varphi
         \Alpha \Beta \Gamma \Delta \Epsilon \Zeta \Eta \Theta \Iota \Kappa \Lambda \Mu \Nu \Xi \Omicron \Pi \Rho \Sigma \Tau \Upsilon \Phi \Chi \Psi \Omega
         \hbar \imath \jmath \ell \wp
         \aleph \beth \gimel
         \partial \eth \nabla \square \increment \infty
-        \end{lstverbatim}
+        \end{lstlisting}
       \end{block}
     \end{column}
     \begin{column}{0.26\textwidth}
@@ -58,7 +71,7 @@
   \end{columns}
 \end{frame}
 
-\begin{frame}{Operatoren}
+\begin{frame}{Operatoren und Relationen}
 \end{frame}
 
 \begin{frame}{Indizes}
@@ -74,30 +87,33 @@
 \end{frame}
 
 \begin{frame}[fragile]{Fonts}
-    \begin{block}{Pakete}
-        \begin{lstverbatim}
-        \usepackage{unicode-math} % nach Mathe-Paketen und fontspec
-        \end{lstverbatim}
-    \end{block}
-    \begin{columns}[t]
-        \begin{column}{0.47\textwidth}
-            \begin{block}{Latin Modern}
-                \begin{lstverbatim}
-                \setmathfont{Latin Modern Math}
-                \end{lstverbatim}
-            \end{block}
-        \end{column}
-        \begin{column}{0.47\textwidth}
-            \begin{block}{Tex Gyre}
-                \begin{lstverbatim}
-                \setmathfont{Tex Gyre Pagella Math}
-                \end{lstverbatim}
-            \end{block}
-        \end{column}
-    \end{columns}
+  \begin{Packages}
+    \begin{lstlisting}
+    \usepackage{unicode-math} % nach Mathe-Paketen und fontspec
+    \end{lstlisting}
+  \end{Packages}
+  \begin{columns}[onlytextwidth, t]
+    \begin{column}{0.48\textwidth}
+      \begin{block}{Latin Modern}
+        \begin{lstlisting}
+        \setmathfont{Latin Modern Math}
+        \end{lstlisting}
+      \end{block}
+    \end{column}
+    \begin{column}{0.48\textwidth}
+      \begin{block}{Tex Gyre}
+        \begin{lstlisting}
+        \setmathfont{Tex Gyre Pagella Math}
+        \end{lstlisting}
+      \end{block}
+    \end{column}
+  \end{columns}
 \end{frame}
 
 \begin{frame}{Spaces}
+\end{frame}
+
+\begin{frame}{Klammern}
 \end{frame}
 
 \begin{frame}[fragile]{
@@ -107,82 +123,32 @@
   Praktischer Link: \\
   \url{http://detexify.kirelabs.org/classify.html} \\
   (Symbol malen und \LaTeX-Code angezeigt bekommen)
-  \begin{columns}[T]
-    \begin{column}{0.7\textwidth}
-      \begin{block}{\LaTeX-Code}
-        \begin{lstverbatim}
-        \leq \geq \gg \ll \approx \propto
-        \cdot \times \bar{x} \vec{x} \vec{\imath}
-        \pm \mp
-        \int_0^1 \sum_{i=1}^N \prod
-        \iint \iiint \oint
-        \end{lstverbatim}
-      \end{block}
-    \end{column}
-    \begin{column}{0.25\textwidth}
-      \begin{block}{Ergebnis}
-        \begin{IEEEeqnarray*}{c}
-          \leq \geq \gg \ll \approx \propto \\
-          \cdot \times \bar{x} \vec{x} \vec{\imath} \\
-          \pm \mp \\
-          \int_0^1 \sum_{i=1}^N \prod \\
-          \iint \iiint \oint
-        \end{IEEEeqnarray*}
-      \end{block}
-    \end{column}
-  \end{columns}
-\end{frame}
-
-\begin{frame}[fragile]{Mehr Mathematik}
-  \begin{columns}[T]
-    \column{0.7\textwidth}
-    \begin{block}{\LaTeX-Code}
-      \begin{lstverbatim}
-      \begin{align*}
-        \alpha, \beta, \gamma, \delta \\ 
-        \Alpha, \Beta, \Gamma, \Delta \\
-        \frac12 \quad \frac{3x^2 + 2x}{4x - 7} \\
-        \sin(x) \quad \cos(x) \\
-        \lim_{x \to \infty} \exp(-x) = 0 \\
-        \sqrt[n]{a^2 + b^2} = c \\
-        \langle x \rangle \; \text{vs.} \; < x >  \\
-        \left(\frac{x^2}{y^3}\right)
-      \end{align*}
-      \end{lstverbatim}
-    \end{block}
-    \column{0.25\textwidth}
-    \begin{block}{Resultat}
-      \begin{align*}
-        \alpha, \beta, \gamma, \delta \\ 
-        \Alpha, \Beta, \Gamma, \Delta \\
-        \frac12 \quad \frac{3x^2 + 2x}{4x - 7} \\
-        \sin(x) \quad \cos(x) \\
-        \lim_{x \to \infty} \exp(-x) = 0 \\
-        \sqrt[n]{a^2 + b^2} = c \\
-        \langle x \rangle \; \text{vs.} \; < x >  \\
-        \left(\frac{x^2}{y^3}\right)
-      \end{align*}
-    \end{block}
-  \end{columns}
 \end{frame}
 
 \begin{frame}[fragile]{Konventionen: Variablen, Zahlen, Einheiten, Indizes}
   \begin{itemize}
     \item Variablen werden kursiv gesetzt.
       Dies geschieht im Mathematikmodus automatisch.
-      Am besten benutzt man hierfür immer \texttt{siunitx}.
-  \item Die eulersche Zahl $\mathup{e}$, das imaginäre $\mathup{i}$, die Kreiszahl $\mathup{\pi}$ und das infinitesimale $\mathup{d}$ werden ebenfalls aufrecht gesetzt.
+    \item Die eulersche Zahl $\mathup{e}$, das imaginäre $\mathup{i}$, die Kreiszahl $\mathup{\pi}$ und das infinitesimale $\mathup{d}$ werden ebenfalls aufrecht gesetzt.
       Im Mathematikmodus erreicht man dies mit
-      \begin{lstverbatim}
-          \mathup{e}, \mathup{d}, \mathup{\pi}, \mathup{i}.
-      \end{lstverbatim}
+      \begin{lstlisting}
+        \mathup{e}, \mathup{d}, \mathup{\pi}, \mathup{i}.
+      \end{lstlisting}
     \item Bestehen Indizes aus Text, wie min oder max, so wird dies ebenfalls aufrecht gesetzt.
-      \begin{lstverbatim}
+      \begin{lstlisting}
       x_\text{min}
-      \end{lstverbatim}
+      \end{lstlisting}
     \item ein $\mathrm{d}x$ sollte durch ein kleines Leerzeichen (\verb+\,+) vom Integranden abgetrennt werden.
-        \begin{equation}
-            \int_0^1 \int_0^{\mathup{\pi}} \int_0^{2\mathup{\pi}} r^2 \sin(\vartheta)\, \mathup{d}\phi\, \mathup{d}\vartheta \, \mathup{d}r = \frac{4}{3}\mathup{\pi}
-        \end{equation}
+
+      \vspace{5pt}
+      \begin{lstlisting}
+        \int_0^1 \int_0^{\mathup{\pi}} \int_0^{2 \mathup{\pi}}
+          r^2 \sin(\vartheta) \, \mathup{d}\varphi \, \mathup{d}\vartheta
+          \, \mathup{d}r = \frac{4}{3} \mathup{\pi}
+      \end{lstlisting}
+
+      \begin{equation*}
+        \int_0^1 \int_0^{\mathup{\pi}} \int_0^{2 \mathup{\pi}} r^2 \sin(\vartheta) \, \mathup{d}\phi \, \mathup{d}\vartheta \, \mathup{d}r = \frac{4}{3} \mathup{\pi}
+      \end{equation*}
   \end{itemize}
 \end{frame}

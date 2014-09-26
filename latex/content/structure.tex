@@ -4,69 +4,70 @@
   \LaTeX\ erstellt automatisch eine Titelseite aus den Metadaten.
 
   \begin{block}{Empfehlung fürs Praktikum:}
-    \begin{lstverbatim}
-    \title{Vxxx: Titel des Versuchs}
-    \subtitle{Physikalisches Anfängerpraktikum}
-    \author{Max Mustermann}
-    % Mehrere Autoren mit \and :
+    \begin{lstlisting}
+    \title{101 Titel des Versuchs}
+    % Mehrere Autoren mit \and:
     \author{Max Mustermann \and Maria Musterfrau}
-    \date{Durchführung: 26.9.2014, Abgabe: 29.9.2014}
-    % Zusätzlich möglich:
-    \subject{…}
-    \titlehead{…}
-    \publishers{…}
-    \end{lstverbatim}
+    \date{Durchführung: 26.09.2014, Abgabe: 29.09.2014}
+    \end{lstlisting}
   \end{block}
 
   \begin{block}{Titelseite generieren}
-    \begin{lstverbatim}
+    \begin{lstlisting}
     \maketitle
-    \end{lstverbatim}
+    \end{lstlisting}
   \end{block}
 \end{frame}
 
-\begin{frame}[fragile]{Inhaltsverzeichnis und Gliederung}
+\begin{frame}[fragile]{Gliederung}
   \LaTeX\ bietet Befehle zum erstellen von Gliederungsebenen.
   Diese werden automatisch nummeriert und in entsprechend größerer und fetter Schrift gesetzt.
 
-  Mit \verb+\tableofcontents+ wird das Inhaltsverzeichnis erstellt.
-
   \begin{block}{Gliederungsebenen für \texttt{scrartcl}}
-    \begin{lstverbatim}
+    \begin{lstlisting}
     \section{Überschrift}
     \subsection{Überschrift}
     \subsubsection{Überschrift}
     \paragraph{Überschrift} % wird nicht nummeriert
     \subparagraph{Überschrift} % wird nicht nummeriert
-    \end{lstverbatim}
+    \end{lstlisting}
   \end{block}
-  \begin{block}{höhere Gliederungsebenen für \texttt{scrrepr} und \texttt{scrbook}}
-    \begin{lstverbatim}
+  \begin{block}{Höhere Gliederungsebenen für \texttt{scrreprt} und \texttt{scrbook}}
+    \begin{lstlisting}
     \part{Überschrift}
     \chapter{Überschrift}
     \section{Überschrift}
-    \end{lstverbatim}
+    \end{lstlisting}
+  \end{block}
+\end{frame}
+
+\begin{frame}[fragile]{Inhaltsverzeichnis}
+  \begin{block}{Inhaltsverzeichnis generieren}
+    \begin{lstlisting}
+    \tableofcontents
+    \newpage
+    \end{lstlisting}
   \end{block}
 \end{frame}
 
 \begin{frame}[fragile]{Referenzen}
   \begin{block}{Code}
-    \begin{lstverbatim}
+    \begin{lstlisting}
     \section{Messung mit Apparatur 2}
     \label{sec:apparatur2}
-    . . .
+    % .
     \section{Auswertung}
     Wie in \ref{sec:apparatur2} beschrieben, ...
-    \end{lstverbatim}
+    \end{lstlisting}
   \end{block}
   \begin{itemize}
     \item Auch für Gleichungen, Grafiken, Tabellen → später
     \item Für Übersichtlichkeit sollten Labels den Typ der Referenz nennen:
       \begin{description}
-        \item[Tabellen] \texttt{tab:}
-        \item[Grafiken] \texttt{fig:}
+        \item[Sections]    \texttt{sec:}
         \item[Gleichungen] \texttt{eqn:}
-        \item[Sections] \texttt{sec:}
+        \item[Abbildungen] \texttt{fig:}
+        \item[Tabellen]    \texttt{tab:}
       \end{description}
     \item Bei Gleichungen: \verb+\eqref+ statt \verb+\ref+ → setzt Klammern: \eqref{eqn:maxwell1}
     \item \verb+\label+ immer nach dem, worauf verwiesen wird

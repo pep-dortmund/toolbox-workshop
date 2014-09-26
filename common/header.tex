@@ -45,7 +45,6 @@
   sans-style=italic,
   nabla=upright,
   partial=upright,
-  vargreek-shape=unicode,
 ]{unicode-math}
 \usepackage[retainorgcmds]{IEEEtrantools}
 
@@ -70,7 +69,7 @@
 \DeclareMathSymbol{\hbar}{\mathord}{AMSb}{"7E}
 \DeclareMathSymbol{ℏ}{\mathord}{AMSb}{"7E}
 
-\usepackage[locale=DE, separate-uncertainty=true, per-mode=fraction]{siunitx}
+\usepackage[locale=DE, separate-uncertainty=true, per-mode=symbol-or-fraction]{siunitx}
 \AtBeginDocument{\sisetup{math-rm=\mathrm, text-rm=\rmfamily}}
 
 \usepackage[version=3]{mhchem}
@@ -85,7 +84,6 @@
 \setbeamertemplate{caption}[numbered]
 
 \usepackage{xcolor}
-\usepackage{enumerate}
 \usepackage{metalogo}
 \usepackage{pdflscape}
 
@@ -93,35 +91,66 @@
 \usepackage{listings}
 \usepackage{lstautogobble}
 
-\lstnewenvironment{lstverbatim}[1][]{
-  \lstset
-  {
-    autogobble,
-    language={[LaTeX]TeX},
-    basicstyle=\ttfamily,
-    texcsstyle=*\color{red},
-    keywordstyle=\color{cyan},
-    commentstyle=\color{gray},
-    morekeywords = {hallo},
-    otherkeywords={$,$, &, \{, \}, \[, \],  ^, _},
-    moretexcs={setmainlanguage, text, num, SI, si, kilo, gram, befehl, subject, titlehead, publishers, textenglish, textfrench,
-               metre, per, second, squared, micro, subtitle, maketitle, tableofcontents,
-               subsection, subsubsection, part, chapter, paragraph, subparagraph,
-               iint, iiint, includegraphics, addbibresource, printbibliography,
-               OverfullCenter, ExplSyntaxOn, ExplSyntaxOff, NewDocumentCommand,
-               enquote, selectlanguage, textcquote,
-               setmainfont, setsansfont, setmonofont,
-               setmathfont, mathscr, mathbfscr, mathcal, mathbfcal, DeclareSymbolFont, protected, mathbb, numexpr, symAMSb, vDash, coloneq, lblkbrbrak, rblkbrbrak, DeclareMathSymbol,
-               omicron, varkappa, Alpha, Beta, Epsilon, Zeta, Eta, Iota, Kappa, Mu, Nu, Omicron, Rho, Tau, Chi, beth, gimel, eth,
-               square, increment, setotherlanguages,
-             },
-    columns=fullflexible,
-    breaklines=true,
-    keepspaces=true,
-    aboveskip=-0.2em,
-    belowskip=-0.2em
+\lstset{
+  autogobble,
+  language={[LaTeX]TeX},
+  basicstyle=\ttfamily,
+  texcsstyle=*\color{red},
+  keywordstyle=\color{cyan},
+  commentstyle=\color{gray},
+  otherkeywords={$,$, &, \{, \}, \[, \],  ^, _},
+  morekeywords={},
+  moretexcs={setmainlanguage, text, num, SI, si, kilo, gram, befehl, subject, titlehead, publishers, textenglish, textfrench,
+             metre, per, second, squared, micro, subtitle, maketitle, tableofcontents,
+             subsection, subsubsection, part, chapter, paragraph, subparagraph,
+             iint, iiint, includegraphics, addbibresource, printbibliography,
+             OverfullCenter, ExplSyntaxOn, ExplSyntaxOff, NewDocumentCommand,
+             enquote, selectlanguage, textcquote,
+             setmainfont, setsansfont, setmonofont,
+             setmathfont, mathscr, mathbfscr, mathcal, mathbfcal, DeclareSymbolFont, protected, mathbb, numexpr, symAMSb, vDash, coloneq, lblkbrbrak, rblkbrbrak, DeclareMathSymbol,
+             omicron, varkappa, Alpha, Beta, Epsilon, Zeta, Eta, Iota, Kappa, Mu, Nu, Omicron, Rho, Tau, Chi, beth, gimel, eth,
+             square, increment, setotherlanguages, mathup, meter, joule, kelvin, FloatBarrier, \&, \%,
+           },
+  columns=fullflexible,
+  breaklines=true,
+  keepspaces=true,
+  aboveskip=-0.2em,
+  belowskip=-0.2em,
+}
+
+\ExplSyntaxOn
+
+\NewDocumentEnvironment {CodeExample} {o m O{Code} O{Ergebnis}} {
+  \NewDocumentCommand \CodeResult {} {
+      \end{block}
+    \end{column}
+    \begin{column}{
+      \IfValueTF {#1} {
+        #1
+      }{
+        \fp_eval:n {1 - 0.04 - #2}
+      }
+      \textwidth
+    }
+      \begin{block}{#4}
   }
-}{}
+
+  \begin{columns}[onlytextwidth, t]
+    \begin{column}{#2 \textwidth}
+      \begin{block}{#3}
+}{
+      \end{block}
+    \end{column}
+  \end{columns}
+}
+
+\NewDocumentEnvironment {Packages} {} {
+  \begin{block}{Benötigte Pakete}
+}{
+  \end{block}
+}
+
+\ExplSyntaxOff
 
 \usepackage{tikz}
 \usetikzlibrary{
@@ -208,7 +237,7 @@
 \setbeamertemplate{bibliography item}[text]
 
 % remove space before eqn in block
-\addtobeamertemplate{block begin}{\setlength\abovedisplayskip{-5pt}}
+\addtobeamertemplate{block begin}{\setlength\abovedisplayskip{-2pt}}
 
 \author{PeP et al.\ Toolbox}
 \date{2014}

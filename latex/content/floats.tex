@@ -1,45 +1,42 @@
-\section{Floating-Umgebungen}
+\section{Gleitumgebungen}
 
-\begin{frame}{Gleitumgebungen}
+\begin{frame}[fragile]{Gleitumgebungen}
   Zum Setzen von Elementen, die nicht zum Fließtext gehören, werden Gleitumgebungen genutzt.
   Diese werden automatisch an eine passende Stelle gesetzt.
-  \begin{itemize}
-    \item für Abbildungen und Tabellen
-    \item Die Freiheit, die \LaTeX \ beim Setzen hat, kann mit optionalen Argumenten gesteuert werden.
-    \item h (here), !h (noch strenger), t (top), b (bottom)
-  \end{itemize}
+
+  \begin{Packages}
+    \begin{lstlisting}
+    % Floats innerhalb eines Sections halten
+    \usepackage[section, below]{placeins}
+    \usepackage[labelfont=bf]{caption} % Captions schöner machen
+    \end{lstlisting}
+  \end{Packages}
+
+  \lstinline+\FloatBarrier+ kann benutzt werden, um alle vorigen Floats zu setzen.
 \end{frame}
 
 \begin{frame}[fragile]{Bilder einbinden}
-  \begin{block}{benötigte Pakete}
-    \begin{lstverbatim}
+  \begin{Packages}
+    \begin{lstlisting}
     \usepackage{graphicx}
     \usepackage{grffile}
-    \usepackage[labelfont=bf]{caption}
-    \end{lstverbatim}
-  \end{block}
-  \begin{columns}[T]
-    \begin{column}{0.6\textwidth}
-      \begin{block}{\LaTeX-Code}
-        \begin{lstverbatim}
-        \begin{figure}
-          \centering
-          \includegraphics[width=\textwidth]{logos/pep.pdf}
-          \caption{Das Pep-Logo}
-          \label{fig:peplogo}
-        \end{figure}
-        \end{lstverbatim}
-      \end{block}
-    \end{column}
-    \begin{column}{0.35\textwidth}
-      \begin{block}{Ergebnis}
-        \begin{figure}
-          \centering
-          \includegraphics[width=\textwidth]{logos/pep.pdf}
-          \caption{Das PeP-Logo}
-          \label{fig:peplogo}
-        \end{figure}
-      \end{block}
-    \end{column}
-  \end{columns}
+    \end{lstlisting}
+  \end{Packages}
+  \begin{CodeExample}{0.60}
+    \begin{lstlisting}
+      \begin{figure}
+        \centering
+        \includegraphics[width=\textwidth]{logos/pep.pdf}
+        \caption{Das Pep-Logo}
+        \label{fig:peplogo}
+      \end{figure}
+    \end{lstlisting}
+  \CodeResult
+    \begin{figure}
+      \centering
+      \includegraphics[width=\textwidth]{logos/pep.pdf}
+      \caption{Das PeP-Logo}
+      \label{fig:peplogo}
+    \end{figure}
+  \end{CodeExample}
 \end{frame}

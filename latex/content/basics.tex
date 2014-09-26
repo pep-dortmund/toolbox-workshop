@@ -2,10 +2,10 @@
 
 \begin{frame}[fragile]{Das Dokument}
   Diese drei Zeilen braucht jedes \LaTeX-Dokument:
-  \begin{columns}[T]
-    \begin{column}{0.47\textwidth}
-      \begin{block}{\LaTeX-Code}
-        \begin{lstverbatim}
+  \begin{columns}[onlytextwidth, t]
+    \begin{column}{0.48\textwidth}
+      \begin{block}{Code}
+        \begin{lstlisting}
         \documentclass[optionen]{klasse}
           % Präambel
           % .
@@ -15,10 +15,10 @@
           % .
           % .
         \end{document}
-        \end{lstverbatim}
+        \end{lstlisting}
       \end{block}
     \end{column}
-    \begin{column}{0.47\textwidth}
+    \begin{column}{0.48\textwidth}
       \begin{block}{\texttt{\textbackslash documentclass}}
         Hier wird die Dokumentenklasse gewählt und mit Optionen angepasst.
       \end{block}
@@ -33,15 +33,15 @@
 \end{frame}
 
 \begin{frame}[fragile]{Syntax: Befehle}
-  \LaTeX-Befehle beginnen stets mit einem \textbackslash\ (Backslash).
+  \LaTeX-Befehle beginnen stets mit einem \verb+\+ (Backslash).
 
-  Obligatorische Argumente stehen in \{ \}, optionale Argumente stehen in [ ].
+  Obligatorische Argumente stehen in \verb+{ }+, optionale Argumente stehen in \verb+[ ]+.
 
-  * ruft häufg eine Alternativform des Befehls auf.
-  \begin{columns}[T]
+  \verb+*+ ruft häufg eine Alternativform des Befehls auf.
+  \begin{columns}[onlytextwidth, t]
     \begin{column}{0.53\textwidth}
-      \begin{block}{\LaTeX-Code}
-        \begin{lstverbatim}
+      \begin{block}{Code}
+        \begin{lstlisting}
         \befehl*[optional]{obligatorisch}
         \documentclass[paper=a4]{scrartcl}
 
@@ -50,15 +50,15 @@
 
 
         % Kommentar
-        \end{lstverbatim}
+        \end{lstlisting}
       \end{block}
     \end{column}
-    \begin{column}{0.41\textwidth}
+    \begin{column}{0.43\textwidth}
       \begin{block}{Erklärung}
         Beispiel \\
         Setzt die Dokumentenklasse auf \texttt{scrartcl} und das Papierformat auf DIN\,A4. \\
         Es gibt auch Befehle mit zwei oder mehr Pflichtargumenten, z.B. der Bruch. \\
-        Text oder Befehle nach einem \%-Zeichen werden nicht berücksichtigt.
+        Text oder Befehle nach einem \verb+%+-Zeichen werden nicht berücksichtigt.
       \end{block}
     \end{column}
   \end{columns}
@@ -67,67 +67,63 @@
 \begin{frame}[fragile]{Syntax: Umgebungen}
   Das zweite wichtige \LaTeX-Element sind die Umgebungen.
   Umgebungen können extrem vielseitig sein, von einer Änderung der Textausrichtung über mathematische Formel bis hin zu Designelementen.
-  \begin{columns}[T]
-    \begin{column}{0.47\textwidth}
+  \begin{columns}[onlytextwidth, t]
+    \begin{column}{0.48\textwidth}
       \begin{block}{Syntax}
-        \begin{lstverbatim}
+        \begin{lstlisting}
         \begin{Umgebung*}[optional]
             {obligatorisch}
           % .
           % .
         \end{Umgebung*}
-        \end{lstverbatim}
+        \end{lstlisting}
       \end{block}
     \end{column}
-    \begin{column}{0.47\textwidth}
+    \begin{column}{0.48\textwidth}
       \begin{block}{Beispiel}
-        \begin{lstverbatim}
+        \begin{lstlisting}
         \begin{flushright}
-            …
+          % .
         \end{flushright}
-        \end{lstverbatim}
+        \end{lstlisting}
       \end{block}
     \end{column}
   \end{columns}
 \end{frame}
 
 \begin{frame}[fragile]{Syntax: Umgebungen}
-    Umgebungen können weitere Umgebungen enthalten, diese müssen 
-    aber in dieser Umgebung wieder geschlossen werden.
-    \begin{columns}[t]
-        \begin{column}{0.47\textwidth}
-            \begin{block}{Geht:}
-                \begin{lstverbatim}
-                \begin{document}
-                    \begin{flushright}
-                        …
-                    \end{flushright}
-                \end{document}
-                \end{lstverbatim}
-            \end{block}
-        \end{column}
-        \begin{column}{0.47\textwidth}
-            \begin{alertblock}{Geht nicht:}
-                \begin{lstverbatim}
-                    \begin{itemize}
-                        \begin{enumerate}
-                    \end{itemize}
-                        \end{enumerate}
-                \end{lstverbatim}
-            \end{alertblock}
-        \end{column}
-    \end{columns}
+  Umgebungen können weitere Umgebungen enthalten, diese müssen aber in dieser Umgebung wieder geschlossen werden.
+  \begin{columns}[onlytextwidth, t]
+    \begin{column}{0.48\textwidth}
+      \begin{block}{Geht:}
+        \begin{lstlisting}
+        \begin{document}
+          \begin{flushright}
+            % .
+          \end{flushright}
+        \end{document}
+        \end{lstlisting}
+      \end{block}
+    \end{column}
+    \begin{column}{0.48\textwidth}
+      \begin{alertblock}{Geht nicht:}
+        \begin{lstlisting}
+        \begin{itemize}
+          \begin{enumerate}
+        \end{itemize}
+          \end{enumerate}
+        \end{lstlisting}
+      \end{alertblock}
+    \end{column}
+  \end{columns}
 \end{frame}
-
-
-
 
 \begin{frame}[fragile]{Standardpakete}
   Die hier aufgezählten Pakete sollten immer geladen werden, da sie wesentliche Funktionen bieten und wichtige Einstellungen vornehmen.
-  \begin{columns}[T]
-    \begin{column}{0.47\textwidth}
+  \begin{columns}[onlytextwidth, t]
+    \begin{column}{0.48\textwidth}
       \begin{block}{Paket}
-        \begin{lstverbatim}
+        \begin{lstlisting}
         \usepackage{fixltx2e}
         \usepackage[aux]{rerunfilecheck}
 
@@ -138,16 +134,16 @@
 
         \usepackage[unicode,pdfusetitle]{hyperref}
         \usepackage{bookmark}
-        \end{lstverbatim}
+        \end{lstlisting}
       \end{block}
     \end{column}
-    \begin{column}{0.47\textwidth}
+    \begin{column}{0.48\textwidth}
       \begin{block}{Funktion}
         \LaTeXe\ korrigieren. \\
         Warnung, falls nochmal kompiliert werden muss. \\
         Deutsche Spracheinstellungen für das Dokument. \\
         Für Fonteinstellungen \\[2\baselineskip]
-        Für Hyperlinks im Dokument (z.B. Inhaltsverzeichnis $\rightarrow$ Kapitel). \\
+        Für Hyperlinks im Dokument (z.B. Inhaltsverzeichnis → Kapitel). \\
         Erweiterte Bookmarks im PDF.
       \end{block}
     \end{column}
@@ -163,51 +159,50 @@
 }
   Stellt die wichtigen Klassen \texttt{scrartcl}, \texttt{scrreprt} und \texttt{scrbook} zur Verfügung.
   Sehr gute Vorlagen schon mit den Standardeinstellungen, schnell global mit Klassenoptionen anpassbar.
-  \begin{block}{fürs Praktikum empfohlenene Einstellungen}
-    \begin{lstverbatim}
+  \begin{block}{Fürs Praktikum empfohlenene Einstellungen}
+    \begin{lstlisting}
     \documentclass[
       captions=tableheading,  % Spacing für Tabellenüberschriften
       titlepage=firstiscover, % Titelseite ist Deckblatt
       bibliography=totoc,     % Literatur im Inhaltsverzeichnis
     ]{scrartcl}
-    \end{lstverbatim}
+    \end{lstlisting}
   \end{block}
 \end{frame}
 
 \begin{frame}[fragile]{Fonteinstellungen}
-    Standardeinstellung sind die Latin-Modern-Fonts. 
-    \vspace{1em}
-    \begin{columns}[c]
-        \begin{column}{0.47\textwidth}
-            \begin{block}{Latin Modern}
-                \begin{lstverbatim}
-                \usepackage{fontspec}
-                \end{lstverbatim}
-            \end{block}
-        \end{column}
-        \begin{column}{0.47\textwidth}
-            \begin{block}{Alternativ: Tex Gyre}
-                \begin{lstverbatim}
-                \usepackage{fontspec}
-                \setmainfont{Tex Gyre Pagella}
-                \setsansfont{Tex Gyre Heros}
-                \setmonofont{Tex Gyre Cursor}
-                \end{lstverbatim}
-            \end{block}
-        \end{column}
-    \end{columns}
-    \begin{itemize}
-        \item jede System-Schriftart kann genutzt
-        \item \alert{das ist i.A. nicht sinnvoll: \fontspec{Comic Sans MS} Hallo Welt in Comic Sans MS! }
-        \item Schriften müssen zueinander passen
-        \item Schriften müssen alle benötigten Sonderzichen enthalten
-        \item Bei Änderung auch Mathefont anpassen $\rightarrow$ später.
-    \end{itemize}
+  Standardeinstellung sind die Latin-Modern-Fonts.
+  \vspace{1em}
+  \begin{columns}[onlytextwidth, t]
+    \begin{column}{0.48\textwidth}
+      \begin{block}{Latin Modern}
+        \begin{lstlisting}
+        \usepackage{fontspec}
+        \end{lstlisting}
+      \end{block}
+    \end{column}
+    \begin{column}{0.48\textwidth}
+      \begin{block}{Alternativ: Tex Gyre}
+        \begin{lstlisting}
+        \usepackage{fontspec}
+        \setmainfont{Tex Gyre Pagella}
+        \setsansfont{Tex Gyre Heros}
+        \setmonofont{Tex Gyre Cursor}
+        \end{lstlisting}
+      \end{block}
+    \end{column}
+  \end{columns}
+  \begin{itemize}
+    \item Jede System-Schriftart kann genutzt
+    \item \alert{Das ist i.A. nicht sinnvoll: \fontspec{Comic Sans MS} Hallo Welt in Comic Sans MS!}
+    \item Schriften müssen zueinander passen
+    \item Schriften müssen alle benötigten Sonderzichen enthalten
+    \item Bei Änderung auch Mathefont anpassen → später.
+  \end{itemize}
 \end{frame}
 
-
 \begin{frame}[fragile]{Gerüst}
-  \begin{lstverbatim}
+  \begin{lstlisting}
   \documentclass[
     captions=tableheading,
     titlepage=firstiscover,
@@ -217,7 +212,7 @@
   \usepackage{fixltx2e}
   \usepackage[aux]{rerunfilecheck}
   \usepackage{polyglossia}
-    \setmainlanguage{german}
+  \setmainlanguage{german}
   \usepackage{fontspec}
   % mehr Pakete hier
   \usepackage[unicode,pdfusetitle]{hyperref}
@@ -226,18 +221,18 @@
   \begin{document}
     % Text hier
   \end{document}
-  \end{lstverbatim}
+  \end{lstlisting}
 \end{frame}
 
 \begin{frame}[fragile]{Das Ausgabedokument erstellen}
-  Es gibt mehrere verschiedene \LaTeX-Kompiler, die verschiedene Ausgabeformate erzeugen können.
+  Es gibt verschiedene \LaTeX-Kompiler, die verschiedene Ausgabeformate erzeugen können.
   Der modernste Kompiler, der PDF-Dateien erstellt, ist \alert{lualatex}.
 
   \begin{block}{\LaTeX-Dokument kompilieren}
     Konsole öffnen:
-    \begin{lstverbatim}
+    \begin{lstlisting}
     lualatex MeinDokument.tex
-    \end{lstverbatim}
+    \end{lstlisting}
   \end{block}
   \begin{alertblock}{Vorsicht!}
     \begin{itemize}

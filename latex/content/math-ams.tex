@@ -1,46 +1,36 @@
 \subsection{Mathe-Umgebungen – \texttt{amsmath}}
 
-\begin{frame}[fragile]{
-  amsmath und mathtools:
-  \hfill\doc{http://mirrors.ctan.org/macros/latex/required/amslatex/math/amsldoc.pdf}{amsmath}
-  \doc{http://mirrors.ctan.org/macros/latex/contrib/mathtools/mathtools.pdf}{mathtools}
-}
-  \begin{block}{benötigte Pakete}
-    \begin{lstverbatim}
-    \usepackage{amsmath}
-    \usepackage{amssymb}
-    \usepackage{mathtools}
-    \end{lstverbatim}
-  \end{block}
+\begin{frame}{Math-Umgebungen}
   \begin{itemize}
-      \item Stellen Matheumgebungen für alles was man so braucht zur Verfügung.
+    \item \texttt{amsmath} stellt Mathe-Umgebungen für alles was man so braucht zur Verfügung.
       \item Alle Gleichungen werden automatisch nummeriert.
-      \item * nach dem Umgebungsnamen sorgt für unnumerierte Gleichung
+      \item \texttt{*} nach dem Umgebungsnamen sorgt für unnumerierte Gleichung
+      \item Unnumerierte Gleichungen sollten selten sein.
   \end{itemize}
 \end{frame}
 
 \begin{frame}[fragile]{Die \texttt{equation}-Umgebung}
   Abgesetzte Gleichung, automatische Nummerierung. \\
   \texttt{equation*} erzeugt unnummerierte Gleichung.
-  \begin{columns}[T, onlytextwidth]
-    \begin{column}{0.6\textwidth}
-      \begin{block}{\LaTeX-Code}
-        \begin{lstverbatim}
+  \begin{columns}[onlytextwidth, t]
+    \begin{column}{0.60\textwidth}
+      \begin{block}{Code}
+        \begin{lstlisting}
         \begin{equation}
-          \nabla \cdot \vec{E} =
-          \frac{\rho} {\epsilon_0}
-          \label{eqn:maxwell1}
+          \nabla \cdot \vec{E}
+            = \frac{\rho}{\varepsilon_0}
+            \label{eqn:maxwell1}
         \end{equation}
         Schon Gauß hatte das Durchflutungsgesetz \eqref{eqn:maxwell1} aufgestellt.
-        \end{lstverbatim}
+        \end{lstlisting}
       \end{block}
     \end{column}
-    \begin{column}{0.35\textwidth}
+    \begin{column}{0.36\textwidth}
       \begin{block}{Ergebnis}
         \begin{equation}
           \nabla \cdot \vec{E} =
-          \frac{\rho}{\epsilon_0}
-          \label{eqn:maxwell1}
+            = \frac{\rho}{\varepsilon_0}
+            \label{eqn:maxwell1}
         \end{equation}
         Schon Gauß hatte das Durchflutungsgesetz \eqref{eqn:maxwell1} aufgestellt.
       \end{block}
@@ -49,29 +39,32 @@
 \end{frame}
 
 \begin{frame}[fragile]{Die \texttt{gather}-Umgebung}
-    \begin{itemize}
-        \item für mehrere Gleichungen
-        \item \texttt{\textbackslash\textbackslash} erzeugt neue Zeile
-        \item jede Zeile bekommt eine Gleichungsnummer
-    \end{itemize}
-  \begin{columns}[T]
+  \begin{itemize}
+    \item Für mehrere Gleichungen
+    \item \verb+\\+ erzeugt neue Zeile
+      \begin{itemize}
+        \item Kein \verb+\\+ nach letzter Zeile!
+      \end{itemize}
+    \item Jede Zeile bekommt eine Gleichungsnummer
+  \end{itemize}
+  \begin{columns}[onlytextwidth, t]
     \begin{column}{0.53\textwidth}
-      \begin{block}{\LaTeX-Code}
-        \begin{lstverbatim}
+      \begin{block}{Code}
+        \begin{lstlisting}
         \begin{gather}
-            (a + b)^2 = a^2 + 2ab + b^2 \\
-            (a - b)^2 = a^2 - 2ab + b^2 \\
-            (a + b) \cdot (a-b) = a^2 -  b^2
+          (a + b)^2 = a^2 + 2ab + b^2 \\
+          (a - b)^2 = a^2 - 2ab + b^2 \\
+          (a + b) \cdot (a - b) = a^2 - b^2
         \end{gather}
-        \end{lstverbatim}
+        \end{lstlisting}
       \end{block}
     \end{column}
     \begin{column}{0.43\textwidth}
       \begin{block}{Ergebnis}
         \begin{gather}
-            (a + b)^2 = a^2 + 2ab + b^2 \\
-            (a - b)^2 = a^2 - 2ab + b^2 \\
-            (a + b) \cdot (a-b) = a^2 -  b^2 
+          (a + b)^2 = a^2 + 2ab + b^2 \\
+          (a - b)^2 = a^2 - 2ab + b^2 \\
+          (a + b) \cdot (a - b) = a^2 - b^2
         \end{gather}
       \end{block}
     \end{column}
@@ -79,24 +72,24 @@
 \end{frame}
 
 \begin{frame}[fragile]{Die \texttt{align}-Umgebung}
-    \begin{itemize}
-        \item für mehrere Gleichungen, die aneinander ausgerichtet werden
-        \item \texttt{\&} steuert Ausrichtung
-        \item \texttt{\textbackslash\textbackslash} erzeugt neue Zeile
-        \item jede Zeile bekommt eine Gleichungsnummer
-    \end{itemize}
-  \begin{columns}[T]
+  \begin{itemize}
+    \item Für mehrere Gleichungen, die aneinander ausgerichtet werden
+    \item \texttt{\&} steuert Ausrichtung
+    \item \verb+\\+ erzeugt neue Zeile
+    \item Jede Zeile bekommt eine Gleichungsnummer
+  \end{itemize}
+  \begin{columns}[onlytextwidth, t]
     \begin{column}{0.65\textwidth}
-      \begin{block}{\LaTeX-Code}
-        \begin{lstverbatim}
+      \begin{block}{Code}
+        \begin{lstlisting}
         \begin{align}
           a         &= 1 & b           &= 2 \\
           a \cdot b &= 5 & \frac{a}{b} &= 0.5
         \end{align}
-        \end{lstverbatim}
+        \end{lstlisting}
       \end{block}
     \end{column}
-    \begin{column}{0.3\textwidth}
+    \begin{column}{0.31\textwidth}
       \begin{block}{Ergebnis}
         \begin{align}
           a         &= 1 & b           &= 2 \\
@@ -108,34 +101,34 @@
 \end{frame}
 
 \begin{frame}[fragile]{Die \texttt{split}-Umgebung}
-    \begin{itemize}
-        \item um überlange Gleichungen auf zwei Zeilen aufzuteilen.
-        \item kommt in den anderen Umgebungen zum Einsatz
-        \item \texttt{\&} steuert Ausrichtung
-        \item \texttt{\textbackslash\textbackslash} erzeugt neue Zeile
-        \item gemeinsame Gleichungsnummer
-    \end{itemize}
-  \begin{columns}[T]
+  \begin{itemize}
+    \item Um überlange Gleichungen auf zwei Zeilen aufzuteilen.
+    \item Kommt in den anderen Umgebungen zum Einsatz
+    \item \texttt{\&} steuert Ausrichtung
+    \item \verb+\\+ erzeugt neue Zeile
+    \item Gemeinsame Gleichungsnummer
+  \end{itemize}
+  \begin{columns}[onlytextwidth, t]
     \begin{column}{0.55\textwidth}
-      \begin{block}{\LaTeX-Code}
-        \begin{lstverbatim}
+      \begin{block}{Code}
+        \begin{lstlisting}
         \begin{equation}
-            \begin{split}
-                (a+b)^3 & = a^3 + 3a^2b \\
-                        & \quad +3ab^2 + b^3
-            \end{split}
+          \begin{split}
+            (a+b)^3 = {} & a^3 + 3a^2b \\
+                         & + 3ab^2 + b^3
+          \end{split}
         \end{equation}
-        \end{lstverbatim}
+        \end{lstlisting}
       \end{block}
     \end{column}
-    \begin{column}{0.40\textwidth}
+    \begin{column}{0.41\textwidth}
       \begin{block}{Ergebnis}
-          \vspace{0.5em}
+        \vspace{0.5em}
         \begin{equation}
-            \begin{split}
-                (a+b)^3 & = a^3 + 3a^2b \\
-                        & \quad +3ab^2 + b^3
-            \end{split}
+          \begin{split}
+            (a+b)^3 = {} & a^3 + 3a^2b \\
+                         & + 3ab^2 + b^3
+          \end{split}
         \end{equation}
       \end{block}
     \end{column}
