@@ -1,0 +1,7 @@
+Aufgabe 1:
+  Lagert den Text und die Prämbel eurer Hello-World-Übung
+  in einzelne .tex-Dateien aus.
+
+Aufgabe 2:
+  Ladet sie wieder in ein Dokument, sodass die PDF-Datei 
+  identisch ist.

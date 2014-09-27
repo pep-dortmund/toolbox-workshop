@@ -1,0 +1,7 @@
+Aufgabe 1:
+	Erstellt mit LaTeX ein PDF-Dokument, dass 
+		"Hello World!"
+	enthält.
+
+	Nutzt dazu das vorgestellte "Gerüst" und kompiliert 
+	mit lualatex
