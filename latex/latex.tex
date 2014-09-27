@@ -41,7 +41,15 @@
 }
 
 \begin{frame}{Übersicht}
-  \tableofcontents
+  \linespread{1.5}
+  \begin{columns}[onlytextwidth, t]
+    \begin{column}{0.5\textwidth}
+      \tableofcontents[sections=-8]
+    \end{column}
+    \begin{column}{0.5\textwidth}
+      \tableofcontents[sections=9-]
+    \end{column}
+  \end{columns}
 \end{frame}
 
 \input{content/introduction.tex}
