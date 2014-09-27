@@ -1,0 +1,27 @@
+\subsection{Links}
+\begin{frame}[fragile]{Links und Mail-Adressen}
+  \begin{itemize}
+    \item Es ist sehr empfehlenswert auf der Titelseite eure Mailadressen anzugeben!
+    \item \texttt{hyperef} stellt den \lstinline+\href{link}{text}+ Befehl.
+  \end{itemize}
+  \begin{CodeExample}{0.7}
+    \begin{lstlisting}
+      \href{www.google.de}{Google}
+      \href{mailto:max@mustermann.de}{max@mustermann.de}
+    \end{lstlisting}
+    \CodeResult
+    \href{www.google.de}{Google}
+    \href{mailto:max@mustermann.de}{max@mustermann.de}
+  \end{CodeExample}
+  \begin{block}{Autoren mit Mailadressen:}
+    \begin{lstlisting}
+    \author{
+      Max Mustermann\\
+      \href{mailto:max@mustermann}{max@mustermann.de}
+      \and
+      Felix Mustermann\\
+      \href{mailto:felix@mustermann}{max@mustermann.de}
+    }
+    \end{lstlisting}
+  \end{block}
+\end{frame}
