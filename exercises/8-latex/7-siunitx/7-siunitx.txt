@@ -1,0 +1,19 @@
+Aufgabe 1:
+	ladet das Paket siunitx in eurer Präambel
+	nehmt folgende Einstellungen vor:
+		locale=DE,
+		separate-uncertainty=true,
+		per-mode=symbol-or-fraction,
+	
+Aufgabe 2:
+	schreibt die Definition des Newton einmal im Fließtext in $...$ und
+	einmal in einer equation-Umgebung. Wie unterscheiden sie sich?
+	Welche Option ist für dieses Verhalten verantwortlich.
+
+Aufgabe 3: 
+	Ihr möchtet einen Wert mit Fehler angeben.
+	Hierfür gibt es zwei Schreibweisen.
+		a = 5,2 ± 0,1
+		a = 5,2(1)
+	Tragt beide in eine \num{} Umgebung ein, was ist das Ergebnis? Warum?
+
