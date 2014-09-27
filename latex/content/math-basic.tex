@@ -246,9 +246,6 @@
       \mathbf{x\alpha}
       \mathbfsf{x \alpha}
       \mathbb{R N 1 0}
-      \mathcal{I A} \mathbfcal{I A} % Latin Modern
-      \mathcal{I A} \mathbfcal{I A} % XITS Math, StylisticSet=1
-      \mathscr{I A} \mathbfscr{I A} % XITS Math
       \mathfrak{A B} \mathbffrak{A B}
     \end{lstlisting}
   \CodeResult
@@ -257,19 +254,8 @@
     $\mathbf{x\alpha}$ \\
     $\mathbfsf{x \alpha}$ \\
     $\mathbb{R N 1 0}$ \\
-    $\mathcal{I A} \mathbfcal{I A}$ \\
-    {\setmathfont[range={\mathcal,\mathbfcal},StylisticSet=1]{XITS Math} $\mathcal{I A} \mathbfcal{I A}$} \\
-    $\mathscr{I A} \mathbfscr{I A}$ \\
     $\mathfrak{A B} \mathbffrak{A B}$
   \end{CodeExample}
-
-  \begin{block}{Mathe-Fonts einstellen}
-    \begin{lstlisting}
-      \setmathfont[range={\mathscr, \mathbfscr}]{XITS Math}
-      \setmathfont[range={\mathcal, \mathbfcal}, StylisticSet=1]{XITS Math}
-      \setmathfont[range={\mathcal, \mathbfcal}]{Latin Modern Math}
-    \end{lstlisting}
-  \end{block}
 \end{frame}
 
 \begin{frame}[fragile]{Spaces}
