@@ -1,26 +1,24 @@
-Hinweis: Falls ihr die hier benötigten Gesetze 
-         und Gleichungen nicht mehr wisst, 
-		 werft einen Blick in das PDF der Musterlösung.
-		 (Nicht in die .tex ;))
+Hinweis: Falls ihr die hier benötigten Gesetze
+         und Gleichungen nicht mehr wisst,
+         werft einen Blick in das PDF der Musterlösung.
+         (Nicht in die .tex ;))
 
 Aufgabe 1:
-	Ladet zusätzlich zum Gerüst die benötigten Pakete 
-	für Mathematik und nehmt die empfohlenen  Einstellungen
-	vor
+  Ladet zusätzlich zum Gerüst die benötigten Pakete
+  für Mathematik und nehmt die empfohlenen Einstellungen
+  vor.
 
 Aufgabe 2:
-	Setzt das Biot-Savart-Gesetz. Erklärt darunter im Fließtext
-	die darin vorkommenden Größen und Konstanten.
+  Setzt das Biot-Savart-Gesetz. Erklärt darunter im Fließtext
+  die darin vorkommenden Größen und Konstanten.
 
 Aufgabe 3:
-	Setzt die Formel für die Gaußsche Fehlerfortpflanzung
+  Setzt die Formel für die Gaußsche Fehlerfortpflanzung.
 
-Aufgabe 4: 
-	Setzt die vier differentiellen Maxwell-Gleichungen.
-	Dabei sollen jeweils die homogenen bzw. die inhomogen
-	Gleichungen in einer Zeile stehen und die Gleichungen für
-	E bzw. B untereinander.
-	Richtet die Gleichungen jeweils Vertikal am Gleicheitszeichen
-	aus.
-
-
+Aufgabe 4:
+  Setzt die vier differentiellen Maxwell-Gleichungen.
+  Dabei sollen jeweils die homogenen bzw. die inhomogen
+  Gleichungen in einer Zeile stehen und die Gleichungen für
+  E bzw. B untereinander.
+  Richtet die Gleichungen jeweils Vertikal am Gleicheitszeichen
+  aus.

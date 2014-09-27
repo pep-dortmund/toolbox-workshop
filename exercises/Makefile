@@ -23,6 +23,10 @@ package: exercises
 	rm -f build/exercises-{1,2,3,4,5,latex}/*/.gitignore
 	rm -f build/exercises-{1,2,3,4,5,latex}/*/*/.gitignore
 	rm -rf build/exercises-{1,2,3,4,5,latex}/*/*/__pycache__
+	cd build/exercises-latex ; \
+	for dir in * ; do \
+		cd "$$dir" && mv build/loesung.pdf . && rm -r build && cd .. || true ; \
+	done
 	cd build ; \
 	for day in 1 2 3 4 5 latex ; do \
 		zip -r exercises-$$day.zip exercises-$$day ; \

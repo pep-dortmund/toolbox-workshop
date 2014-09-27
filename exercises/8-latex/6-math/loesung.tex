@@ -1,20 +1,16 @@
 \documentclass{scrartcl}
 
+\usepackage{fixltx2e}
 \usepackage[aux]{rerunfilecheck}
-
 
 \usepackage{polyglossia}
 \setmainlanguage{german}
 
-\usepackage{fontspec}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%    Mathe-Pakete    %%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{mathtools}
+
+\usepackage{fontspec}
 
 \usepackage[
   math-style=ISO,
@@ -22,7 +18,7 @@
   sans-style=italic,
   nabla=upright,
   partial=upright,
-  ]{unicode-math}
+]{unicode-math}
 
 \usepackage[unicode]{hyperref}
 \usepackage{bookmark}
@@ -33,26 +29,22 @@
 Das Magnetfeld $\vec{B}$ am Ort $\vec{r}$ eines stromdurchflossenen Leiters ergbibt sich zu
 \begin{equation}
   \vec{B}(\vec{r}) = \frac{\mu_0}{4\mathup{\pi}}
-  \int_V  \vec{\jmath}(r') \times \frac{\vec{r}-\vec{r}'}{|\vec{r}-\vec{r}'|^3} \, \mathup{d}V' \quad .
+  \int_V \vec{\jmath}(r') \times \frac{\vec{r}-\vec{r}'}{|\vec{r}-\vec{r}'|^3} \, \mathup{d}V' .
 \end{equation}
-Hierbei bezeichnet $\vec{\jmath}$ die Stromdichte am Ort $r'$, $\mu_0$ ist die Magnetische Feldkonstante.
+Hierbei bezeichnet $\vec{\jmath}$ die Stromdichte am Ort $\vec{r}'$ und $\mu_0$ die magnetische Feldkonstante.
 
 \section{Fehlerfortpflanunzung}
-
 \begin{equation}
-\sigma_f = \sqrt{\sum\limits_{i=1}^N \left( \frac{\partial f}{\partial x_i}
-                 \sigma_i \right)^2}
+  \sigma_f = \sqrt{\sum\limits_{i=1}^N \left( \frac{\partial f}{\partial x_i}
+                   \sigma_i \right)^{\!\!2}}
 \end{equation}
-
-
 
 \section{Die vier Maxwell-Gleichungen}
 \begin{align}
-  \nabla \cdot \vec{E} &= \frac{\rho}{\epsilon_0} &
-  \nabla \cdot \vec{B} &= 0 \\
+  \nabla \cdot  \vec{E} &= \frac{\rho}{\varepsilon_0} &
+  \nabla \cdot  \vec{B} &= 0 \\
   \nabla \times \vec{E} &= - \partial_t \vec{B} &
-  \nabla \times \vec{B} &= \mu_0 \vec{\jmath} + \mu_0 \epsilon_0 \partial_t \vec{E} 
+  \nabla \times \vec{B} &= \mu_0 \vec{\jmath} + \mu_0 \varepsilon_0 \partial_t \vec{E}
 \end{align}
+
 \end{document}
-
-

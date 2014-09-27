@@ -1,10 +1,9 @@
 Aufgabe 1:
-	setzt in eurem Dokument die Meta-Angaben
-		author
-		title
-		date
-	für euren ersten Praktikumsversuch.
+  Setzt in eurem Dokument die Meta-Angaben
+    author
+    title
+    date
+  für euren ersten Praktikumsversuch.
 
-	und erstellt das PDF-Dokument so, dass es die Titelei
-	auf einer eigenen Titelseite ausgeben wird.
-
+  Erstellt das PDF-Dokument so, dass es die Titelei
+  auf einer eigenen Titelseite ausgeben wird.
