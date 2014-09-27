@@ -2,12 +2,12 @@
 
 \begin{frame}{Literaturverzeichnis}
   \begin{itemize}
-    \item wichtiger Teil vieler Dokumente, für wissenschaftliche Texte zwingend
+    \item Wichtiger Teil vieler Dokumente, für wissenschaftliche Texte zwingend
     \item Bib\LaTeX\ und biber bieten eine sehr angenehme Arbeitsweise
-    \item auch für sehr große Referenzdatenbanken geeignet
-    \item es gibt viele unterschiedliche Stile
+    \item Auch für sehr große Referenzdatenbanken geeignet
+    \item Es gibt viele unterschiedliche Stile
     \item Standardstil fürs Praktikum geeignet
-    \item Referenzen in .bib-Dateien
+    \item Referenzen in \texttt{.bib}-Dateien
   \end{itemize}
 \end{frame}
 
@@ -17,7 +17,7 @@
   \begin{tikzpicture}[remember picture,overlay]
     \tikzset{shift={(current page.center)}}
     \node at (-4.3,3) {
-      \textrm{\textsc{Bib}\TeX-Familie}
+      \textrm{\textsc{Bib}\TeX}-Familie
     };
     \only<2>{
       \node (here) at (-4.3,-2.8) {
@@ -30,114 +30,99 @@
 
 \begin{frame}{Warum biber?}
   \begin{itemize}
-    \item unterstützt Unicode-Input
-    \item wird weiterentwickelt, zusammen mit Bib\LaTeX
-    \item sortiert richtig, nach regeln der jeweiligen Sprache
-    \item kann noch viele weitere Formate außer .bib lesen
-    \item unterstützt alle Funktionen von Bib\LaTeX
+    \item Unterstützt Unicode-Input
+    \item Wird weiterentwickelt, zusammen mit Bib\LaTeX
+    \item Sortiert richtig, nach regeln der jeweiligen Sprache
+    \item Kann noch viele weitere Formate außer .bib lesen
+    \item Unterstützt alle Funktionen von Bib\LaTeX
   \end{itemize}
 \end{frame}
 
-\defverbatim{\bibexamplei}{%
-\begin{verbatim}
-@manual{anleitung01,
-  author = "TU Dortmund",    % alternativ ist {…} statt "…" möglich
-  title = "Versuchsanleitung zu Versuch Nr. 01
-           Lebensdauer der Myonen",
-  year = 2004
-}
-\end{verbatim}
-}
-
-\begin{frame}{.bib-Dateien (I)}
-  \bibexamplei
+\begin{frame}[fragile]{\texttt{.bib}-Dateien (I)}
+  \begin{lstlisting}[language=, keywordstyle={}]
+    @manual{anleitung01,
+      author = "TU Dortmund", % alternativ ist {...} statt "..." möglich
+      title = "Versuchsanleitung zu Versuch Nr. 01
+               Lebensdauer der Myonen",
+      year = 2004
+    }
+  \end{lstlisting}
+  \vspace{1em}
   \fullcite{anleitung01}
 \end{frame}
 
-\defverbatim{\bibexampleii}{%
-\begin{verbatim}
-@article{numpy,
-  author = "Travis E. Oliphant",
-  title = "Python for Scientific Computing",
-  publisher = "IEEE",
-  year = "2007",
-  journal = "Computing in Science \& Engineering",
-  volume = "9",
-  number = "3",
-  pages = "10–20",
-  url = "http://link.aip.org/link/?CSX/9/10/1",
-  addendum = "Version 1.8.1"
-}
-\end{verbatim}
-}
-
-\begin{frame}{.bib-Dateien (II)}
-  \bibexampleii
+\begin{frame}[fragile]{\texttt{.bib}-Dateien (II)}
+  \begin{lstlisting}[language=, keywordstyle={}]
+    @article{numpy,
+      author = "Travis E. Oliphant",
+      title = "Python for Scientific Computing",
+      publisher = "IEEE",
+      year = "2007",
+      journal = "Computing in Science \& Engineering",
+      volume = "9",
+      number = "3",
+      pages = "10–20",
+      url = "http://link.aip.org/link/?CSX/9/10/1",
+      addendum = "Version 1.8.1"
+    }
+  \end{lstlisting}
+  \vspace{1em}
   \fullcite{numpy}
 \end{frame}
 
-\defverbatim{\bibexampleiii}{%
-\begin{verbatim}
-@inproceedings{root,
-  author = "Brun, Rene and Rademakers, Fons",
-  booktitle = "AIHENP'96 Workshop, Lausanne",
-  url = "http://root.cern.ch/",
-  journal = "Nucl. Inst. \& Meth. in Phys. Res. A",
-  pages = "81–86",
-  title = "ROOT — An Object Oriented Data Analysis Framework",
-  volume = 389,
-  year = 1996,
-  addendum = "Version 5.34.18"
-}
-\end{verbatim}
-}
-
-\begin{frame}{.bib-Dateien (III)}
-  \bibexampleiii
+\begin{frame}[fragile]{\texttt{.bib}-Dateien (III)}
+  \begin{lstlisting}[language=, keywordstyle={}]
+    @inproceedings{root,
+      author = "Brun, Rene and Rademakers, Fons",
+      booktitle = "AIHENP'96 Workshop, Lausanne",
+      url = "http://root.cern.ch/",
+      journal = "Nucl. Inst. \& Meth. in Phys. Res. A",
+      pages = "81–86",
+      title = "ROOT — An Object Oriented Data Analysis Framework",
+      volume = 389,
+      year = 1996,
+      addendum = "Version 5.34.18"
+    }
+  \end{lstlisting}
+  \vspace{1em}
   \fullcite{root}
 \end{frame}
 
-\defverbatim{\bibexampleiv}{%
-\begin{verbatim}
-@online{splot,
-  author = "Muriel Pivk and Francois R. Le Diberder",
-  title = "sPlot: a statistical tool to unfold data distributions",
-  date = "2005-09-02",
-  archivePrefix = "arXiv",
-  eprint = "physics/0402083v3"
-}
-\end{verbatim}
-}
-
-\begin{frame}{.bib-Dateien (IV)}
-  \bibexampleiv
+\begin{frame}[fragile]{\texttt{.bib}-Dateien (IV)}
+  \begin{lstlisting}[language=, keywordstyle={}]
+    @online{splot,
+      author = "Muriel Pivk and Francois R. Le Diberder",
+      title = "sPlot: a statistical tool to unfold data distributions",
+      date = "2005-09-02",
+      archivePrefix = "arXiv",
+      eprint = "physics/0402083v3"
+    }
+  \end{lstlisting}
+  \vspace{1em}
   \fullcite{splot}
 \end{frame}
 
-\defverbatim{\bibexamplev}{%
-\begin{verbatim}
-@online{wingate,
-  author = "Zhaofeng Liu and Stefan Meinel and Alistair Hart and
-            Ron R. Horgan and Eike H. Müller and Matthew Wingate",
-  title = "A lattice calculation of \HepProcess{\PB \to \PK^{(*)}}
-           form factors",
-  date = "2011-01-14",
-  archivePrefix = "arXiv",
-  eprint = "1101.2726v1",
-  primaryClass = "hep-ph"
-}
-\end{verbatim}
-}
-
-\begin{frame}{.bib-Dateien (V)}
-  \bibexamplev
+\begin{frame}[fragile]{\texttt{.bib}-Dateien (V)}
+  \begin{lstlisting}[language=, keywordstyle={}]
+    @online{wingate,
+      author = "Zhaofeng Liu and Stefan Meinel and Alistair Hart and
+                Ron R. Horgan and Eike H. Müller and Matthew Wingate",
+      title = "A lattice calculation of \HepProcess{\PB \to \PK^{(*)}}
+               form factors",
+      date = "2011-01-14",
+      archivePrefix = "arXiv",
+      eprint = "1101.2726v1",
+      primaryClass = "hep-ph"
+    }
+  \end{lstlisting}
+  \vspace{1em}
   \fullcite{wingate}
 \end{frame}
 
 \begin{frame}[fragile]{Bib\LaTeX\hfill\doc{http://mirrors.ctan.org/macros/latex/contrib/biblatex/doc/biblatex.pdf}{biblatex}}
   \begin{Packages}
     \begin{lstlisting}
-      \usepackage[backend=biber]{biblatex} % nach babel
+      \usepackage[backend=biber]{biblatex} % nach polyglossia
       \addbibresource{lit.bib}
     \end{lstlisting}
   \end{Packages}
@@ -146,7 +131,7 @@
       \begin{lstlisting}
         \cite{numpy}
         \cite[20]{numpy}
-        \cite[1-3]{numpy}
+        \cite[1–3]{numpy}
         \cite{splot, root}
       \end{lstlisting}
     \end{minipage}
@@ -172,14 +157,14 @@
   \Huge ???
 \end{frame}
 
-\begin{frame}[fragile]{biber}
+\begin{frame}[fragile]{\texttt{biber}}
   Die Idee ist:
   \begin{enumerate}
-    \item Bib\LaTeX\ erstellt eine Liste der .bib-Dateien und der benötigten Referenzen\\
-          → .bcf-Datei
-    \item biber liest Anweisungen, liest .bib, sucht und sortiert Referenzen\\
-          → .bbl-Datei
-    \item Bib\LaTeX\ liest .bbl, gibt Verzeichnis aus
+    \item Bib\LaTeX\ erstellt eine Liste der \texttt{.bib}-Dateien und der benötigten Referenzen \\
+      → \texttt{.bcf}-Datei
+    \item biber liest Anweisungen, liest \texttt{.bib}, sucht und sortiert Referenzen \\
+      → \texttt{.bbl}-Datei
+    \item Bib\LaTeX\ liest \texttt{.bbl}, gibt Verzeichnis aus
   \end{enumerate}
 
   \vspace{10pt}
@@ -197,13 +182,14 @@
   \nocite{*}
   \printbibliography[heading=none]
 \end{frame}
+
 \begin{frame}[fragile]{Stile}
   \begin{itemize}
     \item Standardstil ist \enquote{numeric}
-    \item häufig genutzte Alternative: \enquote{alphabetic}
+    \item Häufig genutzte Alternative: \enquote{alphabetic}
     \item Kombination aus Autorenname und Jahr: z.B. [Oli07]
-    \item viele weitere Stile → Doku
-    \item setzen mit \texttt{style=…} als Option für \texttt{biblatex}
+    \item Viele weitere Stile → Doku
+    \item Setzen mit \texttt{style=…} als Option für \texttt{biblatex}
   \end{itemize}
   \begin{block}{Code}
     \begin{lstlisting}

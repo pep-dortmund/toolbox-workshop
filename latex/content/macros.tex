@@ -1,13 +1,14 @@
 \section{Makros}
 
 \begin{frame}[fragile]{Eigene \LaTeX-Kommandos}
-  Nach 20 Mal \verb+\mathrm{e}+ oder \verb+\mathrm{i}+ schreiben hat man keine Lust mehr
+  Nach 20 Mal \lstinline+\mathrm{e}+ oder \lstinline+\mathrm{i}+ schreiben hat man keine Lust mehr.
   \begin{block}{Kommandostruktur}
     \begin{lstlisting}
       \newcommand\Kommandoname[#Argumente]{Code mit #1, #2, ...}
       \newenvironment{Umgebungsname}[#Argumente]{\begin-Code}{\end-Code}
     \end{lstlisting}
   \end{block}
+  \verb+##+ gibt ein wirkliches \verb+#+.
   \begin{CodeExample}{0.75}
     \begin{lstlisting}
       \newcommand\I{\mathrm{i}}
@@ -23,12 +24,10 @@
       \dd{x}{y}
       \v{u}
       \begin{eqn}
-        ...
+        % .
       \end{eqn}
     \end{lstlisting}
   \end{CodeExample}
-  \vspace{0.5cm}
-  → Okay für simple Kommandos, stößt aber schnell an gewisse Grenzen
 \end{frame}
 
 % \begin{frame}[fragile]{\texttt{xparse}}

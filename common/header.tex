@@ -110,6 +110,7 @@
              setmathfont, mathscr, mathbfscr, mathcal, mathbfcal, DeclareSymbolFont, protected, mathbb, numexpr, symAMSb, vDash, coloneq, lblkbrbrak, rblkbrbrak, DeclareMathSymbol,
              omicron, varkappa, Alpha, Beta, Epsilon, Zeta, Eta, Iota, Kappa, Mu, Nu, Omicron, Rho, Tau, Chi, beth, gimel, eth,
              square, increment, setotherlanguages, mathup, meter, joule, kelvin, FloatBarrier, ce,
+             toprule, midrule, bottomrule, eqref, sisetup, dd,
            },
   columns=fullflexible,
   breaklines=true,
@@ -238,6 +239,8 @@
 
 % remove space before eqn in block
 \addtobeamertemplate{block begin}{\setlength\abovedisplayskip{-2pt}}
+
+\NewDocumentCommand\defaultdisplayskip{}{\setlength\abovedisplayskip{8.0pt plus 4.0pt minus 4.0pt}}
 
 \author{PeP et al.\ Toolbox}
 \date{2014}

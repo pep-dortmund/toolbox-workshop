@@ -1,6 +1,6 @@
 \subsection{Mathe-Umgebungen – \texttt{amsmath}}
 
-\begin{frame}{Math-Umgebungen}
+\begin{frame}{Mathe-Umgebungen}
   \begin{itemize}
     \item \texttt{amsmath} stellt Mathe-Umgebungen für alles was man so braucht zur Verfügung.
       \item Alle Gleichungen werden automatisch nummeriert.
@@ -14,17 +14,20 @@
   \texttt{equation*} erzeugt unnummerierte Gleichung.
   \begin{CodeExample}{0.60}
     \begin{lstlisting}
+      Es gilt
       \begin{equation}
         \nabla \cdot \vec{E}
-          = \frac{\rho}{\varepsilon_0}
+          = \frac{\rho}{\varepsilon_0} .
           \label{eqn:maxwell1}
       \end{equation}
       Schon Gauß hatte das Durchflutungsgesetz \eqref{eqn:maxwell1} aufgestellt.
     \end{lstlisting}
   \CodeResult
+    \defaultdisplayskip
+    Es gilt
     \begin{equation}
-      \nabla \cdot \vec{E} =
-        = \frac{\rho}{\varepsilon_0}
+      \nabla \cdot \vec{E}
+        = \frac{\rho}{\varepsilon_0} .
         \label{eqn:maxwell1}
     \end{equation}
     Schon Gauß hatte das Durchflutungsgesetz \eqref{eqn:maxwell1} aufgestellt.
@@ -60,7 +63,7 @@
 \begin{frame}[fragile]{Die \texttt{align}-Umgebung}
   \begin{itemize}
     \item Für mehrere Gleichungen, die aneinander ausgerichtet werden
-    \item \texttt{\&} steuert Ausrichtung
+    \item \lstinline+&+ steuert Ausrichtung
     \item \verb+\\+ erzeugt neue Zeile
     \item Jede Zeile bekommt eine Gleichungsnummer
   \end{itemize}
@@ -83,7 +86,7 @@
   \begin{itemize}
     \item Um überlange Gleichungen auf zwei Zeilen aufzuteilen.
     \item Kommt in den anderen Umgebungen zum Einsatz
-    \item \texttt{\&} steuert Ausrichtung
+    \item \lstinline+&+ steuert Ausrichtung
     \item \verb+\\+ erzeugt neue Zeile
     \item Gemeinsame Gleichungsnummer
   \end{itemize}

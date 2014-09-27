@@ -33,11 +33,7 @@
         \item Äußere \texttt{table}-Umgebung behandelt Tabelle wie ein float
         \item Innere \texttt{tabular}-Umgebung für eigentlichen Tabelleninhalt
         \item \texttt{l},\texttt{c} oder \texttt{r} geben Ausrichtung der einzelnen Spalten an
-        \item
-          \begin{lstlisting}
-            \label, \caption
-          \end{lstlisting}
-          oberhalb von \texttt{tabular}
+        \item \lstinline+\caption+, \lstinline+\label+ oberhalb von \texttt{tabular}
       \end{itemize}
     \end{column}
   \end{columns}
@@ -64,7 +60,7 @@
 \end{frame}
 
 \begin{frame}[fragile]{Schönere Tabellen mit \texttt{siunitx}}
-  \fontsize{7}{5}
+  \fontsize{8}{6}
   \begin{block}{Code}
     \begin{lstlisting}
       \begin{table}
@@ -106,20 +102,20 @@
     \end{tabular}
   \end{table}
   \begin{itemize}
-    \item \texttt{S}-Spalte eröffnet mehr Ausrichtungsmöglichkeiten mit \verb+\sisetup+ und […]
+    \item \texttt{S}-Spalte eröffnet mehr Ausrichtungsmöglichkeiten mit \lstinline+\sisetup+ und \lstinline+[...]+
     \item \texttt{s}-Spalte für Einheiten
     \item Standard: Ausrichtung an Dezimalkomma
-    \item Spaltennamen durch Brackets schützen
+    \item Spaltennamen durch \lstinline+{ }+ schützen
   \end{itemize}
 \end{frame}
 
 \begin{frame}[fragile]{Gruppieren von mehreren Spalten}
-  \fontsize{7}{5}
   \begin{block}{Kommandostruktur}
     \begin{lstlisting}
       \multicolumn{#Spalten}{Ausrichtung}{Inhalt}
     \end{lstlisting}
   \end{block}
+  \fontsize{8}{6}
   \begin{block}{Beispiel}
     \begin{lstlisting}
       \begin{table}
