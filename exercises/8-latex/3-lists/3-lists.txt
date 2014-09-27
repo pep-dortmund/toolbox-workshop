@@ -1,0 +1,20 @@
+Aufgabe 1:
+	Erstellt eine unnummerierte Liste der 
+	Vorlesungen auf, die ihr nächstes Semester hört.
+
+Aufgabe 2: 
+	Erstellt eine nummerierte Liste der TOP 3 eurer
+	Lieblingsfilme.
+
+Aufgabe 3:
+	Beschreibt kurz drei Personen eurer Wahl.
+
+Aufgabe 4:
+	Verschachtelt zwei oder mehr Aufzählungen:
+	z.B.:
+	- A
+		1. a
+		2. b
+	- B
+	- C
+
