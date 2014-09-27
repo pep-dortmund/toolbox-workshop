@@ -1,0 +1,109 @@
+\section{Ausblick}
+
+\begin{frame}
+  \centering
+  \only<1>{
+    \includegraphics[height=0.95\textheight]{figures/engines-few.pdf}
+    \hspace{1.15em}
+  }
+  \only<2,3>{
+    \includegraphics[height=0.95\textheight]{figures/engines-many.pdf}
+  }
+  \begin{tikzpicture}[remember picture,overlay]
+    \tikzset{shift={(current page.center)}}
+    \node at (-4.3,1.3) {
+      \TeX-Engines
+    };
+    \only<3>{
+      \node (here) at (-4.3,-2.8) {
+        Sie sind hier
+      };
+      \draw [->, >=Stealth] (here.east) -- ++(1.55,-0.85);
+    }
+  \end{tikzpicture}
+\end{frame}
+
+\begin{frame}[fragile]{In diesem Kurs: \LuaTeX}
+  \begin{itemize}
+    \item Unicode-Input
+      \begin{itemize}
+        \item Bequem, äöüßêéè funktioniert einfach
+      \end{itemize}
+    \item OTF-Fonts
+      \begin{itemize}
+        \item Alle Fonts benutzen, die man auf dem Rechner hat (nur wenige Fonts wirklich sinnvoll, bitte keine Protokolle in Comic Sans MS)
+      \end{itemize}
+    \item Unicode-Math
+      \begin{itemize}
+        \item Mathe-Input über Unicode (bei mir: $\langle$Caps$\rangle\langle$Caps$\rangle$a → $α$)
+          \begin{itemize}
+            \item Code lesbarer, Tippen schneller
+            \end{itemize}
+        \item Mehr Font-Möglichkeiten
+      \end{itemize}
+    \item Lua-Programmierung
+      \begin{itemize}
+        \item \TeX-Programmierung ist nicht besonders einfach
+        \item Manche Pakete bieten weitergehende Funktionen nur über Lua an
+      \end{itemize}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[t]
+  \centering
+  \only<1>{
+    \includegraphics[height=6.1em]{figures/formats-few.pdf}
+    \hspace{0.5em}
+  }
+  \only<2,3>{
+    \includegraphics[height=0.95\textheight]{figures/formats-many.pdf}
+  }
+  \begin{tikzpicture}[remember picture,overlay]
+    \tikzset{shift={(current page.center)}}
+    \node at (-4.3,2.5) {
+      \TeX-Formate
+    };
+    \only<3>{
+      \node (here) at (-4.3,-0.6) {
+        Sie sind hier
+      };
+      \draw [->, >=Stealth] (here.east) -- ++(3.05,0);
+    }
+  \end{tikzpicture}
+\end{frame}
+
+\begin{frame}{Warum \LaTeX3?}
+  \begin{itemize}
+    \item \LaTeX3 existiert (noch) nicht
+    \item \texttt{expl3} ist \LaTeX3 unter \LaTeXe
+    \item \texttt{xpackages} sind Pakete, die auf \texttt{expl3} aufbauen und neue Möglichkeiten bieten
+    \item \texttt{xparse} macht das schreiben neuer (auch komplizierter) Befehle sehr einfach
+    \item viele Pakete benutzen jetzt schon \texttt{expl3} und \texttt{xparse}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+  \centering
+  {\Huge \LaTeX:}
+
+  \vspace{10pt}
+  \centering
+  \begin{BVerbatim}[gobble=4]
+    \DeclareRobustCommand{\LaTeX}{%
+      L\kern-.36em%
+      {\sbox\z@ T%
+        \vbox to\ht\z@{\hbox{%
+          \check@mathfonts
+          \fontsize\sf@size\z@
+          \math@fontsfalse\selectfont A}%
+          \vss}%
+      }%
+      \kern-.15em%
+      \TeX}
+  \end{BVerbatim}
+
+  \begin{center}
+    \Huge
+    … alles klar?
+  \end{center}
+\end{frame}
