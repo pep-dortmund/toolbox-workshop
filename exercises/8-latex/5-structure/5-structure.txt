@@ -1,0 +1,17 @@
+Aufgabe 1:
+	Kopiert eure Lösung aus Aufgabe 4 und fügt zusätzlich
+	die Gliederung für das Protokoll ein.
+	Diese sieht üblicherweise so aus:
+		1. Theorie
+		2. Aufbau und Durchführung
+			2.1 Aufbau
+			2.2 Durchführung
+		3. Auswertung
+			3.1 Auswertung Teil 1
+			3.2 Auswertung Teil 2
+			...
+		4. Diskussion
+
+Aufgabe 2:
+	Erstellt das Inhaltsverzeichnis und kompiliert.
+
