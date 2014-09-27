@@ -1,4 +1,4 @@
-\documentclass[titlepage=firstiscover]{scrartcl}
+\documentclass[parskip=half,titlepage=firstiscover]{scrartcl}
 
 \usepackage{fixltx2e}
 \usepackage[aux]{rerunfilecheck}
@@ -8,30 +8,53 @@
 
 \usepackage{fontspec}
 
-\usepackage[
-  locale=DE,
-  separate-uncertainty=true,
-  per-mode=symbol-or-fraction,
-]{siunitx}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%  Paket-Einbingung   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{siunitx}
 
 \usepackage[unicode]{hyperref}
 \usepackage{bookmark}
 
 \begin{document}
 
-\section{Aufgabe 2}
-Das Newton ist definiert als die Kraft, die eine Masse von \SI{1}{\kilo\gram} in einer Sekunde auf die Geschwindigkeit \SI{1}{\meter\per\second} beschleunigt:
-$\si{\newton} = \si{\kilo\gram\meter\per\second\squared}$.
-
-Als Gleichung:
+\section*{Aufgabe 2}
+\subsection*{Ohne Optionen}
+\SI{27.23(1)e3}{\meter\per\second}
 \begin{equation}
-  \si{\newton} = \si{\kilo\gram\meter\per\second\squared} .
+  \SI{27.23(1)e3}{\meter\per\second} 
 \end{equation}
 
-\section{Aufgabe 3}
-
+\subsection*{Mit \texttt{locale=DE}}
+\sisetup{locale=DE}%
+\SI{27.23(1)e3}{\meter\per\second}
 \begin{equation}
-  \num{5.2(1)} = \num{5.2 +- 0.1}
+  \SI{27.23(1)e3}{\meter\per\second} 
 \end{equation}
 
+\subsection*{Mit \texttt{separate-uncertainty=true}}
+\sisetup{separate-uncertainty=true}%
+\SI{27.23(1)e3}{\meter\per\second}
+\begin{equation}
+  \SI{27.23(1)e3}{\meter\per\second} 
+\end{equation}
+
+\subsection*{Mit \texttt{per-mode=symbol-or-fraction}}
+\sisetup{per-mode=symbol-or-fraction}%
+\SI{27.23(1)e3}{\meter\per\second}
+\begin{equation} 
+  \SI{27.23(1)e3}{\meter\per\second} 
+\end{equation}
+
+\section*{Aufgabe 3}
+$0,2$ und $\num{0,2}$
+
+$10000$ und $\num{10000}$
+
+$3,1415926$ und $\num{3,1415926}$
+
+\begin{equation}
+  (1,\!234 \pm 5)\cdot 10^3
+\end{equation}
 \end{document}

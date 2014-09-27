@@ -1,18 +1,27 @@
 Aufgabe 1:
-  ladet das Paket siunitx in eurer Präambel,
-  nehmt folgende Einstellungen vor:
-    locale=DE,
-    separate-uncertainty=true,
-    per-mode=symbol-or-fraction,
+	ladet das Paket siunitx in eurer Präambel
+	ohne Einstellungen.
 
 Aufgabe 2:
-  schreibt die Definition des Newton einmal im Fließtext in $...$ und
-  einmal in einer equation-Umgebung. Wie unterscheiden sie sich?
-  Welche Option ist für dieses Verhalten verantwortlich?
+	Erzeugt Ausgaben für 
+		\SI{27.23(1)e3}{\meter\per\second}
+    \begin{equation}
+      \SI{27(1)e3}{\meter\per\second}
+    \end{equation}
 
+	Ladet nun die Option "locale=DE", wie ändert sich die Ausgabe?
+	Tipp: mit \sisetup{} lassen sich Optionen auch nach dem Laden 
+	der Klasse einstellen.
+	Ladet zusätzlich die Option "separate-uncertainty=true",
+	wie verändert sich die Ausgabe?
+	Ladet zusätzlich die Option "per-mode=symbol-or-fraction",
+	wie ändert sich die Ausgabe?.
+	
 Aufgabe 3:
-  Ihr möchtet einen Wert mit Fehler angeben.
-  Hierfür gibt es zwei Schreibweisen.
-    a = 5,2 ± 0,1
-    a = 5,2(1)
-  Tragt beide in eine \num{} Umgebung ein, was ist das Ergebnis? Warum?
+	Vergleicht die Ausgaben von:
+		$0,2$ und $\num{0,2}$
+		$10000$ und $\num{10000}$
+		$3,1415926$ und $\num{3,1415926}$
+	Wie würdet ihr ohne siunitx die Ausgabe von 
+		\num{1,234(5)e3}
+	erreichen?
