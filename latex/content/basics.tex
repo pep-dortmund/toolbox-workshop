@@ -138,13 +138,9 @@
 }
   Stellt die wichtigen Klassen \texttt{scrartcl}, \texttt{scrreprt} und \texttt{scrbook} zur Verfügung.
   Sehr gute Vorlagen schon mit den Standardeinstellungen, schnell global mit Klassenoptionen anpassbar.
-  \begin{block}{Fürs Praktikum empfohlenene Einstellungen}
+  \begin{block}{Fürs Praktikum empfohlenene Klasse}
     \begin{lstlisting}
-      \documentclass[
-        captions=tableheading,  % Spacing für Tabellenüberschriften
-        titlepage=firstiscover, % Titelseite ist Deckblatt
-        bibliography=totoc,     % Literatur im Inhaltsverzeichnis
-      ]{scrartcl}
+      \documentclass[…]{scrartcl}
     \end{lstlisting}
   \end{block}
 \end{frame}
@@ -175,11 +171,7 @@
 
 \begin{frame}[fragile]{Gerüst}
   \begin{lstlisting}
-    \documentclass[
-      captions=tableheading,
-      titlepage=firstiscover,
-      bibliography=totoc,
-    ]{scrartcl}
+    \documentclass[]{scrartcl}
 
     \usepackage{fixltx2e}
     \usepackage[aux]{rerunfilecheck}

@@ -1,7 +1,14 @@
 \section{Struktur}
 
 \begin{frame}[fragile]{Titelseite und Metadaten}
-  \LaTeX\ erstellt automatisch eine Titelseite aus den Metadaten.
+  \LaTeX\ erstellt automatisch eine Titelei aus den Metadaten. \\
+  Mit der Klassenoption \lstinline{titlepage=firstiscover} wird diese  als eigene Seite gesetzt.
+  
+  \begin{block}{neue Klassenoption:}
+    \begin{lstlisting}
+      \documentclass[…,titlepage=firstiscover, …]{scrartcl}
+    \end{lstlisting}
+  \end{block}
 
   \begin{block}{Empfehlung fürs Praktikum:}
     \begin{lstlisting}

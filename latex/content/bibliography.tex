@@ -1,6 +1,6 @@
 \section{Literaturverzeichnis}
 
-\begin{frame}{Literaturverzeichnis}
+\begin{frame}[fragile]{Literaturverzeichnis}
   \begin{itemize}
     \item Wichtiger Teil vieler Dokumente, für wissenschaftliche Texte zwingend
     \item Bib\LaTeX\ und biber bieten eine sehr angenehme Arbeitsweise
@@ -9,6 +9,11 @@
     \item Standardstil fürs Praktikum geeignet
     \item Referenzen in \texttt{.bib}-Dateien
   \end{itemize}
+  \begin{block}{Neue Klassenoption:}
+    \begin{lstlisting}
+      \documentclass[…,bibliography=totoc,…]{scrartcl}
+    \end{lstlisting}
+  \end{block}
 \end{frame}
 
 \begin{frame}

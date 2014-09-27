@@ -1,11 +1,23 @@
 \section{Tabellen}
 
 \begin{frame}[fragile]{Tabellen}
-  \begin{Packages}
-    \begin{lstlisting}
-      \usepackage{booktabs}
-    \end{lstlisting}
-  \end{Packages}
+  \begin{columns}[t]
+    \begin{column}{0.31\textwidth}
+      \begin{Packages}
+        \begin{lstlisting}
+          \usepackage{booktabs}
+        \end{lstlisting}
+      \end{Packages}
+    \end{column}
+    \begin{column}{0.63\textwidth}
+    \begin{block}{neue Klassenoption}
+      \begin{lstlisting}
+        \documentclass[…,captions=tableheading,…]{scrartcl}
+      \end{lstlisting}
+    \end{block}
+    \end{column}
+  \end{columns}
+  \vspace{-2pt}
   \begin{columns}[onlytextwidth, t]
     \begin{column}{0.60\textwidth}
       \fontsize{8}{6}
@@ -13,7 +25,7 @@
         \begin{lstlisting}
           \begin{table}
             \centering
-            \caption{Eine gewöhnliche Tabelle mit Messdaten.}
+            \caption{Eine Tabelle mit Messdaten.}
             \label{tab:some_data}
             \begin{tabular}{c c c c c}
               \toprule
@@ -42,7 +54,7 @@
 \begin{frame}{Ergebnis}
   \begin{table}
     \centering
-    \caption{Eine gewöhnliche Tabelle mit Messdaten.}
+    \caption{Eine Tabelle mit Messdaten.}
     \begin{tabular}{l c c c c}
       \toprule
       $f$ & $l_\text{start}$ & $l_1$ & $l_{\text{kor},1}$ & $B_1$ \\
