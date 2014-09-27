@@ -3,6 +3,24 @@
   \hfill\doc{http://mirrors.ctan.org/macros/latex/required/amslatex/math/amsldoc.pdf}{amsmath}
   \doc{http://mirrors.ctan.org/macros/latex/contrib/mathtools/mathtools.pdf}{mathtools}
 }
+  \begin{lstlisting}
+    \usepackage{amsmath}   % unverzichtbare Mathe-Befehle
+    \usepackage{amssymb}   % viele Mathe-Symbole
+    \usepackage{mathtools} % Erweiterungen für amsmath
+
+    \usepackage{fontspec} % nach amssymb
+
+    \usepackage[
+      math-style=ISO,    % \
+      bold-style=ISO,    % |
+      sans-style=italic, % | ISO-Standard folgen
+      nabla=upright,     % |
+      partial=upright,   % /
+    ]{unicode-math}      % "Does exactly what it says on the tin."
+
+    % \setmathfont{Latin Modern Math}     % standard
+    % \setmathfont{Tex Gyre Pagella Math} % alternativ
+  \end{lstlisting}
 \end{frame}
 
 \begin{frame}[fragile]{\lstinline+\$...\$+-Umgebung}
@@ -72,21 +90,7 @@
 \begin{frame}{Große Operatoren}
 \end{frame}
 
-\begin{frame}[fragile]{Fonts}
-  \begin{Packages}
-    \begin{lstlisting}
-      \usepackage{unicode-math} % nach Mathe-Paketen und fontspec
-    \end{lstlisting}
-  \end{Packages}
-  \begin{CodeExample}{0.48}[Latin Modern][Tex Gyre]
-    \begin{lstlisting}
-      \setmathfont{Latin Modern Math}
-    \end{lstlisting}
-  \CodeResult
-    \begin{lstlisting}
-      \setmathfont{Tex Gyre Pagella Math}
-    \end{lstlisting}
-  \end{CodeExample}
+\begin{frame}{Fonts}
 \end{frame}
 
 \begin{frame}{Spaces}

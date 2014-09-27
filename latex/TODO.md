@@ -1,14 +1,5 @@
 # TODO
 
-* \footnote
-* placeins
-* math (after environments)
-  - gather
-  - matrices
-  - cases
-  - different parens
-  - \big…
-  - \left, \right (spacing important!)
 * advanced
   - TEXINPUTS, BIBINPUTS
   - --output-directory, --interaction=batchmode, similar for biber
@@ -24,8 +15,4 @@
   - \TextOrMath, \ensuremath
   - IEEEtrantools
   - xparse
-  - amsmath
-    - multline
-    - split
-    - intertext
-    - subequations
+  - subequations
