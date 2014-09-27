@@ -58,7 +58,7 @@
       \Alpha \Beta \Gamma \Delta \Epsilon \Zeta \Eta \Theta \Iota \Kappa \Lambda \Mu \Nu \Xi \Omicron \Pi \Rho \Sigma \Tau \Upsilon \Phi \Chi \Psi \Omega
       \hbar \imath \jmath \ell \wp
       \aleph \beth \gimel
-      \partial \eth \nabla \square \increment \infty
+      \partial \eth \nabla \square \increment \infty \diameter \ldots \cdots
     \end{lstlisting}
   \CodeResult
     \Umathordordspacing\textstyle=4mu
@@ -74,37 +74,157 @@
     $\quad \Chi \Psi \Omega$ \\
     $\hbar \imath \jmath \ell \wp$ \\
     $\aleph \beth \gimel$ \\
-    $\partial \eth \nabla \square \increment \infty$
+    $\partial \eth \nabla \square \increment \infty$ \\
+    $\quad \diameter \ldots \cdots$
   \end{CodeExample}
 \end{frame}
 
-\begin{frame}{Operatoren und Relationen}
+\begin{frame}[fragile]{Operatoren und Relationen}
+  \vspace{-1em}
+  \begin{CodeExample}{0.74}
+    \begin{lstlisting}
+      + - \pm \mp * \cdot \times / \oplus \circ
+      \wedge \vee \cap \cup \smallsetminus
+      \in \notin \ni \subset \supset
+      = \simeq \equiv \cong \approx \propto \sim \coloneq
+      < > \le \ge \ll \gg \ne
+      \forall \exists \mid
+      \to \iff \implies \mapsto \leadsto
+    \end{lstlisting}
+  \CodeResult
+    \Umathbinbinspacing\textstyle=4mu
+    \Umathrelrelspacing\textstyle=4mu
+    $+ - \pm \mp * \cdot \times / \oplus \circ$ \\
+    $\wedge \vee \cap \cup \smallsetminus$ \\
+    $\in \notin \ni \subset \supset$ \\
+    $= \simeq \equiv \cong \approx \propto \sim \coloneq$ \\
+    $< > \le \ge \ll \gg \ne$ \\
+    $\forall \: \exists \mid$ \\
+    $\to \iff \implies \mapsto \leadsto$
+  \end{CodeExample}
+  \vspace{5pt}
+  Die meisten Relationen lassen sich durch ein \texttt{n} negieren:
+  \vspace{-1.5em}
+  \begin{CodeExample}{0.74}
+    \begin{lstlisting}
+      \nsime \nequiv \ncong \napprox \nsim \nexists \nni
+    \end{lstlisting}
+  \CodeResult
+    \Umathbinbinspacing\textstyle=4mu
+    \Umathrelrelspacing\textstyle=4mu
+    $\nsime \nequiv \ncong \napprox \nsim \nexists \nni$
+  \end{CodeExample}
+  \vspace{5pt}
+  Häufig möchte man etwas über eine Relation schreiben:
+  \vspace{-1.5em}
+  \begin{CodeExample}{0.74}
+    \begin{lstlisting}
+      \stackrel{!}{=} \stackrel{\text{def}}{=}
+    \end{lstlisting}
+  \CodeResult
+    $\stackrel{!}{=} \stackrel{\text{def}}{=}$
+  \end{CodeExample}
 \end{frame}
 
-\begin{frame}{Indizes}
+\begin{frame}[fragile]{Indizes}
+  \begin{CodeExample}{0.50}
+    \begin{lstlisting}
+      x^2 x_2 x²
+      x^10 x^{10}
+      x' x^' x'' x'^2
+      x_2^2 x_2 x_2^{}
+      x^2^2 x^{2^2} \cramped{x^{2^2}}
+      {}^2 x
+      x_{min} x_\text{min}
+      x_\sqrt[3]{2} x_{\sqrt[3]{2}}
+    \end{lstlisting}
+  \CodeResult
+    $x^2 \quad x_2 \quad x²$ \\
+    $x^10 \quad x^{10}$ \\
+    $x' \quad x^{'} \quad x'' \quad x'^2$ \\
+    $x_y^2 x_y x_y^{}$ \\
+    Fehler$\quad x^{2^2} \quad \cramped{x^{2^2}}$ \\
+    ${}^2 x$ \\
+    $x_{min} \quad x_\text{min}$ \\
+    Fehler$\quad x_{\sqrt[3]{2}}$
+  \end{CodeExample}
 \end{frame}
 
-\begin{frame}{Akzente}
+\begin{frame}[fragile]{Akzente}
+  \begin{CodeExample}{0.70}
+    \begin{lstlisting}
+      \bar{x}
+      \hat{x}
+      \tilde{x}
+      \vec{x}
+      \mathring{x}
+      \dot{x} \ddot{x} \dddot{x} \ddddot{x}
+      \hat{x_\text{min}} \hat{x}_\text{min}
+      \underline{xy} \overline{xy}
+    \end{lstlisting}
+  \CodeResult
+    \Umathordordspacing\textstyle=4mu
+    $\bar{x}$ \\
+    $\hat{x}$ \\
+    $\tilde{x}$ \\
+    $\vec{x}$ \\
+    $\mathring{x}$ \\
+    $\dot{x} \ddot{x} \dddot{x} \ddddot{x}$ \\
+    $\hat{x_\text{min}} \hat{x}_\text{min}$ \\
+    $\underline{xy} \overline{xy}$
+  \end{CodeExample}
 \end{frame}
 
-\begin{frame}{Funktionen}
+\begin{frame}[fragile]{Funktionen}
+  \begin{CodeExample}{0.70}
+    \begin{lstlisting}
+      x \sin y
+      x \sin(y)
+      \cos \tan \exp \ln
+      \lim_{x \to \infty} x^2
+    \end{lstlisting}
+  \CodeResult
+    $x \sin y$ \\
+    $x \sin(y)$ \\
+    $\cos \tan \exp \ln$ \\
+    $\displaystyle \lim_{x \to \infty} x^2$
+  \end{CodeExample}
+  \vspace{5pt}
+  Man kann auch eigene Funktionen definieren:
+  \vspace{-1em}
+  \begin{CodeExample}{0.70}
+    \begin{lstlisting}
+      \operatorname{xyz}_i(a)
+      \operatorname*{xyz}_i(a)
+
+      % in Präambel
+      \DeclareMathOperator{\xyz}{xyz} \xyz_i(a)
+      \DeclareMathOperator*{\Xyz}{Xyz} \Xyz_i(a)
+    \end{lstlisting}
+  \CodeResult
+    $\operatorname{xyz}_i(a)$ \\
+    $\displaystyle \operatorname*{xyz}_i(a)$ \\[\baselineskip]
+    $\operatorname{xyz}_i(a)$ \\
+    $\displaystyle \operatorname*{Xyz}_i(a)$
+  \end{CodeExample}
 \end{frame}
 
-\begin{frame}{Große Operatoren}
+\begin{frame}[fragile]{Große Operatoren}
 \end{frame}
 
-\begin{frame}{Fonts}
+\begin{frame}[fragile]{Fonts}
 \end{frame}
 
-\begin{frame}{Spaces}
+\begin{frame}[fragile]{Spaces}
 \end{frame}
 
-\begin{frame}{Klammern}
+\begin{frame}[fragile]{Klammern}
 \end{frame}
 
 \begin{frame}[fragile]{
   Symbol-Sammlung
   \hfill\doc{http://mirrors.ctan.org/info/symbols/comprehensive/symbols-a4.pdf}{symbols-a4}
+  \hfill\doc{http://mirrors.ctan.org/macros/latex/contrib/unicode-math/unimath-symbols.pdf}{unimath-symbols}
 }
   Praktischer Link: \\
   \url{http://detexify.kirelabs.org/classify.html} \\
