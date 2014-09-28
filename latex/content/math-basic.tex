@@ -294,6 +294,49 @@
 \end{frame}
 
 \begin{frame}[fragile]{Klammern}
+  \vspace{-1.5em}
+  \begin{CodeExample}{0.74}
+    \begin{lstlisting}
+      () [] \{\} \langle\rangle \lvert\rvert \lVert\rVert
+    \end{lstlisting}
+  \CodeResult
+    \Umathcloseopenspacing\textstyle=4mu
+    $() [] \{\} \langle\rangle \lvert x\rvert \lVert x\rVert$
+  \end{CodeExample}
+  \vspace{5pt}
+  Häufig braucht man größere Klammern.
+  \vspace{-1.5em}
+  \begin{CodeExample}{0.80}
+    \begin{lstlisting}
+      \bigl(\bigr) \Bigl(\Bigr) \biggl(\biggr) \Biggl(\Biggr)
+      \bigl<\bigr> \bigl|\bigr|
+    \end{lstlisting}
+  \CodeResult
+    $\bigl(\bigr) \Bigl(\Bigr) \biggl(\biggr) \Biggl(\Biggr)$ \\
+    $\bigl<\bigr> \bigl|\bigr|$
+  \end{CodeExample}
+  \vspace{-1.0em}
+  Für noch größere Klammern oder Faulheit:
+  \vspace{-1.5em}
+  \begin{CodeExample}{0.74}
+    \begin{lstlisting}
+      \left(\right) \left(\right.
+      \left\{ \,\middle|\, \right\}
+    \end{lstlisting}
+  \CodeResult
+    $\left(\frac{1}{2}\right) \quad \left(\frac{1}{2}\right.$ \\
+    $\left\{ x \,\middle|\, x < \frac{1}{2} \right\}$
+  \end{CodeExample}
+  \vspace{-0.5em}
+  \lstinline+\left\right+ hat kein optimales Spacing:
+  \vspace{-1.5em}
+  \begin{CodeExample}{0.70}
+    \begin{lstlisting}
+      \sin(x) \sin\left(x\right) \sin\!\left(x\right)
+    \end{lstlisting}
+  \CodeResult
+    $\sin(x) \sin\left(x\right) \sin\!\left(x\right)$
+  \end{CodeExample}
 \end{frame}
 
 \begin{frame}[fragile]{
