@@ -103,22 +103,18 @@
     $\forall \: \exists \mid$ \\
     $\to \iff \implies \mapsto \leadsto$
   \end{CodeExample}
-  \vspace{5pt}
-  Die meisten Relationen lassen sich durch ein \texttt{n} negieren:
-  \vspace{-1.5em}
-  \begin{CodeExample}{0.74}
+
+  \begin{CodeExample}{0.74}[Die meisten Relationen lassen sich durch ein \texttt{n} negieren:]
     \begin{lstlisting}
-      \nsime \nequiv \ncong \napprox \nsim \nexists \nni
+      \neq \nsime \nequiv \ncong \napprox \nsim \nexists \nni
     \end{lstlisting}
   \CodeResult
     \Umathbinbinspacing\textstyle=4mu
     \Umathrelrelspacing\textstyle=4mu
-    $\nsime \nequiv \ncong \napprox \nsim \nexists \nni$
+  $\neq \nsime \nequiv \ncong \napprox \nsim \nexists \nni$
   \end{CodeExample}
-  \vspace{5pt}
-  Häufig möchte man etwas über eine Relation schreiben:
-  \vspace{-1.5em}
-  \begin{CodeExample}{0.74}
+  
+  \begin{CodeExample}{0.74}[Häufig möchte man etwas über eine Relation schreiben:]
     \begin{lstlisting}
       \stackrel{!}{=} \stackrel{\text{def}}{=}
     \end{lstlisting}
@@ -236,7 +232,7 @@
     $\displaystyle \sum\nolimits_0^1 \int\limits_0^1$ \\
     $\displaystyle \sideset{_a^b}{_c^d}\sum_{i=0}^n$ \\
     $\displaystyle \sum_{i=1+2+3+4+5+6} x_i$ \\
-    $\displaystyle \qquad \sum_{\mathclap{i=1+2+3+4+5+6}} x_i$
+    \hspace*{0.75cm}$\displaystyle \sum_{\mathclap{i=1+2+3+4+5+6}} x_i$
   \end{CodeExample}
 \end{frame}
 
@@ -282,14 +278,13 @@
     $|\mspace{-5mu} \qquad|$ \\
     $|\mspace{-5mu} \!|$
   \end{CodeExample}
-  \begin{CodeExample}{0.70}
+  \begin{CodeExample}{0.48}
     \begin{lstlisting}
-      ^2
+      ^2       ^{\!\! 2}
 
-      ^{\!\! 2}
     \end{lstlisting}
   \CodeResult
-    $\displaystyle \left( \frac{2^2}{2} \right)^2$ \\
+    $\displaystyle \left( \frac{2^2}{2} \right)^2$ 
     $\displaystyle \left( \frac{2^2}{2} \right)^{\!\! 2}$
   \end{CodeExample}
 \end{frame}
@@ -304,34 +299,26 @@
     \Umathcloseopenspacing\textstyle=4mu
     $() [] \{\} \langle\rangle \lvert x\rvert \lVert x\rVert$
   \end{CodeExample}
-  \vspace{5pt}
-  Häufig braucht man größere Klammern.
-  \vspace{-1.5em}
-  \begin{CodeExample}{0.80}
+
+  \begin{CodeExample}{0.7}[ Häufig braucht man größere Klammern.]
     \begin{lstlisting}
       \bigl(\bigr) \Bigl(\Bigr) \biggl(\biggr) \Biggl(\Biggr)
-      \bigl<\bigr> \bigl|\bigr|
     \end{lstlisting}
   \CodeResult
-    $\bigl(\bigr) \Bigl(\Bigr) \biggl(\biggr) \Biggl(\Biggr)$ \\
-    $\bigl<\bigr> \bigl|\bigr|$
+    $\bigl(\bigr) \Bigl(\Bigr) \biggl(\biggr) \Biggl(\Biggr)$ 
   \end{CodeExample}
-  \vspace{-1.0em}
-  Für noch größere Klammern oder Faulheit:
-  \vspace{-1.5em}
-  \begin{CodeExample}{0.74}
+
+  \begin{CodeExample}{0.6}[Automatische Bestimmung der Größe:]
     \begin{lstlisting}
       \left(\right) \left(\right.
       \left\{ \,\middle|\, \right\}
     \end{lstlisting}
   \CodeResult
-    $\left(\frac{1}{2}\right) \quad \left(\frac{1}{2}\right.$ \\
+    $\left(\frac{1}{2}\right) \quad \left(\frac{1}{2}\right.$ 
     $\left\{ x \,\middle|\, x < \frac{1}{2} \right\}$
   \end{CodeExample}
-  \vspace{-0.5em}
-  \lstinline+\left\right+ hat kein optimales Spacing:
-  \vspace{-1.5em}
-  \begin{CodeExample}{0.70}
+  
+  \begin{CodeExample}{0.70}[hat kein optimales Spacing:]
     \begin{lstlisting}
       \sin(x) \sin\left(x\right) \sin\!\left(x\right)
     \end{lstlisting}
