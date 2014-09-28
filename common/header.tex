@@ -125,42 +125,41 @@
 
 \ExplSyntaxOn
 
-\NewDocumentEnvironment {tblock}{m}{
-    \begin{tcolorbox}[title=#1,
-                      noparskip,
-                      lefttitle=0.1em,
-                      colback=white,
-                      colframe=TUgreen,
-                      boxsep=0.5mm,
-                      coltext=black,
-                      coltitle=black,
-                      left=1mm,
-                      right=1mm,
-                      top=1mm,
-                      bottom=1mm]
-      \begin{flushleft}
-  }
-  {
-      \end{flushleft}
+\RenewDocumentEnvironment {block} {m} {
+  \begin{tcolorbox}[adjusted~title=#1,
+                    noparskip,
+                    lefttitle=0.1em,
+                    colback=white,
+                    colframe=TUgreen,
+                    boxsep=0.5mm,
+                    coltext=black,
+                    coltitle=black,
+                    left=1mm,
+                    right=1mm,
+                    top=1mm,
+                    bottom=1mm]
+    \begin{flushleft}
+}{
+    \end{flushleft}
   \end{tcolorbox}
 }
-\NewDocumentEnvironment {alerttblock}{m}{
-    \begin{tcolorbox}[title=#1,
-                      noparskip,
-                      lefttitle=0.1em,
-                      colback=white,
-                      colframe=red,
-                      boxsep=0.5mm,
-                      coltext=black,
-                      coltitle=black,
-                      left=1mm,
-                      right=1mm,
-                      top=1mm,
-                      bottom=1mm]
-      \begin{flushleft}
-  }
-  {
-      \end{flushleft}
+
+\RenewDocumentEnvironment {alertblock} {m} {
+  \begin{tcolorbox}[adjusted~title=#1,
+                    noparskip,
+                    lefttitle=0.1em,
+                    colback=white,
+                    colframe=red,
+                    boxsep=0.5mm,
+                    coltext=black,
+                    coltitle=black,
+                    left=1mm,
+                    right=1mm,
+                    top=1mm,
+                    bottom=1mm]
+    \begin{flushleft}
+}{
+    \end{flushleft}
   \end{tcolorbox}
 }
 
@@ -176,7 +175,7 @@
       }
       \textwidth
     }
-    \begin{tcolorbox}[title=#4,
+    \begin{tcolorbox}[adjusted~title=#4,
                       noparskip,
                       lefttitle=0.1em,
                       colback=white,
@@ -191,7 +190,7 @@
   }
   \begin{columns}[onlytextwidth, t]
     \begin{column}{#2 \textwidth}
-      \begin{tcolorbox}[title=#3,
+      \begin{tcolorbox}[adjusted~title=#3,
                         noparskip,
                         lefttitle=0.1em,
                         colback=white,
@@ -221,7 +220,7 @@
       }
       \textwidth
     }
-    \begin{tcolorbox}[title=#4,
+    \begin{tcolorbox}[adjusted~title=#4,
                       noparskip,
                       lefttitle=0.1em,
                       colback=white,
@@ -237,7 +236,7 @@
   }
   \begin{columns}[onlytextwidth, t]
     \begin{column}{#2 \textwidth}
-      \begin{tcolorbox}[title=#3,
+      \begin{tcolorbox}[adjusted~title=#3,
                         noparskip,
                         lefttitle=0.1em,
                         colback=white,
@@ -256,9 +255,9 @@
 }
 
 \NewDocumentEnvironment {Packages} {} {
-  \begin{tblock}{Benötigte~Pakete}
+  \begin{block}{Benötigte~Pakete}
 }{
-  \end{tblock}
+  \end{block}
 }
 
 \ExplSyntaxOff
