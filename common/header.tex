@@ -137,7 +137,8 @@
   toptitle=-1mm,
   bottom=0mm,
   bottomtitle=-1mm,
-  before upper={\setlength\abovedisplayskip{-2pt}},
+  before upper={\raggedright\setlength\abovedisplayskip{-2pt}},
+  before title={\raggedright},
 }
 
 
@@ -147,9 +148,7 @@
   \begin{tcolorbox}[
     adjusted~title=#1,
   ]
-    \begin{flushleft}
 }{
-    \end{flushleft}
   \end{tcolorbox}
 }
 
@@ -158,9 +157,7 @@
     adjusted~title=#1,
     colframe=red,
   ]
-    \begin{flushleft}
 }{
-    \end{flushleft}
   \end{tcolorbox}
 }
 
