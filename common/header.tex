@@ -125,6 +125,45 @@
 
 \ExplSyntaxOn
 
+\NewDocumentEnvironment {tblock}{m}{
+    \begin{tcolorbox}[title=#1,
+                      noparskip,
+                      lefttitle=0.1em,
+                      colback=white,
+                      colframe=TUgreen,
+                      boxsep=0.5mm,
+                      coltext=black,
+                      coltitle=black,
+                      left=1mm,
+                      right=1mm,
+                      top=1mm,
+                      bottom=1mm]
+      \begin{flushleft}
+  }
+  {
+      \end{flushleft}
+  \end{tcolorbox}
+}
+\NewDocumentEnvironment {alerttblock}{m}{
+    \begin{tcolorbox}[title=#1,
+                      noparskip,
+                      lefttitle=0.1em,
+                      colback=white,
+                      colframe=red,
+                      boxsep=0.5mm,
+                      coltext=black,
+                      coltitle=black,
+                      left=1mm,
+                      right=1mm,
+                      top=1mm,
+                      bottom=1mm]
+      \begin{flushleft}
+  }
+  {
+      \end{flushleft}
+  \end{tcolorbox}
+}
+
 \NewDocumentEnvironment {CodeExplanation} {o m O{Code} O{Ergebnis}} {
   \NewDocumentCommand \Explanation {} {
       \end{tcolorbox}

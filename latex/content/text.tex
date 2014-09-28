@@ -1,7 +1,7 @@
 \section{Text erstellen}
 
 \begin{frame}[fragile]{Text schreiben}
-  \begin{block}{Beispiel}
+  \begin{tblock}{Beispiel}
     \begin{lstlisting}
       % Präambel
       \begin{document}
@@ -16,7 +16,7 @@
         markiert.
       \end{document}
     \end{lstlisting}
-  \end{block}
+  \end{tblock}
 \end{frame}
 
 \begin{frame}[fragile]{Konventionen für Text}
@@ -25,14 +25,14 @@
     \item Absätze werden durch eine Leerzeile markiert
     \item Im Fließtext sollten keine Umbrüche mit \verb+\\+ erzwungen werden
   \end{itemize}
-  \begin{alertblock}{Sonderzeichen}
+  \begin{alerttblock}{Sonderzeichen}
     Viele Sonderzeichen sind \LaTeX-Steuerzeichen.
     Damit diese im Text genutzt werden können, muss meist ein \verb+\+ vorangestellt oder ein Befehl genutzt werden:
     \begin{center}
       \verb+\% \& \_+ \lstinline+\textbackslash+ \verb+\$ \{ \}+ \\
       \% \& \_ \textbackslash\ \$ \{ \}
     \end{center}
-  \end{alertblock}
+  \end{alerttblock}
 \end{frame}
 
 \begin{frame}[fragile]{Textauszeichnung}
@@ -77,16 +77,16 @@
     {\huge huge}
   \end{CodeExample}
   \vspace{1em}
-  \begin{block}{Alle Größen}
+  \begin{tblock}{Alle Größen}
     \begin{lstlisting}
       \tiny, \scriptsize, \footnotesize, \small, \normalsize, \large, \Large, \LARGE, \huge, \Huge
     \end{lstlisting}
-  \end{block}
+  \end{tblock}
   Auch diese Befehle sollten nur über semantischen Markup benutzt werden.
 \end{frame}
 
 \begin{frame}[fragile]{Inhalt auslagern}
-  \begin{block}{Code}
+  \begin{tblock}{Code}
     \begin{lstlisting}
       \input{header.tex}
       \begin{document}
@@ -95,7 +95,7 @@
         % .
       \end{document}
     \end{lstlisting}
-  \end{block}
+  \end{tblock}
   \begin{itemize}
     \item Verschachtelung möglich
     \item Zur Aufteilung größerer Dokumente (z.B. diese Präsentation)

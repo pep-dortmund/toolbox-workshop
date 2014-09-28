@@ -4,7 +4,7 @@
   Diese drei Zeilen braucht jedes \LaTeX-Dokument:
   \begin{columns}[onlytextwidth, t]
     \begin{column}{0.48\textwidth}
-      \begin{block}{Code}
+      \begin{tblock}{Code}
         \begin{lstlisting}
           \documentclass[optionen]{klasse}
             % Präambel
@@ -16,18 +16,18 @@
             % .
           \end{document}
         \end{lstlisting}
-      \end{block}
+      \end{tblock}
     \end{column}
     \begin{column}{0.48\textwidth}
-      \begin{block}{\lstinline+\\documentclass+}
+      \begin{tblock}{\lstinline+\\documentclass+}
         Dokumentenklasse=Vorlage wählen, mit Optionen anpassen.
-      \end{block}
-      \begin{block}{Präambel}
+      \end{tblock}
+      \begin{tblock}{Präambel}
         Globale Optionen und zusätzliche Pakete.
-      \end{block}
-      \begin{block}{\texttt{document}-Umgebung}
+      \end{tblock}
+      \begin{tblock}{\texttt{document}-Umgebung}
         Inhalt des Dokuments.
-      \end{block}
+      \end{tblock}
     \end{column}
   \end{columns}
 \end{frame}
@@ -36,12 +36,12 @@
   \LaTeX-Befehle beginnen stets mit einem \verb+\+ (Backslash).
 
   Obligatorische Argumente stehen in \lstinline+{ }+, optionale Argumente stehen in \lstinline+[ ]+.
-    \begin{block}{Syntax}
+    \begin{tblock}{Syntax}
       \begin{lstlisting}
         \befehl[optional]{obligatorisch}
         \befehl*[optional]{obligatorisch}
       \end{lstlisting}
-    \end{block}
+    \end{tblock}
 
   \verb+*+ ruft häufg eine Alternativform des Befehls auf.
   \begin{CodeExplanation}{0.53}[Code][Erklärung]
@@ -53,7 +53,8 @@
       % Kommentar
     \end{lstlisting}
   \Explanation
-    Dokumentenklasse \texttt{scrartcl}, Papierformat DIN\,A4. \\
+    Dokumentenklasse \texttt{scrartcl},\\
+    Papierformat DIN\,A4. \\
     Zwei oder mehr Pflichtargumente, z.B. der Bruch. \\
     \verb+%+-Zeichen für Kommentare.
   \end{CodeExplanation}
@@ -85,7 +86,7 @@
   Umgebungen können weitere Umgebungen enthalten, diese müssen aber in dieser Umgebung wieder geschlossen werden.
   \begin{columns}[onlytextwidth, t]
     \begin{column}{0.48\textwidth}
-      \begin{block}{Geht:}
+      \begin{tblock}{Geht:}
         \begin{lstlisting}
           \begin{document}
             \begin{flushright}
@@ -93,17 +94,17 @@
             \end{flushright}
           \end{document}
         \end{lstlisting}
-      \end{block}
+      \end{tblock}
     \end{column}
     \begin{column}{0.48\textwidth}
-      \begin{alertblock}{Geht nicht:}
+      \begin{alerttblock}{Geht nicht:}
         \begin{lstlisting}
           \begin{itemize}
             \begin{enumerate}
           \end{itemize}
             \end{enumerate}
         \end{lstlisting}
-      \end{alertblock}
+      \end{alerttblock}
     \end{column}
   \end{columns}
 \end{frame}
@@ -142,11 +143,11 @@
 }
   Stellt die wichtigen Klassen \texttt{scrartcl}, \texttt{scrreprt} und \texttt{scrbook} zur Verfügung.
   Sehr gute Vorlagen schon mit den Standardeinstellungen, schnell global mit Klassenoptionen anpassbar.
-  \begin{block}{Fürs Praktikum empfohlenene Klasse}
+  \begin{tblock}{Fürs Praktikum empfohlenene Klasse}
     \begin{lstlisting}
       \documentclass[…]{scrartcl}
     \end{lstlisting}
-  \end{block}
+  \end{tblock}
 \end{frame}
 
 \begin{frame}[fragile]{Fonteinstellungen}
@@ -199,32 +200,32 @@
   Es gibt verschiedene \LaTeX-Kompiler, die verschiedene Ausgabeformate erzeugen können.
   Der modernste Kompiler, der PDF-Dateien erstellt, ist \alert{lualatex}.
 
-  \begin{block}{\LaTeX-Dokument kompilieren}
+  \begin{tblock}{\LaTeX-Dokument kompilieren}
     Terminal öffnen:
     \begin{lstlisting}
       lualatex MeinDokument.tex
     \end{lstlisting}
-  \end{block}
+  \end{tblock}
 
-  \begin{alertblock}{Vorsicht!}
+  \begin{alerttblock}{Vorsicht!}
     \begin{itemize}
       \item Es muss fast immer mindestens zweimal kompiliert werden.
       \item Es werden diverse Hilfs- und Logdateien erzeugt.
       \item Die Input-Dokumente müssen UTF-8 codiert sein.
     \end{itemize}
-  \end{alertblock}
+  \end{alerttblock}
 \end{frame}
 
 \begin{frame}{\texttt{texdoc}}
   \LaTeX\ und (fast) alle Pakete sind hervorragend dokumentiert. Die Dokumentation wird automatisch mitinstalliert.
-  \begin{block}{Dokumentation zu einem Paket}
+  \begin{tblock}{Dokumentation zu einem Paket}
     \texttt{texdoc \textit{paket}}
-  \end{block}
+  \end{tblock}
 
   Dabei ist \texttt{\textit{paket}} ein Suchstring.
-  \begin{block}{Nach Dokumentation suchen}
+  \begin{tblock}{Nach Dokumentation suchen}
     \texttt{texdoc -l \textit{name}}
-  \end{block}
+  \end{tblock}
 
   Es ist wichtig zu lernen, Dokumentationen zu lesen. Probiert es an den oben genannten Paketen aus.
 

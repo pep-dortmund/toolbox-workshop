@@ -2,12 +2,12 @@
 
 \begin{frame}[fragile]{Eigene \LaTeX-Kommandos}
   Nach 20 Mal \lstinline+\mathrm{e}+ oder \lstinline+\mathrm{i}+ schreiben hat man keine Lust mehr.
-  \begin{block}{Kommandostruktur}
+  \begin{tblock}{Kommandostruktur}
     \begin{lstlisting}
       \newcommand\Kommandoname[#Argumente]{Code mit #1, #2, ...}
       \newenvironment{Umgebungsname}[#Argumente]{\begin-Code}{\end-Code}
     \end{lstlisting}
-  \end{block}
+  \end{tblock}
   \verb+##+ gibt ein wirkliches \verb+#+.
   \begin{CodeExample}{0.75}
     \begin{lstlisting}
@@ -36,7 +36,7 @@
 %       \usepackage{xparse}
 %     \end{lstlisting}
 %   \end{Packages}
-%   \begin{block}{Kommandostruktur}
+%   \begin{tblock}{Kommandostruktur}
 %     \begin{lstlisting}
 %       \NewDocumentCommand\Kommandoname{m o O{...} ...}{Code mit #1, #2,...}
 %       \NewDocumentEnvironment{Umgebungsname}{m o O{...} ...}
@@ -47,7 +47,7 @@
 %         \end-Code
 %       }
 %     \end{lstlisting}
-%   \end{block}
+%   \end{tblock}
 %   Platzhalter legen Anzahl, Typ und Reihenfolge der Argumente fest
 %   \begin{description}
 %     \item[\texttt{m}] Pflichtargument
@@ -57,7 +57,7 @@
 % \end{frame}
 
 % \begin{frame}[fragile]{Nützliche eigene Umgebungen}
-%   \begin{block}{Code}
+%   \begin{tblock}{Code}
 %     \begin{lstlisting}
 %       \NewDocumentEnvironment{eqns}{O{rCl}}
 %       {
@@ -76,11 +76,11 @@
 %         \ignorespacesafterend
 %       }
 %       \end{lstlisting}
-%   \end{block}
+%   \end{tblock}
 % \end{frame}
 
 % \begin{frame}[fragile]{Mehr Beispiele}
-%   \begin{block}{Code}
+%   \begin{tblock}{Code}
 %     \begin{lstlisting}
 %       \RenewDocumentCommand\v{m}{\mathbf{#1}}
 %       \NewDocumentCommand\setN{}{\mathbb{N}}
@@ -91,7 +91,7 @@
 %       }
 %       \NewDocumentCommmand\til{m}{\ensuremath{\tilde{#1}}} % erzwingt Mathemodus; sparend einsetzen
 %     \end{lstlisting}
-%   \end{block}
+%   \end{tblock}
 %   \begin{CodeExample}{0.70}[Test]
 %     \begin{lstlisting}
 %       $ \setN \quad \grad \v{F} \quad \div \v{A} $ \\

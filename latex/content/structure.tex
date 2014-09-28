@@ -1,65 +1,65 @@
-\section{Struktur}
+    \section{Struktur}
 
-\begin{frame}[fragile]{Titelseite und Metadaten}
-  \LaTeX\ erstellt automatisch eine Titelei aus den Metadaten. \\
-  Mit der Klassenoption \lstinline{titlepage=firstiscover} wird diese  als eigene Seite gesetzt.
-  
-  \begin{block}{Neue Klassenoption}
-    \begin{lstlisting}
-      \documentclass[…, titlepage=firstiscover, …]{scrartcl}
-    \end{lstlisting}
-  \end{block}
+    \begin{frame}[fragile]{Titelseite und Metadaten}
+      \LaTeX\ erstellt automatisch eine Titelei aus den Metadaten. \\
+      Mit der Klassenoption \lstinline{titlepage=firstiscover} wird diese  als eigene Seite gesetzt.
+      
+      \begin{tblock}{Neue Klassenoption}
+        \begin{lstlisting}
+          \documentclass[…, titlepage=firstiscover, …]{scrartcl}
+        \end{lstlisting}
+      \end{tblock}
 
-  \begin{block}{Empfehlung fürs Praktikum:}
-    \begin{lstlisting}
-      \title{101 Titel des Versuchs}
-      % Mehrere Autoren mit \and:
-      \author{Max Mustermann \and Maria Musterfrau}
-      \date{Durchführung: 26.09.2014, Abgabe: 29.09.2014}
-    \end{lstlisting}
-  \end{block}
+      \begin{tblock}{Empfehlung fürs Praktikum:}
+        \begin{lstlisting}
+          \title{101 Titel des Versuchs}
+          % Mehrere Autoren mit \and:
+          \author{Max Mustermann \and Maria Musterfrau}
+          \date{Durchführung: 26.09.2014, Abgabe: 29.09.2014}
+        \end{lstlisting}
+      \end{tblock}
 
-  \begin{block}{Titelseite generieren}
-    \begin{lstlisting}
-      \maketitle
-    \end{lstlisting}
-  \end{block}
-\end{frame}
+      \begin{tblock}{Titelseite generieren}
+        \begin{lstlisting}
+          \maketitle
+        \end{lstlisting}
+      \end{tblock}
+    \end{frame}
 
-\begin{frame}[fragile]{Gliederung}
-  \LaTeX\ bietet Befehle zum erstellen von Gliederungsebenen.
-  Diese werden automatisch nummeriert und in entsprechend größerer und fetter Schrift gesetzt.
+    \begin{frame}[fragile]{Gliederung}
+      \LaTeX\ bietet Befehle zum erstellen von Gliederungsebenen.
+      Diese werden automatisch nummeriert und in entsprechend größerer und fetter Schrift gesetzt.
 
-  \begin{block}{Gliederungsebenen für \texttt{scrartcl}}
-    \begin{lstlisting}
+      \begin{tblock}{Gliederungsebenen für \texttt{scrartcl}}
+        \begin{lstlisting}
       \section{Überschrift}
       \subsection{Überschrift}
       \subsubsection{Überschrift}
       \paragraph{Überschrift}    % wird nicht nummeriert
       \subparagraph{Überschrift} % wird nicht nummeriert
     \end{lstlisting}
-  \end{block}
-  \begin{block}{Höhere Gliederungsebenen für \texttt{scrreprt} und \texttt{scrbook}}
+  \end{tblock}
+  \begin{tblock}{Höhere Gliederungsebenen für \texttt{scrreprt} und \texttt{scrbook}}
     \begin{lstlisting}
       \part{Überschrift}
       \chapter{Überschrift}
       \section{Überschrift}
     \end{lstlisting}
-  \end{block}
+  \end{tblock}
 \end{frame}
 
 \begin{frame}[fragile]{Inhaltsverzeichnis}
-  Aus den Gliederungselementen kann automatisch das Inhaltsverzeichnis erzeigt werden.
-  \begin{block}{Inhaltsverzeichnis generieren}
+  Aus den Gliederungselementen kann automatisch das Inhaltsverzeichnis erzeugt werden.
+  \begin{tblock}{Inhaltsverzeichnis generieren}
     \begin{lstlisting}
       \tableofcontents
       \newpage
     \end{lstlisting}
-  \end{block}
+  \end{tblock}
 \end{frame}
 
 \begin{frame}[fragile]{Referenzen}
-  \begin{block}{Code}
+  \begin{tblock}{Code}
     \begin{lstlisting}
       \section{Messung mit Apparatur 2}
       \label{sec:apparatur2}
@@ -67,7 +67,7 @@
       \section{Auswertung}
       Wie in \ref{sec:apparatur2} beschrieben, ...
     \end{lstlisting}
-  \end{block}
+  \end{tblock}
   \begin{itemize}
     \item Auch für Gleichungen, Grafiken, Tabellen → später
     \item Für Übersichtlichkeit sollten Labels den Typ der Referenz nennen:
