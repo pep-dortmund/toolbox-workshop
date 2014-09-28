@@ -1,27 +1,30 @@
 Aufgabe 1:
-	ladet das Paket siunitx in eurer Präambel
-	ohne Einstellungen.
+  ladet das Paket siunitx in eurer Präambel
+  ohne Einstellungen.
 
 Aufgabe 2:
-	Erzeugt Ausgaben für 
-		\SI{27.23(1)e3}{\meter\per\second}
+  Erzeugt Ausgaben für
+    \SI{27.23(1)e3}{\meter\per\second}
+
+    und
+
     \begin{equation}
       \SI{27(1)e3}{\meter\per\second}
     \end{equation}
 
-	Ladet nun die Option "locale=DE", wie ändert sich die Ausgabe?
-	Tipp: mit \sisetup{} lassen sich Optionen auch nach dem Laden 
-	der Klasse einstellen.
-	Ladet zusätzlich die Option "separate-uncertainty=true",
-	wie verändert sich die Ausgabe?
-	Ladet zusätzlich die Option "per-mode=symbol-or-fraction",
-	wie ändert sich die Ausgabe?.
-	
+  Ladet nun die Option "locale=DE", wie ändert sich die Ausgabe?
+  Tipp: mit \sisetup{} lassen sich Optionen auch nach dem Laden
+  der Klasse einstellen.
+  Ladet zusätzlich die Option "separate-uncertainty=true",
+  wie verändert sich die Ausgabe?
+  Ladet zusätzlich die Option "per-mode=symbol-or-fraction",
+  wie ändert sich die Ausgabe?
+
 Aufgabe 3:
-	Vergleicht die Ausgaben von:
-		$0,2$ und $\num{0,2}$
-		$10000$ und $\num{10000}$
-		$3,1415926$ und $\num{3,1415926}$
-	Wie würdet ihr ohne siunitx die Ausgabe von 
-		\num{1,234(5)e3}
-	erreichen?
+  Vergleicht die Ausgaben von:
+    $0,2$ und $\num{0,2}$
+    $10000$ und $\num{10000}$
+    $3,1415926$ und $\num{3,1415926}$
+  Wie würdet ihr ohne siunitx die Ausgabe von
+    \num{1,234(5)e3}
+  erreichen?

@@ -1,4 +1,4 @@
-\documentclass[parskip=half,titlepage=firstiscover]{scrartcl}
+\documentclass{scrartcl}
 
 \usepackage{fixltx2e}
 \usepackage[aux]{rerunfilecheck}
@@ -7,10 +7,6 @@
 \setmainlanguage{german}
 
 \usepackage{fontspec}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%  Paket-Einbindung   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \usepackage{siunitx}
 
@@ -27,21 +23,21 @@
 \end{equation}
 
 \subsection*{Mit \texttt{locale=DE}}
-\sisetup{locale=DE}%
+\sisetup{locale=DE}
 \SI{27.23(1)e3}{\meter\per\second}
 \begin{equation}
   \SI{27.23(1)e3}{\meter\per\second} 
 \end{equation}
 
 \subsection*{Mit \texttt{separate-uncertainty=true}}
-\sisetup{separate-uncertainty=true}%
+\sisetup{separate-uncertainty=true}
 \SI{27.23(1)e3}{\meter\per\second}
 \begin{equation}
   \SI{27.23(1)e3}{\meter\per\second} 
 \end{equation}
 
 \subsection*{Mit \texttt{per-mode=symbol-or-fraction}}
-\sisetup{per-mode=symbol-or-fraction}%
+\sisetup{per-mode=symbol-or-fraction}
 \SI{27.23(1)e3}{\meter\per\second}
 \begin{equation} 
   \SI{27.23(1)e3}{\meter\per\second} 
@@ -57,4 +53,5 @@ $3,1415926$ und $\num{3,1415926}$
 \begin{equation}
   (1,\!234 \pm 5)\cdot 10^3
 \end{equation}
+
 \end{document}
