@@ -19,7 +19,7 @@
       \end{block}
     \end{column}
     \begin{column}{0.48\textwidth}
-      \begin{block}{\texttt{documentclass}}
+      \begin{block}{\lstinline+\\documentclass+}
         Dokumentenklasse=Vorlage wählen, mit Optionen anpassen.
       \end{block}
       \begin{block}{Präambel}
@@ -87,7 +87,7 @@
     \begin{column}{0.48\textwidth}
       \begin{block}{Geht:}
         \begin{lstlisting}
-          \begin{document
+          \begin{document}
             \begin{flushright}
               % .
             \end{flushright}
@@ -110,6 +110,7 @@
 
 \begin{frame}[fragile]{Standardpakete}
   Die hier aufgezählten Pakete sollten immer geladen werden, da sie wesentliche Funktionen bieten und wichtige Einstellungen vornehmen.
+  \vspace{-1em}
   \begin{CodeExplanation}{0.48}[Paket][Funktion]
     \begin{lstlisting}
       \usepackage{fixltx2e}
@@ -126,14 +127,12 @@
     \end{lstlisting}
   \Explanation
     \LaTeXe\ korrigieren. \\
-    Warnung, falls nochmal kompiliert werden muss. \\
+    Warnung, falls nochmal kompiliert werden muss. \\[\baselineskip]
   Deutsche Spracheinstellungen. \\[\baselineskip]
     Für Fonteinstellungen \\[2\baselineskip]
     Für Hyperlinks (z.B. Inhaltsverzeichnis → Kapitel). \\
     Erweiterte Bookmarks im PDF.
   \end{CodeExplanation}
-
-  \vspace{5pt}
   Die Reihenfolge ist manchmal wichtig, z.B. damit Pakete die Spracheinstellung kennen.
 \end{frame}
 
@@ -176,17 +175,20 @@
 
 \begin{frame}[fragile]{Gerüst}
   \begin{lstlisting}
-    \documentclass[]{scrartcl}
+    \documentclass{scrartcl}
 
     \usepackage{fixltx2e}
     \usepackage[aux]{rerunfilecheck}
     \usepackage{polyglossia}
     \setmainlanguage{german}
+
     \usepackage{fontspec}
     % mehr Pakete hier
+
     \usepackage[unicode,pdfusetitle]{hyperref}
     \usepackage{bookmark}
     % Einstellungen hier, z.B. Fonts
+
     \begin{document}
       % Text hier
     \end{document}
