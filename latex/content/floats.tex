@@ -29,7 +29,7 @@
         \includegraphics[width=\textwidth]{logos/pep.pdf}
         \caption{Das Pep-Logo.}
         \label{fig:peplogo}
-      \end{figure} 
+      \end{figure}
     \end{lstlisting}
   \CodeResult
     \begin{figure}
@@ -82,6 +82,30 @@
   \end{block}
 \end{frame}
 
+\begin{frame}[fragile]{Referenzen}
+  \begin{block}{Code}
+    \begin{lstlisting}
+      \section{Messung mit Apparatur 2}
+      \label{sec:apparatur2}
+      % .
+      \section{Auswertung}
+      Wie in \ref{sec:apparatur2} beschrieben, ...
+    \end{lstlisting}
+  \end{block}
+  \begin{itemize}
+    \item Auch für Gleichungen, Grafiken, Tabellen
+    \item Für Übersichtlichkeit sollten Labels den Typ der Referenz nennen:
+      \begin{description}
+        \item[Sections]    \texttt{sec:}
+        \item[Gleichungen] \texttt{eqn:}
+        \item[Abbildungen] \texttt{fig:}
+        \item[Tabellen]    \texttt{tab:}
+      \end{description}
+    \item Bei Gleichungen: \lstinline+\eqref+ statt \lstinline+\ref+ → setzt Klammern: \eqref{eqn:maxwell1}
+    \item \lstinline+\label+ immer nach dem, worauf verwiesen wird
+  \end{itemize}
+\end{frame}
+
 \begin{frame}[fragile]{\texttt{ref} vs. \texttt{subref}}
   \begin{CodeExample}{0.48}
     \begin{lstlisting}
@@ -89,7 +113,7 @@
       In Abbildung \subref{fig:pep2} sehen Sie das PeP-Logo
     \end{lstlisting}
     \CodeResult
-      In Abbildung \ref{fig:pep2} sehen Sie das PeP-Logo\\
+      In Abbildung \ref{fig:pep2} sehen Sie das PeP-Logo \\
       In Abbildung \subref{fig:pep2} sehen Sie das PeP-Logo
   \end{CodeExample}
 \end{frame}
