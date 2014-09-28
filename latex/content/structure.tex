@@ -1,37 +1,37 @@
-    \section{Struktur}
+\section{Struktur}
 
-    \begin{frame}[fragile]{Titelseite und Metadaten}
-      \LaTeX\ erstellt automatisch eine Titelei aus den Metadaten. \\
-      Mit der Klassenoption \lstinline{titlepage=firstiscover} wird diese  als eigene Seite gesetzt.
-      
-      \begin{tblock}{Neue Klassenoption}
-        \begin{lstlisting}
-          \documentclass[…, titlepage=firstiscover, …]{scrartcl}
-        \end{lstlisting}
-      \end{tblock}
+\begin{frame}[fragile]{Titelseite und Metadaten}
+  \LaTeX\ erstellt automatisch eine Titelei aus den Metadaten. \\
+  Mit der Klassenoption \lstinline{titlepage=firstiscover} wird diese  als eigene Seite gesetzt.
+  
+  \begin{tblock}{Neue Klassenoption}
+    \begin{lstlisting}
+      \documentclass[…, titlepage=firstiscover, …]{scrartcl}
+    \end{lstlisting}
+  \end{tblock}
 
-      \begin{tblock}{Empfehlung fürs Praktikum:}
-        \begin{lstlisting}
-          \title{101 Titel des Versuchs}
-          % Mehrere Autoren mit \and:
-          \author{Max Mustermann \and Maria Musterfrau}
-          \date{Durchführung: 26.09.2014, Abgabe: 29.09.2014}
-        \end{lstlisting}
-      \end{tblock}
+  \begin{tblock}{Empfehlung fürs Praktikum:}
+    \begin{lstlisting}
+      \title{101 Titel des Versuchs}
+      % Mehrere Autoren mit \and:
+      \author{Max Mustermann \and Maria Musterfrau}
+      \date{Durchführung: 26.09.2014, Abgabe: 29.09.2014}
+    \end{lstlisting}
+  \end{tblock}
 
-      \begin{tblock}{Titelseite generieren}
-        \begin{lstlisting}
-          \maketitle
-        \end{lstlisting}
-      \end{tblock}
-    \end{frame}
+  \begin{tblock}{Titelseite generieren}
+    \begin{lstlisting}
+      \maketitle
+    \end{lstlisting}
+  \end{tblock}
+\end{frame}
 
-    \begin{frame}[fragile]{Gliederung}
-      \LaTeX\ bietet Befehle zum erstellen von Gliederungsebenen.
-      Diese werden automatisch nummeriert und in entsprechend größerer und fetter Schrift gesetzt.
+\begin{frame}[fragile]{Gliederung}
+  \LaTeX\ bietet Befehle zum erstellen von Gliederungsebenen.
+  Diese werden automatisch nummeriert und in entsprechend größerer und fetter Schrift gesetzt.
 
-      \begin{tblock}{Gliederungsebenen für \texttt{scrartcl}}
-        \begin{lstlisting}
+  \begin{tblock}{Gliederungsebenen für \texttt{scrartcl}}
+    \begin{lstlisting}
       \section{Überschrift}
       \subsection{Überschrift}
       \subsubsection{Überschrift}
