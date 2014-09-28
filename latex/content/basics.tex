@@ -19,7 +19,7 @@
       \end{block}
     \end{column}
     \begin{column}{0.48\textwidth}
-      \begin{block}{\lstinline+\\documentclass+}
+      \begin{block}{\texttt{documentclass}}
         Hier wird die Dokumentenklasse gewählt und mit Optionen angepasst.
       \end{block}
       \begin{block}{Präambel}
@@ -36,45 +36,53 @@
   \LaTeX-Befehle beginnen stets mit einem \verb+\+ (Backslash).
 
   Obligatorische Argumente stehen in \lstinline+{ }+, optionale Argumente stehen in \lstinline+[ ]+.
+    \begin{block}{Syntax}
+      \begin{lstlisting}
+        \befehl[optional]{obligatorisch}
+        \befehl*[optional]{obligatorisch}
+      \end{lstlisting}
+    \end{block}
 
   \verb+*+ ruft häufg eine Alternativform des Befehls auf.
   \begin{CodeExample}{0.53}[Code][Erklärung]
     \begin{lstlisting}
-      \befehl*[optional]{obligatorisch}
       \documentclass[paper=a4]{scrartcl}
 
-
       \frac{1}{2}
-
 
       % Kommentar
     \end{lstlisting}
   \CodeResult
-    Beispiel \\
-    Setzt die Dokumentenklasse auf \texttt{scrartcl} und das Papierformat auf DIN\,A4. \\
-    Es gibt auch Befehle mit zwei oder mehr Pflichtargumenten, z.B. der Bruch. \\
-    Text oder Befehle nach einem \verb+%+-Zeichen werden nicht berücksichtigt.
+    Dokumentenklasse \texttt{scrartcl}, Papierformat DIN\,A4. \\
+    Zwei oder mehr Pflichtargumente, z.B. der Bruch. \\
+    \verb+%+-Zeichen für Kommentare.
   \end{CodeExample}
 \end{frame}
 
 \begin{frame}[fragile]{Syntax: Umgebungen}
   Das zweite wichtige \LaTeX-Element sind die Umgebungen.
   Umgebungen können extrem vielseitig sein, von einer Änderung der Textausrichtung über mathematische Formel bis hin zu Designelementen.
-  \begin{CodeExample}{0.48}[Syntax][Beispiel]
-    \begin{lstlisting}
-      \begin{Umgebung*}[optional]
-          {obligatorisch}
-        % .
-        % .
-      \end{Umgebung*}
-    \end{lstlisting}
-  \CodeResult
-    \begin{lstlisting}
-      \begin{flushright}
-        % .
-      \end{flushright}
-    \end{lstlisting}
-  \end{CodeExample}
+  \begin{columns}[t]
+    \begin{column}{0.47\textwidth}
+      \begin{block}{Syntax}
+        \begin{lstlisting}
+          \begin{Umgebung*}[optional]{obligatorisch}
+            % .
+            % .
+          \end{Umgebung*}
+        \end{lstlisting}
+      \end{block}
+    \end{column}
+    \begin{column}{0.47\textwidth}
+      \begin{block}{Beispiel}
+        \begin{lstlisting}
+          \begin{flushright}
+            % .
+          \end{flushright}
+        \end{lstlisting}
+      \end{block}
+    \end{column}
+  \end{columns}
 \end{frame}
 
 \begin{frame}[fragile]{Syntax: Umgebungen}
