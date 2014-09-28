@@ -1,0 +1,7 @@
+Vorbereitung:
+  Gehe eine Ordnerebene rauf und führe Make aus, sodass, die Lösung kompiliert wird. Öffne dann die Datei "build/loesung.pdf" in diesem Ordner und die Datei vorlage.tex in einem Texteditor.
+
+Aufgabe:
+  Baue die Referenzen so ein, dass es so aussieht wie in der Muster-pdf.
+
+ Hinweis: Achte darauf, dass die labels durch die Präfixe "sec, eqn, tab, fig" gut unterscheidbar sind.
