@@ -54,25 +54,19 @@
 \begin{frame}[fragile]{Griechisch und mehr}
   \begin{CodeExample}{0.70}
     \begin{lstlisting}
-      \alpha \beta \gamma \delta \epsilon \zeta \eta \theta \iota \kappa \lambda \mu \nu \xi \omicron \pi \rho \sigma \tau \upsilon \phi \chi \psi \omega
+      \epsilon \theta \kappa \pi \rho \sigma \phi
       \varepsilon \vartheta \varkappa \varpi \varrho \varsigma \varphi
-      \Alpha \Beta \Gamma \Delta \Epsilon \Zeta \Eta \Theta \Iota \Kappa \Lambda \Mu \Nu \Xi \Omicron \Pi \Rho \Sigma \Tau \Upsilon \Phi \Chi \Psi \Omega
+      \Alpha \Beta \Gamma
       \hbar \imath \jmath \ell \wp
       \aleph \beth \gimel
       \partial \eth \nabla \square \increment \infty \diameter \ldots \cdots
     \end{lstlisting}
   \CodeResult
     \Umathordordspacing\textstyle=4mu
-    $\alpha \beta \gamma \delta \epsilon \zeta \eta$ \\
-    $\quad \theta \iota \kappa \lambda \mu \nu \xi$ \\
-    $\quad \omicron \pi \rho \sigma \tau \upsilon \phi$ \\
-    $\quad \chi \psi \omega$ \\
+    $\epsilon \theta \kappa \pi \rho \sigma \phi$ \\
     $\varepsilon \vartheta \varkappa \varpi \varrho$ \\
     $\quad \varsigma \varphi$ \\
-    $\Alpha \Beta \Gamma \Delta \Epsilon \Zeta \Eta$ \\
-    $\quad \Theta \Iota \Kappa \Lambda \Mu \Nu \Xi$ \\
-    $\quad \Omicron \Pi \Rho \Sigma \Tau \Upsilon \Phi$ \\
-    $\quad \Chi \Psi \Omega$ \\
+    $\Alpha \Beta \Gamma$ \\
     $\hbar \imath \jmath \ell \wp$ \\
     $\aleph \beth \gimel$ \\
     $\partial \eth \nabla \square \increment \infty$ \\
@@ -84,37 +78,35 @@
   \vspace{-1em}
   \begin{CodeExample}{0.74}
     \begin{lstlisting}
-      + - \pm \mp * \cdot \times / \oplus \circ
-      \wedge \vee \cap \cup \smallsetminus
-      \in \notin \ni \subset \supset
-      = \simeq \equiv \cong \approx \propto \sim \coloneq
-      < > \le \ge \ll \gg \ne
-      \forall \exists \mid
-      \to \iff \implies \mapsto \leadsto
+      + - / \pm \mp \cdot \times
+      = \simeq \equiv \cong \approx \propto \sim
+      \coloneq
+      \to \iff \implies
+      \mapsto \leadsto
     \end{lstlisting}
   \CodeResult
     \Umathbinbinspacing\textstyle=4mu
     \Umathrelrelspacing\textstyle=4mu
-    $+ - \pm \mp * \cdot \times / \oplus \circ$ \\
-    $\wedge \vee \cap \cup \smallsetminus$ \\
-    $\in \notin \ni \subset \supset$ \\
-    $= \simeq \equiv \cong \approx \propto \sim \coloneq$ \\
-    $< > \le \ge \ll \gg \ne$ \\
-    $\forall \: \exists \mid$ \\
-    $\to \iff \implies \mapsto \leadsto$
+    $+ - / \pm \mp \cdot \times$ \\
+    $= \simeq \equiv \cong \approx \propto \sim$ \\
+    $\coloneq$ \\
+    $\to \iff \implies$ \\
+    $\mapsto \leadsto$
   \end{CodeExample}
-
-  \begin{CodeExample}{0.74}[Die meisten Relationen lassen sich durch ein \texttt{n} negieren:]
+  Die meisten Relationen lassen sich durch ein \texttt{n} negieren:
+  \vspace{-1em}
+  \begin{CodeExample}{0.74}
     \begin{lstlisting}
-      \neq \nsime \nequiv \ncong \napprox \nsim \nexists \nni
+      \neq \nsime \nexists \nni
     \end{lstlisting}
   \CodeResult
     \Umathbinbinspacing\textstyle=4mu
     \Umathrelrelspacing\textstyle=4mu
-  $\neq \nsime \nequiv \ncong \napprox \nsim \nexists \nni$
+  $\neq \nsime \nexists \nni$
   \end{CodeExample}
-  
-  \begin{CodeExample}{0.74}[Häufig möchte man etwas über eine Relation schreiben:]
+  Häufig möchte man etwas über eine Relation schreiben:
+  \vspace{-1em}
+  \begin{CodeExample}{0.74}
     \begin{lstlisting}
       \stackrel{!}{=} \stackrel{\text{def}}{=}
     \end{lstlisting}
