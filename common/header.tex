@@ -91,6 +91,8 @@
 \usepackage{listings}
 \usepackage{lstautogobble}
 
+\usepackage[listings,theorems,many]{tcolorbox}
+
 \lstset{
   autogobble,
   language={[LaTeX]TeX},
@@ -123,9 +125,9 @@
 
 \ExplSyntaxOn
 
-\NewDocumentEnvironment {CodeExample} {o m O{Code} O{Ergebnis}} {
-  \NewDocumentCommand \CodeResult {} {
-      \end{block}
+\NewDocumentEnvironment {CodeExplanation} {o m O{Code} O{Ergebnis}} {
+  \NewDocumentCommand \Explanation {} {
+      \end{tcolorbox}
     \end{column}
     \begin{column}{
       \IfValueTF {#1} {
@@ -135,14 +137,81 @@
       }
       \textwidth
     }
-      \begin{block}{#4}
+    \begin{tcolorbox}[title=#4,
+                      noparskip,
+                      lefttitle=0.1em,
+                      colback=white,
+                      colframe=TUgreen,
+                      boxsep=0.5mm,
+                      coltext=black,
+                      coltitle=black,
+                      left=1mm,
+                      right=1mm,
+                      top=1mm,
+                      bottom=1mm]
   }
-
   \begin{columns}[onlytextwidth, t]
     \begin{column}{#2 \textwidth}
-      \begin{block}{#3}
+      \begin{tcolorbox}[title=#3,
+                        noparskip,
+                        lefttitle=0.1em,
+                        colback=white,
+                        colframe=TUgreen,
+                        boxsep=0.5mm,
+                        coltext=black,
+                        coltitle=black,
+                        left=1mm,
+                        right=1mm,
+                        top=1mm,
+                        bottom=1mm]
 }{
-      \end{block}
+      \end{tcolorbox}
+    \end{column}
+  \end{columns}
+}
+
+\NewDocumentEnvironment {CodeExample} {o m O{Code} O{Ergebnis}} {
+  \NewDocumentCommand \CodeResult {} {
+      \end{tcolorbox}
+    \end{column}
+    \begin{column}{
+      \IfValueTF {#1} {
+        #1
+      }{
+        \fp_eval:n {1 - 0.04 - #2}
+      }
+      \textwidth
+    }
+    \begin{tcolorbox}[title=#4,
+                      noparskip,
+                      lefttitle=0.1em,
+                      colback=white,
+                      colframe=gray!40,
+                      boxsep=0.5mm,
+                      coltext=black,
+                      coltitle=black,
+                      left=1mm,
+                      right=1mm,
+                      top=1mm,
+                      bottom=1mm]
+        \rmfamily
+  }
+  \begin{columns}[onlytextwidth, t]
+    \begin{column}{#2 \textwidth}
+      \begin{tcolorbox}[title=#3,
+                        noparskip,
+                        lefttitle=0.1em,
+                        colback=white,
+                        colframe=TUgreen,
+                        boxsep=0.5mm,
+                        coltext=black,
+                        coltitle=black,
+                        left=1mm,
+                        right=1mm,
+                        top=1mm,
+                        bottom=1mm]
+}{
+      \end{tcolorbox}
     \end{column}
   \end{columns}
 }
