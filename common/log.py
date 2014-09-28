@@ -210,6 +210,11 @@ def filter_csquotes_polyglossia(message):
         return None
     return message
 
+def filter_caption_compatibility(message):
+    if message["type"] == "latex2/warning" and message["message"][0] == "Package caption Warning: Forced redefinition of \caption since the":
+        return None
+    return message
+
 exit_code = 0
 
 filters = [
@@ -219,6 +224,7 @@ filters = [
         filter_latex2_rerun_tex,
         filter_biblatex_rerun_biber,
         filter_csquotes_polyglossia,
+        filter_caption_compatibility,
         ]
 
 messages_copy = list(messages)
