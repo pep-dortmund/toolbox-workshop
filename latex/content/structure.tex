@@ -49,6 +49,7 @@
 \end{frame}
 
 \begin{frame}[fragile]{Inhaltsverzeichnis}
+  Aus den Gliederungselementen kann automatisch das Inhaltsverzeichnis erzeigt werden.
   \begin{block}{Inhaltsverzeichnis generieren}
     \begin{lstlisting}
       \tableofcontents
@@ -76,7 +77,7 @@
         \item[Abbildungen] \texttt{fig:}
         \item[Tabellen]    \texttt{tab:}
       \end{description}
-    \item Bei Gleichungen: \lstinline+\eqref+ statt \lstinline+\ref+ → setzt Klammern: \eqref{eqn:maxwell1}
+    \item Bei Gleichungen: \lstinline+\eqref+ (\texttt{amsmath} laden) statt \lstinline+\ref+ → setzt Klammern: \eqref{eqn:maxwell1}
     \item \lstinline+\label+ immer nach dem, worauf verwiesen wird
   \end{itemize}
 \end{frame}
