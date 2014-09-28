@@ -1,0 +1,6 @@
+Aufgabe:
+	Erstelle eine lit.bib Datei mit den Quellen aus der Datei quellen.txt
+	Füge die notwendigen packages in vorlage.tex ein und denke dir 3 beliebige Sätze aus, in denen du auf die Quellen verweist.
+	Die Verweise sollten ein normaler sein, einer mit einem Seitenintervall und einer, in dem du auf mehrere Quellen verweist.
+
+Hinweis: Wählt als Stil alphabetic

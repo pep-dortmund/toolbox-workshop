@@ -1,0 +1,29 @@
+Buch
+Autor: P. G. de Gennes and J. Prost
+Titel: The Physics of Liquid Crystals
+Verlag: Clarendon Press, Oxford
+Erscheinungsjahr: 1993
+Editoren: J. Birman and S. F. Edwards and C. H. Llewellyn Smith and M. Rees
+Auflage: 2
+aus der Serie: The International Series of Monographs on Physics
+
+Paper:
+Autor: N. A. Clark
+Datum der Veröffentlichung: 2013-12-12
+Titel: Ferromagnetic ferrofluids
+Veröffentlichende Person: Macmillan Publishers Limited
+Journal: Nature: News \& Views, Research
+Folge des Journals: 504
+
+Online-Referenz
+Autor: B. Senyuk
+Titel: Liquid Crystals: a Simple View on a Complex Matter
+Datum: 2013-12-17
+URL : http://dept.kent.edu/spie/liquidcrystals/
+
+
+Doktorarbeit:
+Autor: Karen Villazor Martin
+Titel: Materials with Supramolecular Chirality: Liquid Crystals and Polymers for Catalysis
+geschrieben am: Massachusetts Institute of Technology; Departemnt of Chemistry
+Datum der Veröffentlichung: Februar 2005
