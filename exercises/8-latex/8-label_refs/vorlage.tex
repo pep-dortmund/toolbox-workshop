@@ -1,4 +1,4 @@
-\documentclass[titlepage=firstiscover]{scrartcl}
+\documentclass[captions=tableheading]{scrartcl}
 
 \usepackage{fixltx2e}
 \usepackage[aux]{rerunfilecheck}
@@ -6,34 +6,44 @@
 \usepackage{polyglossia}
 \setmainlanguage{german}
 
+\usepackage{amsmath}
+
 \usepackage{fontspec}
 
 \usepackage[unicode]{hyperref}
 \usepackage{bookmark}
 
-\usepackage{amsmath}
-
 \begin{document}
+
 \section{Theorie}
+  Es gilt
   \begin{equation}
-      E = mc^2
+      E = mc^2 .
   \end{equation}
   Einstein beschreibt mit seiner Formel den Zusammenhang zwischen Masse und Energie.
+
 \section{Aufbau und Durchführung}
   \begin{figure}
+    \centering
     Ghostfigure
     \caption{Ohne Bild}
   \end{figure}
   Abbildung enthält noch kein Bild.
+
 \section{Auswertung}
+
 \subsection{Auswertungsteil I}
   \begin{table}
+    \centering
     \caption{Ergebnisse}
+    Hier fehlt was ;).
   \end{table}
   In Tabelle befinden sich die Ergebnisse der Auswertung.
+
 \subsection{Auswertungsteil II}
   Hier steht auch noch was.
+
 \section{Diskussion}
   Auch der Wert aus Kapitel stimmt mit dem Theoriewert aus Kapitel überein.
-\end{document}
 
+\end{document}
