@@ -121,7 +121,6 @@
       x^2 x_2 x²
       x^10 x^{10}
       x' x^' x'' x'^2
-      x_y^2 x_y x_y^{}
       x^2^2 x^{2^2} \cramped{x^{2^2}}
       {}^2 x
       x_{min} x_\text{min}
@@ -131,12 +130,15 @@
     $x^2 \quad x_2 \quad x²$ \\
     $x^10 \quad x^{10}$ \\
     $x' \quad x^{'} \quad x'' \quad x'^2$ \\
-    $x_y^2 \quad x_y \quad x_y^{}$ \\
     Fehler$\quad x^{2^2} \quad \cramped{x^{2^2}}$ \\
     ${}^2 x$ \\
     $x_{min} \quad x_\text{min}$ \\
     Fehler$\quad x_{\sqrt[3]{2}}$
   \end{CodeExample}
+  \begin{itemize}
+    \item Man muss häufig den Index in \lstinline+{ }+ schreiben
+    \item Nur wenige Befehle können ohne \lstinline+{ }+ im Index stehen
+  \end{itemize}
 \end{frame}
 
 \begin{frame}[fragile]{Akzente}
@@ -276,8 +278,8 @@
 
     \end{lstlisting}
   \CodeResult
-    $\displaystyle \left( \frac{2^2}{2} \right)^2$ 
-    $\displaystyle \left( \frac{2^2}{2} \right)^{\!\! 2}$
+    $\displaystyle \left( \frac{2^2}{2} \right)^2
+    \qquad \left( \frac{2^2}{2} \right)^{\!\! 2}$
   \end{CodeExample}
 \end{frame}
 
@@ -310,7 +312,7 @@
     $\left\{ x \,\middle|\, x < \frac{1}{2} \right\}$
   \end{CodeExample}
   
-  \begin{CodeExample}{0.70}[hat kein optimales Spacing:]
+  \begin{CodeExample}{0.705}[hat kein optimales Spacing:]
     \begin{lstlisting}
       \sin(x) \sin\left(x\right) \sin\!\left(x\right)
     \end{lstlisting}
