@@ -44,7 +44,7 @@
     \end{block}
 
   \verb+*+ ruft häufg eine Alternativform des Befehls auf.
-  \begin{CodeExample}{0.53}[Code][Erklärung]
+  \begin{CodeExplanation}{0.53}[Code][Erklärung]
     \begin{lstlisting}
       \documentclass[paper=a4]{scrartcl}
 
@@ -52,11 +52,11 @@
 
       % Kommentar
     \end{lstlisting}
-  \CodeResult
+  \Explanation
     Dokumentenklasse \texttt{scrartcl}, Papierformat DIN\,A4. \\
     Zwei oder mehr Pflichtargumente, z.B. der Bruch. \\
     \verb+%+-Zeichen für Kommentare.
-  \end{CodeExample}
+  \end{CodeExplanation}
 \end{frame}
 
 \begin{frame}[fragile]{Syntax: Umgebungen}
@@ -65,27 +65,20 @@
     \item extrem vielseitig
     \item Können ggfs.\ auch Optionen übergeben bekommen
   \end{itemize}
-  \begin{columns}[t]
-    \begin{column}{0.47\textwidth}
-      \begin{block}{Syntax}
-        \begin{lstlisting}
-          \begin{Umgebung*}[optional]{obligatorisch}
-            % .
-            % .
-          \end{Umgebung*}
-        \end{lstlisting}
-      \end{block}
-    \end{column}
-    \begin{column}{0.47\textwidth}
-      \begin{block}{Beispiel}
-        \begin{lstlisting}
-          \begin{flushright}
-            % .
-          \end{flushright}
-        \end{lstlisting}
-      \end{block}
-    \end{column}
-  \end{columns}
+  \begin{CodeExplanation}{0.47}[Syntax][Beispiel]
+    \begin{lstlisting}
+      \begin{Umgebung*}[optional]{obligatorisch}
+        % .
+        % .
+      \end{Umgebung*}
+    \end{lstlisting}
+    \Explanation
+    \begin{lstlisting}
+      \begin{flushright}
+        % .
+      \end{flushright}
+    \end{lstlisting}
+  \end{CodeExplanation}
 \end{frame}
 
 \begin{frame}[fragile]{Syntax: Umgebungen}
@@ -117,7 +110,7 @@
 
 \begin{frame}[fragile]{Standardpakete}
   Die hier aufgezählten Pakete sollten immer geladen werden, da sie wesentliche Funktionen bieten und wichtige Einstellungen vornehmen.
-  \begin{CodeExample}{0.48}[Paket][Funktion]
+  \begin{CodeExplanation}{0.48}[Paket][Funktion]
     \begin{lstlisting}
       \usepackage{fixltx2e}
       \usepackage[aux]{rerunfilecheck}
@@ -131,14 +124,14 @@
 
       \usepackage{bookmark}
     \end{lstlisting}
-  \CodeResult
+  \Explanation
     \LaTeXe\ korrigieren. \\
     Warnung, falls nochmal kompiliert werden muss. \\
   Deutsche Spracheinstellungen. \\[\baselineskip]
     Für Fonteinstellungen \\[2\baselineskip]
     Für Hyperlinks (z.B. Inhaltsverzeichnis → Kapitel). \\
     Erweiterte Bookmarks im PDF.
-  \end{CodeExample}
+  \end{CodeExplanation}
 
   \vspace{5pt}
   Die Reihenfolge ist manchmal wichtig, z.B. damit Pakete die Spracheinstellung kennen.
@@ -160,18 +153,18 @@
 \begin{frame}[fragile]{Fonteinstellungen}
   Standardeinstellung sind die Latin-Modern-Fonts.
   \vspace{1em}
-  \begin{CodeExample}{0.48}[Latin Modern][Alternativ: Tex Gyre]
+  \begin{CodeExplanation}{0.48}[Latin Modern][Alternativ: Tex Gyre]
     \begin{lstlisting}
       \usepackage{fontspec}
     \end{lstlisting}
-  \CodeResult
+  \Explanation
     \begin{lstlisting}
       \usepackage{fontspec}
       \setmainfont{Tex Gyre Pagella}
       \setsansfont{Tex Gyre Heros}
       \setmonofont{Tex Gyre Cursor}
     \end{lstlisting}
-  \end{CodeExample}
+  \end{CodeExplanation}
   \begin{itemize}
     \item Jede System-Schriftart kann genutzt
     \item \alert{Das ist i.A. nicht sinnvoll: \fontspec{Comic Sans MS} Hallo Welt in Comic Sans MS!}
