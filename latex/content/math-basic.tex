@@ -261,6 +261,36 @@
 \end{frame}
 
 \begin{frame}[fragile]{Spaces}
+  Manchmal muss man manuell eingreifen, um das Spacing zu perfektionieren.
+  \begin{CodeExample}{0.48}
+    \begin{lstlisting}
+      %
+      \,
+      \:
+      \;
+      \quad
+      \qquad
+      \! % negativer \,
+    \end{lstlisting}
+  \CodeResult
+    $|\mspace{-5mu} |$ \\
+    $|\mspace{-5mu} \,|$ \\
+    $|\mspace{-5mu} \:|$ \\
+    $|\mspace{-5mu} \;|$ \\
+    $|\mspace{-5mu} \quad|$ \\
+    $|\mspace{-5mu} \qquad|$ \\
+    $|\mspace{-5mu} \!|$
+  \end{CodeExample}
+  \begin{CodeExample}{0.70}
+    \begin{lstlisting}
+      ^2
+
+      ^{\!\! 2}
+    \end{lstlisting}
+  \CodeResult
+    $\displaystyle \left( \frac{2^2}{2} \right)^2$ \\
+    $\displaystyle \left( \frac{2^2}{2} \right)^{\!\! 2}$
+  \end{CodeExample}
 \end{frame}
 
 \begin{frame}[fragile]{Klammern}
