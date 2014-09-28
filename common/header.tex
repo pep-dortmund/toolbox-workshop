@@ -123,21 +123,27 @@
   belowskip=-0.2em,
 }
 
+\tcbset{
+  noparskip,
+  lefttitle=0.1em,
+  colback=white,
+  colframe=TUgreen,
+  boxsep=0.5mm,
+  coltext=black,
+  coltitle=black,
+  left=1mm,
+  right=1mm,
+  top=1mm,
+  bottom=1mm,
+}
+
+
 \ExplSyntaxOn
 
 \RenewDocumentEnvironment {block} {m} {
-  \begin{tcolorbox}[adjusted~title=#1,
-                    noparskip,
-                    lefttitle=0.1em,
-                    colback=white,
-                    colframe=TUgreen,
-                    boxsep=0.5mm,
-                    coltext=black,
-                    coltitle=black,
-                    left=1mm,
-                    right=1mm,
-                    top=1mm,
-                    bottom=1mm]
+  \begin{tcolorbox}[
+    adjusted~title=#1,
+  ]
     \begin{flushleft}
 }{
     \end{flushleft}
@@ -145,18 +151,10 @@
 }
 
 \RenewDocumentEnvironment {alertblock} {m} {
-  \begin{tcolorbox}[adjusted~title=#1,
-                    noparskip,
-                    lefttitle=0.1em,
-                    colback=white,
-                    colframe=red,
-                    boxsep=0.5mm,
-                    coltext=black,
-                    coltitle=black,
-                    left=1mm,
-                    right=1mm,
-                    top=1mm,
-                    bottom=1mm]
+  \begin{tcolorbox}[
+    adjusted~title=#1,
+    colframe=red,
+  ]
     \begin{flushleft}
 }{
     \end{flushleft}
@@ -175,33 +173,15 @@
       }
       \textwidth
     }
-    \begin{tcolorbox}[adjusted~title=#4,
-                      noparskip,
-                      lefttitle=0.1em,
-                      colback=white,
-                      colframe=TUgreen,
-                      boxsep=0.5mm,
-                      coltext=black,
-                      coltitle=black,
-                      left=1mm,
-                      right=1mm,
-                      top=1mm,
-                      bottom=1mm]
+    \begin{tcolorbox}[
+      adjusted~title=#4,
+    ]
   }
   \begin{columns}[onlytextwidth, t]
     \begin{column}{#2 \textwidth}
-      \begin{tcolorbox}[adjusted~title=#3,
-                        noparskip,
-                        lefttitle=0.1em,
-                        colback=white,
-                        colframe=TUgreen,
-                        boxsep=0.5mm,
-                        coltext=black,
-                        coltitle=black,
-                        left=1mm,
-                        right=1mm,
-                        top=1mm,
-                        bottom=1mm]
+      \begin{tcolorbox}[
+        adjusted~title=#3,
+      ]
 }{
       \end{tcolorbox}
     \end{column}
@@ -220,34 +200,17 @@
       }
       \textwidth
     }
-    \begin{tcolorbox}[adjusted~title=#4,
-                      noparskip,
-                      lefttitle=0.1em,
-                      colback=white,
-                      colframe=gray!40,
-                      boxsep=0.5mm,
-                      coltext=black,
-                      coltitle=black,
-                      left=1mm,
-                      right=1mm,
-                      top=1mm,
-                      bottom=1mm]
+      \begin{tcolorbox}[
+        adjusted~title=#4,
+        colframe=gray!40,
+      ]
         \rmfamily
   }
   \begin{columns}[onlytextwidth, t]
     \begin{column}{#2 \textwidth}
-      \begin{tcolorbox}[adjusted~title=#3,
-                        noparskip,
-                        lefttitle=0.1em,
-                        colback=white,
-                        colframe=TUgreen,
-                        boxsep=0.5mm,
-                        coltext=black,
-                        coltitle=black,
-                        left=1mm,
-                        right=1mm,
-                        top=1mm,
-                        bottom=1mm]
+      \begin{tcolorbox}[
+        adjusted~title=#3,
+      ]
 }{
       \end{tcolorbox}
     \end{column}
