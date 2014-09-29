@@ -41,3 +41,6 @@ Aufgabe 7:
 Aufgabe 8:
   Setzt die Jacobi-Matrix einer allgemeinen m-komponentigen
   Funktion mit n Parametern.
+
+Aufgabe 9:
+  Setzt die DGL für den gedämpften Harmonischen Oszillator sowie seine Lösung.
