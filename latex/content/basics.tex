@@ -19,7 +19,7 @@
       \end{block}
     \end{column}
     \begin{column}{0.48\textwidth}
-      \begin{block}{\lstinline+\\documentclass+}
+      \begin{block}{\texttt{\textbackslash documentclass}}
         Dokumentenklasse=Vorlage wählen, mit Optionen anpassen.
       \end{block}
       \begin{block}{Präambel}
@@ -112,10 +112,11 @@
 \begin{frame}[fragile]{Standardpakete}
   Die hier aufgezählten Pakete sollten immer geladen werden, da sie wesentliche Funktionen bieten und wichtige Einstellungen vornehmen.
   \vspace{-1em}
-  \begin{CodeExplanation}{0.48}[Paket][Funktion]
+  \begin{CodeExplanation}{0.50}[Paket][Funktion]
     \begin{lstlisting}
       \usepackage{fixltx2e}
       \usepackage[aux]{rerunfilecheck}
+
 
       \usepackage{polyglossia}
       \setmainlanguage{german}
@@ -141,8 +142,11 @@
   KOMA-Script-Klassen
   \hfill\doc{http://mirrors.ctan.org/macros/latex/contrib/koma-script/doc/scrguide.pdf}{KOMA-Skript}
 }
-  Stellt die wichtigen Klassen \texttt{scrartcl}, \texttt{scrreprt} und \texttt{scrbook} zur Verfügung.
-  Sehr gute Vorlagen schon mit den Standardeinstellungen, schnell global mit Klassenoptionen anpassbar.
+  \begin{itemize}
+    \item \texttt{scrartcl}, \texttt{scrreprt} und \texttt{scrbook}
+    \item Sehr gute Vorlagen 
+    \item Schnell global mit Klassenoptionen anpassbar
+  \end{itemize}
   \begin{block}{Fürs Praktikum empfohlenene Klasse}
     \begin{lstlisting}
       \documentclass[…]{scrartcl}
