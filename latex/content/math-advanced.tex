@@ -86,7 +86,7 @@
       Es gilt
       \begin{align*}
         f  &= xyz , \\
-        \intertext{wobei dies ein langer Erklärungstext ist und}
+        \intertext{wobei dies ein langer Erklärungstext ist, und dass}
         g' &= \mathup{e}^x \\
         \shortintertext{von}
         g  &= \mathup{e}^x
@@ -98,7 +98,7 @@
     Es gilt
     \begin{align*}
       f  &= xyz , \\
-      \intertext{wobei dies ein langer Erklärungstext ist und}
+      \intertext{wobei dies ein langer Erklärungstext ist, und dass}
       g' &= \mathup{e}^x \\
       \shortintertext{von}
       g  &= \mathup{e}^x
@@ -108,12 +108,13 @@
 \end{frame}
 
 \begin{frame}[fragile]{\lstinline+\\underbrace+}
-  \begin{CodeExample}{0.60}
+  \begin{CodeExample}{0.58}
     \begin{lstlisting}
-      f(x)= \underbrace{g(x)}_{x + x^2 + x^3}
-      + \overbrace{h(x)}^{
-        \mathclap{\text{mehr Erklärung}}
-      } + 2
+      f(x)= \underbrace{g(x)}
+        _{x + x^2 + x^3}
+      + \overbrace{h(x)}
+        ^{\mathclap{\text{mehr Erklärung}}}
+      + 2
     \end{lstlisting}
   \CodeResult
     \begin{equation*}
