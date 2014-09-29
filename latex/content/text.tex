@@ -27,12 +27,13 @@
   \end{itemize}
   \begin{alertblock}{Sonderzeichen}
     Viele Sonderzeichen sind \LaTeX-Steuerzeichen.
-    Damit diese im Text genutzt werden können, muss meist ein \verb+\+ vorangestellt oder ein Befehl genutzt werden:
-    \begin{center}
-      \verb+\% \& \_+ \lstinline+\textbackslash+ \verb+\$ \{ \}+ \\
-      \% \& \_ \textbackslash\ \$ \{ \}
-    \end{center}
+    Damit diese im Text genutzt werden können, muss meist ein \verb+\+ vorangestellt oder ein Befehl genutzt werden.
   \end{alertblock}
+  \begin{CodeExample}{0.6}
+    \verb+\% \& \_+ \lstinline+\textbackslash+ \verb+\$ \{ \}+ \\
+  \CodeResult
+    \% \& \_ \textbackslash\ \$ \{ \}
+  \end{CodeExample}
 \end{frame}
 
 \begin{frame}[fragile]{Textauszeichnung}
@@ -45,6 +46,7 @@
       \textrm{Serifen-Schrift}
       \texttt{Mono-Schrift}
       \textsf{Sans-Serif-Schrift}
+      \textsc{Kapitälchen}
     \end{lstlisting}
   \CodeResult
     \textit{kursiv} \emph{kursiv} \\
@@ -53,6 +55,7 @@
     \textrm{Serifen-Schrift} \\
     \texttt{Mono-Schrift} \\
     \textsf{Sans-Serif-Schrift}
+    \textsc{Kapitälchen}
   \end{CodeExample}
 
   \vspace{1em}
