@@ -29,10 +29,10 @@ Aufgabe 5:
   Gruppengeschwindigkeit.
 
 Aufgabe 6:
-  Setzt die Multipolentwicklung für das elektrische Potential 
-  einer Ansammlung von Punktladungen. Definiert dabei den 
+  Setzt die Multipolentwicklung für das elektrische Potential
+  einer Ansammlung von Punktladungen. Definiert dabei den
   Quadrupoltensor in einer unnummerierten Gleichung.
 
 Aufgabe 7:
-  Setzt die Jacobi-Matrix einer allgemeinen m-komponentigen 
+  Setzt die Jacobi-Matrix einer allgemeinen m-komponentigen
   Funktion mit n Parametern.
