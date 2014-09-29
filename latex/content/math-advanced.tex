@@ -1,14 +1,185 @@
 \subsection{Advanced}
 
-\begin{frame}{Matrizen}
-  $\mathbf{M}^\top \mathbf{M}^* \mathbf{M}^\dagger$
+\begin{frame}[fragile]{
+  Matrizen
+  \hfill\doc{http://mirrors.ctan.org/macros/latex/required/amslatex/math/amsldoc.pdf}{amsmath}
+  \doc{http://mirrors.ctan.org/macros/latex/contrib/mathtools/mathtools.pdf}{mathtools}
+}
+  Matrizen (und damit Vektoren) werden fett geschrieben.
+  \begin{CodeExample}{0.70}
+    \begin{lstlisting}
+      \mathbf{M}^\top \mathbf{M}^*
+      \mathbf{M}^\dagger \mathbf{M}^{-1} M_{12}
+    \end{lstlisting}
+  \CodeResult
+    $\mathbf{M}^\top \mathbf{M}^*$ \\
+    $\mathbf{M}^\dagger \mathbf{M}^{-1} M_{12}$
+  \end{CodeExample}
+
+  \fontsize{8}{6}
+  \begin{CodeExample}{0.70}
+    \begin{lstlisting}
+      \begin{pmatrix} \begin{bmatrix} \begin{Bmatrix*}[r]
+        x & y \\        -1 \\           -1 \\
+        z & abc          2               2
+      \end{pmatrix}   \end{bmatrix}   \end{Bmatrix*}
+    \end{lstlisting}
+  \CodeResult
+    \begin{equation*}
+      \begin{pmatrix}
+        x & y \\
+        z & abc
+      \end{pmatrix}
+      \begin{bmatrix}
+        -1 \\
+         2
+      \end{bmatrix}
+      \begin{Bmatrix*}[r]
+        -1 \\
+         2
+      \end{Bmatrix*}
+    \end{equation*}
+  \end{CodeExample}
+
+  \vspace{1em}
+  Mehr Möglichkeiten in der Doku.
 \end{frame}
 
-\begin{frame}{cases}
+\begin{frame}[fragile]{cases}
+  \begin{CodeExample}{0.55}
+    \begin{lstlisting}
+      f(x) =
+      \begin{cases}
+         x ,         & x \ge 0 \\
+        \int_0^1 x , & \text{sonst}
+      \end{cases}
+
+      \begin{drcases*}
+         x ,         & x < 0 \\
+        \int_0^1 x , & \text{sonst}
+      \end{drcases*}
+      \ne - \lvert x \rvert
+    \end{lstlisting}
+  \CodeResult
+    \begin{equation*}
+      f(x) =
+      \begin{cases}
+         x ,         & x \ge 0 \\
+        \int_0^1 x , & \text{sonst}
+      \end{cases}
+    \end{equation*}
+
+    \vspace{5em}
+    \begin{equation*}
+      \begin{drcases*}
+         x ,         & x < 0 \\
+        \int_0^1 x , & \text{sonst}
+      \end{drcases*}
+      \ne - \lvert x \rvert
+    \end{equation*}
+  \end{CodeExample}
 \end{frame}
 
-\begin{frame}{underbrace}
+\begin{frame}[fragile]{\lstinline+\\intertext+}
+  \begin{CodeExample}{0.60}
+    \begin{lstlisting}
+      Es gilt
+      \begin{align*}
+        f  &= xyz , \\
+        \intertext{wobei dies ein langer Erklärungstext ist und}
+        g' &= \mathup{e}^x \\
+        \shortintertext{von}
+        g  &= \mathup{e}^x
+      \end{align*}
+      gelöst wird.
+    \end{lstlisting}
+  \CodeResult
+    \defaultdisplayskip
+    Es gilt
+    \begin{align*}
+      f  &= xyz , \\
+      \intertext{wobei dies ein langer Erklärungstext ist und}
+      g' &= \mathup{e}^x \\
+      \shortintertext{von}
+      g  &= \mathup{e}^x
+    \end{align*}
+    gelöst wird.
+  \end{CodeExample}
 \end{frame}
 
-\begin{frame}{phantom, hphantom, vphantom}
+\begin{frame}[fragile]{\lstinline+\\underbrace+}
+  \begin{CodeExample}{0.60}
+    \begin{lstlisting}
+      f(x)= \underbrace{g(x)}_{x + x^2 + x^3}
+      + \overbrace{h(x)}^{
+        \mathclap{\text{mehr Erklärung}}
+      } + 2
+    \end{lstlisting}
+  \CodeResult
+    \begin{equation*}
+      f(x)= \underbrace{g(x)}_{x + x^2 + x^3}
+      + \overbrace{h(x)}^{
+        \mathclap{\text{mehr Erklärung}}
+      } + 2
+    \end{equation*}
+  \end{CodeExample}
+\end{frame}
+
+\begin{frame}[fragile]{\lstinline+\\phantom+}
+  \begin{CodeExample}{0.60}
+    \begin{lstlisting}
+      \begin{align*}
+        f_{123} &=          2  x + 3y + z \\
+        g       &= \phantom{2} x + 3y + z \\
+        h       &=             x + 3y + z
+      \end{align*}
+    \end{lstlisting}
+  \CodeResult
+    \begin{align*}
+      f_{123} &=          2  x + 3y + z \\
+      g       &= \phantom{2} x + 3y + z \\
+      h       &=             x + 3y + z
+    \end{align*}
+  \end{CodeExample}
+  \begin{CodeExample}{0.70}
+    \begin{lstlisting}
+      \begin{align*}
+        f_{123} &=           \frac{1}{2}  x + y \\
+        g       &= \hphantom{\frac{1}{2}} x + y \\
+        h       &=  \phantom{\frac{1}{2}} x + y
+      \end{align*}
+    \end{lstlisting}
+  \CodeResult
+    \mathtoolsset{shortvdotsadjustbelow=1.8em}
+    \begin{align*}
+      f_{123} &=           \frac{1}{2}  x + y \\
+              &\shortvdotswithin{=} \\
+      g       &= \hphantom{\frac{1}{2}} x + y
+    \end{align*}
+    \begin{align*}
+      f_{123} &=           \frac{1}{2}  x + y \\
+              &\shortvdotswithin{=} \\
+      h       &=  \phantom{\frac{1}{2}} x + y
+    \end{align*}
+  \end{CodeExample}
+  \vspace{-1.5em}
+  \lstinline+\hphantom+ wirkt nur horizontal und hat keine Höhe.
+\end{frame}
+
+\begin{frame}[fragile]{\lstinline+\\vphantom+}
+  \begin{CodeExample}{0.70}
+    \begin{lstlisting}
+      \begin{align*}
+        f = {} & \left( \frac{1}{2} \right. \\
+               & \left. \vphantom{\frac{1}{2}} + x \right)^{\! 2}
+      \end{align*}
+    \end{lstlisting}
+  \CodeResult
+    \begin{align*}
+      f = {} & \left( \frac{1}{2} \right. \\
+             & \left. \vphantom{\frac{1}{2}} + x \right)^{\! 2}
+    \end{align*}
+  \end{CodeExample}
+  \vspace{5pt}
+  \lstinline+\vphantom+ wirkt nur vertikal und hat keine Breite.
 \end{frame}
