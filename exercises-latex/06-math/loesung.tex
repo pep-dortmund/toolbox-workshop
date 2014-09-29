@@ -26,7 +26,7 @@
 \begin{document}
 
 \section{Biot-Savart}
-Das Magnetfeld $\vec{B}$ am Ort $\vec{r}$ eines stromdurchflossenen Leiters ergbibt sich zu
+Das Magnetfeld $\vec{B}$ am Ort $\vec{r}$ eines stromdurchflossenen Leiters ergibt sich zu
 \begin{equation}
   \vec{B}(\vec{r}) = \frac{\mu_0}{4\mathup{\pi}}
   \int_V \vec{\jmath}(\vec{r}') \times \frac{\vec{r} - \vec{r}'}{\lvert \vec{r} - \vec{r}' \rvert^3} \, \mathup{d}V' .
@@ -48,8 +48,8 @@ Hierbei bezeichnet $\vec{\jmath}$ die Stromdichte am Ort $\vec{r}'$ und $\mu_0$ 
 \end{align}
 
 \section{Wellengleichung}
-Im Vakuum gilt $\rho = \vec{\jmath} = 0$.
-Damit wird aus den Maxwellgleichungen
+Im Vakuum gilt $\rho=0$ und $\vec{\jmath}=0$,
+damit wird aus den Maxwellgleichungen:
 \begin{align}
   \nabla \cdot  \vec{E} &= 0 \label{eq:max1} \\
   \nabla \cdot  \vec{B} &= 0 \label{eq:max2} \\
@@ -72,7 +72,7 @@ Aus der linken Seite wird mit
 \begin{equation}
   \nabla \times \left( \nabla \times \vec{E} \right) = \nabla \cdot \left( \nabla \cdot \vec{E} \right) - \increment \vec{E}
 \end{equation}
-und Ausnutzen von Gleichung \eqref{eq:max1}
+und Ausnutzen von Gleichung \eqref{eq:max1}:
 \begin{equation}
   - \increment\vec{E} = -\mu_0 \varepsilon_0 \partial_t^2 \vec{E} .
 \end{equation}

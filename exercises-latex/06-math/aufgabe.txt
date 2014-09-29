@@ -11,6 +11,7 @@ Aufgabe 1:
 Aufgabe 2:
   Setzt das Biot-Savart-Gesetz. Erklärt darunter im Fließtext
   die darin vorkommenden Größen und Konstanten.
+  Versucht dafür die $-Umgebung und weitere Umgebungen zu verwenden, die ihr kennen gelernt habt.
 
 Aufgabe 3:
   Setzt die Formel für die Gaußsche Fehlerfortpflanzung.
