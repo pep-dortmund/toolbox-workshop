@@ -29,7 +29,7 @@
 Das Magnetfeld $\vec{B}$ am Ort $\vec{r}$ eines stromdurchflossenen Leiters ergbibt sich zu
 \begin{equation}
   \vec{B}(\vec{r}) = \frac{\mu_0}{4\mathup{\pi}}
-  \int_V \vec{\jmath}(r') \times \frac{\vec{r}-\vec{r}'}{|\vec{r}-\vec{r}'|^3} \, \mathup{d}V' .
+  \int_V \vec{\jmath}(\vec{r}') \times \frac{\vec{r}-\vec{r}'}{|\vec{r}-\vec{r}'|^3} \, \mathup{d}V' .
 \end{equation}
 Hierbei bezeichnet $\vec{\jmath}$ die Stromdichte am Ort $\vec{r}'$ und $\mu_0$ die magnetische Feldkonstante.
 
@@ -47,4 +47,36 @@ Hierbei bezeichnet $\vec{\jmath}$ die Stromdichte am Ort $\vec{r}'$ und $\mu_0$ 
   \nabla \times \vec{B} &= \mu_0 \vec{\jmath} + \mu_0 \varepsilon_0 \partial_t \vec{E}
 \end{align}
 
+\section{Wellengleichung}
+Ebene Welle:
+\begin{equation}
+  \nabla^2 A - \frac{1}{c^2} \frac{\partial^2 A}{\partial t^2} = 0
+\end{equation}
+Eine Lösung:
+\begin{equation}
+  A = A_0 \exp\left(\mathrm{i}\left(\vec{k} \vec{x} - \omega t\right)\right)
+\end{equation}
+Gruppen- und Phasengeschwindigkeit:
+\begin{equation}
+  v_\text{Gr.} = \frac{\partial \omega}{\partial k} \qquad v_\text{Ph.} = \frac{\omega}{k}
+\end{equation}
+
+\section{Multipolentwicklung}
+\begin{equation}
+  \Phi(\vec{r}) = \frac{1}{4\pi\epsilon_0}\left(\frac{Q}{r} + 
+  \frac{\vec{r} \cdot \vec{p}}{r^3} + \frac{1}{2} \sum_{k, l} Q_{kl} \frac{r_k r_l}{r^5} + \dots\right)
+\end{equation}
+\begin{equation*}
+  Q_{kl} = \sum_{i = 1}^n q_i \left(3 r_{ik} r_{il} - r_i^2 \delta_{kl}\right)
+\end{equation*}
+
+\section{Jacobi-Matrix}
+\begin{equation}
+  J =
+  \begin{pmatrix}
+    \frac{\partial f_1}{\partial x_1} & \dots  & \frac{\partial f_1}{\partial x_n} \\
+    \vdots                            & \ddots & \vdots                            \\ 
+    \frac{\partial f_m}{\partial x_1} & \dots  & \frac{\partial f_m}{\partial x_n} \\
+  \end{pmatrix}
+\end{equation}
 \end{document}

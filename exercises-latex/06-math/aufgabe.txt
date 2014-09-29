@@ -22,3 +22,17 @@ Aufgabe 4:
   E bzw. B untereinander.
   Richtet die Gleichungen jeweils Vertikal am Gleicheitszeichen
   aus.
+
+Aufgabe 5:
+  Setzt die Gleichung für eine ebene Welle sowie eine mögliche
+  Lösung derselben. Setzt die Definitionen von Phasen- und
+  Gruppengeschwindigkeit.
+
+Aufgabe 6:
+  Setzt die Multipolentwicklung für das elektrische Potential 
+  einer Ansammlung von Punktladungen. Definiert dabei den 
+  Quadrupoltensor in einer unnummerierten Gleichung.
+
+Aufgabe 7:
+  Setzt die Jacobi-Matrix einer allgemeinen m-komponentigen 
+  Funktion mit n Parametern.
