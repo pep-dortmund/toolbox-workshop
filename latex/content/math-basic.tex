@@ -379,28 +379,38 @@
 
 \begin{frame}[fragile]{Konventionen: Variablen, Zahlen, Einheiten, Indizes}
   \begin{itemize}
-    \item Variablen werden kursiv gesetzt.
-      Dies geschieht im Mathematikmodus automatisch.
-    \item Die eulersche Zahl $\mathup{e}$, das imaginäre $\mathup{i}$, die Kreiszahl $\mathup{\pi}$ und das infinitesimale $\mathup{d}$ werden ebenfalls aufrecht gesetzt.
-      Im Mathematikmodus erreicht man dies mit
-      \begin{lstlisting}
-        \mathup{e}, \mathup{d}, \mathup{\pi}, \mathup{i}.
-      \end{lstlisting}
-    \item Bestehen Indizes aus Text, wie min oder max, so wird dies ebenfalls aufrecht gesetzt.
-      \begin{lstlisting}
-        x_\text{min}
-      \end{lstlisting}
-    \item ein $\mathrm{d}x$ sollte durch ein kleines Leerzeichen (\verb+\,+) vom Integranden abgetrennt werden.
-
-      \vspace{5pt}
-      \begin{lstlisting}
-        \int_0^1 \int_0^{\mathup{\pi}} \int_0^{2 \mathup{\pi}}
-          r^2 \sin(\vartheta) \, \mathup{d}\varphi \, \mathup{d}\vartheta
-          \, \mathup{d}r = \frac{4}{3} \mathup{\pi}
-      \end{lstlisting}
-
-      \begin{equation*}
-        \int_0^1 \int_0^{\mathup{\pi}} \int_0^{2 \mathup{\pi}} r^2 \sin(\vartheta) \, \mathup{d}\phi \, \mathup{d}\vartheta \, \mathup{d}r = \frac{4}{3} \mathup{\pi}
-      \end{equation*}
+    \item Variablen/Größen werden kursiv gesetzt
+    \item Mathematikmodus: alles erstmal Variable
+    \item Alles, was keine Variable ist: aufrecht.
+      \begin{itemize}
+        \item Konstanten: $\mathup{e}$, $\mathup{i}$, $\mathup{\pi}$, $\mathup{d}x$
+          \medskip
+          \begin{lstlisting}
+            $\mathup{e}$, $\mathup{i}$, $\mathup{\pi}$, $\mathup{d}x$
+          \end{lstlisting}
+          \medskip
+        \item Indizes wie \enquote{min} oder \enquote{max}
+          \medskip
+          \begin{lstlisting}
+            x_\text{min}
+          \end{lstlisting}
+      \end{itemize}
+    \item $\mathrm{d}x$ wird durch kleines Leerzeichen (\verb+\,+) vom Integranden abgetrennt.
   \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Konventionen: Variablen, Zahlen, Einheiten, Indizes}
+  \begin{lstlisting}
+    \int_0^1   \int_0^{\mathup{\pi}}   \int_0^{2 \mathup{\pi}}
+    r^2 \sin(\vartheta) 
+    \, \mathup{d}\varphi \, \mathup{d}\vartheta \, \mathup{d}r 
+    = \frac{4}{3} \mathup{\pi}
+  \end{lstlisting}
+
+  \begin{equation*}
+    \int_0^1 \int_0^{\mathup{\pi}} \int_0^{2 \mathup{\pi}}
+    r^2 \sin(\vartheta) \, 
+    \mathup{d}\phi \, \mathup{d}\vartheta \, \mathup{d}r 
+    = \frac{4}{3} \mathup{\pi}
+  \end{equation*}
 \end{frame}
