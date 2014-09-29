@@ -1,8 +1,37 @@
-\begin{frame}[fragile]{
-  Benötigte Pakete
-  \hfill\doc{http://mirrors.ctan.org/macros/latex/required/amslatex/math/amsldoc.pdf}{amsmath}
-  \doc{http://mirrors.ctan.org/macros/latex/contrib/mathtools/mathtools.pdf}{mathtools}
-}
+\newsavebox{\mathfontsone}
+\newsavebox{\mathfontstwo}
+\newsavebox{\mathfontsthree}
+
+\begin{lrbox}{\mathfontsone}
+  \begin{lstlisting}
+    \usepackage{amsmath}   % unverzichtbare Mathe-Befehle
+    \usepackage{amssymb}   % viele Mathe-Symbole
+    \usepackage{mathtools} % Erweiterungen für amsmath
+  \end{lstlisting}
+\end{lrbox}
+
+\begin{lrbox}{\mathfontstwo}
+  \begin{lstlisting}
+    \usepackage{amsmath}   % unverzichtbare Mathe-Befehle
+    \usepackage{amssymb}   % viele Mathe-Symbole
+    \usepackage{mathtools} % Erweiterungen für amsmath
+
+    \usepackage{fontspec} % nach amssymb
+
+    \usepackage[
+
+
+
+
+
+    ]{unicode-math}      % "Does exactly what it says on the tin."
+
+    % \setmathfont{Latin Modern Math}     % standard
+    % \setmathfont{Tex Gyre Pagella Math} % alternativ
+  \end{lstlisting}
+\end{lrbox}
+
+\begin{lrbox}{\mathfontsthree}
   \begin{lstlisting}
     \usepackage{amsmath}   % unverzichtbare Mathe-Befehle
     \usepackage{amssymb}   % viele Mathe-Symbole
@@ -21,6 +50,17 @@
     % \setmathfont{Latin Modern Math}     % standard
     % \setmathfont{Tex Gyre Pagella Math} % alternativ
   \end{lstlisting}
+\end{lrbox}
+
+\begin{frame}[fragile,t]{
+  Benötigte Pakete
+  \hfill\doc{http://mirrors.ctan.org/macros/latex/required/amslatex/math/amsldoc.pdf}{amsmath}
+  \doc{http://mirrors.ctan.org/macros/latex/contrib/mathtools/mathtools.pdf}{mathtools}
+}
+
+  \only<1>{\usebox{\mathfontsone}}
+  \only<2>{\usebox{\mathfontstwo}}
+  \only<3>{\usebox{\mathfontsthree}}
 \end{frame}
 
 \begin{frame}[fragile]{\lstinline+\$...\$+-Umgebung}
