@@ -46,7 +46,43 @@ Hierbei bezeichnet $\vec{\jmath}$ die Stromdichte am Ort $\vec{r}'$ und $\mu_0$ 
   \nabla \times \vec{E} &= - \partial_t \vec{B} &
   \nabla \times \vec{B} &= \mu_0 \vec{\jmath} + \mu_0 \varepsilon_0 \partial_t \vec{E}
 \end{align}
-
+\section{Wellengleichung}
+Im Vakuum git $\rho=0$ und $\vec{\jmath}=0$, 
+damit wird aus den Maxwellgleichungen:
+\begin{align}
+  \nabla \cdot  \vec{E} &= 0 \label{eq:max1} \\
+  \nabla \cdot  \vec{B} &= 0 \label{eq:max2} \\
+  \nabla \times \vec{E} &= - \partial_t \vec{B}  \label{eq:max3} \\
+  \nabla \times \vec{B} &= \mu_0 \varepsilon_0 \partial_t \vec{E}\label{eq:max4}
+\end{align}
+Wir beginnen mit auf Gleichung \eqref{eq:max3} erneut die Rotation anwenden:
+\begin{equation}
+  \nabla \times \left( \nabla \times \vec{E}\right) = \nabla \times \left(- \partial_t \vec{B} \right)
+\end{equation}
+Nach Satz von Schwartz lassen sich die partiellen Ableitungen Vertauschen:
+\begin{equation}
+  \nabla \times \left( \nabla \times \vec{E}\right) = - \partial_t \left( \nabla \times  \vec{B} \right)
+\end{equation}
+Wir setzen auf der rechten Seite Gleichung \eqref{eq:max2} ein.
+\begin{equation}
+  \nabla \times \left( \nabla \times \vec{E}\right) = -\mu_0 \varepsilon_0 \partial_t^2 \vec{E}
+\end{equation}
+Aus der linken Seite wird mit
+\begin{equation}
+  \nabla \times \left(\nabla \times \vec{E}\right) = \nabla \cdot \left(\nabla\cdot \vec{E}\right) - \mathup{\Delta} \vec{E}
+\end{equation}
+und ausnutzen von Gleichung \eqref{eq:max1}:
+\begin{equation}
+  - \mathup{\Delta}\vec{E} = -\mu_0 \varepsilon_0 \partial_t^2 \vec{E}
+\end{equation}
+Dies ist die Wellengleichung für das elektrische Feld, in der sich die Lichtgeschwindigkeit identifizieren lässt:
+\begin{equation}
+  c = \frac{1}{\sqrt{\mu_0 \varepsilon_0}}
+\end{equation}
+Damit können wir schreiben:
+\begin{equation}
+  \left(\mathup{\Delta} - \frac{1}{c^2} \frac{\partial^2}{\partial t^2} \right) \vec{E} = 0
+\end{equation}
 \section{Wellengleichung}
 Ebene Welle:
 \begin{equation}
@@ -79,4 +115,5 @@ Gruppen- und Phasengeschwindigkeit:
     \frac{\partial f_m}{\partial x_1} & \dots  & \frac{\partial f_m}{\partial x_n} \\
   \end{pmatrix}
 \end{equation}
+
 \end{document}

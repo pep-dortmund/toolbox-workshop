@@ -23,16 +23,20 @@ Aufgabe 4:
   Richtet die Gleichungen jeweils Vertikal am Gleicheitszeichen
   aus.
 
-Aufgabe 5:
+Aufgabe 5: 
+	Leitet aus den Maxwellgleichungen im Vakuum die Wellengleichung
+	für E oder B Feld her.
+
+Aufgabe 6:
   Setzt die Gleichung für eine ebene Welle sowie eine mögliche
   Lösung derselben. Setzt die Definitionen von Phasen- und
   Gruppengeschwindigkeit.
 
-Aufgabe 6:
+Aufgabe 7:
   Setzt die Multipolentwicklung für das elektrische Potential
   einer Ansammlung von Punktladungen. Definiert dabei den
   Quadrupoltensor in einer unnummerierten Gleichung.
 
-Aufgabe 7:
-  Setzt die Jacobi-Matrix einer allgemeinen m-komponentigen
+Aufgabe 8:
+  Setzt die Jacobi-Matrix einer allgemeinen m-komponentigen 
   Funktion mit n Parametern.
