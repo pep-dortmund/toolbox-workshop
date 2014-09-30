@@ -1,6 +1,6 @@
 all: build/loesung.pdf
 
-build/loesung.pdf: loesung.tex | build
+build/loesung.pdf: loesung.tex loesung.bib | build
 	lualatex --output-directory=build --interaction=batchmode --halt-on-error loesung.tex
 	biber build/loesung.bcf
 	lualatex --output-directory=build --interaction=batchmode --halt-on-error loesung.tex

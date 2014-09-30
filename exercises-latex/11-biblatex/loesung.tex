@@ -1,24 +1,23 @@
-\documentclass[captions=tableheading]{scrartcl}
+\documentclass{scrartcl}
 
 \usepackage{fixltx2e}
 \usepackage[aux]{rerunfilecheck}
 
 \usepackage{polyglossia}
 \setmainlanguage{german}
-\usepackage[backend=biber, style=alphabetic]{biblatex}
-\addbibresource {loesung.bib}
+
+\usepackage[style=alphabetic]{biblatex}
 
 \usepackage{fontspec}
-
-\usepackage{float}
-\usepackage[section, below]{placeins}
 
 \usepackage[unicode]{hyperref}
 \usepackage{bookmark}
 
+\addbibresource {loesung.bib}
+
 \begin{document}
   \section{Theorie}
-    Um den Phasenübergang zu beschreiben schlägt deGennes den Ordnungsparameter $a$ vor \cite[2-8]{deGennes}.
+    Um den Phasenübergang zu beschreiben, schlägt deGennes den Ordnungsparameter $a$ vor \cite[2-8]{deGennes}.
   \section{Aufbau und Durchführung}
     Ein übersichtliches Schema für die experimentelle Realisierung kann den Quellen \cite{martin, magnet} entnommen werden.
   \section{Diskussion}
