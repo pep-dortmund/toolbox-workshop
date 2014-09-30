@@ -1,13 +1,13 @@
 \section{Gleitumgebungen}
 \begin{frame}[fragile]{
   Gleitumgebungen \hfill
-  \doc{ftp://ftp.tu-chemnitz.de/pub/tex/macros/latex/contrib/placeins/placeins-doc.pdf}{placeins}
-  \doc{http://ftp.uni-erlangen.de/mirrors/CTAN/macros/latex/contrib/caption/caption-deu.pdf}{caption}
+  \doc{http://mirrors.ctan.org/macros/latex/contrib/placeins/placeins-doc.pdf}{placeins}
+  \doc{http://mirrors.ctan.org/macros/latex/contrib/caption/caption-deu.pdf}{caption}
 }
   \begin{itemize}
     \item Zum setzen von Elementen, die nicht Fließtext sind
-    \item hauptsächlich Grafiken und Tabellen
-    \item Position wird von \LaTeX{} automatisch bestimmt.
+    \item Hauptsächlich Grafiken und Tabellen
+    \item Position wird von \LaTeX{} automatisch bestimmt
     \item Nicht auf früherer Seite als umgebender Text
     \item Bekommen meist \lstinline+\caption+ und \lstinline+\label+
   \end{itemize}
@@ -22,7 +22,10 @@
   \lstinline+\FloatBarrier+ kann benutzt werden, um alle vorigen Floats zu setzen.
 \end{frame}
 
-\begin{frame}[fragile]{Bilder einbinden}
+\begin{frame}[fragile]{
+  Bilder einbinden \hfill
+  \doc{http://mirrors.ctan.org/macros/latex/required/graphics/grfguide.pdf}{graphicx}
+}
   \begin{Packages}
     \begin{lstlisting}
       \usepackage{graphicx}
@@ -46,6 +49,7 @@
       \label{fig:peplogo}
     \end{figure}
   \end{CodeExample}
+  \vspace{5pt}
   Auch möglich: \lstinline+height=...+, \lstinline+scale=...+
 \end{frame}
 
@@ -136,4 +140,16 @@
   \end{CodeExample}
   \vspace{2em}
   \lstinline+\subref+ nur in \lstinline+\caption{…}+ zu Subfigures sinvoll.
+\end{frame}
+
+\begin{frame}[fragile]{Positionen der Gleitumgebungen}
+  Standardpositionierung verbessern:
+  \begin{Packages}
+    \begin{lstlisting}
+      \usepackage{float}
+
+      \floatplacement{figure}{htbp}
+      \floatplacement{table}{htbp}
+    \end{lstlisting}
+  \end{Packages}
 \end{frame}

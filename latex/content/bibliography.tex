@@ -127,7 +127,7 @@
 \begin{frame}[fragile]{Bib\LaTeX\hfill\doc{http://mirrors.ctan.org/macros/latex/contrib/biblatex/doc/biblatex.pdf}{biblatex}}
   \begin{Packages}
     \begin{lstlisting}
-      \usepackage[backend=biber]{biblatex} % nach polyglossia
+      \usepackage{biblatex} % nach polyglossia
       \addbibresource{lit.bib}
     \end{lstlisting}
   \end{Packages}
@@ -149,8 +149,8 @@
   \end{block}
   \begin{block}{Verzeichnis ausgeben}
     \begin{lstlisting}
-      \nocite{anleitung01} % ins Verzeichnis, obwohl nicht explizit zitiert
-      \nocite{*}           % alles aus .bib ins Verzeichnis
+      \nocite{wingate}   % ins Verzeichnis, obwohl nicht explizit zitiert
+      \nocite{*}         % alles aus .bib ins Verzeichnis
       \printbibliography
     \end{lstlisting}
   \end{block}
@@ -198,7 +198,7 @@
   \end{itemize}
   \begin{block}{Code}
     \begin{lstlisting}
-      \usepackage[backend=biber, style=alphabetic]{biblatex}
+      \usepackage[style=alphabetic]{biblatex}
     \end{lstlisting}
   \end{block}
 \end{frame}
