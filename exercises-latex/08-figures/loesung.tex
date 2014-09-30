@@ -1,0 +1,73 @@
+\documentclass[
+  captions=tableheading,
+]{scrartcl}
+
+\usepackage{fixltx2e}
+\usepackage[aux]{rerunfilecheck}
+
+\usepackage{polyglossia}
+\setmainlanguage{german}
+
+\usepackage{fontspec}
+
+\usepackage[
+  locale=DE,
+  separate-uncertainty=true,
+  per-mode=symbol-or-fraction,
+]{siunitx}
+
+\usepackage[labelfont=bf,
+            font=small,
+            width=0.9\textwidth,
+          ]{caption}
+
+\usepackage{subcaption}
+
+\usepackage{graphicx}
+\usepackage{grffile}
+
+\usepackage[section, below]{placeins}
+\usepackage{float}
+\floatplacement{figure}{htbp}
+
+\usepackage{blindtext}
+\usepackage[unicode]{hyperref}
+\usepackage{bookmark}
+
+\begin{document}
+\section*{Aufgabe 1}
+In Abbildung \ref{fig:plot1} ist ein schöner Plot zu sehen.
+\blindtext
+\begin{figure}
+  \centering
+  \includegraphics[scale=1]{plot1.pdf}
+  \caption{Ein schöner Plot.}
+  \label{fig:plot1}
+\end{figure}
+\blindtext
+
+\section*{Aufgabe 2}
+In Abbildung \ref{fig:subfigs} enthält zwei schöne Plots.
+Abbildung \ref{fig:plot2} ist der schönste aller Plots.
+\begin{figure}
+  \centering
+  \begin{subfigure}{0.48\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{plot2.pdf}
+    \caption{Schöner Plot 2.}
+    \label{fig:plot2}
+  \end{subfigure}
+  \begin{subfigure}{0.48\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{plot3.pdf}
+    \caption{Schöner Plot 3.}
+    \label{fig:plot3}
+  \end{subfigure}
+  \caption{
+    Zwei schöne Plots, Abbildung \subref{fig:plot2} und Abbildung \subref{fig:plot3}.
+    Um die Breite dieser Caption zu demonstrieren muss man sie noch viel länger machen. 
+    So langsam sollte es ausreichen.
+  }
+  \label{fig:subfigs}
+\end{figure}
+\end{document}
