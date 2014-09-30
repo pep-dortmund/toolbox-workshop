@@ -1,8 +1,8 @@
 all: build/loesung.pdf
 
 build/loesung.pdf: loesung.tex loesung-header.tex loesung-hello.tex | build
-	lualatex --output-directory=build --batchmode --halt-on-error loesung.tex
-	lualatex --output-directory=build --batchmode --halt-on-error loesung.tex
+	lualatex --output-directory=build --interaction=batchmode --halt-on-error loesung.tex
+	lualatex --output-directory=build --interaction=batchmode --halt-on-error loesung.tex
 
 build:
 	mkdir -p build
