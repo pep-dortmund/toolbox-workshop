@@ -28,3 +28,15 @@ Aufgabe 3:
   Wie würdet ihr ohne siunitx die Ausgabe von
     \num{1,234(5)e3}
   erreichen?
+
+Aufgabe 4:
+  Setzt folgende Größen mit siunitx:
+    511 keV
+    1*10^-10 m
+    3*10^8 m/s
+    10 kg*m/s^2
+    9001 N/(A m)
+    100 V^4
+
+    
+
