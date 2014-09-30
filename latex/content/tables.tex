@@ -170,3 +170,42 @@
     \end{tabular}
   \end{table}
 \end{frame}
+
+\begin{frame}[fragile]{Fehler in Tabellen}
+  \begin{CodeExample}{0.67}
+    \begin{lstlisting}
+      \begin{tabular}{
+        S[table-format=3.1]
+        @{${}\pm{}$}
+        S[table-format=2.1]
+      }
+        \toprule
+        \multicolumn{2}{c}{$x \:/\: \si{\ohm}$} \\
+        \midrule
+        663.0 & 12.1 \\
+        670.0 & 10.9 \\
+        678.0 &  9.1 \\
+        684.0 &  8.2 \\
+        \bottomrule
+      \end{tabular}
+    \end{lstlisting}
+  \CodeResult
+    \centering
+    \begin{tabular}{
+      S[table-format=3.1]
+      @{${}\pm{}$}
+      S[table-format=2.1]
+    }
+      \toprule
+      \multicolumn{2}{c}{$x \:/\: \si{\ohm}$} \\
+      \midrule
+      663.0 & 12.1 \\
+      670.0 & 10.9 \\
+      678.0 &  9.1 \\
+      684.0 &  8.2 \\
+      \bottomrule
+    \end{tabular}
+  \end{CodeExample}
+  \vspace{5pt}
+  \lstinline+@{…}+ ersetzt den Spaltenabstand durch \texttt{…}
+\end{frame}
