@@ -1,5 +1,5 @@
 Aufgabe 1:
-  Erstellt mithilfe der Pakete siunitx und booktabs eine 
-  Tabelle aus den Daten in data.txt. Denkt daran, Einheiten 
-  für Größen anzugeben und ausreichend viel Platz für alle 
+  Erstellt mithilfe der Pakete siunitx und booktabs eine
+  Tabelle aus den Daten in data.txt. Denkt daran, Einheiten
+  für Größen anzugeben und ausreichend viel Platz für alle
   Spalten zu reservieren.

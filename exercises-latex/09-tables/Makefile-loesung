@@ -1,0 +1,11 @@
+all: build/loesung.pdf
+
+build/loesung.pdf: loesung.tex | build
+	lualatex --output-directory=build --batchmode --halt-on-error loesung.tex
+	lualatex --output-directory=build --batchmode --halt-on-error loesung.tex
+
+build:
+	mkdir -p build
+
+clean:
+	rm -r build
