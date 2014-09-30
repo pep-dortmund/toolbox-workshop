@@ -1,6 +1,7 @@
 \newsavebox{\mathfontsone}
 \newsavebox{\mathfontstwo}
 \newsavebox{\mathfontsthree}
+\newsavebox{\mathfontsfour}
 
 \begin{lrbox}{\mathfontsone}
   \begin{lstlisting}
@@ -46,6 +47,24 @@
       nabla=upright,     % |
       partial=upright,   % /
     ]{unicode-math}      % "Does exactly what it says on the tin."
+  \end{lstlisting}
+\end{lrbox}
+
+\begin{lrbox}{\mathfontsfour}
+  \begin{lstlisting}
+    \usepackage{amsmath}   % unverzichtbare Mathe-Befehle
+    \usepackage{amssymb}   % viele Mathe-Symbole
+    \usepackage{mathtools} % Erweiterungen für amsmath
+
+    \usepackage{fontspec} % nach amssymb
+
+    \usepackage[
+      math-style=ISO,    % \
+      bold-style=ISO,    % |
+      sans-style=italic, % | ISO-Standard folgen
+      nabla=upright,     % |
+      partial=upright,   % /
+    ]{unicode-math}      % "Does exactly what it says on the tin."
 
     % \setmathfont{Latin Modern Math}     % standard
     % \setmathfont{Tex Gyre Pagella Math} % alternativ
@@ -63,6 +82,7 @@
   \only<1>{\usebox{\mathfontsone}}
   \only<2>{\usebox{\mathfontstwo}}
   \only<3>{\usebox{\mathfontsthree}}
+  \only<4>{\usebox{\mathfontsfour}}
 \end{frame}
 
 \begin{frame}[fragile]{\lstinline+\$...\$+-Umgebung}
@@ -338,9 +358,10 @@
 
 \begin{frame}[fragile]{Klammern}
   \vspace{-1.5em}
-  \begin{CodeExample}{0.74}
+  \begin{CodeExample}{0.7}
     \begin{lstlisting}
-      () [] \{\} \langle\rangle \lvert\rvert \lVert\rVert
+      () [] \{\} \langle\rangle \lvert\rvert
+      \lVert\rVert
     \end{lstlisting}
   \CodeResult
     \Umathcloseopenspacing\textstyle=4mu
