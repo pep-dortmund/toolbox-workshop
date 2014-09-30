@@ -1,6 +1,9 @@
 \section{Tabellen}
 
-\begin{frame}[fragile]{Tabellen}
+\begin{frame}[fragile]{
+  Tabellen \hfill
+  \doc{http://mirrors.ctan.org/macros/latex/contrib/booktabs/booktabs.pdf}{booktabs}
+}
   \begin{columns}[t]
     \begin{column}{0.33\textwidth}
       \begin{Packages}
@@ -55,7 +58,7 @@
   \begin{table}
     \centering
     \caption{Eine Tabelle mit Messdaten.}
-    \begin{tabular}{l c c c c}
+    \begin{tabular}{c c c c c}
       \toprule
       $f$ & $l_\text{start}$ & $l_1$ & $l_{\text{kor},1}$ & $B_1$ \\
       \midrule
@@ -71,7 +74,10 @@
   \end{itemize}
 \end{frame}
 
-\begin{frame}[fragile]{Schönere Tabellen mit \texttt{siunitx}}
+\begin{frame}[fragile]{
+  Schönere Tabellen mit \texttt{siunitx}
+  \hfill\doc{http://mirrors.ctan.org/macros/latex/contrib/siunitx/siunitx.pdf}{siunitx}
+}
   \fontsize{8}{6}
   \begin{block}{Code}
     \begin{lstlisting}
@@ -99,7 +105,7 @@
 \begin{frame}[fragile]{Ergebnis}
   \begin{table}
     \centering
-    \caption{Eine gewöhnliche Tabelle mit Messdaten.}
+    \caption{Eine schöne Tabelle mit Messdaten.}
     \sisetup{table-format=1.2}
     \begin{tabular}{S[table-format=3.0] S S S S[table-format=3.2]}
       \toprule
@@ -132,12 +138,12 @@
     \begin{lstlisting}
       \begin{table}
         \centering
-        \caption{Messdaten für dubiose Elemente}
+        \caption{Messdaten für dubiose Elemente.}
         \sisetup{table-format=2.1}
         \begin{tabular}{S[table-format=3.1] S S S S}
           \toprule
           & \multicolumn{2}{c}{Technetium} & \multicolumn{2}{c}{Molybdän} \\
-          {$\lambda \mathbin{/} \si{\nano\meter}$}
+          {$\lambda \:/\: \si{\nano\meter}$}
           & {$\phi_1$} & {$\phi_2$} & {$\phi_1$} & {$\phi_2$} \\
           \midrule
           663.0 & 12.1 & 14.4 & 13.1 & 16.9 \\
@@ -154,12 +160,12 @@
 \begin{frame}{Resultat}
   \begin{table}
     \centering
-    \caption{Messdaten für dubiose Elemente}
+    \caption{Messdaten für dubiose Elemente.}
     \sisetup{table-format=2.1}
     \begin{tabular}{S[table-format=3.1] S S S S}
       \toprule
       & \multicolumn{2}{c}{Technetium} & \multicolumn{2}{c}{Molybdän} \\
-      {$\lambda \mathbin{/} \si{\nano\meter}$}
+      {$\lambda \:/\: \si{\nano\meter}$}
       & {$\phi_1$} & {$\phi_2$} & {$\phi_1$} & {$\phi_2$} \\
       \midrule
       663.0 & 12.1 & 14.4 & 13.1 & 16.9 \\

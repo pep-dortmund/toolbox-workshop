@@ -131,22 +131,19 @@
       \addbibresource{lit.bib}
     \end{lstlisting}
   \end{Packages}
-  \begin{block}{Zitieren}
-    \begin{minipage}{0.6\linewidth}
-      \begin{lstlisting}
-        \cite{numpy}
-        \cite[20]{numpy}
-        \cite[1–3]{numpy}
-        \cite{splot, root}
-      \end{lstlisting}
-    \end{minipage}
-    \begin{minipage}{0.35\linewidth}
-      \cite{numpy} \\
-      \cite[20]{numpy} \\
-      \cite[1-3]{numpy} \\
+  \begin{CodeExample}{0.60}[Zitieren]
+    \begin{lstlisting}
+      \cite{numpy}
+      \cite[20]{numpy}
+      \cite[1--3]{numpy}
       \cite{splot, root}
-    \end{minipage}
-  \end{block}
+    \end{lstlisting}
+  \CodeResult
+    \cite{numpy} \\
+    \cite[20]{numpy} \\
+    \cite[1--3]{numpy} \\
+    \cite{splot, root}
+  \end{CodeExample}
   \begin{block}{Verzeichnis ausgeben}
     \begin{lstlisting}
       \nocite{wingate}   % ins Verzeichnis, obwohl nicht explizit zitiert
@@ -162,7 +159,10 @@
   \Huge ???
 \end{frame}
 
-\begin{frame}[fragile]{\texttt{biber}}
+\begin{frame}[fragile]{
+  \texttt{biber} \hfill
+  \doc{http://mirrors.ctan.org/biblio/biber/documentation/biber.pdf}{biber}
+}
   Die Idee ist:
   \begin{enumerate}
     \item Bib\LaTeX\ erstellt eine Liste der \texttt{.bib}-Dateien und der benötigten Referenzen \\

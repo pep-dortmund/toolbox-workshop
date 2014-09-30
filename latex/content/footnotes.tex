@@ -1,4 +1,5 @@
 \section{Fußnoten}
+
 \begin{frame}[fragile]{Fußnoten}
   \begin{CodeExample}{0.5}
     \begin{lstlisting}
@@ -8,7 +9,6 @@
     \CodeResult
     In diesem Versuch benutzen wir PMTs\footnote{Photo-Multiplier-Tubes}.
   \end{CodeExample}
-  
 
   \begin{alertblock}{Vorsicht bei Float-Umgebungen!}
     \begin{lstlisting}
@@ -16,9 +16,10 @@
         \includegraphics[height=0.5cm]{pep.pdf}
         \caption{Bla\footnotemark}
       \end{figure}
-      \footnotetext{Unsinnige Caption}
+      \footnotetext{Unsinnige Caption.}
     \end{lstlisting}
   \end{alertblock}
+
+  \vspace{5pt}
+  Anpassung von Fußnoten mit dem Paket \texttt{footmisc}.
 \end{frame}
-
-
