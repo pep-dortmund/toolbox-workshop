@@ -1,6 +1,6 @@
 all: build/loesung.pdf
 
-build/loesung.pdf: loesung.tex | build
+build/loesung.pdf: loesung.tex plot1.pdf plot2.pdf plot3.pdf | build
 	lualatex --output-directory=build --interaction=batchmode --halt-on-error loesung.tex
 	lualatex --output-directory=build --interaction=batchmode --halt-on-error loesung.tex
 
