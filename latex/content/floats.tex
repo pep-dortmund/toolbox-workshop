@@ -1,9 +1,16 @@
 \section{Gleitumgebungen}
-
-\begin{frame}[fragile]{Gleitumgebungen}
-  Zum Setzen von Elementen, die nicht zum Fließtext gehören, werden Gleitumgebungen genutzt.
-  Diese werden automatisch an eine passende Stelle gesetzt.
-
+\begin{frame}[fragile]{
+  Gleitumgebungen \hfill
+  \doc{ftp://ftp.tu-chemnitz.de/pub/tex/macros/latex/contrib/placeins/placeins-doc.pdf}{placeins}
+  \doc{http://ftp.uni-erlangen.de/mirrors/CTAN/macros/latex/contrib/caption/caption-deu.pdf}{caption}
+}
+  \begin{itemize}
+    \item Zum setzen von Elementen, die nicht Fließtext sind
+    \item hauptsächlich Grafiken und Tabellen
+    \item Position wird von \LaTeX{} automatisch bestimmt.
+    \item Nicht auf früherer Seite als umgebender Text
+    \item Bekommen meist \lstinline+\caption+ und \lstinline+\label+
+  \end{itemize}
   \begin{Packages}
     \begin{lstlisting}
       % Floats innerhalb einer Section halten
@@ -39,9 +46,10 @@
       \label{fig:peplogo}
     \end{figure}
   \end{CodeExample}
+  Auch möglich: \lstinline+height=...+, \lstinline+scale=...+
 \end{frame}
 
-\begin{frame}[fragile]{Subfigures}
+\begin{frame}[fragile]{Subfigures\hfill \doc{ftp://ftp.rrzn.uni-hannover.de/pub/mirror/tex-archive/macros/latex/contrib/caption/subcaption.pdf}{subcaption}}
   \begin{Packages}
     \begin{lstlisting}
     \usepackage{subcaption}
@@ -61,7 +69,7 @@
           \caption{Das TU-Logo.}
           \label{fig:TU}
         \end{subfigure}
-        \caption{Zwei Logos, Abbildung \subref{fig:TU}: Das TU-Logo.}\label{fig:logos}
+        \caption{Zwei Logos, Abbildung \subref{fig:TU}: das TU-Logo.}\label{fig:logos}
       \end{figure}
 \end{frame}
 
@@ -126,4 +134,6 @@
       In Abbildung \ref{fig:pep2} sehen Sie das PeP-Logo. \\
       In Abbildung \subref{fig:pep2} sehen Sie das PeP-Logo.
   \end{CodeExample}
+  \vspace{2em}
+  \lstinline+\subref+ nur in \lstinline+\caption{…}+ zu Subfigures sinvoll.
 \end{frame}
