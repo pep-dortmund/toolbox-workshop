@@ -18,18 +18,25 @@
 
 \subject{VERSUCH NUMMER}
 \title{TITEL}
-\author{AUTOR \and Autor}
+\author{
+AUTOR A\\
+\href{mailto:authorA@udo.edu}{authorA@udo.edu}
+\texorpdfstring{\and}{,}
+AUTOR B\\
+\href{mailto:authorB@udo.edu}{authorB@udo.edu}
+}
 \publishers{TU Dortmund - Fakultät Physik}
-\date{DATUM}
+\date{Durchführung: DATUM \hspace{3em} Abgabe: DATUM}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{document}
 
 \maketitle
-
+\thispagestyle{empty}
 \tableofcontents
 \newpage
+\pagenumbering{arabic}
 
 \input{content/Theorie}
 \input{content/Durchfuehrung}
