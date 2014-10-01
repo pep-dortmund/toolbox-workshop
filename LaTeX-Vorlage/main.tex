@@ -1,0 +1,42 @@
+\documentclass[
+	bibliography=totoc,
+	caption=tableheading,
+	titlepage=firstiscover,
+]{scrartcl}
+
+\input{res/header.tex}
+
+%%% Hier werden alle weiteren Pakete geladen %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%% Hier nach keine weiteren Pakete laden %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage[unicode]{hyperref}		% Für Hyperlinks im Dokument.
+
+\usepackage{bookmark}			% Für erweiterte Bookmarks im PDF.
+
+%%% Hier definiert man Titel, Autor und Datum %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subject{VERSUCH NUMMER}
+\title{TITEL}
+\author{AUTOR \and Autor}
+\publishers{TU Dortmund - Fakultät Physik}
+\date{DATUM}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+\newpage
+
+\input{content/Theorie}
+\input{content/Durchfuehrung}
+\input{content/Auswertung}
+\input{content/Diskussion}
+
+\clearpage
+\printbibliography
+
+\end{document}
