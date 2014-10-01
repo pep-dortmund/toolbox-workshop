@@ -1,4 +1,27 @@
 \subsection{Ein bisschen Typografie}
+
+\begin{frame}[fragile]{Schönere Brüche im Text}
+  \begin{Packages}
+    \begin{lstlisting}
+    \usepackage{xfrac}
+    \end{lstlisting}
+  \end{Packages}
+  \begin{itemize}
+    \item Problem: \lstinline+\frac{1}{2}+ zu hoch
+    \item unschöne Alternative: 1/2
+    \item schön: \lstinline+\sfrac{1}{2}+
+  \end{itemize}
+  \begin{CodeExample}{0.5}
+    \begin{lstlisting}
+    \sfrac{1}{2}
+    \sfrac{$\mathup{\pi}$}{2}
+    \end{lstlisting}
+    \CodeResult
+    \sfrac{1}{2} \\
+    \sfrac{$\mathup{\pi}$}{2}
+  \end{CodeExample}
+\end{frame}
+
 \begin{frame}[fragile]{Geschützte Leerzeichen}
   \begin{itemize}
     \item Es gibt Leerzeichen an denen nicht umgebrochen werden soll
