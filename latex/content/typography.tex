@@ -18,7 +18,7 @@
     \end{lstlisting}
     \CodeResult
       Prof.~Dr.~Dr.~Rhode \\
-      Abbildung~\ref{fig:pep-logo} \\
+      Abbildung~\ref{fig:peplogo} \\
       z.~B. \\
       2.~Oktober~2014 \\
       St.~Helena
@@ -98,10 +98,14 @@
 \end{frame}
 
 \begin{frame}[fragile]{Silbentrennung}
-  Manchmal kann \LaTeX\ ein Wort nicht richtig trennen.
+  \begin{itemize}
+    \item Manchmal kann \LaTeX\ ein Wort nicht richtig trennen
+    \item Manche Fachwörter sollten nicht nach deutschen Regeln getennt werden
+  \end{itemize}
   \begin{block}{Trennung für Wort vorgeben}
     \begin{lstlisting}
-      \hyphenation{hy-phen-ate hy-phen-a-tion} % Präambel
+      \hyphenation{Dia-mag-ne-tis-mus hy-phen-ate hy-phen-a-tion} % Präambel
+      statt Di-a-mag-ne-tis-mus
 
       hy\-phen\-ate % im Text
     \end{lstlisting}
