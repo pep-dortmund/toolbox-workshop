@@ -38,3 +38,36 @@
       \end{lstlisting}
   \end{itemize}
 \end{frame}
+
+\begin{frame}[fragile]{
+  Trennung bei Strichen \hfill
+  \doc{http://mirrors.ctan.org/macros/latex/contrib/ncctools/doc/extdash.pdf}{extdash}
+}
+  \begin{Packages}
+    \begin{lstlisting}
+      \usepackage[shortcuts]{extdash} % nach hyperref, bookmark
+    \end{lstlisting}
+  \end{Packages}
+
+  \LaTeX\ trennt Wörter nur an Strichen, falls welche da sind.\\
+  So trennt man sie trotzdem:
+  \vspace{-0.5em}
+  \begin{CodeExample}{0.85}[Trennbare Striche]
+    \begin{lstlisting}
+      \-/ \-- \---
+      Maxwell--Boltzmann-Verteilung
+      Maxwell\--Boltzmann\-/Verteilung
+    \end{lstlisting}
+  \CodeResult
+    - -- --- \\
+    Maxwell--Boltzmann-Verteilung \\
+    Maxwell\--Boltzmann\-/Verteilung
+  \end{CodeExample}
+
+  \vspace{-7em}
+  So verhindert man die Trennung an den Strichen:
+  \begin{lstlisting}
+    \=/ \== \===
+    $x$\=/Achse
+  \end{lstlisting}
+\end{frame}
