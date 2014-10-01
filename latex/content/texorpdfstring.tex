@@ -1,0 +1,30 @@
+\subsection{texorpdfstring}
+
+\begin{frame}[fragile]{texorpdfstring}
+
+  \begin{block}{Motivation}
+    \begin{itemize}
+      \item {\texttt hyperref} bezieht den Text für seine Bookmarks, z.B. aus sections \\ $\rightarrow$ Bookmarks möchten keinen Mathemodus
+      \item \begin{lstlisting}
+              \section{$3 + 1$}
+            \end{lstlisting}
+      ergibt Fehlermeldung:
+        \begin{lstlisting}
+          Package hyperref Warning:
+          Token not allowed in a PDFDocEncoded string:
+        \end{lstlisting}
+    \end{itemize}
+  \end{block}
+  \begin{block}{Lösung}
+    \begin{lstlisting}
+      \texorpdfstring{LateXcode}{Unicode-Äquivalent}
+    \end{lstlisting}
+   \end{block}
+    \begin{CodeExample}{0.49}
+      \begin{lstlisting}
+        \section{\texorpdfstring{$3 + 1$}{3 + 1}}
+      \end{lstlisting}
+      \CodeResult
+         3 + 1
+    \end{CodeExample}
+\end{frame}
