@@ -3,3 +3,9 @@ Aufgabe 1:
   Tabelle aus den Daten in data.txt. Denkt daran, Einheiten
   für Größen anzugeben und ausreichend viel Platz für alle
   Spalten zu reservieren.
+
+Aufgabe 2:
+  Erstellt mittels siunitx und booktabs eine Tabelle mit den
+  Daten aus data_error.txt. Setzt zwischen Wert und Fehler
+  ein +/- wie auf den Folien besprochen.
+
