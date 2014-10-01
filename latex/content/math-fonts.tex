@@ -1,0 +1,41 @@
+\subsection{Mathe-Fonts}
+
+\begin{frame}[fragile]{Alternative Mathe-Fonts}
+  Manchmal braucht man einen Script-Font oder einen zweiten kalligraphischen.
+  \vspace{1em}
+  \begin{CodeExample}{0.83}
+    \begin{lstlisting}
+      \mathcal{IA} \mathbfcal{IA} % Latin Modern
+      \mathcal{IA} \mathbfcal{IA} % XITS Math, StylisticSet=1
+      \mathscr{IA} \mathbfscr{IA} % XITS Math
+    \end{lstlisting}
+  \CodeResult
+    \Umathordordspacing\textstyle=4mu
+    $\mathcal{I A} \mathbfcal{I A}$ \\
+    {\setmathfont[range={\mathcal,\mathbfcal},StylisticSet=1]{XITS Math} $\mathcal{I A} \mathbfcal{I A}$} \\
+    $\mathscr{I A} \mathbfscr{I A}$
+  \end{CodeExample}
+
+  \begin{block}{Mathe-Fonts einstellen}
+    \begin{lstlisting}
+      \setmathfont[range={\mathcal,\mathbfcal},StylisticSet=1]{XITS Math}
+      \setmathfont[range={\mathscr,\mathbfscr}]{XITS Math}
+    \end{lstlisting}
+  \end{block}
+\end{frame}
+
+\begin{frame}[fragile]{Fehlende Zeichen}
+  Manchmal sind Sonderzeichen nicht im Font enthalten:
+  \vspace{1em}
+  \begin{block}{Code}
+    \begin{lstlisting}
+      \setmathfont[range=\coloneq]{XITS Math}
+      \setmathfont[range=\propto]{XITS Math}
+
+      % make bar horizontal, use \hslash for slashed h
+      \let\hbar\relax
+      \DeclareMathSymbol{\hbar}{\mathord}{AMSb}{"7E}
+      \DeclareMathSymbol{ }{\mathord}{AMSb}{"7E} % mit Unicode hbar (nicht in diesem Font drin :()
+    \end{lstlisting}
+  \end{block}
+\end{frame}

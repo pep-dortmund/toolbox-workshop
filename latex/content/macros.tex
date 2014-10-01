@@ -2,20 +2,32 @@
 
 \begin{frame}[fragile]{Eigene \LaTeX-Kommandos}
   Nach 20 Mal \lstinline+\mathrm{e}+ oder \lstinline+\mathrm{i}+ schreiben hat man keine Lust mehr.
+  \vspace{1em}
   \begin{block}{Kommandostruktur}
     \begin{lstlisting}
-      \newcommand\Kommandoname[#Argumente]{Code mit #1, #2, ...}
-      \newenvironment{Umgebungsname}[#Argumente]{\begin-Code}{\end-Code}
+      \newcommand*\Kommandoname[#Argumente]{Code mit #1, #2, ...}
+      \newcommand*\Command[#Argumente][Default]{Code}
+      \newenvironment*{Umgebungsname}[#Argumente]{\begin-Code}{\end-Code}
     \end{lstlisting}
   \end{block}
-  \verb+##+ gibt ein wirkliches \verb+#+.
-  \begin{CodeExample}{0.75}
+  \begin{itemize}
+    \item \verb+##+ gibt ein wirkliches \verb+#+
+    \item Ohne \texttt{*}, um mehrere Absätze als Argument übergeben zu können
+    \item \lstinline+\end+-Code kann Argumente nicht nutzen
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Beispiele}
+  \begin{CodeExample}{0.78}[Code][Verwendung]
     \begin{lstlisting}
-      \newcommand\I{\mathrm{i}}
-      \newcommand\t[1]{\text{#1}}
-      \newcommand\dd[2]{\frac{\mathrm{d}#1}{\mathrm{d}#2}}
-      \renewcommand\v[1]{\vec{#1}} % Überschreiben bereits belegter Kommandos
-      \newenvironment{eqn}{\begin{equation}}{\end{equation}}
+      \newcommand*\I{\mathup{i}}
+      \newcommand*\t[1]{\text{#1}}
+      \newcommand*\dd[2]{\frac{\mathup{d}#1}{\mathup{d}#2}}
+
+      % Überschreiben bereits belegter Kommandos
+      \renewcommand*\v[1]{\mathbf{#1}}
+
+      \newenvironment*{eqn}{\begin{equation}}{\end{equation}\ignorespacesafterend}
     \end{lstlisting}
   \CodeResult
     \begin{lstlisting}
