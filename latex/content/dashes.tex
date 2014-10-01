@@ -1,0 +1,40 @@
+\subsection{Striche}
+
+\begin{frame}[fragile]{Striche}
+  \begin{block}{Benötigte Einstellung}
+    \begin{lstlisting}
+      \defaultfontfeatures{Ligatures=TeX}
+    \end{lstlisting}
+  \end{block}
+  Es gibt vier verschiedene Striche:
+  \begin{CodeExample}{0.49}
+    \begin{lstlisting}
+      - $-$ -- ---
+    \end{lstlisting}
+  \CodeResult
+    - $-$ -- ---
+  \end{CodeExample}
+
+  \begin{itemize}
+    \item -- (en-dash) ist der Gedankenstrich (nicht für Protokolle)
+      \begin{lstlisting}
+        Text -- oh, Gedankenstriche -- Text
+      \end{lstlisting}
+    \item -- zwischen Namen von unterschiedlichen Personen
+      \begin{lstlisting}
+        Maxwell--Boltzmann-Verteilung
+      \end{lstlisting}
+    \item - zwischen Doppelnamen der selben Person
+      \begin{lstlisting}
+        Levi-Civita-Symbol
+      \end{lstlisting}
+    \item -- ist auch der Streckenstrich
+      \begin{lstlisting}
+        1 bis 10 ist 1--10
+      \end{lstlisting}
+    \item --- (em-dash) kommt im Deutschen nicht vor, ist aber der englische Gedankenstrich
+      \begin{lstlisting}
+        text---oh, em-dashes---text
+      \end{lstlisting}
+  \end{itemize}
+\end{frame}
