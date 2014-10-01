@@ -71,3 +71,14 @@
     $x$\=/Achse
   \end{lstlisting}
 \end{frame}
+
+\begin{frame}[fragile]{Silbentrennung}
+  Manchmal kann \LaTeX\ ein Wort nicht richtig trennen.
+  \begin{block}{Trennung für Wort vorgeben}
+    \begin{lstlisting}
+      \hyphenation{hy-phen-ate hy-phen-a-tion} % Präambel
+
+      hy\-phen\-ate % im Text
+    \end{lstlisting}
+  \end{block}
+\end{frame}
