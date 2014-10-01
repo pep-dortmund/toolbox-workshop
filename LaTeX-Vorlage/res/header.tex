@@ -1,9 +1,8 @@
-\usepackage{fixltx2e}			% LaTeX2e korrigieren.
+\usepackage{fixltx2e}			        % LaTeX2e korrigieren.
 \usepackage[aux]{rerunfilecheck}	% Warnung, falls nochmal kompiliert werden muss.
 
 \usepackage{polyglossia}		% Deutsche Spracheinstellungen.
 \setmainlanguage{german}
-\usepackage{blindtext}			% Für zufälligen Text.
 
 \usepackage{amsmath}			% Unverzichtbare Mathe-Befehle.
 \usepackage{amssymb}			% Viele Mathe-Symbole.
@@ -20,7 +19,6 @@
 ]{unicode-math}				% "Does exactly what it says on the tin."
 
 \usepackage[autostyle]{csquotes}	% Sorgt für die richtigen Anführungszeichen.
-\setotherlanguages{english, french}	% Andere Sprachen laden. 
 
 \usepackage[
 	locale=DE,			% LaTeX den Länderstandard mitteilen.
@@ -31,17 +29,21 @@
 \usepackage[version=3]{mhchem}		% Für chemische Formeln
 
 \usepackage[section, below]{placeins}	% Floats innerhalb einer Section halten.
-\usepackage{caption}			% Captions schöner machen.
-\usepackage{subcaption}			% Subcaptions werden möglich.
+\usepackage[
+  labelfont=bf,        % Tabelle x: Abbildung y: ist jetzt fett
+  font=small,          % Schrift etwas kleiner als Dokument
+  width=0.9\textwidth,  % Maximale Breite einer Caption schmaler
+]{caption}			% Captions schöner machen.
+\usepackage{subcaption}			% subfigure, subtable, subref
 
 \usepackage{graphicx}			% Grafiken können eingebunden werden.
 \usepackage{grffile}			% Größere Variation von Dateinamen möglich.
 
-\usepackage{float}			% Gleitumgebungen schön manipulieren.
+\usepackage{float}			        % Standardplatzierung für Floats einstellen
 \floatplacement{figure}{htbp}		% Grafiken schön setzen.
 \floatplacement{table}{htbp}		% Tabellen schön setzen.
 
-\usepackage{booktabs}			% Tabellen schön machen.
+\usepackage{booktabs}			% für schöne Tabellen
 
 \usepackage{biblatex}			% Für ordentliche Quellenverzeichnisse.
 \addbibresource{res/lit.bib}		% Datei zur Literaturverwaltung.
