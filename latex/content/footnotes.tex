@@ -14,12 +14,17 @@
     \begin{lstlisting}
       \begin{figure}
         \includegraphics[height=0.5cm]{pep.pdf}
-        \caption{Bla\footnotemark}
+        \caption[Bla]{Bla\footnotemark}
       \end{figure}
       \footnotetext{Unsinnige Caption.}
     \end{lstlisting}
   \end{alertblock}
+  \begin{itemize}
+    \item \lstinline+\footnotemark+ an der Stelle wo die Fußnote sein soll.
+    \item Bei \lstinline+\caption+ muss der Inhalt der Caption nocheinmal
+        ohne \lstinline+\footnotemark+ in \lstinline+[ ]+
+        gegeben werden
+      \item \lstinline+\footnotetex{...}+ außerhalb der Umgebung für den Text der Fußnote
+  \end{itemize}
 
-  \vspace{5pt}
-  Anpassung von Fußnoten mit dem Paket \texttt{footmisc}.
 \end{frame}
