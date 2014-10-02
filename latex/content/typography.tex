@@ -78,7 +78,7 @@
 \begin{frame}[fragile]{Striche}
   \begin{block}{Benötigte Einstellung}
     \begin{lstlisting}
-      \defaultfontfeatures{Ligatures=TeX}
+      \defaultfontfeatures{Ligatures=TeX} % nach fontspec
     \end{lstlisting}
   \end{block}
   Es gibt vier verschiedene Striche:
@@ -90,28 +90,35 @@
     - $-$ -- ---
   \end{CodeExample}
 
-  \begin{itemize}
-    \item -- (en-dash) ist der Gedankenstrich (nicht für Protokolle)
-      \begin{lstlisting}
-        Text -- oh, Gedankenstriche -- Text
-      \end{lstlisting}
-    \item -- zwischen Namen von unterschiedlichen Personen
-      \begin{lstlisting}
-        Maxwell--Boltzmann-Verteilung
-      \end{lstlisting}
-    \item - zwischen Doppelnamen der selben Person
-      \begin{lstlisting}
-        Levi-Civita-Symbol
-      \end{lstlisting}
-    \item -- ist auch der Streckenstrich
-      \begin{lstlisting}
-        1 bis 10 ist 1--10
-      \end{lstlisting}
-    \item --- (em-dash) kommt im Deutschen nicht vor, ist aber der englische Gedankenstrich
-      \begin{lstlisting}
-        text---oh, em-dashes---text
-      \end{lstlisting}
-  \end{itemize}
+  \begin{description}[-- Halbgeviertstrich (en-dash)]
+    \item[- Bindestrich]
+      \begin{itemize}
+        \item Bindestrich
+        \item zwischen Doppelnamen der selben Person
+          \begin{lstlisting}
+            Levi-Civita-Symbol
+          \end{lstlisting}
+      \end{itemize}
+    \item[-- Halbgeviertstrich (en-dash)]
+      \begin{itemize}
+        \item Gedankenstrich: \lstinline+ Text -- oh, Gedankenstriche -- Text +
+        \item zwischen Namen von versch. Personen
+          \begin{lstlisting}
+            Maxwell--Boltzmann-Verteilung
+          \end{lstlisting}
+        \item ist auch der Streckenstrich
+          \begin{lstlisting}
+            1 bis 10 ist 1--10
+          \end{lstlisting}
+      \end{itemize}
+    \item[--- Geviertstrich (em-dash)]
+      \begin{itemize}
+          \item nicht im Deutschen, englischer Gedankenstrich
+            \begin{lstlisting}
+              text---oh, em-dashes---text
+            \end{lstlisting}
+      \end{itemize}
+  \end{description}
 \end{frame}
 
 \begin{frame}[fragile]{
