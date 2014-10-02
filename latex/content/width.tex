@@ -2,11 +2,11 @@
 
 \begin{frame}[fragile]{\texttt{\textbackslash OverfullCenter}}
   \begin{lstlisting}
-    \includegraphics[height=1cm,width=\textwidth+25pt]{logos/tu.pdf}
+  \includegraphics[width=\textwidth+25pt]{figures/Panorama.jpg}
   \end{lstlisting}
 
   \vspace{5pt}
-  \rlap{\includegraphics[height=1cm,width=\textwidth+25pt]{logos/tu.pdf}}
+  \rlap{\includegraphics[width=\textwidth+25pt]{figures/Panorama.jpg}}
 
   \vspace{5pt}
   Bild oder Tabelle ist zu Breit, passt aber auf die Seite.\\
@@ -14,13 +14,12 @@
 
   \vspace{5pt}
   \begin{lstlisting}
-    \OverfullCenter{\includegraphics[height=1cm,width=\textwidth+25pt]{logos/tu.pdf}}
+  \OverfullCenter{\includegraphics[width=\textwidth+25pt]{figures/Panorama.jpg}}
   \end{lstlisting}
 
   \vspace{5pt}
-  \OverfullCenter{\includegraphics[height=1cm,width=\textwidth+25pt]{logos/tu.pdf}}
+  \OverfullCenter{\includegraphics[width=\textwidth+25pt]{figures/Panorama.jpg}}
 
-  \vspace{1em}
   \begin{block}{Code}
     \begin{lstlisting}
       \newcommand\OverfullCenter[1]{\noindent\makebox[\linewidth]{#1}}
