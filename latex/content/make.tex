@@ -5,7 +5,7 @@
   \begin{block}{Aufrufe}
     \begin{lstlisting}[language=, keywordstyle={}]
       lualatex --output-directory=build file.tex
-      biber build/file.tex
+      biber build/file.bcf
     \end{lstlisting}
   \end{block}
 
@@ -13,7 +13,7 @@
   \begin{block}{Aufrufe}
     \begin{lstlisting}[language=, keywordstyle={}]
       TEXINPUTS=build:.: lualatex --output-directory=build file.tex
-      BIBINPUTS=build:.  biber build/file.tex
+      BIBINPUTS=build:.  biber build/file.bcf
     \end{lstlisting}
   \end{block}
 \end{frame}
