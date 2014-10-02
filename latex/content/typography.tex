@@ -17,8 +17,8 @@
     \sfrac{$\mathup{\pi}$}{2}
     \end{lstlisting}
     \CodeResult
-    \sfrac{1}{2} \\
-    \sfrac{$\mathup{\pi}$}{2}
+    $\sfrac{1}{2}$ \\
+    $\sfrac{\mathup{\pi}}{2}$
   \end{CodeExample}
 \end{frame}
 
@@ -38,7 +38,7 @@
       Abbildung~\ref{fig:peplogo}
       z.\,B.
       2.~Oktober~2014
-      St.~Helena 
+      St.~Helena
     \end{lstlisting}
     \CodeResult
       Prof.~Dr.~Dr.~Rhode \\
@@ -92,6 +92,7 @@
   Trennung bei Strichen \hfill
   \doc{http://mirrors.ctan.org/macros/latex/contrib/ncctools/doc/extdash.pdf}{extdash}
 }
+  \vspace*{-2em}
   \begin{Packages}
     \begin{lstlisting}
       \usepackage[shortcuts]{extdash} % nach hyperref, bookmark
@@ -128,8 +129,9 @@
   \end{itemize}
   \begin{block}{Trennung für Wort vorgeben}
     \begin{lstlisting}
-      \hyphenation{Dia-mag-ne-tis-mus hy-phen-ate hy-phen-a-tion} % Präambel
-      statt Di-a-mag-ne-tis-mus
+      % Präambel
+      \hyphenation{Dia-mag-ne-tis-mus hy-phen-ate hy-phen-a-tion}
+      % statt Di-a-mag-ne-tis-mus
 
       hy\-phen\-ate % im Text
     \end{lstlisting}

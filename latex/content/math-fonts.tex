@@ -28,14 +28,14 @@
   Manchmal sind Sonderzeichen nicht im Font enthalten:
   \vspace{1em}
   \begin{block}{Code}
-    \begin{lstlisting}
+    \begin{lstlisting}[escapechar=|]
       \setmathfont[range=\coloneq]{XITS Math}
       \setmathfont[range=\propto]{XITS Math}
 
       % make bar horizontal, use \hslash for slashed h
       \let\hbar\relax
       \DeclareMathSymbol{\hbar}{\mathord}{AMSb}{"7E}
-      \DeclareMathSymbol{ }{\mathord}{AMSb}{"7E} % mit Unicode hbar (nicht in diesem Font drin :()
+      \DeclareMathSymbol{|$ℏ$|}{\mathord}{AMSb}{"7E} % mit Unicode hbar
     \end{lstlisting}
   \end{block}
 \end{frame}

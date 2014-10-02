@@ -1,16 +1,16 @@
-\subsection{texorpdfstring}
+\subsection{\texttt{\textbackslash texorpdfstring}}
 
-\begin{frame}[fragile]{texorpdfstring}
-
+\begin{frame}[fragile]{\lstinline+\\texorpdfstring+}
   \begin{block}{Motivation}
     \begin{itemize}
-      \item {\texttt hyperref} bezieht den Text für seine Bookmarks, z.B. aus \lstinline+\section{ }+ 
-      \item[→]  Bookmarks möchten meist keine \LaTeX-Befehle
+      \item \texttt{hyperref} bezieht den Text für seine Bookmarks, z.B. aus \lstinline+\section{ }+
+      \item[→] Bookmarks mögen meist keine \LaTeX-Befehle
       \item \texttt{hyperref} fängt vieles ab, aber nicht alles
-      \item \begin{lstlisting}
-              \section{$\alpha + 1$}
-            \end{lstlisting}
-      ergibt Fehlermeldung:
+      \item
+        \begin{lstlisting}
+          \section{$\alpha + 1$}
+        \end{lstlisting}
+        ergibt Fehlermeldung:
         \begin{lstlisting}
           Package hyperref Warning:
           Token not allowed in a PDFDocEncoded string:
@@ -22,12 +22,10 @@
     \begin{lstlisting}
       \texorpdfstring{LateXcode}{Unicode-Äquivalent}
     \end{lstlisting}
-   \end{block}
-    \begin{CodeExample}{0.49}
-      \begin{lstlisting}
-        \section{\texorpdfstring{$\alpha + 1$}{α + 1}}
-      \end{lstlisting}
-      \CodeResult
-      $\alpha + 1$
-    \end{CodeExample}
+  \end{block}
+  \begin{block}{Code}
+    \begin{lstlisting}[escapechar=|]
+      \section{\texorpdfstring{$\alpha + 1$}{|$α$| + 1}}
+    \end{lstlisting}
+  \end{block}
 \end{frame}
