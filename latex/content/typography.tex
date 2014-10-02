@@ -1,4 +1,31 @@
 \subsection{Ein bisschen Typografie}
+\begin{frame}[fragile]{Absatzauszeichnung}
+  \begin{itemize}
+    \item Zur Erinnerung: Leerzeile im Code erzeugt neuen Absatz
+    \item Zwei Möglichkeiten: Einzug der ersten Zeile oder vertikaler Abstand
+    \item Standard ist Einzug
+    \item halbzeiliger vertikaler Abstand mit:
+      \begin{block}{Klassenoption}
+        \begin{lstlisting}
+          \documentclass[parskip=halfi, ...]{scrartcl}
+        \end{lstlisting}
+      \end{block}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{\texttt{microtype}}
+  \begin{itemize}
+    \item Ihr werdet den Effekt kaum sehen
+    \item Das ist Absicht!
+    \item Kleine Korrekturen, die das Schriftbild verbessern
+    \item z.\,B. - etwas in den Rand hinein für homogen Grauanteil
+      \begin{Packages}
+        \begin{lstlisting}
+          \usepackage{microtype}
+        \end{lstlisting}
+      \end{Packages}
+  \end{itemize}
+\end{frame}
 
 \begin{frame}[fragile]{Schönere Brüche im Text}
   \begin{Packages}
