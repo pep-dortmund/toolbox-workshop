@@ -1,0 +1,118 @@
+\documentclass[
+  bibliography=totoc,     % Literatur im Inhaltsverzeichnis
+  captions=tableheading,   % Tabellenüberschriften
+  titlepage=firstiscover, % Titelseite ist Deckblatt
+]{scrartcl}
+
+% LaTeX2e korrigieren.
+\usepackage{fixltx2e}
+% Warnung, falls nochmal kompiliert werden muss
+\usepackage[aux]{rerunfilecheck}
+
+% deutsche Spracheinstellungen
+\usepackage{polyglossia}
+\setmainlanguage{german}
+
+% unverzichtbare Mathe-Befehle
+\usepackage{amsmath}
+% viele Mathe-Symbole
+\usepackage{amssymb}
+% Erweiterungen für amsmath
+\usepackage{mathtools}
+
+% Fonteinstellungen
+\usepackage{fontspec}
+\defaultfontfeatures{Ligatures=TeX}
+
+\usepackage[
+  math-style=ISO,    % \
+  bold-style=ISO,    % |
+  sans-style=italic, % | ISO-Standard folgen
+  nabla=upright,     % |
+  partial=upright,   % /
+]{unicode-math}
+
+\setmathfont[range={\mathscr, \mathbfscr}]{XITS Math}
+\setmathfont[range=\coloneq]{XITS Math}
+\setmathfont[range=\propto]{XITS Math}
+% make bar horizontal, use \hslash for slashed h
+\let\hbar\relax
+\DeclareMathSymbol{\hbar}{\mathord}{AMSb}{"7E}
+\DeclareMathSymbol{ℏ}{\mathord}{AMSb}{"7E}
+
+% richtige Anführungszeichen
+\usepackage[autostyle]{csquotes}
+
+% Zahlen und Einheiten
+\usepackage[
+  locale=DE,                   % deutsche Einstellungen
+  separate-uncertainty=true,   % Immer Fehler mit \pm
+  per-mode=symbol-or-fraction, % m/s im Text, sonst Brüche
+]{siunitx}
+
+% chemische Formeln
+\usepackage[version=3]{mhchem}
+
+% schöne Brüche im Text
+\usepackage{xfrac}
+
+% Floats innerhalb einer Section halten
+\usepackage[section, below]{placeins}
+% Captions schöner machen.
+\usepackage[
+  labelfont=bf,        % Tabelle x: Abbildung y: ist jetzt fett
+  font=small,          % Schrift etwas kleiner als Dokument
+  width=0.9\textwidth, % maximale Breite einer Caption schmaler
+]{caption}
+% subfigure, subtable, subref
+\usepackage{subcaption}
+
+% Grafiken können eingebunden werden
+\usepackage{graphicx}
+% größere Variation von Dateinamen möglich
+\usepackage{grffile}
+
+% Standardplatzierung für Floats einstellen
+\usepackage{float}
+\floatplacement{figure}{htbp}
+\floatplacement{table}{htbp}
+
+% schöne Tabellen
+\usepackage{booktabs}
+
+% Seite drehen für breite Tabellen
+\usepackage{pdflscape}
+
+% Literaturverzeichnis
+\usepackage{biblatex}
+% Quellendatenbank
+\addbibresource{lit.bib}
+\addbibresource{programme.bib}
+
+% Hyperlinks im Dokument
+\usepackage[
+  unicode,
+  pdfusetitle, % Titel, Autoren und Datum als PDF-Attribute
+  pdfcreator={},  % PDF-Attribute säubern
+  pdfproducer={}, % "
+]{hyperref}
+% erweiterte Bookmarks im PDF
+\usepackage{bookmark}
+
+% Trennung von Wörtern mit Strichen
+\usepackage[shortcuts]{extdash}
+
+\author{
+  AUTOR A%
+  \texorpdfstring{
+    \\
+    \href{mailto:authorA@udo.edu}{authorA@udo.edu}
+  }{}%
+  \texorpdfstring{\and}{, }
+  AUTOR B
+  \texorpdfstring{
+    \\
+    \href{mailto:authorB@udo.edu}{authorB@udo.edu}
+  }{}
+}
+\publishers{TU Dortmund – Fakultät Physik}
