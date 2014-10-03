@@ -20,6 +20,11 @@
       \end{itemize}
     \end{lstlisting}
   \CodeResult
+  \setbeamerfont{item}{family=\rmfamily, size=\normalfont}
+  \setbeamerfont{itemize/enumerate body}{family=\rmfamily}
+  \setbeamerfont{itemize/enumerate subbody}{family=\rmfamily}
+  \setbeamertemplate{itemize item}{\bullet}
+  \setbeamertemplate{itemize subitem}{--}
     \begin{itemize}
       \item Punkt 1
       \item Punkt 2
@@ -47,6 +52,11 @@
       \end{enumerate}
     \end{lstlisting}
   \CodeResult
+    \setbeamerfont{item}{family=\rmfamily, size=\normalfont}
+    \setbeamerfont{itemize/enumerate body}{family=\rmfamily}
+    \setbeamerfont{itemize/enumerate subbody}{family=\rmfamily}
+    \setbeamertemplate{enumerate item}{\theenumi .}
+    \setbeamertemplate{enumerate subitem}{(\alph{enumii})}
     \begin{enumerate}
       \item Punkt 1
       \item Punkt 2
@@ -70,6 +80,7 @@ Stichwort \lstinline+\item+ als optionales Argument übergeben.
       \end{description}
     \end{lstlisting}
   \CodeResult
+    \setbeamerfont{description item}{series=\bfseries}
     \begin{description}
       \item[\LaTeX] gut
       \item[Word] böse
