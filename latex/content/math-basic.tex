@@ -217,7 +217,6 @@
       \vec{x}
       \mathring{x}
       \dot{x} \ddot{x} \dddot{x} \ddddot{x}
-      \hat{x_\text{min}} \hat{x}_\text{min}
       \underline{xy} \overline{xy}
     \end{lstlisting}
   \CodeResult
@@ -228,8 +227,16 @@
     $\vec{x}$ \\
     $\mathring{x}$ \\
     $\dot{x} \ddot{x} \dddot{x} \ddddot{x}$ \\
-    $\hat{x_\text{min}} \hat{x}_\text{min}$ \\
     $\underline{xy} \overline{xy}$
+  \end{CodeExample}
+  Aufpassen, wo der Akzent hinkommt:
+  \begin{CodeExample}{0.7}
+    \begin{lstlisting}
+      \hat{x_\text{min}} \hat{x}_\text{min}
+    \end{lstlisting}
+  \CodeResult
+    \Umathordordspacing\textstyle=4mu
+    $\hat{x_\text{min}} \hat{x}_\text{min}$ \\
   \end{CodeExample}
 \end{frame}
 
@@ -239,13 +246,15 @@
       x \sin y
       x \sin(y)
       \cos \tan \exp \ln
-      \lim_{x \to \infty} x^2
+      \lim_{x \to \infty} x^2 
+      \lim_{\mathclap{x \to \infty}} x^2
     \end{lstlisting}
   \CodeResult
     $x \sin y$ \\
     $x \sin(y)$ \\
     $\cos \tan \exp \ln$ \\
     $\displaystyle \lim_{x \to \infty} x^2$
+    $\displaystyle \lim_{\mathclap{x \to \infty}} x^2$
   \end{CodeExample}
   \vspace{5pt}
   Man kann auch eigene Funktionen definieren:
@@ -323,15 +332,15 @@
 
 \begin{frame}[fragile]{Spaces}
   Manchmal muss man manuell eingreifen, um das Spacing zu perfektionieren.
+  \vspace{-1em}
   \begin{CodeExample}{0.48}
     \begin{lstlisting}
-      %
+      % Kein Space
       \,
       \:
       \;
       \quad
       \qquad
-      \! % negativer \,
     \end{lstlisting}
   \CodeResult
     $|\mspace{-5mu} |$ \\
@@ -340,12 +349,19 @@
     $|\mspace{-5mu} \;|$ \\
     $|\mspace{-5mu} \quad|$ \\
     $|\mspace{-5mu} \qquad|$ \\
+  \end{CodeExample}
+  Negativer Space um zu viel Platz zu korrigieren:
+  \vspace{-1em}
+  \begin{CodeExample}{0.48}
+    \begin{lstlisting}
+      \! % negativer \,
+    \end{lstlisting}
+  \CodeResult
     $|\mspace{-5mu} \!|$
   \end{CodeExample}
   \begin{CodeExample}{0.48}
     \begin{lstlisting}
       ^2       ^{\!\! 2}
-
     \end{lstlisting}
   \CodeResult
     $\displaystyle \left( \frac{2^2}{2} \right)^2
@@ -357,37 +373,53 @@
   \vspace{-1.5em}
   \begin{CodeExample}{0.7}
     \begin{lstlisting}
-      () [] \{\} \langle\rangle \lvert\rvert
-      \lVert\rVert
+      (x) [x] \{x\} \langle x\rangle
+      \lvert x\rvert \lVert x\rVert
     \end{lstlisting}
   \CodeResult
     \Umathcloseopenspacing\textstyle=4mu
-    $() [] \{\} \langle\rangle \lvert x\rvert \lVert x\rVert$
+    $(x) [x] \{x\} \langle x\rangle $\\
+    $\lvert x\rvert \lVert x\rVert$
   \end{CodeExample}
 
   \begin{CodeExample}{0.7}[ Häufig braucht man größere Klammern.]
     \begin{lstlisting}
-      \bigl(\bigr) \Bigl(\Bigr) \biggl(\biggr) \Biggl(\Biggr) \bigl<\bigr> \bigl|\bigr|
+      \bigl(x\bigr) \Bigl(x\Bigr) \biggl(x\biggr) \Biggl(x\Biggr)
+      \bigl< x\bigr> \bigl|x\bigr|
     \end{lstlisting}
   \CodeResult
-    $\bigl(\bigr) \Bigl(\Bigr) \biggl(\biggr) \Biggl(\Biggr)\bigl<\bigr>\bigl|\bigr|$
+    $\bigl(x\bigr) \Bigl(x\Bigr) \biggl(x\biggr) \Biggl(x\Biggr)$ \\
+    $\bigl< x\bigr>\bigl|x\bigr|$
+  \end{CodeExample}
+\end{frame}
+
+\begin{frame}[fragile]{Klammern: Automatische Größe}
+  \begin{itemize}
+    \item Größe des Ausdrucks zwischen \lstinline+\left+ und \lstinline+\right+ bestimmt Größe der Klammern
+    \item Ein \lstinline+\left+ muss in der gleichen Zeile wieder mit \lstinline+\right+ geschlossen werden
+    \item \lstinline+\left.+ oder \lstinline+\right-+ falls nur eine Klammer gewünscht wird
+  \end{itemize}
+  \begin{CodeExample}{0.75}
+    \begin{lstlisting}
+    \left(\frac{1}{2} \right) \left(\frac{1}{2}\right.
+
+      \left\{x \,\middle|\, x<\frac{1}{2} \right\}
+    \end{lstlisting}
+  \CodeResult
+$\left(\frac{1}{2}\right) \qquad \left(\frac{1}{2}\right.$ \\\smallskip
+    $\left\{ x \, \middle| \, x < \frac{1}{2} \right\}$
   \end{CodeExample}
 
-  \begin{CodeExample}{0.6}[Automatische Bestimmung der Größe:]
+  \begin{CodeExample}{0.75}[hat kein optimales Spacing:]
     \begin{lstlisting}
-      \left(\right) \left(\right.
-      \left\{ \,\middle|\, \right\}
+      \sin(x)
+      \sin\left(x\right)
+      \sin\!\left(x\right)
     \end{lstlisting}
   \CodeResult
-    $\left(\frac{1}{2}\right) \qquad \left(\frac{1}{2}\right. \qquad \left\{ x \,\middle|\, x < \frac{1}{2} \right\}$
-  \end{CodeExample}
-
-  \begin{CodeExample}{0.705}[hat kein optimales Spacing:]
-    \begin{lstlisting}
-      \sin(x) \sin\left(x\right) \sin\!\left(x\right)
-    \end{lstlisting}
-  \CodeResult
-    $\sin(x) \sin\left(x\right) \sin\!\left(x\right)$
+    $\sin(x)$ \\
+    $\sin\left(x\right)$ \\
+    $\sin\!\left(x\right)$
   \end{CodeExample}
 \end{frame}
 
@@ -405,31 +437,34 @@
   \begin{itemize}
     \item Variablen/Größen werden kursiv gesetzt
     \item Mathematikmodus: alles erstmal Variable
-    \item Alles, was keine Variable ist: aufrecht.
+    \item Alles, was keine Variable ist: aufrecht
       \begin{itemize}
-        \item Konstanten: $\mathup{e}$, $\mathup{i}$, $\mathup{\pi}$, $\mathup{d}x$
-          \medskip
+        \item Konstanten: $\mathup{e}$, $\mathup{i}$, $\mathup{\pi}$
+          \smallskip
           \begin{lstlisting}
-            $\mathup{e}$, $\mathup{i}$, $\mathup{\pi}$, $\mathup{d}x$
+            $\mathup{e}$, $\mathup{i}$, $\mathup{\pi}$
+          \end{lstlisting}
+          \medskip
+        \item Infinitesimales: $\mathup{d}x$
+          \smallskip
+          \begin{lstlisting}
+            $\mathup{d}x$
           \end{lstlisting}
           \medskip
         \item Indizes wie \enquote{min} oder \enquote{max}
-          \medskip
+          \smallskip
           \begin{lstlisting}
             x_\text{min}
           \end{lstlisting}
       \end{itemize}
-    \item $\mathrm{d}x$ wird durch kleines Leerzeichen (\verb+\,+) vom Integranden abgetrennt.
   \end{itemize}
 \end{frame}
 
 \begin{frame}[fragile]{Konventionen: Variablen, Zahlen, Einheiten, Indizes}
-  \begin{lstlisting}
-    \int_0^1   \int_0^{\mathup{\pi}}   \int_0^{2 \mathup{\pi}}
-    r^2 \sin(\vartheta)
-    \, \mathup{d}\varphi \, \mathup{d}\vartheta \, \mathup{d}r
-    = \frac{4}{3} \mathup{\pi}
-  \end{lstlisting}
+  \begin{itemize}
+    \item $\mathrm{d}x$ wird durch kleines Leerzeichen (\verb+\,+) vom Integranden abgetrennt
+    \item \verb+\,+ auch zwischen verschiedenen $\mathup{d}x_i$
+  \end{itemize}
 
   \begin{equation*}
     \int_0^1 \int_0^{\mathup{\pi}} \int_0^{2 \mathup{\pi}}
@@ -437,4 +472,12 @@
     \mathup{d}\phi \, \mathup{d}\vartheta \, \mathup{d}r
     = \frac{4}{3} \mathup{\pi}
   \end{equation*}
+
+  \begin{lstlisting}
+    \int_0^1   \int_0^{\mathup{\pi}}   \int_0^{2 \mathup{\pi}}
+    r^2 \sin(\vartheta)
+    \, \mathup{d}\varphi \, \mathup{d}\vartheta \, \mathup{d}r
+    = \frac{4}{3} \mathup{\pi}
+  \end{lstlisting}
+
 \end{frame}
