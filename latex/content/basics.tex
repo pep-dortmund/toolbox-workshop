@@ -3,7 +3,7 @@
 \begin{frame}[fragile]{Das Dokument}
   Diese drei Zeilen braucht jedes \LaTeX-Dokument:
   \begin{columns}[onlytextwidth, t]
-    \begin{column}{0.48\textwidth}
+    \begin{column}{0.50\textwidth}
       \begin{block}{Code}
         \begin{lstlisting}
           \documentclass[optionen]{klasse}
@@ -48,15 +48,16 @@
     \begin{lstlisting}
       \documentclass[paper=a4]{scrartcl}
 
+      \tableofcontents
       \frac{1}{2}
-
       % Kommentar
     \end{lstlisting}
   \Explanation
     Dokumentenklasse \texttt{scrartcl},\\
-    Papierformat DIN\,A4. \\
-    Zwei oder mehr Pflichtargumente, z.B. der Bruch. \\
-    \verb+%+-Zeichen für Kommentare.
+    Papierformat DIN\,A4 \\
+    Keine Argumente \\
+    Zwei oder mehr Pflichtargumente\\
+    \verb+%+-Zeichen für Kommentare
   \end{CodeExplanation}
 \end{frame}
 
@@ -65,13 +66,14 @@
     \item Einstellungen für Bereich des Dokuments
     \item extrem vielseitig
     \item Können ggfs.\ auch Optionen übergeben bekommen
+    \item Oft auch Alternativform mit \lstinline+*+
   \end{itemize}
-  \begin{CodeExplanation}{0.47}[Syntax][Beispiel]
+  \begin{CodeExplanation}{0.65}[Syntax][Beispiel]
     \begin{lstlisting}
-      \begin{Umgebung*}[optional]{obligatorisch}
+      \begin{Umgebung}[optional]{obligatorisch}
         % .
         % .
-      \end{Umgebung*}
+      \end{Umgebung}
     \end{lstlisting}
     \Explanation
     \begin{lstlisting}
@@ -83,7 +85,10 @@
 \end{frame}
 
 \begin{frame}[fragile]{Syntax: Umgebungen}
-  Umgebungen können weitere Umgebungen enthalten, diese müssen aber in dieser Umgebung wieder geschlossen werden.
+  \begin{itemize}
+    \item Können weitere Umgebungen enthalten
+    \item Diese müssen aber in Umgebung wieder geschlossen werden
+\end{itemize}
   \begin{columns}[onlytextwidth, t]
     \begin{column}{0.48\textwidth}
       \begin{block}{Geht:}
@@ -173,8 +178,8 @@
     \item Jede System-Schriftart kann genutzt
     \item \alert{Das ist i.A. nicht sinnvoll: \fontspec{Comic Sans MS} Hallo Welt in Comic Sans MS!}
     \item Schriften müssen zueinander passen
-    \item Schriften müssen alle benötigten Sonderzichen enthalten
-    \item Bei Änderung auch Mathefont anpassen → später.
+    \item Schriften müssen alle benötigten Sonderzeichen enthalten
+    \item Bei Änderung auch Mathefont anpassen → später in  \ref{sec:math}
   \end{itemize}
 \end{frame}
 
