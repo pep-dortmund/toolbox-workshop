@@ -130,6 +130,7 @@
 
   \begin{verbatim}
     plot1.pdf plot2.pdf: plot.sync
+        @: # nichts tun
 
     plot.sync: plot.py data.txt
         python plot.py
