@@ -55,19 +55,21 @@
 \end{frame}
 
 \begin{frame}{Ergebnis}
-  \begin{table}
-    \centering
-    \caption{Eine Tabelle mit Messdaten.}
-    \begin{tabular}{c c c c c}
-      \toprule
-      $f$ & $l_\text{start}$ & $l_1$ & $l_{\text{kor},1}$ & $B_1$ \\
-      \midrule
-      100 & 1.14 & 3.51 & 0.00 &   4.30 \\
-      300 & 1.27 & 2.42 & 0.13 &  41.14 \\
-      500 & 1.21 & 1.70 & 0.25 & 168.73 \\
-      \toprule
-    \end{tabular}
-  \end{table}
+  \begin{EmulateArticle}
+    \begin{table}
+      \centering
+      \caption{Eine Tabelle mit Messdaten.}
+      \begin{tabular}{c c c c c}
+        \toprule
+        $f$ & $l_\text{start}$ & $l_1$ & $l_{\text{kor},1}$ & $B_1$ \\
+        \midrule
+        100 & 1.14 & 3.51 & 0.00 &   4.30 \\
+        300 & 1.27 & 2.42 & 0.13 &  41.14 \\
+        500 & 1.21 & 1.70 & 0.25 & 168.73 \\
+        \toprule
+      \end{tabular}
+    \end{table}
+  \end{EmulateArticle}
   \begin{itemize}
     \item Keine vertikalen Linien!
     \item Keine horizontalen Linien zwischen Daten!
@@ -103,22 +105,24 @@
 \end{frame}
 
 \begin{frame}[fragile]{Ergebnis}
-  \begin{table}
-    \centering
-    \caption{Eine schöne Tabelle mit Messdaten.}
-    \sisetup{table-format=1.2}
-    \begin{tabular}{S[table-format=3.0] S S S S[table-format=3.2]}
-      \toprule
-      {$f$} & {$l_\text{start}$} & {$l_1$} & {$l_{\text{kor},1}$} & {$B_1$} \\
-      \midrule
-      100 & 1.14 & 3.51 & 0.00 &   4.30 \\
-      200 & 1.30 & 2.99 & 0.06 &  25.98 \\
-      300 & 1.27 & 2.42 & 0.13 &  41.14 \\
-      400 & 1.28 & 1.47 & 0.20 &  53.76 \\
-      500 & 1.21 & 1.70 & 0.25 & 168.73 \\
-      \bottomrule
-    \end{tabular}
-  \end{table}
+  \begin{EmulateArticle}
+    \begin{table}
+      \centering
+      \caption{Eine schöne Tabelle mit Messdaten.}
+      \sisetup{table-format=1.2}
+      \begin{tabular}{S[table-format=3.0] S S S S[table-format=3.2]}
+        \toprule
+        {$f$} & {$l_\text{start}$} & {$l_1$} & {$l_{\text{kor},1}$} & {$B_1$} \\
+        \midrule
+        100 & 1.14 & 3.51 & 0.00 &   4.30 \\
+        200 & 1.30 & 2.99 & 0.06 &  25.98 \\
+        300 & 1.27 & 2.42 & 0.13 &  41.14 \\
+        400 & 1.28 & 1.47 & 0.20 &  53.76 \\
+        500 & 1.21 & 1.70 & 0.25 & 168.73 \\
+        \bottomrule
+      \end{tabular}
+    \end{table}
+  \end{EmulateArticle}
   \begin{itemize}
     \item \texttt{S}-Spalte eröffnet mehr Ausrichtungsmöglichkeiten mit \lstinline+\sisetup+ und \lstinline+[...]+
     \item \texttt{s}-Spalte für Einheiten
@@ -158,23 +162,25 @@
 \end{frame}
 
 \begin{frame}{Resultat}
-  \begin{table}
-    \centering
-    \caption{Messdaten für dubiose Elemente.}
-    \sisetup{table-format=2.1}
-    \begin{tabular}{S[table-format=3.1] S S S S}
-      \toprule
-      & \multicolumn{2}{c}{Technetium} & \multicolumn{2}{c}{Molybdän} \\
-      {$\lambda \:/\: \si{\nano\meter}$}
-      & {$\phi_1$} & {$\phi_2$} & {$\phi_1$} & {$\phi_2$} \\
-      \midrule
-      663.0 & 12.1 & 14.4 & 13.1 & 16.9 \\
-      670.0 & 10.9 & 12.9 & 11.8 & 15.7 \\
-      678.0 &  9.1 & 11.4 & 10.3 & 14.6 \\
-      684.0 &  8.2 & 10.2 &  9.5 & 13.5 \\
-      \bottomrule
-    \end{tabular}
-  \end{table}
+  \begin{EmulateArticle}
+    \begin{table}
+      \centering
+      \caption{Messdaten für dubiose Elemente.}
+      \sisetup{table-format=2.1}
+      \begin{tabular}{S[table-format=3.1] S S S S}
+        \toprule
+        & \multicolumn{2}{c}{Technetium} & \multicolumn{2}{c}{Molybdän} \\
+        {$\lambda \:/\: \si{\nano\meter}$}
+        & {$\phi_1$} & {$\phi_2$} & {$\phi_1$} & {$\phi_2$} \\
+        \midrule
+        663.0 & 12.1 & 14.4 & 13.1 & 16.9 \\
+        670.0 & 10.9 & 12.9 & 11.8 & 15.7 \\
+        678.0 &  9.1 & 11.4 & 10.3 & 14.6 \\
+        684.0 &  8.2 & 10.2 &  9.5 & 13.5 \\
+        \bottomrule
+      \end{tabular}
+    \end{table}
+  \end{EmulateArticle}
 \end{frame}
 
 \begin{frame}[fragile]{Fehler in Tabellen}
@@ -196,21 +202,22 @@
       \end{tabular}
     \end{lstlisting}
   \CodeResult
-    \centering
-    \begin{tabular}{
-      S[table-format=3.1]
-      @{${}\pm{}$}
-      S[table-format=2.1]
-    }
-      \toprule
-      \multicolumn{2}{c}{$x \:/\: \si{\ohm}$} \\
-      \midrule
-      663.0 & 12.1 \\
-      670.0 & 10.9 \\
-      678.0 &  9.1 \\
-      684.0 &  8.2 \\
-      \bottomrule
-    \end{tabular}
+    \begin{center}
+      \begin{tabular}{
+        S[table-format=3.1]
+        @{${}\pm{}$}
+        S[table-format=2.1]
+      }
+        \toprule
+        \multicolumn{2}{c}{$x \:/\: \si{\ohm}$} \\
+        \midrule
+        663.0 & 12.1 \\
+        670.0 & 10.9 \\
+        678.0 &  9.1 \\
+        684.0 &  8.2 \\
+        \bottomrule
+      \end{tabular}
+    \end{center}
   \end{CodeExample}
   \vspace{5pt}
   \lstinline+@{…}+ ersetzt den Spaltenabstand durch \texttt{…}

@@ -192,6 +192,28 @@
   \end{columns}
 }
 
+\NewDocumentEnvironment {EmulateArticle} {} {
+  \rmfamily
+
+  \setbeamercolor{item}{fg=black}
+  \setbeamerfont{item}{family=\rmfamily, size=\normalsize}
+  \setbeamerfont{itemize/enumerate~body}{family=\rmfamily}
+  \setbeamerfont{itemize/enumerate~subbody}{family=\rmfamily}
+  \setbeamerfont{itemize/enumerate~subsubbody}{family=\rmfamily}
+  \setbeamerfont{description~item}{series=\bfseries}
+  \setbeamertemplate{itemize~item}{\bullet}
+  \setbeamertemplate{itemize~subitem}{--}
+  \setbeamertemplate{itemize~subsubitem}{\textasteriskcentered}
+  \setbeamertemplate{enumerate~item}{\theenumi.}
+  \setbeamertemplate{enumerate~subitem}{\alph{enumii})}
+  \setbeamertemplate{enumerate~subsubitem}{\roman{enumii}.}
+
+  \setbeamerfont{caption}{family=\rmfamily}
+  \setbeamercolor{caption~name}{fg=black}
+  \setbeamerfont{caption~name}{family=\rmfamily, series=\bfseries}
+}{
+}
+
 \NewDocumentEnvironment {CodeExample} {o m O{Code} O{Ergebnis}} {
   \NewDocumentCommand \CodeResult {} {
       \end{tcolorbox}
@@ -208,19 +230,7 @@
         adjusted~title=#4,
         colframe=gray!40,
       ]
-        \rmfamily
-        \setbeamercolor{item}{fg=black}
-        \setbeamerfont{item}{family=\rmfamily, size=\normalsize}
-        \setbeamerfont{itemize/enumerate~body}{family=\rmfamily}
-        \setbeamerfont{itemize/enumerate~subbody}{family=\rmfamily}
-        \setbeamerfont{itemize/enumerate~subsubbody}{family=\rmfamily}
-        \setbeamerfont{description~item}{series=\bfseries}
-        \setbeamertemplate{itemize~item}{\bullet}
-        \setbeamertemplate{itemize~subitem}{--}
-        \setbeamertemplate{itemize~subsubitem}{\textasteriskcentered}
-        \setbeamertemplate{enumerate~item}{\theenumi.}
-        \setbeamertemplate{enumerate~subitem}{\alph{enumii})}
-        \setbeamertemplate{enumerate~subsubitem}{\roman{enumii}.}
+        \begin{EmulateArticle}
   }
   \begin{columns}[onlytextwidth, t]
     \begin{column}{#2 \textwidth}
@@ -228,6 +238,7 @@
         adjusted~title=#3,
       ]
 }{
+        \end{EmulateArticle}
       \end{tcolorbox}
     \end{column}
   \end{columns}
