@@ -192,6 +192,7 @@
   \end{columns}
 }
 
+\makeatletter
 \NewDocumentEnvironment {EmulateArticle} {} {
   \rmfamily
 
@@ -211,8 +212,13 @@
   \setbeamerfont{caption}{family=\rmfamily}
   \setbeamercolor{caption~name}{fg=black}
   \setbeamerfont{caption~name}{family=\rmfamily, series=\bfseries}
+
+  \let\reftagform@=\tagform@
+  \def\tagform@##1{\maketag@@@{(\ignorespaces{\rmfamily{##1}}\unskip\@@italiccorr)}}
+  \renewcommand{\eqref}[1]{\textup{\reftagform@{\rmfamily\ref{##1}}}}
 }{
 }
+\makeatother
 
 \NewDocumentEnvironment {CodeExample} {o m O{Code} O{Ergebnis}} {
   \NewDocumentCommand \CodeResult {} {
@@ -315,7 +321,7 @@
   \end{IEEEeqnarray}
   \ignorespacesafterend
 }
-\NewDocumentEnvironment{eqn}{}  
+\NewDocumentEnvironment{eqn}{}
 {
   \begin{eqns}[c]
 }
