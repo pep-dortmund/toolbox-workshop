@@ -13,7 +13,6 @@
 \usepackage{fontspec}
 \defaultfontfeatures{Ligatures=TeX}
 
-
 \setmainfont[
   SmallCapsFont = {Latin Modern Roman Caps},
   SlantedFont = {Latin Modern Roman Slanted},
@@ -81,7 +80,7 @@
 \usepackage{threeparttable}
 \usepackage{tabu}
 
-\usepackage[]{graphicx}
+\usepackage{graphicx}
 \usepackage[compatibility=false]{caption}
 \setbeamertemplate{caption}[numbered]
 \usepackage{subcaption}
@@ -211,6 +210,17 @@
       ]
         \rmfamily
         \setbeamercolor{item}{fg=black}
+        \setbeamerfont{item}{family=\rmfamily, size=\normalsize}
+        \setbeamerfont{itemize/enumerate~body}{family=\rmfamily}
+        \setbeamerfont{itemize/enumerate~subbody}{family=\rmfamily}
+        \setbeamerfont{itemize/enumerate~subsubbody}{family=\rmfamily}
+        \setbeamerfont{description~item}{series=\bfseries}
+        \setbeamertemplate{itemize~item}{\bullet}
+        \setbeamertemplate{itemize~subitem}{--}
+        \setbeamertemplate{itemize~subsubitem}{\textasteriskcentered}
+        \setbeamertemplate{enumerate~item}{\theenumi.}
+        \setbeamertemplate{enumerate~subitem}{\alph{enumii})}
+        \setbeamertemplate{enumerate~subsubitem}{\roman{enumii}.}
   }
   \begin{columns}[onlytextwidth, t]
     \begin{column}{#2 \textwidth}
