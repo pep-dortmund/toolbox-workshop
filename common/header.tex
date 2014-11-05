@@ -11,7 +11,6 @@
 \usepackage[backend=biber,sorting=nyt,sortlocale=de_DE.UTF-8]{biblatex}
 
 \usepackage{fontspec}
-\defaultfontfeatures{Ligatures=TeX}
 
 \setmainfont[
   SmallCapsFont = {Latin Modern Roman Caps},
@@ -19,9 +18,12 @@
   ItalicFeatures  = {
     SmallCapsFont = {LMRomanCaps10-Oblique}
   },
-  ]{Latin Modern Roman}
+  Ligatures = TeX,
+]{Latin Modern Roman}
 
-\setsansfont{Latin Modern Sans}
+\setsansfont[
+  Ligatures = TeX,
+]{Latin Modern Sans}
 
 \setmonofont[
   SmallCapsFont = {Latin Modern Mono Caps},
@@ -29,7 +31,8 @@
   ItalicFeatures  = {
     SmallCapsFont = {LMMonoCaps10-Oblique}
   },
-  ]{Latin Modern Mono}
+  Ligatures = ,
+]{Latin Modern Mono}
 
 \setlength{\parindent}{0pt}
 \usepackage[german=quotes,autostyle]{csquotes}
