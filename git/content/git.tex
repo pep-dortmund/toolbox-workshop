@@ -89,7 +89,12 @@
 
 \begin{frame}{History}
   \begin{tikzpicture}
-    \graph [nodes=blue] {
+    \graph [
+      nodes={
+        blue,
+        node font=\ttfamily,
+      },
+    ] {
       "v1.2" [green, x=4],
       a <- b <- c <- d <- {e <- f, g [x=0.5]} <- h <- {i <- master [red], j <- foo [red]};
       "v1.2" -> e;

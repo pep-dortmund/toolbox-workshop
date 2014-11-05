@@ -68,8 +68,14 @@
 \begin{frame}{Funktionsweise}
   \begin{center}
     \begin{tikzpicture}
-      \graph [grow down, branch right sep] {
-        "all" -> "report.pdf" -> {
+      \graph [
+        grow down,
+        branch right sep,
+        nodes={
+          node font=\ttfamily,
+        },
+      ] {
+        "all" [x=3.5] -> "report.pdf" [x=3] -> {
           "report.tex",
           "plot.pdf" -> {
             "plot.py", "data.txt"
