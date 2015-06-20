@@ -1,0 +1,67 @@
+\PassOptionsToPackage{unicode}{hyperref}
+\documentclass[9pt]{beamer}
+
+\usetheme{TUDo}
+\usefonttheme{professionalfonts}
+
+\usepackage{fontspec}
+\usepackage{polyglossia}
+\setmainlanguage{german}
+
+\usepackage{graphicx}
+\usepackage{tikz}
+
+\title[Toolbox 2015]{Toolbox-Workshop 2015}
+\subtitle{Python, Unix-Shell, Make, Git, \LaTeX{}}
+\date{5.–16.~Oktober 2015}
+\institute[Pep et al.\ e.V.]{\includegraphics[height=0.5cm]{logos/pep.pdf}}
+\titlegraphic{../python/muon_plot.png}
+\author{PeP et al. e.\,V.}
+
+\begin{document}
+
+\maketitle
+
+\begin{frame}
+  \begin{center}
+  \Huge Praktikums-Versuche richtig auswerten!\\
+  \Large 5. – 9.~Oktober 2015, 13–17~Uhr
+  \end{center}
+  \begin{tikzpicture}[remember picture, overlay]
+    \tikzset{shift={(current page.center)}}
+    \node[anchor=center] at (-3,2) {%
+      \includegraphics[height=1cm]{logos/python.pdf}%
+    };
+    \node[anchor=center] at (3,2) {%
+      \includegraphics[height=1.25cm]{logos/git.png}%
+    };
+    \node[anchor=center] at (4,-2) {%
+      \includegraphics[height=1cm]{logos/numpy.png}%
+    };
+    \node[anchor=center] at (-2.5,-2) {%
+      \includegraphics[height=1cm]{logos/matplotlib.png}%
+    };
+    \node[anchor=center] at (0,-3.5) {%
+      \includegraphics[height=1.25cm]{logos/uncertainties.png}%
+    };
+  \end{tikzpicture}
+\end{frame}
+
+\begin{frame}
+  \begin{center}
+    \Large Wissenschaftliche Arbeiten verfassen mit \\[0.5\baselineskip]
+    \Huge \textrm{\LaTeX{}}\\[0.5\baselineskip]
+    \Large 12. – 16.~Oktober 2015, 13–17~Uhr
+  \end{center}
+\end{frame}
+
+\begin{frame}
+  \begin{center}
+    \LARGE
+    Software installieren\\[0.5\baselineskip]
+    → \textcolor{blue!70!black}{\url{http://toolbox.pep-dortmund.org/install.html}}\\[0.5\baselineskip]
+    Laptops mitbringen\\[0.5\baselineskip]
+    Umfrage ausfüllen
+  \end{center}
+\end{frame}
+\end{document}
