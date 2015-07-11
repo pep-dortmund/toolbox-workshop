@@ -1,4 +1,4 @@
-DOCUMENTS := exercises-latex exercises-toolbox git intro latex make python unix
+DOCUMENTS := exercises-latex exercises-toolbox git intro latex make python teaser-slides unix
 
 all:
 	for document in $(DOCUMENTS) ; do \
