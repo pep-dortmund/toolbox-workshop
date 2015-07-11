@@ -2,23 +2,27 @@
 \begin{frame}[fragile]{Chemische Formeln}
   \begin{Packages}
     \begin{lstlisting}
-      \usepackage[version=3]{mhchem}
+      \usepackage[
+        version=4,
+        math-greek=default,
+        text-greek=default,
+      ]{mhchem}
     \end{lstlisting}
   \end{Packages}
   \begin{CodeExample}{0.51}
     \begin{lstlisting}
-      \ce{H2O2}
-      \ce{^{227}_{90}Th+}
-      $c_{\ce{H2O}} = \SI{4184}{\joule\per\kilo\gram\kelvin}$
-      \ce{^{14}_6C -> ^{14}_7N  + e- + \bar{\mathup{\nu}}_e}
-      \ce{CO2 + C <=> 2CO}
+      $\ce{H2O2}$
+      $\ce{^{227}_{90}Th+}$
+      $c_{\ce{H2O}} = \SI{4184}{\joule\per\kilo\gram\per\kelvin}$
+      $\ce{^{14}_6C -> ^{14}_7N  + e- + \bar{\nu}_e}$
+      $\ce{CO2 + C <=> 2CO}$
     \end{lstlisting}
   \CodeResult
     \linespread{1.3}\selectfont
-    \ce{H2O2} \\
-    \ce{^{227}_{90}Th+} \\
+    $\ce{H2O2}$ \\
+    $\ce{^{227}_{90}Th+}$ \\
     $c_{\ce{H2O}} = \SI{4184}{\joule\per\kilo\gram\per\kelvin}$ \\[0.3\baselineskip]
-    \ce{^{14}_6C -> ^{14}_7N  + e- + \bar{\mathup{\nu}}_e} \\[0.3\baselineskip]
-    \ce{CO2 + C <=> 2CO}
+    $\ce{^{14}_6C -> ^{14}_7N  + e- + \bar{\nu}_e}$ \\[0.3\baselineskip]
+    $\ce{CO2 + C <=> 2CO}$
   \end{CodeExample}
 \end{frame}
