@@ -42,7 +42,6 @@
 \usepackage{mathtools}
 \usepackage{amssymb}
 \usepackage{xfrac}
-\usepackage[noss]{hepnicenames} % loads bm, before unicode-math
 \usepackage[
   math-style=ISO,
   bold-style=ISO,
@@ -276,28 +275,6 @@
             \Huge\color{TUgreen}#1
         \end{center}
     \end{frame}
-}
-
-%patch maybe for hepnames
-\RenewDocumentCommand \maybebm {m}
-{
-  \ensuremath{{{#1}}}
-}
-\RenewDocumentCommand \maybesf {m}
-{
-  \ensuremath{{#1}}
-}
-\RenewDocumentCommand \mayberm {m}
-{
-  \ensuremath{{\mathrm{#1}}}
-}
-\RenewDocumentCommand \maybeitrm {m}
-{
-  \ensuremath{{\mathrm{#1}}}
-}
-\RenewDocumentCommand \maybeitsubscript {m}
-{
-  \ensuremath{{#1}}
 }
 
 \NewDocumentCommand\setN{}{\mathbb{N}}
