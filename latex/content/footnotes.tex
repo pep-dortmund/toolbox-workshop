@@ -3,11 +3,15 @@
 \begin{frame}[fragile]{Fußnoten}
   \begin{CodeExample}{0.5}
     \begin{lstlisting}
-      In diesem Versuch benutzen wir
-      PMTs\footnote{Photo-Multiplier-Tubes}.
+      In diesem Versuch werden
+      PMTs\footnote{Photo-Multiplier-Tubes}
+      eingesetzt.
     \end{lstlisting}
     \CodeResult
-    In diesem Versuch benutzen wir PMTs\footnote{Photo-Multiplier-Tubes}.
+      In diesem Versuch werden
+      PMTs\footnote{Photo-Multiplier-Tubes}
+      eingesetzt.
+    \vspace{4cm}
   \end{CodeExample}
   \begin{itemize}
     \item Anpassung von Fußnoten mit dem Paket \texttt{footmisc}
@@ -18,7 +22,7 @@
     \begin{lstlisting}
       \begin{figure}
         \includegraphics[height=0.5cm]{pep.pdf}
-        \caption[Bla]{Bla\footnotemark}
+        \caption{Bla\protect\footnotemark}
       \end{figure}
       \footnotetext{Unsinnige Caption.}
     \end{lstlisting}
@@ -26,8 +30,8 @@
   \vspace{-1pt}
   \begin{itemize}
     \item \lstinline+\footnotemark+ an der Stelle wo die Fußnote sein soll
-    \item Bei \lstinline+\caption+ muss der Inhalt der Caption nocheinmal
-        ohne \lstinline+\footnotemark+ in \lstinline+[ ]+ gegeben werden
+    \item In einer \lstinline+\caption+ muss dem \lstinline+\footnotemark+ ein \lstinline+\protect+ vorangestellt werden.
     \item \lstinline+\footnotetext{...}+ außerhalb der Umgebung für den Text der Fußnote
+    \item Fußnoten in Abbildungen sollten vermieden werden.
   \end{itemize}
 \end{frame}
