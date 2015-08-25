@@ -51,11 +51,10 @@
 ]{unicode-math}
 \usepackage[retainorgcmds]{IEEEtrantools}
 
-\setmathfont{Latin Modern Math}
-
-\setmathfont[range={\mathscr,\mathbfscr}]{XITS Math}
-%\setmathfont[range={\mathcal,\mathbfcal},StylisticSet=1]{XITS Math}
-\setmathfont[range={\mathcal,\mathbfcal}]{Latin Modern Math}
+\setmathfont{Latin Modern Math}[version=normal]
+\setmathfont{XITS Math}[version=xits]
+\setmathfont{XITS Math}[version=xitsss1, StylisticSet=1]
+\mathversion{normal}
 
 % make bar horizontal, use \hslash for slashed h
 \let\hbar\relax
