@@ -1,4 +1,4 @@
-HEADER := $(addprefix ../common/, header.tex beamercolorthemeTUDo.sty beamerfontthemeTUDo.sty beamerinnerthemeTUDo.sty beamerouterthemeTUDo.sty beamerthemeTUDo.sty)
+HEADER := $(addprefix ../common/, header.tex packages.tex settings.tex commands.tex beamercolorthemeTUDo.sty beamerfontthemeTUDo.sty beamerinnerthemeTUDo.sty beamerouterthemeTUDo.sty beamerthemeTUDo.sty)
 
 DOCUMENT := $(shell basename "$$(pwd)")
 

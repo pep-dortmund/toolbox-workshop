@@ -1,0 +1,116 @@
+\PassOptionsToPackage{
+  unicode,
+  pdfusetitle,
+  colorlinks,
+  linkcolor=TUgreen,
+  urlcolor=TUorange,
+}{hyperref}
+\PassOptionsToPackage{
+  aux,
+}{rerunfilecheck}
+
+\documentclass[
+  9pt,
+]{beamer}
+\usetheme{TUDo}
+\usefonttheme{professionalfonts}
+
+\usepackage{polyglossia}
+\setmainlanguage{german}
+\setotherlanguages{english, french}
+
+\usepackage{fontspec}
+\setmainfont{Latin Modern Roman}[
+  SmallCapsFont = {Latin Modern Roman Caps},
+  Ligatures = TeX,
+]
+\setsansfont{Latin Modern Sans}[
+  Ligatures = TeX,
+]
+\setmonofont{Latin Modern Mono}[
+  SmallCapsFont = {Latin Modern Mono Caps},
+  Ligatures = ,
+]
+
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{amssymb}
+
+\usepackage[
+  math-style=ISO,
+  bold-style=ISO,
+  sans-style=italic,
+  nabla=upright,
+  partial=upright,
+]{unicode-math}
+\setmathfont{Latin Modern Math}[version=normal]
+\setmathfont{XITS Math}[version=xits]
+\setmathfont{XITS Math}[version=xitsss1, StylisticSet=1]
+\mathversion{normal}
+
+\usepackage[
+  locale=DE,
+  separate-uncertainty=true,
+  per-mode=symbol-or-fraction,
+]{siunitx}
+\AtBeginDocument{\sisetup{math-rm=\mathrm, text-rm=\rmfamily}}
+
+\usepackage[
+  version=4,
+  math-greek=default,
+  text-greek=default,
+]{mhchem}
+
+\usepackage[
+  german=quotes,
+  autostyle,
+]{csquotes}
+\usepackage{eurosym}
+\usepackage{xfrac}
+
+\usepackage{booktabs}
+\usepackage{tabulary}
+\usepackage{threeparttable}
+\usepackage{tabu}
+
+\usepackage{graphicx}
+\usepackage{grffile}
+
+\usepackage[
+  compatibility=false,
+]{caption}
+\usepackage{subcaption}
+
+\usepackage{xcolor}
+\usepackage{metalogo}
+\usepackage{pdflscape}
+
+\usepackage{fancyvrb}
+\usepackage{listings}
+\usepackage{lstautogobble}
+
+\usepackage[
+  backend=biber,
+  sorting=nyt,
+  sortlocale=de_DE.UTF-8,
+]{biblatex}
+
+\usepackage[
+  listings,
+  theorems,
+  many,
+]{tcolorbox}
+
+\usepackage{tikz}
+\usetikzlibrary{
+  arrows,
+    arrows.meta,
+  graphs,
+  positioning,
+  shadows,
+  shapes,
+}
+
+\usepackage[
+  shortcuts,
+]{extdash}
