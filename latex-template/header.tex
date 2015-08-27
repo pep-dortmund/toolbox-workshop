@@ -20,37 +20,57 @@
 
 % Fonteinstellungen
 \usepackage{fontspec}
-\defaultfontfeatures{Ligatures=TeX}
 
 \usepackage[
-  math-style=ISO,    % \
-  bold-style=ISO,    % |
-  sans-style=italic, % | ISO-Standard folgen
-  nabla=upright,     % |
-  partial=upright,   % /
+  math-style=ISO,    % ┐
+  bold-style=ISO,    % │
+  sans-style=italic, % │ ISO-Standard folgen
+  nabla=upright,     % │
+  partial=upright,   % ┘
+  warnings-off={           % ┐
+    mathtools-colon,       % │ unnötige Warnungen ausschalten
+    mathtools-overbracket, % │
+  },                       % ┘
 ]{unicode-math}
 
 \setmathfont{Latin Modern Math}
-\setmathfont[range={\mathscr, \mathbfscr}]{XITS Math}
+\setmathfont{XITS Math}[range={scr, bfscr}]
+\setmathfont{XITS Math}[range={cal, bfcal}, StylisticSet=1]
+
+% Zahlen und Einheiten
+\usepackage[
+  locale=DE,                 % deutsche Einstellungen
+  separate-uncertainty=true, % immer Fehler mit \pm
+  per-mode=reciprocal,       % ^-1 für inverse Einheiten
+]{siunitx}
+
+% chemische Formeln
+\usepackage[
+  version=4,
+  math-greek=default, % ┐ mit unicode-math zusammenarbeiten
+  text-greek=default, % ┘
+]{mhchem}
 
 % richtige Anführungszeichen
 \usepackage[autostyle]{csquotes}
 
-% Zahlen und Einheiten
-\usepackage[
-  locale=DE,                   % deutsche Einstellungen
-  separate-uncertainty=true,   % Immer Fehler mit \pm
-  per-mode=symbol-or-fraction, % m/s im Text, sonst Brüche
-]{siunitx}
-
-% chemische Formeln
-\usepackage[version=3]{mhchem}
-
 % schöne Brüche im Text
 \usepackage{xfrac}
 
+% Standardplatzierung für Floats einstellen
+\usepackage{float}
+\floatplacement{figure}{htbp}
+\floatplacement{table}{htbp}
+
 % Floats innerhalb einer Section halten
-\usepackage[section, below]{placeins}
+\usepackage[
+  section, % Floats innerhalb der Section halten
+  below,   % unterhalb der Section aber auf der selben Seite ist ok
+]{placeins}
+
+% Seite drehen für breite Tabellen
+\usepackage{pdflscape}
+
 % Captions schöner machen.
 \usepackage[
   labelfont=bf,        % Tabelle x: Abbildung y: ist jetzt fett
@@ -65,29 +85,23 @@
 % größere Variation von Dateinamen möglich
 \usepackage{grffile}
 
-% Standardplatzierung für Floats einstellen
-\usepackage{float}
-\floatplacement{figure}{htbp}
-\floatplacement{table}{htbp}
-
 % schöne Tabellen
 \usepackage{booktabs}
 
-% Seite drehen für breite Tabellen
-\usepackage{pdflscape}
-
 % Literaturverzeichnis
-\usepackage{biblatex}
+\usepackage[
+  backend=biber,
+]{biblatex}
 % Quellendatenbank
 \addbibresource{lit.bib}
 \addbibresource{programme.bib}
 
 % Hyperlinks im Dokument
 \usepackage[
-  unicode,
+  unicode,        % Unicode in PDF-Attributen erlauben
   pdfusetitle,    % Titel, Autoren und Datum als PDF-Attribute
-  pdfcreator={},  % PDF-Attribute säubern
-  pdfproducer={}, % "
+  pdfcreator={},  % ┐ PDF-Attribute säubern
+  pdfproducer={}, % ┘
 ]{hyperref}
 % erweiterte Bookmarks im PDF
 \usepackage{bookmark}
@@ -102,10 +116,10 @@
     \href{mailto:authorA@udo.edu}{authorA@udo.edu}
   }{}%
   \texorpdfstring{\and}{, }
-  AUTOR B
+  AUTOR B%
   \texorpdfstring{
     \\
     \href{mailto:authorB@udo.edu}{authorB@udo.edu}
-  }{}
+  }{}%
 }
 \publishers{TU Dortmund – Fakultät Physik}
