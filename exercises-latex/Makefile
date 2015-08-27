@@ -1,4 +1,4 @@
-CATEGORIES := 01-helloworld 02-input 03-lists 04-titlepage 05-structure 06-math 07-siunitx 09-tables 10-references 11-biblatex
+CATEGORIES := 01-helloworld 02-input 03-lists 04-titlepage 05-structure 06-math 07-siunitx 08-figures 09-tables 10-references 11-biblatex
 
 all: package
 
