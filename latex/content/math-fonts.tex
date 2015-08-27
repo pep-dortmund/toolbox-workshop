@@ -5,21 +5,21 @@
   \vspace{1em}
   \begin{CodeExample}{0.83}
     \begin{lstlisting}
-      \mathcal{IA} \mathbfcal{IA} % Latin Modern
-      \mathcal{IA} \mathbfcal{IA} % XITS Math, StylisticSet=1
-      \mathscr{IA} \mathbfscr{IA} % XITS Math
+      \symcal{IA} \symbfcal{IA} % Latin Modern
+      \symcal{IA} \symbfcal{IA} % XITS Math, StylisticSet=1
+      \symscr{IA} \symbfscr{IA} % XITS Math
     \end{lstlisting}
   \CodeResult
     \Umathordordspacing\textstyle=4mu
-                           $\mathcal{I A} \mathbfcal{I A}$ \\
-    {\mathversion{xitsss1} $\mathcal{I A} \mathbfcal{I A}$} \\
-    {\mathversion{xits}    $\mathscr{I A} \mathbfscr{I A}$}
+                           $\symcal{I A} \symbfcal{I A}$ \\
+    {\mathversion{xitsss1} $\symcal{I A} \symbfcal{I A}$} \\
+    {\mathversion{xits}    $\symscr{I A} \symbfscr{I A}$}
   \end{CodeExample}
 
   \begin{block}{Mathe-Fonts einstellen}
     \begin{lstlisting}
-      \setmathfont[range={\mathcal,\mathbfcal},StylisticSet=1]{XITS Math}
-      \setmathfont[range={\mathscr,\mathbfscr}]{XITS Math}
+      \setmathfont{XITS Math}[range={scr, bfscr}]
+      \setmathfont{XITS Math}[range={cal, bfcal}, StylisticSet=1]
     \end{lstlisting}
   \end{block}
 \end{frame}

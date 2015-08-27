@@ -312,21 +312,21 @@
 }
   \begin{CodeExample}{0.70}
     \begin{lstlisting}
-      x \alpha \mathup{x \alpha}
-      \mathbf{x\alpha}
-      \mathbfsf{x \alpha}
-      \mathbb{R N 1 0 x}
-      \mathcal{I A O} \mathbfcal{I A O}
-      \mathfrak{A B c} \mathbffrak{A B}
+      x \alpha \symup{x \alpha}
+      \symbf{x\alpha}
+      \symbfsf{x \alpha}
+      \symbb{R N 1 0 x}
+      \symcal{I A O} \symbfcal{I A O}
+      \symfrak{A B c} \symbffrak{A B}
     \end{lstlisting}
   \CodeResult
     \Umathordordspacing\textstyle=4mu
-    $x \alpha \mathup{x \alpha}$ \\
-    $\mathbf{x\alpha}$ \\
-    $\mathbfsf{x \alpha}$ \\
-    $\mathbb{R N 1 0 x}$ \\
-    $\mathcal{I A O} \mathbfcal{I A O}$ \\
-    $\mathfrak{A B c} \mathbffrak{A B c}$
+    $x \alpha \symup{x \alpha}$ \\
+    $\symbf{x\alpha}$ \\
+    $\symbfsf{x \alpha}$ \\
+    $\symbb{R N 1 0 x}$ \\
+    $\symcal{I A O} \symbfcal{I A O}$ \\
+    $\symfrak{A B c} \symbffrak{A B c}$
   \end{CodeExample}
 \end{frame}
 
@@ -439,16 +439,16 @@ $\left(\frac{1}{2}\right) \qquad \left(\frac{1}{2}\right.$ \\\smallskip
     \item Mathematikmodus: alles erstmal Variable
     \item Alles, was keine Variable ist: aufrecht
       \begin{itemize}
-        \item Konstanten: $\mathup{e}$, $\mathup{i}$, $\mathup{\pi}$
+        \item Konstanten: $\symup{e}$, $\symup{i}$, $\symup{\pi}$
           \smallskip
           \begin{lstlisting}
-            $\mathup{e}$, $\mathup{i}$, $\mathup{\pi}$
+            $\symup{e}$, $\symup{i}$, $\symup{\pi}$
           \end{lstlisting}
           \medskip
-        \item Infinitesimales: $\mathup{d}x$
+        \item Infinitesimales: $\symup{d}x$
           \smallskip
           \begin{lstlisting}
-            $\mathup{d}x$
+            $\symup{d}x$
           \end{lstlisting}
           \medskip
         \item Indizes wie \enquote{min} oder \enquote{max}
@@ -462,22 +462,22 @@ $\left(\frac{1}{2}\right) \qquad \left(\frac{1}{2}\right.$ \\\smallskip
 
 \begin{frame}[fragile]{Konventionen: Variablen, Zahlen, Einheiten, Indizes}
   \begin{itemize}
-    \item $\mathrm{d}x$ wird durch kleines Leerzeichen (\verb+\,+) vom Integranden abgetrennt
-    \item \verb+\,+ auch zwischen verschiedenen $\mathup{d}x_i$
+    \item $\symup{d}x$ wird durch kleines Leerzeichen (\verb+\,+) vom Integranden abgetrennt
+    \item \verb+\,+ auch zwischen verschiedenen $\symup{d}x_i$
   \end{itemize}
 
   \begin{equation*}
-    \int_0^1 \int_0^{\mathup{\pi}} \int_0^{2 \mathup{\pi}}
+    \int_0^1 \int_0^{\symup{\pi}} \int_0^{2 \symup{\pi}}
     r^2 \sin(\vartheta) \,
-    \mathup{d}\phi \, \mathup{d}\vartheta \, \mathup{d}r
-    = \frac{4}{3} \mathup{\pi}
+    \symup{d}\phi \, \symup{d}\vartheta \, \symup{d}r
+    = \frac{4}{3} \symup{\pi}
   \end{equation*}
 
   \vspace{1em}
   \begin{lstlisting}
-    \int_0^1   \int_0^{\mathup{\pi}}   \int_0^{2 \mathup{\pi}}
+    \int_0^1   \int_0^{\symup{\pi}}   \int_0^{2 \symup{\pi}}
     r^2 \sin(\vartheta)
-    \, \mathup{d}\varphi \, \mathup{d}\vartheta \, \mathup{d}r
-    = \frac{4}{3} \mathup{\pi}
+    \, \symup{d}\varphi \, \symup{d}\vartheta \, \symup{d}r
+    = \frac{4}{3} \symup{\pi}
   \end{lstlisting}
 \end{frame}

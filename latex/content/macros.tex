@@ -1,7 +1,7 @@
 \subsection{Makros}
 
 \begin{frame}[fragile]{Eigene \LaTeX-Kommandos}
-  Nach 20 Mal \lstinline+\mathup{e}+ oder \lstinline+\mathup{i}+ schreiben hat man keine Lust mehr.
+  Nach 20 Mal \lstinline+\symup{e}+ oder \lstinline+\symup{i}+ schreiben hat man keine Lust mehr.
   \vspace{1em}
   \begin{block}{Kommandostruktur}
     \begin{lstlisting}
@@ -21,12 +21,12 @@
 \begin{frame}[fragile]{Beispiele}
   \begin{CodeExample}{0.79}[Code][Verwendung]
     \begin{lstlisting}
-      \newcommand*\I{\mathup{i}}
+      \newcommand*\I{\symup{i}}
       \newcommand*\t[1]{\text{#1}}
-      \newcommand*\dd[2]{\frac{\mathup{d}#1}{\mathup{d}#2}}
+      \newcommand*\dd[2]{\frac{\symup{d}#1}{\symup{d}#2}}
 
       % Überschreiben bereits belegter Kommandos
-      \renewcommand*\v[1]{\mathbf{#1}}
+      \renewcommand*\v[1]{\symup{#1}}
 
       \newenvironment*{eqn}{\begin{equation}}{\end{equation}\ignorespacesafterend}
     \end{lstlisting}
@@ -95,8 +95,8 @@
 % \begin{frame}[fragile]{Mehr Beispiele}
 %   \begin{block}{Code}
 %     \begin{lstlisting}
-%       \RenewDocumentCommand\v{m}{\mathbf{#1}}
-%       \NewDocumentCommand\setN{}{\mathbb{N}}
+%       \RenewDocumentCommand\v{m}{\symbf{#1}}
+%       \NewDocumentCommand\setN{}{\symbb{N}}
 %       \NewDocumentCommand\grad{}{\operatorname{grad}} % rm-font und passende Abstände im Mathemodus
 %       \AtBeginDocument % wegen unicode-math
 %       {
