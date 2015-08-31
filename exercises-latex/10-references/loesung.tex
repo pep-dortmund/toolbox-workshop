@@ -1,4 +1,6 @@
-\documentclass[captions=tableheading]{scrartcl}
+\documentclass[
+  captions=tableheading,
+]{scrartcl}
 
 \usepackage[aux]{rerunfilecheck}
 
@@ -6,17 +8,22 @@
 \setmainlanguage{german}
 
 \usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathtools}
 
 \usepackage{fontspec}
 
 \usepackage{float}
-\usepackage[section, below]{placeins}
+\floatplacement{figure}{htbp}
+\floatplacement{table}{htbp}
+
+\usepackage[
+  section,
+  below,
+]{placeins}
 
 \usepackage[unicode]{hyperref}
 \usepackage{bookmark}
-
-\floatplacement{figure}{htbp}
-\floatplacement{table}{htbp}
 
 \begin{document}
 
