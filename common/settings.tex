@@ -1,0 +1,56 @@
+\setlength{\parindent}{0pt}
+\setbeamertemplate{caption}[numbered]
+\setbeamertemplate{bibliography item}[text]
+
+% remove space before eqn in block
+\addtobeamertemplate{block begin}{\setlength\abovedisplayskip{-2pt}}
+
+\tcbset{
+  noparskip,
+  colback=white,
+  colframe=TUgreen,
+  boxsep=1mm,
+  coltext=black,
+  coltitle=black,
+  left=0mm,
+  right=0mm,
+  top=0.5mm,
+  toptitle=-1mm,
+  bottom=0mm,
+  bottomtitle=-1mm,
+  before upper={\raggedright\setlength\abovedisplayskip{-2pt}},
+  before title={\raggedright},
+}
+
+\lstset{
+  autogobble,
+  language={[LaTeX]TeX},
+  basicstyle=\ttfamily,
+  texcsstyle=*\color{red},
+  keywordstyle=\color{cyan},
+  commentstyle=\color{darkgray},
+  otherkeywords={$,$, &, \{, \}, \[, \],  ^, _},
+  morekeywords={},
+  moretexcs={
+    setmainlanguage, text, num, SI, si, kilo, gram, befehl, subject, titlehead, publishers, textenglish, textfrench,
+    metre, per, second, squared, micro, subtitle, maketitle, tableofcontents,
+    subsection, subsubsection, part, chapter, paragraph, subparagraph,
+    iint, iiint, includegraphics, addbibresource, printbibliography,
+    OverfullCenter, ExplSyntaxOn, ExplSyntaxOff, NewDocumentCommand,
+    enquote, selectlanguage, textcquote,
+    setmainfont, setsansfont, setmonofont,
+    setmathfont, mathscr, mathbfscr, mathcal, mathbfcal, DeclareSymbolFont, protected, mathbb, numexpr, symAMSb, vDash, coloneq, lblkbrbrak, rblkbrbrak, DeclareMathSymbol,
+    symbf, symup, symbfup, symit, symbfit, symsf, symsfup, symsfit, symbfsf, symbfsfup, symbfsfit, symtt, symbb, symbbit, symscr, symbfscr, symcal, symbfcal, symfrak, symbffrak,
+    omicron, varkappa, Alpha, Beta, Epsilon, Zeta, Eta, Iota, Kappa, Mu, Nu, Omicron, Rho, Tau, Chi, beth, gimel, eth,
+    square, increment, setotherlanguages, mathup, meter, joule, kelvin, FloatBarrier, ce,
+    toprule, midrule, bottomrule, eqref, sisetup, dd, href, smallsetminus, implies, sime, nequiv, ncong, napprox, nsim, nexists, nni, nsime, diameter,
+    cramped, mathring, dddot, ddddot, operatorname, DeclareMathOperator, xyz, Xyz, sideset, mathclap, mathfrak, mathbfsf, mathbffrak,
+    lvert, rvert, lVert, rVert, middle, subref, intertext, shortintertext, newton, floatplacement, ohm, nano, ignorespacesafterend, Kommandoname, Command,
+    defaultfontfeatures, texorpdfstring, sfrac, url,
+  },
+  columns=fullflexible,
+  breaklines=true,
+  keepspaces=true,
+  aboveskip=-0.2em,
+  belowskip=-0.2em,
+}
