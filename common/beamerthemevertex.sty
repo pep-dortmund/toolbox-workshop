@@ -1,4 +1,3 @@
-
 % Vertex beamer theme
 
 \ProvidesPackage{beamerthemevertex}[2014/03/31]
@@ -11,7 +10,7 @@
 \ProcessOptions
 
 % Table of contents
-\useoutertheme[subsection=true,shadow]{miniframes}
+\useoutertheme[subsection=true, shadow]{miniframes}
 \setbeamertemplate{section in toc}[sections unnumberd]
 \setbeamertemplate{subsection in toc}[subsections unnumbered]
 
@@ -22,14 +21,14 @@
 \setlength{\parskip}{0.5em}
 
 % Colors
-\definecolor{vertexDarkGrey}{rgb}{0.3019607844,0.2803921571,0.258823530}
-\definecolor{vertexLightGrey}{rgb}{0.833333333,0.8117647064,0.790196078}
+\definecolor{vertexDarkGrey}{rgb}{0.3019607844, 0.2803921571, 0.258823530}
+\definecolor{vertexLightGrey}{rgb}{0.833333333, 0.8117647064, 0.790196078}
 \colorlet{vertexDarkRed}{red!70!black}
 \setbeamercolor{normal text}{fg=vertexDarkGrey}
 \setbeamercolor{math text}{parent=normal text}
 \setbeamercolor{structure}{fg=vertexDarkGrey}
 \setbeamercolor{palette1}{fg=white, bg=vertexDarkGrey}
-\setbeamercolor{palette2}{fg=vertexDarkGrey,bg=vertexLightGrey}
+\setbeamercolor{palette2}{fg=vertexDarkGrey, bg=vertexLightGrey}
 \setbeamercolor{title page}{parent=palette2}
 \setbeamercolor{title}{parent=normal text}
 \setbeamercolor{subtitle}{parent=normal text}
@@ -45,24 +44,32 @@
 \setbeamercolor{alerted text}{fg=vertexDarkRed}
 
 % Fonts
-\usepackage{fontspec}%
+\usepackage{fontspec}
 \usefonttheme{professionalfonts}
-\newfontfamily\Light{Source Sans Pro Light}%
-\newfontfamily\Regular{Source Sans Pro}%
-\newfontfamily\Bold{Source Sans Pro Bold}%
-\setsansfont{Source Sans Pro}%
-\setmonofont[Scale=MatchLowercase]{Source Code Pro}%
-\setbeamerfont{title}{family=\Light,size=\fontsize{30}{30}}
-\setbeamerfont{subtitle}{family=\Light,size=\fontsize{18}{20}}
+\newfontfamily\Light{Source Sans Pro Light}
+\newfontfamily\Regular{Source Sans Pro}
+\newfontfamily\Bold{Source Sans Pro Bold}
+\setsansfont{Source Sans Pro}
+\setmonofont[Scale=MatchLowercase]{Source Code Pro}
+\setbeamerfont{title}{family=\Light, size=\fontsize{30}{30}}
+\setbeamerfont{subtitle}{family=\Light, size=\fontsize{18}{20}}
 \setbeamerfont{date}{size=\fontsize{10}{12}}
 \setbeamerfont{author}{size=\fontsize{16}{18}}
 \setbeamerfont{institute}{size=\fontsize{14}{16}}
 \setbeamerfont{section title}{size=\LARGE}
-\setbeamerfont{frametitle}{family=\Regular,size=\Large}
-\setbeamerfont{block title}{family=\Regular,size=\large}
+\setbeamerfont{frametitle}{family=\Regular, size=\Large}
+\setbeamerfont{block title}{family=\Regular, size=\large}
 \setbeamerfont{caption name}{family=\Regular}
 \setbeamerfont{description item}{series=\bfseries}
 \setbeamerfont{enumerate item}{series=\bfseries}
+
+% Captions
+\setbeamertemplate{caption}{\insertcaption}
+\setbeamertemplate{caption label separator}{:~}
+\setbeamerfont{caption}{size=\small}
+
+% Headline
+\setbeamertemplate{headline}{}
 
 % Titlepage
 \def\maketitle{\ifbeamer@inframe\titlepage\else\frame[plain]{\titlepage}\fi}
@@ -147,13 +154,4 @@
 \setbeamertemplate{block end}
 {\end{beamercolorbox}\vskip\smallskipamount}
 
-% Captions
-\setbeamertemplate{caption}{\insertcaption}
-\setbeamertemplate{caption label separator}{:~}
-\setbeamerfont{caption}{size=\small}
-
-% Headline
-\setbeamertemplate{headline}{}
-
-\mode
-<all>
+\mode<all>
