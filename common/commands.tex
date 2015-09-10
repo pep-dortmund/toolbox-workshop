@@ -169,7 +169,41 @@
   \setlength\abovedisplayskip{8.0pt plus 4.0pt minus 4.0pt}
 }
 
-\ExplSyntaxOff
+\makeatletter
+\seteverylogo
+{
+  \setlogodrop{0.7ex}
+  \setLaTeXa{{\scshape a}}
+  \fp_compare:nNnTF {\f@size} > {10}
+  {
+    \setlogokern{La}{-0.33em}
+  }
+  {
+    \fp_compare:nNnTF {\f@size} < {10}
+    {
+      \setlogokern{La}{-0.4em}
+    }
+    {
+      \setlogokern{La}{-0.36em}
+    }
+  }
+}
+\makeatother
 
-\let\oldlatex\LaTeX
-\renewcommand\LaTeX{\latinmodernrm{\oldlatex}}
+\let\TeXold=\TeX
+\def\TeX{\latinmodernrm{\TeXold}}
+\let\LaTeXold=\LaTeX
+\def\LaTeX{\latinmodernrm{\LaTeXold}}
+\let\XeTeXold=\XeTeX
+\def\XeTeX{\latinmodernrm{\XeTeXold}}
+\let\XeLaTeXold=\XeLaTeX
+\def\XeLaTeX{\latinmodernrm{\XeLaTeXold}}
+\let\LuaTeXold=\LuaTeX
+\def\LuaTeX{\latinmodernrm{\LuaTeXold}}
+\let\LuaLaTeXold=\LuaLaTeX
+\def\LuaLaTeX{\latinmodernrm{\LuaLaTeXold}}
+\def\pdfTeX{\latinmodernrm{pdf\TeX}}
+\def\BibTeX{\latinmodernrm{\textsc{Bib}\TeX}}
+\def\BibLaTeX{\latinmodernrm{Bib\LaTeX}}
+
+\ExplSyntaxOff
