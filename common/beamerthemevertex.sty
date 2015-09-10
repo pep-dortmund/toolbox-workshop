@@ -144,7 +144,11 @@
       \insertshortauthor
     \end{beamercolorbox}
     \begin{beamercolorbox}[wd=.6\paperwidth, ht=1.8em, dp=1em, center]{}
-      \insertshorttitle{}:~\insertsection
+      \insertshorttitle
+      \ifx\insertsection\@empty
+      \else
+        :~\insertsection
+      \fi
     \end{beamercolorbox}
   \fi
   \begin{beamercolorbox}[wd=.2\paperwidth, ht=1.8em, dp=1em, right, rightskip=1em]{}
