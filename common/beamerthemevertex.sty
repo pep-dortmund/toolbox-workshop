@@ -2,6 +2,8 @@
 
 \ProvidesPackage{beamerthemevertex}[2014/03/31]
 
+\usepackage{expl3}
+
 \mode<presentation>
 
 % Process options
@@ -71,87 +73,103 @@
 % Headline
 \setbeamertemplate{headline}{}
 
+\ExplSyntaxOn
+
 % Titlepage
-\def\maketitle{\ifbeamer@inframe\titlepage\else\frame[plain]{\titlepage}\fi}
-\def\titlepage{\usebeamertemplate{title page}}
-\setbeamertemplate{title page}
-{%
+\def\maketitle
+{
+  \ifbeamer@inframe
+    \titlepage
+  \else
+    \frame[plain]{\titlepage}
+  \fi
+}
+\def\titlepage
+{
+  \usebeamertemplate{title~page}
+}
+\setbeamertemplate{title~page}
+{
 	\begin{minipage}[b][\paperheight]{\textwidth}
-    \centering%
-    \begin{beamercolorbox}[wd=\paperwidth,ht=12em,dp=2em]{title page}%
-      \centering%
-      \ifx\inserttitle\@empty%
-      \else%
-      {\usebeamerfont{title}\inserttitle\par}%
-      \fi%
-      \ifx\insertsubtitle\@empty%
-      \else%
+    \centering
+    \begin{beamercolorbox}[wd=\paperwidth, ht=12em, dp=2em]{title~page}
+      \centering
+      \ifx\inserttitle\@empty
+      \else
+        {\usebeamerfont{title}\inserttitle\par}
+      \fi
+      \ifx\insertsubtitle\@empty
+      \else
         \vspace{6mm}
-        {\usebeamerfont{subtitle}\insertsubtitle\par}%
-      \fi%
-    \end{beamercolorbox}%
-    \ifx\insertauthor\@empty%
-    \else%
-      \vspace*{5mm}%
-      {\usebeamerfont{author}\insertauthor\par}%
-    \fi%
-    \ifx\insertinstitute\@empty%
-    \else%
-      \vspace*{5mm}%
-      {\usebeamerfont{institute}\insertinstitute\par}%
-    \fi%
+        {\usebeamerfont{subtitle}\insertsubtitle\par}
+      \fi
+    \end{beamercolorbox}
+    \ifx\insertauthor\@empty
+    \else
+      \vspace*{5mm}
+      {\usebeamerfont{author}\insertauthor\par}
+    \fi
+    \ifx\insertinstitute\@empty
+    \else
+      \vspace*{5mm}
+      {\usebeamerfont{institute}\insertinstitute\par}
+    \fi
     \vfill
-    \ifx\insertdate\@empty%
-    \else%
-      {\usebeamerfont{date}\usebeamercolor[fg]{date}\insertdate\par}%
-    \fi%
-    \vspace{10mm}%
+    \ifx\insertdate\@empty
+    \else
+      {\usebeamerfont{date}\usebeamercolor[fg]{date}\insertdate\par}
+    \fi
+    \vspace{10mm}
 	\end{minipage}
 }
 
 % Frametitle
 \setbeamertemplate{frametitle}
-{%
-\nointerlineskip % This one's tricky
-\begin{beamercolorbox}[wd=\paperwidth,leftskip=0.3cm,rightskip=0.3cm,ht=3ex,dp=1.5ex]{frametitle}
-  \usebeamerfont{frametitle}{\setbeamercolor{math text}{parent=palette1}\insertframetitle}%
-\end{beamercolorbox}
+{
+  \nointerlineskip % This one's tricky
+  \begin{beamercolorbox}[wd=\paperwidth, leftskip=0.3cm, rightskip=0.3cm, ht=3ex, dp=1.5ex]{frametitle}
+    \usebeamerfont{frametitle}{\setbeamercolor{math~text}{parent=palette1}\insertframetitle}
+  \end{beamercolorbox}
 }
 
 % Footline
 \usenavigationsymbolstemplate{}
 \setbeamertemplate{footline}
-{%
-\leavevmode%
-\if@simplefootline%
-  \hfill
-\else%
-  \begin{beamercolorbox}[wd=.2\paperwidth, ht=1.8em, dp=1em, left, leftskip=1em]{normal text}%
-  \insertshortauthor%
-  \end{beamercolorbox}%
-  \begin{beamercolorbox}[wd=.6\paperwidth, ht=1.8em, dp=1em, center]{}%
-  \insertshorttitle: \insertsection%
-  \end{beamercolorbox}%
-\fi%
-\begin{beamercolorbox}[wd=.2\paperwidth, ht=1.8em, dp=1em, right, rightskip=1em]{}%
-\insertframenumber{} / \inserttotalframenumber%
-\end{beamercolorbox}%
+{
+  \leavevmode
+  \if@simplefootline
+    \hfill
+  \else
+    \begin{beamercolorbox}[wd=.2\paperwidth, ht=1.8em, dp=1em, left, leftskip=1em]{normal text}
+      \insertshortauthor
+    \end{beamercolorbox}
+    \begin{beamercolorbox}[wd=.6\paperwidth, ht=1.8em, dp=1em, center]{}
+      \insertshorttitle{}:~\insertsection
+    \end{beamercolorbox}
+  \fi
+  \begin{beamercolorbox}[wd=.2\paperwidth, ht=1.8em, dp=1em, right, rightskip=1em]{}
+    \insertframenumber{}~/~\inserttotalframenumber
+  \end{beamercolorbox}
 }
 
 % Blocks
-\setbeamertemplate{block begin}
-{%
-  \setbeamercolor{item}{parent=block body}
-  \par\vskip\medskipamount%
-  \begin{beamercolorbox}[sep=.5ex,dp=0.6ex,leftskip=0.5ex,rightskip=0.5ex]{block title}
-    \usebeamerfont*{block title}\insertblocktitle%
-  \end{beamercolorbox}%
-  {\parskip0pt\par}%
-  {\nointerlineskip\vskip-0.5pt}%
-  \usebeamerfont{block body}%
-  \begin{beamercolorbox}[sep=.5ex,dp=0.4ex,leftskip=0.5ex,rightskip=0.5ex,vmode]{block body}%
+\setbeamertemplate{block~begin}
+{
+  \setbeamercolor{item}{parent=block~body}
+  \par\vskip\medskipamount
+  \begin{beamercolorbox}[sep=.5ex, dp=0.6ex, leftskip=0.5ex, rightskip=0.5ex]{block title}
+    \usebeamerfont*{block~title}\insertblocktitle
+  \end{beamercolorbox}
+  {\parskip0pt\par}
+  {\nointerlineskip\vskip-0.5pt}
+  \usebeamerfont{block~body}
+  \begin{beamercolorbox}[sep=.5ex, dp=0.4ex, leftskip=0.5ex, rightskip=0.5ex, vmode]{block body}
 }
-\setbeamertemplate{block end}
-{\end{beamercolorbox}\vskip\smallskipamount}
+\setbeamertemplate{block~end}
+{
+  \end{beamercolorbox}\vskip\smallskipamount
+}
+
+\ExplSyntaxOff
 
 \mode<all>
