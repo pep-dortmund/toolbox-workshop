@@ -13,7 +13,6 @@
   9pt,
 ]{beamer}
 \usetheme{vertex}
-\usefonttheme{professionalfonts}
 
 \usepackage{polyglossia}
 \setmainlanguage{german}
@@ -22,15 +21,11 @@
 \usepackage{fontspec}
 \setmainfont{Latin Modern Roman}[
   SmallCapsFont = {Latin Modern Roman Caps},
-  Ligatures = TeX,
 ]
-\setsansfont{Latin Modern Sans}[
-  Ligatures = TeX,
-]
-\setmonofont{Latin Modern Mono}[
-  SmallCapsFont = {Latin Modern Mono Caps},
-  Ligatures = ,
-]
+\newfontfamily{\latinmodernsans}{Latin Modern Sans}
+\DeclareTextFontCommand{\latinmodernsf}{\latinmodernsans}
+\newfontfamily{\latinmodernmono}{Latin Modern Mono}
+\DeclareTextFontCommand{\latinmoderntt}{\latinmodernmono}
 
 \usepackage{amsmath}
 \usepackage{mathtools}

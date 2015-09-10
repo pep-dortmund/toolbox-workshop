@@ -84,6 +84,8 @@
 \makeatletter
 \NewDocumentEnvironment {EmulateArticle} {} {
   \rmfamily
+  \let\textsf=\latinmodernsf
+  \let\texttt=\latinmoderntt
 
   \setbeamercolor{item}{fg=black}
   \setbeamercolor{itemize/enumerate~body}{fg=black}
