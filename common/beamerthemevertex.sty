@@ -94,7 +94,8 @@
 }
 \setbeamertemplate{title~page}
 {
-	\begin{minipage}[b][\paperheight]{\textwidth}
+  \nointerlineskip % This one's tricky
+  \begin{minipage}[b][\paperheight]{\textwidth}
     \centering
     \begin{beamercolorbox}[wd=\paperwidth, ht=12em, dp=2em]{title~page}
       \centering
@@ -124,7 +125,7 @@
       {\usebeamerfont{date}\usebeamercolor[fg]{date}\insertdate\par}
     \fi
     \vspace{10mm}
-	\end{minipage}
+  \end{minipage}
 }
 
 % Frametitle
