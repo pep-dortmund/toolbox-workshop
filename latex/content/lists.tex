@@ -20,15 +20,17 @@
       \end{itemize}
     \end{lstlisting}
   \CodeResult
-    \begin{itemize}
-      \item Punkt 1
-      \item Punkt 2
-        \begin{itemize}
-          \item Unterpunkt 1
-          \item Unterpunkt 2
-        \end{itemize}
-      \item[→] Punkt 3
-    \end{itemize}
+    \begin{minipage}[c][9\baselineskip][c]{\textwidth}
+      \begin{itemize}
+        \item Punkt 1
+        \item Punkt 2
+          \begin{itemize}
+            \item Unterpunkt 1
+            \item Unterpunkt 2
+          \end{itemize}
+        \item[→] Punkt 3
+      \end{itemize}
+    \end{minipage}
   \end{CodeExample}
 \end{frame}
 
@@ -47,15 +49,17 @@
       \end{enumerate}
     \end{lstlisting}
   \CodeResult
-    \begin{enumerate}
-      \item Punkt 1
-      \item Punkt 2
-        \begin{enumerate}
-          \item Unterpunkt 1
-          \item Unterpunkt 2
-        \end{enumerate}
-      \item Punkt 3
-    \end{enumerate}
+    \begin{minipage}[c][9\baselineskip][c]{\textwidth}
+      \begin{enumerate}
+        \item Punkt 1
+        \item Punkt 2
+          \begin{enumerate}
+            \item Unterpunkt 1
+            \item Unterpunkt 2
+          \end{enumerate}
+        \item Punkt 3
+      \end{enumerate}
+    \end{minipage}
   \end{CodeExample}
 \end{frame}
 
@@ -70,9 +74,11 @@ Stichwort \lstinline+\item+ als optionales Argument übergeben.
       \end{description}
     \end{lstlisting}
   \CodeResult
-    \begin{description}
-      \item[\LaTeX] gut
-      \item[Word] böse
-    \end{description}
+    \begin{minipage}[c][4\baselineskip][c]{\textwidth}
+      \begin{description}
+        \item[\LaTeX] gut
+        \item[Word] böse
+      \end{description}
+    \end{minipage}
   \end{CodeExample}
 \end{frame}
