@@ -24,14 +24,16 @@
       Schon Gauß hatte das Durchflutungsgesetz \eqref{eqn:maxwell1} aufgestellt.
     \end{lstlisting}
   \CodeResult
-    \defaultdisplayskip
-    Es gilt
-    \begin{equation}
-      \nabla \cdot \vec{E}
-        = \frac{\rho}{\varepsilon_0} .
-        \label{eqn:maxwell1}
-    \end{equation}
-    Schon Gauß hatte das Durchflutungsgesetz \eqref{eqn:maxwell1} aufgestellt.
+  \begin{minipage}[c][9\baselineskip][t]{\textwidth}
+      \defaultdisplayskip
+      Es gilt
+      \begin{equation}
+        \nabla \cdot \vec{E}
+          = \frac{\rho}{\varepsilon_0} .
+          \label{eqn:maxwell1}
+      \end{equation}
+      Schon Gauß hatte das Durchflutungsgesetz \eqref{eqn:maxwell1} aufgestellt.
+    \end{minipage}
   \end{CodeExample}
 
   \begin{itemize}
@@ -55,15 +57,18 @@
       \begin{gather}
         (a + b)^2 = a^2 + 2ab + b^2 \\
         (a - b)^2 = a^2 - 2ab + b^2 \\
-        (a + b) \cdot (a - b) = a^2 - b^2
+        (a+b) \cdot (a-b) = a^2 - b^2
       \end{gather}
     \end{lstlisting}
   \CodeResult
-    \begin{gather}
-      (a + b)^2 = a^2 + 2ab + b^2 \\
-      (a - b)^2 = a^2 - 2ab + b^2 \\
-      (a + b) \cdot (a - b) = a^2 - b^2
-    \end{gather}
+    \begin{minipage}[c][5\baselineskip][c]{\textwidth}
+      \defaultdisplayskip
+      \begin{gather}
+        (a + b)^2 = a^2 + 2ab + b^2 \\
+        (a - b)^2 = a^2 - 2ab + b^2 \\
+        (a + b) \cdot (a - b) = a^2 - b^2
+      \end{gather}
+    \end{minipage}
   \end{CodeExample}
 
   \vspace{1em}
@@ -79,7 +84,7 @@
     \item \verb+\\+ erzeugt neue Zeile
     \item Jede Zeile bekommt eine Gleichungsnummer
   \end{itemize}
-  \begin{CodeExample}{0.6}
+  \begin{CodeExample}{0.63}
     \begin{lstlisting}
       \begin{align}
         a         &= 1 & b           &= 2 \\
@@ -87,10 +92,13 @@
       \end{align}
     \end{lstlisting}
   \CodeResult
-    \begin{align}
-      a         &= 1 & b           &= 2 \\
-      a \cdot b &= 2 & \frac{a}{b} &= 0.5
-    \end{align}
+    \begin{minipage}[c][4\baselineskip][c]{\textwidth}
+      \defaultdisplayskip
+      \begin{align}
+        a         &= 1 & b           &= 2 \\
+        a \cdot b &= 2 & \frac{a}{b} &= 0.5
+      \end{align}
+    \end{minipage}
   \end{CodeExample}
 \end{frame}
 
@@ -112,12 +120,14 @@
       \end{equation}
     \end{lstlisting}
   \CodeResult
-    \vspace{0.5em}
-    \begin{equation}
-      \begin{split}
-        (a+b)^3 = {} & a^3 + 3a^2b \\
-                     & + 3ab^2 + b^3
-      \end{split}
-    \end{equation}
+    \begin{minipage}[c][6\baselineskip][c]{\textwidth}
+      \defaultdisplayskip
+      \begin{equation}
+        \begin{split}
+          (a+b)^3 = {} & a^3 + 3a^2b \\
+                       & + 3ab^2 + b^3
+        \end{split}
+      \end{equation}
+    \end{minipage}
   \end{CodeExample}
 \end{frame}
