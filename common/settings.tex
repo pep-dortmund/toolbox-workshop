@@ -1,23 +1,17 @@
-\setlength{\parindent}{0pt}
-\setbeamertemplate{caption}[numbered]
-\setbeamertemplate{bibliography item}[text]
-
-% remove space before eqn in block
-\addtobeamertemplate{block begin}{\setlength\abovedisplayskip{-2pt}}
-
 \tcbset{
   noparskip,
   colback=white,
-  colframe=TUgreen,
+  colframe=vertexDarkGrey,
   boxsep=1mm,
   coltext=black,
-  coltitle=black,
+  coltitle=white,
   left=0mm,
   right=0mm,
   top=0.5mm,
   toptitle=-1mm,
   bottom=0mm,
   bottomtitle=-1mm,
+  sharp corners,
   before upper={\raggedright\setlength\abovedisplayskip{-2pt}},
   before title={\raggedright},
 }
@@ -47,10 +41,12 @@
     cramped, mathring, dddot, ddddot, operatorname, DeclareMathOperator, xyz, Xyz, sideset, mathclap, mathfrak, mathbfsf, mathbffrak,
     lvert, rvert, lVert, rVert, middle, subref, intertext, shortintertext, newton, floatplacement, ohm, nano, ignorespacesafterend, Kommandoname, Command,
     defaultfontfeatures, texorpdfstring, sfrac, url,
+    textbackslash,
   },
   columns=fullflexible,
   breaklines=true,
   keepspaces=true,
-  aboveskip=-0.2em,
-  belowskip=-0.2em,
+  showlines=true,
+  aboveskip=0em,
+  belowskip=0em,
 }

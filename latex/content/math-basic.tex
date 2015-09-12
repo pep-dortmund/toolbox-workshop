@@ -85,7 +85,7 @@
 \begin{frame}[fragile]{\lstinline+\$...\$+-Umgebung}
   Aktiviert den Mathematikmodus im Fließtext.
 
-  \begin{CodeExample}{0.56}
+  \begin{CodeExample}{0.57}
     \begin{lstlisting}
       Dies ist eine Variable: $x$.
       Liste von Variablen $x$, $y$, $z$.
@@ -98,9 +98,11 @@
   \CodeResult
     Dies ist eine Variable: $x$. \\
     Liste von Variablen $x$, $y$, $z$. \\
-    kleine Formel: $a^2 + b^2 = c^2$. \\
-    Vorsicht Höhe: $x^{2^{2^{2^2}}}$ $x_{2_{2_{2_2}}}$ \\
-    Mehr Text. Mehr Text. Mehr \\
+    kleine Formel: $a^2 + b^2 = c^2$.\strut \\\nointerlineskip
+    \begin{minipage}[t][2\baselineskip][t]{\textwidth}
+      Vorsicht Höhe: $x^{2^{2^{2^2}}}$ $x_{2_{2_{2_2}}}$
+    \end{minipage} \\\nointerlineskip
+    \strut Mehr Text. Mehr Text. Mehr \\
     $x$-Achse, $x$-$y$-Ebene
   \end{CodeExample}
 
@@ -113,7 +115,7 @@
 \end{frame}
 
 \begin{frame}[fragile]{Griechisch und mehr}
-  \begin{CodeExample}{0.70}
+  \begin{CodeExample}{0.72}
     \begin{lstlisting}
       \epsilon \theta \kappa \pi \rho \sigma \phi
       \varepsilon \vartheta \varkappa \varpi \varrho \varsigma \varphi
@@ -125,13 +127,12 @@
   \CodeResult
     \Umathordordspacing\textstyle=4mu
     $\epsilon \theta \kappa \pi \rho \sigma \phi$ \\
-    $\varepsilon \vartheta \varkappa \varpi \varrho$ \\
-    $\quad \varsigma \varphi$ \\
+    $\varepsilon \vartheta \varkappa \varpi \varrho \varsigma \varphi$ \\[\baselineskip]
     $\Alpha \Beta \Gamma$ \\
     $\hbar \imath \jmath \ell \wp$ \\
     $\aleph \beth \gimel$ \\
-    $\partial \eth \nabla \square \increment \infty$ \\
-    $\quad \diameter \ldots \cdots$
+    $\partial \eth \nabla \square \increment$ \\
+    $\quad \infty \diameter \ldots \cdots$
   \end{CodeExample}
 \end{frame}
 
@@ -172,7 +173,7 @@
       \stackrel{!}{=} \stackrel{\text{def}}{=}
     \end{lstlisting}
   \CodeResult
-    $\stackrel{!}{=} \stackrel{\text{def}}{=}$
+  $\smash{\stackrel{!}{=} \quad \stackrel{\text{def}}{=}}$
   \end{CodeExample}
 \end{frame}
 
@@ -197,9 +198,9 @@
     ${}^2 x$ \\
     $x_{min} \quad x_\text{min}$ \\[\baselineskip]
     \alert{Fehler}\\
-    $\quad x^{2^2} \quad \cramped{x^{2^2}}$ \\
+    $x^{2^2} \quad \cramped{x^{2^2}}$ \\
     \alert{Fehler} \\
-    $\quad x_{\sqrt[3]{2}}$
+    $\smash{x_{\sqrt[3]{2}}}$
   \end{CodeExample}
   \begin{itemize}
     \item Man muss häufig den Index in \lstinline+{ }+ schreiben
@@ -227,7 +228,7 @@
     $\vec{x}$ \\
     $\mathring{x}$ \\
     $\dot{x} \ddot{x} \dddot{x} \ddddot{x}$ \\
-    $\underline{xy} \overline{xy}$
+    $\smash{\underline{xy} \overline{xy}}$
   \end{CodeExample}
   Aufpassen, wo der Akzent hinkommt:
   \begin{CodeExample}{0.7}
@@ -236,7 +237,7 @@
     \end{lstlisting}
   \CodeResult
     \Umathordordspacing\textstyle=4mu
-    $\hat{x_\text{min}} \hat{x}_\text{min}$ \\
+    $\hat{x_\text{min}} \hat{x}_\text{min}$
   \end{CodeExample}
 \end{frame}
 
@@ -253,8 +254,11 @@
     $x \sin y$ \\
     $x \sin(y)$ \\
     $\cos \tan \exp \ln$ \\
-    $\displaystyle \lim_{x \to \infty} x^2$
-    $\displaystyle \lim_{\mathclap{x \to \infty}} x^2$
+    \begin{minipage}[c][2\baselineskip][c]{\textwidth}
+      $\displaystyle \lim_{x \to \infty} x^2$
+      \quad
+      $\displaystyle \lim_{\mathclap{x \to \infty}} x^2$
+    \end{minipage}
   \end{CodeExample}
   \vspace{5pt}
   Man kann auch eigene Funktionen definieren:
@@ -270,15 +274,20 @@
     \end{lstlisting}
   \CodeResult
     $\operatorname{xyz}_i(a)$ \\
-    $\displaystyle \operatorname*{xyz}_i(a)$ \\[\baselineskip]
-    $\operatorname{xyz}_i(a)$ \\
-    $\displaystyle \operatorname*{Xyz}_i(a)$
+    $\smash{\displaystyle \operatorname*{xyz}_i(a)}$ \\
+    \ \\
+    \ \strut\\\nointerlineskip
+    \begin{minipage}[c][2\baselineskip][c]{\textwidth}
+      $\operatorname{xyz}_i(a)$
+      \quad
+      $\smash{\displaystyle \operatorname*{Xyz}_i(a)}$
+    \end{minipage}
   \end{CodeExample}
 \end{frame}
 
 \begin{frame}[fragile]{Große Operatoren}
   \begin{CodeExample}{0.70}
-    \begin{lstlisting}
+    \begin{lstlisting}[lineskip=1pt]
       \sum_{i=0}^\infty x_i
 
       \prod \bigotimes
@@ -294,15 +303,30 @@
       \sum_{i=1+2+3+4+5+6} x_i
 
       \sum_{\mathclap{i=1+2+3+4+5+6}} x_i
+
     \end{lstlisting}
   \CodeResult
-    $\displaystyle \sum_{i=0}^\infty x_i$ \\
-    $\displaystyle \prod \bigotimes$ \\
-    $\displaystyle \int_0^1 \iiint \oint$  \\
-    $\displaystyle \sum\nolimits_0^1 \int\limits_0^1$ \\
-    $\displaystyle \sideset{_a^b}{_c^d}\sum_{i=0}^n$ \\
-    $\displaystyle \sum_{i=1+2+3+4+5+6} x_i$ \\
-    \hspace*{0.75cm}$\displaystyle \sum_{\mathclap{i=1+2+3+4+5+6}} x_i$
+    \begin{minipage}[c][2\baselineskip + 2pt][c]{0.9\textwidth}
+      $\displaystyle \sum_{i=0}^\infty x_i$
+    \end{minipage} \\\nointerlineskip
+    \begin{minipage}[c][2\baselineskip + 2pt][c]{\textwidth}
+      $\displaystyle \prod \bigotimes$
+    \end{minipage} \\\nointerlineskip
+    \begin{minipage}[c][2\baselineskip + 2pt][c]{\textwidth}
+      $\displaystyle \smash{\int_0^1} \iiint \oint$
+    \end{minipage} \\\nointerlineskip
+    \begin{minipage}[c][3\baselineskip + 3pt][c]{\textwidth}
+      $\displaystyle \sum\nolimits_0^1 \int\limits_0^1$
+    \end{minipage} \\\nointerlineskip
+    \begin{minipage}[c][3\baselineskip + 3pt][c]{\textwidth}
+      $\displaystyle \sideset{_a^b}{_c^d}\sum_{i=0}^n$
+    \end{minipage} \\\nointerlineskip
+    \begin{minipage}[c][2\baselineskip + 2pt][c]{\textwidth}
+      $\displaystyle \sum_{i=1+2+3+4+5+6} x_i$
+    \end{minipage} \\\nointerlineskip
+    \begin{minipage}[c][2\baselineskip + 2pt][c]{\textwidth}
+      \hspace*{0.75cm}$\displaystyle \sum_{\mathclap{i=1+2+3+4+5+6}} x_i$
+    \end{minipage}
   \end{CodeExample}
 \end{frame}
 
@@ -348,30 +372,36 @@
     $|\mspace{-5mu} \:|$ \\
     $|\mspace{-5mu} \;|$ \\
     $|\mspace{-5mu} \quad|$ \\
-    $|\mspace{-5mu} \qquad|$ \\
+    $|\mspace{-5mu} \qquad|$
   \end{CodeExample}
   Negativer Space um zu viel Platz zu korrigieren:
   \vspace{-1em}
   \begin{CodeExample}{0.48}
     \begin{lstlisting}
+      % kein Space
       \! % negativer \,
     \end{lstlisting}
   \CodeResult
+    $|\mspace{-5mu} |$ \\
     $|\mspace{-5mu} \!|$
   \end{CodeExample}
   \begin{CodeExample}{0.48}
     \begin{lstlisting}
       ^2       ^{\!\! 2}
+
     \end{lstlisting}
   \CodeResult
-    $\displaystyle \left( \frac{2^2}{2} \right)^2
-    \qquad \left( \frac{2^2}{2} \right)^{\!\! 2}$
+    \begin{minipage}[c][2\baselineskip][c]{\textwidth}
+      ${\displaystyle \left( \frac{2^2}{2} \right)^2}$
+      \qquad
+      ${\displaystyle \left( \frac{2^2}{2} \right)^{\!\! 2}}$
+    \end{minipage}
   \end{CodeExample}
 \end{frame}
 
 \begin{frame}[fragile]{Klammern}
   \vspace{-1.5em}
-  \begin{CodeExample}{0.7}
+  \begin{CodeExample}{0.71}
     \begin{lstlisting}
       (x) [x] \{x\} \langle x\rangle
       \lvert x\rvert \lVert x\rVert
@@ -382,14 +412,17 @@
     $\lvert x\rvert \lVert x\rVert$
   \end{CodeExample}
 
-  \begin{CodeExample}{0.7}[ Häufig braucht man größere Klammern.]
+  \begin{CodeExample}{0.71}[Häufig braucht man größere Klammern.]
     \begin{lstlisting}
       \bigl(x\bigr) \Bigl(x\Bigr) \biggl(x\biggr) \Biggl(x\Biggr)
-      \bigl< x\bigr> \bigl|x\bigr|
+
+      \bigl<x\bigr> \bigl|x\bigr| \bigl\|x\bigr\|
     \end{lstlisting}
   \CodeResult
-    $\bigl(x\bigr) \Bigl(x\Bigr) \biggl(x\biggr) \Biggl(x\Biggr)$ \\
-    $\bigl< x\bigr>\bigl|x\bigr|$
+    \begin{minipage}[c][2\baselineskip][c]{\textwidth}
+      $\bigl(x\bigr) \Bigl(x\Bigr) \biggl(x\biggr) \Biggl(x\Biggr)$
+    \end{minipage} \\[\baselineskip]\nointerlineskip
+    $\bigl< x\bigr> \; \bigl|x\bigr| \; \bigl\|x\bigr\|$
   \end{CodeExample}
 \end{frame}
 
@@ -399,18 +432,18 @@
     \item Ein \lstinline+\left+ muss in der gleichen Zeile wieder mit \lstinline+\right+ geschlossen werden
     \item \lstinline+\left.+ oder \lstinline+\right.+ falls nur eine Klammer gewünscht wird
   \end{itemize}
-  \begin{CodeExample}{0.75}
+  \begin{CodeExample}{0.76}
     \begin{lstlisting}
       \left(\frac{1}{2} \right) \left(\frac{1}{2}\right.
 
       \left\{x \,\middle|\, x<\frac{1}{2} \right\}
     \end{lstlisting}
   \CodeResult
-$\left(\frac{1}{2}\right) \qquad \left(\frac{1}{2}\right.$ \\\smallskip
-    $\left\{ x \, \middle| \, x < \frac{1}{2} \right\}$
+    $\left(\frac{1}{2}\right) \qquad \left(\frac{1}{2}\right.$ \\[2\baselineskip]
+      $\left\{ x \, \middle| \, x < \frac{1}{2} \right\}$
   \end{CodeExample}
 
-  \begin{CodeExample}{0.75}[hat kein optimales Spacing:]
+  \begin{CodeExample}{0.76}[Hat kein optimales Spacing:]
     \begin{lstlisting}
       \sin(x)
       \sin\left(x\right)

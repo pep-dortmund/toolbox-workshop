@@ -7,7 +7,9 @@
       \begin{block}{Code}
         \begin{lstlisting}
           \documentclass[optionen]{klasse}
+            % .
             % Präambel
+            % .
             % .
             % .
           \begin{document}
@@ -19,7 +21,7 @@
       \end{block}
     \end{column}
     \begin{column}{0.48\textwidth}
-      \begin{block}{\texttt{\textbackslash documentclass}}
+      \begin{block}{\lstinline+\\documentclass+}
         Dokumentenklasse=Vorlage wählen, mit Optionen anpassen.
       \end{block}
       \begin{block}{Präambel}
@@ -54,7 +56,7 @@
     \end{lstlisting}
   \Explanation
     Dokumentenklasse \texttt{scrartcl},\\
-    Papierformat DIN\,A4 \\
+    Papierformat DIN\,A4 \\[\baselineskip]
     Keine Argumente \\
     Zwei oder mehr Pflichtargumente\\
     \verb+%+-Zeichen für Kommentare
@@ -108,6 +110,7 @@
             \begin{enumerate}
           \end{itemize}
             \end{enumerate}
+
         \end{lstlisting}
       \end{alertblock}
     \end{column}
@@ -117,10 +120,9 @@
 \begin{frame}[fragile]{Standardpakete}
   Die hier aufgezählten Pakete sollten immer geladen werden, da sie wesentliche Funktionen bieten und wichtige Einstellungen vornehmen.
   \vspace{-1em}
-  \begin{CodeExplanation}{0.50}[Paket][Funktion]
+  \begin{CodeExplanation}{0.52}[Paket][Funktion]
     \begin{lstlisting}
       \usepackage[aux]{rerunfilecheck}
-
 
       \usepackage{polyglossia}
       \setmainlanguage{german}
@@ -167,7 +169,7 @@
   \Explanation
     \begin{lstlisting}
       \usepackage{fontspec}
-      \setmainfont{Tex Gyre Pagella}
+      \setmainfont{Tex Gyre Termes}
       \setsansfont{Tex Gyre Heros}
       \setmonofont{Tex Gyre Cursor}
     \end{lstlisting}

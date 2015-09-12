@@ -2,8 +2,8 @@
   unicode,
   pdfusetitle,
   colorlinks,
-  linkcolor=TUgreen,
-  urlcolor=TUorange,
+  linkcolor=vertexDarkRed,
+  urlcolor=vertexDarkRed,
 }{hyperref}
 \PassOptionsToPackage{
   aux,
@@ -12,8 +12,7 @@
 \documentclass[
   9pt,
 ]{beamer}
-\usetheme{TUDo}
-\usefonttheme{professionalfonts}
+\usetheme{vertex}
 
 \usepackage{polyglossia}
 \setmainlanguage{german}
@@ -22,15 +21,15 @@
 \usepackage{fontspec}
 \setmainfont{Latin Modern Roman}[
   SmallCapsFont = {Latin Modern Roman Caps},
-  Ligatures = TeX,
 ]
-\setsansfont{Latin Modern Sans}[
-  Ligatures = TeX,
+\newfontfamily{\latinmodernroman}{Latin Modern Roman}[
+  SmallCapsFont = {Latin Modern Roman Caps},
 ]
-\setmonofont{Latin Modern Mono}[
-  SmallCapsFont = {Latin Modern Mono Caps},
-  Ligatures = ,
-]
+\DeclareTextFontCommand{\latinmodernrm}{\latinmodernroman}
+\newfontfamily{\latinmodernsans}{Latin Modern Sans}
+\DeclareTextFontCommand{\latinmodernsf}{\latinmodernsans}
+\newfontfamily{\latinmodernmono}{Latin Modern Mono}
+\DeclareTextFontCommand{\latinmoderntt}{\latinmodernmono}
 
 \usepackage{amsmath}
 \usepackage{mathtools}

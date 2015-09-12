@@ -11,7 +11,7 @@
 \RenewDocumentEnvironment {alertblock} {m} {
   \begin{tcolorbox}[
     adjusted~title=#1,
-    colframe=red,
+    colframe=vertexDarkRed,
   ]
 }{
   \end{tcolorbox}
@@ -31,6 +31,8 @@
     }
     \begin{tcolorbox}[
       adjusted~title=#4,
+      before~upper=\strut,
+      after~upper=\strut,
     ]
   }
   \begin{columns}[onlytextwidth, t]
@@ -59,8 +61,10 @@
       \begin{tcolorbox}[
         adjusted~title=#4,
         colframe=gray!40,
+        coltitle=black,
+        after~upper=\strut,
       ]
-        \begin{EmulateArticle}
+        \begin{EmulateArticle}\strut
   }
   \begin{columns}[onlytextwidth, t]
     \begin{column}{#2 \textwidth}
@@ -83,12 +87,23 @@
 \makeatletter
 \NewDocumentEnvironment {EmulateArticle} {} {
   \rmfamily
+  \let\textrm=\latinmodernrm
+  \let\textsf=\latinmodernsf
+  \let\texttt=\latinmoderntt
 
   \setbeamercolor{item}{fg=black}
+  \setbeamercolor{itemize/enumerate~body}{fg=black}
+  \setbeamercolor{itemize/enumerate~subbody}{fg=black}
+  \setbeamercolor{itemize/enumerate~subsubbody}{fg=black}
+  \setbeamercolor{description~item}{fg=black}
+  \setbeamercolor{enumerate~item}{fg=black}
+  \setbeamercolor{itemize~item}{fg=black}
+  \setbeamercolor{normal~text}{fg=black}
+  \setbeamercolor{block~body}{fg=black}
   \setbeamerfont{item}{family=\rmfamily, size=\normalsize}
-  \setbeamerfont{itemize/enumerate~body}{family=\rmfamily}
-  \setbeamerfont{itemize/enumerate~subbody}{family=\rmfamily}
-  \setbeamerfont{itemize/enumerate~subsubbody}{family=\rmfamily}
+  \setbeamerfont{itemize/enumerate~body}{family=\rmfamily, size=\normalsize}
+  \setbeamerfont{itemize/enumerate~subbody}{family=\rmfamily, size=\normalsize}
+  \setbeamerfont{itemize/enumerate~subsubbody}{family=\rmfamily, size=\normalsize}
   \setbeamerfont{description~item}{series=\bfseries}
   \setbeamertemplate{itemize~item}{\bullet}
   \setbeamertemplate{itemize~subitem}{--}
@@ -100,13 +115,16 @@
   \setbeamerfont{footnote}{family=\rmfamily}
   \setbeamerfont{footnote~mark}{family=\rmfamily}
 
+  \setbeamertemplate{caption}[numbered]
+  \setbeamercolor{caption}{fg=black}
   \setbeamerfont{caption}{family=\rmfamily}
   \setbeamercolor{caption~name}{fg=black}
   \setbeamerfont{caption~name}{family=\rmfamily, series=\bfseries}
 
-  \let\reftagform@=\tagform@
-  \def\tagform@##1{\maketag@@@{(\ignorespaces{\rmfamily{##1}}\unskip\@@italiccorr)}}
-  \renewcommand{\eqref}[1]{\textup{\reftagform@{\rmfamily\ref{##1}}}}
+  % from amsmath.dtx
+  % \def\maketag@@@#1{\hbox{\m@th\normalfont#1}}
+  \def\maketag@@@##1{\hbox{\m@th\normalfont\rmfamily##1}}
+  \hypersetup{linkcolor=black}
 }{
 }
 \makeatother
@@ -124,7 +142,6 @@
   draw=black!80,
   drop~shadow,
   font={\bfseries},
-  text=TUgreen,
 ]
 
 \NewDocumentCommand \button {m}
@@ -146,7 +163,7 @@
 {
   \begin{frame}
     \begin{center}
-      \Huge\color{TUgreen}#1
+      \Huge\color{vertexDarkRed}#1
     \end{center}
   \end{frame}
 }
@@ -155,5 +172,42 @@
 {
   \setlength\abovedisplayskip{8.0pt plus 4.0pt minus 4.0pt}
 }
+
+\makeatletter
+\seteverylogo
+{
+  \setlogodrop{0.7ex}
+  \setLaTeXa{{\scshape a}}
+  \fp_compare:nNnTF {\f@size} > {10}
+  {
+    \setlogokern{La}{-0.33em}
+  }
+  {
+    \fp_compare:nNnTF {\f@size} < {10}
+    {
+      \setlogokern{La}{-0.4em}
+    }
+    {
+      \setlogokern{La}{-0.36em}
+    }
+  }
+}
+\makeatother
+
+\let\TeXold=\TeX
+\def\TeX{\latinmodernrm{\TeXold}}
+\let\LaTeXold=\LaTeX
+\def\LaTeX{\latinmodernrm{\LaTeXold}}
+\let\XeTeXold=\XeTeX
+\def\XeTeX{\latinmodernrm{\XeTeXold}}
+\let\XeLaTeXold=\XeLaTeX
+\def\XeLaTeX{\latinmodernrm{\XeLaTeXold}}
+\let\LuaTeXold=\LuaTeX
+\def\LuaTeX{\latinmodernrm{\LuaTeXold}}
+\let\LuaLaTeXold=\LuaLaTeX
+\def\LuaLaTeX{\latinmodernrm{\LuaLaTeXold}}
+\def\pdfTeX{\latinmodernrm{pdf\TeX}}
+\def\BibTeX{\latinmodernrm{\textsc{Bib}\TeX}}
+\def\BibLaTeX{\latinmodernrm{Bib\LaTeX}}
 
 \ExplSyntaxOff
