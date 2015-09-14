@@ -25,6 +25,7 @@
       \end{pmatrix}   \end{bmatrix}   \end{Bmatrix*}
     \end{lstlisting}
   \CodeResult
+    \removedisplayskip
     \begin{equation*}
       \begin{pmatrix}
         x & y \\
@@ -62,6 +63,7 @@
       \ne - \lvert x \rvert
     \end{lstlisting}
   \CodeResult
+    \removedisplayskip
     \begin{equation*}
       f(x) =
       \begin{cases}
@@ -70,7 +72,7 @@
       \end{cases}
     \end{equation*}
 
-    \vspace{5em}
+    \vspace{3em}
     \begin{equation*}
       \begin{drcases*}
          x ,         & $x < 0$ \\
@@ -136,6 +138,7 @@
       \end{align*}
     \end{lstlisting}
   \CodeResult%
+  \removedisplayskip
     \begin{align*}
       f_{123} &=          2  x + 3y + z \\
       g       &= \phantom{2} x + 3y + z \\
@@ -152,13 +155,15 @@
     \end{lstlisting}
   \CodeResult
     \mathtoolsset{shortvdotsadjustbelow=1.8em}
+    \removedisplayskip
     \begin{align*}
       f_{123} &=           \frac{1}{2}  x + y \\
       g       &= \hphantom{\frac{1}{2}} x + y \\
       h       &=  \phantom{\frac{1}{2}} x + y
     \end{align*}
   \end{CodeExample}
-  \lstinline+\hphantom+ wirkt nur horizontal und hat keine Höhe.
+  \lstinline+\hphantom+ wirkt nur horizontal und hat keine Höhe. \\
+  \lstinline+\vphantom+ analog.
 \end{frame}
 
 \begin{frame}[fragile]{\lstinline+\\vphantom+}
@@ -170,6 +175,7 @@
       \end{align*}
     \end{lstlisting}
   \CodeResult
+    \removedisplayskip
     \begin{align*}
       f = {} & \left( \frac{1}{2} \right. \\
              & \left. \vphantom{\frac{1}{2}} + x \right)^{\! 2}
