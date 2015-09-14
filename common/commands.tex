@@ -17,6 +17,8 @@
   \end{tcolorbox}
 }
 
+\newcounter{heightgroup}
+
 \NewDocumentEnvironment {CodeExplanation} {o m O{Code} O{Ergebnis}} {
   \NewDocumentCommand \Explanation {} {
       \end{tcolorbox}
@@ -30,20 +32,25 @@
       \textwidth
     }
     \begin{tcolorbox}[
+      equal~height~group=\theheightgroup,
       adjusted~title=#4,
       before~upper=\strut,
       after~upper=\strut,
+      valign=top,
     ]
   }
   \begin{columns}[onlytextwidth, t]
     \begin{column}{#2 \textwidth}
       \begin{tcolorbox}[
         adjusted~title=#3,
+        equal~height~group=\theheightgroup,
+        valign=top,
       ]
 }{
       \end{tcolorbox}
     \end{column}
   \end{columns}
+  \stepcounter{heightgroup}
 }
 
 \NewDocumentEnvironment {CodeExample} {o m O{Code} O{Ergebnis}} {
@@ -63,6 +70,8 @@
         colframe=gray!40,
         coltitle=black,
         after~upper=\strut,
+        equal~height~group=\theheightgroup,
+        valign=top,
       ]
         \begin{EmulateArticle}\strut
   }
@@ -70,12 +79,15 @@
     \begin{column}{#2 \textwidth}
       \begin{tcolorbox}[
         adjusted~title=#3,
+        equal~height~group=\theheightgroup,
+        valign=top,
       ]
 }{
         \end{EmulateArticle}
       \end{tcolorbox}
     \end{column}
   \end{columns}
+  \stepcounter{heightgroup}
 }
 
 \NewDocumentEnvironment {Packages} {} {
