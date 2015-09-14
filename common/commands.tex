@@ -34,8 +34,6 @@
     \begin{tcolorbox}[
       equal~height~group=\theheightgroup,
       adjusted~title=#4,
-      before~upper=\strut,
-      after~upper=\strut,
       valign=top,
     ]
   }
@@ -69,11 +67,10 @@
         adjusted~title=#4,
         colframe=gray!40,
         coltitle=black,
-        after~upper=\strut,
         equal~height~group=\theheightgroup,
         valign=top,
       ]
-        \begin{EmulateArticle}\strut
+        \begin{EmulateArticle}
   }
   \begin{columns}[onlytextwidth, t]
     \begin{column}{#2 \textwidth}
@@ -133,10 +130,17 @@
   \setbeamercolor{caption~name}{fg=black}
   \setbeamerfont{caption~name}{family=\rmfamily, series=\bfseries}
 
+  % spacing around display math:
+
+
   % from amsmath.dtx
   % \def\maketag@@@#1{\hbox{\m@th\normalfont#1}}
   \def\maketag@@@##1{\hbox{\m@th\normalfont\rmfamily##1}}
   \hypersetup{linkcolor=black}
+  \abovedisplayskip=0ex
+  \belowdisplayskip=0ex
+  \abovedisplayshortskip=0ex
+  \belowdisplayshortskip=0ex
 }{
 }
 \makeatother
