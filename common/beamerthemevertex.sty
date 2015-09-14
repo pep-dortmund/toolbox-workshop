@@ -11,6 +11,9 @@
 \DeclareOption{simplefootline}{\@simplefootlinetrue}
 \ProcessOptions
 
+% margins:
+\setbeamersize{text margin left=10pt,text margin right=10pt}
+
 % Table of contents
 \useoutertheme[subsection=true, shadow]{miniframes}
 \setbeamertemplate{section in toc}[sections unnumberd]
@@ -94,10 +97,10 @@
 }
 \setbeamertemplate{title~page}
 {
-  \nointerlineskip % This one's tricky
-  \begin{minipage}[b][\paperheight]{\textwidth}
+  \nointerlineskip% This one's tricky
+  \begin{minipage}[b][\paperheight-18pt]{\textwidth}
     \centering
-    \begin{beamercolorbox}[wd=\paperwidth, ht=12em, dp=2em]{title~page}
+    \begin{beamercolorbox}[wd=\paperwidth, ht=12em, dp=4em]{title~page}
       \centering
       \ifx\inserttitle\@empty
       \else
