@@ -137,10 +137,6 @@
   % \def\maketag@@@#1{\hbox{\m@th\normalfont#1}}
   \def\maketag@@@##1{\hbox{\m@th\normalfont\rmfamily##1}}
   \hypersetup{linkcolor=black}
-  \abovedisplayskip=0ex
-  \belowdisplayskip=0ex
-  \abovedisplayshortskip=0ex
-  \belowdisplayshortskip=0ex
 }{
 }
 \makeatother
@@ -184,9 +180,12 @@
   \end{frame}
 }
 
-\NewDocumentCommand \defaultdisplayskip {}
+\NewDocumentCommand \removedisplayskip {}
 {
-  \setlength\abovedisplayskip{8.0pt plus 4.0pt minus 4.0pt}
+  \setlength\abovedisplayskip{0ex}
+  \setlength\belowdisplayskip{0ex}
+  \setlength\abovedisplayshortskip{0ex}
+  \setlength\belowdisplayshortskip{0ex}
 }
 
 \makeatletter
