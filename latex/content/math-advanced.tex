@@ -183,22 +183,32 @@
       h       &=             x + 3y + z
     \end{align*}
   \end{CodeExample}
-  \begin{CodeExample}{0.70}
+  \begin{CodeExample}{0.60}
     \begin{lstlisting}
       \begin{align*}
-        f_{123} &=           \frac{1}{2}  x + y \\
-        g       &= \hphantom{\frac{1}{2}} x + y \\
-        h       &=  \phantom{\frac{1}{2}} x + y
+        f &=           \frac{1}{2}  x\\
+        g &= \hphantom{\frac{1}{2}} x\\
+      \end{align*}
+      \begin{align*}
+        f &=           \frac{1}{2}  x\\
+        g &=  \phantom{\frac{1}{2}} x
       \end{align*}
     \end{lstlisting}
   \CodeResult
     \mathtoolsset{shortvdotsadjustbelow=1.8em}
     \removedisplayskip
+    \begin{minipage}[t]{0.5\textwidth}%
     \begin{align*}
-      f_{123} &=           \frac{1}{2}  x + y \\
-      g       &= \hphantom{\frac{1}{2}} x + y \\
-      h       &=  \phantom{\frac{1}{2}} x + y
+      f &=           \frac{1}{2}  x\\
+      g &= \hphantom{\frac{1}{2}} x\\
     \end{align*}
+    \end{minipage}%
+    \begin{minipage}[t]{0.5\textwidth}%
+    \begin{align*}
+      f &=           \frac{1}{2}  x\\
+      g &=  \phantom{\frac{1}{2}} x
+    \end{align*}
+    \end{minipage}%
   \end{CodeExample}
   \lstinline+\hphantom+ wirkt nur horizontal und hat keine Höhe. \\
 \end{frame}
