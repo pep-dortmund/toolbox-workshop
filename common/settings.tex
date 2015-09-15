@@ -24,7 +24,13 @@
   keywordstyle=\color{cyan},
   commentstyle=\color{darkgray},
   otherkeywords={$,$, &, \{, \}, \[, \],  ^, _},
-  morekeywords={},
+  morekeywords={}, % do not remove even though empty
+  columns=fullflexible,
+  breaklines=true,
+  keepspaces=true,
+  showlines=true,
+  aboveskip=0em,
+  belowskip=0em,
   moretexcs={
     setmainlanguage, text, num, SI, si, kilo, gram, befehl, subject, titlehead, publishers, textenglish, textfrench,
     metre, per, second, squared, micro, subtitle, maketitle, tableofcontents,
@@ -43,10 +49,44 @@
     defaultfontfeatures, texorpdfstring, sfrac, url,
     textbackslash,
   },
-  columns=fullflexible,
-  breaklines=true,
-  keepspaces=true,
-  showlines=true,
-  aboveskip=0em,
-  belowskip=0em,
+  literate=*%
+    {\\!}{{\textcolor{vertexDarkRed}{\textbackslash!}}}{2}
+    {\\"}{{\textcolor{vertexDarkRed}{\textbackslash"}}}{2}
+    {\\\#}{{\textcolor{vertexDarkRed}{\textbackslash\#}}}{2}
+    {\\\$}{{\textcolor{vertexDarkRed}{\textbackslash\$}}}{2}
+    {\\\%}{{\textcolor{vertexDarkRed}{\textbackslash\%}}}{2}
+    {\\\&}{{\textcolor{vertexDarkRed}{\textbackslash\&}}}{2}
+    {\\'}{{\textcolor{vertexDarkRed}{\textbackslash'}}}{2}
+    {\\(}{{\textcolor{vertexDarkRed}{\textbackslash(}}}{2}
+    {\\)}{{\textcolor{vertexDarkRed}{\textbackslash)}}}{2}
+    {\\*}{{\textcolor{vertexDarkRed}{\textbackslash*}}}{2}
+    {\\+}{{\textcolor{vertexDarkRed}{\textbackslash+}}}{2}
+    {\\,}{{\textcolor{vertexDarkRed}{\textbackslash,}}}{2}
+    {\\-}{{\textcolor{vertexDarkRed}{\textbackslash-}}}{2}
+    {\\.}{{\textcolor{vertexDarkRed}{\textbackslash.}}}{2}
+    {\\/}{{\textcolor{vertexDarkRed}{\textbackslash/}}}{2}
+    {\\:}{{\textcolor{vertexDarkRed}{\textbackslash:}}}{2}
+    {\\;}{{\textcolor{vertexDarkRed}{\textbackslash;}}}{2}
+    {\\<}{{\textcolor{vertexDarkRed}{\textbackslash<}}}{2}
+    {\\=}{{\textcolor{vertexDarkRed}{\textbackslash=}}}{2}
+    {\\>}{{\textcolor{vertexDarkRed}{\textbackslash>}}}{2}
+    {\\?}{{\textcolor{vertexDarkRed}{\textbackslash?}}}{2}
+    {\\[}{{\textcolor{vertexDarkRed}{\textbackslash[}}}{2}
+    {\\\\}{{\textcolor{vertexDarkRed}{\textbackslash\textbackslash}}}{2}
+    {\\]}{{\textcolor{vertexDarkRed}{\textbackslash]}}}{2}
+    {\\\^}{{\textcolor{vertexDarkRed}{\textbackslash\textasciicircum}}}{2}
+    {\\\_}{{\textcolor{vertexDarkRed}{\textbackslash\_}}}{2}
+    {\\\{}{{\textcolor{vertexDarkRed}{\textbackslash\{}}}{2}
+    {\\|}{{\textcolor{vertexDarkRed}{\textbackslash|}}}{2}
+    {\\\}}{{\textcolor{vertexDarkRed}{\textbackslash\}}}}{2}
+    {\\\~}{{\textcolor{vertexDarkRed}{\textbackslash\textasciitilde}}}{2}
 }
+
+% http://tex.stackexchange.com/a/267701/32665
+% "Rehook" literate char table.
+\makeatletter
+\lst@AddToHook{SelectCharTable}
+    {\ifx\lst@literate\@empty\else
+         \expandafter\lst@Literate\lst@literate{}\relax\z@
+     \fi}
+\makeatother
