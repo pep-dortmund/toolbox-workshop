@@ -1,18 +1,33 @@
 \ExplSyntaxOn
 
-\RenewDocumentEnvironment {block} {m} {
-  \begin{tcolorbox}[
-    adjusted~title=#1,
-  ]
+\RenewDocumentEnvironment {block} {m o} {
+  \IfValueTF{#2}{
+    \begin{tcolorbox}[
+      adjusted~title=#1,
+      #2,
+    ]
+  }{
+    \begin{tcolorbox}[
+      adjusted~title=#1,
+    ]
+  }
 }{
   \end{tcolorbox}
 }
 
-\RenewDocumentEnvironment {alertblock} {m} {
-  \begin{tcolorbox}[
-    adjusted~title=#1,
-    colframe=vertexDarkRed,
-  ]
+\RenewDocumentEnvironment {alertblock} {m o} {
+  \IfValueTF{#2}{
+    \begin{tcolorbox}[
+      adjusted~title=#1,
+      colframe=vertexDarkRed,
+      #2,
+    ]
+  }{
+    \begin{tcolorbox}[
+      adjusted~title=#1,
+      colframe=vertexDarkRed,
+    ]
+  }
 }{
   \end{tcolorbox}
 }
