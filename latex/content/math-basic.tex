@@ -120,19 +120,20 @@
       \epsilon \theta \kappa \pi \rho \sigma \phi
       \varepsilon \vartheta \varkappa \varpi \varrho \varsigma \varphi
       \Alpha \Beta \Gamma
-      \hbar \imath \jmath \ell \wp
+      \hbar \imath \jmath \ell
       \aleph \beth \gimel
-      \partial \eth \nabla \square \increment \infty \diameter \ldots \cdots
+      \partial \nabla \square \increment
+      \infty \diameter \ldots \cdots
     \end{lstlisting}
   \CodeResult
     \Umathordordspacing\textstyle=4mu
     $\epsilon \theta \kappa \pi \rho \sigma \phi$ \\
     $\varepsilon \vartheta \varkappa \varpi \varrho \varsigma \varphi$ \\[\baselineskip]
     $\Alpha \Beta \Gamma$ \\
-    $\hbar \imath \jmath \ell \wp$ \\
+    $\hbar \imath \jmath \ell$ \\
     $\aleph \beth \gimel$ \\
-    $\partial \eth \nabla \square \increment$ \\
-    $\quad \infty \diameter \ldots \cdots$
+    $\partial \nabla \square \increment$ \\
+    $\infty \diameter \ldots \cdots$
   \end{CodeExample}
 \end{frame}
 
@@ -140,20 +141,26 @@
   \vspace{-1em}
   \begin{CodeExample}{0.74}
     \begin{lstlisting}
-      + - / \pm \mp \cdot \times
-      = \simeq \equiv \cong \approx \propto \sim
-      \coloneq
+      + - / \cdot \times
+      \pm \mp
+      = \simeq \equiv \cong
+      \approx \propto \sim
+      \coloneq \eqcolon
       \to \iff \implies
       \mapsto \leadsto
+      \forall \exists \in \subset
     \end{lstlisting}
   \CodeResult
     \Umathbinbinspacing\textstyle=4mu
     \Umathrelrelspacing\textstyle=4mu
-    $+ - / \pm \mp \cdot \times$ \\
-    $= \simeq \equiv \cong \approx \propto \sim$ \\
-    $\coloneq$ \\
+    $+ - / \cdot \times$\\
+    $\pm \mp$ \\
+    $= \simeq \equiv \cong$\\
+    $\approx \propto \sim$ \\
+    $\coloneq \quad \eqcolon$ \\
     $\to \iff \implies$ \\
-    $\mapsto \leadsto$
+    $\mapsto \leadsto$ \\
+    $\forall \exists \in \subset$
   \end{CodeExample}
   Die meisten Relationen lassen sich durch ein \texttt{n} negieren:
   \vspace{-1em}
@@ -178,36 +185,46 @@
   \end{CodeExample}
 \end{frame}
 
-\begin{frame}[fragile]{Indizes}
-  \begin{CodeExample}{0.50}
+\begin{frame}[fragile]{Indizes / Exponenten}
+  \begin{CodeExample}{0.60}
     \begin{lstlisting}
       x^2 x_2 x²
-      x^10 x^{10}
-      x' x^' x'' x'^2
-      {}^2 x
-      x_{min} x_\text{min}
-
-      x^2^2
-      x^{2^2} \cramped{x^{2^2}}
-      x_\sqrt[3]{2}
-      x_{\sqrt[3]{2}}
     \end{lstlisting}
   \CodeResult
     $x^2 \quad x_2 \quad x²$ \\
-    $x^10 \quad x^{10}$ \\
+  \end{CodeExample}
+  \begin{CodeExample}{0.60}[Lange o.\ doppelte Indizes/Exponenten]
+    \vspace{0.5\baselineskip}
+    \begin{lstlisting}[lineskip=0.5ex]
+      x^10               x^{10}
+      x^2^2              x^{2^2}
+      x_\sqrt[3]{2}      x_{\sqrt[3]{2}}
+    \end{lstlisting}
+  \CodeResult
+  \removedisplayskip
+  \begin{flalign*}
+    &x^10 & &x^{10} \\
+    &\text{\alert{error}} & &x^{2^2} \\
+    &\text{\alert{error}} & &\smash{x_{\sqrt[3]{2}}}
+  \end{flalign*}
+  \end{CodeExample}
+  \begin{CodeExample}{0.60}[Text in Indizes]
+    \begin{lstlisting}
+    falsch: x_{min},  richtig: x_\text{min}
+    \end{lstlisting}
+  \CodeResult
+    falsch: $x_{min}$,  richtig: $x_\text{min}$
+  \end{CodeExample}
+  \begin{CodeExample}{0.60}[Striche / linksseitig]
+    \begin{lstlisting}
+      x' x^' x'' x'^2
+      {}^2 x
+    \end{lstlisting}
+  \CodeResult
     $x' \quad x^{'} \quad x'' \quad x'^2$ \\
     ${}^2 x$ \\
-    $x_{min} \quad x_\text{min}$ \\[\baselineskip]
-    \alert{Fehler}\\
-    $x^{2^2} \quad \cramped{x^{2^2}}$ \\
-    \alert{Fehler} \\
-    $\smash{x_{\sqrt[3]{2}}}$
   \end{CodeExample}
-  \begin{itemize}
-    \item Man muss häufig den Index in \lstinline+{ }+ schreiben
-    \item Beim mehrfachen Hochstellen jeweils \lstinline+{ }+ nötig
-    \item Nur wenige Befehle können ohne \lstinline+{ }+ im Index stehen
-  \end{itemize}
+  Nur wenige Befehle können ohne \lstinline+{ }+ im Index stehen
 \end{frame}
 
 \begin{frame}[fragile]{Akzente}
@@ -231,56 +248,55 @@
     $\dot{x} \ddot{x} \dddot{x} \ddddot{x}$ \\
     $\smash{\underline{xy} \overline{xy}}$
   \end{CodeExample}
-  Aufpassen, wo der Akzent hinkommt:
-  \begin{CodeExample}{0.7}
+  
+  \begin{CodeExample}{0.7}[{Auf Position des Akzents achten:}]
     \begin{lstlisting}
-      \hat{x_\text{min}} \hat{x}_\text{min}
+      \hat{x_\text{min}}
+      \hat{x}_\text{min}
     \end{lstlisting}
   \CodeResult
     \Umathordordspacing\textstyle=4mu
-    $\hat{x_\text{min}} \hat{x}_\text{min}$
+    $\hat{x_\text{min}}$\\
+    $\hat{x}_\text{min}$
   \end{CodeExample}
 \end{frame}
 
 \begin{frame}[fragile]{Funktionen}
-  \begin{CodeExample}{0.70}
+  \begin{CodeExample}{0.65}
     \begin{lstlisting}
       x \sin y
       x \sin(y)
-      \cos \tan \exp \ln
+      \cos \tan \exp \ln \log_{10}(x)
+
       \lim_{x \to \infty} x^2 
-      \lim_{\mathclap{x \to \infty}} x^2
     \end{lstlisting}
   \CodeResult
     $x \sin y$ \\
     $x \sin(y)$ \\
-    $\cos \tan \exp \ln$ \\
-    \begin{minipage}[c][2\baselineskip][c]{\textwidth}
-      $\displaystyle \lim_{x \to \infty} x^2$
-      \quad
-      $\displaystyle \lim_{\mathclap{x \to \infty}} x^2$
-    \end{minipage}
+    $\cos \tan \exp \ln \log_{10}(x)$ \\[1\baselineskip]
+    $\displaystyle \lim_{x \to \infty} x^2$
   \end{CodeExample}
-  \vspace{5pt}
-  Man kann auch eigene Funktionen definieren:
-  \vspace{-1em}
-  \begin{CodeExample}{0.70}
+  \begin{CodeExample}{0.65}[Man kann auch eigene Funktionen definieren:]
     \begin{lstlisting}
+      % direkt in der Matheumgebung:
       \operatorname{xyz}_i(a)
       \operatorname*{xyz}_i(a)
 
-      % in Präambel
-      \DeclareMathOperator{\xyz}{xyz} \xyz_i(a)
-      \DeclareMathOperator*{\Xyz}{Xyz} \Xyz_i(a)
+      % in Präambel definieren
+      \DeclareMathOperator{\xyz}{xyz}
+      \DeclareMathOperator*{\Xyz}{Xyz}
+      % dann überall im Dokument nutzbar:
+      \xyz_i(a)
+      \Xyz_i(a)
     \end{lstlisting}
   \CodeResult
+    \ \\
     $\operatorname{xyz}_i(a)$ \\
     $\smash{\displaystyle \operatorname*{xyz}_i(a)}$ \\
-    \ \\
+    \ \\[3\baselineskip]
     \ \strut\\\nointerlineskip
     \begin{minipage}[c][2\baselineskip][c]{\textwidth}
-      $\operatorname{xyz}_i(a)$
-      \quad
+      $\operatorname{xyz}_i(a)$ \\
       $\smash{\displaystyle \operatorname*{Xyz}_i(a)}$
     \end{minipage}
   \end{CodeExample}
@@ -288,45 +304,31 @@
 
 \begin{frame}[fragile]{Große Operatoren}
   \begin{CodeExample}{0.70}
-    \begin{lstlisting}[lineskip=1pt]
+    \vspace{\baselineskip}
+    \begin{lstlisting}
       \sum_{i=0}^\infty x_i
 
-      \prod \bigotimes
+
+      \int_{0}^{1} f(x) \, \symup{d}x
+
 
       \int_0^1 \iiint \oint
 
 
-      \sum\nolimits_0^1 \int\limits_0^1
-
-
-      \sideset{_a^b}{_c^d}\sum_{i=0}^n
-
-      \sum_{i=1+2+3+4+5+6} x_i
-
-      \sum_{\mathclap{i=1+2+3+4+5+6}} x_i
-
+      \prod \bigotimes
     \end{lstlisting}
   \CodeResult
-    \begin{minipage}[c][2\baselineskip + 2pt][c]{0.9\textwidth}
+  \begin{minipage}[c][3\baselineskip][c]{0.9\textwidth}
       $\displaystyle \sum_{i=0}^\infty x_i$
     \end{minipage} \\\nointerlineskip
-    \begin{minipage}[c][2\baselineskip + 2pt][c]{\textwidth}
+    \begin{minipage}[c][3\baselineskip][c]{\textwidth}
+      $\displaystyle \int_{0}^{1} f(x) \, \symup{d}x $
+    \end{minipage} \\\nointerlineskip
+    \begin{minipage}[c][3\baselineskip][c]{\textwidth}
       $\displaystyle \prod \bigotimes$
     \end{minipage} \\\nointerlineskip
-    \begin{minipage}[c][2\baselineskip + 2pt][c]{\textwidth}
+    \begin{minipage}[c][3\baselineskip][c]{\textwidth}
       $\displaystyle \smash{\int_0^1} \iiint \oint$
-    \end{minipage} \\\nointerlineskip
-    \begin{minipage}[c][3\baselineskip + 3pt][c]{\textwidth}
-      $\displaystyle \sum\nolimits_0^1 \int\limits_0^1$
-    \end{minipage} \\\nointerlineskip
-    \begin{minipage}[c][3\baselineskip + 3pt][c]{\textwidth}
-      $\displaystyle \sideset{_a^b}{_c^d}\sum_{i=0}^n$
-    \end{minipage} \\\nointerlineskip
-    \begin{minipage}[c][2\baselineskip + 2pt][c]{\textwidth}
-      $\displaystyle \sum_{i=1+2+3+4+5+6} x_i$
-    \end{minipage} \\\nointerlineskip
-    \begin{minipage}[c][2\baselineskip + 2pt][c]{\textwidth}
-      \hspace*{0.75cm}$\displaystyle \sum_{\mathclap{i=1+2+3+4+5+6}} x_i$
     \end{minipage}
   \end{CodeExample}
 \end{frame}
@@ -436,6 +438,7 @@
   \begin{CodeExample}{0.76}
     \begin{lstlisting}
       \left(\frac{1}{2} \right) \left(\frac{1}{2}\right.
+
 
       \left\{x \,\middle|\, x<\frac{1}{2} \right\}
     \end{lstlisting}

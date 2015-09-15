@@ -46,6 +46,43 @@
   Mehr Möglichkeiten in der Doku.
 \end{frame}
 
+\begin{frame}[fragile]{Unnötigen Leerraum loswerden}
+  \lstinline+mathtools+ stellt zwei wichtige Befehle, um Leerraum zu eliminieren:
+  \begin{CodeExample}{0.7}
+    \begin{lstlisting}
+      \lim_{x\to\infty} f(x)
+
+      \lim_{\mathclap{x\to\infty}} f(x)
+
+      \sum_{i \in \{1, 2, 3, 4, 5\}} i
+
+      \sum_{\mathclap{i \in \{1, 2, 3, 4, 5\}}} i
+    \end{lstlisting}
+  \CodeResult
+    \begin{minipage}[t][2\baselineskip][t]{\textwidth}
+      $\displaystyle \lim_{x\to\infty} f(x)$
+    \end{minipage} \\\nointerlineskip
+    \begin{minipage}[t][2\baselineskip][t]{\textwidth}
+      $\displaystyle \lim_{\mathclap{x\to\infty}} f(x)$
+    \end{minipage} \\\nointerlineskip
+    \begin{minipage}[t][2\baselineskip][t]{\textwidth}
+      $\displaystyle\sum_{i \in \{1, 2, 3, 4, 5\}} i$
+    \end{minipage}\\\nointerlineskip
+    \begin{minipage}[t][2\baselineskip][t]{\textwidth}
+      $\qquad\displaystyle\sum_{\mathclap{i \in \{1, 2, 3, 4, 5\}}} i$
+    \end{minipage}
+  \end{CodeExample}
+
+  \begin{CodeExample}{0.7}
+    \begin{lstlisting}
+      2^{2^2} \cramped{2^{2^2}}
+    \end{lstlisting}
+  \CodeResult
+    $2^{2^2} \cramped{2^{2^2}}$
+  \end{CodeExample}
+  
+\end{frame}
+
 \begin{frame}[fragile]{Fallunterscheidungen}
   Befehle mit * aktivieren den Textmodus nach dem \lstinline+&+.
   \begin{CodeExample}{0.55}
