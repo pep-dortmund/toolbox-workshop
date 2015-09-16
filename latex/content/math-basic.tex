@@ -85,33 +85,41 @@
 \begin{frame}[fragile]{\lstinline+\$...\$+-Umgebung}
   Aktiviert den Mathematikmodus im Fließtext.
 
-  \begin{CodeExample}{0.57}
+  \begin{CodeExample}{0.6}[\TeX{} sorgt für gute Abstände]
+    \begin{lstlisting}
+      $x    =     5$, $y=3$
+    \end{lstlisting}
+  \CodeResult
+      $x    =     5$, $y=3$
+  \end{CodeExample}
+
+  \begin{CodeExample}{0.6}[Satzzeichen u.\ Bindestriche gehören nicht in \lstinline+\$...\$+]
     \begin{lstlisting}
       Dies ist eine Variable: $x$.
       Liste von Variablen $x$, $y$, $z$.
-      Kleine Formel: $a^2 + b^2 = c^2$.
-      Vorsicht Höhe: $x^{2^{2^{2^2}}}$
-          $x_{2_{2_{2_2}}}$
-      Mehr Text. Mehr Text. Mehr
-      $x$-Achse, $x$-$y$-Ebene
+      $y$-Achse, $x$-$y$-Ebene
     \end{lstlisting}
   \CodeResult
     Dies ist eine Variable: $x$. \\
     Liste von Variablen $x$, $y$, $z$. \\
-    kleine Formel: $a^2 + b^2 = c^2$.\strut \\\nointerlineskip
-    \begin{minipage}[t][2\baselineskip][t]{\textwidth}
-      Vorsicht Höhe: $x^{2^{2^{2^2}}}$ $x_{2_{2_{2_2}}}$
-    \end{minipage} \\\nointerlineskip
-    \strut Mehr Text. Mehr Text. Mehr \\
-    $x$-Achse, $x$-$y$-Ebene
+    $y$-Achse, $x$-$y$-Ebene
   \end{CodeExample}
-
-  \vspace{1em}
-  \begin{itemize}
-    \item Leerzeichen werden im Mathe-Modus ignoriert.
-    \item \TeX\ hat Algorithmen für das richtige Spacing.
-    \item Satzzeichen gehören nicht in die \lstinline+$...$+-Umgebung!
-  \end{itemize}
+  \begin{CodeExample}{0.6}[Vorsicht bei der Höhe von Formeln im Text]
+    \begin{lstlisting}
+    Text ohne eine Bedeutung.
+    Mit einer Formel:
+    $\frac{1}{1- \frac{1}{1 - x}}$
+    Text ohne eine Bedeutung.
+    \end{lstlisting}
+  \CodeResult
+    \hrule
+    Text ohne eine Bedeutung.
+    \hrule
+    Mit einer Formel: $\frac{1}{1- \frac{1}{1 - x}}$
+    \hrule
+    Text ohne eine Bedeutung.
+    \hrule
+  \end{CodeExample}
 \end{frame}
 
 \begin{frame}[fragile]{Griechisch und mehr}
@@ -143,6 +151,7 @@
     \begin{lstlisting}
       + - / \cdot \times
       \pm \mp
+      < > \leq \geq
       = \simeq \equiv \cong
       \approx \propto \sim
       \coloneq \eqcolon
@@ -154,7 +163,8 @@
     \Umathbinbinspacing\textstyle=4mu
     \Umathrelrelspacing\textstyle=4mu
     $+ - / \cdot \times$\\
-    $\pm \mp$ \\
+    $\pm \mp$\\
+    $< >\leq \geq$ \\
     $= \simeq \equiv \cong$\\
     $\approx \propto \sim$ \\
     $\coloneq \quad \eqcolon$ \\
@@ -162,20 +172,16 @@
     $\mapsto \leadsto$ \\
     $\forall \exists \in \subset$
   \end{CodeExample}
-  Die meisten Relationen lassen sich durch ein \texttt{n} negieren:
-  \vspace{-1em}
-  \begin{CodeExample}{0.74}
+  \begin{CodeExample}{0.74}[Negierte Variante mit \texttt{n} bzw.\ \texttt{not}] 
     \begin{lstlisting}
-      \neq \nsime \nexists \nni
+      \neq \nsime \nexists \nni \notin
     \end{lstlisting}
   \CodeResult
     \Umathbinbinspacing\textstyle=4mu
     \Umathrelrelspacing\textstyle=4mu
-  $\neq \nsime \nexists \nni$
+  $\neq \nsime \nexists \nni \notin$
   \end{CodeExample}
-  Häufig möchte man etwas über eine Relation schreiben:
-  \vspace{-1em}
-  \begin{CodeExample}{0.74}
+  \begin{CodeExample}{0.74}[Häufig möchte man etwas über eine Relation schreiben:]
     \begin{lstlisting}
       \stackrel{!}{=} \stackrel{\text{def}}{=}
     \end{lstlisting}
