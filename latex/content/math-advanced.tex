@@ -5,17 +5,18 @@
   \hfill\doc{http://mirrors.ctan.org/macros/latex/required/amslatex/math/amsldoc.pdf}{amsmath}
   \doc{http://mirrors.ctan.org/macros/latex/contrib/mathtools/mathtools.pdf}{mathtools}
 }
-\begin{CodeExample}{0.70}[Matrizen (und damit Vektoren) werden fett geschrieben.]
+  \begin{CodeExample}{0.70}[Matrizen (und damit Vektoren) werden fett geschrieben.]
     \begin{lstlisting}
-      \symbf{M}^\top \symbf{M}^*
-      \symbf{M}^\dagger \symbf{M}^{-1} M_{12}
+      \symbf{M}^\top     \symbf{M}^*
+      \symbf{M}^\dagger  \symbf{M}^{-1}  M_{12}
     \end{lstlisting}
   \CodeResult
-    $\symbf{M}^\top \symbf{M}^*$ \\
-    $\symbf{M}^\dagger \symbf{M}^{-1} M_{12}$
+    \strut
+    $\symbf{M}^\top    \quad \symbf{M}^*$ \\
+    $\symbf{M}^\dagger \quad \symbf{M}^{-1} \quad M_{12}$
   \end{CodeExample}
 
-  \fontsize{8}{6}
+  \fontsize{8}{0.8\baselineskip}\selectfont
   \begin{CodeExample}{0.70}[Verschiedene Klammern]
     \begin{lstlisting}
       \begin{pmatrix} \begin{bmatrix} \begin{Bmatrix}
@@ -23,9 +24,8 @@
         z & abc          2               2
       \end{pmatrix}   \end{bmatrix}   \end{Bmatrix}
     \end{lstlisting}
-  \CodeResult
-    \removedisplayskip
-    \begin{equation*}
+  \CodeResult<valign=center>
+    $\displaystyle
       \begin{pmatrix}
         x & y \\
         z & abc
@@ -38,36 +38,43 @@
         -1 \\
          2
       \end{Bmatrix}
-    \end{equation*}
+    $
   \end{CodeExample}
   \begin{CodeExample}{0.60}[Unterschiedliche Ausrichtung mit \lstinline+*+]
     \begin{lstlisting}
       \begin{pmatrix*}[l]     \begin{pmatrix*}[c]
-         1 & -1\\                1 & -1\\
-        -1 & 2                  -1 & 2 
-      \end{pmatrix*}          \end{pmatrix*}     
-      \begin{pmatrix*}[r]    
-         1 & -1\\
-        -1 & 2 
+         1 & -1 \\               1 & -1 \\
+        -1 &  2                 -1 &  2
+      \end{pmatrix*}          \end{pmatrix*}
+      \begin{pmatrix*}[r]
+         1 & -1 \\
+        -1 &  2
       \end{pmatrix*}
     \end{lstlisting}
   \CodeResult
-    \removedisplayskip
-    \begin{flalign*}
-      &\begin{pmatrix*}[l]
-         1 & -1\\
-        -1 & 2 
-      \end{pmatrix*}&
-      \begin{pmatrix*}[c]
-         1 & -1\\
-        -1 & 2 
-      \end{pmatrix*}\\
-      &\begin{pmatrix*}[r]
-         1 & -1\\
-        -1 & 2 
-      \end{pmatrix*}
-    \end{flalign*}
+    \begin{CenterStrip}{4}
+      $\displaystyle
+        \begin{pmatrix*}[l]
+           1 & -1 \\
+          -1 &  2
+        \end{pmatrix*}
+        \qquad
+        \begin{pmatrix*}[c]
+           1 & -1 \\
+          -1 &  2
+        \end{pmatrix*}
+      $
+    \end{CenterStrip} \\\nointerlineskip
+    \begin{CenterStrip}{4}
+      $\displaystyle
+        \begin{pmatrix*}[r]
+           1 & -1 \\
+          -1 &  2
+        \end{pmatrix*}
+      $
+    \end{CenterStrip}
   \end{CodeExample}
+  \vspace*{-1pt}
   Mehr Möglichkeiten in der Doku.
 \end{frame}
 
@@ -103,9 +110,10 @@
       2^{2^2} \cramped{2^{2^2}}
     \end{lstlisting}
   \CodeResult
+    \strut
     $2^{2^2} \cramped{2^{2^2}}$
   \end{CodeExample}
-  
+
 \end{frame}
 
 \begin{frame}[fragile]{Fallunterscheidungen}
@@ -125,23 +133,27 @@
       \ne - \lvert x \rvert
     \end{lstlisting}
   \CodeResult
-    \removedisplayskip
-    \begin{equation*}
-      f(x) =
-      \begin{cases}
-         x ,         & x \ge 0 \\
-        \int_0^1 x , & \text{sonst}
-      \end{cases}
-    \end{equation*}
-
-    \vspace{3em}
-    \begin{equation*}
-      \begin{drcases*}
-         x ,         & $x < 0$ \\
-        \int_0^1 x , & sonst
-      \end{drcases*}
-      \ne - \lvert x \rvert
-    \end{equation*}
+    \begin{CenterStrip}{5}
+      \centering
+      $\displaystyle
+        f(x) =
+        \begin{cases}
+           x ,         & x \ge 0 \\
+          \int_0^1 x , & \text{sonst}
+        \end{cases}
+      $
+    \end{CenterStrip}
+    \\[\baselineskip]
+    \begin{CenterStrip}{5}
+      \centering
+      $\displaystyle
+        \begin{drcases*}
+           x ,         & $x < 0$ \\
+          \int_0^1 x , & sonst
+        \end{drcases*}
+        \ne - \lvert x \rvert
+      $
+    \end{CenterStrip}
   \end{CodeExample}
 \end{frame}
 
@@ -243,14 +255,14 @@
     \begin{lstlisting}
       \begin{align*}
         f = {} & \left( \frac{1}{2} \right. \\
-               & \left. \vphantom{\frac{1}{2}} + x \right)^{\! 2}
+               & \left. \vphantom{\frac{1}{2}} + x \right)^{\!\! 2}
       \end{align*}
     \end{lstlisting}
   \CodeResult
     \removedisplayskip
     \begin{align*}
       f = {} & \left( \frac{1}{2} \right. \\
-             & \left. \vphantom{\frac{1}{2}} + x \right)^{\! 2}
+             & \left. \vphantom{\frac{1}{2}} + x \right)^{\!\! 2}
     \end{align*}
   \end{CodeExample}
   \vspace{5pt}
