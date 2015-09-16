@@ -21,10 +21,11 @@
           = \frac{\rho}{\varepsilon_0} .
           \label{eqn:maxwell1}
       \end{equation}
-      Schon Gauß hatte das Durchflutungsgesetz \eqref{eqn:maxwell1} aufgestellt.
+      Schon Gauß hatte das Durchflutungsgesetz
+      \eqref{eqn:maxwell1} aufgestellt.
     \end{lstlisting}
   \CodeResult
-  \begin{minipage}[c][9\baselineskip][t]{\textwidth}
+  \begin{minipage}[c][8\baselineskip][c]{\textwidth}
       Es gilt
       \begin{equation}
         \nabla \cdot \vec{E}
@@ -38,16 +39,16 @@
   \begin{itemize}
     \item Satzzeichen gehören in die \texttt{equation}-Umgebung!
     \item Gleichung ist grammatikalisch ein Substantiv
-    \item Gleichungen sollten immer Teil eines vollständigen Satzes sein
+    \item Gleichungen müssen immer Teil eines vollständigen Satzes sein
   \end{itemize}
 \end{frame}
 
 \begin{frame}[fragile]{Die \texttt{gather}-Umgebung}
   \begin{itemize}
     \item Für mehrere Gleichungen
-    \item \verb+\\+ erzeugt neue Zeile
+    \item \lstinline+\\+ erzeugt neue Zeile
       \begin{itemize}
-        \item Kein \verb+\\+ nach letzter Zeile!
+        \item Kein \lstinline+\\+ nach der letzten Zeile!
       \end{itemize}
     \item Jede Zeile bekommt eine Gleichungsnummer
   \end{itemize}
@@ -79,7 +80,7 @@
   \begin{itemize}
     \item Für mehrere Gleichungen, die aneinander ausgerichtet werden
     \item \lstinline+&+ steuert Ausrichtung
-    \item \verb+\\+ erzeugt neue Zeile
+    \item \lstinline+\\+ erzeugt neue Zeile
     \item Jede Zeile bekommt eine Gleichungsnummer
   \end{itemize}
   \begin{CodeExample}{0.63}
@@ -104,7 +105,7 @@
     \item Um überlange Gleichungen auf zwei Zeilen aufzuteilen.
     \item Kommt in den anderen Umgebungen zum Einsatz
     \item \lstinline+&+ steuert Ausrichtung
-    \item \verb+\\+ erzeugt neue Zeile
+    \item \lstinline+\\+ erzeugt neue Zeile
     \item Gemeinsame Gleichungsnummer
   \end{itemize}
   \begin{CodeExample}{0.55}
