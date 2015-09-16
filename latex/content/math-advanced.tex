@@ -5,8 +5,7 @@
   \hfill\doc{http://mirrors.ctan.org/macros/latex/required/amslatex/math/amsldoc.pdf}{amsmath}
   \doc{http://mirrors.ctan.org/macros/latex/contrib/mathtools/mathtools.pdf}{mathtools}
 }
-  Matrizen (und damit Vektoren) werden fett geschrieben.
-  \begin{CodeExample}{0.70}
+\begin{CodeExample}{0.70}[Matrizen (und damit Vektoren) werden fett geschrieben.]
     \begin{lstlisting}
       \symbf{M}^\top \symbf{M}^*
       \symbf{M}^\dagger \symbf{M}^{-1} M_{12}
@@ -17,12 +16,12 @@
   \end{CodeExample}
 
   \fontsize{8}{6}
-  \begin{CodeExample}{0.70}
+  \begin{CodeExample}{0.70}[Verschiedene Klammern]
     \begin{lstlisting}
-      \begin{pmatrix} \begin{bmatrix} \begin{Bmatrix*}[r]
+      \begin{pmatrix} \begin{bmatrix} \begin{Bmatrix}
         x & y \\        -1 \\           -1 \\
         z & abc          2               2
-      \end{pmatrix}   \end{bmatrix}   \end{Bmatrix*}
+      \end{pmatrix}   \end{bmatrix}   \end{Bmatrix}
     \end{lstlisting}
   \CodeResult
     \removedisplayskip
@@ -35,14 +34,40 @@
         -1 \\
          2
       \end{bmatrix}
-      \begin{Bmatrix*}[r]
+      \begin{Bmatrix}
         -1 \\
          2
-      \end{Bmatrix*}
+      \end{Bmatrix}
     \end{equation*}
   \end{CodeExample}
-
-  \vspace{1em}
+  \begin{CodeExample}{0.60}[Unterschiedliche Ausrichtung mit \lstinline+*+]
+    \begin{lstlisting}
+      \begin{pmatrix*}[l]     \begin{pmatrix*}[c]
+         1 & -1\\                1 & -1\\
+        -1 & 2                  -1 & 2 
+      \end{pmatrix*}          \end{pmatrix*}     
+      \begin{pmatrix*}[r]    
+         1 & -1\\
+        -1 & 2 
+      \end{pmatrix*}
+    \end{lstlisting}
+  \CodeResult
+    \removedisplayskip
+    \begin{flalign*}
+      &\begin{pmatrix*}[l]
+         1 & -1\\
+        -1 & 2 
+      \end{pmatrix*}&
+      \begin{pmatrix*}[c]
+         1 & -1\\
+        -1 & 2 
+      \end{pmatrix*}\\
+      &\begin{pmatrix*}[r]
+         1 & -1\\
+        -1 & 2 
+      \end{pmatrix*}
+    \end{flalign*}
+  \end{CodeExample}
   Mehr Möglichkeiten in der Doku.
 \end{frame}
 
