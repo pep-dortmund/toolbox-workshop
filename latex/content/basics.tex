@@ -11,18 +11,15 @@
             % Präambel
             % .
             % .
-            % .
           \begin{document}
             % Inhalt des Dokuments
-            % .
-            % .
           \end{document}
         \end{lstlisting}
       \end{block}
     \end{column}
     \begin{column}{0.48\textwidth}
       \begin{block}{\lstinline+\\documentclass+}
-        Dokumentenklasse=Vorlage wählen, mit Optionen anpassen.
+        Vorlage wählen, mit Optionen anpassen.
       \end{block}
       \begin{block}{Präambel}
         Globale Optionen und zusätzliche Pakete.
@@ -55,8 +52,9 @@
       % Kommentar
     \end{lstlisting}
   \Explanation
+    \strut
     Dokumentenklasse \texttt{scrartcl},\\
-    Papierformat DIN\,A4 \\[\baselineskip]
+    Papierformat DIN\,A4 \\
     Keine Argumente \\
     Zwei oder mehr Pflichtargumente\\
     \verb+%+-Zeichen für Kommentare
@@ -66,14 +64,13 @@
 \begin{frame}[fragile]{Syntax: Umgebungen}
   \begin{itemize}
     \item Einstellungen für Bereich des Dokuments
-    \item extrem vielseitig
+    \item Extrem vielseitig
     \item Können ggfs.\ auch Optionen übergeben bekommen
     \item Oft auch Alternativform mit \lstinline+*+
   \end{itemize}
   \begin{CodeExplanation}{0.65}[Syntax][Beispiel]
     \begin{lstlisting}
       \begin{Umgebung}[optional]{obligatorisch}
-        % .
         % .
       \end{Umgebung}
     \end{lstlisting}
@@ -89,8 +86,8 @@
 \begin{frame}[fragile]{Syntax: Umgebungen}
   \begin{itemize}
     \item Können weitere Umgebungen enthalten
-    \item Diese müssen aber in Umgebung wieder geschlossen werden
-\end{itemize}
+    \item Diese müssen aber in der Umgebung wieder geschlossen werden
+  \end{itemize}
   \begin{columns}[onlytextwidth, t]
     \begin{column}{0.48\textwidth}
       \begin{block}{Geht:}
@@ -108,9 +105,9 @@
         \begin{lstlisting}
           \begin{itemize}
             \begin{enumerate}
+              % .
           \end{itemize}
             \end{enumerate}
-
         \end{lstlisting}
       \end{alertblock}
     \end{column}
@@ -124,9 +121,11 @@
     \begin{lstlisting}
       \usepackage[aux]{rerunfilecheck}
 
+
       \usepackage{polyglossia}
       \setmainlanguage{german}
       \usepackage{fontspec}
+
       % mehr Pakete hier
 
       \usepackage[unicode]{hyperref}
@@ -134,9 +133,10 @@
       \usepackage{bookmark}
     \end{lstlisting}
   \Explanation
+    \strut
     Warnung, falls nochmal kompiliert werden muss. \\[\baselineskip]
   Deutsche Spracheinstellungen. \\[\baselineskip]
-    Für Fonteinstellungen \\[2\baselineskip]
+    Für Fonteinstellungen \\[3\baselineskip]
     Für Hyperlinks (z.B. Inhaltsverzeichnis → Kapitel). \\
     Erweiterte Bookmarks im PDF.
   \end{CodeExplanation}
@@ -176,10 +176,10 @@
   \end{CodeExplanation}
   \begin{itemize}
     \item Jede System-Schriftart kann genutzt
-    \item \alert{Das ist i.A. nicht sinnvoll: \fontspec{Comic Sans MS} Hallo Welt in Comic Sans MS!}
+    \item \alert{Das ist i.A. nicht sinnvoll: \fontspec{Comic Sans MS} Hallo Welt in Comic Sans!}
     \item Schriften müssen zueinander passen
     \item Schriften müssen alle benötigten Sonderzeichen enthalten
-    \item Bei Änderung auch Mathefont anpassen → später in  \ref{sec:math}
+    \item Bei Änderung auch Mathefont anpassen → später
   \end{itemize}
 \end{frame}
 
@@ -187,7 +187,6 @@
   \begin{lstlisting}
     \documentclass{scrartcl}
 
-    \usepackage{fixltx2e}
     \usepackage[aux]{rerunfilecheck}
     \usepackage{polyglossia}
     \setmainlanguage{german}
