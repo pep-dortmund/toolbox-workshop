@@ -23,18 +23,21 @@
   \begin{itemize}
     \item Höchstens ein Satz pro Code-Zeile
     \item Absätze werden durch eine Leerzeile markiert
-    \item Im Fließtext sollten keine Umbrüche mit \verb+\\+ erzwungen werden
+    \item Im Fließtext sollten keine Umbrüche mit \lstinline+\\+ erzwungen werden
   \end{itemize}
   \begin{alertblock}{Sonderzeichen}
     Viele Sonderzeichen sind \LaTeX-Steuerzeichen.
     Damit diese im Text genutzt werden können, muss meist ein \verb+\+ vorangestellt oder ein Befehl genutzt werden.
   \end{alertblock}
-  \begin{CodeExample}{0.6}
+  \begin{CodeExample}{0.7}
     \begin{lstlisting}
-      \% \& \_ \textbackslash \$ \{ \}
+      \# \$ \% \& \_ \{ \}
+      \textbackslash \textasciicircum \textasciitilde
     \end{lstlisting}
   \CodeResult
-    \% \& \_ \textbackslash\ \$ \{ \}
+    \strut
+    \# \$ \% \& \_ \{ \} \\
+    \textbackslash\ \textasciicircum\ \textasciitilde
   \end{CodeExample}
 \end{frame}
 
@@ -51,6 +54,7 @@
       \textsc{Kapitälchen}
     \end{lstlisting}
   \CodeResult
+    \strut
     \textit{kursiv} \emph{kursiv} \\
     \textbf{fett} \\
     \textbf{\textit{fett-kursiv}} \\
@@ -75,11 +79,13 @@
       {\huge huge}
     \end{lstlisting}
   \CodeResult
-    {\tiny tiny}
-    {\small small}
-    {\normalsize normal}
-    {\large large}
-    {\huge huge}
+    \begin{minipage}[c][5\baselineskip][c]{\textwidth}
+      {\tiny tiny}
+      {\small small}
+      {\normalsize normal}
+      {\large large}
+      {\huge huge}
+    \end{minipage}
   \end{CodeExample}
   \vspace{1em}
   \begin{block}{Alle Größen}
@@ -104,18 +110,21 @@
   \begin{itemize}
     \item Verschachtelung möglich
     \item Zur Aufteilung größerer Dokumente (z.B. diese Präsentation)
-    \item Für häufig wiederverwendeten \LaTeX-Code (header, Erläuterungen zu Fehlerrechnung, …)
+    \item Für häufig wiederverwendeten Code (Header, Erläuterungen zu Fehlerrechnung, …)
     \item Für per Skript erzeugte Tabelleninhalte
   \end{itemize}
 \end{frame}
 
-\begin{frame}[fragile]{Anführungszeichen}
+\begin{frame}[fragile]{
+  Anführungszeichen
+  \hfill\doc{http://mirrors.ctan.org/macros/latex/contrib/csquotes/csquotes.pdf}{csquotes}
+}
   Die richtigen Anführungszeichen, wo die Satzzeichen hingehören und vieles mehr hängt von der Sprache ab.
   So macht man es richtig:
   \begin{Packages}
     \begin{lstlisting}
       \usepackage[autostyle]{csquotes}    % nach polyglossia
-      \setotherlanguages{english, french} % andere Sprachen laden.
+      \setotherlanguages{english, french} % andere Sprachen laden
     \end{lstlisting}
   \end{Packages}
   \begin{CodeExample}{0.60}
@@ -127,6 +136,7 @@
       \textcquote{root}{foo}
     \end{lstlisting}
   \CodeResult
+    \strut
     foo \enquote{bar} baz \\
     \enquote{foo \enquote{bar} baz} \\
     \textenglish{\enquote{foo}} \\
