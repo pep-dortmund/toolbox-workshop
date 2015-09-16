@@ -31,62 +31,10 @@
   showlines=true,
   aboveskip=0em,
   belowskip=0em,
-  moretexcs={
-    setmainlanguage, text, num, SI, si, kilo, gram, befehl, subject, titlehead, publishers, textenglish, textfrench, milli, ang, celsius, percent, cubic, centi, tothe, 
-    metre, per, second, squared, micro, subtitle, maketitle, tableofcontents,
-    subsection, subsubsection, part, chapter, paragraph, subparagraph,
-    iint, iiint, includegraphics, addbibresource, printbibliography,
-    OverfullCenter, ExplSyntaxOn, ExplSyntaxOff, NewDocumentCommand,
-    enquote, selectlanguage, textcquote,
-    setmainfont, setsansfont, setmonofont,
-    setmathfont, mathscr, mathbfscr, mathcal, mathbfcal, DeclareSymbolFont, protected, mathbb, numexpr, symAMSb, vDash, eqcolon, coloneq, lblkbrbrak, rblkbrbrak, DeclareMathSymbol,
-    symbf, symup, symbfup, symit, symbfit, symsf, symsfup, symsfit, symbfsf, symbfsfup, symbfsfit, symtt, symbb, symbbit, symscr, symbfscr, symcal, symbfcal, symfrak, symbffrak,
-    omicron, varkappa, Alpha, Beta, Epsilon, Zeta, Eta, Iota, Kappa, Mu, Nu, Omicron, Rho, Tau, Chi, beth, gimel, eth,
-    square, increment, setotherlanguages, mathup, meter, joule, kelvin, FloatBarrier, ce,
-    toprule, midrule, bottomrule, eqref, sisetup, dd, href, smallsetminus, implies, sime, nequiv, ncong, napprox, nsim, nexists, nni, nsime, diameter,
-    cramped, mathring, dddot, ddddot, operatorname, DeclareMathOperator, xyz, Xyz, sideset, mathclap, mathfrak, mathbfsf, mathbffrak,
-    lvert, rvert, lVert, rVert, middle, subref, intertext, shortintertext, newton, floatplacement, ohm, nano, ignorespacesafterend, Kommandoname, Command,
-    defaultfontfeatures, texorpdfstring, sfrac, url,
-    textbackslash,
-  },
-  literate=*%
-    {\\!}{{\textcolor{vertexDarkRed}{\textbackslash!}}}{2}
-    {\\"}{{\textcolor{vertexDarkRed}{\textbackslash"}}}{2}
-    {\\\#}{{\textcolor{vertexDarkRed}{\textbackslash\#}}}{2}
-    {\\\$}{{\textcolor{vertexDarkRed}{\textbackslash\$}}}{2}
-    {\\\%}{{\textcolor{vertexDarkRed}{\textbackslash\%}}}{2}
-    {\\\&}{{\textcolor{vertexDarkRed}{\textbackslash\&}}}{2}
-    {\\'}{{\textcolor{vertexDarkRed}{\textbackslash'}}}{2}
-    {\\(}{{\textcolor{vertexDarkRed}{\textbackslash(}}}{2}
-    {\\)}{{\textcolor{vertexDarkRed}{\textbackslash)}}}{2}
-    {\\*}{{\textcolor{vertexDarkRed}{\textbackslash*}}}{2}
-    {\\+}{{\textcolor{vertexDarkRed}{\textbackslash+}}}{2}
-    {\\,}{{\textcolor{vertexDarkRed}{\textbackslash,}}}{2}
-    {\\-}{{\textcolor{vertexDarkRed}{\textbackslash-}}}{2}
-    {\\.}{{\textcolor{vertexDarkRed}{\textbackslash.}}}{2}
-    {\\/}{{\textcolor{vertexDarkRed}{\textbackslash/}}}{2}
-    {\\:}{{\textcolor{vertexDarkRed}{\textbackslash:}}}{2}
-    {\\;}{{\textcolor{vertexDarkRed}{\textbackslash;}}}{2}
-    {\\<}{{\textcolor{vertexDarkRed}{\textbackslash<}}}{2}
-    {\\=}{{\textcolor{vertexDarkRed}{\textbackslash=}}}{2}
-    {\\>}{{\textcolor{vertexDarkRed}{\textbackslash>}}}{2}
-    {\\?}{{\textcolor{vertexDarkRed}{\textbackslash?}}}{2}
-    {\\[}{{\textcolor{vertexDarkRed}{\textbackslash[}}}{2}
-    {\\\\}{{\textcolor{vertexDarkRed}{\textbackslash\textbackslash}}}{2}
-    {\\]}{{\textcolor{vertexDarkRed}{\textbackslash]}}}{2}
-    {\\\^}{{\textcolor{vertexDarkRed}{\textbackslash\textasciicircum}}}{2}
-    {\\\_}{{\textcolor{vertexDarkRed}{\textbackslash\_}}}{2}
-    {\\\{}{{\textcolor{vertexDarkRed}{\textbackslash\{}}}{2}
-    {\\|}{{\textcolor{vertexDarkRed}{\textbackslash|}}}{2}
-    {\\\}}{{\textcolor{vertexDarkRed}{\textbackslash\}}}}{2}
-    {\\\~}{{\textcolor{vertexDarkRed}{\textbackslash\textasciitilde}}}{2}
-    {\\-/}{{\textcolor{vertexDarkRed}{\textbackslash-/}}}{2}
-    {\\--}{{\textcolor{vertexDarkRed}{\textbackslash--}}}{2}
-    {\\---}{{\textcolor{vertexDarkRed}{\textbackslash---}}}{2}
-    {\\=/}{{\textcolor{vertexDarkRed}{\textbackslash=/}}}{2}
-    {\\==}{{\textcolor{vertexDarkRed}{\textbackslash==}}}{2}
-    {\\===}{{\textcolor{vertexDarkRed}{\textbackslash===}}}{2}
 }
+
+\input{settings-lst-cs.tex}
+\input{settings-lst-literate.tex}
 
 % http://tex.stackexchange.com/a/267701/32665
 % "Rehook" literate char table.
