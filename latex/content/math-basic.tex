@@ -209,7 +209,7 @@
       x_\sqrt[3]{2}      x_{\sqrt[3]{2}}
     \end{lstlisting}
   \CodeResult
-  \removedisplayskip
+    \removedisplayskip
     \begin{flalign*}
       &x^10                 && x^{10} \\
       &\text{\alert{error}} && x^{2^2} \\
@@ -218,7 +218,7 @@
   \end{CodeExample}
   \begin{CodeExample}{0.60}[Text in Indizes]
     \begin{lstlisting}
-    falsch: x_{min},  richtig: x_\text{min}
+      falsch: x_{min},  richtig: x_\text{min}
     \end{lstlisting}
   \CodeResult
     \strut
@@ -234,6 +234,7 @@
     $x' \quad x^{'} \quad x'' \quad x'^2$ \\
     ${}^2 x$
   \end{CodeExample}
+  \vspace*{-1pt}
   Nur wenige Befehle können ohne \lstinline+{ }+ im Index stehen.
 \end{frame}
 
@@ -289,6 +290,7 @@
     $\cos \tan \exp \ln \log_{10}(x)$ \\[1\baselineskip]
     $\displaystyle \lim_{x \to \infty} x^2$
   \end{CodeExample}
+  \vspace*{-2pt}
   \begin{CodeExample}{0.65}[Man kann auch eigene Funktionen definieren:]
     \begin{lstlisting}
       % direkt in der Matheumgebung:
