@@ -34,8 +34,8 @@
 
 \newcounter{heightgroup}
 
-\NewDocumentEnvironment {CodeExplanation} {o m O{Code} O{Ergebnis}} {
-  \NewDocumentCommand \Explanation {} {
+\NewDocumentEnvironment {CodeExplanation} {o m O{Code} O{Ergebnis} D<>{}} {
+  \NewDocumentCommand \Explanation {D<>{}} {
       \end{tcolorbox}
     \end{column}
     \begin{column}{
@@ -50,6 +50,7 @@
       equal~height~group=\theheightgroup,
       adjusted~title=#4,
       valign=top,
+      ##1,
     ]
   }
   \begin{columns}[onlytextwidth, t]
@@ -58,6 +59,7 @@
         adjusted~title=#3,
         equal~height~group=\theheightgroup,
         valign=top,
+        #5,
       ]
 }{
       \end{tcolorbox}
@@ -66,8 +68,8 @@
   \stepcounter{heightgroup}
 }
 
-\NewDocumentEnvironment {CodeExample} {o m O{Code} O{Ergebnis}} {
-  \NewDocumentCommand \CodeResult {} {
+\NewDocumentEnvironment {CodeExample} {o m O{Code} O{Ergebnis} D<>{}} {
+  \NewDocumentCommand \CodeResult {D<>{}} {
       \end{tcolorbox}
     \end{column}
     \begin{column}{
@@ -84,6 +86,7 @@
         coltitle=black,
         equal~height~group=\theheightgroup,
         valign=top,
+        ##1,
       ]
         \begin{EmulateArticle}
   }
@@ -93,6 +96,7 @@
         adjusted~title=#3,
         equal~height~group=\theheightgroup,
         valign=top,
+        #5,
       ]
 }{
         \end{EmulateArticle}
@@ -153,6 +157,13 @@
 }{
 }
 \makeatother
+
+\NewDocumentEnvironment {CenterStrip} {m}
+{
+  \begin{minipage}[c][#1\baselineskip][c]{\textwidth}
+}{
+  \end{minipage}
+}
 
 \NewDocumentCommand \OverfullCenter {+m}
 {
