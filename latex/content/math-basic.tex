@@ -90,7 +90,8 @@
       $x    =     5$, $y=3$
     \end{lstlisting}
   \CodeResult
-      $x    =     5$, $y=3$
+    \strut
+    $x    =     5$, $y=3$
   \end{CodeExample}
 
   \begin{CodeExample}{0.6}[Satzzeichen u.\ Bindestriche gehören nicht in \lstinline+\$...\$+]
@@ -100,16 +101,17 @@
       $y$-Achse, $x$-$y$-Ebene
     \end{lstlisting}
   \CodeResult
+    \strut
     Dies ist eine Variable: $x$. \\
     Liste von Variablen $x$, $y$, $z$. \\
     $y$-Achse, $x$-$y$-Ebene
   \end{CodeExample}
   \begin{CodeExample}{0.6}[Vorsicht bei der Höhe von Formeln im Text]
     \begin{lstlisting}
-    Text ohne eine Bedeutung.
-    Mit einer Formel:
-    $\frac{1}{1- \frac{1}{1 - x}}$
-    Text ohne eine Bedeutung.
+      Text ohne eine Bedeutung.
+      Mit einer Formel:
+      $\frac{1}{1- \frac{1}{1 - x}}$
+      Text ohne eine Bedeutung.
     \end{lstlisting}
   \CodeResult
     \hrule
@@ -129,17 +131,16 @@
       \varepsilon \vartheta \varkappa \varpi \varrho \varsigma \varphi
       \Alpha \Beta \Gamma
       \hbar \imath \jmath \ell
-      \aleph \beth \gimel
       \partial \nabla \square \increment
       \infty \diameter \ldots \cdots
     \end{lstlisting}
   \CodeResult
+    \strut
     \Umathordordspacing\textstyle=4mu
     $\epsilon \theta \kappa \pi \rho \sigma \phi$ \\
     $\varepsilon \vartheta \varkappa \varpi \varrho \varsigma \varphi$ \\[\baselineskip]
     $\Alpha \Beta \Gamma$ \\
     $\hbar \imath \jmath \ell$ \\
-    $\aleph \beth \gimel$ \\
     $\partial \nabla \square \increment$ \\
     $\infty \diameter \ldots \cdots$
   \end{CodeExample}
@@ -197,7 +198,8 @@
       x^2 x_2 x²
     \end{lstlisting}
   \CodeResult
-    $x^2 \quad x_2 \quad x²$ \\
+    \strut
+    $x^2 \quad x_2 \quad x²$
   \end{CodeExample}
   \begin{CodeExample}{0.60}[Lange o.\ doppelte Indizes/Exponenten]
     \vspace{0.5\baselineskip}
@@ -208,18 +210,19 @@
     \end{lstlisting}
   \CodeResult
   \removedisplayskip
-  \begin{flalign*}
-    &x^10 & &x^{10} \\
-    &\text{\alert{error}} & &x^{2^2} \\
-    &\text{\alert{error}} & &\smash{x_{\sqrt[3]{2}}}
-  \end{flalign*}
+    \begin{flalign*}
+      &x^10                 && x^{10} \\
+      &\text{\alert{error}} && x^{2^2} \\
+      &\text{\alert{error}} && \smash{x_{\sqrt[3]{2}}} \qquad\qquad
+    \end{flalign*}
   \end{CodeExample}
   \begin{CodeExample}{0.60}[Text in Indizes]
     \begin{lstlisting}
     falsch: x_{min},  richtig: x_\text{min}
     \end{lstlisting}
   \CodeResult
-    falsch: $x_{min}$,  richtig: $x_\text{min}$
+    \strut
+    falsch: $x_{min}$, \quad richtig: $x_\text{min}$
   \end{CodeExample}
   \begin{CodeExample}{0.60}[Striche / linksseitig]
     \begin{lstlisting}
@@ -227,10 +230,11 @@
       {}^2 x
     \end{lstlisting}
   \CodeResult
+    \strut
     $x' \quad x^{'} \quad x'' \quad x'^2$ \\
-    ${}^2 x$ \\
+    ${}^2 x$
   \end{CodeExample}
-  Nur wenige Befehle können ohne \lstinline+{ }+ im Index stehen
+  Nur wenige Befehle können ohne \lstinline+{ }+ im Index stehen.
 \end{frame}
 
 \begin{frame}[fragile]{Akzente}
@@ -245,6 +249,7 @@
       \underline{xy} \overline{xy}
     \end{lstlisting}
   \CodeResult
+    \strut
     \Umathordordspacing\textstyle=4mu
     $\bar{x}$ \\
     $\hat{x}$ \\
@@ -261,6 +266,7 @@
       \hat{x}_\text{min}
     \end{lstlisting}
   \CodeResult
+    \strut
     \Umathordordspacing\textstyle=4mu
     $\hat{x_\text{min}}$\\
     $\hat{x}_\text{min}$
@@ -277,6 +283,7 @@
       \lim_{x \to \infty} x^2 
     \end{lstlisting}
   \CodeResult
+    \strut
     $x \sin y$ \\
     $x \sin(y)$ \\
     $\cos \tan \exp \ln \log_{10}(x)$ \\[1\baselineskip]
@@ -296,45 +303,49 @@
       \Xyz_i(a)
     \end{lstlisting}
   \CodeResult
-    \ \\
+    \strut \\
     $\operatorname{xyz}_i(a)$ \\
     $\smash{\displaystyle \operatorname*{xyz}_i(a)}$ \\
-    \ \\[3\baselineskip]
-    \ \strut\\\nointerlineskip
-    \begin{minipage}[c][2\baselineskip][c]{\textwidth}
-      $\operatorname{xyz}_i(a)$ \\
-      $\smash{\displaystyle \operatorname*{Xyz}_i(a)}$
-    \end{minipage}
+    \ \\[3.5\baselineskip]
+    $\operatorname{xyz}_i(a)$ \\
+    $\displaystyle \operatorname*{Xyz}_i(a)$
   \end{CodeExample}
 \end{frame}
 
 \begin{frame}[fragile]{Große Operatoren}
-  \begin{CodeExample}{0.70}
+  \begin{CodeExample}{0.65}
     \vspace{\baselineskip}
     \begin{lstlisting}
       \sum_{i=0}^\infty x_i
 
 
-      \int_{0}^{1} f(x) \, \symup{d}x
+      \prod_{x \neq 0}
 
 
       \int_0^1 \iiint \oint
 
 
-      \prod \bigotimes
+      \int_{0}^{1} f(x) \, \symup{d}x
+
+
+      \int x   \int_0 x  \int^{} x  \int_0^{} x
+      % LuaTeX Bug: immer obere Grenze angeben
     \end{lstlisting}
   \CodeResult
   \begin{minipage}[c][3\baselineskip][c]{0.9\textwidth}
       $\displaystyle \sum_{i=0}^\infty x_i$
     \end{minipage} \\\nointerlineskip
     \begin{minipage}[c][3\baselineskip][c]{\textwidth}
-      $\displaystyle \int_{0}^{1} f(x) \, \symup{d}x $
-    \end{minipage} \\\nointerlineskip
-    \begin{minipage}[c][3\baselineskip][c]{\textwidth}
-      $\displaystyle \prod \bigotimes$
+      $\displaystyle \prod_{x \neq 0}$
     \end{minipage} \\\nointerlineskip
     \begin{minipage}[c][3\baselineskip][c]{\textwidth}
       $\displaystyle \smash{\int_0^1} \iiint \oint$
+    \end{minipage} \\\nointerlineskip
+    \begin{minipage}[c][3\baselineskip][c]{\textwidth}
+      $\displaystyle \int_{0}^{1} f(x) \, \symup{d}x $
+    \end{minipage}
+    \begin{minipage}[c][3\baselineskip][c]{\textwidth}
+      $\displaystyle \int x \quad \int_0 x \quad \int^{} x \quad \int_0^{} x$
     \end{minipage}
   \end{CodeExample}
 \end{frame}
@@ -353,9 +364,10 @@
       \symfrak{A B c} \symbffrak{A B c}
     \end{lstlisting}
   \CodeResult
+    \strut
     \Umathordordspacing\textstyle=4mu
     $x \alpha \symup{x \alpha}$ \\
-    $\symbf{x\alpha}$ \\
+    $\symbf{x \alpha}$ \\
     $\symbfsf{x \alpha}$ \\
     $\symbb{R N 1 0 x}$ \\
     $\symcal{I A O} \symbfcal{I A O}$ \\
@@ -376,6 +388,7 @@
       \qquad
     \end{lstlisting}
   \CodeResult
+    \strut
     $\Rightarrow\mspace{-2mu} \Leftarrow$ \\
     $\Rightarrow\mspace{-2mu} \,\Leftarrow$ \\
     $\Rightarrow\mspace{-2mu} \:\Leftarrow$ \\
@@ -391,6 +404,7 @@
       \! % negativer \,
     \end{lstlisting}
   \CodeResult
+    \strut
     $\Rightarrow\mspace{-2mu} \Leftarrow$ \\
     $\Rightarrow\mspace{-2mu} \!\Leftarrow$
   \end{CodeExample}
@@ -416,12 +430,13 @@
       \lvert x\rvert \lVert x\rVert
     \end{lstlisting}
   \CodeResult
+    \strut
     \Umathcloseopenspacing\textstyle=4mu
     $(x) [x] \{x\} \langle x\rangle $\\
     $\lvert x\rvert \lVert x\rVert$
   \end{CodeExample}
 
-  \begin{CodeExample}{0.71}[Häufig braucht man größere Klammern.]
+  \begin{CodeExample}{0.71}[Häufig braucht man größere Klammern]
     \begin{lstlisting}
       \bigl(x\bigr) \Bigl(x\Bigr) \biggl(x\biggr) \Biggl(x\Biggr)
 
@@ -460,6 +475,7 @@
       \sin\!\left(x\right)
     \end{lstlisting}
   \CodeResult
+    \strut
     $\sin(x)$ \\
     $\sin\left(x\right)$ \\
     $\sin\!\left(x\right)$
@@ -472,7 +488,7 @@
   \hfill\doc{http://mirrors.ctan.org/macros/latex/contrib/unicode-math/unimath-symbols.pdf}{unimath-symbols}
 }
   Praktischer Link: \\
-  \url{http://detexify.kirelabs.org/classify.html} \\
+  \href{http://detexify.kirelabs.org/classify.html}{http://detexify.kirelabs.org/classify.html} \\
   (Symbol malen und \LaTeX-Code angezeigt bekommen)
 \end{frame}
 
@@ -517,10 +533,13 @@
   \end{equation*}
 
   \vspace{1em}
-  \begin{lstlisting}
-    \int_0^1   \int_0^{\symup{\pi}}   \int_0^{2 \symup{\pi}}
-    r^2 \sin(\vartheta)
-    \, \symup{d}\varphi \, \symup{d}\vartheta \, \symup{d}r
-    = \frac{4}{3} \symup{\pi}
-  \end{lstlisting}
+  \qquad
+  \begin{minipage}{0.8\textwidth}
+    \begin{lstlisting}
+      \int_0^1   \int_0^{\symup{\pi}}   \int_0^{2 \symup{\pi}}
+      r^2 \sin(\vartheta)
+      \, \symup{d}\varphi \, \symup{d}\vartheta \, \symup{d}r
+      = \frac{4}{3} \symup{\pi}
+    \end{lstlisting}
+  \end{minipage}
 \end{frame}
