@@ -97,8 +97,8 @@
 }
 \setbeamertemplate{title~page}
 {
-  \nointerlineskip% This one's tricky
-  \begin{minipage}[b][\paperheight-18pt]{\textwidth}
+  \nointerlineskip % This one's tricky
+  \begin{minipage}[b][\paperheight]{\textwidth}
     \centering
     \begin{beamercolorbox}[wd=\paperwidth, ht=12em, dp=4em]{title~page}
       \centering
@@ -122,9 +122,9 @@
       \vspace*{5mm}
       {\usebeamerfont{institute}\insertinstitute\par}
     \fi
-    \vfill
     \ifx\insertdate\@empty
     \else
+      \vspace*{5mm}
       {\usebeamerfont{date}\usebeamercolor[fg]{date}\insertdate\par}
     \fi
     \vspace{10mm}
@@ -148,10 +148,14 @@
   \if@simplefootline
     \hfill
   \else
-    \begin{beamercolorbox}[wd=.2\paperwidth, ht=1.8em, dp=1em, left, leftskip=1em]{normal text}
+    \begin{beamercolorbox}[wd=.25\paperwidth, ht=1.8em, dp=1em, left, leftskip=1em]{normal text}
       \insertshortauthor
+      \ifx\insertdate\@emtpy
+      \else
+        \ \insertdate
+      \fi
     \end{beamercolorbox}
-    \begin{beamercolorbox}[wd=.6\paperwidth, ht=1.8em, dp=1em, center]{}
+    \begin{beamercolorbox}[wd=.5\paperwidth, ht=1.8em, dp=1em, center]{}
       \insertshorttitle
       \ifx\insertsection\@empty
       \else
@@ -159,7 +163,7 @@
       \fi
     \end{beamercolorbox}
   \fi
-  \begin{beamercolorbox}[wd=.2\paperwidth, ht=1.8em, dp=1em, right, rightskip=1em]{}
+  \begin{beamercolorbox}[wd=.25\paperwidth, ht=1.8em, dp=1em, right, rightskip=1em]{}
     \insertframenumber
   \end{beamercolorbox}
 }
