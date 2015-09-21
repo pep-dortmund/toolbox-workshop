@@ -169,3 +169,20 @@
       \end{itemize}
   \end{itemize}
 \end{frame}
+
+\begin{frame}{Umgebungsvariablen}
+  \begin{itemize}
+    \item steuern viele Einstellungen und Programme
+    \item Ausgabe mit \texttt{echo \$NAME}
+    \item wichtiges Beispiel: \texttt{PATH} (auch unter Windows):
+      \begin{itemize}
+        \item enthält alle Pfade, in denen nach Programmen gesucht werden soll
+        \item wird von vorne nach hinten gelesen
+        \item erster Treffer wird genommen
+        \item \texttt{which \textit{program}} zeigt den Pfad eines Programms
+        \item Shebang, das den ersten Treffer im \texttt{PATH} nutzt, statt festem Pfad: \texttt{\#!/usr/bin/env python}
+      \end{itemize}
+    \item Änderung über \texttt{export}:\\
+      \texttt{export PATH=/home/maxnoe/anaconda3/bin:\$PATH}
+  \end{itemize} 
+\end{frame}
