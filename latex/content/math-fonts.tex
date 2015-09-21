@@ -23,18 +23,3 @@
     \end{lstlisting}
   \end{block}
 \end{frame}
-
-\begin{frame}[fragile]{Fehlende Zeichen}
-  Manchmal sind Sonderzeichen nicht im Font enthalten:
-  \vspace{1em}
-  \begin{block}{Code}
-    \begin{lstlisting}[escapechar=|]
-      \setmathfont[range={\lblkbrbrak,\rblkbrbrak}]{XITS Math}
-
-      % make bar horizontal, use \hslash for slashed h
-      \let\hbar\relax
-      \DeclareMathSymbol{\hbar}{\mathord}{AMSb}{"7E}
-      \DeclareMathSymbol{|$ℏ$|}{\mathord}{AMSb}{"7E} % mit Unicode hbar
-    \end{lstlisting}
-  \end{block}
-\end{frame}

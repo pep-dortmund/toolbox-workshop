@@ -71,6 +71,7 @@
     \begin{figure}
       \centering
       \begin{subfigure}{0.48\textwidth}
+        \centering
         \includegraphics[height=0.75cm]{logos/pep.pdf}
         \caption{PeP-Logo.}
         \label{fig:pep2}
@@ -136,15 +137,16 @@
 \end{frame}
 
 \begin{frame}[fragile]{\lstinline+\\ref+ vs. \lstinline+\\subref+}
-  \begin{CodeExample}{0.48}
+  \begin{CodeExample}{0.47}
     \begin{lstlisting}
       In Abbildung \ref{fig:logos} sehen Sie zwei Logos.
       In Abbildung \ref{fig:pep2} sehen Sie das PeP-Logo.
       In Abbildung \subref{fig:pep2} sehen Sie das PeP-Logo.
     \end{lstlisting}
     \CodeResult
+      \strut
       In Abbildung \ref{fig:logos} sehen Sie zwei Logos. \\[\baselineskip]
-      In Abbildung \ref{fig:pep2} sehen Sie das PeP-Logo. \\
+      In Abbildung \ref{fig:pep2} sehen Sie das PeP-Logo. \\[\baselineskip]
       In Abbildung \subref{fig:pep2} sehen Sie das PeP-Logo.
   \end{CodeExample}
   \vspace{2em}

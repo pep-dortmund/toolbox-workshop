@@ -11,11 +11,11 @@
   }
   \begin{tikzpicture}[remember picture,overlay]
     \tikzset{shift={(current page.center)}}
-    \node at (-4.3,1.3) {
+    \node at (-4.3,2.3) {
       \TeX-Engines
     };
     \only<3>{
-      \node (here) at (-4.3,-2.8) {
+      \node (here) at (-4.5,-2.6) {
         Sie sind hier
       };
       \draw [->, >=Stealth] (here.east) -- ++(1.55,-0.85);
@@ -44,7 +44,7 @@
     \item[Lua-Programmierung]
       \begin{itemize}
         \item \TeX-Programmierung ist nicht besonders einfach
-        \item Manche Pakete bieten weitergehende Funktionen nur über Lua an
+        \item Manche Pakete bieten weitergehende Funktionen nur über Lua
       \end{itemize}
   \end{description}
 \end{frame}
@@ -60,14 +60,14 @@
   }
   \begin{tikzpicture}[remember picture,overlay]
     \tikzset{shift={(current page.center)}}
-    \node at (-4.3,2.5) {
+    \node at (-4.3,3.5) {
       \TeX-Formate
     };
     \only<3>{
-      \node (here) at (-4.3,-0.6) {
+      \node (here) at (-4.3,-0.85) {
         Sie sind hier
       };
-      \draw [->, >=Stealth] (here.east) -- ++(3.05,0);
+      \draw [->, >=Stealth] (here.east) -- ++(3.08,0);
     }
   \end{tikzpicture}
 \end{frame}
