@@ -77,7 +77,7 @@
 \end{frame}
 
 \begin{frame}{\texttt{man}, \texttt{pwd}, \texttt{cd}}
-  \begin{tabu}{>{\ttfamily}l X}
+  \begin{tabu}{>{\ttfamily}l X[,L]}
     man \textit{topic}    & \enquote{manual}: zeigt die Hilfe für ein Programm \\
     pwd                   & \enquote{print working directory}: zeigt das aktuelle Verzeichnis \\
     cd \textit{directory} & \enquote{change directory}: wechselt in das angegebene Verzeichnis
@@ -85,7 +85,7 @@
 \end{frame}
 
 \begin{frame}{\texttt{ls}}
-  \begin{tabu}{>{\ttfamily}l X}
+  \begin{tabu}{>{\ttfamily}l X[,L]}
     ls [\textit{directory}] & \enquote{list}: zeigt den Inhalt eines Verzeichnisses an \\
     ls -l                   & \enquote{long}: zeigt mehr Informationen über Dateien und Verzeichnisse \\
     ls -a                   & \enquote{all}: zeigt auch versteckte Dateien (fangen mit \texttt{.} an)
@@ -93,7 +93,7 @@
 \end{frame}
 
 \begin{frame}{\texttt{mkdir}, \texttt{touch}}
-  \begin{tabu}{>{\ttfamily}l X}
+  \begin{tabu}{>{\ttfamily}l X[,L]}
     mkdir \textit{directory}    & \enquote{make directory}: erstellt ein neues Verzeichnis \\
     mkdir -p \textit{directory} & \enquote{parent}: erstellt auch alle notwendigen Oberverzeichnisse \\
     touch \textit{file}         & erstellt eine leere Datei
@@ -101,7 +101,7 @@
 \end{frame}
 
 \begin{frame}{\texttt{cp}, \texttt{mv}, \texttt{rm}, \texttt{rmdir}}
-  \begin{tabu}{>{\ttfamily}l X}
+  \begin{tabu}{>{\ttfamily}l X[,L]}
     cp \textit{source} \textit{destination}    & \enquote{copy}: kopiert eine Datei \\
     cp -r \textit{source} \textit{destination} & \enquote{recursive}: kopiert ein Verzeichnis rekursiv \\
     mv \textit{source} \textit{desination}     & \enquote{move}: verschiebt eine Datei (Umbenennung) \\
@@ -112,7 +112,7 @@
 \end{frame}
 
 \begin{frame}{\texttt{cat}, \texttt{less}, \texttt{grep}, \texttt{echo}}
-  \begin{tabu}{>{\ttfamily}l X}
+  \begin{tabu}{>{\ttfamily}l X[,L]}
     cat \textit{file}                           & \enquote{concatenate}: gibt Inhalt einer (oder mehr) Datei(en) aus \\
     less \textit{file}                          & (besser als \texttt{more}): wie \texttt{cat}, aber navigabel \\
     grep \textit{pattern} \textit{file}         & \texttt{g/re/p}: sucht in einer Datei nach einem Muster \\
@@ -123,7 +123,7 @@
 \end{frame}
 
 \begin{frame}{Ein- und Ausgabe}
-  \begin{tabu}{>{\ttfamily}l X}
+  \begin{tabu}{>{\ttfamily}l X[,L]}
     \textit{command} > \textit{file}      & überschreibt Datei mit Ausgabe \\
     \textit{command} >> \textit{file}     & fügt Ausgabe einer Datei hinzu \\
     \textit{command} < \textit{file}      & Datei als Eingabe \\
@@ -132,7 +132,7 @@
 \end{frame}
 
 \begin{frame}{Tastaturkürzel}
-  \begin{tabu}{>{\ttfamily}l X}
+  \begin{tabu}{>{\ttfamily}l X[,L]}
     Ctrl-C & beendet das laufende Programm \\
     Ctrl-D & EOF (end of file) eingeben, kann Programme beenden \\
     Ctrl-L & leert den Bildschirm
@@ -140,7 +140,7 @@
 \end{frame}
 
 \begin{frame}{Globbing}
-  \begin{tabu}{>{\ttfamily}l X}
+  \begin{tabu}{>{\ttfamily}l X[,L]}
     *                         & wird ersetzt durch alle passenden Dateien \\
     \{\textit{a},\textit{b}\} & bildet alle Kombinationen
   \end{tabu}

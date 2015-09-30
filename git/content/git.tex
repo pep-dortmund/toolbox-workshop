@@ -133,7 +133,7 @@
 \end{frame}
 
 \begin{frame}{\texttt{git init}, \texttt{git clone}}
-  \begin{tabu}{>{\ttfamily}l X}
+  \begin{tabu}{>{\ttfamily}l X[,L]}
     git init               & initialisiert ein \texttt{git}-Repo im jetzigen Verzeichnis \\
     git clone \textit{url} & klont das Repo aus \texttt{\textit{url}} \\
     rm -rf .git            & löscht alle Spuren von \texttt{git} aus dem Repo
@@ -141,14 +141,14 @@
 \end{frame}
 
 \begin{frame}{\texttt{git status}, \texttt{git log}}
-  \begin{tabu}{>{\ttfamily}l X}
+  \begin{tabu}{>{\ttfamily}l X[,L]}
     git status & zeigt Status des Repos (welche Dateien sind neu, gelöscht, verschoben, bearbeitet) \\
     git log    & listet Commits in aktuellem Branch
   \end{tabu}
 \end{frame}
 
 \begin{frame}{\texttt{git add}, \texttt{git mv}, \texttt{git rm}, \texttt{git reset}}
-  \begin{tabu}{>{\ttfamily}l X}
+  \begin{tabu}{>{\ttfamily}l X[,L]}
     git add \textit{file} … & fügt Dateien/Verzeichnisse zum Staging-Bereich hinzu \\
     git add -p …            & fügt Teile einer Datei zum Staging-Bereich hinzu \\
     git mv                  & wie \texttt{mv} (automatisch in Staging)\\
@@ -158,7 +158,7 @@
 \end{frame}
 
 \begin{frame}{\texttt{git diff}}
-  \begin{tabu}{>{\ttfamily}l X}
+  \begin{tabu}{>{\ttfamily}l X[,L]}
     git diff                                   & zeigt Unterschiede zwischen Staging und Arbeitsverzeichnis \\
     git diff --staged                          & zeigt Unterschiede zwischen letzten Commit und Staging \\
     git diff \textit{commit1} \textit{commit2} & zeigt Unterschiede zwischen zwei Commits
@@ -166,7 +166,7 @@
 \end{frame}
 
 \begin{frame}{\texttt{git commit}}
-  \begin{tabu}{>{\ttfamily}l X}
+  \begin{tabu}{>{\ttfamily}l X[,L]}
     git commit                       & erzeugt Commit aus jetzigem Staging-Bereich, öffnet Editor für Commit-Message \\
     git commit -m "\textit{message}" & Commit mit \texttt{\textit{message}} als Message \\
     git commit --amend               & letzten Commit ändern (fügt aktuellen Staging hinzu, Message bearbeitbar)
@@ -186,7 +186,7 @@
 \end{frame}
 
 \begin{frame}{\texttt{git pull}, \texttt{git push}}
-  \begin{tabu}{>{\ttfamily}l X}
+  \begin{tabu}{>{\ttfamily}l X[,L]}
     git pull          & Commits herunterladen (mit Merge-Commit) \\
     git pull --rebase & Commits herunterladen (ohne Merge-Commit) \\
     git push          & Commits hochladen
@@ -227,14 +227,14 @@
 \end{frame}
 
 \begin{frame}{\texttt{git checkout}}
-  \begin{tabu}{>{\ttfamily}l X}
+  \begin{tabu}{>{\ttfamily}l X[,L]}
     git checkout \textit{commit} & Commit ins Arbeitsverzeichnis laden \\
     git checkout \textit{file}   & Änderungen an Dateien verwerfen (zum letzten Commit zurückkehren)
   \end{tabu}
 \end{frame}
 
 \begin{frame}{\texttt{git stash}}
-  \begin{tabu}{>{\ttfamily}l X}
+  \begin{tabu}{>{\ttfamily}l X[,L]}
     git stash     & Änderungen kurz zur Seite schieben \\
     git stash pop & Änderungen zurückholen aus Stash
   \end{tabu}
