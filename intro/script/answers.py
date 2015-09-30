@@ -4,6 +4,15 @@ import pandas as pd
 
 import matplotlib as mpl
 import matplotlib.pyplot as plt
+from matplotlib.style import use
+use('ggplot')
+
+colors = [
+    '#D0583A',
+    '#7777CD',
+    '#7FBC3B',
+    '#CC52B0',
+]
 
 answers = pd.read_csv('data/answers.tsv', sep='\t')
 
@@ -12,7 +21,7 @@ os /= os.sum()
 
 fig = plt.figure(figsize=(8, 6))
 ax = fig.add_axes([0, 0, 0.75, 1])
-ax.pie(os.values, labels=os.keys())
+ax.pie(os.values, labels=os.keys(), colors=colors, startangle=-10)
 fig.savefig('build/figures/os.pdf')
 
 programming = answers['Programmierkenntnisse']
@@ -25,7 +34,7 @@ programming /= programming.sum()
 
 fig = plt.figure(figsize=(8, 6))
 ax = fig.add_axes([0.0, 0.0, 0.75, 1])
-ax.pie(programming.values, labels=programming.keys())
+ax.pie(programming.values, labels=programming.keys(), colors=colors)
 fig.savefig('build/figures/programming.pdf')
 
 interest = answers['Mich interessieren besonders']
