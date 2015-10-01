@@ -4,7 +4,7 @@ FIGURES := $(addprefix build/figures/, $(addsuffix .pdf, os programming interest
 
 build/intro.pdf: $(FIGURES) $(addprefix build/figures/, editors.jpg vim.png emacs.png real_programmers.png matplotlib.png sympy.png scipy.png numpy.png)
 
-$(FIGURES): script/answers.py data/answers.tsv
+$(FIGURES): script/answers.py data/2015.tsv
 	python3 $<
 
 build/figures/editors.jpg: | build/figures

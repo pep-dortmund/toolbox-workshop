@@ -14,13 +14,13 @@ colors = [
     '#CC52B0',
 ]
 
-answers = pd.read_csv('data/answers.tsv', sep='\t')
+answers = pd.read_csv('data/2015.tsv', sep='\t')
 
 os = answers['Betriebssystem'].value_counts()
 os /= os.sum()
 
-fig = plt.figure(figsize=(8, 6))
-ax = fig.add_axes([0, 0, 0.75, 1])
+fig = plt.figure(figsize=(4, 3))
+ax = fig.add_axes([0.125, 0, 0.75, 1])
 ax.pie(os.values, labels=os.keys(), colors=colors, startangle=-10)
 fig.savefig('build/figures/os.pdf')
 
@@ -32,8 +32,8 @@ programming[programming == 'bereits in Python programmiert'] = 'Python'
 programming = programming.value_counts()
 programming /= programming.sum()
 
-fig = plt.figure(figsize=(8, 6))
-ax = fig.add_axes([0.0, 0.0, 0.75, 1])
+fig = plt.figure(figsize=(4, 3))
+ax = fig.add_axes([0.125, 0.0, 0.75, 1])
 ax.pie(programming.values, labels=programming.keys(), colors=colors)
 fig.savefig('build/figures/programming.pdf')
 
@@ -54,7 +54,7 @@ interest[interest == 'Zusammenarbeit mittels Versionskontrolle (git)'] = 'git'
 
 interest = interest.value_counts()
 
-fig, ax = plt.subplots(1, 1)
+fig, ax = plt.subplots(1, 1, figsize=(4, 3))
 pos = np.arange(len(interest))
 ax.barh(pos, interest.values, align='center')
 ax.set_yticklabels([''] + list(interest.keys()))
