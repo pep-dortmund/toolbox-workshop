@@ -35,7 +35,7 @@ print("λ=", Lamb)
 print("U=", U)
 print("τ=", 1/Lamb)
 
-t_plot = np.linspace(0, max(t), 1000)
+t_plot = np.linspace(0, 11, 1000)
 y_plot = u_decay_with_background(t_plot, N0, Lamb, U)
 
 fig = plt.figure(figsize=(15/2.54, 10/2.54))
@@ -43,7 +43,7 @@ ax = fig.add_subplot(1,1,1)
 
 data = ax.errorbar(t, N, yerr=N_err, fmt='k+', label="Messwerte", capsize=1, ms=3, capthick=0.5, elinewidth=0.75)
 fit, = ax.plot(t_plot, nom(y_plot), 'r-', label="Fit", lw=0.5)
-ax.fill_between(t_plot, nom(y_plot)-2*std(y_plot), nom(y_plot)+2*std(y_plot),
+ax.fill_between(t_plot, nom(y_plot)-10*std(y_plot), nom(y_plot)+10*std(y_plot),
                 color='r', alpha=0.3, lw=0)
 
 ax.set_title("Plot: matplotlib")
@@ -59,7 +59,7 @@ ax.annotate("Fehlerrechnung: uncertainties", xy=(t[20],N[20]),
 
 proxy = Rectangle((0,0),0,0, color='r', alpha=0.3, linewidth=0)
 
-ax.legend([data, fit, proxy], ["Messwerte", "Fit", r"$1\sigma$-Umgebung"], loc="best")
+ax.legend([data, fit, proxy], ["Messwerte", "Fit", r"$1\sigma$-Umgebung ($\times 10$)"], loc="best")
 ax.set_xlabel(r"$t/\si{\micro\second}$")
 ax.set_ylabel(r"Zählrate")
 ax.set_xlim(0,11)
