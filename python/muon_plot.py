@@ -63,5 +63,6 @@ ax.legend([data, fit, proxy], ["Messwerte", "Fit", r"$1\sigma$-Umgebung ($\times
 ax.set_xlabel(r"$t/\si{\micro\second}$")
 ax.set_ylabel(r"Zählrate")
 ax.set_xlim(0,11)
+ax.set_ylim(-50, 500)
 fig.tight_layout()
 fig.savefig("muon_plot.png", dpi=150)
