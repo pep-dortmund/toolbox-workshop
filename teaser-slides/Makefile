@@ -5,7 +5,7 @@ texoptions = -lualatex \
 
 texinputs = .:../common:
 
-all: build/teaser.pdf
+all: #build/teaser.pdf
 
 build/teaser.pdf: teaser.tex | build
 	TEXINPUTS=$(texinputs) texfot latexmk $(texoptions) teaser.tex
