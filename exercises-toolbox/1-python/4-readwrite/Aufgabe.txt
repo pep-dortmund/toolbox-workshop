@@ -11,11 +11,16 @@ Schlage außerdem nach, wie man Text aus einer Datei ausliest oder in eine Datei
 Tipp: Suche nach Informationen zur Funktion "open()".
 
 1. Lesen
-Schreibe ein Python-Skript, welches den Inhalt der Datei "text.txt" ausgibt.
+Schreibe ein Python-Skript, welches den Inhalt der Datei "test.txt" ausgibt.
 Teste dein Skript mit einer Beispieldatei.
 
+Bonus:
+Ändere das Skript so, dass die zu lesende Datei in der Kommandozeile angegeben werden kann.
+Tipp:
+Schaue in die Dokumentation für das Modul sys.
+
 2. Schreiben
-Schreibe ein Python-Skript, welches die Zahl "42" in die Datei "text.txt" schreibt
+Schreibe ein Python-Skript, welches die Zahl "42" in die Datei "test.txt" schreibt
 und nutze das Skript aus 1. um dein Programm zu testen.
 
 Bonus:
