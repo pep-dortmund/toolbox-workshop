@@ -20,16 +20,13 @@ def linleastsquares(functionlist, x_values, y_values):
 
     A = np.matrix(np.zeros(dim))
 
-    for i, x in enumerate(x_values):
-        for j, func in enumerate(functionlist):
-            A[i,j] = func(x)
-
+    for i, func in enumerate(functionlist):
+        A[:, i] = func(x_values)
 
     invATA = (A.T * Z * A).I
     params = invATA * A.T * Z * y
 
     cov = invATA
-
 
     return (np.array(unc.correlated_values(params.flat, np.array(cov))))
 

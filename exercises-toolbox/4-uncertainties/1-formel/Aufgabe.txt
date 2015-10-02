@@ -1,13 +1,13 @@
 Aufgabe:
 Es sind einige fehlerbehaftete Messwerte gegeben:
 
-x = 4.56 +/- 0.2
-y = 2.11 +/- 0.3
-z = 10 +/- 1
+x = 4.56 ± 0.2
+y = 2.11 ± 0.3
+z = 10 ± 1
 
 Es soll nun der Fehler auf folgende Größe bestimmt werden:
 
-Q = x**2 * sin(y) + z
+Q = x² sin(y) + z
 
 1. Berechne den Fehler manuell. Rechne dazu die Ableitungen
 von Q nach x, y und z aus und setze sie in die Formel für

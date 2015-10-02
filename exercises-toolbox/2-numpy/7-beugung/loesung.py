@@ -16,11 +16,11 @@ phi = (zeta - zeta_0) / L
 def theory(phi, A0, b):
     return (A0 * b * np.sinc(b * np.sin(phi) / lambda_))**2
 
-popt, pcov = curve_fit(theory, phi, I, p0=[np.sqrt(np.max(I)) / 1e-4, 1e-4])
-print(popt, np.sqrt(np.diag(pcov)), sep='\n')
+parameters, pcov = curve_fit(theory, phi, I, p0=[np.sqrt(np.max(I)) / 1e-4, 1e-4])
+print(parameters, np.sqrt(np.diag(pcov)), sep='\n')
 
 x = np.linspace(-0.03, 0.03, 100)
-plt.plot(x, theory(x, *popt), 'b-', label='Fit')
+plt.plot(x, theory(x, *parameters), 'b-', label='Fit')
 plt.plot(phi, I, 'rx', label='Daten')
 plt.xlabel(r'$\varphi \ / \ \mathrm{rad}$')
 plt.ylabel(r'$I \ / \ \mathrm{A}$')

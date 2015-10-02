@@ -1,7 +1,11 @@
 import numpy as np
 
 def linregress(x, y):
-    N = len(y) # Annahme: len(x) == len(y), sonst kommt während der Rechnung eine Fehlermeldung
+    assert len(x) == len(y)
+
+    x, y = np.array(x), np.array(y)
+
+    N = len(y)
     Delta = N * np.sum(x**2) - (np.sum(x))**2
 
     A = (N * np.sum(x * y) - np.sum(x) * np.sum(y)) / Delta
@@ -13,3 +17,7 @@ def linregress(x, y):
     B_error = sigma_y * np.sqrt(np.sum(x**2) / Delta)
 
     return A, A_error, B, B_error
+
+if __name__ == '__main__':
+    print(linregress([1, 2, 3, 4], [1, 2.5, 3, 3.5]))
+

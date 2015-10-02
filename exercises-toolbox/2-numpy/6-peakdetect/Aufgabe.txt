@@ -1,0 +1,19 @@
+Entnommen aus Versuch 354.
+Ziel ist es, Exponentialfunktionen an die Maxima und Minima der abklingenden Schwingung zu fitten.
+Dabei sollte die Funktion
+
+e(x) = a * exp(b * x) + c
+
+sein.
+
+Dazu gibt es in scipy.signal die Funktion
+
+find_peaks_cwt(y, widths)
+
+Dabei ist y ein Array von Werten, in denen Peaks gefunden werden sollen.
+Widths ist ein Array mit Breiten von Suchfenstern.
+In dieser Aufgabe eignet sich dafür np.linspace(30, 50, 30).
+Die Funktion gibt die Indizes der Maxima aus.
+
+Frage:
+Wie findet man mit der Funktion Minima?
