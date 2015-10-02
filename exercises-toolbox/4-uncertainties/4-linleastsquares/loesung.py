@@ -21,7 +21,7 @@ def linleastsquares(functionlist, x_values, y_values):
     A = np.matrix(np.zeros(dim))
 
     for i, func in enumerate(functionlist):
-        A[:, i] = func(x_values)
+        A[:, i] = func(x_values)[:, np.newaxis]
 
     invATA = (A.T * Z * A).I
     params = invATA * A.T * Z * y
