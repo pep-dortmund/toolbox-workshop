@@ -1,15 +1,16 @@
-DOCUMENTS := exercises-latex exercises-toolbox git intro latex make python teaser-slides unix
-
 all:
-	for document in $(DOCUMENTS) ; do \
-		if [ -e "$$document/Makefile" ] ; then \
-			make -C "$$document" ; \
-		fi ; \
-	done
 
-clean:
-	for document in $(DOCUMENTS) ; do \
-		if [ -e "$$document/Makefile" ] ; then \
-			make -C "$$document" clean ; \
-		fi ; \
-	done
+include common/recursive.mk
+
+all: $(BUILDS)
+
+CLEANS := $(addsuffix _clean, $(DIRS))
+
+clean: $(CLEANS)
+
+%_clean:
+	@[ ! -e $*/Makefile ] || $(MAKE) -C $* clean
+
+FORCE: $(CLEANS)
+
+.PHONY: all clean

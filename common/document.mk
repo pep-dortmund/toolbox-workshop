@@ -16,3 +16,5 @@ fast:
 
 clean:
 	rm -rf build
+
+.PHONY: all fast clean

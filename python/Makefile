@@ -5,3 +5,8 @@ all: $(addsuffix .html, Python ScientificPython Matplotlib uncertainties)
 
 muon_plot.png: muon_plot.py muon_data.txt
 	python3 $<
+
+clean:
+	git clean -Xdf
+
+.PHONY: all clean

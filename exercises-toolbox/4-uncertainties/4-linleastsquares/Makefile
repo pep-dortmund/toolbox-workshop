@@ -9,3 +9,5 @@ linleastsquares.pdf: linleastsquares.tex
 	lualatex --output-directory=build linleastsquares
 	mv build/linleastsquares.pdf .
 	rm -r build
+
+.PHONY: all

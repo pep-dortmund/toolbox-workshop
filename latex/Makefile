@@ -1,6 +1,6 @@
 BIBER := --biber
 
-include ../common/common.mk
+include ../common/document.mk
 
 FIGURES := $(addprefix build/figures/, $(addsuffix .pdf, os experience))
 

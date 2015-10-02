@@ -1,2 +1,2 @@
 all:
-	make -C 4-linleastsquares
+	@$(MAKE) -C 4-linleastsquares
