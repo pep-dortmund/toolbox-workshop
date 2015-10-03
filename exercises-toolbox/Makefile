@@ -10,7 +10,7 @@ all: $(BUILDS)
 	@cp -r 5-make build/exercises-toolbox-3
 	@cp -r 6-git build/exercises-toolbox-4
 	@cp -r 7-all build/exercises-toolbox-5
-	@rm -rf build/exercises-toolbox-{1,2,3,4,5}/*/{{,*/}{Makefile,.gitignore},*/__pycache__}
+	@rm -rf build/exercises-toolbox-{1,2,3,4,5}/*/{,*/}{Makefile,.gitignore,__pycache__,*.dummy}
 	@cd build ; \
 	for day in 1 2 3 4 5 ; do \
 		echo zip -rq exercises-toolbox-$$day.zip exercises-toolbox-$$day ; \
