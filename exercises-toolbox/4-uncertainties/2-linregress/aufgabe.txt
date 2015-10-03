@@ -1,4 +1,4 @@
-Schreibe ein Wrapper für linregress (siehe numpy-linregress.py), der die Ausgabe durch Verwendung von uncertainties vereinfacht.
+Schreibe einen Wrapper für linregress (siehe 2-numpy/4-linregress), der die Ausgabe durch Verwendung von uncertainties vereinfacht.
 
 Dabei sollte ein Array aus A und B zurückgegeben werden, wobei A und B ufloats sind.
 

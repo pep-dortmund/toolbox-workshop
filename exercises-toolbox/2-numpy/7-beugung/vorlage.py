@@ -6,7 +6,7 @@ def theory(phi, A0, b):
     # Hier Funktion ergänzen
 
 # Hier Fit ergänzen
-parameters = ?
+parameters = #
 
 # Hier wird der Plot erstellt
 x = np.linspace(-0.03, 0.03, 100)

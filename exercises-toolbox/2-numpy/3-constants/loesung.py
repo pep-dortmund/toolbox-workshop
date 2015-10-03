@@ -1,6 +1,6 @@
 from scipy.constants import find, physical_constants
 
-# Gefunden mit IPython:
+# Found using find() in IPython:
 
 for name in [
         'Planck constant',

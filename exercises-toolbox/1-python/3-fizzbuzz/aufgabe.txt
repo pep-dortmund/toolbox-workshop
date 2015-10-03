@@ -5,9 +5,9 @@ Eine beliebte Aufgabe in Bewerbungs-Interviews für Programmierer.
 Aufgabe:
 
 Öffne die Datei "fizzbuzz.py" und ergänze sie wie folgt:
-Gebe die Zahlen von 1 bis 100 aus, wobei du aber Zahlen, die durch 3 teilbar sind,
+Gib die Zahlen von 1 bis 100 aus, wobei du aber Zahlen, die durch 3 teilbar sind,
 durch "Fizz" und Zahlen, die durch 5 teilbar sind, durch "Buzz" ersetzt.
-Ist eine Zahl sowohl durch 3 als auch durch 5 teilbar, so gebe stattdessen "Fizzbuzz" aus.
+Ist eine Zahl sowohl durch 3 als auch durch 5 teilbar, so gib stattdessen "Fizzbuzz" aus.
 
 Tipp: Eine Zahl n ist durch eine andere Zahl x teilbar,
 wenn ihr Divisionsrest 0 ist: n % x == 0

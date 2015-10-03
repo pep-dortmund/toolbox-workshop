@@ -1,84 +1,84 @@
 \documentclass{scrartcl}
 
-\usepackage{fontspec}
-\setmainfont{Tex Gyre Pagella}
-\setsansfont{Tex Gyre Heros}
-\setmonofont{Tex Gyre Cursor}
-
-\usepackage{mathtools}
-\usepackage[bold-style=ISO, math-style=ISO]{unicode-math}
-\setmathfont{Tex Gyre Pagella Math}
-
 \usepackage{polyglossia}
 \setmainlanguage{german}
+
+\usepackage{fontspec}
+
+\usepackage{mathtools}
+\usepackage[
+  math-style=ISO,
+  bold-style=ISO,
+]{unicode-math}
 
 \usepackage{csquotes}
 \usepackage[locale=DE]{siunitx}
 
 \usepackage{hyperref}
 
-
-
-
 \begin{document}
+
 \section*{Die Methode der kleinsten Quadrate für Linearkombinationen von Funktionen}
 
-Zur Anpassung einer Linearkombinationen aus Funktionen 
+Zur Anpassung einer Linearkombinationen aus Funktionen
 \begin{equation}
-    \sum_i^p a_i \cdot f_i(x)
+  \sum_i^p a_i \cdot f_i(x)
 \end{equation}
-an $N$ Datenpunkte $(x_j, y_j)$ kann die analytische Methode der kleinsten Quadrate verwendet werden. 
+an $N$ Datenpunkte $(x_j, y_j)$ kann die analytische Methode der kleinsten Quadrate verwendet werden.
 Ziel ist es, die Parameter $a_i$ zu bestimmen, bei denen die Summe
 \begin{equation}
-    \sum_j^N\left( y_i - \sum_i^p a_i\cdot f_i(x_j)\right)^2
+  \sum_j^N\left( y_i - \sum_i^p a_i\cdot f_i(x_j)\right)^{\!\!\! 2}
 \end{equation}
 minimal ist, der Funktionsgraph also minimal von den Datenpunkten abweicht.
+
 \subsection*{Bestimmung der Parameter}
 
 \begin{enumerate}
-    \item Zuerst wird die sogennante Designmatrix $\mathbf{A}$ aufgestellt, sie enthält die Funktionswerte für jede Funktion $f_i$ ausgewertet an den gemessenen $x_j$:
-        \begin{equation}
-            \mathbf{A} = 
-            \begin{pmatrix}
-                f_1(x_1) & f_2(x_1) & \cdots & f_p(x_1) \\  
-                f_1(x_2) & f_2(x_2) & \cdots & f_p(x_2) \\  
-                \vdots   &          &        &  \vdots  \\
-                f_1(x_N) & f_2(x_N) & \cdots & f_p(x_N) 
-            \end{pmatrix}
-        \end{equation}
-    \item Als nächstes definieren wir den Spalten-Vektor 
-        \begin{equation}
-            \vec{y} = (y_1, y_2, …, y_N)^\mathrm{T} \ ,
-        \end{equation}
-        der die $y$-Koordinaten unserer Messwerte enthält.
-    \item Die Kovarianzmatrix der Messwerte sei $\mathbf{W}$ und $\mathbf{Z} = \mathbf{W}^{-1}$.
-    \item der Parametervektor $\vec{a}$ ergibt sich dann zu:
-        \begin{equation}
-            \vec{a} = \left(\mathbf{A}^T \mathbf{Z} \mathbf{A}\right)^{-1} \cdot \mathbf{A}^T \mathbf{Z} \cdot \vec{y}
-        \end{equation}
-
-    \item Die Kovarianzmatrix ergibt sich zu:
-        \begin{equation}
-            \mathbf{V} = \left(\mathbf{A}^T \mathbf{Z} \mathbf{A}\right)^{-1}
-        \end{equation}
+  \item Zuerst wird die sogennante Designmatrix $\symbf{A}$ aufgestellt.
+    Sie enthält die Funktionswerte für jede Funktion $f_i$ ausgewertet an den gemessenen $x_j$:
+    \begin{equation}
+      \symbf{A} =
+      \begin{pmatrix}
+        f_1(x_1) & f_2(x_1) & \cdots & f_p(x_1) \\
+        f_1(x_2) & f_2(x_2) & \cdots & f_p(x_2) \\
+        \vdots   &          &        &  \vdots  \\
+        f_1(x_N) & f_2(x_N) & \cdots & f_p(x_N)
+      \end{pmatrix} \ .
+    \end{equation}
+  \item Als nächstes definieren wir den Spalten-Vektor
+    \begin{equation}
+      \vec{y} = (y_1, y_2, …, y_N)^{\top} \ ,
+    \end{equation}
+    der die $y$-Koordinaten unserer Messwerte enthält.
+  \item Die Kovarianzmatrix der Messwerte sei $\symbf{W}$ und $\symbf{Z} = \symbf{W}^{-1}$.
+  \item der Parametervektor $\vec{a}$ ergibt sich dann zu:
+    \begin{equation}
+      \vec{a} = \left(\symbf{A}^\top \symbf{Z} \symbf{A}\right)^{-1} \cdot \symbf{A}^\top \symbf{Z} \cdot \vec{y}
+    \end{equation}
+  \item Die Kovarianzmatrix ergibt sich zu:
+    \begin{equation}
+      \symbf{V} = \left(\symbf{A}^\top \symbf{Z} \symbf{A}\right)^{-1}
+    \end{equation}
 \end{enumerate}
 Wer sich für die Herleitung interessiert: Blobel-Lohrmann: \enquote{Statistische und numerische Methoden der Datenanalyse} bzw. SMD-Vorlesung.
 Alternativ auch bei Wikipedia: \url{https://en.wikipedia.org/wiki/Linear_least_squares_(mathematics)}
 
 \subsection*{Aufgaben}
+
 \begin{enumerate}
-    \item Implementiert eine Funktion, die eine Liste von Funktionen und die $x$ und $y$ Werte übergeben bekommt und die lineare Methode der kleinsten Quadrate anwendet. 
-        Die Funktion soll den Parametervektor als Array von korrelierten \texttt{ufloat}s zurückgeben.
-    \item Testet eure Funktion indem ihr einen Fit der Form
-        \begin{equation}
-            \Psi(x) = a_1 \cos(x) + a_2 \sin(x)
-        \end{equation}
-        an die Daten in der Datei \texttt{daten.txt} durchführt.
-        Der Fehler der $y_i$ soll als $\sigma = \num{0.1}$ angenommen werden.
+  \item Implementiert eine Funktion, die eine Liste von Funktionen und die $x$- und $y$-Werte übergeben bekommt und die lineare Methode der kleinsten Quadrate anwendet.
+    Die Funktion soll den Parametervektor als Array von korrelierten \texttt{ufloat}s zurückgeben.
+  \item Testet eure Funktion indem ihr einen Fit der Form
+    \begin{equation}
+      \Psi(x) = a_1 \cos(x) + a_2 \sin(x)
+    \end{equation}
+    an die Daten in der Datei \texttt{daten.txt} durchführt.
+    Der Fehler der $y_i$ soll als $\sigma = \num{0.1}$ angenommen werden.
 \end{enumerate}
 
 \subsection*{Tipps}
-Hilfreich könnte die NumPy-Datenstruktur \texttt{matrix} mit ihren Methoden 
+
+Hilfreich könnte die NumPy-Datenstruktur \texttt{matrix} mit ihren Methoden
 \begin{itemize}
     \item \texttt{.T},
     \item \texttt{.I},

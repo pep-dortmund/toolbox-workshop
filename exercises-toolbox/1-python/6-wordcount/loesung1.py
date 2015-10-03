@@ -8,7 +8,7 @@ for word in words:
         counts[word] += 1
     else:
         counts[word] = 1
-        
+
 def get_count(x):
     return x[1]
 

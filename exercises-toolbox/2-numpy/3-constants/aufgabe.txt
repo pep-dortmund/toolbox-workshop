@@ -1,4 +1,3 @@
-
 Aufgabe: constants
 
 Scipy enthält die CODATA2010-Datenbank mit physikalischen Konstanten.
@@ -18,4 +17,3 @@ zu finden und ihre Werte mit print() auszugeben:
 Das Modul scipy.constants ist hier dokumentiert:
 
     http://docs.scipy.org/doc/scipy/reference/constants.html
-

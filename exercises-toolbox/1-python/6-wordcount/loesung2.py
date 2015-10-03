@@ -14,4 +14,3 @@ result = sorted(counts, key=counts.get, reverse=True)
 
 for key in result[:20]:
     print("{}: {}".format(key, counts[key]))
-

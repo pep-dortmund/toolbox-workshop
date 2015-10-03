@@ -4,7 +4,7 @@ import numpy as np
 # Datenfile erzeugen
 data_x = np.linspace(0, 10, 100)
 data_y = 10 * np.exp(-data_x)
-np.savetxt('3.txt', np.array([data_x, data_y]).T)
+np.savetxt('3.txt', np.column_stack([data_x, data_y]), header='x y')
 
 x, y = np.genfromtxt('3.txt', unpack=True)
 

@@ -1,4 +1,3 @@
-
 Aufgabe: gauss
 
 Erstelle 1000 gaußverteilte Werte mit Mittelwert 1 und Standardabweichung 2.
@@ -8,5 +7,4 @@ Informiere dich in der Numpy-Dokumentation
 
 http://docs.scipy.org/doc/numpy/reference/
 
-wie man mit Numpy Zufallszahlen erstellen kann (Tipp: verwende das Modul "random").
-
+wie man mit Numpy Zufallszahlen erstellen kann (Tipp: verwende das Modul "numpy.random").

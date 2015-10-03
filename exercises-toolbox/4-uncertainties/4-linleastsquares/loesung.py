@@ -1,15 +1,12 @@
 import matplotlib.pyplot as plt
 import numpy as np
-import os.path
 import uncertainties as unc
 import uncertainties.unumpy as unp
 
-if not os.path.isfile("daten.txt"):
-    print("creating data file")
-    x = np.linspace(0, 2 * np.pi)
-    y = 3 * np.sin(x) + 2 * np.cos(x) + np.random.normal(0, 0.1, len(x))
-    np.savetxt("daten.txt", np.transpose([x, y]), header="x\ty")
-    print("done")
+# Datenfile erzeugen
+x = np.linspace(0, 2 * np.pi)
+y = 3 * np.sin(x) + 2 * np.cos(x) + np.random.normal(0, 0.1, len(x))
+np.savetxt("daten.txt", np.column_stack([x, y]), header="x y")
 
 def linleastsquares(functionlist, x_values, y_values):
     y = np.matrix(unp.nominal_values(y_values)).T
@@ -38,9 +35,12 @@ params = linleastsquares([np.sin, np.cos], x, y)
 for i, param in enumerate(params):
     print("Param", i, "=", unp.nominal_values(param), "±", unp.std_devs(param))
 
-x_plot = np.linspace(0, 2 * np.pi, 100)
+x_plot = np.linspace(-0.1, 2 * np.pi + 0.1, 100)
 
 plt.errorbar(x, unp.nominal_values(y), yerr=unp.std_devs(y), fmt='k+', label="Daten")
 plt.plot(x_plot, unp.nominal_values(params[0] * np.sin(x_plot) + params[1] * np.cos(x_plot)), 'b-', label="Fit")
+plt.xlabel(r'$x$')
+plt.ylabel(r'$y$')
+plt.xlim(-0.1, 2 * np.pi + 0.1)
 plt.legend()
 plt.savefig('loesung.pdf')

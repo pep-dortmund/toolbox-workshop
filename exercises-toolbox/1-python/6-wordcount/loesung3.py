@@ -7,4 +7,3 @@ counts = Counter(words)
 
 for key, count in counts.most_common(20):
     print("{}: {}".format(key, count))
-

@@ -9,4 +9,4 @@ for n in range(1, 11):
 plt.legend(loc='upper left')
 plt.xlabel('$x$')
 plt.tight_layout()
-plt.savefig('loesung.pdf', pad_inches=0, bbox_inches='tight')
+plt.savefig('loesung.pdf')

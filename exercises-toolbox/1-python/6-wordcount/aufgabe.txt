@@ -1,4 +1,3 @@
-
 Aufgabe: wordcount
 
 Die Beispieldatei "text.txt" enthält das erste Kapitel eines bekannten Kinderbuchs.
@@ -9,4 +8,3 @@ Das Skript soll die 20 häufigsten Wörter (und die Anzahl) absteigend nach Häu
 Als "Wort" sollen in dieser Aufgabe alle Abfolgen von Zeichen zählen, die von Leerzeichen getrennt werden.
 
 Welche Datenstruktur bietet sich zum Abspeichern der Häufigkeiten an?
-

@@ -1,4 +1,5 @@
 import numpy as np
+import uncertainties.unumpy as unp
 
 def linregress(x, y):
     assert len(x) == len(y)
@@ -18,6 +19,6 @@ def linregress(x, y):
 
     return A, A_error, B, B_error
 
-if __name__ == '__main__':
-    print(linregress([1, 2, 3, 4], [1, 2.5, 3, 3.5]))
-
+def ulinregress(x, y):
+    A, A_error, B, B_error = linregress(x, y)
+    return unp.uarray([A, B], [A_error, B_error])
