@@ -1,4 +1,4 @@
-all: $(addsuffix .html, Python ScientificPython Matplotlib uncertainties)
+all: $(patsubst %.ipynb, %.html, $(wildcard *.ipynb))
 
 %.html: %.ipynb
 	jupyter-nbconvert --execute --allow-errors --to html $<
