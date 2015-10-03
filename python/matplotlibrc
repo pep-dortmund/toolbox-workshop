@@ -1,6 +1,0 @@
-backend : Qt4Agg
-
-font.family : serif
-
-text.latex.unicode : true
-text.latex.preamble : \usepackage{lmodern}\usepackage{siunitx}
