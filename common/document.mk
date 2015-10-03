@@ -17,4 +17,6 @@ fast:
 clean:
 	rm -rf build
 
+.DELETE_ON_ERROR:
+
 .PHONY: all fast clean
