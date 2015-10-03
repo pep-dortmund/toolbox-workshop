@@ -4,7 +4,7 @@ import os.path
 import re
 import sys
 
-logfile = open(sys.argv[1], "r")
+logfile = open(sys.argv[1], "r", encoding="utf8", errors="replace")
 lines = [line.rstrip("\n") for line in logfile.readlines()]
 lines.reverse()
 
@@ -12,24 +12,25 @@ def parse_path_page(lines):
     global paths, pages, page
     parts = [
             r'\)',
-            r'\(([^ ")]+|"[^"]+")',
+            r'\(([^ "()]+|"[^"]+")',
             r'\[[0-9]*',
             r'\]',
             r'<[^>]*>',
-            r'|\{[^}]*\}',
+            r'\{[^}]*\}',
             r'\((using write cache|using read cache|load luc): [^)]*\)',
             r'ABD: EveryShipout initializing macros',
             r'luatex-hyphen: using data file: ([^ ")]+|"[^"]+")',
             r'luatex-hyphen: info: no hyphenation exceptions for this language',
-            r'at position [0-9]+ in \'luaotfload.patch_font\'',
+            r'luatex-hyphen: loading patterns and exceptions for: [^ ]+ \([^)]+\)',
+            r'at position [0-9]+ in \'[^\']+\'',
             r'luaotfload \| db : Font names database loaded from [^(]+',
             r'luaotfload \| load : Lookup/name: [^(]+',
             ]
     if not re.match(r'^ ?(({}) ?)+$'.format('|'.join(parts)), lines[-1]):
         return None
     line = lines.pop()
-    for match in re.findall(r'\)|\((?:[^ ")]+|"[^"]+")|\[[0-9]+|\]', line):
-        if match == ")":# and len(files) > 1: # should not happen
+    for match in re.findall(r'\)|\((?:[^ "()]+|"[^"]+")|\[[0-9]+|\]', line):
+        if match == ")":# and len(paths) > 1: # should not happen
             paths.pop()
         elif match[0] == "(":
             paths.append(match[1:].strip('"'))
@@ -122,7 +123,7 @@ def parse_latex3(lines):
             }
 
 def parse_tex_error(lines):
-    if not re.match(r'^! ', lines[-1]):
+    if not re.match(r'^!', lines[-1]):
         return None
     message = [lines.pop()]
     while lines and lines[-1]:
@@ -169,6 +170,11 @@ while lines:
             break
     else:
         lines.pop()
+
+if paths:
+    print('log.py: paths non-empty: ' + str(paths))
+if page:
+    print('log.py: page non-None: ' + str(page))
 
 def filter_info(message):
     if message["type"].endswith("/info"):
