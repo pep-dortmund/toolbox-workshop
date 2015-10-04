@@ -36,7 +36,7 @@
     \hspace{1cm} recipe}
   \end{block}
   \begin{description}
-    \item[\texttt{\hphantom{prerequisites}\llap{target}}] Datei(en), die von dieser Rule erzeugt wird
+    \item[\texttt{\hphantom{prerequisites}\llap{target}}] Datei(en), die von dieser Rule erzeugt werden
     \item[\texttt{prerequisites}]                         Dateien, von denen diese Rule abhängt
     \item[\texttt{\hphantom{prerequisites}\llap{recipe}}] Befehle: \texttt{prerequisites} → \texttt{target} (mit Tab eingerückt)
   \end{description}
@@ -141,7 +141,11 @@
     plot.sync: plot.py data.txt
         touch plot.sync
         python plot.py
+
+    .DELETE_ON_ERROR:
   \end{verbatim}
+
+  Wenn man die Plots löscht, muss man auch \texttt{plot.sync} löschen.
 \end{frame}
 
 \begin{frame}{Motivation}
