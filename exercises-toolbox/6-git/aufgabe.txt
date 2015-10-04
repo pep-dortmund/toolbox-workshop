@@ -1,9 +1,9 @@
-Aufgabe I:
+Aufgabe 1:
 
-Lade mittels "git clone https://github.com/pep-dortmund/toolbox-workshop-2014" die Materialien für diesen
+Lade mittels "git clone https://github.com/pep-dortmund/toolbox-workshop" die Materialien für diesen
 Workshop herunter und schaue dir mittels "git log" die Vergangenheit des Repositories an.
 
-Aufgabe II:
+Aufgabe 2:
 
 Mache dich mit git vertraut.
 Dazu haben wir ein Beispiel-Repository (repo) vorbereitet.
@@ -20,7 +20,7 @@ Wir werden es anstelle eines Repositories auf bitbucket.org oder github.com verw
 2. Schaue dir die Dateien im Repository an.
    Erzeuge 2 Plots, indem du "make" in deiner Kopie des Repositories ausführst
 
-4. Mache beliebige Änderungen an den Dateien "plot1.py" und "plot2.py
+4. Mache beliebige Änderungen an den Dateien "plot1.py" und "plot2.py"
    (Ändere z.B. die Farben der eingezeichneten Linien) und erzeuge die Plots durch Ausführen von "make"
 
 5. Führe "git status" aus, um dir anzusehen, welche Dateien du geändert hast.
@@ -39,8 +39,8 @@ Wir werden es anstelle eines Repositories auf bitbucket.org oder github.com verw
    Hier wollen wir simulieren, dass mehrere Leute am selben Repository arbeiten.
 
 10. Immer wenn du Änderungen aus dem einen Repository mit "git push" hochgeladen hast,
-   kannst du sie mit "git pull" aus dem anderen herunterladen.
-   Teste, ob das reibungslos funktioniert.
+    kannst du sie mit "git pull" aus dem anderen herunterladen.
+    Teste, ob das reibungslos funktioniert.
 
-11, Bonus: Versuche einen merge conflict herbeizuführen, indem du in beiden deiner Kopien dieselbe Zeile änderst
-   und 10. wiederhost.
+11. Bonus: Versuche einen merge conflict herbeizuführen, indem du in beiden deiner Kopien dieselbe Zeile änderst
+    und 10. wiederhost.
