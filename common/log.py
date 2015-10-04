@@ -23,6 +23,7 @@ def parse_path_page(lines):
             r'luatex-hyphen: info: no hyphenation exceptions for this language',
             r'luatex-hyphen: loading patterns and exceptions for: [^ ]+ \([^)]+\)',
             r'(Inserting (`|\')[^\']+\' )?at position [0-9]+ in (`|\')[^\']+\'\.?',
+            r'Removing  (`|\')[^\']+\' from (`|\')[^\']+\'\.?',
             r'luaotfload \| db : Font names database loaded from [^(]+',
             r'luaotfload \| load : Lookup/name: [^(]+',
             r'Lua module: [^()[\]]+',
