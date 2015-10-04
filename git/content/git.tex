@@ -95,8 +95,8 @@
         node font=\ttfamily,
       },
     ] {
-      "v1.2" [green, x=4],
-      a <- b <- c <- d <- {e <- f, g [x=0.5]} <- h <- {i <- master [red], j <- foo [red]};
+      "v1.2" [green!60!black, x=4],
+      a <- b <- c <- d <- {e <- f, g [x=0.5]} <- h <- {i <- master [vertexDarkRed], j <- foo [vertexDarkRed]};
       "v1.2" -> e;
     };
   \end{tikzpicture}
@@ -107,11 +107,11 @@
       \begin{itemize}
         \item Snapshot, Name ist Hash des Inhalts, enthält Commit-Message (Beschreibung der Änderungen)
       \end{itemize}
-    \item \textcolor{red}{Branch}: benannter Zeiger auf einen Commit
+    \item \textcolor{vertexDarkRed}{Branch}: benannter Zeiger auf einen Commit
       \begin{itemize}
         \item Entwicklungszweig, im Praktikum nur \texttt{master}
       \end{itemize}
-    \item \textcolor{green}{Tag}: unveränderbarer Zeiger auf einen Commit
+    \item \textcolor{green!60!black}{Tag}: unveränderbarer Zeiger auf einen Commit
       \begin{itemize}
         \item Wichtiges Ereignis, z.B. veröffentlichte Version
       \end{itemize}
@@ -187,13 +187,12 @@
 
 \begin{frame}{\texttt{git pull}, \texttt{git push}}
   \begin{tabu}{>{\ttfamily}l X[,L]}
-    git pull          & Commits herunterladen (mit Merge-Commit) \\
-    git pull --rebase & Commits herunterladen (ohne Merge-Commit) \\
+    git pull          & Commits herunterladen \\
     git push          & Commits hochladen
   \end{tabu}
 
   \begin{itemize}
-    \item (falls gewollt) \texttt{--rebase} standardmäßig: \\
+    \item Aus der Installationsanleitung: \\
       \texttt{git config --global pull.rebase true}
   \end{itemize}
 \end{frame}
@@ -217,11 +216,11 @@
         baz
         >>>>>>> Commit-Message
 \end{verbatim}
-    \item Merge abschließen: \texttt{git add …}
-      \begin{itemize}
-        \item kein \texttt{--rebase}: \texttt{git commit} ausführen, um zu bestätigen
-        \item \texttt{--rebase}: \texttt{git rebase --continue}
-      \end{itemize}
+    \item Merge abschließen:
+      \begin{enumerate}
+        \item \texttt{git add …}
+        \item \texttt{git rebase --continue}
+      \end{enumerate}
   \end{enumerate}
   Nützlich: \texttt{git config --global merge.conflictstyle diff3}
 \end{frame}
@@ -258,7 +257,7 @@
     \begin{lstlisting}[language=, keywordstyle={}]
       build/
       *.pdf
-      __pycache__
+      __pycache__/
     \end{lstlisting}
 \end{frame}
 
