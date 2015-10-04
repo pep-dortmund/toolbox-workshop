@@ -1,3 +1,4 @@
+include ../common/common.mk
 include ../common/document.mk
 
 build/git.pdf: $(addprefix build/figures/, github.png bitbucket.png gitlab.png)

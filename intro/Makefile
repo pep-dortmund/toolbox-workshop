@@ -1,3 +1,4 @@
+include ../common/common.mk
 include ../common/document.mk
 
 FIGURES := $(addprefix build/figures/, $(addsuffix .pdf, os programming interest))

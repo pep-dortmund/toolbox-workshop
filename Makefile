@@ -1,3 +1,5 @@
+include common/common.mk
+
 all:
 
 include common/recursive.mk

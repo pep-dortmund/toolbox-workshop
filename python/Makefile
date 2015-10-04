@@ -1,3 +1,5 @@
+include ../common/common.mk
+
 all: $(patsubst %.ipynb, %.html, $(wildcard *.ipynb))
 
 %.html: %.ipynb

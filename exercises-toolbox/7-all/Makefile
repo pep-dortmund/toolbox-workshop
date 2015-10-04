@@ -1,3 +1,5 @@
+include ../../common/common.mk
+
 DIRS := $(sort $(wildcard *))
 BUILDS := $(addsuffix _build, $(DIRS))
 

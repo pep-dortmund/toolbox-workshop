@@ -1,3 +1,5 @@
+include ../common/common.mk
+
 BIBER := --biber
 
 include ../common/document.mk

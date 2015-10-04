@@ -1,3 +1,4 @@
+include ../../common/common.mk
 include ../../common/loesung.py.mk
 
 all: 4-linleastsquares/FORCE
