@@ -1,6 +1,7 @@
 all:
 
 include ../common/recursive.mk
+include ../common/common.mk
 
 all: $(BUILDS)
 	@rm -rf build
