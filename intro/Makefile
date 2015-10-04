@@ -3,7 +3,7 @@ include ../common/document.mk
 
 FIGURES := $(addprefix build/figures/, $(addsuffix .pdf, os programming interest))
 
-build/intro.pdf: $(FIGURES) $(addprefix build/figures/, editors.jpg vim.png emacs.png real_programmers.png matplotlib.png sympy.png scipy.png numpy.png)
+build/intro.pdf: $(FIGURES) $(addprefix build/figures/, editors.jpg vim.png emacs.png real_programmers.png matplotlib.png sympy.png scipy.png numpy.png atom.jpg)
 
 $(FIGURES): script/answers.py data/2015.tsv
 	python3 $<
@@ -31,3 +31,6 @@ build/figures/scipy.png: | build/figures
 
 build/figures/numpy.png: | build/figures
 	wget http://www.numpy.org/_static/numpy_logo.png -O $@ --no-use-server-timestamps
+
+build/figures/atom.jpg: | build/figures
+	wget https://education.github.com/assets/pack/logo-atom-656df6620b79beabebf1b2582cd0584c.jpg  -O $@ --no-use-server-timestamps
