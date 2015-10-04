@@ -22,9 +22,10 @@ def parse_path_page(lines):
             r'luatex-hyphen: using data file: ([^ ")]+|"[^"]+")',
             r'luatex-hyphen: info: no hyphenation exceptions for this language',
             r'luatex-hyphen: loading patterns and exceptions for: [^ ]+ \([^)]+\)',
-            r'at position [0-9]+ in \'[^\']+\'',
+            r'(Inserting (`|\')[^\']+\' )?at position [0-9]+ in (`|\')[^\']+\'\.?',
             r'luaotfload \| db : Font names database loaded from [^(]+',
             r'luaotfload \| load : Lookup/name: [^(]+',
+            r'Lua module: [^()[\]]+',
             ]
     if not re.match(r'^ ?(({}) ?)+$'.format('|'.join(parts)), lines[-1]):
         return None
