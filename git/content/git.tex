@@ -278,29 +278,25 @@
 \end{frame}
 
 \begin{frame}{Hoster}
-  \begin{columns}[t]
-    \begin{column}{0.3\textwidth}
-      \href{https://github.com}{\includegraphics[width=\linewidth]{figures/github.png}}
-      \begin{itemize}
-        \item größter Hoster
-        \item viele open-source Projekte
-        \item keine (kostenlosen) privaten Repos
-      \end{itemize}
-    \end{column}
-    \begin{column}{0.3\textwidth}
-      \href{https://bitbucket.org}{\includegraphics[width=\linewidth]{figures/bitbucket.png}}
-      \begin{itemize}
-        \item kostenlose private Repos mit höchstens fünf Leuten
-        \item keine Speicherbegrenzungen
-      \end{itemize}
-    \end{column}
-    \begin{column}{0.3\textwidth}
-      \href{https://gitlab.com}{\includegraphics[width=\linewidth]{figures/gitlab.png}}
-      \begin{itemize}
-        \item open-source
-        \item keine Begrenzungen an privaten Repos
-        \item kann man selbst auf einem eigenen Server betreiben
-      \end{itemize}
-    \end{column}
-  \end{columns}
+  \begin{tabu}{@{} X[,C] @{} X[,C] @{} X[,C] @{}}
+    \href{https://github.com}{\includegraphics[width=0.75\linewidth]{figures/github.png}} &
+    \href{https://bitbucket.org}{\includegraphics[width=0.75\linewidth]{figures/bitbucket.png}} &
+    \href{https://gitlab.com}{\includegraphics[width=0.75\linewidth]{figures/gitlab.png}} \\
+    \begin{itemize}
+      \item größter Hoster
+      \item viele open-source Projekte
+      \item keine (kostenlosen) privaten Repos
+    \end{itemize}
+    &
+    \begin{itemize}
+      \item kostenlose private Repos mit höchstens fünf Leuten
+      \item keine Speicherbegrenzungen
+    \end{itemize}
+    &
+    \begin{itemize}
+      \item open-source
+      \item keine Begrenzungen an privaten Repos
+      \item kann man selbst auf einem eigenen Server betreiben
+    \end{itemize}
+  \end{tabu}
 \end{frame}
