@@ -8,6 +8,7 @@ colors = [
     '#7777CD',
     '#7FBC3B',
     '#CC52B0',
+    'yellow',
 ]
 
 answers = pd.read_csv('data/2015.tsv', sep='\t')
