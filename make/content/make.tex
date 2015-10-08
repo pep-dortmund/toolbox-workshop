@@ -23,7 +23,17 @@
   \end{itemize}
 \end{frame}
 
-\begin{frame}{Makefile}
+\begin{frame}{Motivation}
+  \begin{itemize}
+    \item Automatisierung verhindert Fehler
+    \item Dient als Dokumentation
+    \item Reproduzierbarkeit unverzichtbar in der Wissenschaft
+    \item Idealfall: Eingabe von \texttt{make} erstellt komplettes Protokoll/Paper aus Daten
+    \item Spart Zeit, da nur nötige Operationen ausgeführt werden
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Makefile}
   \begin{itemize}
     \item Datei heißt \texttt{Makefile}, keine Endung!
       \begin{itemize}
@@ -32,8 +42,10 @@
     \item besteht aus Rules:
   \end{itemize}
   \begin{block}{Rule}
-    \texttt{target: prerequisites\\
-    \hspace{1cm} recipe}
+    \begin{lstmake}
+      target: prerequisites
+          recipe
+    \end{lstmake}
   \end{block}
   \begin{description}
     \item[\texttt{\hphantom{prerequisites}\llap{target}}] Datei(en), die von dieser Rule erzeugt werden
@@ -42,9 +54,16 @@
   \end{description}
 \end{frame}
 
+\begin{frame}[fragile]{Einfachstes Beispiel}
+  \begin{lstmake}
+    plot.pdf: plot.py data.txt
+        python plot.py
+  \end{lstmake}
+\end{frame}
+
 \begin{frame}[fragile]{Beispiel}
-  \begin{verbatim}
-    all: report.pdf
+  \begin{lstmake}
+    all: report.pdf  # convention
 
     plot.pdf: plot.py data.txt
         python plot.py
@@ -52,16 +71,20 @@
     report.pdf: report.tex
         lualatex report.tex
 
-    report.pdf: plot.pdf
-  \end{verbatim}
+    report.pdf: plot.pdf  # add prerequisite
+  \end{lstmake}
+  \vspace{1em}
 
+  \texttt{make} eingeben:
   \begin{itemize}
-    \item wenn nur \texttt{make} gestartet wird, wird der erste Target erstellt, hier \texttt{all}; um ein anderes Target zu erstellen, startet man \texttt{make \textit{target}}
+    \item \texttt{all} braucht \texttt{report.pdf}
       \begin{itemize}
-        \item nützlich, wenn man Plot bearbeitet: \texttt{make plot.pdf}
-      \end{itemize}
-    \item \texttt{all} braucht \texttt{report.pdf}, also wird \texttt{latex report.tex} ausgeführt
-    \item \texttt{report.pdf} braucht noch \texttt{plot.pdf}, also wird Python ausgeführt
+        \item \texttt{report.pdf} braucht \texttt{plot.pdf}
+          \begin{itemize}
+            \item \texttt{python plot.py}
+          \end{itemize}
+        \item \texttt{lualatex report.tex}
+    \end{itemize}
   \end{itemize}
 \end{frame}
 
@@ -96,28 +119,57 @@
   \end{itemize}
 \end{frame}
 
-\begin{frame}[fragile]{Advanced}
+\begin{frame}[fragile]{Argumente für \texttt{make}}
+  \begin{tabu}{>{\ttfamily}l X[,L]}
+    make \textit{target} & statt des ersten in der \texttt{Makefile} genannten Targets (meist \texttt{all}) nur \texttt{target} erstellen \\
+    make -n              & dry run: Befehle anzeigen aber nicht ausführen \\
+    make -d              & debug: anzeigen, warum \texttt{make} sich so entschieden hat \\
+    make -p              & Datenbank aller Abhängigkeiten ausgeben
+  \end{tabu}
   \begin{itemize}
-    \item \texttt{make clean}
-      \begin{verbatim}
+    \item Nützlich, wenn man einen Plot bearbeitet: \texttt{make plot.pdf}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{\texttt{make clean}}
+  Es ist eine (nützliche) Konvention, dass \texttt{make clean} alles vom \texttt{Makefile} erstellte löscht.
+
+  \vspace{1em}
+  \begin{lstmake}
     clean:
-        # alles löschen, was vom Makefile erzeugt wird
         rm plot.pdf report.pdf
-      \end{verbatim}
-    \item \texttt{build}-Ordner: Ordner sauber halten
-      \begin{verbatim}
+  \end{lstmake}
+  \vspace{1em}
+
+  Das Projekt sollte dann so aussehen wie vor dem ersten Ausführen von \texttt{make}.
+\end{frame}
+
+\begin{frame}[fragile]{Advanced}
+  \texttt{build}-Ordner: Projekt sauber halten
+
+  \vspace{0.9em}
+  \begin{lstmake}
+    all: build/report.tex
+
     build/plot.pdf: plot.py data.txt | build
-        python plot.py # savefig('build/plot.pdf')
+        python plot.py  # savefig('build/plot.pdf')
 
     build/report.pdf: report.tex build/plot.pdf | build
         lualatex --output-directory=build report.tex
 
     build:
         mkdir -p build
+
     clean:
         rm -rf build
-      \end{verbatim}
+
+    .PHONY: all clean
+  \end{lstmake}
+  \vspace{0.9em}
+
+  \begin{itemize}
     \item \texttt{| build} ist ein order-only Prerequisite: Alter wird ignoriert
+    \item Targets, die bei \texttt{.PHONY} genannt werden, entsprechen nicht Dateien (guter Stil)
   \end{itemize}
 \end{frame}
 
@@ -125,35 +177,25 @@
   Mehrere unabhängige Auswertungen: könnte man sie parallel ausführen? \\
   Ja! \texttt{make -j4} (4 Prozesse gleichzeitig)
 
-  \begin{verbatim}
+  \vspace{1em}
+  \begin{lstmake}
     plot1.pdf plot2.pdf: plot.py data.txt
         python plot.py
-  \end{verbatim}
+  \end{lstmake}
+  \vspace{1em}
 
   Problem: \texttt{make} führt \texttt{plot.py} gleichzeitig zweimal aus
 
   Lösung: manuell synchronisieren
 
-  \begin{verbatim}
-    plot1.pdf plot2.pdf: plot.sync
-        @: # nichts tun
-
-    plot.sync: plot.py data.txt
-        touch plot.sync
+  \vspace{1em}
+  \begin{lstmake}
+    plot1.pdf: plot.py data.txt
         python plot.py
 
-    .DELETE_ON_ERROR:
-  \end{verbatim}
+    plot2.pdf: plot1.pdf
+  \end{lstmake}
+  \vspace{1em}
 
-  Wenn man die Plots löscht, muss man auch \texttt{plot.sync} löschen.
-\end{frame}
-
-\begin{frame}{Motivation}
-  \begin{itemize}
-    \item Automatisierung verhindert Fehler
-    \item Dient als Dokumentation
-    \item Reproduzierbarkeit unverzichtbar in der Wissenschaft
-    \item Idealfall: Eingabe von \texttt{make} erstellt komplettes Protokoll/Paper aus Daten
-    \item Spart Zeit, da nur nötige Operationen ausgeführt werden
-  \end{itemize}
+  Wenn man \texttt{plot2.pdf} aber nicht \texttt{plot1.pdf} löscht, kann \texttt{make} nicht mehr \texttt{plot2.pdf} erstellen.
 \end{frame}

@@ -158,6 +158,23 @@
 }
 \makeatother
 
+\box_new:N \l_listings_boxed_box
+\lstnewenvironment{lstmake}[1][]{
+  \lstset{
+    language={[gnu]make},
+    basicstyle=\ttfamily\color{black},
+    otherkeywords={:, |},
+    ~#1}
+  \hbox_set:Nw \l_listings_boxed_box
+}{
+  \hbox_set_end:
+  \setlength\topsep{0pt}
+  \setlength\parskip{0pt}
+  \begin{center}
+    \leavevmode\box_use:N \l_listings_boxed_box
+  \end{center}
+}
+
 \NewDocumentEnvironment {CenterStrip} {m}
 {
   \begin{minipage}[c][#1\baselineskip][c]{\textwidth}
