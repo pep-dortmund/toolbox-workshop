@@ -59,6 +59,7 @@
       \item Ein Versionskontrollsystem
       \item Ursprünglich entwickelt, um den Programmcode des Linux-Kernels zu verwalten (Linus Torvalds)
       \item Hat sich gegenüber ähnlichen Programmen (SVN, mercurial) durchgesetzt
+      \item Wird in der Regel über die Kommandozeile benutzt
     \end{itemize}
 \end{frame}
 
@@ -69,12 +70,13 @@
     \item Kann die meisten Änderungen automatisch zusammenfügen
     \item Wirkt nebenbei auch als Backup
   \end{itemize}
-  Einziges Problem: Man muss lernen, damit umzugehen
+  Einzige Herausforderung: Man muss lernen, damit umzugehen
 \end{frame}
 
 \begin{frame}{Zentrales Konzept: Das Repository}
   \begin{itemize}
     \item Erzeugen mit \texttt{git init}
+    \item Damit wird der jetztige Ordner zu einem Repository
   \end{itemize}
   \vspace{3em}
   \centering
@@ -105,11 +107,13 @@
   \begin{itemize}
     \item \textcolor{blue}{Commit}: Zustand/Inhalt des Arbeitsverzeichnisses zu einem Zeitpunkt
       \begin{itemize}
-        \item Snapshot, Name ist Hash des Inhalts, enthält Commit-Message (Beschreibung der Änderungen)
+        \item Enthält Commit-Message (Beschreibung der Änderungen)
+        \item Wird über einen Hash-Code identifiziert
       \end{itemize}
     \item \textcolor{vertexDarkRed}{Branch}: benannter Zeiger auf einen Commit
       \begin{itemize}
-        \item Entwicklungszweig, im Praktikum nur \texttt{master}
+        \item Entwicklungszweig
+        \item Im Praktikum reicht bereits die Standard-Branch: \texttt{master}
       \end{itemize}
     \item \textcolor{green!60!black}{Tag}: unveränderbarer Zeiger auf einen Commit
       \begin{itemize}
@@ -118,14 +122,14 @@
   \end{itemize}
 \end{frame}
 
-\begin{frame}{Workflow}
+\begin{frame}{Typischer Arbeitsablauf}
   \begin{enumerate}
-    \item Repo erzeugen/klonen: \texttt{git init}, \texttt{git clone}
+    \item Repository erzeugen oder klonen: \texttt{git init}, \texttt{git clone}
     \item Arbeiten
       \begin{enumerate}
-        \item Dateien bearbeiten, testen: \texttt{vim}, \texttt{make}
-        \item Änderungen in Staging schieben: \texttt{git add}
-        \item Commit erzeugen: \texttt{git commit}
+        \item Dateien bearbeiten und testen
+        \item Änderungen vorbereiten: \texttt{git add}
+        \item Änderungen als \emph{commit} speichern: \texttt{git commit}
       \end{enumerate}
     \item Commits anderer herunterladen und integrieren: \texttt{git pull}
     \item Eigene Commits hochladen: \texttt{git push}
@@ -173,15 +177,15 @@
   \end{tabu}
 
   \begin{itemize}
-    \item Sinnvolle Commit-Messages schreiben!
+    \item Wichtig: Sinnvolle Commit-Messages
       \begin{itemize}
         \item Erster Satz ist Zusammenfassung
       \end{itemize}
     \item Logische Commits erstellen, für jede logische Einheit ein Commit
       \begin{itemize}
-        \item \texttt{git add -p} sehr nützlich
+        \item \texttt{git add -p} ist hier nützlich
       \end{itemize}
-    \item Hochgeladene Commits nicht mehr ändern!
+    \item Hochgeladene Commits sollte man nicht mehr ändern
   \end{itemize}
 \end{frame}
 
@@ -262,7 +266,7 @@
 \end{frame}
 
 \begin{frame}{SSH-Keys}
-  Git kann auf zwei Arten mit einem Server kommunizieren:
+  Git kann auf mehrere Arten mit einem Server kommunizieren:
   \begin{itemize}
     \item HTTPS: funktioniert immer, keine Einstellungen erforderlich, Passwort muss für jede Kommunikation eingegeben werden
     \item SSH: Keys müssen erzeugt und eingestellt werden, keine Passwörter mehr erforderlich
