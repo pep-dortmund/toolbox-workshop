@@ -1,4 +1,4 @@
-HEADER := $(addprefix ../common/, header.tex packages.tex settings.tex commands.tex beamerthemevertex.sty)
+HEADER := $(addprefix ../common/, header.tex packages.tex settings.tex settings-lst-cs.tex settings-lst-literate.tex commands.tex beamerthemevertex.sty)
 
 DOCUMENT := $(shell basename "$$(pwd)")
 
