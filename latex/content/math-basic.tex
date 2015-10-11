@@ -133,7 +133,7 @@
       \Alpha \Beta \Gamma
       \hbar \imath \jmath \ell
       \partial \nabla \square \increment
-      \infty \diameter \ldots \cdots
+      \infty \diameter
     \end{lstlisting}
   \CodeResult
     \strut
@@ -143,7 +143,7 @@
     $\Alpha \Beta \Gamma$ \\
     $\hbar \imath \jmath \ell$ \\
     $\partial \nabla \square \increment$ \\
-    $\infty \diameter \ldots \cdots$
+    $\infty \diameter$
   \end{CodeExample}
 \end{frame}
 
@@ -351,6 +351,44 @@
       $\displaystyle \int x \quad \int_0 x \quad \int^{} x \quad \int_0^{} x$
     \end{minipage}
   \end{CodeExample}
+\end{frame}
+
+\begin{frame}[fragile]{Auslassungspunkte}
+  Auslassungspunkte sind sehr … wichtig.
+  \begin{CodeExample}{0.5}
+    \begin{lstlisting}
+      a_1,    \dotsc , a_n
+      a_1 +   \dotsb + a_n
+      a_1     \dotsm   a_n
+      \int^{} \dotsi \int^{}
+    \end{lstlisting}
+  \CodeResult
+    \strut
+    $a_1,    \dotsc , a_n$ \\
+    $a_1 +   \dotsb + a_n$ \\
+    $a_1     \dotsm   a_n$ \\
+    $\int^{} \dotsi \int^{}$
+  \end{CodeExample}
+
+  Für andere Fälle gibt es Befehle mit festen Positionen:
+  \begin{CodeExample}{0.5}
+    \begin{lstlisting}
+      x \ldots x
+      x \cdots x
+        \vdots
+        \ddots
+        \adots
+    \end{lstlisting}
+  \CodeResult
+    \strut
+    $x \ldots x$ \\
+    $x \cdots x$ \\
+    $\vdots$ \\
+    $\ddots$ \\
+    $\adots$
+  \end{CodeExample}
+
+  Im Text kann man einfach \lstinline+\dots+ benutzen.
 \end{frame}
 
 \begin{frame}[fragile]{
