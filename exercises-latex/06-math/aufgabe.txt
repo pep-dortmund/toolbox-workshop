@@ -9,15 +9,15 @@ Aufgabe 1:
   vor.
 
 Aufgabe 2:
-  Setzt das Biot-Savart-Gesetz. Erklärt darunter im Fließtext
+  Setzt das Biot–Savart-Gesetz. Erklärt darunter im Fließtext
   die darin vorkommenden Größen und Konstanten.
   Versucht dafür die $-Umgebung und weitere Umgebungen zu verwenden, die ihr kennen gelernt habt.
 
 Aufgabe 3:
-  Setzt die Formel für die Gaußsche Fehlerfortpflanzung.
+  Setzt die Formel für die gaußsche Fehlerfortpflanzung.
 
 Aufgabe 4:
-  Setzt die vier differentiellen Maxwell-Gleichungen.
+  Setzt die vier differentiellen Maxwellgleichungen.
   Dabei sollen jeweils die homogenen bzw. die inhomogen
   Gleichungen in einer Zeile stehen und die Gleichungen für
   E bzw. B untereinander.

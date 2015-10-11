@@ -9,6 +9,8 @@
 
 \usepackage{fontspec}
 
+\usepackage{float}
+\floatplacement{figure}{htbp}
 \usepackage[
   section,
   below,
@@ -24,9 +26,6 @@
 \usepackage{graphicx}
 \usepackage{grffile}
 
-\usepackage{float}
-\floatplacement{figure}{htbp}
-
 \usepackage{blindtext}
 
 \usepackage[unicode]{hyperref}
@@ -35,6 +34,7 @@
 \begin{document}
 
 \section*{Aufgabe 1}
+
 In Abbildung \ref{fig:plot1} ist ein schöner Plot zu sehen.
 \blindtext
 \begin{figure}
@@ -46,6 +46,7 @@ In Abbildung \ref{fig:plot1} ist ein schöner Plot zu sehen.
 \blindtext
 
 \section*{Aufgabe 2}
+
 In Abbildung \ref{fig:subfigs} enthält zwei schöne Plots.
 Abbildung \ref{fig:plot2} ist der schönste aller Plots.
 \begin{figure}
@@ -56,7 +57,7 @@ Abbildung \ref{fig:plot2} ist der schönste aller Plots.
     \caption{Schöner Plot 2.}
     \label{fig:plot2}
   \end{subfigure}
-  \hfill
+  \hspace*{\fill}
   \begin{subfigure}{0.40\textwidth}
     \centering
     \includegraphics[width=\textwidth]{plot3.pdf}

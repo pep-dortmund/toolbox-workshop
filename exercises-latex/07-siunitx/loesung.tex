@@ -5,24 +5,38 @@
 \usepackage{polyglossia}
 \setmainlanguage{german}
 
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathtools}
+
 \usepackage{fontspec}
+
+\usepackage[
+  math-style=ISO,
+  bold-style=ISO,
+  sans-style=italic,
+  nabla=upright,
+  partial=upright,
+]{unicode-math}
 
 \usepackage{siunitx}
 
-\usepackage{amsmath}
 \usepackage[unicode]{hyperref}
 \usepackage{bookmark}
 
 \begin{document}
 
 \section*{Aufgabe 2}
+
 \subsection*{Ohne Optionen}
+
 \SI{27.23(1)e3}{\meter\per\second}
 \begin{equation}
   \SI{27.23(1)e3}{\meter\per\second} 
 \end{equation}
 
 \subsection*{Mit \texttt{locale=DE}}
+
 \sisetup{locale=DE}
 \SI{27.23(1)e3}{\meter\per\second}
 \begin{equation}
@@ -30,6 +44,7 @@
 \end{equation}
 
 \subsection*{Mit \texttt{separate-uncertainty=true}}
+
 \sisetup{separate-uncertainty=true}
 \SI{27.23(1)e3}{\meter\per\second}
 \begin{equation}
@@ -37,6 +52,7 @@
 \end{equation}
 
 \subsection*{Mit \texttt{per-mode=symbol-or-fraction}}
+
 \sisetup{per-mode=symbol-or-fraction}
 \SI{27.23(1)e3}{\meter\per\second}
 \begin{equation} 
@@ -44,6 +60,7 @@
 \end{equation}
 
 \section*{Aufgabe 3}
+
 $0,2$ und $\num{0,2}$
 
 $10000$ und $\num{10000}$
@@ -51,7 +68,7 @@ $10000$ und $\num{10000}$
 $3,1415926$ und $\num{3,1415926}$
 
 \begin{equation}
-  (1,\!234 \pm 5)\cdot 10^3
+  (1{,}234 \pm 5) \cdot 10^3
 \end{equation}
 
 \section*{Aufgabe 4}

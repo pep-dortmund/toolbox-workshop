@@ -1,9 +1,9 @@
 Aufgabe 1:
   Erstellt eine unnummerierte Liste der
-  Vorlesungen auf, die ihr nächstes Semester hört.
+  Vorlesungen, die ihr nächstes Semester hört.
 
 Aufgabe 2:
-  Erstellt eine nummerierte Liste der TOP 3 eurer
+  Erstellt eine nummerierte Liste der Top-3 eurer
   Lieblingsfilme.
 
 Aufgabe 3:

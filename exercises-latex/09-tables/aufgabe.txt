@@ -9,3 +9,6 @@ Aufgabe 2:
   Daten aus data_error.txt. Setzt zwischen Wert und Fehler
   ein +/- wie auf den Folien besprochen.
 
+Tipp:
+  Ein guter Texteditor macht die Aufgabe viel leichter.
+  Finde heraus, wie dein Editor z.B. eine Spalte aus & einfügen kann.

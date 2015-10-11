@@ -1,5 +1,5 @@
 Aufgabe 1:
-  ladet das Paket siunitx in eurer Präambel
+  Ladet das Paket siunitx in eurer Präambel
   ohne Einstellungen.
 
 Aufgabe 2:
@@ -14,7 +14,7 @@ Aufgabe 2:
 
   Ladet nun die Option "locale=DE", wie ändert sich die Ausgabe?
   Tipp: mit \sisetup{} lassen sich Optionen auch nach dem Laden
-  der Klasse einstellen.
+  des Pakets einstellen.
   Ladet zusätzlich die Option "separate-uncertainty=true",
   wie verändert sich die Ausgabe?
   Ladet zusätzlich die Option "per-mode=symbol-or-fraction",
@@ -37,6 +37,3 @@ Aufgabe 4:
     10 kg*m/s^2
     9001 N/(A m)
     100 V^4
-
-    
-

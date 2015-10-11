@@ -19,28 +19,31 @@
   partial=upright,
 ]{unicode-math}
 
-\setmathfont{Latin Modern Math}
-
 \usepackage[unicode]{hyperref}
 \usepackage{bookmark}
 
 \begin{document}
 
-\section{Biot-Savart}
+\section{Biot--Savart}
+
 Das Magnetfeld $\vec{B}$ am Ort $\vec{r}$ eines stromdurchflossenen Leiters ergibt sich zu
 \begin{equation}
-  \vec{B}(\vec{r}) = \frac{\mu_0}{4\mathup{\pi}}
-  \int_V \vec{\jmath}(\vec{r}') \times \frac{\vec{r} - \vec{r}'}{\lvert \vec{r} - \vec{r}' \rvert^3} \, \mathup{d}V' .
+  \vec{B}(\vec{r}) = \frac{\mu_0}{4 \symup{\pi}}
+    \int_V \vec{\jmath}(\vec{r}') \times \frac{\vec{r} - \vec{r}'}{\lvert \vec{r} - \vec{r}' \rvert^3} \, \symup{d}V' .
 \end{equation}
 Hierbei bezeichnet $\vec{\jmath}$ die Stromdichte am Ort $\vec{r}'$ und $\mu_0$ die magnetische Feldkonstante.
 
 \section{Fehlerfortpflanunzung}
+
 \begin{equation}
-  \sigma_f = \sqrt{\sum\limits_{i=1}^N \left( \frac{\partial f}{\partial x_i}
-                   \sigma_i \right)^{\!\!2}}
+  \sigma_f = \sqrt{
+    \sum\limits_{i = 1}^N
+      \left( \frac{\partial f}{\partial x_i} \sigma_i \right)^{\!\! 2}
+  }
 \end{equation}
 
-\section{Die vier Maxwell-Gleichungen}
+\section{Die vier Maxwellgleichungen}
+
 \begin{align}
   \nabla \cdot  \vec{E} &= \frac{\rho}{\varepsilon_0} &
   \nabla \cdot  \vec{B} &= 0 \\
@@ -49,23 +52,25 @@ Hierbei bezeichnet $\vec{\jmath}$ die Stromdichte am Ort $\vec{r}'$ und $\mu_0$ 
 \end{align}
 
 \section{Wellengleichung}
-Im Vakuum gilt $\rho=0$ und $\vec{\jmath}=0$,
-damit wird aus den Maxwellgleichungen:
+
+Im Vakuum gelten $\rho = 0$ und $\vec{\jmath} = 0$, womit sich die Maxwellgleichungen zu
 \begin{align}
-  \nabla \cdot  \vec{E} &= 0 \label{eq:max1} \\
-  \nabla \cdot  \vec{B} &= 0 \label{eq:max2} \\
-  \nabla \times \vec{E} &= - \partial_t \vec{B} \label{eq:max3} \\
-  \nabla \times \vec{B} &= \mu_0 \varepsilon_0 \partial_t \vec{E} . \label{eq:max4}
+  \nabla \cdot  \vec{E} &= 0 \label{eqn:max1} \\
+  \nabla \cdot  \vec{B} &= 0 \label{eqn:max2} \\
+  \nabla \times \vec{E} &= - \partial_t \vec{B} \label{eqn:max3} \\
+  \nabla \times \vec{B} &= \mu_0 \varepsilon_0 \partial_t \vec{E} . \label{eqn:max4}
 \end{align}
-Wir beginnen damit, auf Gleichung \eqref{eq:max3} erneut die Rotation anzuwenden:
+reduzieren.
+Nach erneuter Anwendung der Rotation auf \eqref{eqn:max3} ergibt sich
 \begin{equation}
   \nabla \times \left( \nabla \times \vec{E} \right) = \nabla \times \left( - \partial_t \vec{B} \right) .
 \end{equation}
-Nach dem Satz von Schwartz lassen sich die partiellen Ableitungen vertauschen:
+Nach dem Satz von Schwartz lassen sich die partiellen Ableitungen vertauschen, was zu
 \begin{equation}
-  \nabla \times \left( \nabla \times \vec{E} \right) = - \partial_t \left( \nabla \times \vec{B} \right) .
+  \nabla \times \left( \nabla \times \vec{E} \right) = - \partial_t \! \left( \nabla \times \vec{B} \right) .
 \end{equation}
-Wir setzen auf der rechten Seite Gleichung \eqref{eq:max2} ein:
+führt.
+Wir setzen auf der rechten Seite \eqref{eqn:max2} ein:
 \begin{equation}
   \nabla \times \left( \nabla \times \vec{E} \right) = - \mu_0 \varepsilon_0 \partial_t^2 \vec{E} .
 \end{equation}
@@ -73,7 +78,7 @@ Aus der linken Seite wird mit
 \begin{equation}
   \nabla \times \left( \nabla \times \vec{E} \right) = \nabla \cdot \left( \nabla \cdot \vec{E} \right) - \increment \vec{E}
 \end{equation}
-und Ausnutzen von Gleichung \eqref{eq:max1}:
+und Ausnutzen von \eqref{eqn:max1}
 \begin{equation}
   - \increment\vec{E} = -\mu_0 \varepsilon_0 \partial_t^2 \vec{E} .
 \end{equation}
@@ -84,50 +89,58 @@ Dies ist die Wellengleichung für das elektrische Feld, in der sich die Lichtges
 identifizieren lässt.
 Damit können wir
 \begin{equation}
-  \left(\increment - \frac{1}{c^2} \frac{\partial^2}{\partial t^2} \right) \vec{E} = 0
+  \left(\increment - \frac{1}{c^2} \frac{\partial^2}{\partial t^2} \right) \! \vec{E} = 0
 \end{equation}
 schreiben.
 
 \section{Wellengleichung}
+
 Ebene Welle:
 \begin{equation}
-  \nabla^2 A - \frac{1}{c^2} \frac{\partial^2 A}{\partial t^2} = 0
+  \nabla^2 A - \frac{1}{c^2} \frac{\partial^2}{\partial t^2} A = 0
 \end{equation}
 Eine Lösung:
 \begin{equation}
-  A = A_0 \exp(\mathrm{i} (\mathbf{k} \mathbf{x} - \omega t))
+  A = A_0 \exp(\mathrm{i} (\symbf{k} \symbf{x} - \omega t))
 \end{equation}
 Gruppen- und Phasengeschwindigkeit:
-\begin{equation}
-  v_\text{Gr.} = \frac{\partial \omega}{\partial k} \qquad v_\text{Ph.} = \frac{\omega}{k}
-\end{equation}
+\begin{align}
+  v_\text{Gr} &= \frac{\partial \omega}{\partial k} &
+  v_\text{Ph} &= \frac{\omega}{k}
+\end{align}
 
 \section{Multipolentwicklung}
+
 \begin{equation}
-  \Phi(\mathbf{r}) = \frac{1}{4\pi\epsilon_0}\left(\frac{Q}{r} +
-  \frac{\mathbf{r} \cdot \mathbf{p}}{r^3} + \frac{1}{2} \sum_{k, l} Q_{kl} \frac{r_k r_l}{r^5} + \dots\right)
+  \Phi(\symbf{r}) = \frac{1}{4 \symup{\pi} \varepsilon_0} \left(
+    \frac{Q}{r} + \frac{\symbf{r} \cdot \symbf{p}}{r^3}
+    + \frac{1}{2} \sum_{k, l} Q_{k l} \frac{r_k r_l}{r^5} + \dotsb
+  \right) ,
 \end{equation}
+wobei
 \begin{equation*}
-  Q_{kl} = \sum_{i = 1}^n q_i \left(3 r_{ik} r_{il} - r_i^2 \delta_{kl}\right)
+  Q_{k l} = \sum_{i = 1}^n q_i \left( 3 r_{i k} r_{i l} - r_i^2 \symup{\delta}_{k l} \right)
 \end{equation*}
 
 \section{Jacobi-Matrix}
+
 \begin{equation}
-  \mathbf{J} =
+  \symbf{J} =
   \begin{pmatrix}
-    \frac{\partial f_1}{\partial x_1} & \dots  & \frac{\partial f_1}{\partial x_n} \\
-    \vdots                            & \ddots & \vdots                            \\
-    \frac{\partial f_m}{\partial x_1} & \dots  & \frac{\partial f_m}{\partial x_n} \\
+    \frac{\partial f_1}{\partial x_1} & \cdots  & \frac{\partial f_1}{\partial x_n} \\
+    \vdots                            & \ddots  & \vdots                            \\
+    \frac{\partial f_m}{\partial x_1} & \cdots  & \frac{\partial f_m}{\partial x_n}
   \end{pmatrix}
 \end{equation}
 
 \section{Harmonischer Oszillator}
+
 \begin{equation}
   \ddot{x} + 2 \gamma \dot{x} + \omega_0^2 x = 0 
 \end{equation}
 Reelle Lösung:
 \begin{equation}
-  x(t) = \mathup{e}^{-\gamma t} (A \cos(\omega t) + B \sin(\omega t))
+  x(t) = \symup{e}^{-\gamma t} (A \cos(\omega t) + B \sin(\omega t))
 \end{equation}
 mit
 \begin{equation}

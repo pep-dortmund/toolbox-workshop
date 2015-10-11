@@ -5,23 +5,30 @@
 \usepackage{polyglossia}
 \setmainlanguage{german}
 
+\usepackage{fontspec}
+
 \usepackage[
   style=alphabetic,
 ]{biblatex}
-
-\usepackage{fontspec}
+\addbibresource{loesung.bib}
 
 \usepackage[unicode]{hyperref}
 \usepackage{bookmark}
 
-\addbibresource {loesung.bib}
-
 \begin{document}
-  \section{Theorie}
-    Um den Phasenübergang zu beschreiben, schlägt deGennes den Ordnungsparameter $a$ vor \cite[2-8]{deGennes}.
-  \section{Aufbau und Durchführung}
-    Ein übersichtliches Schema für die experimentelle Realisierung kann den Quellen \cite{martin, magnet} entnommen werden.
-  \section{Diskussion}
-    Eine Übersicht über weitere Verfahren befindet sich in \cite{kent}.
-  \printbibliography
+
+\section{Theorie}
+
+Um den Phasenübergang zu beschreiben, schlägt deGennes den Ordnungsparameter $a$ vor \cite[2--8]{deGennes}.
+
+\section{Aufbau und Durchführung}
+
+Ein übersichtliches Schema für die experimentelle Realisierung kann den Quellen \cite{martin, magnet} entnommen werden.
+
+\section{Diskussion}
+
+Eine Übersicht über weitere Verfahren befindet sich in \cite{kent}.
+
+\printbibliography
+
 \end{document}
