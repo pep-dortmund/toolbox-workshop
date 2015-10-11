@@ -1,0 +1,75 @@
+\subsection{Debug}
+
+\begin{frame}[fragile]{\lstinline+\\ovefullrule+}
+  \fbox{
+    \begin{minipage}{10em}
+      \mbox{fooooooooooooooooooooo}
+    \end{minipage}
+  }
+
+  \vspace{\baselineskip}
+  \begin{lstlisting}
+    Overfull \hbox (14.97614pt too wide) in paragraph at lines 10--10
+  \end{lstlisting}
+  Wo genau ist die problematische Stelle?
+
+  \vspace{\baselineskip}
+  \begin{lstlisting}
+    \setlength\overfullrule{5pt}
+  \end{lstlisting}
+
+  \setlength\overfullrule{5pt}
+  \fbox{
+    \begin{minipage}{10em}
+      \mbox{fooooooooooooooooooooo}
+    \end{minipage}
+  }
+
+  \vspace{\baselineskip}
+  Zeilen, die über den Rand ragen, werden markiert.
+\end{frame}
+
+\begin{frame}[fragile]{\texttt{draft}}
+  Entweder als Option für die Dokumentklasse
+  \begin{lstlisting}
+    \documentclass[…, draft, …]{…}
+  \end{lstlisting}
+  oder auch nur für ein Bild
+  \begin{lstlisting}
+    \includegraphics[draft, height=2cm]{logos/pep.pdf}
+  \end{lstlisting}
+  \includegraphics[draft, height=2cm]{logos/pep.pdf}
+
+  Vorteile:
+  \begin{itemize}
+    \item Ränder des Bilds sind sichtbar
+    \item Bild muss nicht existieren
+  \end{itemize}
+\end{frame}
+
+\AddToShipoutPictureFG*{\ShowFramePicture}
+\begin{frame}[fragile]{\texttt{showframe}}
+  Manchmal möchte man den Textbereich auf der Seite grafisch sehen.
+
+  Das geht mit
+  \begin{lstlisting}
+    \usepackage{showframe}
+  \end{lstlisting}
+\end{frame}
+
+\directlua{lvd = require("lua-visual-debug")}
+\AtBeginShipoutNext{\directlua{lvd.show_page_elements(tex.box["AtBeginShipoutBox"])}}
+\begin{frame}[fragile]{\texttt{lua-visual-debug}}
+  Manchmal möchte man sicher gehen, dass Sachen ausgerichtet sind oder die richtige Größe haben.
+  
+  Dabei hilft
+  \begin{lstlisting}
+    \usepackage{lua-visual-debug}
+  \end{lstlisting}
+
+  \vspace{2\baselineskip}
+  Hier noch eine Gleichung
+  \begin{equation}
+    \int_0^\infty \mathup{e}^{-x^2} \, \mathup{d}x = \frac{\sqrt{\mathup{\pi}}}{2}
+  \end{equation}
+\end{frame}
