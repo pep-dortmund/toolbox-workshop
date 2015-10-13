@@ -1,0 +1,27 @@
+\section{Latexmk}
+
+\begin{frame}[fragile]{
+  Latexmk
+  \hfill
+  \doc{http://mirrors.ctan.org/support/latexmk/latexmk.pdf}{latexmk}
+}
+  \begin{itemize}
+    \item Problem: Mehrfaches Kompilieren von Dokumenten ist aufwändig und fehleranfällig
+    \item \texttt{latexmk} ist ein Kommandozeilenwerkzeug, das automatisch \LaTeX (und andere Programme wie \texttt{biber}) oft genug aufruft
+    \item Bei TexLive mitgeliefert
+    \item Auswahl von LuaLaTeX durch Parameter \texttt{--lualatex}.
+    \item Versteht auch viele \texttt{latex}-Argumente wie \texttt{--interaction} und \texttt{--halt-on-error}.
+  \end{itemize}
+
+  \begin{block}{Aufruf auf der Kommandozeile}
+    \begin{lstlisting}
+       latexmk --lualatex --output-directory=build file.tex --interaction=nonstopmode --halt-on-error
+    \end{lstlisting}
+  \end{block}
+
+  \begin{itemize}
+    \item Noch mehr Kontrolle durch Konfigurationsdatei \texttt{latexmkrc}
+    \item Siehe dazu Dokumentation
+  \end{itemize}
+\end{frame}
+ 
