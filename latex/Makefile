@@ -25,5 +25,7 @@ build/latex.pdf: examples.bib
 
 build/latex.pdf: $(FIGURES)
 
-$(FIGURES): script/answers.py data/2015.tsv
+build/figures/os.pdf: script/answers.py data/2015.tsv
 	python3 $<
+
+build/figures/experience.pdf: build/figures/os.pdf
