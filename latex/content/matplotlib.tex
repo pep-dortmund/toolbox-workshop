@@ -1,0 +1,96 @@
+\section{\TeX\ in \texttt{matplotlib}}
+
+\begin{frame}[fragile]{\TeX\ in \texttt{matplotlib} (1)}
+  \lstinputpython[firstline=3]{script/mattex1.py}
+\end{frame}
+
+\AddToShipoutPictureFG*{\ShowFramePicture}
+\begin{frame}{Ergebnis (1)}
+  \centering
+  \includegraphics{figures/mattex1.pdf}
+\end{frame}
+
+\begin{frame}[fragile]{\TeX\ in \texttt{matplotlib} (2)}
+  \lstinputpython[firstline=3]{script/mattex2.py}
+\end{frame}
+
+\begin{frame}[fragile]{Bildgröße}
+  \lstpythoninline+plt.figure(figsize=(4.76, 2.94))+
+  \begin{itemize}
+    \item Größe der Zeichenfläche setzen (in Zoll)
+    \item Breite des textes kann mit \lstinline+\the\textwidth+ ins Dokument geschrieben werden
+    \item $1\,\mathrm{in} = \num{72.27}\,\mathrm{pt}$
+    \item Goldener Schnitt für Höhe
+  \end{itemize}
+
+  \begin{lstpython}
+    plt.tight_layout(pad=0)
+    plt.savefig(..., bbox_inches='tight', pad_inches=0)
+  \end{lstpython}
+  \begin{itemize}
+    \item Weiße Leerräume am Rand eliminieren
+    \item Inhalt des Bilds ist genauso breit wie der Text
+  \end{itemize}
+\end{frame}
+
+\AddToShipoutPictureFG*{\ShowFramePicture}
+\begin{frame}{Ergebnis (2)}
+  \centering
+  \includegraphics{figures/mattex2.pdf}
+\end{frame}
+
+\begin{frame}[fragile]{\TeX\ in \texttt{matplotlib} (3)}
+  \lstinputpython[firstline=3]{script/mattex3.py}
+\end{frame}
+
+\AddToShipoutPictureFG*{\ShowFramePicture}
+\begin{frame}{Ergebnis (3)}
+  \centering
+  \includegraphics{figures/mattex3.pdf}
+\end{frame}
+
+\begin{frame}[fragile]{\TeX\ in \texttt{matplotlib} (4)}
+  \lstinputpython[firstline=3]{script/mattex4.py}
+\end{frame}
+
+\begin{frame}[fragile]{\texttt{header-matplotlib.tex}}
+  \lstinputlisting{header-matplotlib.tex}
+
+  \begin{itemize}
+    \item \TeX\ wird von \texttt{matplotlib} in \texttt{/tmp} ausgeführt
+      \begin{itemize}
+        \item Datei kann nicht gefunden werden
+      \end{itemize}
+    \item Lösung: \texttt{TEXINPUTS} setzen!
+    \item \texttt{TEXINPUTS=\$(pwd): python script/mattex4.py}
+  \end{itemize}
+\end{frame}
+
+\AddToShipoutPictureFG*{\ShowFramePicture}
+\begin{frame}{Ergebnis (4)}
+  \centering
+  \includegraphics{figures/mattex4.pdf}
+\end{frame}
+
+\begin{frame}[fragile]{\TeX\ in \texttt{matplotlib} (5)}
+  \lstinputpython[firstline=3]{script/mattex5.py}
+\end{frame}
+
+\begin{frame}[fragile]{\texttt{matplotlibrc}}
+  \lstMatplotlibrcSettings
+  \lstinputlisting{matplotlibrc.txt}
+
+  \begin{itemize}
+    \item Datei heißt \texttt{matplotlibrc} ohne Endung!
+    \item Wird im aktuellen Verzeichnis gesucht
+      \begin{itemize}
+        \item nicht unbedingt gleich dem Ordner, wo das Skript liegt
+      \end{itemize}
+  \end{itemize}
+\end{frame}
+
+\AddToShipoutPictureFG*{\ShowFramePicture}
+\begin{frame}{Ergebnis (5)}
+  \centering
+  \includegraphics{figures/mattex5.pdf}
+\end{frame}

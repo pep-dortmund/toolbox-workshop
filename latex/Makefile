@@ -25,7 +25,12 @@ build/latex.pdf: examples.bib
 
 build/latex.pdf: $(FIGURES)
 
-build/figures/os.pdf: script/answers.py data/2015.tsv
+MATTEX := $(addprefix build/figures/mattex, $(addsuffix .pdf, 1 2 3 4 5))
+
+build/latex.pdf: $(MATTEX) $(addprefix script/mattex, $(addsuffix .py, 1 2 3 4 5)) matplotlibrc header-matplotlib.tex
+
+$(FIGURES): script/answers.py data/2015.tsv
 	python3 $<
 
-build/figures/experience.pdf: build/figures/os.pdf
+build/figures/mattex%.pdf: script/mattex%.py matplotlibrc header-matplotlib.tex
+	TEXINPUTS=$(shell pwd): python $<

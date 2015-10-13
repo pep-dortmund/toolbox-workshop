@@ -176,6 +176,52 @@
   \end{center}
 }
 
+\NewDocumentCommand \lstPythonSettingsInline {}
+{
+  language=python,
+  basicstyle=\ttfamily\color{black},
+  otherkeywords={True, False, None, as},
+  showstringspaces=false,
+  stringstyle=\color{vertexDarkRed},
+}
+
+\NewDocumentCommand \lstPythonSettings {}
+{
+  \expandafter\lstset\expandafter{\lstPythonSettingsInline}
+}
+
+\NewDocumentCommand \lstMatplotlibrcSettings {}
+{
+  \lstset{
+    basicstyle={\ttfamily\color{black}},
+    morecomment={[l]\#},
+    otherkeywords={^, \{, \}, ^}, % ^ is a hack
+  }
+}
+
+\NewDocumentCommand \lstinputpython {O{} m}
+{
+  \lstPythonSettings
+  \hbox_set:Nw \l_listings_boxed_box
+  \lstinputlisting[#1]{#2}
+  \hbox_set_end:
+  \leavevmode\box_use:N \l_listings_boxed_box
+}
+
+\NewDocumentCommand \lstpythoninline {O{}}
+{
+  \expandafter\lstinline\expandafter[\lstPythonSettingsInline,#1]
+}
+
+\lstnewenvironment{lstpython}[1][]{
+  \lstPythonSettings
+  \lstset{#1}
+  \hbox_set:Nw \l_listings_boxed_box
+}{
+  \hbox_set_end:
+  \leavevmode\box_use:N \l_listings_boxed_box
+}
+
 \NewDocumentEnvironment {CenterStrip} {m}
 {
   \begin{minipage}[c][#1\baselineskip][c]{\textwidth}
