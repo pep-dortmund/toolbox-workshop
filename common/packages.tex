@@ -52,7 +52,12 @@
   separate-uncertainty=true,
   per-mode=symbol-or-fraction,
 ]{siunitx}
-\AtBeginDocument{\sisetup{math-rm=\mathrm, text-rm=\rmfamily}}
+\AtBeginDocument{
+  \sisetup{
+    math-rm=\mathrm,
+    math-micro=µ,
+  }
+}
 
 \usepackage[
   version=4,

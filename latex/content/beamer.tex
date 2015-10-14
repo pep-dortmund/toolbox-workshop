@@ -1,14 +1,14 @@
-\section{Präsentationen mit \LaTeX: \lstinline+beamer+}
+\section{Präsentationen mit \LaTeX: \texttt{beamer}}
 
-\begin{frame}[fragile]{\lstinline+beamer+}
+\begin{frame}[fragile]{
+  \texttt{beamer}
+  \hfill
+  \doc{http://mirrors.ctan.org/macros/latex/contrib/beamer/doc/beameruserguide.pdf}{beamer}
+}
   \begin{itemize}
     \item Dokumentenklasse für Präsentationen
     \item \lstinline+frame+-Umgebung erzeugt eine Folie
-    \item Bei Nutzung mit \lstinline+fontspec+ und \lstinline+unicode-math+ muss
-      \begin{lstlisting}
-      \usefonttheme{professionalfonts}
-      \end{lstlisting}
-      vor diesen Paketen gesetzt werden.
+    \item Bei Nutzung mit \lstinline+fontspec+ und \lstinline+unicode-math+ muss die Option \texttt{professionalfonts} gesetzt werden.
     \item Aussehen wird durch \enquote{themes} gesteuert.
     \item Viele themes werden mit \TeX-Live mitgeliefert.
     \item Sehen leider alle fast gleich aus.
@@ -17,9 +17,10 @@
 \begin{frame}[fragile]{Minimal-Beispiel}
   \begin{center}
     \begin{lstlisting}
-      \documentclass{beamer}
+      \documentclass[
+        professionalfonts,
+      ]{beamer}
 
-      \usefonttheme{professionalfonts}
       \usepackage{fontspec}
       \usepackage[
         math-style=ISO,
@@ -42,7 +43,7 @@
 \begin{frame}[fragile]{Nervige Buttons abschalten}
   \begin{center}
     \begin{lstlisting}
-      \documentclass{beamer}
+      \documentclass[…]{beamer}
       %  …
       %  packages here
       %  …
@@ -59,22 +60,26 @@
 \end{frame}
 
 
-\begin{frame}[fragile]{\lstinline+siunitx+ mit beamer}
+\begin{frame}[fragile]{\texttt{siunitx} mit beamer}
   \begin{center}
     \begin{lstlisting}
-      \documentclass{beamer}
+      \documentclass[professionalfonts]{beamer}
       %  …
       %  packages here
       %  …
 
-      \usepackage[
-        math-rm=\symup,
-        % more option here
-      ]{siunitx}
+      \usepackage{siunitx}
+
+      \AtBeginDocument{
+        \sisetup{
+          math-rm=\mathrm,
+          math-micro=µ, % AltGr+m = MICRO SIGN, Unicode: U+00B5
+        }
+      }
 
       \begin{document}
         \begin{frame}{title}
-          \SI{5}{\mega\ohm}
+          \SI{5}{\micro\ohm}
         \end{frame}
       \end{document}
     \end{lstlisting}
