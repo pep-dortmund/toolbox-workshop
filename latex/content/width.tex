@@ -20,7 +20,8 @@
 
   \begin{block}{Code}
     \begin{lstlisting}
-      \newcommand\OverfullCenter[1]{\noindent\makebox[\linewidth]{#1}}
+      \NewDocumentCommand \OverfullCenter {+m} {
+        \noindent\makebox[\linewidth]{#1} }
     \end{lstlisting}
   \end{block}
 \end{frame}
