@@ -42,6 +42,7 @@
     \item besteht aus Rules:
   \end{itemize}
   \begin{block}{Rule}
+    \centering
     \begin{lstmake}
       target: prerequisites
           recipe
@@ -55,24 +56,28 @@
 \end{frame}
 
 \begin{frame}[fragile]{Einfachstes Beispiel}
-  \begin{lstmake}
-    plot.pdf: plot.py data.txt
-        python plot.py
-  \end{lstmake}
+  \begin{center}
+    \begin{lstmake}
+      plot.pdf: plot.py data.txt
+          python plot.py
+    \end{lstmake}
+  \end{center}
 \end{frame}
 
 \begin{frame}[fragile]{Beispiel}
-  \begin{lstmake}
-    all: report.pdf  # convention
+  \begin{center}
+    \begin{lstmake}
+      all: report.pdf  # convention
 
-    plot.pdf: plot.py data.txt
-        python plot.py
+      plot.pdf: plot.py data.txt
+          python plot.py
 
-    report.pdf: report.tex
-        lualatex report.tex
+      report.pdf: report.tex
+          lualatex report.tex
 
-    report.pdf: plot.pdf  # add prerequisite
-  \end{lstmake}
+      report.pdf: plot.pdf  # add prerequisite
+    \end{lstmake}
+  \end{center}
   \vspace{1em}
 
   \texttt{make} eingeben:
@@ -134,12 +139,12 @@
 \begin{frame}[fragile]{\texttt{make clean}}
   Es ist eine (nützliche) Konvention, dass \texttt{make clean} alles vom \texttt{Makefile} erstellte löscht.
 
-  \vspace{1em}
-  \begin{lstmake}
-    clean:
-        rm plot.pdf report.pdf
-  \end{lstmake}
-  \vspace{1em}
+  \begin{center}
+    \begin{lstmake}
+      clean:
+          rm plot.pdf report.pdf
+    \end{lstmake}
+  \end{center}
 
   Das Projekt sollte dann so aussehen wie vor dem ersten Ausführen von \texttt{make}.
 \end{frame}
@@ -147,25 +152,25 @@
 \begin{frame}[fragile]{Advanced}
   \texttt{build}-Ordner: Projekt sauber halten
 
-  \vspace{0.9em}
-  \begin{lstmake}
-    all: build/report.tex
+  \begin{center}
+    \begin{lstmake}
+      all: build/report.tex
 
-    build/plot.pdf: plot.py data.txt | build
-        python plot.py  # savefig('build/plot.pdf')
+      build/plot.pdf: plot.py data.txt | build
+          python plot.py  # savefig('build/plot.pdf')
 
-    build/report.pdf: report.tex build/plot.pdf | build
-        lualatex --output-directory=build report.tex
+      build/report.pdf: report.tex build/plot.pdf | build
+          lualatex --output-directory=build report.tex
 
-    build:
-        mkdir -p build
+      build:
+          mkdir -p build
 
-    clean:
-        rm -rf build
+      clean:
+          rm -rf build
 
-    .PHONY: all clean
-  \end{lstmake}
-  \vspace{0.9em}
+      .PHONY: all clean
+    \end{lstmake}
+  \end{center}
 
   \begin{itemize}
     \item \texttt{| build} ist ein order-only Prerequisite: Alter wird ignoriert
@@ -177,25 +182,25 @@
   Mehrere unabhängige Auswertungen: könnte man sie parallel ausführen? \\
   Ja! \texttt{make -j4} (4 Prozesse gleichzeitig)
 
-  \vspace{1em}
-  \begin{lstmake}
-    plot1.pdf plot2.pdf: plot.py data.txt
-        python plot.py
-  \end{lstmake}
-  \vspace{1em}
+  \begin{center}
+    \begin{lstmake}
+      plot1.pdf plot2.pdf: plot.py data.txt
+          python plot.py
+    \end{lstmake}
+  \end{center}
 
   Problem: \texttt{make} führt \texttt{plot.py} gleichzeitig zweimal aus
 
   Lösung: manuell synchronisieren
 
-  \vspace{1em}
-  \begin{lstmake}
-    plot1.pdf: plot.py data.txt
-        python plot.py
+  \begin{center}
+    \begin{lstmake}
+      plot1.pdf: plot.py data.txt
+          python plot.py
 
-    plot2.pdf: plot1.pdf
-  \end{lstmake}
-  \vspace{1em}
+      plot2.pdf: plot1.pdf
+    \end{lstmake}
+  \end{center}
 
   Wenn man \texttt{plot2.pdf} aber nicht \texttt{plot1.pdf} löscht, kann \texttt{make} nicht mehr \texttt{plot2.pdf} erstellen.
 \end{frame}
