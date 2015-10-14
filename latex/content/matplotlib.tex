@@ -56,6 +56,7 @@
 \begin{frame}[fragile]{\texttt{header-matplotlib.tex}}
   \lstinputlisting{header-matplotlib.tex}
 
+  \vspace*{-0.5em}
   \begin{itemize}
     \item \TeX\ wird von \texttt{matplotlib} in \texttt{/tmp} ausgeführt
       \begin{itemize}
@@ -63,7 +64,9 @@
       \end{itemize}
     \item Lösung: \texttt{TEXINPUTS} setzen!
     \item \texttt{TEXINPUTS=\$(pwd): python script/mattex4.py}
+    \item \texttt{Makefile}: \texttt{TEXINPUTS=\$(shell pwd): python script/mattex4.py}
   \end{itemize}
+  \vspace*{-1em}
 \end{frame}
 
 \AddToShipoutPictureFG*{\ShowFramePicture}
