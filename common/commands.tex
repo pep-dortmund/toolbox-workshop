@@ -159,13 +159,27 @@
 }
 \makeatother
 
+\NewDocumentCommand \lstMakeSettingsInline {}
+{
+  language={[gnu]make},
+  basicstyle=\ttfamily\color{black},
+  otherkeywords={:, |},
+}
+
+\NewDocumentCommand \lstMakeSettings {}
+{
+  \expandafter\lstset\expandafter{\lstMakeSettingsInline}
+}
+
+\NewDocumentCommand \lstmakeinline {O{}}
+{
+  \expandafter\lstinline\expandafter[\lstMakeSettingsInline,#1]
+}
+
 \box_new:N \l_listings_boxed_box
 \lstnewenvironment{lstmake}[1][]{
-  \lstset{
-    language={[gnu]make},
-    basicstyle=\ttfamily\color{black},
-    otherkeywords={:, |},
-    ~#1}
+  \lstMakeSettings
+  \lstset{#1}
   \hbox_set:Nw \l_listings_boxed_box
 }{
   \hbox_set_end:
@@ -190,15 +204,6 @@
   \expandafter\lstset\expandafter{\lstPythonSettingsInline}
 }
 
-\NewDocumentCommand \lstMatplotlibrcSettings {}
-{
-  \lstset{
-    basicstyle={\ttfamily\color{black}},
-    morecomment={[l]\#},
-    otherkeywords={^, \{, \}, ^}, % ^ is a hack
-  }
-}
-
 \NewDocumentCommand \lstinputpython {O{} m}
 {
   \lstPythonSettings
@@ -220,6 +225,15 @@
 }{
   \hbox_set_end:
   \leavevmode\box_use:N \l_listings_boxed_box
+}
+
+\NewDocumentCommand \lstMatplotlibrcSettings {}
+{
+  \lstset{
+    basicstyle={\ttfamily\color{black}},
+    morecomment={[l]\#},
+    otherkeywords={^, \{, \}, ^}, % ^ is a hack
+  }
 }
 
 \NewDocumentEnvironment {CenterStrip} {m}
