@@ -1,0 +1,12 @@
+Aufgabe 1:
+Erstellt eine Präsentation mit:
+* Titelseite mit Autor, Titel, Datum 
+* Übersicht („Inhaltsverzeichnis“)
+* Folie mit einer Erklärung für einen Plot,
+  Erklärung und Plot sollten nebeneinander stehen.
+* Folie mit je einer Box für die vier Maxwell-Gleichungen
+
+Aufgabe 2:
+* Nutzt eines der in TeX-Live enthaltenen Beamer-Themes.
+* Schaltet die Navigationssybole aus
+* Ändert das Farbthema
