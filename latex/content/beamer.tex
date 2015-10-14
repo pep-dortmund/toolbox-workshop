@@ -1,0 +1,87 @@
+\section{Präsentationen mit \LaTeX: \texttt{beamer}}
+
+\begin{frame}[fragile]{
+  \texttt{beamer}
+  \hfill
+  \doc{http://mirrors.ctan.org/macros/latex/contrib/beamer/doc/beameruserguide.pdf}{beamer}
+}
+  \begin{itemize}
+    \item Dokumentenklasse für Präsentationen
+    \item \lstinline+frame+-Umgebung erzeugt eine Folie
+    \item Bei Nutzung mit \lstinline+fontspec+ und \lstinline+unicode-math+ muss die Option \texttt{professionalfonts} gesetzt werden.
+    \item Aussehen wird durch \enquote{themes} gesteuert.
+    \item Viele themes werden mit \TeX-Live mitgeliefert.
+    \item Sehen leider alle fast gleich aus.
+  \end{itemize}
+\end{frame}
+\begin{frame}[fragile]{Minimal-Beispiel}
+  \begin{center}
+    \begin{lstlisting}
+      \documentclass[
+        professionalfonts,
+      ]{beamer}
+
+      \usepackage{fontspec}
+      \usepackage[
+        math-style=ISO,
+        bold-style=ISO,
+        nabla=upright,
+        partial=upright,
+        sans-style=italic,
+      ]{unicode-math}
+      \setmathfont{Latin Modern Math}
+
+      \begin{document}
+        \begin{frame}{title}
+          Hallo Welt!
+        \end{frame}
+      \end{document}
+    \end{lstlisting}
+  \end{center}
+\end{frame}
+
+\begin{frame}[fragile]{Nervige Buttons abschalten}
+  \begin{center}
+    \begin{lstlisting}
+      \documentclass[…]{beamer}
+      %  …
+      %  packages here
+      %  …
+
+      \setbeamertemplate{navigation symbols}{}
+
+      \begin{document}
+        \begin{frame}{title}
+          Hallo Welt!
+        \end{frame}
+      \end{document}
+    \end{lstlisting}
+  \end{center}
+\end{frame}
+
+
+\begin{frame}[fragile]{\texttt{siunitx} mit beamer}
+  \begin{center}
+    \begin{lstlisting}
+      \documentclass[professionalfonts]{beamer}
+      %  …
+      %  packages here
+      %  …
+
+      \usepackage{siunitx}
+
+      \AtBeginDocument{
+        \sisetup{
+          math-rm=\mathrm,
+          math-micro=µ, % AltGr+m = MICRO SIGN, Unicode: U+00B5
+        }
+      }
+
+      \begin{document}
+        \begin{frame}{title}
+          \SI{5}{\micro\ohm}
+        \end{frame}
+      \end{document}
+    \end{lstlisting}
+  \end{center}
+\end{frame}

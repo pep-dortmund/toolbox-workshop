@@ -54,7 +54,14 @@
 
 \begin{frame}{Übersicht}
   \linespread{1.5}
-  \tableofcontents[sections=16-]
+  \begin{columns}[onlytextwidth, t]
+    \begin{column}{0.5\textwidth}
+      \tableofcontents[sections=16]
+    \end{column}
+    \begin{column}{0.5\textwidth}
+      \tableofcontents[sections=17-]
+    \end{column}
+  \end{columns}
 \end{frame}
 
 \input{content/introduction.tex}
@@ -74,6 +81,7 @@
 \input{content/advanced.tex}
 \input{content/latexmk.tex}
 \input{content/matplotlib.tex}
+\input{content/beamer.tex}
 \input{content/end.tex}
 
 \end{document}
