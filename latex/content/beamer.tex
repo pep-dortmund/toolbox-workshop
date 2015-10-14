@@ -58,3 +58,25 @@
   \end{center}
 \end{frame}
 
+
+\begin{frame}[fragile]{\lstinline+siunitx+ mit beamer}
+  \begin{center}
+    \begin{lstlisting}
+      \documentclass{beamer}
+      %  …
+      %  packages here
+      %  …
+
+      \usepackage[
+        math-rm=\symup,
+        % more option here
+      ]{siunitx}
+
+      \begin{document}
+        \begin{frame}{title}
+          \SI{5}{\mega\ohm}
+        \end{frame}
+      \end{document}
+    \end{lstlisting}
+  \end{center}
+\end{frame}
