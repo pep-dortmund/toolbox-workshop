@@ -12,7 +12,7 @@ Aufgabe 2:
   wohl auf die ganze Abbildung als auch auf einen Teil im
   Text.
 
-  Warum ist es nich gut, die beiden Plots auf diese Weise
+  Warum ist es nicht gut, die beiden Plots auf diese Weise
   einzubinden?
 
 Aufgabe 3:
@@ -23,7 +23,7 @@ Aufgabe 3:
     3. Die Breite für Abbildungsunterschriften schmaler
        als die Breite des Fließtextes macht.
   Dies sorgt dafür, dass sich Abbildungsunterschriften
-  (und Tabellenüberschriften) detlicher vom Fließtext abheben.
+  (und Tabellenüberschriften) deutlicher vom Fließtext abheben.
 
 Aufgabe 4:
   Ändert die Ausrichtung der Caption-Texte am Label.
