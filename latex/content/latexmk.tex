@@ -1,21 +1,21 @@
-\section{Latexmk}
+\section{\texttt{latexmk}}
 
 \begin{frame}[fragile]{
-  Latexmk
+  \texttt{latexmk}
   \hfill
   \doc{http://mirrors.ctan.org/support/latexmk/latexmk.pdf}{latexmk}
 }
   \begin{itemize}
     \item Problem: Mehrfaches Kompilieren von Dokumenten ist aufwändig und fehleranfällig
-    \item \texttt{latexmk} ist ein Kommandozeilenwerkzeug, das automatisch \LaTeX (und andere Programme wie \texttt{biber}) oft genug aufruft
-    \item Bei TexLive mitgeliefert
-    \item Auswahl von LuaLaTeX durch Parameter \texttt{--lualatex}.
-    \item Versteht auch viele \texttt{latex}-Argumente wie \texttt{--interaction} und \texttt{--halt-on-error}.
+    \item \texttt{latexmk} ist ein Kommandozeilenwerkzeug, das automatisch \texttt{tex} (und andere Programme wie \texttt{biber}) oft genug aufruft
+    \item Bei TeXLive mitgeliefert
+    \item Auswahl von \LuaLaTeX\ durch Parameter \texttt{--lualatex}.
+    \item Versteht auch viele \texttt{tex}-Argumente wie \texttt{--interaction} und \texttt{--halt-on-error}.
   \end{itemize}
 
   \begin{block}{Aufruf auf der Kommandozeile}
     \begin{lstlisting}
-       latexmk --lualatex --output-directory=build file.tex --interaction=nonstopmode --halt-on-error
+      latexmk --lualatex --output-directory=build --interaction=nonstopmode --halt-on-error file.tex
     \end{lstlisting}
   \end{block}
 
@@ -24,4 +24,23 @@
     \item Siehe dazu Dokumentation
   \end{itemize}
 \end{frame}
- 
+
+\begin{frame}[fragile]{\texttt{latexmk} im \texttt{Makefile}}
+  \begin{block}{Im \texttt{Makefile}}
+    \begin{lstmake}
+      build/file.pdf: FORCE plots...
+          latexmk --lualatex --output-directory=build \
+              --interaction=nonstopmode --halt-on-error file.tex
+
+      FORCE:
+    \end{lstmake}
+  \end{block}
+
+  \begin{itemize}
+    \item \texttt{latexmk} bestimmt Abhängigkeiten selbst
+    \item sollte also immer ausgeführt werden
+      \begin{itemize}
+        \item \texttt{FORCE}
+      \end{itemize}
+  \end{itemize}
+\end{frame}
