@@ -9,7 +9,7 @@ Aufgabe 2:
     und
 
     \begin{equation}
-      \SI{27(1)e3}{\meter\per\second}
+      \SI{27.23(1)e3}{\meter\per\second}
     \end{equation}
 
   Ladet nun die Option "locale=DE", wie ändert sich die Ausgabe?
