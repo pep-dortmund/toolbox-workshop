@@ -1,0 +1,32 @@
+\section{Präsentationen mit \LaTeX: \lstinline+beamer+}
+
+\begin{frame}[fragile]{\lstinline+beamer+}
+  \begin{itemize}
+    \item Dokumentenklasse für Präsentationen
+    \item \lstinline+frame+-Umgebung erzeugt eine Folie
+    \item Bei Nutzung mit \lstinline+fontspec+ und \lstinline+unicode-math+ muss
+      \begin{lstlisting}
+      \usefonttheme{professionalfonts}
+      \end{lstlisting}
+      vor diesen Paketen gesetzt werden.
+    \item Aussehen wird durch \enquote{themes} gesteuert.
+    \item Viele themes werden mit \TeX-Live mitgeliefert.
+    \item Sehen leider alle fast gleich aus.
+  \end{itemize}
+\end{frame}
+\begin{frame}[fragile]{Minimal-Beispiel}
+  \begin{center}
+    \begin{lstlisting}
+      \documentclass{beamer}
+
+      \usefonttheme{professionalfonts}
+      \usepackage{fontspec}
+
+      \begin{document}
+        \begin{frame}{title}
+          Hallo Welt!
+        \end{frame}
+      \end{document}
+    \end{lstlisting}
+  \end{center}
+\end{frame}
