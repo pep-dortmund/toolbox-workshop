@@ -1,4 +1,4 @@
-all: build/loesung-pythagoras.pdf
+all: build/loesung-pythagoras.pdf build/loesung-nikolaus.pdf
 
 
 build/loesung-pythagoras.pdf: loesung-pythagoras.tex | build
@@ -7,6 +7,13 @@ build/loesung-pythagoras.pdf: loesung-pythagoras.tex | build
 		--interaction=batchmode \
 		--halt-on-error \
 		loesung-pythagoras.tex
+
+build/loesung-nikolaus.pdf: loesung-nikolaus.tex | build
+	lualatex \
+		--output-directory=build \
+		--interaction=batchmode \
+		--halt-on-error \
+		loesung-nikolaus.tex
 
 build:
 	mkdir -p build

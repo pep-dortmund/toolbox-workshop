@@ -2,6 +2,10 @@
 
 ## Aufgabe 1
 
+Malt das Haus vom Nikolaus mit einem Path ohne überschneidungen
+
+## Aufgabe 2
+
 Zeichne eine Darstellung des Satz von Pythagoras mit Tikz
 
 Diese sollte folgende Elemente beinhalten
