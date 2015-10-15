@@ -1,14 +1,16 @@
 \PassOptionsToPackage{unicode}{hyperref}
 \PassOptionsToPackage{aux}{rerunfilecheck}
+
 \documentclass[professionalfonts]{beamer}
+
+\usepackage{polyglossia}
+\setmainlanguage{german}
 
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{mathtools}
 
 \usepackage{fontspec}
-\usepackage{polyglossia}
-\setmainlanguage{german}
 \usepackage[
   math-style=ISO,
   bold-style=ISO,
@@ -36,47 +38,58 @@
 \begin{frame}
   \maketitle
 \end{frame}
+
 \begin{frame}{Übersicht}
   \tableofcontents
 \end{frame}
 
 \section{Toller Plot}
+
 \begin{frame}{Plot}
   \begin{columns}[c, onlytextwidth]
-    \begin{column}{0.47\textwidth}
+    \begin{column}{0.42\textwidth}
       \includegraphics[width=\textwidth]{example-image-a}
     \end{column}
-    \begin{column}{0.47\textwidth}
+    \begin{column}{0.52\textwidth}
       \begin{itemize}
         \item Dies ist ein Beispielbild
         \item Es kommt mit dem Paket \texttt{mwe}
-        \item Gut zum testen
+        \item Gut zum Testen
       \end{itemize}
     \end{column}
   \end{columns} 
 \end{frame}
+
 \section{Maxwell-Gleichungen}
+
 \begin{frame}{Maxwell-Gleichungen}
-  \begin{columns}[c, onlytextwidth]
+  \begin{columns}[t, onlytextwidth]
     \begin{column}{0.45\textwidth}
       \begin{block}{Maxwell I}
         \begin{equation}
           \nabla \cdot \symbf{E} = \frac{ρ}{ε_0}
         \end{equation}
       \end{block}
+    \end{column}
+    \begin{column}{0.45\textwidth}
+      \begin{block}{Maxwell II}
+        \begin{equation}
+          \nabla \cdot \symbf{B} = 0
+        \end{equation}
+      \end{block}
+    \end{column}
+  \end{columns}
+  \begin{columns}[t, onlytextwidth]
+    \begin{column}{0.45\textwidth}
       \begin{block}{Maxwell III}
         \begin{equation}
           \nabla \times \symbf{E} = - \partial_t \symbf{B}
         \end{equation}
       \end{block}
     \end{column}
-    \begin{column}{0.5\textwidth}
-      \begin{block}{Maxwell II}
-        \begin{equation}
-          \nabla \cdot \symbf{B} = 0
-        \end{equation}
-      \end{block}
+    \begin{column}{0.45\textwidth}
       \begin{block}{Maxwell IV}
+        \setlength{\abovedisplayskip}{0pt}
         \begin{equation}
           \nabla \times \symbf{B} = μ_0 \symbf{j} - μ_0 ε_0 \partial_t \symbf{E}
         \end{equation}
@@ -84,4 +97,5 @@
     \end{column}
   \end{columns} 
 \end{frame}
+
 \end{document}
