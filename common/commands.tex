@@ -365,4 +365,17 @@
   % \aftergroup\egroup\right
 }
 
+\AtBeginDocument{
+  \let\symRe=\Re
+  \RenewDocumentCommand \Re {}
+  {
+    \operatorname{Re}
+  }
+  \let\symIm=\Im
+  \RenewDocumentCommand \Im {}
+  {
+    \operatorname{Im}
+  }
+}
+
 \ExplSyntaxOff

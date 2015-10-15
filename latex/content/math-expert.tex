@@ -1,0 +1,129 @@
+\subsection{Mathe: Expertmodus}
+
+\begin{frame}[fragile]{Alternative Mathe-Fonts}
+  Manchmal braucht man einen Script-Font oder einen zweiten kalligraphischen.
+  \vspace{1em}
+  \begin{CodeExample}{0.83}
+    \begin{lstlisting}
+      \symcal{IA} \symbfcal{IA} % Latin Modern
+      \symcal{IA} \symbfcal{IA} % XITS Math, StylisticSet=1
+      \symscr{IA} \symbfscr{IA} % XITS Math
+    \end{lstlisting}
+  \CodeResult
+    \Umathordordspacing\textstyle=4mu
+                           $\symcal{I A} \symbfcal{I A}$ \\
+    {\mathversion{xitsss1} $\symcal{I A} \symbfcal{I A}$} \\
+    {\mathversion{xits}    $\symscr{I A} \symbfscr{I A}$}
+  \end{CodeExample}
+
+  \begin{block}{Mathe-Fonts einstellen}
+    \begin{lstlisting}
+      \setmathfont{XITS Math}[range={scr, bfscr}]
+      \setmathfont{XITS Math}[range={cal, bfcal}, StylisticSet=1]
+    \end{lstlisting}
+  \end{block}
+\end{frame}
+
+\begin{frame}[fragile]{\lstinline+\\Re+, \lstinline+\\Im+}
+  \lstinline+\Re+ und \lstinline+\Im+ tun nicht das, was man will:
+  \vspace*{-1.2em}
+  \begin{CodeExample}{0.5}
+    \begin{lstlisting}
+      \Re z    \Im z
+    \end{lstlisting}
+  \CodeResult
+    \strut
+    $\symRe z \qquad \symIm z$
+  \end{CodeExample}
+
+  \begin{lstlisting}
+    \AtBeginDocument{ % wird bei \begin{document} ausgeführt
+      \let\symIm=\Im  % werden sonst wieder von unicode-math überschrieben
+      \RenewDocumentCommand \Re {}
+      {
+        \operatorname{Re}
+      }
+      \let\symIm=\Im
+      \RenewDocumentCommand \Im {}
+      {
+        \operatorname{Im}
+      }
+    }
+  \end{lstlisting}
+
+  \vspace{-0.5em}
+  Besser:
+  \vspace*{-1.2em}
+  \begin{CodeExample}{0.5}
+    \begin{lstlisting}
+      \Re z    \Im z
+    \end{lstlisting}
+  \CodeResult
+    \strut
+    $\Re z \qquad \Im z$
+  \end{CodeExample}
+\end{frame}
+
+\begin{frame}[fragile]{Richtiges Spacing für \lstinline+\\left+, \lstinline+\\right+}
+  \begin{Packages}
+    \begin{lstlisting}
+      \usepackage{mleftright}
+    \end{lstlisting}
+  \end{Packages}
+
+  \vspace*{-\baselineskip}
+  \begin{CodeExample}{0.5}
+    \begin{lstlisting}
+      \sin  \left( x  \right) y
+      \sin \mleft( x \mright) y
+    \end{lstlisting}
+  \CodeResult
+    \strut
+    $\sin  \left( x  \right) y$ \\
+    $\sin \mleft( x \mright) y$
+  \end{CodeExample}
+
+  Man kann natürlich eigene kurze Makros für \lstinline+\mleft+ und \lstinline+\mright+ definieren. \\
+  Beispiel:\lstinline+\l+ und \lstinline+\r+ (Textbedeutungen beachten!).
+
+  \vspace*{0.5em}
+  \begin{lstlisting}
+    \let\ltext=\l
+    \RenewDocumentCommand \l {}
+    {
+      \TextOrMath{ \ltext }{ \mleft }
+    }
+    \let\raccent=\r
+    \RenewDocumentCommand \r {}
+    {
+      \TextOrMath{ \raccent }{ \mright }
+    }
+  \end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]{\lstinline+\\delimitershortfall+}
+  Klammern wachsen nicht immer:
+  \begin{CodeExample}{0.8}
+    \begin{lstlisting}
+      \left(  \left(  \left(  \left(
+        x
+      \right) \right) \right) \right)
+
+      % in Präambel
+      \setlength{\delimitershortfall}{-1sp}
+
+      \left(  \left(  \left(  \left(
+        x
+      \right) \right) \right) \right)
+    \end{lstlisting}
+  \CodeResult
+    \begin{CenterStrip}{3}
+      $\left( \left( \left( \left( x \right) \right) \right) \right)$
+    \end{CenterStrip}
+    \\[4\baselineskip]
+    \setlength{\delimitershortfall}{-1sp}
+    \begin{CenterStrip}{3}
+      $\left( \left( \left( \left( x \right) \right) \right) \right)$
+    \end{CenterStrip}
+  \end{CodeExample}
+\end{frame}
