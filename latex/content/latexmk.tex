@@ -28,9 +28,16 @@
 \begin{frame}[fragile]{\texttt{latexmk} im \texttt{Makefile}}
   \begin{block}{Im \texttt{Makefile}}
     \begin{lstmake}
-      build/file.pdf: FORCE plots...
-          latexmk --lualatex --output-directory=build \
-              --interaction=nonstopmode --halt-on-error file.tex
+      build/file.pdf: FORCE plots... tabellen...
+            TEXINPUTS=build: \
+            BIBINPUTS=build: \
+            max_print_line=1048576 \
+          latexmk \
+            --lualatex \
+            --output-directory=build \
+            --interaction=nonstopmode \
+            --halt-on-error \
+          file.tex
 
       FORCE:
     \end{lstmake}
@@ -38,7 +45,7 @@
 
   \begin{itemize}
     \item \texttt{latexmk} bestimmt Abhängigkeiten selbst
-    \item sollte also immer ausgeführt werden
+    \item Sollte also immer ausgeführt werden
       \begin{itemize}
         \item \texttt{FORCE}
       \end{itemize}
