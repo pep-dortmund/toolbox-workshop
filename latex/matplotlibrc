@@ -1,5 +1,5 @@
 backend : pgf  # mpl.use('...')
-figure.figsize : 4.76, 2.94
+figure.figsize : 4.76, 2.94  # 5.78, 3.57 für scrartcl
 font.family : serif
 font.size : 11  # standard Textgröße in scrartcl
 legend.fontsize : medium
