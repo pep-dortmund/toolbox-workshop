@@ -1,0 +1,46 @@
+Fitte die Daten aus daten.txt (t, U, U_err) mit der Funktion
+
+        f(x) = a * sin(b * x + c) + d .
+
+Benutze dazu ucurve_fit aus der Datei curve_fit.py.
+Geneignete Startwerte sind a=1, b=1e3, c=d=0.
+
+Plotte die Daten und die gefittete Funktion.
+Verwende das pgf-Backend und eine matplotlibrc sowie die nötigen LaTeX-Pakete,
+um die Beschriftung schön zu machen.
+
+Benutze die Funktionen aus table.py, um die Daten und Ergbnisse in .tex-Dateien zu schreiben.
+Teile die Daten dabei in zwei Spalten auf, damit die Tabelle nicht zu lang wird.
+
+Bei
+
+        make_table(columns, figures=None)
+
+ist columns eine Liste aus den Daten (NumPy-Arrays) der Spalten (mit oder ohne Fehler).
+figures ist eine Liste mit einem Wert pro Spalte.
+figures gibt bei Werten mit Fehlern die Anzahl der signifikanten Stellen des Fehlers an, wobei None den Rundungsalgortihmus von uncertainties verwendet.
+Bei Werten ohne Fehlern gibt figures die Anzahl der Nachkommastellen an.
+
+Schreibe auch die Ergebnisse für die Fitparameter in .tex-Dateien in der Form
+
+        \SI{1+-2e3}{\meter} .
+
+Dabei ist e3 aber nicht unbedingt nötig in dieser Aufgabe.
+Nutze dazu die Funktion
+
+        make_SI(num, unit, exp='', figures=None) .
+
+Dabei gibt num den Wert (mit Fehler) an.
+unit ist die Einheit in der Form eines Strings mit siunitx-Einheitenbefehlen.
+exp ist optional und gibt einen Exponenten in der Form 'e3' an.
+figures funktioniert wie bei make_table.
+
+Die Funktion
+
+        write(filename, content)
+
+schreibt den String content in die Datei filename.
+
+Schreibe ein Protokoll, in der du den Plot, die Tabelle und die Fitergebnisse (als Formeln) einbindest.
+Bei der Tabelle muss man beachten, dass ganz links eine Spalte eingeüft wird, die leer ist und nicht sichtbar sein soll, hierzu kann man die erste Spalte als l@{} deklarieren.
+Schreibe eine Makefile, die alle Dateien neu erstellen kann.
