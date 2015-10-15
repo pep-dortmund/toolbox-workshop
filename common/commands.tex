@@ -34,7 +34,7 @@
 
 \newcounter{heightgroup}
 
-\NewDocumentEnvironment {CodeExplanation} {o m O{Code} O{Ergebnis} D<>{}} {
+\NewDocumentEnvironment {CodeExplanation} {o m O{Code} O{Erklärung} D<>{}} {
   \NewDocumentCommand \Explanation {D<>{}} {
       \end{tcolorbox}
     \end{column}
@@ -232,9 +232,9 @@
   }
 }
 
-\NewDocumentEnvironment {CenterStrip} {m}
+\NewDocumentEnvironment {CenterStrip} {O{\textwidth} m}
 {
-  \begin{minipage}[c][#1\baselineskip][c]{\textwidth}
+  \begin{minipage}[c][#2\baselineskip][c]{#1}
 }{
   \end{minipage}
 }
@@ -323,5 +323,46 @@
 \def\pdfTeX{\latinmodernrm{pdf\TeX}}
 \def\BibTeX{\latinmodernrm{\textsc{Bib}\TeX}}
 \def\BibLaTeX{\latinmodernrm{Bib\LaTeX}}
+
+% macro examples
+\NewDocumentCommand \dif {m}
+{
+  \mathinner{\symup{d} #1}
+}
+\NewDocumentCommand \Dif {m}
+{
+  \mathinner{\symup{D} #1}
+}
+\NewDocumentCommand \del {m}
+{
+  \mathinner{\symup{\delta} #1}
+}
+\NewDocumentCommand \Del {m}
+{
+  \mathinner{\symup{\Delta} #1}
+}
+
+\let\vaccent=\v
+\RenewDocumentCommand \v {}
+{
+  \TextOrMath{
+    \vaccent
+  }{
+    \symbf
+  }
+}
+
+\let\ltext=\l
+\RenewDocumentCommand \l {}
+{
+  \TextOrMath { \ltext }{ \mleft }
+  % \mathopen{}\mathclose\bgroup\left
+}
+\let\raccent=\r
+\RenewDocumentCommand \r {}
+{
+  \TextOrMath { \raccent }{ \mright }
+  % \aftergroup\egroup\right
+}
 
 \ExplSyntaxOff
