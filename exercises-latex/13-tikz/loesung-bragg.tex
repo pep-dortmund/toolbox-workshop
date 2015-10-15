@@ -1,4 +1,4 @@
-\documentclass{scrartcl}
+\documentclass{standalone}
 
 \usepackage{mathtools}
 \usepackage{fontspec}
@@ -36,5 +36,6 @@
   \draw (0, 0) -- (270 - \ang: {cos(\ang)} * \d);
   \draw (0, 0) -- (270 + \ang: {cos(\ang)} * \d);
   \draw[dashed, thin] (0, 1) -- (0, -1*\d);
+  \draw[<->] (-2.5, 0) -- +(0, -\d) node[left, midway] {$d$}; 
 \end{tikzpicture}
 \end{document}
