@@ -39,7 +39,63 @@
     \end{lstlisting}
   \end{center}
 \end{frame}
+\begin{frame}[fragile]{Mehrere Spalten}
+  \begin{itemize}
+    \item \texttt{columns}-Umgebung für Bereich mit mehreren Spalten
+    \item Option \texttt{onlytextwidth} damit nichts in den Rand ragt
+    \item Mögliche option für vertikale Ausrichtung der Spalten:
+      \begin{description}
+        \item[t] top, funktioniert nicht bei Bildern
+        \item[c] center
+        \item[b] bottom
+        \item[T] wie \texttt{t}, funktioniert aber auch bei Bildern
+      \end{description}
+    \item \texttt{column}-Umgebung erzeugt Spalte, Breite ist Pflichtargument
+  \end{itemize}
+  \begin{center}
+    \begin{lstlisting}
+      \begin{columns}[onlytextwidth]
+        \begin{column}{0.45\textwidth}
+          Hallo
+        \end{column}
+        \begin{column}{0.45\textwidth}
+          Welt
+        \end{column}
+      \end{columns}
+    \end{lstlisting}
+  \end{center}
+\end{frame}
+\begin{frame}[fragile]{Blöcke}
+  \begin{itemize}
+    \item (Zu?) Oft genutztes Element in \texttt{beamer}-Präsentationen
+    \item Standardblöcke können nicht viel → \texttt{tcolorbox}
+  \end{itemize}
+  \begin{CodeExample}{0.5}
+    \begin{lstlisting}
+      \begin{block}{Titel}
+        Block Body
+      \end{block}
 
+      \begin{exampleblock}{Titel}
+        Block Body
+      \end{exampleblock}
+
+      \begin{alertblock}{Titel}
+        Block Body
+      \end{alertblock}
+    \end{lstlisting}
+  \CodeResult
+    \begin{block}{Titel}
+      Block Body
+    \end{block}
+    \begin{exampleblock}{Titel}
+      Block Body
+    \end{exampleblock}
+    \begin{alertblock}{Titel}
+      Block Body
+    \end{alertblock}
+  \end{CodeExample}
+\end{frame}
 \begin{frame}[fragile]{Nervige Buttons abschalten}
   \begin{center}
     \begin{lstlisting}
@@ -58,8 +114,6 @@
     \end{lstlisting}
   \end{center}
 \end{frame}
-
-
 \begin{frame}[fragile]{\texttt{siunitx} mit beamer}
   \begin{center}
     \begin{lstlisting}
