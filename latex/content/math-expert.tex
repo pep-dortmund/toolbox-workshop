@@ -101,6 +101,61 @@
   \end{lstlisting}
 \end{frame}
 
+\begin{frame}[fragile]{\lstinline+\\DeclarePairedDelimiter+}
+  \begin{itemize}
+    \item Man kann mit dem \texttt{mathtools}-Befehl \lstinline+\DeclarePairedDelimiter+ Befehle erzeugen, die Symbole um Ausdrücke setzen.
+    \item Automatische \lstinline+*+-Variante, die mitwächst.
+    \item Mit richtigem Spacing!
+  \end{itemize}
+  \begin{CodeExample}{0.7}
+    \begin{lstlisting}
+      % before \begin{document}
+      \DeclarePairedDelimiter{\abs}{\lvert}{\rvert}
+      \DeclarePairedDelimiter{\norm}{\lVert}{\rVert}
+      % In Mathe:
+      \abs{x} \abs*{\frac{1}{x}}
+      \norm{\symbf{y}}
+
+      \sin\abs*{\frac{1}{2}}
+      \sin\left|\frac{1}{2}\right|
+    \end{lstlisting}
+  \CodeResult
+    \vspace{4\baselineskip}
+    \strut
+    $\abs{x} \quad \abs*{\frac{1}{x}}$ \\
+    $\norm{\symbf{y}}$ \\[\baselineskip]
+    $\sin\abs*{\frac{1}{2}}$ \\
+    $\sin\left|\frac{1}{2}\right|$
+  \end{CodeExample}
+\end{frame}
+
+\begin{frame}[fragile]{Bra, Ket, BraKet}
+  \begin{itemize}
+    \item Schonmal für Physik IV und Quantenmechanik vormerken:
+    \item \lstinline+\delimsize+ gibt Größe der äußeren Klammern in \texttt{<body>}
+  \end{itemize}
+  \begin{block}{In der Präambel}
+    \begin{lstlisting}
+      \DeclarePairedDelimiter{\bra}{\langle}{\rvert}
+      \DeclarePairedDelimiter{\ket}{\lvert}{\rangle}
+      % <name> <#arguments> <left> <right> <body>
+      \DeclarePairedDelimiterX{\braket}[2]{\langle}
+      {\rangle}{#1\delimsize|#2}
+    \end{lstlisting}
+  \end{block}
+  \begin{CodeExample}{0.7}
+    \begin{lstlisting}
+      \bra{\Psi}
+      \ket{\Psi}
+      \braket*{\Psi_1}{\Psi_2}
+    \end{lstlisting}
+  \CodeResult
+    \strut$\bra{\Psi}$ \\
+    $\ket{\Psi}$ \\
+    $\braket*{\Psi_1}{\Psi_2}$ \\
+  \end{CodeExample}
+\end{frame}
+
 \begin{frame}[fragile]{\lstinline+\\delimitershortfall+}
   Klammern wachsen nicht immer:
   \begin{CodeExample}{0.8}
