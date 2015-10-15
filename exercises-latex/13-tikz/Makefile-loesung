@@ -1,3 +1,15 @@
-all:
+all: build/loesung-pythagoras.pdf
+
+
+build/loesung-pythagoras.pdf: loesung-pythagoras.tex | build
+	lualatex \
+		--output-directory=build \
+		--interaction=batchmode \
+		--halt-on-error \
+		loesung-pythagoras.tex
+
+build:
 	mkdir -p build
-	touch build/loesung.pdf
+
+clean:
+	rm -rf build

@@ -1,0 +1,14 @@
+# Tikz-Aufgaben
+
+## Aufgabe 1
+
+Zeichne eine Darstellung des Satz von Pythagoras mit Tikz
+
+Diese sollte folgende Elemente beinhalten
+* Beschriftungen der Kanten und des Rechten Winkels
+* Die Flächen der Quadrate
+
+
+Tipps:
+* Die Doku hat zahlreiche Beispiele
+* Die Dokumentenklasse `standalone` ist gut geeignet
