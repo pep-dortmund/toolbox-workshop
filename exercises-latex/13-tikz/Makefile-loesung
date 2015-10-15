@@ -1,4 +1,6 @@
-all: build/loesung-pythagoras.pdf build/loesung-nikolaus.pdf
+all: build/loesung-pythagoras.pdf \
+	build/loesung-nikolaus.pdf \
+	build/loesung-bragg.pdf \
 
 
 build/loesung-pythagoras.pdf: loesung-pythagoras.tex | build
@@ -14,6 +16,13 @@ build/loesung-nikolaus.pdf: loesung-nikolaus.tex | build
 		--interaction=batchmode \
 		--halt-on-error \
 		loesung-nikolaus.tex
+
+build/loesung-bragg.pdf: loesung-bragg.tex | build
+	lualatex \
+		--output-directory=build \
+		--interaction=batchmode \
+		--halt-on-error \
+		loesung-bragg.tex
 
 build:
 	mkdir -p build

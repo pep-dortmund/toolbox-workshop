@@ -6,6 +6,10 @@ Malt das Haus vom Nikolaus mit einem Path ohne überschneidungen
 
 ## Aufgabe 2
 
+Stellt mithilfe von Tikz die Bragg-Bedingung dar
+
+## Aufgabe 3
+
 Zeichne eine Darstellung des Satz von Pythagoras mit Tikz
 
 Diese sollte folgende Elemente beinhalten
