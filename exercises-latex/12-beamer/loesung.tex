@@ -1,0 +1,87 @@
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{aux}{rerunfilecheck}
+\documentclass[professionalfonts]{beamer}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathtools}
+
+\usepackage{fontspec}
+\usepackage{polyglossia}
+\setmainlanguage{german}
+\usepackage[
+  math-style=ISO,
+  bold-style=ISO,
+  sans-style=italic,
+  nabla=upright,
+  partial=upright,
+]{unicode-math}
+
+\usepackage[
+  math-micro=µ,
+  locale=DE,
+]{siunitx}
+
+\usetheme{Frankfurt}
+\usecolortheme{seagull}
+\setbeamertemplate{navigation symbols}{}
+
+\author{PeP et al.\ e.\,V.}
+\institute{TU Dortmund}
+\date{Toolbox-Workshop 2015}
+\title{Beamer-Musterlösung}
+
+\begin{document}
+
+\begin{frame}
+  \maketitle
+\end{frame}
+\begin{frame}{Übersicht}
+  \tableofcontents
+\end{frame}
+
+\section{Toller Plot}
+\begin{frame}{Plot}
+  \begin{columns}[c, onlytextwidth]
+    \begin{column}{0.47\textwidth}
+      \includegraphics[width=\textwidth]{example-image-a}
+    \end{column}
+    \begin{column}{0.47\textwidth}
+      \begin{itemize}
+        \item Dies ist ein Beispielbild
+        \item Es kommt mit dem Paket \texttt{mwe}
+        \item Gut zum testen
+      \end{itemize}
+    \end{column}
+  \end{columns} 
+\end{frame}
+\section{Maxwell-Gleichungen}
+\begin{frame}{Maxwell-Gleichungen}
+  \begin{columns}[c, onlytextwidth]
+    \begin{column}{0.45\textwidth}
+      \begin{block}{Maxwell I}
+        \begin{equation}
+          \nabla \cdot \symbf{E} = \frac{ρ}{ε_0}
+        \end{equation}
+      \end{block}
+      \begin{block}{Maxwell III}
+        \begin{equation}
+          \nabla \times \symbf{E} = - \partial_t \symbf{B}
+        \end{equation}
+      \end{block}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+      \begin{block}{Maxwell II}
+        \begin{equation}
+          \nabla \cdot \symbf{B} = 0
+        \end{equation}
+      \end{block}
+      \begin{block}{Maxwell IV}
+        \begin{equation}
+          \nabla \times \symbf{B} = μ_0 \symbf{j} - μ_0 ε_0 \partial_t \symbf{E}
+        \end{equation}
+      \end{block}
+    \end{column}
+  \end{columns} 
+\end{frame}
+\end{document}
