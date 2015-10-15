@@ -2,7 +2,7 @@
 
 ## Aufgabe 1
 
-Malt das Haus vom Nikolaus mit einem Path ohne überschneidungen
+Malt das Haus vom Nikolaus ohne „den Stift abzusetzen“.
 
 ## Aufgabe 2
 
