@@ -15,12 +15,16 @@ build/loesung-plot.pdf: loesung.py curve_fit.py table.py data.txt loesung-matplo
 
 $(addprefix build/loesung-, table.tex a.tex b.tex c.tex d.tex): build/loesung-plot.pdf
 
-FORCE:
+data.txt: data.py
+	python $<
 
 build:
 	mkdir -p build
 
 clean:
 	rm -rf build
+	rm -f data.txt
+
+FORCE:
 
 .PHONY: all clean
