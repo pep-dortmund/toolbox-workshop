@@ -42,5 +42,6 @@ Die Funktion
 schreibt den String content in die Datei filename.
 
 Schreibe ein Protokoll, in der du den Plot, die Tabelle und die Fitergebnisse (als Formeln) einbindest.
-Bei der Tabelle muss man beachten, dass ganz links eine Spalte eingeüft wird, die leer ist und nicht sichtbar sein soll, hierzu kann man die erste Spalte als l@{} deklarieren.
+Man muss vor tabular \sisetup{parse-numbers=false} setzen, da sonst ein Fehler auftritt.
+Weitere Infos dazu gibt es unter: http://tex.stackexchange.com/a/23460/32665 .
 Schreibe eine Makefile, die alle Dateien neu erstellen kann.

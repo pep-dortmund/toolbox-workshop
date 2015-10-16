@@ -11,9 +11,7 @@ def make_table(columns, figures=None):
     if figures is None:
         figures = [None] * len(columns)
 
-    max_len = max(len(c) for c in columns)
-
-    cols = [max_len * ['']]
+    cols = []
     for column, figure in zip(columns, figures):
         if np.any(stds(column)):
             if figure is None:

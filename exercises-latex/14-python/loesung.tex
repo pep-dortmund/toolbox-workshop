@@ -22,8 +22,8 @@ Die Messdaten und das Ergebnis des Fits sind in Abbildung~\ref{fig:plot} geplott
   \centering
   \caption{Messdaten.}
   \label{tab:data}
+  \sisetup{parse-numbers=false}
   \begin{tabular}{
-    l@{}
     S[table-format=1.3]
     S[table-format=-1.2]
     @{${}\pm{}$}
@@ -35,7 +35,6 @@ Die Messdaten und das Ergebnis des Fits sind in Abbildung~\ref{fig:plot} geplott
     S[table-format=1.2]
   }
     \toprule
-    &
     {$t \:/\: \si{\milli\second}$} & \multicolumn{2}{c}{$U \:/\: \si{\kilo\volt}$\hspace*{3em}} &
     {$t \:/\: \si{\milli\second}$} & \multicolumn{2}{c}{$U \:/\: \si{\kilo\volt}$} \\
     \midrule
