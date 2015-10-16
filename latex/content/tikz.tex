@@ -1,0 +1,62 @@
+\section{Zeichnen mit Tikz}
+
+\begin{frame}[fragile]{Ti\textit{k}z}
+  \begin{Packages}
+    \lstinline+\usepackage{tikz}+
+  \end{Packages}
+  \begin{itemize}
+    \item \alert{T}i\textit{k}z \alert{i}st \alert{k}ein \alert{Z}eichenprogramm
+    \item Zeichnen mit Befehlen
+      \begin{itemize}
+        \item Sehr präzise
+        \item programmierfähig
+        \item automatisierbar
+        \item Versionkontrolle!
+      \end{itemize}
+    \item Extrem umfangreiche Doku mit \emph{zahlreichen} Beispiel (>\num{1000} Seiten)
+    \item Basis-Einheit ist \si{\centi\meter}
+  \end{itemize}
+  \begin{CodeExample}{0.7}
+    \begin{lstlisting}
+      \begin{tikzpicture}
+        \draw[thick, ->] (0, 0) -- (1, 0);
+      \end{tikzpicture}
+    \end{lstlisting}
+  \CodeResult
+  \strut\\
+    \begin{tikzpicture}
+      \draw[thick, ->] (0, 0) -- (1, 0);
+    \end{tikzpicture}
+  \end{CodeExample}
+\end{frame}
+\begin{frame}[fragile]{Kleine Beispiele}
+  \begin{CodeExample}{0.8}[\texttt{cycle}]
+    \begin{lstlisting}
+      \begin{tikzpicture}
+        \draw[thick] (0, 0) -- (1, 0) -- (1, 1) -- cycle;
+      \end{tikzpicture}
+    \end{lstlisting}
+  \CodeResult
+    \begin{tikzpicture}
+        \draw[thick] (0, 0) -- (1, 0) -- (1, 1) -- cycle;
+    \end{tikzpicture}
+  \end{CodeExample}
+  \begin{CodeExample}{0.8}[Polarkoordinaten]
+    \begin{lstlisting}
+      \begin{tikzpicture}
+        \foreach\ang in {0, 45, 90, 135, 180, 215, 270, 315}
+        {
+          \draw (0, 0) -- (\ang: 10pt);
+        }
+      \end{tikzpicture}
+    \end{lstlisting}
+  \CodeResult
+    \begin{tikzpicture}
+      \foreach\ang in {0, 45, 90, 135, 180, 215, 270, 315}
+      {
+        \draw (0, 0) -- (\ang: 10pt);
+      }
+    \end{tikzpicture}
+  \end{CodeExample}
+
+\end{frame}
