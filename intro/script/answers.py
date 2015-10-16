@@ -6,6 +6,7 @@ import matplotlib as mpl
 import matplotlib.pyplot as plt
 from matplotlib.style import use
 use('ggplot')
+plt.rcParams['font.family'] = 'sans-serif'
 
 colors = [
     '#D0583A',
@@ -21,7 +22,7 @@ os = answers['Betriebssystem'].value_counts()
 os /= os.sum()
 
 fig = plt.figure(figsize=(4, 3))
-ax = fig.add_axes([0.125, 0, 0.75, 1])
+ax = fig.add_axes([0.125, 0, 0.75, 1], aspect=1)
 ax.pie(os.values, labels=os.keys(), colors=colors, startangle=-10)
 fig.savefig('build/figures/os.pdf')
 
@@ -34,7 +35,7 @@ programming = programming.value_counts()
 programming /= programming.sum()
 
 fig = plt.figure(figsize=(4, 3))
-ax = fig.add_axes([0.125, 0.0, 0.75, 1])
+ax = fig.add_axes([0.125, 0.0, 0.75, 1], aspect=1)
 ax.pie(programming.values, labels=programming.keys(), colors=colors)
 fig.savefig('build/figures/programming.pdf')
 

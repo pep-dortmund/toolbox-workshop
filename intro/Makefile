@@ -6,7 +6,7 @@ FIGURES := $(addprefix build/figures/, $(addsuffix .pdf, os programming interest
 build/intro.pdf: $(FIGURES) $(addprefix build/figures/, editors.jpg vim.png emacs.png real_programmers.png matplotlib.png sympy.png scipy.png numpy.png atom.jpg)
 
 build/figures/os.pdf: script/answers.py data/2015.tsv
-	python3 $<
+	TEXINPUTS=$(shell pwd): python3 $<
 
 $(addprefix build/figures/, programming.pdf interest.pdf): build/figures/os.pdf
 
