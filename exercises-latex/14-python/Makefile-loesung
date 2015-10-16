@@ -1,3 +1,26 @@
-all:
+all: build/loesung.pdf
+
+build/loesung.pdf: FORCE $(addprefix build/loesung-, table.tex a.tex b.tex c.tex d.tex plot.pdf) | build
+	  TEXINPUTS=build: \
+	  max_print_line=1048576 \
+	latexmk \
+	  --lualatex \
+	  --output-directory=build \
+	  --interaction=nonstopmode \
+	  --halt-on-error \
+	loesung.tex
+
+build/loesung-plot.pdf: loesung.py curve_fit.py table.py data.txt loesung-matplotlibrc loesung-header-matplotlib.tex | build
+	TEXINPUTS=$(shell pwd): python loesung.py
+
+$(addprefix build/loesung-, table.tex a.tex b.tex c.tex d.tex): build/loesung-plot.pdf
+
+FORCE:
+
+build:
 	mkdir -p build
-	touch build/loesung.pdf
+
+clean:
+	rm -rf build
+
+.PHONY: all clean
