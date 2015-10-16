@@ -15,6 +15,7 @@ all: $(BUILDS)
 	@rm -rf build/exercises-toolbox-{1,2,3,4,5}/*/{,*/}{Makefile,.gitignore,__pycache__,*.dummy}
 	@cd build ; \
 	for day in 1 2 3 4 5 ; do \
+		rm -f exercises-toolbox-$$day.zip ; \
 		echo zip -rq exercises-toolbox-$$day.zip exercises-toolbox-$$day ; \
 		zip -rq exercises-toolbox-$$day.zip exercises-toolbox-$$day ; \
 	done

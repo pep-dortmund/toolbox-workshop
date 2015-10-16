@@ -20,6 +20,7 @@ all: $(BUILDS)
 			cd "$$dir" && mv build/loesung*.pdf . && rm -rf build && cd .. || true ; \
 		done ; \
 		cd .. ; \
+		rm -f exercises-latex-$$day.zip ; \
 		echo zip -rq exercises-latex-$$day.zip exercises-latex-$$day ; \
 		zip -rq exercises-latex-$$day.zip exercises-latex-$$day ; \
 	done
