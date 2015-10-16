@@ -1,4 +1,5 @@
-all: build/loesung-pythagoras.pdf \
+all: \
+	build/loesung-pythagoras.pdf \
 	build/loesung-nikolaus.pdf \
 	build/loesung-bragg.pdf \
 	build/loesung-circuitikz.pdf \

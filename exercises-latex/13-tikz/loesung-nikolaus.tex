@@ -13,8 +13,10 @@
 \usepackage{tikz}
 
 \begin{document}
-\newcommand\len{2cm}
+
 \begin{tikzpicture}
+  \newcommand\len{2cm}
+
   \draw[rounded corners] (0, 0) -- ++(0, \len)
   -- ++( \len/2,  \len/2)
   -- ++( \len/2, -\len/2)
@@ -24,4 +26,5 @@
   -- ++( \len, +\len)
   -- ++(    0, -\len);
 \end{tikzpicture}
+
 \end{document}

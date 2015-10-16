@@ -17,7 +17,7 @@ all: $(BUILDS)
 	for day in 1 2 3 5 ; do \
 		cd exercises-latex-$$day ; \
 		for dir in * ; do \
-			cd "$$dir" && mv build/loesung.pdf . && rm -rf build && cd .. || true ; \
+			cd "$$dir" && mv build/loesung*.pdf . && rm -rf build && cd .. || true ; \
 		done ; \
 		cd .. ; \
 		echo zip -rq exercises-latex-$$day.zip exercises-latex-$$day ; \
