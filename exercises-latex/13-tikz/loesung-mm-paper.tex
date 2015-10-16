@@ -1,0 +1,25 @@
+\documentclass{scrartcl}
+
+\pagestyle{empty}
+\usepackage[margin=1cm]{geometry}
+\usepackage{xcolor}
+
+\usepackage{mathtools}
+\usepackage{fontspec}
+\usepackage[
+  math-style=ISO,
+  bold-style=ISO,
+  sans-style=italic,
+  nabla=upright,
+  partial=upright,
+]{unicode-math}
+\setmathfont{Latin Modern Math}
+\usepackage{tikz}
+
+\begin{document}%
+\begin{tikzpicture}[remember picture, overlay, shift=(current page.north west)]%
+  \draw[step=1mm, black!10, very thin] (1cm, -1cm) grid +(\textwidth, -\textheight);
+  \draw[step=5mm, black!20, very thin] (1cm, -1cm) grid +(\textwidth, -\textheight);
+  \draw[step=10mm, black!30, very thin] (1cm, -1cm) grid +(\textwidth, -\textheight);
+\end{tikzpicture}%
+\end{document}%
