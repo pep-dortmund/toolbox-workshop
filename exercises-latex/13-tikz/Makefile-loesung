@@ -1,6 +1,7 @@
 all: build/loesung-pythagoras.pdf \
 	build/loesung-nikolaus.pdf \
 	build/loesung-bragg.pdf \
+	build/loesung-circuitikz.pdf \
 
 
 build/loesung-pythagoras.pdf: loesung-pythagoras.tex | build
@@ -23,6 +24,13 @@ build/loesung-bragg.pdf: loesung-bragg.tex | build
 		--interaction=batchmode \
 		--halt-on-error \
 		loesung-bragg.tex
+
+build/loesung-circuitikz.pdf: loesung-circuitikz.tex | build
+	lualatex \
+		--output-directory=build \
+		--interaction=batchmode \
+		--halt-on-error \
+		loesung-circuitikz.tex
 
 build:
 	mkdir -p build

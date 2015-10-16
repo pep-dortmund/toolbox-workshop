@@ -1,0 +1,43 @@
+\documentclass[margin=5pt]{standalone}
+
+
+\usepackage{mathtools}
+\usepackage{fontspec}
+\usepackage{polyglossia}
+\setmainlanguage{german}
+\usepackage[
+  math-style=ISO,
+  bold-style=ISO,
+  sans-style=italic,
+  nabla=upright,
+  partial=upright,
+]{unicode-math}
+\setmathfont{Latin Modern Math}
+
+\usepackage[
+  locale=DE,
+]{siunitx}
+
+\usepackage{tikz}
+\usepackage[
+  europeanresistors,  % follow DIN
+  americaninductors,  % foolow DIN, funny, isn't it?
+  siunitx,
+]{circuitikz}
+
+\AtBeginDocument{%
+  \sisetup{%
+    math-rm=\mathrm,
+    math-micro=µ, % AltGr+m = MICRO SIGN, Unicode: U+00B5
+  }%
+}%
+
+\begin{document}
+
+\begin{circuitikz}
+  \draw (0, 0) to[R=50<\ohm>] (4, 0)
+    to[C=1<\micro\farad>] (4, 4)
+    to[L=1<\henry>] (0, 4) -- (0, 0);
+\end{circuitikz}
+  
+\end{document}

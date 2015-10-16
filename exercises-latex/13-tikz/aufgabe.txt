@@ -6,9 +6,18 @@ Malt das Haus vom Nikolaus ohne „den Stift abzusetzen“.
 
 ## Aufgabe 2
 
-Stellt mithilfe von Tikz die Bragg-Bedingung dar
+Guckt auch die Doku von `circuitikz` an,
+und baut den Schaltplan für einen gedämpften Schwingkreis
+mit
+C = 1 µF
+R = 50 Ω 
+L = 1 H 
 
 ## Aufgabe 3
+
+Stellt mithilfe von Tikz die Bragg-Bedingung dar
+
+## Aufgabe 4
 
 Zeichne eine Darstellung des Satz von Pythagoras mit Tikz
 
