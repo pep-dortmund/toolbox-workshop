@@ -1,6 +1,10 @@
 \section{Zeichnen mit Tikz}
 
-\begin{frame}[fragile]{Ti\textit{k}z}
+\begin{frame}[fragile]{%
+  Ti\textit{k}Z
+  \hfill
+  \doc{http://mirrors.ctan.org/graphics/pgf/base/doc/pgfmanual.pdf}{tikz/pgf}
+}
   \begin{Packages}
     \lstinline+\usepackage{tikz}+
   \end{Packages}
@@ -58,5 +62,24 @@
       }
     \end{tikzpicture}
   \end{CodeExample}
+\end{frame}
 
+\begin{frame}[fragile]{Kleine Beispiele}
+  \begin{CodeExample}{0.8}[\texttt{nodes}]
+    \begin{lstlisting}
+      \begin{tikzpicture}
+        \draw[thick] (0, 0)
+          -- (1, 0) node[midway, below] {$a$}
+          -- (1, 1) node[midway, right] {$b$}
+          -- cycle  node[midway, above left] {$c$};
+      \end{tikzpicture}
+    \end{lstlisting}
+  \CodeResult
+    \begin{tikzpicture}
+      \draw[thick] (0, 0)
+        -- (1, 0) node[midway, below] {$a$}
+        -- (1, 1) node[midway, right] {$b$}
+        -- cycle  node[midway, above left] {$c$};
+    \end{tikzpicture}
+  \end{CodeExample}
 \end{frame}
