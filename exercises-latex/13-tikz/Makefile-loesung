@@ -3,6 +3,7 @@ all: \
 	build/loesung-nikolaus.pdf \
 	build/loesung-bragg.pdf \
 	build/loesung-circuitikz.pdf \
+	build/loesung-mm-paper.pdf 
 
 
 build/loesung-pythagoras.pdf: loesung-pythagoras.tex | build
@@ -11,6 +12,14 @@ build/loesung-pythagoras.pdf: loesung-pythagoras.tex | build
 		--interaction=batchmode \
 		--halt-on-error \
 		loesung-pythagoras.tex
+
+
+build/loesung-mm-paper.pdf: loesung-mm-paper.tex | build
+	lualatex \
+		--output-directory=build \
+		--interaction=batchmode \
+		--halt-on-error \
+		loesung-mm-paper.tex
 
 build/loesung-nikolaus.pdf: loesung-nikolaus.tex | build
 	lualatex \

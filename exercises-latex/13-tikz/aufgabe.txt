@@ -1,10 +1,23 @@
 # Tikz-Aufgaben
 
+Tipps:
+* Die Doku hat zahlreiche Beispiele
+* Die Dokumentenklasse `standalone` ist gut geeignet
+
 ## Aufgabe 1
 
 Malt das Haus vom Nikolaus ohne „den Stift abzusetzen“.
 
 ## Aufgabe 2
+Erstellt DIN A4 Millimeter Papier (1cm Rand)
+Ihr solltet unterschiedliche Markierungen für 10 mm, 5 mm und 1 mm
+
+Tipps:
+* das Paket `geometry` und seine `margin` option
+* Wie bekommt man die Seitenzahl weg?
+* die tikz-Optionen `remember picture`, `overlay` und `shift`
+
+## Aufgabe 3
 
 Guckt auch die Doku von `circuitikz` an,
 und baut den Schaltplan für einen gedämpften Schwingkreis
@@ -13,11 +26,12 @@ C = 1 µF
 R = 50 Ω
 L = 1 H
 
-## Aufgabe 3
+
+## Aufgabe 4
 
 Stellt mithilfe von Tikz die Bragg-Bedingung dar
 
-## Aufgabe 4
+## Aufgabe 5
 
 Zeichne eine Darstellung des Satz von Pythagoras mit Tikz
 
@@ -25,7 +39,3 @@ Diese sollte folgende Elemente beinhalten
 * Beschriftungen der Kanten und des Rechten Winkels
 * Die Flächen der Quadrate
 
-
-Tipps:
-* Die Doku hat zahlreiche Beispiele
-* Die Dokumentenklasse `standalone` ist gut geeignet
