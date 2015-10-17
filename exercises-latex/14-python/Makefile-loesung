@@ -1,3 +1,13 @@
+ifeq (,$(shell sh -c 'cygpath --version 2> /dev/null'))
+  # Unix
+  pwd := $$(pwd)
+  translate = $1
+else
+  # Windows mit MSys2/Cygwin
+  pwd := $$(cygpath -m "$$(pwd)")
+  translate = $(shell echo '$1' | sed 's/:/;/g')
+endif
+
 all: build/loesung.pdf
 
 build/loesung.pdf: FORCE $(addprefix build/loesung-, table.tex a.tex b.tex c.tex d.tex plot.pdf) | build
@@ -11,7 +21,7 @@ build/loesung.pdf: FORCE $(addprefix build/loesung-, table.tex a.tex b.tex c.tex
 	loesung.tex
 
 build/loesung-plot.pdf: loesung.py curve_fit.py table.py data.txt loesung-matplotlibrc loesung-header-matplotlib.tex | build
-	TEXINPUTS=$(shell pwd): python loesung.py
+	TEXINPUTS="$(call translate,$(pwd):)" python loesung.py
 
 $(addprefix build/loesung-, table.tex a.tex b.tex c.tex d.tex): build/loesung-plot.pdf
 

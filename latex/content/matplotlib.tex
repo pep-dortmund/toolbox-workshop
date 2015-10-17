@@ -1,4 +1,4 @@
-\section{\TeX\ in \texttt{matplotlib}}
+\section{\TeX\ in \texttt{matplotlib} in \TeX}
 
 \begin{frame}[fragile]{\TeX\ in \texttt{matplotlib} (1)}
   \lstinputpython[firstline=3]{script/mattex1.py}
@@ -65,9 +65,34 @@
       \end{itemize}
     \item Lösung: \texttt{TEXINPUTS} setzen!
     \item \texttt{TEXINPUTS=\$(pwd): python script/mattex4.py}
-    \item \texttt{Makefile}: \texttt{TEXINPUTS=\$(shell pwd): python script/mattex4.py}
+    \item \texttt{Makefile}: \texttt{TEXINPUTS=\$\$(pwd): python script/mattex4.py}
   \end{itemize}
   \vspace*{-1em}
+\end{frame}
+
+\begin{frame}[fragile]{Windows}
+  Hier funktioniert Windows leider anders als Linux/Max.
+  Auf Windows muss man Python so starten:
+
+  \texttt{TEXINPUTS="\$(cygpath -m "\$(pwd)")" python script/mattex4.py}
+
+  Hier eine Makefile, die überall funktioniert:
+
+  \vspace{1em}
+  \begin{lstmake}
+    ifeq (,$(shell sh -c 'cygpath --version 2> /dev/null'))
+      # Unix
+      pwd := $$(pwd)
+      translate = $1
+    else
+      # Windows mit MSYS2/Cygwin
+      pwd := $$(cygpath -m "$$(pwd)")
+      translate = $(shell echo '$1' | sed 's/:/;/g')
+    endif
+
+    build/figures/mattex4.pdf: script/mattex4.py
+        TEXINPUTS="$(call translate,$(pwd):)" python script/mattex4.py
+  \end{lstmake}
 \end{frame}
 
 \AddToShipoutPictureFG*{\ShowFramePicture}
