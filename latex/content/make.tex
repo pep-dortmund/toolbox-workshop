@@ -16,12 +16,17 @@
       BIBINPUTS=build: biber build/file.bcf
     \end{lstlisting}
   \end{block}
+  \vspace*{-0.5em}
   \begin{itemize}
     \item \texttt{TEXINPUTS}, \texttt{BIBINPUTS}: Suchpfade für \TeX- und \texttt{.bib}-Dateien
     \item Elemente getrennt mit \texttt{:}, der erste Treffer wird genommen (wie \texttt{PATH})
+      \begin{itemize}
+        \item Auf Windows muss man \texttt{:} durch \texttt{;} ersetzen
+      \end{itemize}
     \item \texttt{TEXINPUTS} auch für \lstinline+\includegraphics+
     \item \texttt{:} am Ende der Liste: Standardsuchpfade anhängen (wichtig!)
     \item \texttt{.} (der aktuelle Ordner) ist am Anfang der Standardliste, braucht man also nicht selbst angeben
+    \item Endet ein Element mit \texttt{//}, werden auch alle Unterordner durchsucht
   \end{itemize}
 \end{frame}
 

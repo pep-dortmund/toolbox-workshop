@@ -78,7 +78,6 @@
 
   Hier eine Makefile, die überall funktioniert:
 
-  \vspace{1em}
   \begin{lstmake}
     ifeq (,$(shell sh -c 'cygpath --version 2> /dev/null'))
       # Unix
@@ -89,6 +88,9 @@
       pwd := $$(cygpath -m "$$(pwd)")
       translate = $(shell echo '$1' | sed 's/:/;/g')
     endif
+
+    build/document.pdf: ...
+        TEXINPUTS="$(call translate,build:)" ...
 
     build/figures/mattex4.pdf: script/mattex4.py
         TEXINPUTS="$(call translate,$(pwd):)" python script/mattex4.py

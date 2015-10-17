@@ -11,7 +11,7 @@ endif
 all: build/loesung.pdf
 
 build/loesung.pdf: FORCE $(addprefix build/loesung-, table.tex a.tex b.tex c.tex d.tex plot.pdf) | build
-	  TEXINPUTS=build: \
+	  TEXINPUTS="$(call translate,build:)" \
 	  max_print_line=1048576 \
 	latexmk \
 	  --lualatex \
