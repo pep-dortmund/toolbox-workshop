@@ -9,5 +9,3 @@ pgf.rcfonts : False
 text.usetex : True
 pgf.texsystem : lualatex
 pgf.preamble : \input{header-matplotlib.tex}
-savefig.bbox : tight    # savefig(bbox_inches=...)
-savefig.pad_inches : 0  # savefig(pad_inches=...)

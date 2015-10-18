@@ -20,7 +20,3 @@ pgf.rcfonts : False
 text.usetex : True
 pgf.texsystem : lualatex
 pgf.preamble : \input{header-matplotlib.tex}
-
-# keine weißen Ränder
-savefig.bbox : tight
-savefig.pad_inches : 0
