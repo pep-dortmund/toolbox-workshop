@@ -35,4 +35,4 @@ build/figures/numpy.png: | build/figures
 	wget http://www.numpy.org/_static/numpy_logo.png -O $@ --no-use-server-timestamps
 
 build/figures/atom.jpg: | build/figures
-	wget https://education.github.com/assets/pack/logo-atom-656df6620b79beabebf1b2582cd0584c.jpg  -O $@ --no-use-server-timestamps
+	wget https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Atom_editor_logo.svg/2000px-Atom_editor_logo.svg.png -O $@ --no-use-server-timestamps
