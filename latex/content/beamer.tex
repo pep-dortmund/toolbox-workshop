@@ -8,20 +8,19 @@
   \begin{itemize}
     \item Dokumentenklasse für Präsentationen
     \item \lstinline+frame+-Umgebung erzeugt eine Folie
-    \item Bei Nutzung mit \lstinline+fontspec+ und \lstinline+unicode-math+ muss die Option \texttt{professionalfonts} gesetzt werden.
+    \item Bei Nutzung mit \lstinline+fontspec+ und \lstinline+unicode-math+ muss das \texttt{fonttheme} \texttt{professionalfonts} genutzt werden.
     \item Aussehen wird durch \enquote{themes} gesteuert.
     \item Viele themes werden mit \TeX-Live mitgeliefert.
     \item Sehen leider alle fast gleich aus.
+    \item Alternativen: z.\,B.~\texttt{mtheme}
   \end{itemize}
 \end{frame}
 
 \begin{frame}[fragile]{Minimal-Beispiel}
   \begin{center}
     \begin{lstlisting}
-      \documentclass[
-        professionalfonts,
-      ]{beamer}
-
+      \documentclass[aspectratio=1610]{beamer}
+      \usefontheme{professionalfonts}
       \usepackage{fontspec}
       \usepackage[
         math-style=ISO,
@@ -122,7 +121,7 @@
 \begin{frame}[fragile]{\texttt{siunitx} mit beamer}
   \begin{center}
     \begin{lstlisting}
-      \documentclass[professionalfonts]{beamer}
+      \documentclass[aspectratio=1610]{beamer}
       %  …
       %  packages here
       %  …
