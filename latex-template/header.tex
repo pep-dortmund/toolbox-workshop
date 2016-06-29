@@ -44,10 +44,9 @@
 
 % Zahlen und Einheiten
 \usepackage[
-  locale=DE,                 % deutsche Einstellungen
-  separate-uncertainty=true, % immer Fehler mit \pm
-  per-mode=reciprocal,       % ^-1 für inverse Einheiten
-  output-decimal-marker=.,   % . statt , für Dezimalzahlen
+  locale=DE,                   % deutsche Einstellungen
+  separate-uncertainty=true,   % immer Fehler mit \pm
+  per-mode=symbol-or-fraction, % / in inline math, fraction in display math
 ]{siunitx}
 
 % chemische Formeln
