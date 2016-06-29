@@ -25,7 +25,7 @@ Folgende Themen sind Teil des Workshops:
 ## Installation
 
 For TeXLive and anaconda, follow the installtion instruction on
-http://toolbox.pep-dortmund.org
+http://toolbox.pep-dortmund.org/install
 
 ### MacOS 
 
