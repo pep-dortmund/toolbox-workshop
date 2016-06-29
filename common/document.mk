@@ -7,6 +7,7 @@ build/$(DOCUMENT).pdf: FORCE  | build
 	max_print_line=1048576 \
 	latexmk -r $(shell pwd)/../common/latexmkrc \
 	$(DOCUMENT).tex
+	python $(shell pwd)/../common/log.py build/$(DOCUMENT).log
 
 preview: FORCE | build
 	TEXINPUTS="$(shell pwd)/../common/:" \
