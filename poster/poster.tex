@@ -1,5 +1,4 @@
-\RequirePackage{luatex85}
-\documentclass{scrartcl}
+\documentclass[paper=landscape]{scrartcl}
 
 \usepackage[margin=1cm]{geometry}
 \usepackage{fontspec}
@@ -12,53 +11,63 @@
 \usepackage[colorlinks=true, urlcolor=blue!60!black]{hyperref}
 
 \begin{document}
-
-  \begin{center}
-    \fontsize{40}{50}\bfseries\selectfont Toolbox-Workshop 2016
-  \end{center}
+  
+  \begin{minipage}{0.25\textwidth}%
+    \includegraphics[width=\textwidth]{logos/pep.pdf}%
+  \end{minipage}%
+  \begin{minipage}{0.75\textwidth}%
+    \centering\fontsize{50}{60}\bfseries\selectfont Toolbox-Workshop 2016%
+  \end{minipage}%
 
   \vspace{0.5cm}
 
   \begin{center}
-    \huge Ihr müsst im nächsten Semester Praktikums-Versuche machen? \\[0.5\baselineskip]
+    \Huge Ihr müsst im nächsten Semester Praktikums-Versuche machen? \\[0.5\baselineskip]
     Wir machen es euch einfach(er)!
   \end{center}
   
   \vspace{0.5cm}
 
   \begin{center}
-    \begin{tikzpicture}
-      \node[anchor=center] at (0, 3) {%
-        \includegraphics[height=2.2cm]{logos/python.pdf}%
-        \hspace{1cm}%
-        \includegraphics[height=2.2cm]{logos/git.png}%
-      };
-      \node[anchor=center] at (0,-3) {%
-        \includegraphics[height=1.8cm]{logos/matplotlib.png}%
-        \hspace{1cm}%
-        \includegraphics[height=1.8cm]{logos/numpy.png}%
-      };
-      \node[anchor=center] at (0, -5.5) {%
-        \includegraphics[height=1.2cm]{logos/uncertainties.png}%
-        \hspace{1cm}%
-        \fontsize{42}{45}\selectfont\texttt{make}%
-      };
-      \node[anchor=center, align=center] at (0, 0) {%
-        \huge Praktikums-Versuche richtig auswerten! \\[0.5\baselineskip]
-        \huge 4. – 7.~Oktober 2016, 13–17~Uhr, Chemie HS3
-      };
-    \end{tikzpicture}
-  \end{center}
-
-  \begin{center}
-    \huge Wissenschaftliche Arbeiten verfassen mit \\[1\baselineskip]
-    \textrm{\fontsize{80}{120}\selectfont\LaTeX{}}\\[1\baselineskip]
-    10. – 14.~Oktober 2015, 13–17~Uhr, Chemie HS3
+    \huge \textbf{Praktikums-Versuche richtig auswerten!} \\[0.5\baselineskip]
+    4.–7.~Oktober 2016, 13–17~Uhr, Chemie HS3
   \end{center}
   \vspace{0.5cm}
   \begin{center}
-    \large Weitere Informationen und Umfrage: \\
+    \huge \textbf{Wissenschaftliche Arbeiten verfassen mit} \textrm{\LaTeX}\\[0.5\baselineskip]
+    10.–14.~Oktober 2015, 13–17~Uhr, Chemie HS3
+  \end{center}
+  \vspace{0.5cm}
+  \begin{center}
+    \large Software installieren und Umfrage ausfüllen: \\
     \Huge \href{https://toolbox.pep-dortmund.org}{toolbox.pep-dortmund.org}
   \end{center}
+
+  \begin{tikzpicture}[remember picture, overlay, shift=(current page.south)]
+    \node[anchor=center] at (-10, 5.5) {%
+      \includegraphics[height=2.0cm]{logos/python.pdf}%
+    };
+    \node[anchor=center] at (10.5, 12) {%
+      \includegraphics[height=2.0cm]{logos/git.png}%
+    };
+    \node[anchor=center] at (0, 2) {%
+      \includegraphics[height=1.8cm]{logos/matplotlib.png}%
+    };
+    \node[anchor=center] at (-11, 13) {%
+      \includegraphics[height=1.6cm]{logos/numpy.png}%
+    };
+    \node[anchor=center] at (-10, 2) {%
+      \includegraphics[width=8cm]{logos/uncertainties.png}%
+    };
+    \node[anchor=center] at (9.5, 5.5) {%
+      \includegraphics[height=2.2cm]{logos/scipy.png}%
+    };
+    \node[anchor=center] at (11.5, 9) {%
+      \fontsize{42}{45}\selectfont\texttt{make}%
+    };
+    \node[anchor=center] at (10, 2) {%
+      \fontsize{60}{80}\selectfont\rmfamily\LaTeX
+    };
+  \end{tikzpicture}
 
 \end{document}
