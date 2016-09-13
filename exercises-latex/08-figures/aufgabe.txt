@@ -1,14 +1,14 @@
 Aufgabe 1:
   Ladet die benötigten Pakete zum Einbinden von Grafiken.
-  Fügt "plot1.pdf" in die Datei ein und gebt dem Plot
-  Abbildungsunterschrift und Label. Bezieht euch
+  Fügt "plot1.pdf" in die Datei ein und gebt dem Plot eine
+  Abbildungsunterschrift und ein Label. Bezieht Euch
   im Text auf die Grafik.
 
 Aufgabe 2:
   Erstelle eine Abbildung, die "plot2.pdf" und "plot3.pdf"
   nebeneinander enthält. Dabei soll jeder Plot eine eigene
   Abbildungsunterschrift und ein eigenes Label bekommen
-  sowie die ganze Abbilung eine gemeinsame. Bezieht euch so-
+  sowie die ganze Abbildung eine gemeinsame. Bezieht euch so-
   wohl auf die ganze Abbildung als auch auf einen Teil im
   Text.
 

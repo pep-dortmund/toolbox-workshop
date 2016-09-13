@@ -5,5 +5,5 @@ Aufgabe 1:
     date
   für euren ersten Praktikumsversuch.
 
-  Erstellt das PDF-Dokument so, dass es die Titelei
-  auf einer eigenen Titelseite ausgeben wird.
+  Erstellt das PDF-Dokument so, dass die Titelangaben (Titel, Autor, Datum, etc.)
+  auf einer eigenen Titelseite ausgeben werden.

@@ -1,4 +1,4 @@
-Hinweis: Falls ihr die hier benötigten Gesetze
+Hinweis: Falls Ihr die hier benötigten Gesetze
          und Gleichungen nicht mehr wisst,
          werft einen Blick in das PDF der Musterlösung.
          (Nicht in die .tex ;))
@@ -11,7 +11,7 @@ Aufgabe 1:
 Aufgabe 2:
   Setzt das Biot–Savart-Gesetz. Erklärt darunter im Fließtext
   die darin vorkommenden Größen und Konstanten.
-  Versucht dafür die $-Umgebung und weitere Umgebungen zu verwenden, die ihr kennen gelernt habt.
+  Versucht dafür die $-Umgebung und weitere Umgebungen zu verwenden, die Ihr kennen gelernt habt.
 
 Aufgabe 3:
   Setzt die Formel für die gaußsche Fehlerfortpflanzung.
@@ -43,4 +43,4 @@ Aufgabe 8:
   Funktion mit n Parametern.
 
 Aufgabe 9:
-  Setzt die DGL für den gedämpften Harmonischen Oszillator sowie seine Lösung.
+  Setzt die DGL für den gedämpften harmonischen Oszillator sowie ihre Lösung.

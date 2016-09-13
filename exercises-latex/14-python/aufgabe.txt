@@ -3,7 +3,7 @@ Fitte die Daten aus daten.txt (t, U, U_err) mit der Funktion
         f(x) = a * sin(b * x + c) + d .
 
 Benutze dazu ucurve_fit aus der Datei curve_fit.py.
-Geneignete Startwerte sind a=1, b=1e3, c=d=0.
+Geeignete Startwerte sind a=1, b=1e3, c=d=0.
 
 Plotte die Daten und die gefittete Funktion.
 Verwende das pgf-Backend und eine matplotlibrc sowie die nötigen LaTeX-Pakete,
@@ -41,7 +41,7 @@ Die Funktion
 
 schreibt den String content in die Datei filename.
 
-Schreibe ein Protokoll, in der du den Plot, die Tabelle und die Fitergebnisse (als Formeln) einbindest.
+Schreibe ein Protokoll, in der Du den Plot, die Tabelle und die Fitergebnisse (als Formeln) einbindest.
 Man muss vor tabular \sisetup{parse-numbers=false} setzen, da sonst ein Fehler auftritt.
 Weitere Infos dazu gibt es unter: http://tex.stackexchange.com/a/23460/32665 .
-Schreibe eine Makefile, die alle Dateien neu erstellen kann.
+Schreibe ein Makefile, das alle Dateien neu erstellen kann.
