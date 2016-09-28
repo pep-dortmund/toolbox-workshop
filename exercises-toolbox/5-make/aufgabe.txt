@@ -1,4 +1,4 @@
 Schreibe ein `Makefile`, das beim Aufruf von `make` die Dateien `plot.pdf` und `parameter.txt` erstellt.
 Die Dateien sollten neu erstellt werden, falls eine der vorhandenen Abhängigkeiten (auswertung.py, L.txt, lambda.txt, I.txt) geändert wird.
 
-Fügen sie ein `clean` target hinzu, welches bei Aufruf von `make clean` den Ordner in den ursprünglichen Zustand vor dem Aufruf von `make` versetzt.
+Füge ein `clean`-Target hinzu, welches beim Aufruf von `make clean` den Ordner in den ursprünglichen Zustand vor der Ausführung von `make` versetzt.
