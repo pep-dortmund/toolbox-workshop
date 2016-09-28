@@ -38,6 +38,7 @@
 \setbeamercolor{subtitle}{parent=normal text}
 \setbeamercolor{institute}{parent=normal text}
 \setbeamercolor{frametitle}{parent=palette1}
+\setbeamercolor{verbatimFrametitle}{fg=vertexLightGrey}
 \setbeamercolor{block title}{parent=palette1}
 \setbeamercolor{block body}{parent=palette2}
 \setbeamercolor{block title example}{parent=palette2}
@@ -167,7 +168,8 @@
 \setbeamertemplate{headline}{%
   \usebeamerfont{frametitle}
   \nointerlineskip % This one's tricky
-  \begin{beamercolorbox}[wd=\paperwidth,leftskip=0.3cm,rightskip=0.3cm,ht=3ex,dp=1.5ex]{frametitle}
+  \begin{beamercolorbox}[wd=\paperwidth,leftskip=0.3cm,rightskip=0.3cm,ht=3ex,dp=1.5ex]{frametitle}%
+    \lstset{texcsstyle=*\color{vertexLightGrey}}
     {\setbeamercolor{math text}{parent=palette1}\insertframetitle}%
   \end{beamercolorbox}%
 }
