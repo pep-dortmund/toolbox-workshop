@@ -1,16 +1,13 @@
 \subsection{\texttt{\textbackslash texorpdfstring}}
 
-\begin{frame}[fragile]{\lstinline+\\texorpdfstring+}
+\begin{frame}[fragile]{\\texorpdfstring}
   \begin{block}{Motivation}
     \begin{itemize}
       \item \texttt{hyperref} bezieht den Text für seine Bookmarks, z.B. aus \lstinline+\section{ }+
       \item[→] Bookmarks mögen meist keine \LaTeX-Befehle
       \item \texttt{hyperref} fängt vieles ab, aber nicht alles
       \item
-        \begin{lstlisting}
-          \section{$\alpha + 1$}
-        \end{lstlisting}
-        ergibt Fehlermeldung:
+        \lstinline!\section{$\alpha + 1$}! ergibt Fehlermeldung:
         \begin{lstlisting}
           Package hyperref Warning:
           Token not allowed in a PDFDocEncoded string:
@@ -23,7 +20,7 @@
       \texorpdfstring{LaTeX-Code}{Unicode-Äquivalent}
     \end{lstlisting}
   \end{block}
-  \begin{block}{Code}
+  \begin{block}{Beipiel}
     \begin{lstlisting}[escapechar=|]
       \section{\texorpdfstring{$\alpha + 1$}{|\textsf{α}| + 1}}
     \end{lstlisting}
