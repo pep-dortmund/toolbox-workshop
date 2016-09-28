@@ -5,3 +5,5 @@ plot.pdf parameter.txt: auswertung.py lambda.txt L.txt I.txt
 
 clean: plot.pdf parameter.txt
 	rm plot.pdf parameter.txt
+
+.PHONY: all clean
