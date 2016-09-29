@@ -1,45 +1,54 @@
 \begin{frame}{Automatisierte, reproduzierbare Prozesse}
 
-  {\huge Problem:}
+  {\huge Problem:}\\
   \vspace{1em}
-  \begin{itemize}
-    \item kurz vor Abgabe noch neue Korrekturen einpflegen
-      \begin{itemize}
-        \item Tippfehler korrigieren, Plots bearbeiten
-      \end{itemize}
+  Kurz vor Abgabe noch neue Korrekturen einpflegen
+  \begin{enumerate}
+    \item Tippfehler korrigieren, Plots bearbeiten
     \item \TeX{} ausführen, ausdrucken
+  \end{enumerate}
+  \begin{itemize}
     \item vergessen, Plots neu zu erstellen
+    \item zurück zu Schritt 1 ...  
   \end{itemize}
 \end{frame}
 
 \begin{frame}{Automatisierte, reproduzierbare Prozesse}
 
-  {\huge Lösung: Make!}
+  {\huge Lösung: Make}
   \vspace{1em}
   \begin{itemize}
-    \item sieht, welche Dateien geändert wurden
-    \item berechnet nötige Operationen
-    \item führt Python-Skript aus, führt \TeX{} aus
+    \item prüft, welche Dateien geändert wurden
+    \item berechnet nötige Operationen um Abhängigkeiten zu erfüllen
+    \item führt Befehle aus
+    \begin{itemize}
+      \item Python-Skripe
+      \item \TeX{}
+      \item etc ...
+    \end{itemize}
   \end{itemize}
 \end{frame}
 
 \begin{frame}{Motivation}
+  {\huge Warum?}
+  \vspace{1em}
   \begin{itemize}
-    \item Automatisierung verhindert Fehler
-    \item Dient als Dokumentation
-    \item Reproduzierbarkeit unverzichtbar in der Wissenschaft
-    \item Idealfall: Eingabe von \texttt{make} erstellt komplettes Protokoll/Paper aus Daten
-    \item Spart Zeit, da nur nötige Operationen ausgeführt werden
+    \item \textbf{Automatisierung} verhindert Fehler
+    \item Dient als \textbf{Dokumentation}
+    \item \textbf{Reproduzierbarkeit}: unverzichtbar in der Wissenschaft
+    \item \textbf{Spart Zeit}: nur notwendige Operationen werden ausgeführt
   \end{itemize}
+  \vspace{1em}
+  Idealfall: Eingabe von \texttt{make} erstellt komplettes Protokoll/Paper aus Daten
 \end{frame}
 
 \begin{frame}[fragile]{Makefile}
   \begin{itemize}
-    \item Datei heißt \texttt{Makefile}, keine Endung!
+    \item Von \texttt{make} benutzte Datei heißt \texttt{Makefile} (keine Endung)
       \begin{itemize}
-        \item bei Windows Dateiendungen einschalten! (\url{http://support.microsoft.com/kb/865219/de})
+        \item bei Windows Dateiendungen einschalten, siehe \url{http://support.microsoft.com/kb/865219/de}
       \end{itemize}
-    \item besteht aus Rules:
+    \item \texttt{Makefile} besteht aus Regeln (Rules):
   \end{itemize}
   \begin{block}{Rule}
     \centering
@@ -51,7 +60,10 @@
   \begin{description}
     \item[\texttt{\hphantom{prerequisites}\llap{target}}] Datei(en), die von dieser Rule erzeugt werden
     \item[\texttt{prerequisites}]                         Dateien, von denen diese Rule abhängt
-    \item[\texttt{\hphantom{prerequisites}\llap{recipe}}] Befehle: \texttt{prerequisites} → \texttt{target} (mit Tab eingerückt)
+    \item[\texttt{\hphantom{prerequisites}\llap{recipe}}] Befehle, um vom \texttt{prerequisites} zu \texttt{target} zu kommen
+    \begin{itemize}
+      \item wird mit Tab unter \texttt{target: prerequisites} eingerückt
+    \end{itemize}
   \end{description}
 \end{frame}
 
@@ -62,6 +74,13 @@
           python plot.py
     \end{lstmake}
   \end{center}
+  \begin{itemize}
+    \item Wir wollen \texttt{plot.pdf} erzeugen (\texttt{target})
+    \begin{itemize}
+      \item \texttt{plot.pdf} hängt von \texttt{plot.py} und \texttt{data.txt} ab (\texttt{prerequisites})
+      \item Der Befehl, um \texttt{plot.pdf} aus den \texttt{prerequisites} zu erhalten ist \texttt{python plot.pdf}
+    \end{itemize}
+  \end{itemize}
 \end{frame}
 
 \begin{frame}[fragile]{Beispiel}
@@ -137,7 +156,7 @@
 \end{frame}
 
 \begin{frame}[fragile]{\texttt{make clean}}
-  Es ist eine (nützliche) Konvention, dass \texttt{make clean} alles vom \texttt{Makefile} erstellte löscht.
+  (Nützliche) Konvention: \texttt{make clean} löscht alle vom \texttt{Makefile} erstellten Dateien/Ordner.
 
   \begin{center}
     \begin{lstmake}
@@ -146,7 +165,7 @@
     \end{lstmake}
   \end{center}
 
-  Das Projekt sollte dann so aussehen wie vor dem ersten Ausführen von \texttt{make}.
+  Das Projekt sollte dann so aussehen, wie vor dem ersten Ausführen von \texttt{make}.
 \end{frame}
 
 \begin{frame}[fragile]{Advanced}
@@ -179,8 +198,8 @@
 \end{frame}
 
 \begin{frame}[fragile]{Expert}
-  Mehrere unabhängige Auswertungen: könnte man sie parallel ausführen? \\
-  Ja! \texttt{make -j4} (4 Prozesse gleichzeitig)
+  Können mehrere unabhängige Auswertungen parallel ausgeführt werden? \\
+  Ja: \texttt{make -j4} (nutzt 4 Prozesse gleichzeitig)
 
   \begin{center}
     \begin{lstmake}

@@ -25,7 +25,7 @@
 \end{frame}
 
 \begin{frame}[fragile]{\lstinline+\\Re+, \lstinline+\\Im+}
-  \lstinline+\Re+ und \lstinline+\Im+ tun nicht das, was man will:
+  \lstinline+\Re+ und \lstinline+\Im+ sehen nicht aus, wie erwartet:
   \vspace*{-1.2em}
   \begin{CodeExample}{0.5}
     \begin{lstlisting}
@@ -38,7 +38,7 @@
 
   \begin{lstlisting}
     \AtBeginDocument{ % wird bei \begin{document} ausgeführt
-      \let\symIm=\Im  % werden sonst wieder von unicode-math überschrieben
+      \let\symRe=\Re  % werden sonst wieder von unicode-math überschrieben
       \RenewDocumentCommand \Re {}
       {
         \operatorname{Re}
@@ -103,9 +103,9 @@
 
 \begin{frame}[fragile]{\lstinline+\\DeclarePairedDelimiter+}
   \begin{itemize}
-    \item Man kann mit dem \texttt{mathtools}-Befehl \lstinline+\DeclarePairedDelimiter+ Befehle erzeugen, die Symbole um Ausdrücke setzen.
+    \item Mit dem \texttt{mathtools}-Befehl \lstinline+\DeclarePairedDelimiter+ können Befehle erzeugen werden, die Symbole um Ausdrücke setzen.
     \item Automatische \lstinline+*+-Variante, die mitwächst.
-    \item Mit richtigem Spacing!
+    \item Automatisch richtiges Spacing
   \end{itemize}
   \begin{CodeExample}{0.7}
     \begin{lstlisting}
