@@ -1,11 +1,8 @@
 import numpy as np
-
 import pandas as pd
-
-import matplotlib as mpl
 import matplotlib.pyplot as plt
-from matplotlib.style import use
-use('ggplot')
+
+plt.style.use('ggplot')
 plt.rcParams['font.family'] = 'sans-serif'
 
 colors = [
@@ -16,7 +13,7 @@ colors = [
     'yellow',
 ]
 
-answers = pd.read_csv('data/2015.tsv', sep='\t')
+answers = pd.read_csv('data/2016.csv')
 
 os = answers['Betriebssystem'].value_counts()
 os /= os.sum()
@@ -26,39 +23,52 @@ ax = fig.add_axes([0.125, 0, 0.75, 1], aspect=1)
 ax.pie(os.values, labels=os.keys(), colors=colors, startangle=-10)
 fig.savefig('build/figures/os.pdf')
 
-programming = answers['Programmierkenntnisse']
-
-programming[programming == 'in einer Sprache außer Python programmiert (z.B. in EINP/DAP)'] = 'programmiert'
-programming[programming == 'bereits in Python programmiert'] = 'Python'
+programming = answers['Programmierkentnisse']
+programming = programming.str.replace(',', ',\n')
 
 programming = programming.value_counts()
 programming /= programming.sum()
 
 fig = plt.figure(figsize=(4, 3))
 ax = fig.add_axes([0.125, 0.0, 0.75, 1], aspect=1)
-ax.pie(programming.values, labels=programming.keys(), colors=colors)
+ax.pie(
+    programming.values,
+    labels=programming.keys(),
+    colors=colors,
+    startangle=0,
+    radius=1,
+    labeldistance=0.4,
+    textprops={
+        'va': 'center',
+        'ha': 'center',
+        'bbox': {'facecolor': 'w', 'alpha': 0.6},
+    },
+)
 fig.savefig('build/figures/programming.pdf')
 
-interest = answers['Mich interessieren besonders']
-i = []
-for foo in interest:
-    if not isinstance(foo, str):
-        continue
-    i += foo.split(', ')
-interest = pd.Series(i)
+interest = pd.Series([
+    elem
+    for row in answers['Mich interessiert besonders'].str.split(';')
+    for elem in row
+])
 
-interest[interest == 'Umgang mit der Kommandozeile (bash)'] = 'Unix'
-interest[interest == 'Auswerten mit einer richtigen Programmiersprache (Python+numpy+scipy)'] = 'NumPy'
-interest[interest == 'Vernünftige Plots erstellen (Python+matplotlib)'] = 'matplotlib'
-interest[interest == 'Automatisierung von Fehlerrechnung (Python+uncertainties+sympy)'] = 'uncertainties'
-interest[interest == 'Protokolle automatisiert und reproduzierbar erstellen (make)'] = 'make'
-interest[interest == 'Zusammenarbeit mittels Versionskontrolle (git)'] = 'git'
+interest.replace(
+    {
+        'Umgang mit der Kommandozeile': 'Unix',
+        'Zusammenarbeiten / Versionskontrolle mit Git': 'Git',
+        'Versuchsauswertung mit Python / Numpy / Scipy': 'Auswerten',
+        'Qualitativ hochwertige Plots erstellen mit Matplotlib': 'Plots',
+        'Automatisierung/Reproduzierbarkeit mit Make': 'Make',
+        'Automatisierung der Fehlerrechnung mit Uncertainties und SymPy': 'Auto-Fehlerrechnung',
+    },
+    inplace=True,
+)
 
 interest = interest.value_counts()
 
 fig, ax = plt.subplots(1, 1, figsize=(4, 3))
-pos = np.arange(len(interest))
-ax.barh(pos, interest.values, align='center')
-ax.set_yticklabels([''] + list(interest.keys()))
+
+interest.plot.barh(ax=ax)
+
 fig.tight_layout()
 fig.savefig('build/figures/interest.pdf')
