@@ -173,7 +173,7 @@
 
   \begin{center}
     \begin{lstmake}
-      all: build/report.tex
+      all: build/report.pdf
 
       build/plot.pdf: plot.py data.txt | build
           python plot.py  # savefig('build/plot.pdf')
@@ -199,20 +199,24 @@
 
 \begin{frame}[fragile]{Expert}
   Können mehrere unabhängige Auswertungen parallel ausgeführt werden? \\
-  Ja: \texttt{make -j4} (nutzt 4 Prozesse gleichzeitig)
+  → Ja: \texttt{make -j4} (nutzt 4 Prozesse gleichzeitig)
 
+  Problem: Manchmal führt \texttt{make} Skripte gleichzeitig zweimal aus (hier \texttt{plot.py})
   \begin{center}
     \begin{lstmake}
+      all: report.txt
+ 
+      report.txt: plot1.pdf plot2.pdf
+        touch report.txt
+
       plot1.pdf plot2.pdf: plot.py data.txt
-          python plot.py
+        python plot.py  # plot.py produziert sowohl plot1.pdf als auch plot2.pdf
     \end{lstmake}
   \end{center}
 
-  Problem: \texttt{make} führt \texttt{plot.py} gleichzeitig zweimal aus
-
   Lösung: manuell synchronisieren
-
   \begin{center}
+    $\vdots$ \\
     \begin{lstmake}
       plot1.pdf: plot.py data.txt
           python plot.py
