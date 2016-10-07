@@ -9,6 +9,7 @@ Folgende Themen sind Teil des Workshops:
    - numpy
    - scipy
    - matplotlib
+   - uncertainties
    - git
    - Unix-Kommandozeile
  - Zweite Woche
