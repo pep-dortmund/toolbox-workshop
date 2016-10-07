@@ -114,6 +114,26 @@
     \draw[thick,->, visible on=<4->] (idx.west) to[out=180,in=180] node[left] {\texttt{git commit}} (hist.west);
   \end{tikzpicture}
 \end{frame}
+\begin{frame}{Zentrales Konzept: Das Repository}
+  \centering
+  \begin{tikzpicture}[
+      line width=1.5,
+      gitstep/.style={
+        draw,
+        rounded corners,
+        thick,
+        minimum width=4cm,
+        minimum height=1.2cm,
+      },
+    ]
+    \node (wd) at (0, 0) [gitstep, fill=red!20, visible on=<1->] {Working directory};
+    \node (idx) [gitstep, fill=yellow!20, below=0.4cm of wd] {Staging};
+    \node (hist) [gitstep, fill=green!20, below=0.4cm of idx] {History};
+    \node [right=1cm of wd, text width=0.5\textwidth, align=flush left] {Aktuelles Arbeitsverzeichnis, Inhalt des Ordners im Dateisystem.};
+    \node [right=1cm of idx, text width=0.5\textwidth, align=flush left] {Änderungen, die für den nächsten commit vorgemerkt sind.};
+    \node [right=1cm of hist, text width=0.5\textwidth, align=flush left] {Gespeicherte Historie des Projekts. Alle jemals gemachten Änderungen. Ein Baum von Commits.};
+  \end{tikzpicture}
+\end{frame}
 
 \begin{frame}{Remotes}
   Remotes sind zentrale Stellen, z.\,B. Server auf denen die History gespeichert wird.
