@@ -248,13 +248,16 @@
   \begin{tabu}{>{\ttfamily}l X[,L]}
     git commit                       & erzeugt Commit aus jetzigem Staging-Bereich, öffnet Editor für Commit-Message \\
     git commit -m "\textit{message}" & Commit mit \texttt{\textit{message}} als Message \\
-    git commit --amend               & letzten Commit ändern (fügt aktuellen Staging hinzu, Message bearbeitbar)
+    git commit --amend               & letzten Commit ändern (fügt aktuellen Staging hinzu, Message bearbeitbar) \\
+    & \alert{\bfseries Niemals commits ändern, die schon gepusht sind!}
   \end{tabu}
 
   \begin{itemize}
     \item Wichtig: Sinnvolle Commit-Messages
       \begin{itemize}
-        \item Erster Satz ist Zusammenfassung
+        \item Erster Satz ist Zusammenfassung (ideal < 50 Zeichen)
+        \item Danach eine leere Zeile lassen
+        \item Dann längere Erläuterung des commits
       \end{itemize}
     \item Logische Commits erstellen, für jede logische Einheit ein Commit
       \begin{itemize}
@@ -348,7 +351,8 @@
     \begin{itemize}
       \item größter Hoster
       \item viele open-source Projekte
-      \item keine (kostenlosen) privaten Repos
+      \item Unbegrenzt private Repositories für Studenten und Forscher:  \newline
+        \href{http://education.github.com}{education.github.com}
     \end{itemize}
     &
     \begin{itemize}
@@ -361,6 +365,11 @@
       \item keine Begrenzungen an privaten Repos
       \item kann man selbst auf einem eigenen Server betreiben
     \end{itemize}
+    \begin{center}
+      \onslide<2->{%
+        \enquote{Everybody gets born with a GitHub account these days} – Guido van Rossum
+      }
+    \end{center}
   \end{tabu}
 \end{frame}
 
@@ -375,7 +384,7 @@
   SSH-Keys:
   \begin{enumerate}
     \item \texttt{ssh-keygen}
-    \item Standardeinstellungen ok (kein Passwort!)
+    \item Passwort wählen
     \item \texttt{cat \textasciitilde/.ssh/id\_rsa.pub}
     \item Ausgabe ist Public-Key, beim Server eintragen (im Browser)
   \end{enumerate}
