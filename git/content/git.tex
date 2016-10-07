@@ -56,8 +56,9 @@
 
   \begin{itemize}
     \item Man merkt nichts von Änderungen der Anderen
-    \item Gleichzeitige Änderungen führen zu \enquote{In Konflikt stehende Kopie}-Dateien.
-    \item Änderungen werden nicht zusammengeführt.
+    \item Gleichzeitige Änderungen führen zu \enquote{In Konflikt stehende Kopie}-Dateien
+    \item Änderungen werden nicht zusammengeführt
+    \item Keine echte Historie des Projekts
   \end{itemize}
   \textbf{\Large Fazit: Besser, aber hat deutliche Probleme}
 \end{frame}
@@ -96,12 +97,21 @@
   \end{itemize}
   \vspace{3em}
   \centering
-  \begin{tikzpicture}[line width=1.5]
-    \node (wd) at (0, 0) [draw,rounded corners,thick,minimum width=4cm,minimum height=1.2cm,fill=red!20] {Working directory};
-    \node (idx) [below=0.4cm of wd,draw,thick,rounded corners,minimum width=4cm,minimum height=1.2cm,fill=yellow!20] {Staging};
-    \node (hist) [below=0.4cm of idx,draw,rounded corners,thick,minimum width=4cm,minimum height=1.2cm,fill=green!20] {History};
-    \draw[thick,->] (wd.east) to[out=0,in=0] node[right] {\texttt{git add}} (idx.east);
-    \draw[thick,->] (idx.west) to[out=180,in=180] node[left] {\texttt{git commit}} (hist.west);
+  \begin{tikzpicture}[
+      line width=1.5,
+      gitstep/.style={
+        draw,
+        rounded corners,
+        thick,
+        minimum width=4cm,
+        minimum height=1.2cm,
+      },
+    ]
+    \node (wd) at (0, 0) [gitstep, fill=red!20, visible on=<1->] {Working directory};
+    \node (idx) [gitstep, fill=yellow!20, visible on=<2->, below=0.4cm of wd] {Staging};
+    \node (hist) [gitstep, fill=green!20, visible on=<3->, below=0.4cm of idx] {History};
+    \draw[thick,->, visible on=<4->] (wd.east) to[out=0,in=0] node[right] {\texttt{git add}} (idx.east);
+    \draw[thick,->, visible on=<4->] (idx.west) to[out=180,in=180] node[left] {\texttt{git commit}} (hist.west);
   \end{tikzpicture}
 \end{frame}
 
