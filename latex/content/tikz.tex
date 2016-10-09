@@ -12,10 +12,10 @@
     \item \alert{T}i\textit{k}z \alert{i}st \alert{k}ein \alert{Z}eichenprogramm
     \item Zeichnen mit Befehlen
       \begin{itemize}
-        \item Sehr präzise
+        \item Sehr präzise (Kleinste Einheit in \TeX ${} \approx \SI{5}{\nano\meter}$)
         \item programmierfähig
         \item automatisierbar
-        \item Versionkontrolle!
+        \item Versionskontrolle!
       \end{itemize}
     \item Extrem umfangreiche Doku mit \emph{zahlreichen} Beispiel (>\num{1000} Seiten)
     \item Basis-Einheit ist \si{\centi\meter}
@@ -81,5 +81,48 @@
         -- (1, 1) node[midway, right] {$b$}
         -- cycle  node[midway, above left] {$c$};
     \end{tikzpicture}
+  \end{CodeExample}
+\end{frame}
+
+\begin{frame}[fragile]{Tikz-Feynman}
+  \begin{Packages}
+    \lstinline+\usepackage{tikz-feynman}+
+  \end{Packages}
+  \begin{CodeExample}{0.65}[Tree-Graph]
+    \begin{lstlisting}
+      \feynmandiagram [horizontal=a to b] {
+        i1 -- [fermion] a -- [fermion] i2,
+        a -- [photon] b,
+        f1 -- [fermion] b -- [fermion] f2,
+      };
+    \end{lstlisting}
+  \CodeResult
+    \feynmandiagram [horizontal=a to b] {
+      i1 -- [fermion] a -- [fermion] i2,
+      a -- [photon] b,
+      f1 -- [fermion] b -- [fermion] f2,
+    };
+  \end{CodeExample}
+\end{frame}
+
+\begin{frame}[fragile]{Tikz-Feynman}
+  \begin{CodeExample}{0.65}[Tree-Graph]
+    \begin{lstlisting}
+      \feynmandiagram [horizontal=a to b] {
+        i1 [particle=$\symup{e}^-$]
+          -- [fermion] a
+          -- [fermion] i2 [particle=$\symup{e}^+$],
+        a -- [photon, edge label=$\symup{γ}$] b,
+        f1 [particle=$\symup{μ}^-$]
+          -- [fermion] b
+          -- [fermion] f2 [particle=$\symup{μ}^+$],
+      };
+    \end{lstlisting}
+  \CodeResult
+    \feynmandiagram [horizontal=a to b] {
+      i1 [particle=$\symup{e}^-$] -- [fermion] a -- [fermion] i2 [particle=$\symup{e}^+$],
+      a -- [photon, edge label=$\symup{γ}$] b,
+      f1 [particle=$\symup{μ}^-$] -- [fermion] b -- [fermion] f2 [particle=$\symup{μ}^+$],
+    };
   \end{CodeExample}
 \end{frame}
