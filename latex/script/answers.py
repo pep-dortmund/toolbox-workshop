@@ -1,7 +1,7 @@
 import pandas as pd
 import matplotlib.pyplot as plt
-from matplotlib.style import use
-use('ggplot')
+
+plt.style.use('ggplot')
 plt.rcParams['font.family'] = 'sans-serif'
 
 colors = [
@@ -12,7 +12,7 @@ colors = [
     'yellow',
 ]
 
-answers = pd.read_csv('data/2015.tsv', sep='\t')
+answers = pd.read_csv('data/2016.csv')
 
 os = answers['Betriebssystem'].value_counts()
 os /= os.sum()
