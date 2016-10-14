@@ -10,10 +10,6 @@
 % Warnung, falls nochmal kompiliert werden muss
 \usepackage[aux]{rerunfilecheck}
 
-% deutsche Spracheinstellungen
-\usepackage{polyglossia}
-\setmainlanguage{german}
-
 % unverzichtbare Mathe-Befehle
 \usepackage{amsmath}
 % viele Mathe-Symbole
@@ -24,6 +20,17 @@
 % Fonteinstellungen
 \usepackage{fontspec}
 % Latin Modern Fonts werden automatisch geladen
+% Alternativ:
+%\setromanfont{Libertinus Serif}
+%\setsansfont{Libertinus Sans}
+%\setmonofont{Libertinus Mono}
+\recalctypearea % Wenn man andere Schriftarten gesetzt hat,
+% sollte man das Seiten-Layout neu berechnen lassen
+
+% deutsche Spracheinstellungen
+\usepackage{polyglossia}
+\setmainlanguage{german}
+
 
 \usepackage[
   math-style=ISO,    % ┐
@@ -39,6 +46,9 @@
 
 % traditionelle Fonts für Mathematik
 \setmathfont{Latin Modern Math}
+% Alternativ:
+%\setmathfont{Libertinus Math}
+
 \setmathfont{XITS Math}[range={scr, bfscr}]
 \setmathfont{XITS Math}[range={cal, bfcal}, StylisticSet=1]
 
@@ -73,7 +83,7 @@
   below,   % unterhalb der Section aber auf der selben Seite ist ok
 ]{placeins}
 
-% Seite drehen für breite Tabellen
+% Seite drehen für breite Tabellen: landscape Umgebung
 \usepackage{pdflscape}
 
 % Captions schöner machen.
