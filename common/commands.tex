@@ -191,27 +191,14 @@
 }
 \makeatother
 
-\NewDocumentCommand \lstMakeSettingsInline {}
-{
-  language={[gnu]make},
-  basicstyle=\ttfamily\color{black},
-  otherkeywords={:, |, \\},
-  showstringspaces=false,
-}
-
-\NewDocumentCommand \lstMakeSettings {}
-{
-  \expandafter\lstset\expandafter{\lstMakeSettingsInline}
-}
-
-\NewDocumentCommand \lstmakeinline {O{}}
-{
-  \expandafter\lstinline\expandafter[\lstMakeSettingsInline,#1]
-}
-
 \box_new:N \l_listings_boxed_box
 \lstnewenvironment{lstmake}[1][]{
-  \lstMakeSettings
+  \lstset{
+    language={[gnu]make},
+    basicstyle=\ttfamily\color{black},
+    otherkeywords={:, |, \\},
+    showstringspaces=false,
+  }
   \lstset{#1}
   \hbox_set:Nw \l_listings_boxed_box
 }{
@@ -219,36 +206,40 @@
   \leavevmode\box_use:N \l_listings_boxed_box
 }
 
-\NewDocumentCommand \lstPythonSettingsInline {}
-{
-  language=python,
-  basicstyle=\ttfamily\color{black},
-  otherkeywords={True, False, None, as},
-  showstringspaces=false,
-  stringstyle=\color{vertexDarkRed},
-}
-
-\NewDocumentCommand \lstPythonSettings {}
-{
-  \expandafter\lstset\expandafter{\lstPythonSettingsInline}
-}
-
 \NewDocumentCommand \lstinputpython {O{} m}
 {
-  \lstPythonSettings
+  \lstset{
+    language=python,
+    basicstyle=\ttfamily\color{black},
+    otherkeywords={True, False, None, as},
+    showstringspaces=false,
+    stringstyle=\color{vertexDarkRed},
+  }
   \hbox_set:Nw \l_listings_boxed_box
   \lstinputlisting[#1]{#2}
   \hbox_set_end:
   \leavevmode\box_use:N \l_listings_boxed_box
 }
 
-\NewDocumentCommand \lstpythoninline {O{}}
-{
-  \expandafter\lstinline\expandafter[\lstPythonSettingsInline,#1]
+\NewDocumentCommand{\lstpythoninline} {O{}} {
+  \lstinline[
+    language=python,
+    basicstyle=\ttfamily\color{black},
+    otherkeywords={True, False, None, as},
+    showstringspaces=false,
+    stringstyle=\color{vertexDarkRed},
+    #1
+  ]
 }
 
 \lstnewenvironment{lstpython}[1][]{
-  \lstPythonSettings
+  \lstset{
+    language=python,
+    basicstyle=\ttfamily\color{black},
+    otherkeywords={True, False, None, as},
+    showstringspaces=false,
+    stringstyle=\color{vertexDarkRed},
+  }
   \lstset{#1}
   \hbox_set:Nw \l_listings_boxed_box
 }{
