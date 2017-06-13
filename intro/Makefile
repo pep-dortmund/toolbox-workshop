@@ -11,7 +11,7 @@ build/figures/os.pdf: script/answers.py data/2015.tsv
 $(addprefix build/figures/, programming.pdf interest.pdf): build/figures/os.pdf
 
 build/figures/editors.jpg: | build/figures
-	wget http://www.manuelmagic.me/resources/Geek/Text-editors/text_editors.jpg -O $@ --no-use-server-timestamps
+	wget http://www.manuelmagic.me/manuelsweb/resources/Geek/Text-editors/text_editors.jpg -O $@ --no-use-server-timestamps
 
 build/figures/vim.png: | build/figures
 	wget https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/Vimlogo.svg/500px-Vimlogo.svg.png -O $@ --no-use-server-timestamps
