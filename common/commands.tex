@@ -51,6 +51,19 @@
 
 \newcounter{heightgroup}
 
+
+% see https://tex.stackexchange.com/a/374564/59716
+\NewDocumentEnvironment {BeamerCodeFrame} {O{} g} {
+  \IfValueTF{#2}{
+    \begin{frame}[fragile, environment=BeamerCodeFrame, #1]{#2}
+  }{
+    \begin{frame}[fragile, environment=BeamerCodeFrame, #1]
+  }
+}{
+  \end{frame}
+}
+
+
 \NewDocumentEnvironment {CodeExplanation} {o m O{Code} O{Erklärung} D<>{}} {
   \NewDocumentCommand \Explanation {D<>{}} {
       \end{tcolorbox}
@@ -84,6 +97,7 @@
   \end{columns}
   \stepcounter{heightgroup}
 }
+
 
 \NewDocumentEnvironment {CodeExample} {o m O{Code} O{Ergebnis} D<>{}} {
   \NewDocumentCommand \CodeResult {D<>{}} {
