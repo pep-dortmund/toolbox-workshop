@@ -1,0 +1,25 @@
+Aufgabe: Arrays
+
+1) Erzeuge die folgenden Arrays unter Verwendung von den entsprechenden numpy Funktionen (falls vorhanden)
+   und gib sie auf das Terminal aus.
+    
+    a) Erzeuge ein Array mit den ersten 8 Primzahlen. 
+    b) Erzeuge ein Array mit den ganzen Zahlen von 0 bis 9.
+    c) Erzeuge ein Array mit graden ganzen von 0 bis 18.
+    d) Erzeuge ein Array mit elf Zahlen von 0 bis 5 im Abstand von einander.
+
+2) Lass dir nun zusätzlich zu den Arrays auf ihre Größe auf das Terminal ausgeben. 
+   Hierfür gibt es mehrere Möglichkeiten.
+
+3) Versuche nun verschiedene Arrays zu addieren. 
+   Welche der Arrays von oben lassen sich addieren? Welche nicht? Warum?
+
+5) Mach aus dem Array c) ein 2D Array mit einem Eintrag in jeder Zeile, indem du die 'reshape' Methode verwendest.
+   Gib das Ergebnis auf das Terminal aus.
+   (Informationen zu reshape: https://docs.scipy.org/doc/numpy/reference/generated/numpy.reshape.html)
+
+6) Addiere nun das Array b) aus Aufgabe 1) und das neue Array b) aus Aufgabe 5). Und schaue dir das Ergebnis an.
+   Was ist hier passiert?
+
+
+
