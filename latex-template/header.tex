@@ -20,12 +20,14 @@
 % Fonteinstellungen
 \usepackage{fontspec}
 % Latin Modern Fonts werden automatisch geladen
-% Alternativ:
+% Alternativ zum Beispiel:
 %\setromanfont{Libertinus Serif}
 %\setsansfont{Libertinus Sans}
 %\setmonofont{Libertinus Mono}
-\recalctypearea % Wenn man andere Schriftarten gesetzt hat,
+
+% Wenn man andere Schriftarten gesetzt hat,
 % sollte man das Seiten-Layout neu berechnen lassen
+\recalctypearea{}
 
 % deutsche Spracheinstellungen
 \usepackage{polyglossia}
@@ -46,7 +48,7 @@
 
 % traditionelle Fonts für Mathematik
 \setmathfont{Latin Modern Math}
-% Alternativ:
+% Alternativ zum Beispiel:
 %\setmathfont{Libertinus Math}
 
 \setmathfont{XITS Math}[range={scr, bfscr}]
@@ -128,16 +130,10 @@
 \usepackage[shortcuts]{extdash}
 
 \author{%
-  AUTOR A%
-  \texorpdfstring{%
-    \\%
-    \href{mailto:authorA@udo.edu}{authorA@udo.edu}
-  }{}%
-  \texorpdfstring{\and}{, }%
-  AUTOR B%
-  \texorpdfstring{%
-    \\%
-    \href{mailto:authorB@udo.edu}{authorB@udo.edu}
-  }{}%
+  AUTOR A\\%
+  \href{mailto:authorA@udo.edu}{authorA@udo.edu}%
+  \texorpdfstring{\and}{,}%
+  AUTOR B\\%
+  \href{mailto:authorB@udo.edu}{authorB@udo.edu}%
 }
 \publishers{TU Dortmund – Fakultät Physik}
