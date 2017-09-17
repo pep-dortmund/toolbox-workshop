@@ -26,8 +26,9 @@ es ist hauptsächlich wichtig, dass die Arrays die geforderte Gestalt haben.
    Gib das Ergebnis auf das Terminal aus.
    (Informationen zu reshape: https://docs.scipy.org/doc/numpy/reference/generated/numpy.reshape.html)
 
-5) Addiere nun das Array b) aus Aufgabe 1) und das neue Array c) aus Aufgabe 5). Und schaue dir das Ergebnis an.
-   Was ist hier passiert?
+5*) Zusatzaufgabe:
+    Addiere nun das Array b) aus Aufgabe 1) und das neue Array c) aus Aufgabe 5). Und schaue dir das Ergebnis an.
+    Was ist hier passiert?
 
 
 
