@@ -10,9 +10,12 @@ Es gibt folgende Schiffe:
 2 4er-Schiffe
 1 5er-Schiff
 
+Die Datei 'vorlage.py' enthält bereits den notwendigen code und muss nur noch um die
+die Lösung ergänzt werden. Durch Ausführen dieser Datei kann auch 
+Schritt für Schritt der Fortschritt überprüft werden.
+Durch Ausführen der Datei wird das Spielfeld auf das Terminal ausgegeben,
+zusätzlich wird auch noch ein Bild erzeugt, um einen besseren Überblick zu bekommen.
 
-Durch Ausführen der Datei wird das Spielfeld auf das Terminal ausgegeben, zusätzlich wird auch 
-noch ein Bild erzeugt, um einen besseren Überblick zu haben.
 
 1) Für 2er-, 3er-, 4er- und 5er-Schiffe:
    Versuche mit Hilfe von Array Indexing und Slicing, jeweils ein Schiff aufeinmal zu treffen,
