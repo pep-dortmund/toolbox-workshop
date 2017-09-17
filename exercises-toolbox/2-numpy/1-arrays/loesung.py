@@ -13,46 +13,41 @@ g1 = np.arange(0, 5.5, step=0.5)
 h = 3*np.ones(shape=(3, 3))
 
 
+array_names = ["a", "b", "c", "d", "e", "f", "g0", "g1", "h"]
+arrays = [a, b, c, d, e, f, g0, g1, h]
+
 print("Aufgabe 1)")
-print("Array a)", a)
-print("Array b)", b)
-print("Array c)", c)
-print("Array d)", d)
+for name, array in zip(array_names, arrays):
+    print(f"Array {name}: {array}")
+
 
 # Aufgabe 2)
 print("Aufgabe 2)")
-print("Array a)")
-print("\t len(a)", len(a))
-print("\t a.shape", a.shape)
-print("Array b)")
-print("\t len(b)", len(b))
-print("\t b.shape", b.shape)
-print("Array c)")
-print("\t len(c)", len(c))
-print("\t c.shape", c.shape)
-print("Array d)")
-print("\t len(d)", len(d))
-print("\t d.shape", d.shape)
+for name, array in zip(array_names, arrays):
+    print(f"Array {name}")
+    print(f"\t len({name}): {len(array)}")
+    print(f"\t {name}.shape: {array.shape}")
 
 # Aufgabe 3)
-# Nur Array b) und c) lassen sich addieren, bei allen anderen passen die Größen nicht zusammen.
+# Nur Array e) und f) lassen sich addieren, bei allen anderen passen die Größen nicht zusammen.
 print("Aufgabe 3)")
-print("Array b + c", b + c)
+print(f"Array d + f: {e + f}")
 
 
 # Aufgabe 4)
 print("Aufgabe 4)")
-# Anzahl der Zeilen ist die Anzahl der Elemente in b (ein Element pro Zeile), Anzahl der Spalten ist damit 1
+# Anzahl der Zeilen ist die Anzahl der Elemente in f (ein Element pro Zeile), Anzahl der Spalten ist damit 1
 # Das Produkt aus den Argumenten von reshape muss immer der Anzahl an Elementen entsprechen.
-c_2d = b.reshape(len(c), 1)
-print("Array c_2d (mit len(b))", c_2d)
+f_2d = f.reshape(len(f), 1)
+print(f"Array f.reshape(len(f), 1):\n{f_2d}")
 # Man kann eine Dimension mit einer -1 versehen, diese wird dann automatisch ausgerechnet.
-c_2d = b.reshape(-1, 1)
-print("Array c_2d (mit -1)", c_2d)
+f_2d = f.reshape(-1, 1)
+print(f"Array f.reshape(-1, 1):\n{f_2d}")
 
 
 # Aufgabe 5)
 print("Aufgabe 5)")
-print("Array b)", b)
-print("Array c_2d", c_2d)
-print("Array b + c_2d", b + c_2d)
+print("Zum Vergleich noch mal die beiden Summanden:")
+print(f"Array e: {e}")
+print(f"Array f_2d:\n{f_2d}")
+print(f"Array e + f_2d:\n{e + f_2d}")
