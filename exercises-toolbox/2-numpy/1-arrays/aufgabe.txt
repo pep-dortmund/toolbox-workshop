@@ -1,5 +1,9 @@
 Aufgabe: Arrays
 
+Ziel der Übung ist es sich mit den verschiedenen Numpy-Funktionen vertraut zu machen, mit denen Arrays erzeugt werden können.
+Die Ausgaben aufs Terminal müssen nicht genau so aussehen wie die die durch die Datei 'loesung.py' erzeugt werden, es
+ist hauptsächlich wichtig das die Arrays die geforderte gestallt haben.
+
 1) Erzeuge Arrays mit folgenden Werten und gib sie auf das Terminal aus. Für einige Arrays gibt es 
    eingebaute Numpy-Funktionen.
     
@@ -10,6 +14,8 @@ Aufgabe: Arrays
     e) Erzeuge ein Array mit den ganzen Zahlen von 0 bis 9.
     f) Erzeuge ein Array mit graden ganzen von 0 bis 18.
     g) Erzeuge ein Array mit elf Zahlen von 0 bis 5 im gleichen Abstand von einander. (Hierfür gibts zwei Möglichkeiten.)
+
+    
 
 2) Lass dir nun zusätzlich zu den Arrays auf ihre Größe auf das Terminal ausgeben. 
    Hierfür gibt es mehrere Möglichkeiten.
