@@ -46,8 +46,11 @@ print(f"Array f.reshape(-1, 1):\n{f_2d}")
 
 
 # Aufgabe 5)
+# Das was hier passiert nennt sich 'numpy-broadcasting' und ist eine sehr
 print("Aufgabe 5)")
 print("Zum Vergleich noch mal die beiden Summanden:")
 print(f"Array e: {e}")
+print(f"e.shape: {e.shape}")
 print(f"Array f_2d:\n{f_2d}")
+print(f"f_2d.shape: {f_2d.shape}")
 print(f"Array e + f_2d:\n{e + f_2d}")
