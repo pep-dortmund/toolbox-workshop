@@ -22,7 +22,7 @@ for name, array in zip(array_names, arrays):
 
 
 # Aufgabe 2)
-print("Aufgabe 2)")
+print("\nAufgabe 2)")
 for name, array in zip(array_names, arrays):
     print(f"Array {name}")
     print(f"\t len({name}): {len(array)}")
@@ -30,14 +30,20 @@ for name, array in zip(array_names, arrays):
 
 # Aufgabe 3)
 # Nur Array e) und f) lassen sich addieren, bei allen anderen passen die Größen nicht zusammen.
-print("Aufgabe 3)")
+print("\nAufgabe 3)")
 print(f"Array d + f: {e + f}")
 
 
 # Aufgabe 4)
-print("Aufgabe 4)")
+print("\nAufgabe 4)")
 # Anzahl der Zeilen ist die Anzahl der Elemente in f (ein Element pro Zeile), Anzahl der Spalten ist damit 1
 # Das Produkt aus den Argumenten von reshape muss immer der Anzahl an Elementen entsprechen.
+e_2d = e.reshape(1, len(e))
+print(f"Array e.reshape(1, len(e)):\n{e_2d}")
+# Man kann eine Dimension mit einer -1 versehen, diese wird dann automatisch ausgerechnet.
+e_2d = e.reshape(1, -1)
+print(f"Array e.reshape(1, -1):\n{e_2d}")
+
 f_2d = f.reshape(len(f), 1)
 print(f"Array f.reshape(len(f), 1):\n{f_2d}")
 # Man kann eine Dimension mit einer -1 versehen, diese wird dann automatisch ausgerechnet.
@@ -47,10 +53,10 @@ print(f"Array f.reshape(-1, 1):\n{f_2d}")
 
 # Aufgabe 5)
 # Das was hier passiert nennt sich 'numpy-broadcasting' und ist eine sehr
-print("Aufgabe 5)")
+print("\nAufgabe 5*)")
 print("Zum Vergleich noch mal die beiden Summanden:")
-print(f"Array e: {e}")
-print(f"e.shape: {e.shape}")
+print(f"Array e_2d: {e_2d}")
+print(f"e_2d.shape: {e_2d.shape}")
 print(f"Array f_2d:\n{f_2d}")
 print(f"f_2d.shape: {f_2d.shape}")
-print(f"Array e + f_2d:\n{e + f_2d}")
+print(f"Array e_2d + f_2d:\n{e_2d + f_2d}")
