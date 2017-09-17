@@ -22,11 +22,11 @@ es ist hauptsächlich wichtig, dass die Arrays die geforderte Gestalt haben.
 3) Versuche nun verschiedene dieser Arrays zu addieren. 
    Welche der Arrays von oben lassen sich addieren? Welche nicht? Warum?
 
-5) Mach aus dem Array c) ein 2D Array mit einem Eintrag in jeder Zeile, indem du die 'reshape' Methode verwendest.
+4) Mach aus dem Array c) ein 2D Array mit einem Eintrag in jeder Zeile, indem du die 'reshape' Methode verwendest.
    Gib das Ergebnis auf das Terminal aus.
    (Informationen zu reshape: https://docs.scipy.org/doc/numpy/reference/generated/numpy.reshape.html)
 
-6) Addiere nun das Array b) aus Aufgabe 1) und das neue Array c) aus Aufgabe 5). Und schaue dir das Ergebnis an.
+5) Addiere nun das Array b) aus Aufgabe 1) und das neue Array c) aus Aufgabe 5). Und schaue dir das Ergebnis an.
    Was ist hier passiert?
 
 
