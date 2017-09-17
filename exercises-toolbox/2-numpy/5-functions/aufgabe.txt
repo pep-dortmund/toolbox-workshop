@@ -1,5 +1,5 @@
 In dieser Aufgabe machen wir uns mit Funktionen vertraut,
-die man auf Numpy arrays anwenden kann. Im einzlenen sind dies
+die man auf Numpy arrays anwenden kann. Im einzlenen sind dies:
 
 np.sum
 np.diff
