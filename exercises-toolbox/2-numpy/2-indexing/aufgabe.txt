@@ -14,6 +14,10 @@ Es gibt folgende Schiffe:
 Durch Ausführen der Datei wird das Spielfeld auf das Terminal ausgegeben, zusätzlich wird auch 
 noch ein Bild erzeugt, um einen besseren Überblick zu haben.
 
-Aufgabe 1:
-Versucht mit Hilfe von Array Indexing und Slicing, jeweils ein Schiff aufeinmal zu treffen,
-in dem ihr die entsprechenden Elemente auf -1 setzt.
+1) Für 2er-, 3er-, 4er- und 5er-Schiffe:
+   Versuche mit Hilfe von Array Indexing und Slicing, jeweils ein Schiff aufeinmal zu treffen,
+   in dem die entsprechenden Elemente auf -1 setzt.
+
+
+2) Für 1er-Schiffe:
+   Versuche alle 1er-Schiffe aufeinmal zu treffen.
