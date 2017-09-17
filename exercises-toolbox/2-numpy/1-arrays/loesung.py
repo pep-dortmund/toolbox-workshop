@@ -52,7 +52,11 @@ print(f"Array f.reshape(-1, 1):\n{f_2d}")
 
 
 # Aufgabe 5)
-# Das was hier passiert nennt sich 'numpy-broadcasting' und ist eine sehr
+# Das was hier passiert nennt sich 'numpy-broadcasting' und ist eine sehr 'mächtiges' feature von numpy arrays.
+# Es ist nicht notwendig dieses Feature von Anfang an zu verstehen, es erweißt sich nur irgendwann als
+# sehr nützlich.
+# Details findest du in der Dokumentation: https://docs.scipy.org/doc/numpy-1.13.0/user/basics.broadcasting.html
+
 print("\nAufgabe 5*)")
 print("Zum Vergleich noch mal die beiden Summanden:")
 print(f"Array e_2d: {e_2d}")
