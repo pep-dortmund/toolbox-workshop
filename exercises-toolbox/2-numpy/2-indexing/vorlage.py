@@ -21,7 +21,7 @@ print(field)
 plt.matshow(field, cmap="Set1", vmax=5, vmin=-1)
 plt.savefig("Spielfeld_Beginn.pdf")
 
-# Hier die Lösung für Aufgabe 1 eintragen (ein Beisiel ist angegeben):
+# Hier die Lösung für Aufgabe 1 eintragen (ein Beispiel ist angegeben):
 field[0, 6:8] = -1
 
 
