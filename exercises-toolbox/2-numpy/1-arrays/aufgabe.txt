@@ -1,8 +1,8 @@
 Aufgabe: Arrays
 
-Ziel der Übung ist es sich mit den verschiedenen Numpy-Funktionen vertraut zu machen, mit denen Arrays erzeugt werden können.
-Die Ausgaben aufs Terminal müssen nicht genau so aussehen wie die die durch die Datei 'loesung.py' erzeugt werden, es
-ist hauptsächlich wichtig, dass die Arrays die geforderte gestallt haben.
+Ziel der Übung ist es sich mit Numpy-Arrays vertraut zu machen.
+Die Ausgaben aufs Terminal müssen nicht genau so aussehen wie die, die durch die Datei 'loesung.py' erzeugt werden,
+es ist hauptsächlich wichtig, dass die Arrays die geforderte Gestalt haben.
 
 1) Erzeuge Arrays mit folgenden Werten und gib sie auf das Terminal aus. Für einige Arrays gibt es 
    eingebaute Numpy-Funktionen, die einem die Sache einfacher machen.
@@ -17,10 +17,9 @@ ist hauptsächlich wichtig, dass die Arrays die geforderte gestallt haben.
     h) Erzeuge ein Array mit der Dimension 3x3 mit allen Einträgen gleich 3.
 
 
-2) Lass dir nun zusätzlich zu den Arrays auf ihre Größe auf das Terminal ausgeben. 
-   Hierfür gibt es mehrere Möglichkeiten.
+2) Lass dir nun zusätzlich zu den Arrays auch ihre Länge ('length') und ihre Form ('shape') auf das Terminal ausgeben. 
 
-3) Versuche nun verschiedene Arrays zu addieren. 
+3) Versuche nun verschiedene dieser Arrays zu addieren. 
    Welche der Arrays von oben lassen sich addieren? Welche nicht? Warum?
 
 5) Mach aus dem Array c) ein 2D Array mit einem Eintrag in jeder Zeile, indem du die 'reshape' Methode verwendest.
