@@ -2,10 +2,15 @@ import numpy as np
 
 # Aufgabe 1)
 
-a = np.array([2, 3, 5, 7, 11, 13, 17, 19])
-b = np.arange(0, 10)
-c = np.arange(0, 20, 2)
-d = np.linspace(0, 5, num=11)
+a = np.zeros(shape=3)
+b = np.ones(shape=4)
+c = 4*np.ones(shape=5)
+d = np.array([2, 3, 5, 7, 11, 13, 17, 19])
+e = np.arange(0, 10)
+f = np.arange(0, 20, 2)
+g0 = np.linspace(0, 5, num=11)
+g1 = np.arange(0, 5.5, step=0.5)
+
 
 print("Aufgabe 1)")
 print("Array a)", a)
