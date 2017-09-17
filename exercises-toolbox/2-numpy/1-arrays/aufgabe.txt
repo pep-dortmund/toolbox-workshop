@@ -1,12 +1,15 @@
 Aufgabe: Arrays
 
-1) Erzeuge die folgenden Arrays unter Verwendung von den entsprechenden numpy Funktionen (falls vorhanden)
-   und gib sie auf das Terminal aus.
+1) Erzeuge Arrays mit folgenden Werten und gib sie auf das Terminal aus. Für einige Arrays gibt es 
+   eingebaute Numpy-Funktionen.
     
-    a) Erzeuge ein Array mit den ersten 8 Primzahlen. 
-    b) Erzeuge ein Array mit den ganzen Zahlen von 0 bis 9.
-    c) Erzeuge ein Array mit graden ganzen von 0 bis 18.
-    d) Erzeuge ein Array mit elf Zahlen von 0 bis 5 im Abstand von einander.
+    a) Erzeuge ein Array mit 3 Einträgen "0".
+    b) Erzeuge ein Array mit 4 Einträgen "1".
+    c) Erzeuge ein Array mit 5 Einträgen "4".
+    d) Erzeuge ein Array mit den ersten 8 Primzahlen. 
+    e) Erzeuge ein Array mit den ganzen Zahlen von 0 bis 9.
+    f) Erzeuge ein Array mit graden ganzen von 0 bis 18.
+    g) Erzeuge ein Array mit elf Zahlen von 0 bis 5 im gleichen Abstand von einander. (Hierfür gibts zwei Möglichkeiten.)
 
 2) Lass dir nun zusätzlich zu den Arrays auf ihre Größe auf das Terminal ausgeben. 
    Hierfür gibt es mehrere Möglichkeiten.
@@ -18,7 +21,7 @@ Aufgabe: Arrays
    Gib das Ergebnis auf das Terminal aus.
    (Informationen zu reshape: https://docs.scipy.org/doc/numpy/reference/generated/numpy.reshape.html)
 
-6) Addiere nun das Array b) aus Aufgabe 1) und das neue Array b) aus Aufgabe 5). Und schaue dir das Ergebnis an.
+6) Addiere nun das Array b) aus Aufgabe 1) und das neue Array c) aus Aufgabe 5). Und schaue dir das Ergebnis an.
    Was ist hier passiert?
 
 
