@@ -44,3 +44,18 @@ print("\tnp.std(B, axis=1):", np.std(B, axis=1))
 print("\tnp.std(B, axis=(0,1)):", np.std(B, axis=(0, 1)))
 
 
+# Lösung 3)
+data = np.loadtxt("einkauf.txt")
+print("Daten\n", data)
+
+sum_per_person = np.sum(data, axis=0)
+print("Summe pro Person:", sum_per_person)
+
+mean_per_person = np.mean(data, axis=0)
+print("Mittel pro Person:", mean_per_person)
+
+sum_per_day = np.sum(data, axis=1)
+print("Summe pro Tag:", sum_per_day)
+
+mean_per_day = np.sum(data, axis=1)
+print("Mittel pro Tag:", mean_per_day)
