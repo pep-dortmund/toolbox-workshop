@@ -69,17 +69,58 @@ print("Aufgabe 3)")
 print("Daten\n", data)
 
 sum_per_person = np.sum(data, axis=0)
-print("Summe pro Person:", sum_per_person)
-
+print("\nSumme pro Person:", sum_per_person)
 
 mean_per_person = np.mean(data, axis=0)
-print("Mittel pro Person:", mean_per_person)
+print("\nÜber die Tage gemittele Ausgaben pro Person:\n", mean_per_person)
 
 sum_data = np.sum(data)
-print("Gesamtsumme:", sum_data)
+print("\nGesamtsumme:", sum_data)
 
 sum_per_day = np.sum(data, axis=1)
-print("Summe pro Tag:", sum_per_day)
+print("\nSumme pro Tag:\n", sum_per_day)
 
 mean_per_day = np.mean(data, axis=1)
-print("Mittel pro Tag:", mean_per_day)
+print("\nÜber die Personen gemittelte Ausgaben pro Tag:\n", mean_per_day)
+
+min_per_person = np.min(data, axis=0)
+print("\nMinimalausgabe pro Person", min_per_person)
+
+max_per_person = np.max(data, axis=0)
+print("\nMaximalausgabe pro Person", max_per_person)
+
+min_per_day = np.min(data, axis=1)
+print("\nMinimalausgabe pro Tag", min_per_day)
+
+max_per_day = np.max(data, axis=1)
+print("\nMaximalausgabe pro Tag", max_per_day)
+
+
+print("\nAufgabe 3d) keepdims=True")
+
+sum_per_person = np.sum(data, axis=0, keepdims=True)
+print("\nSumme pro Person:", sum_per_person)
+
+mean_per_person = np.mean(data, axis=0, keepdims=True)
+print("\nÜber die Tage gemittele Ausgaben pro Person:\n", mean_per_person)
+
+sum_data = np.sum(data, keepdims=True)
+print("\nGesamtsumme:", sum_data)
+
+sum_per_day = np.sum(data, axis=1, keepdims=True)
+print("\nSumme pro Tag:\n", sum_per_day)
+
+mean_per_day = np.mean(data, axis=1, keepdims=True)
+print("\nÜber die Personen gemittelte Ausgaben pro Tag:\n", mean_per_day)
+
+min_per_person = np.min(data, axis=0, keepdims=True)
+print("\nMinimalausgabe pro Person", min_per_person)
+
+max_per_person = np.max(data, axis=0, keepdims=True)
+print("\nMaximalausgabe pro Person", max_per_person)
+
+min_per_day = np.min(data, axis=1, keepdims=True)
+print("\nMinimalausgabe pro Tag", min_per_day)
+
+max_per_day = np.max(data, axis=1, keepdims=True)
+print("\nMaximalausgabe pro Tag", max_per_day)
