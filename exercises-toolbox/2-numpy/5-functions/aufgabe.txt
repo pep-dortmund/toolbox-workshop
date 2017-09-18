@@ -6,7 +6,8 @@ np.diff
 np.prod
 np.mean
 np.std
-
+np.min
+np.max
 
 1) Was geben diese Funktionen zurück, wenn sie auf das Array 
    A = np.array([0, 1, 2, 3, 4]) angewendet werden.
