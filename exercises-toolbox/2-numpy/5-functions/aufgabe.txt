@@ -34,7 +34,16 @@ np.max
       Wie viel haben alle fünf zusammen in diesem Monat ausgegeben.
 
    b) Wie viel wurde an jedem Tag in diesem Monat insgesamt (im Mittel) ausgegeben.
-
+   
+   c) Was war die höchste (niedrigste) Einzelausgabe jeder Person.
+      Was war die höchste (niedrigste) Einzelausgabe an jedem Tag.
+   
+   d) Es gibt noch ein keywordargument für die meisten dieser Funktionen 'keepdims'.
+      Für dieses gibt es nur zwei mögliche Wert.
+      np.sum(B, axis=1, keepdims=False) -> Das hier ist der Standardwert und muss nicht extra ausprobiert werden.
+      np.sum(B, axis=1, keepdims=True)
+      Probiere dieses keywordargument nach Belieben an einigen der bereits berechneten
+      arrays aus.
 
    
 
