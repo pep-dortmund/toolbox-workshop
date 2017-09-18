@@ -1,5 +1,5 @@
 In dieser Aufgabe machen wir uns mit Funktionen vertraut,
-die man auf Numpy arrays anwenden kann. Im einzlenen sind dies:
+d man auf Numpy arrays anwenden kann. Im einzlenen sind dies:
 
 np.sum
 np.diff
@@ -8,6 +8,16 @@ np.mean
 np.std
 np.min
 np.max
+
+Ganz wichtig: KEINE PANIK!
+Diese Aufgabe und auch die zugehörige Lösung sind etwas lang. Das sollte dich aber nicht abschrecken.
+Diese Aufgabe ist nicht schwer, man hat nur 'viel' zu tippen.
+Es geht hier nicht darum, die Lösung 1 zu 1 nach zu arbeiten,
+es geht nur darum, ein Gefühl dafür zu bekommen, wie die numpy Funktionen in unterschiedlichen
+Dimensionen funktionieren. Es reicht also auch vollkommen, die ganze Aufgabe nur mit 
+einer (z.B. nur np.sum) der obigen Funktionen durchzuarbeiten, wenn du das Gefühl hast verstanden
+zu haben wie das ganze funktioniert.
+
 
 1) Was geben diese Funktionen zurück, wenn sie auf das Array 
    A = np.array([0, 1, 2, 3, 4]) angewendet werden.
@@ -46,6 +56,3 @@ np.max
       arrays aus.
 
    
-
-
-
