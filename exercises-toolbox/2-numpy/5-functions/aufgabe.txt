@@ -14,9 +14,19 @@ np.std
    B = np.array([[0, 1, 2, 3], [4, 5, 6, 7], [8, 9, 10, 11]])
    angewendet werden. Bei mehrdimensionalen Arrays gibt es ein
    weiteres Argument für die obigen Funktionen. 
-   Dieses heißt 'axis' und wird so verwendet: np.sum(B, axis=0)
-   In einem 2D Array kann das Argument 0, 1 oder (0, 1) sein.
-   Probiere alle Möglichkeiten aus.
+   Dieses keywordargument heißt 'axis' und kann bei 2D Arrays wie folgt verwendet werden: 
+   np.sum(B, axis=0)
+   np.sum(B, axis=1)
+   np.sum(B, axis=(0, 1))
+   
+   Probiere alle 3 Möglichkeiten mit allen obigen Funktionen aus.
+
+3) In der Datei einkauf.txt sind die Kosten für die Einkäufe einer
+   Studenten-WG eingetragen. Jeder der drei Mitbewohner hält darin
+   für jeden Tag des Monats fest, wie viel er ausgegben hat.
+   
+   a) Wie viel hat jeder Mitbewohner in diesem Monat insgesamt (im Mittel) ausgegeben.
+   b) Wie viel wurde an jedem Tag in diesem Monat insgesamt (im Mittel) ausgegeben.
 
 
    
