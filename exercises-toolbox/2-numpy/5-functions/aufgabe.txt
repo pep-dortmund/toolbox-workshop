@@ -7,6 +7,7 @@ np.prod
 np.mean
 np.std
 
+
 1) Was geben diese Funktionen zurück, wenn sie auf das Array 
    A = np.array([0, 1, 2, 3, 4]) angewendet werden.
 
@@ -29,6 +30,8 @@ np.std
    für jeden Tag des Monats fest, wie viel er ausgegben hat.
    
    a) Wie viel hat jeder Mitbewohner in diesem Monat insgesamt (im Mittel) ausgegeben.
+      Wie viel haben alle fünf zusammen in diesem Monat ausgegeben.
+
    b) Wie viel wurde an jedem Tag in diesem Monat insgesamt (im Mittel) ausgegeben.
 
 
