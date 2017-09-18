@@ -7,6 +7,7 @@ import numpy as np
 A = np.arange(5)
 
 
+print("Aufgabe 1)")
 print(f"Array A: {A}")
 
 # Lösung zu 1)
@@ -15,11 +16,14 @@ print("\tnp.diff(A):", np.diff(A))
 print("\tnp.prod(A):", np.prod(A))
 print("\tnp.mean(A):", np.mean(A))
 print("\tnp.std(A):", np.std(A))
+print("\tnp.min(A):", np.min(A))
+print("\tnp.max(A):", np.max(A))
+
 
 
 B = np.array([[2, 1, 2, 1, 2], [1, 2, 1, 2, 1], [3, 1, 3, 1, 3]])
 
-
+print("Aufgabe 2)")
 print(f"Array B:\n{B}")
 
 # Lösung zu 2)
@@ -27,25 +31,41 @@ print("\tnp.sum(B):", np.sum(B))
 print("\tnp.sum(B, axis=0):", np.sum(B, axis=0))
 print("\tnp.sum(B, axis=1):", np.sum(B, axis=1))
 print("\tnp.sum(B, axis=(0,1)):", np.sum(B, axis=(0, 1)))
+print()
 print("\tnp.diff(B):\n", np.diff(B))
 print("\tnp.diff(B, axis=0):\n", np.diff(B, axis=0))
 print("\tnp.diff(B, axis=1):\n", np.diff(B, axis=1))
+print()
 print("\tnp.prod(B):", np.prod(B))
 print("\tnp.prod(B, axis=0):", np.prod(B, axis=0))
 print("\tnp.prod(B, axis=1):", np.prod(B, axis=1))
 print("\tnp.prod(B, axis=(0,1)):", np.prod(B, axis=(0, 1)))
+print()
 print("\tnp.mean(B):", np.mean(B))
 print("\tnp.mean(B, axis=0):", np.mean(B, axis=0))
 print("\tnp.mean(B, axis=1):", np.mean(B, axis=1))
 print("\tnp.mean(B, axis=(0,1)):", np.mean(B, axis=(0, 1)))
+print()
 print("\tnp.std(B):", np.std(B))
 print("\tnp.std(B, axis=0):", np.std(B, axis=0))
 print("\tnp.std(B, axis=1):", np.std(B, axis=1))
 print("\tnp.std(B, axis=(0,1)):", np.std(B, axis=(0, 1)))
+print()
+print("\tnp.min(B):", np.min(B))
+print("\tnp.min(B, axis=0):", np.min(B, axis=0))
+print("\tnp.min(B, axis=1):", np.min(B, axis=1))
+print("\tnp.min(B, axis=(0,1)):", np.min(B, axis=(0, 1)))
+print()
+print("\tnp.max(B):", np.max(B))
+print("\tnp.max(B, axis=0):", np.max(B, axis=0))
+print("\tnp.max(B, axis=1):", np.max(B, axis=1))
+print("\tnp.max(B, axis=(0,1)):", np.max(B, axis=(0, 1)))
 
 
 # Lösung 3)
 data = np.loadtxt("einkauf.txt")
+
+print("Aufgabe 3)")
 print("Daten\n", data)
 
 sum_per_person = np.sum(data, axis=0)
