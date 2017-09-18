@@ -19,7 +19,8 @@ np.std
    np.sum(B, axis=1)
    np.sum(B, axis=(0, 1))
    
-   Probiere alle 3 Möglichkeiten mit allen obigen Funktionen aus.
+   Man kann das keywordargument aber auch weiterhin weg lassen.
+   Probiere alle vier Möglichkeiten mit allen obigen Funktionen aus.
    (Hinweis: Für die Funktion np.diff funktionieren nur die beiden ersten Varianten!)
 
 3) In der Datei einkauf.txt sind die Kosten für die Einkäufe einer
