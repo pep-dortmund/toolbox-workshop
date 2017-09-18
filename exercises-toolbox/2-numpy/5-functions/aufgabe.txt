@@ -21,7 +21,8 @@ np.std
    
    Man kann das keywordargument aber auch weiterhin weg lassen.
    Probiere alle vier Möglichkeiten mit allen obigen Funktionen aus.
-   (Hinweis: Für die Funktion np.diff funktionieren nur die beiden ersten Varianten!)
+   (Hinweis: Die Funktion np.diff funktioniert etwas anders als die anderen Funktionen.
+   Zum Beispiel funktioniert 'axis=(0, 1)' für diese Funktion nicht.)
 
 3) In der Datei einkauf.txt sind die Kosten für die Einkäufe einer
    Studenten-WG eingetragen. Jeder der fünf Mitbewohner hält darin
