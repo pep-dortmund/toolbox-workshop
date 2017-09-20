@@ -11,8 +11,8 @@ endif
 all: build/loesung.pdf
 
 build/loesung.pdf: FORCE $(addprefix build/loesung-, table.tex a.tex b.tex c.tex d.tex plot.pdf) | build
-	  TEXINPUTS="$(call translate,build:)" \
-	  max_print_line=1048576 \
+	TEXINPUTS="$(call translate,build:)" \
+	max_print_line=1048576 \
 	latexmk \
 	  --lualatex \
 	  --output-directory=build \
@@ -20,8 +20,8 @@ build/loesung.pdf: FORCE $(addprefix build/loesung-, table.tex a.tex b.tex c.tex
 	  --halt-on-error \
 	loesung.tex
 
-build/loesung-plot.pdf: loesung.py curve_fit.py table.py data.txt loesung-matplotlibrc loesung-header-matplotlib.tex | build
-	TEXINPUTS="$(call translate,$(pwd):)" python loesung.py
+build/loesung-plot.pdf: loesung.py curve_fit.py data.txt loesung-matplotlibrc loesung-header-matplotlib.tex | build
+	MATPLOTLIBRC=loesung TEXINPUTS="$(call translate,$(pwd):)" python loesung.py
 
 $(addprefix build/loesung-, table.tex a.tex b.tex c.tex d.tex): build/loesung-plot.pdf
 

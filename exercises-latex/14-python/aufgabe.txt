@@ -9,23 +9,16 @@ Plotte die Daten und die gefittete Funktion.
 Verwende das pgf-Backend und eine matplotlibrc sowie die nötigen LaTeX-Pakete,
 um die Beschriftung schön zu machen.
 
-Benutze die Funktionen aus table.py, um die Daten und Ergbnisse in .tex-Dateien zu schreiben.
+
 Teile die Daten dabei in zwei Spalten auf, damit die Tabelle nicht zu lang wird.
 
-Bei
-
-        make_table(columns, figures=None)
-
-ist columns eine Liste aus den Daten (NumPy-Arrays) der Spalten (mit oder ohne Fehler).
-figures ist eine Liste mit einem Wert pro Spalte.
-figures gibt bei Werten mit Fehlern die Anzahl der signifikanten Stellen des Fehlers an, wobei None den Rundungsalgortihmus von uncertainties verwendet.
-Bei Werten ohne Fehlern gibt figures die Anzahl der Nachkommastellen an.
 
 Schreibe auch die Ergebnisse für die Fitparameter in .tex-Dateien in der Form
 
         \SI{1+-2e3}{\meter} .
 
 Dabei ist e3 aber nicht unbedingt nötig in dieser Aufgabe.
+
 Nutze dazu die Funktion
 
         make_SI(num, unit, exp='', figures=None) .
@@ -33,15 +26,8 @@ Nutze dazu die Funktion
 Dabei gibt num den Wert (mit Fehler) an.
 unit ist die Einheit in der Form eines Strings mit siunitx-Einheitenbefehlen.
 exp ist optional und gibt einen Exponenten in der Form 'e3' an.
-figures funktioniert wie bei make_table.
 
-Die Funktion
-
-        write(filename, content)
-
-schreibt den String content in die Datei filename.
 
 Schreibe ein Protokoll, in der Du den Plot, die Tabelle und die Fitergebnisse (als Formeln) einbindest.
-Man muss vor tabular \sisetup{parse-numbers=false} setzen, da sonst ein Fehler auftritt.
-Weitere Infos dazu gibt es unter: http://tex.stackexchange.com/a/23460/32665 .
+
 Schreibe ein Makefile, das alle Dateien neu erstellen kann.
