@@ -5,6 +5,8 @@
 
 \begin{lrbox}{\mathfontsone}
   \begin{lstlisting}
+    \usepackage{fontspec}
+
     \usepackage{amsmath}   % unverzichtbare Mathe-Befehle
     \usepackage{amssymb}   % viele Mathe-Symbole
     \usepackage{mathtools} % Erweiterungen für amsmath
@@ -13,11 +15,11 @@
 
 \begin{lrbox}{\mathfontstwo}
   \begin{lstlisting}
+    \usepackage{fontspec}
+
     \usepackage{amsmath}   % unverzichtbare Mathe-Befehle
     \usepackage{amssymb}   % viele Mathe-Symbole
     \usepackage{mathtools} % Erweiterungen für amsmath
-
-    \usepackage{fontspec} % nach amssymb
 
     \usepackage[
 
@@ -26,16 +28,18 @@
 
 
     ]{unicode-math}      % "Does exactly what it says on the tin."
+    % Laden von OTF-Mathefonts
+    % Ermöglich Unicode Eingabe von Zeichen: α statt \alpha
   \end{lstlisting}
 \end{lrbox}
 
 \begin{lrbox}{\mathfontsthree}
   \begin{lstlisting}
+    \usepackage{fontspec}
+
     \usepackage{amsmath}   % unverzichtbare Mathe-Befehle
     \usepackage{amssymb}   % viele Mathe-Symbole
     \usepackage{mathtools} % Erweiterungen für amsmath
-
-    \usepackage{fontspec} % nach amssymb
 
     \usepackage[
       math-style=ISO,    % \
@@ -44,16 +48,18 @@
       nabla=upright,     % |
       partial=upright,   % /
     ]{unicode-math}      % "Does exactly what it says on the tin."
+    % Laden von OTF-Mathefonts
+    % Ermöglich Unicode Eingabe von Zeichen: α statt \alpha
   \end{lstlisting}
 \end{lrbox}
 
 \begin{lrbox}{\mathfontsfour}
   \begin{lstlisting}
+    \usepackage{fontspec}
+
     \usepackage{amsmath}   % unverzichtbare Mathe-Befehle
     \usepackage{amssymb}   % viele Mathe-Symbole
     \usepackage{mathtools} % Erweiterungen für amsmath
-
-    \usepackage{fontspec} % nach amssymb
 
     \usepackage[
       math-style=ISO,    % \
@@ -62,6 +68,8 @@
       nabla=upright,     % |
       partial=upright,   % /
     ]{unicode-math}      % "Does exactly what it says on the tin."
+    % Laden von OTF-Mathefonts
+    % Ermöglich Unicode Eingabe von Zeichen: α statt \alpha
 
     \setmathfont{Latin Modern Math}
     % \setmathfont{Tex Gyre Pagella Math} % alternativ
