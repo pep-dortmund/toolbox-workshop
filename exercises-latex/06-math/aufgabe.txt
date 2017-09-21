@@ -9,9 +9,10 @@ Aufgabe 1:
   vor.
 
 Aufgabe 2:
-  Setzt das Biot–Savart-Gesetz. Erklärt darunter im Fließtext
-  die darin vorkommenden Größen und Konstanten.
-  Versucht dafür die $-Umgebung und weitere Umgebungen zu verwenden, die Ihr kennen gelernt habt.
+  Setzt das Biot–Savart-Gesetz.
+  Erklärt darunter im Fließtext die darin vorkommenden Größen und Konstanten.
+  Versucht dafür die $-Umgebung und weitere Umgebungen zu verwenden,
+  die Ihr kennen gelernt habt.
 
 Aufgabe 3:
   Setzt die Formel für die gaußsche Fehlerfortpflanzung.
@@ -21,8 +22,7 @@ Aufgabe 4:
   Dabei sollen jeweils die homogenen bzw. die inhomogen
   Gleichungen in einer Zeile stehen und die Gleichungen für
   E bzw. B untereinander.
-  Richtet die Gleichungen jeweils Vertikal am Gleicheitszeichen
-  aus.
+  Richtet die Gleichungen jeweils Vertikal am Gleicheitszeichen aus.
 
 Aufgabe 5:
   Leitet aus den Maxwellgleichungen im Vakuum die Wellengleichung

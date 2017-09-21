@@ -20,6 +20,11 @@ build/loesung-mm-paper.pdf: loesung-mm-paper.tex | build
 		--interaction=batchmode \
 		--halt-on-error \
 		loesung-mm-paper.tex
+	lualatex \
+		--output-directory=build \
+		--interaction=batchmode \
+		--halt-on-error \
+		loesung-mm-paper.tex
 
 build/loesung-nikolaus.pdf: loesung-nikolaus.tex | build
 	lualatex \

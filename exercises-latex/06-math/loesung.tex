@@ -2,14 +2,14 @@
 
 \usepackage[aux]{rerunfilecheck}
 
+\usepackage{fontspec}
+
 \usepackage{polyglossia}
 \setmainlanguage{german}
 
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{mathtools}
-
-\usepackage{fontspec}
 
 \usepackage[
   math-style=ISO,
@@ -26,12 +26,12 @@
 
 \section{Biot--Savart}
 
-Das Magnetfeld $\vec{B}$ am Ort $\vec{r}$ eines stromdurchflossenen Leiters ergibt sich zu
+Das Magnetfeld $\symbf{B}$ am Ort $\symbf{r}$ eines stromdurchflossenen Leiters ergibt sich zu
 \begin{equation}
-  \vec{B}(\vec{r}) = \frac{\mu_0}{4 \symup{\pi}}
-    \int_V \vec{\jmath}(\vec{r}') \times \frac{\vec{r} - \vec{r}'}{\lvert \vec{r} - \vec{r}' \rvert^3} \, \symup{d}V' .
+  \symbf{B}(\symbf{r}) = \frac{\mu_0}{4 \symup{\pi}}
+    \int_V \symbf{j}(\symbf{r}') \times \frac{\symbf{r} - \symbf{r}'}{\lvert \symbf{r} - \symbf{r}' \rvert^3} \, \symup{d}V' .
 \end{equation}
-Hierbei bezeichnet $\vec{\jmath}$ die Stromdichte am Ort $\vec{r}'$ und $\mu_0$ die magnetische Feldkonstante.
+Hierbei bezeichnet $\symbf{j}$ die Stromdichte am Ort $\symbf{r}'$ und $\mu_0$ die magnetische Feldkonstante.
 
 \section{Fehlerfortpflanunzung}
 
@@ -45,42 +45,42 @@ Hierbei bezeichnet $\vec{\jmath}$ die Stromdichte am Ort $\vec{r}'$ und $\mu_0$ 
 \section{Die vier Maxwellgleichungen}
 
 \begin{align}
-  \nabla \cdot  \vec{E} &= \frac{\rho}{\varepsilon_0} &
-  \nabla \cdot  \vec{B} &= 0 \\
-  \nabla \times \vec{E} &= - \partial_t \vec{B} &
-  \nabla \times \vec{B} &= \mu_0 \vec{\jmath} + \mu_0 \varepsilon_0 \partial_t \vec{E}
+  \nabla \cdot  \symbf{E} &= \frac{\rho}{\varepsilon_0} &
+  \nabla \cdot  \symbf{B} &= 0 \\
+  \nabla \times \symbf{E} &= - \partial_t \symbf{B} &
+  \nabla \times \symbf{B} &= \mu_0 \symbf{\jmath} + \mu_0 \varepsilon_0 \partial_t \symbf{E}
 \end{align}
 
 \section{Wellengleichung}
 
-Im Vakuum gelten $\rho = 0$ und $\vec{\jmath} = 0$, womit sich die Maxwellgleichungen zu
+Im Vakuum gelten $\rho = 0$ und $\symbf{\jmath} = 0$, womit sich die Maxwellgleichungen zu
 \begin{align}
-  \nabla \cdot  \vec{E} &= 0 \label{eqn:max1} \\
-  \nabla \cdot  \vec{B} &= 0 \label{eqn:max2} \\
-  \nabla \times \vec{E} &= - \partial_t \vec{B} \label{eqn:max3} \\
-  \nabla \times \vec{B} &= \mu_0 \varepsilon_0 \partial_t \vec{E} \label{eqn:max4}
+  \nabla \cdot  \symbf{E} &= 0 \label{eqn:max1} \\
+  \nabla \cdot  \symbf{B} &= 0 \label{eqn:max2} \\
+  \nabla \times \symbf{E} &= - \partial_t \symbf{B} \label{eqn:max3} \\
+  \nabla \times \symbf{B} &= \mu_0 \varepsilon_0 \partial_t \symbf{E} \label{eqn:max4}
 \end{align}
 reduzieren.
 Nach erneuter Anwendung der Rotation auf \eqref{eqn:max3} ergibt sich
 \begin{equation}
-  \nabla \times \left( \nabla \times \vec{E} \right) = \nabla \times \left( - \partial_t \vec{B} \right) .
+  \nabla \times \left( \nabla \times \symbf{E} \right) = \nabla \times \left( - \partial_t \symbf{B} \right) .
 \end{equation}
 Nach dem Satz von Schwarz lassen sich die partiellen Ableitungen vertauschen, was zu
 \begin{equation}
-  \nabla \times \left( \nabla \times \vec{E} \right) = - \partial_t \! \left( \nabla \times \vec{B} \right) .
+  \nabla \times \left( \nabla \times \symbf{E} \right) = - \partial_t \! \left( \nabla \times \symbf{B} \right) .
 \end{equation}
 führt.
 Wir setzen auf der rechten Seite \eqref{eqn:max4} ein:
 \begin{equation}
-  \nabla \times \left( \nabla \times \vec{E} \right) = - \mu_0 \varepsilon_0 \partial_t^2 \vec{E} .
+  \nabla \times \left( \nabla \times \symbf{E} \right) = - \mu_0 \varepsilon_0 \partial_t^2 \symbf{E} .
 \end{equation}
 Aus der linken Seite wird mit
 \begin{equation}
-  \nabla \times \left( \nabla \times \vec{E} \right) = \nabla \cdot \left( \nabla \cdot \vec{E} \right) - \increment \vec{E}
+  \nabla \times \left( \nabla \times \symbf{E} \right) = \nabla \cdot \left( \nabla \cdot \symbf{E} \right) - \increment \symbf{E}
 \end{equation}
 und Ausnutzen von \eqref{eqn:max1}
 \begin{equation}
-  - \increment\vec{E} = -\mu_0 \varepsilon_0 \partial_t^2 \vec{E} .
+  - \increment\symbf{E} = -\mu_0 \varepsilon_0 \partial_t^2 \symbf{E} .
 \end{equation}
 Dies ist die Wellengleichung für das elektrische Feld, in der sich die Lichtgeschwindigkeit
 \begin{equation}
@@ -89,7 +89,7 @@ Dies ist die Wellengleichung für das elektrische Feld, in der sich die Lichtges
 identifizieren lässt.
 Damit können wir
 \begin{equation}
-  \left(\increment - \frac{1}{c^2} \frac{\partial^2}{\partial t^2} \right) \! \vec{E} = 0
+  \left(\increment - \frac{1}{c^2} \frac{\partial^2}{\partial t^2} \right) \! \symbf{E} = 0
 \end{equation}
 schreiben.
 
