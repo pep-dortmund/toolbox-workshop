@@ -182,16 +182,16 @@
 }
   Standardeinstellung sind die Latin-Modern-Fonts.
   \vspace{1em}
-  \begin{CodeExplanation}{0.48}[Latin Modern][Alternativ: Tex Gyre]
+  \begin{CodeExplanation}{0.48}[Latin Modern][Alternativ zum Beispiel: Libertinus]
     \begin{lstlisting}
       \usepackage{fontspec}
     \end{lstlisting}
   \Explanation
     \begin{lstlisting}
       \usepackage{fontspec}
-      \setmainfont{Tex Gyre Termes}
-      \setsansfont{Tex Gyre Heros}
-      \setmonofont{Tex Gyre Cursor}
+      \setmainfont{Libertinus Serif}
+      \setsansfont{Libertinus Sans}
+      \setmonofont{Libertinus Mono}
     \end{lstlisting}
   \end{CodeExplanation}
   \begin{itemize}
@@ -200,6 +200,7 @@
     \item Schriften müssen zueinander passen
     \item Schriften müssen alle benötigten Sonderzeichen enthalten
     \item Bei Änderung auch Mathefont anpassen → später
+    \item Welche Schriftarten zueinander passen ist eine Wissenschaft für sich.
   \end{itemize}
 \end{frame}
 
@@ -208,10 +209,12 @@
     \documentclass{scrartcl}
 
     \usepackage[aux]{rerunfilecheck}
+
+    \usepackage{fontspec}
+
     \usepackage{polyglossia}
     \setmainlanguage{german}
 
-    \usepackage{fontspec}
     % mehr Pakete hier
 
     \usepackage[unicode]{hyperref}
