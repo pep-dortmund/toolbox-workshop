@@ -3,6 +3,7 @@ import scipy.optimize
 import uncertainties as unc
 import uncertainties.unumpy as unp
 
+
 def ucurve_fit(f, x, y, **kwargs):
     if np.any(unp.std_devs(y) == 0):
         sigma = None

@@ -3,7 +3,6 @@ import uncertainties as unc
 import uncertainties.unumpy as unp
 from uncertainties.unumpy import (nominal_values as noms,
                                   std_devs as stds)
-import matplotlib as mpl
 import matplotlib.pyplot as plt
 
 from linregress import ulinregress
@@ -25,8 +24,8 @@ lambda_ = -A
 print("λ =", lambda_)
 
 x = np.linspace(0, 4000)
-plt.plot(x, np.exp(noms(A * x + B)), 'b-', label='Regressionsgerade')
-plt.errorbar(t, noms(N), yerr=stds(N), fmt='rx', label='Messwerte')
+plt.plot(x, np.exp(noms(A * x + B)), '-', label='Regressionsgerade')
+plt.errorbar(t, noms(N), yerr=stds(N), fmt='x', label='Messwerte')
 plt.yscale('log', nonposy='clip')
 plt.xlabel(r'$t \,/\, \mathrm{s}$')
 plt.ylabel(r'$N$')
