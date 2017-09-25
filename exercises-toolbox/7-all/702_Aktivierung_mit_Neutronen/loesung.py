@@ -24,7 +24,7 @@ lambda_ = -A
 print("λ =", lambda_)
 
 x = np.linspace(0, 4000)
-plt.plot(x, np.exp(noms(A * x + B)), '-', label='Regressionsgerade')
+plt.plot(x, np.exp(noms(A * x + B)), label='Regressionsgerade')
 plt.errorbar(t, noms(N), yerr=stds(N), fmt='x', label='Messwerte')
 plt.yscale('log', nonposy='clip')
 plt.xlabel(r'$t \,/\, \mathrm{s}$')

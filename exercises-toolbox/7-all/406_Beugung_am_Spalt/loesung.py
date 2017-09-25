@@ -22,7 +22,7 @@ popt, pcov = curve_fit(theory, phi, I, p0=[np.sqrt(np.max(I)) / 1e-4, 1e-4])
 print(popt, np.sqrt(np.diag(pcov)), sep='\n')
 
 x = np.linspace(-0.03, 0.03, 100)
-plt.plot(x, theory(x, *popt), '-', label='Fit')
+plt.plot(x, theory(x, *popt), label='Fit')
 plt.plot(phi, I, 'x', label='Daten')
 plt.xlabel(r'$\varphi \,\, / \,\, \mathrm{rad}$')
 plt.ylabel(r'$I \,\, / \,\, \mathrm{A}$')
