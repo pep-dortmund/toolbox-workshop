@@ -26,7 +26,7 @@ popt, pcov = curve_fit(
 print(popt, np.sqrt(np.diag(pcov)), sep='\n')
 
 np.savetxt(
-    'parameter.txt',
+    'build/parameter.txt',
     np.column_stack([popt, np.sqrt(np.diag(pcov))])
 )
 
@@ -36,4 +36,4 @@ plt.plot(phi, I, 'rx', label='Daten')
 plt.xlabel(r'$\varphi \,\, / \,\, \mathrm{rad}$')
 plt.ylabel(r'$I \,\, / \,\, \mathrm{A}$')
 plt.legend(loc='best')
-plt.savefig('plot.pdf')
+plt.savefig('build/plot.pdf')

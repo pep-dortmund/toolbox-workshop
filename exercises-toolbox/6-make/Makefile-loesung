@@ -3,7 +3,7 @@ all: plot.pdf parameter.txt
 plot.pdf parameter.txt: auswertung.py lambda.txt L.txt I.txt
 	python auswertung.py
 
-clean: plot.pdf parameter.txt
-	rm plot.pdf parameter.txt
+clean:
+	rm -f plot.pdf parameter.txt
 
 .PHONY: all clean
