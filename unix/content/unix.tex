@@ -56,23 +56,49 @@
 \end{frame}
 
 \begin{frame}{Dateisystem}
-  \begin{itemize}
-    \item bildet \emph{einen} Baum
+  \begin{columns}[onlytextwidth]
+    \begin{column}{0.475\textwidth}
       \begin{itemize}
-        \item beginnt bei \texttt{/} (root)
-        \item \texttt{/} trennt Teile eines Pfads
-        \item auf Groß-/Kleinschreibung achten!
+        \item bildet \emph{einen} Baum
+          \begin{itemize}
+            \item beginnt bei \texttt{/} (root)
+            \item \texttt{/} trennt Teile eines Pfads
+            \item auf Groß-/Kleinschreibung achten!
+          \end{itemize}
+        \item es gibt ein aktuelles Verzeichnis
+        \item relativer Pfad: vom akuellen Verzeichnis aus (Kein führender \alert{/})
+        \item absoluter Pfad: von \alert{/} aus
+        \item spezielle Verzeichnisse:
+          \begin{description}[\texttt{..}]
+            \item[\texttt{.}] das aktuelle Verzeichnis
+            \item[\texttt{..}] das Oberverzeichnis
+            \item[\texttt{\textasciitilde}] das Homeverzeichnis
+            \item[\texttt{-}] das vorherige Verzeichnis
+          \end{description}
       \end{itemize}
-    \item es gibt ein aktuelles Verzeichnis
-    \item relative vs. absolute Pfade
-    \item spezielle Verzeichnisse:
-      \begin{itemize}
-        \item \texttt{.} das aktuelle Verzeichnis
-        \item \texttt{..} das Oberverzeichnis
-        \item \texttt{\textasciitilde} das Homeverzeichnis
-        \item \texttt{-} das vorherige Verzeichnis
-      \end{itemize}
-  \end{itemize}
+    \end{column}
+  \end{columns}
+  \begin{tikzpicture}[
+      tree layout,
+      font=\ttfamily\bfseries\Large,
+      shift={(12, 5)},
+      remember picture,
+      overlay,
+    ]
+    \graph[grow down] {
+      "/" -> {
+        "home/" -> {
+          "mnoethe/" -> {
+            "Documents/" -> "Example.tex",
+            ".bashrc",
+          },
+          "jluckey/",
+        }, 
+        "etc/",
+        "data/"
+      }
+    };
+  \end{tikzpicture}
 \end{frame}
 
 \begin{frame}[fragile]{User, Gruppen, Rechte}
