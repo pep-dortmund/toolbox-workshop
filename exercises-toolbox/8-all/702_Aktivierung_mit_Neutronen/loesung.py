@@ -7,12 +7,12 @@ import matplotlib.pyplot as plt
 
 from linregress import ulinregress
 
-Delta_t_0 = np.loadtxt('Delta_t_0.txt')
-N_0 = np.loadtxt('N_0.txt')
+Delta_t_0 = np.genfromtxt('Delta_t_0.txt')
+N_0 = np.genfromtxt('N_0.txt')
 N_0 = unc.ufloat(N_0, np.sqrt(N_0))
 
-Delta_t = np.loadtxt('Delta_t.txt')
-N_g = np.loadtxt('N_g.txt', unpack=True)
+Delta_t = np.genfromtxt('Delta_t.txt')
+N_g = np.genfromtxt('N_g.txt', unpack=True)
 N_g = unp.uarray(N_g, np.sqrt(N_g))
 
 t = Delta_t * np.arange(1, len(N_g) + 1)

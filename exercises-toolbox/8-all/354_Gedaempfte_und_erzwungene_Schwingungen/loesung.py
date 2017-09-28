@@ -1,12 +1,11 @@
 import numpy as np
-import matplotlib as mpl
 import matplotlib.pyplot as plt
 
 L, C, R = np.loadtxt('geraetedaten.txt', unpack=True)
 L *= 1e-3
 C *= 1e-9
 
-nu, arg, Z = np.loadtxt('impedanz.txt', unpack=True)
+nu, arg, Z = np.genfromtxt('impedanz.txt', unpack=True)
 nu *= 1e3
 omega = 2 * np.pi * nu
 arg = np.deg2rad(arg)
@@ -37,14 +36,14 @@ plt.polar(arg, Z, 'C1x', label='Messwerte')
 plt.ylim(0, 600)
 plt.xlabel(r'$\varphi \,/\, \mathrm{rad}$')
 plt.figtext(0.67, 0.68, r'$|Z| \,/\, \mathrm{\Omega}$')
-plt.thetagrids([0, 45, 90, 135, 180, 225, 270, 315], labels=[r'$0$',
-                                                             r'$\frac{1}{4} \pi$',
-                                                             r'$\frac{1}{2} \pi$',
-                                                             r'$\frac{3}{4} \pi$',
-                                                             r'$\pm \pi$',
-                                                             r'$- \frac{3}{4} \pi$',
-                                                             r'$- \frac{1}{2} \pi$',
-                                                             r'$- \frac{1}{4} \pi$'])
+plt.thetagrids(
+    [0, 45, 90, 135, 180, 225, 270, 315],
+    labels=[
+        r'$0$', r'$\frac{1}{4} \pi$', r'$\frac{1}{2} \pi$',
+        r'$\frac{3}{4} \pi$', r'$\pm \pi$', r'$- \frac{3}{4} \pi$',
+        r'$- \frac{1}{2} \pi$', r'$- \frac{1}{4} \pi$',
+    ],
+)
 plt.rgrids([200, 400, 600])
 plt.legend(bbox_to_anchor=(0.45, 0.8, 0, 0))
 plt.tight_layout()

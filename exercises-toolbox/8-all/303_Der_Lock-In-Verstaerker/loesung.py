@@ -1,8 +1,5 @@
 import numpy as np
-import uncertainties as unc
-import uncertainties.unumpy as unp
-from uncertainties.unumpy import (nominal_values as noms,
-                                  std_devs as stds)
+from uncertainties.unumpy import nominal_values as noms
 import matplotlib.pyplot as plt
 
 from curve_fit import ucurve_fit
@@ -12,7 +9,7 @@ def Ur(r, A, B, C):
     return A + B / (r + C)**2
 
 
-r, U, PA, LI, LP = np.loadtxt('LED.txt', unpack=True)
+r, U, PA, LI, LP = np.genfromtxt('LED.txt', unpack=True)
 r *= 1e-2
 U /= PA * LI * LP
 

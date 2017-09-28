@@ -10,7 +10,7 @@ def theory(phi, A0, b):
 
 L = np.loadtxt('L.txt')
 L *= 1e-2
-lambda_ = np.loadtxt('lambda.txt')
+lambda_ = np.genfromtxt('lambda.txt')
 lambda_ *= 1e-9
 zeta, I = np.loadtxt('I.txt', unpack=True)
 zeta *= 1e-3
