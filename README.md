@@ -18,8 +18,8 @@ Folgende Themen sind Teil des Workshops:
 
 # Build Requirements
 
-- up-to-date TeXLive 2016
-- up-to-date anaconda3
+- up-to-date TeXLive 2018 (pretest at the moment)
+- up-to-date anaconda3 (using python 3.6.4)
 - poppler (for pdfseparate)
 - wget 
 
