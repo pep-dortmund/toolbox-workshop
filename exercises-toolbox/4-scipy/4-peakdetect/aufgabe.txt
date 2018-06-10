@@ -8,12 +8,11 @@ sein.
 
 Dazu gibt es in scipy.signal die Funktion
 
-find_peaks_cwt(y, widths)
+find_peaks(y, prominence, distance, ...)
 
 Dabei ist y ein Array von Werten, in denen Peaks gefunden werden sollen.
-Widths ist ein Array mit Breiten von Suchfenstern.
-In dieser Aufgabe eignet sich dafür np.linspace(30, 50, 30).
-Die Funktion gibt die Indizes der Maxima aus.
+Die Funktion bekommt weitere Optionen, um die Ergebnisse einzuschränken.
+Wichtig sind zum Beispiel `prominence` und `distance`.
 
 Frage:
 Wie findet man mit der Funktion Minima?
