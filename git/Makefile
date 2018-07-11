@@ -9,7 +9,7 @@ build/figures/github.png: | build/figures
 	cp build/figures/GitHub-Logos/GitHub_Logo.png $@
 
 build/figures/bitbucket.png: | build/figures
-	wget http://www.atlassian.com/dms/wac/images/press/Atlassian-logos/logoBitBucketPNG.png -O $@ --no-use-server-timestamps
+	wget https://www.atlassian.com/dam/jcr:e2a6f06f-b3d5-4002-aed3-73539c56a2eb/Bitbucket@2x-blue.png -O $@ --no-use-server-timestamps
 
 build/figures/gitlab.png: | build/figures
 	wget https://gitlab.com/gitlab-com/gitlab-artwork/raw/master/wordmark/wm_no_bg.png -O $@ --no-use-server-timestamps
