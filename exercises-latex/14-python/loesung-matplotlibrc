@@ -9,3 +9,5 @@ pgf.rcfonts : False
 text.usetex : True
 pgf.texsystem : lualatex
 pgf.preamble : \input{loesung-header-matplotlib.tex}
+figure.autolayout : True
+figure.autolayout.pad : 0

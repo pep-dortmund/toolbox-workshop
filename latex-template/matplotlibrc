@@ -20,3 +20,7 @@ pgf.rcfonts : False
 text.usetex : True
 pgf.texsystem : lualatex
 pgf.preamble : \input{header-matplotlib.tex}
+
+# keine weißen Ränder
+figure.autolayout : True
+figure.autolayout.pad : 0
