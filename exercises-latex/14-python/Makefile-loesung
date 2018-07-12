@@ -6,7 +6,7 @@ build/loesung.pdf: FORCE $(addprefix build/loesung-, table.tex a.tex b.tex c.tex
 	latexmk \
 	  --lualatex \
 	  --output-directory=build \
-	  --interaction=nonstopmode \
+	  --interaction=batchmode \
 	  --halt-on-error \
 	loesung.tex
 
