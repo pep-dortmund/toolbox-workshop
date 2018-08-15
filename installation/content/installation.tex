@@ -1,0 +1,51 @@
+\begin{frame}{W-Lan}
+    Da das Netz ITMC-WPA2 am 01.10.18 abgeschaltet werden soll(te), hier die Einstellungen für eduroam.
+    \begin{itemize}
+        \item Wi-Fi security: WPA- $\&$ WPA2-Enterprise
+        \item Authentication: Geschütztes EAP (PEAP)
+        \item Anonymous Identity: telesec@tu-dortmund.de
+        \item Domain: tu-dortmund.de
+        \item CA-Zertifikat: T-TeleSec$\_$GlobalRoot$\_$Class$\_$2.crt
+        \item zu finden in usr/share/ca-certificates/mozilla/T-TeleSec$\_$GlobalRoot$\_$Class$\_$2.crt
+        \item PEAP-Version: Automatisch
+        \item Inner authentication: MSCHAPv2
+        \item Username: smxxxx@udo.edu
+        \item Passwort: *******
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Acer-Installation}
+    Acer ist der Ansicht, dass nur von Ihnen ausgesuchte Betribessysteme bootfähig sein sollen.
+    Da das vor allem im Dualboot mit Windows und Unix-OS zu Problemen führt, hier zusammengefasst was man machen kann.\\
+    Quelle: \url{https://wiki.ubuntuusers.de/EFI_Problembehebung/}, abgerufen 15.08.18
+
+\end{frame}
+
+\begin{frame}{Eine Plattte}
+    vor der Installation
+    \begin{enumerate}
+        \item UEFI mit \enquote{F2} aufrufen
+        \item Touchpadmodus auf Basic stellen
+        \item Security -> Set Supervisor Password, Vorschlag: passwort, es wird nach der Installation wieder entfernt
+        \item Menüpunkt Boot, Modus UEFI, Secure Boot enabled
+        \item \enquote{F10}, yes
+    \end{enumerate}
+    Installation
+\end{frame}
+
+\begin{frame}{Eine Platte}
+    nach der Installation
+    \begin{enumerate}
+        \item UEFI mit \enquote{F2} aufrufen
+        \item Passwort eingeben
+        \item Menüpunkt Security -> Select an UEFI file as trusted for executing
+        \item HDD0 -> EFI -> <ubuntu> -> shimx64.efi
+        \item Supervisor Password wieder rausnehmen
+        \item \enquote{F10}
+    \end{enumerate}
+\end{frame}
+
+\begin{frame}{Zwei Platten}
+    Diesen Weg habe ich nicht selber getestet, er hat letztes Jahr, 2017, wohl funktioniert.
+    \url{https://askubuntu.com/questions/627416/acer-aspire-e15-will-not-dual-boot}
+\end{frame}
