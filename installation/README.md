@@ -1,4 +1,4 @@
-# Bemerkungen zur Installation auf Acer-Laptops und zur W-Lan Einrichtung
+# Bemerkungen zur W-Lan Einrichtung und zur Installation auf Acer-Laptops
 
 ## W-Lan
 
@@ -26,7 +26,7 @@ Vor der Installation:
  - UEFI mit `F2` aufrufen
  - Touchpadmodus auf **Basic** stellen
  - `Security` → `Set Supervisor Password`
-    - Vorschlag *passwort*, wird nach der Installtaion wieder entfernt
+    - Vorschlag *passwort*, wird nach der Installation wieder entfernt
  - `Boot`
     - Modus: **UEFI**
     - Secure Boot: **enabled**
@@ -35,10 +35,10 @@ Vor der Installation:
 Die Installation läuft wie gewohnt ab.
 
 Nach der Installation, beim ersten Start:
+ - USB-Stick entfernen
  - UEFI mit `F2` aufrufen
  - Passwort eingeben, z.B. *passwort*
- - `Security` → `Select an UEFI file as trusted for executing`
- - `HDD0` → `EFI` → `<ubuntu>` → `shimx64.efi`
+ - `Security` → `Select an UEFI file as trusted for executing` → `HDD0` → `EFI` → `<ubuntu>` → `shimx64.efi`
  - Supervisor Password wieder entfernen
  - mit `F10` und *yes* verlassen
 
