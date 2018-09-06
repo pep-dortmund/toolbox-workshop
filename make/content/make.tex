@@ -227,7 +227,7 @@
 
 \begin{frame}[fragile]{Expert}
   Können mehrere unabhängige Auswertungen parallel ausgeführt werden? \\
-  → Ja: \texttt{make -j4} (nutzt 4 Prozesse gleichzeitig)
+  → Ja: \texttt{make -jN} (nutzt N Prozesse gleichzeitig)
 
   Problem: Manchmal führt \texttt{make} Skripte gleichzeitig zweimal aus (hier \texttt{plot.py})
   \begin{center}
