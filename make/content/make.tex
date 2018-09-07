@@ -193,11 +193,13 @@
 
   \begin{itemize}
     \item \texttt{| build} ist ein order-only Prerequisite: Alter wird ignoriert
-    \item Targets, die bei \texttt{.PHONY} genannt werden, sind keine Dateien (z.B. Ordner / guter Stil)
+    \item Targets von \texttt{.PHONY} existieren nach dem ausführen nicht, keine Dateien/Ordner (guter Stil)
+    % vorher: \item Targets, die bei \texttt{.PHONY} genannt werden, entsprechen nicht Dateien (guter Stil)
+    % ähnlich dazu: \item Targets, die bei \texttt{.PHONY} genannt werden, sind keine Dateien (guter Stil)
   \end{itemize}
 \end{frame}
 
-\begin{frame}[fragile]{Vergleich: Kuchen Backen}
+\begin{frame}[fragile]{Vergleich: Kuchen backen}
   \begin{center}
     \begin{lstmake}
     Kuchen: Teig Backen
@@ -227,7 +229,7 @@
 
 \begin{frame}[fragile]{Expert}
   Können mehrere unabhängige Auswertungen parallel ausgeführt werden? \\
-  → Ja: \texttt{make -jN} (nutzt N Prozesse gleichzeitig)
+  → Ja: \;\texttt{make -j4}\; (nutzt 4 Prozesse gleichzeitig, Anzahl beliebig)
 
   Problem: Manchmal führt \texttt{make} Skripte gleichzeitig zweimal aus (hier \texttt{plot.py})
   \begin{center}
