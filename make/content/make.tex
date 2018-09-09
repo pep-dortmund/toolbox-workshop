@@ -193,9 +193,10 @@
 
   \begin{itemize}
     \item \texttt{| build} ist ein order-only Prerequisite: Alter wird ignoriert
-    \item Targets von \texttt{.PHONY} existieren nach dem ausführen nicht, keine Dateien/Ordner (guter Stil)
-    % vorher: \item Targets, die bei \texttt{.PHONY} genannt werden, entsprechen nicht Dateien (guter Stil)
-    % ähnlich dazu: \item Targets, die bei \texttt{.PHONY} genannt werden, sind keine Dateien (guter Stil)
+    \item Targets, die bei \texttt{.PHONY} genannt werden, erzeugen keine Dateien (guter Stil).
+        Bsp: \textbf{\texttt{clean}} löscht Dateien, wird versehentlich eine Datei clean erstellt,
+        soll trotzdem \textbf{\texttt{clean}} ausgeführt werden.
+        Nennung hier hebt die Verwirrung von \texttt{make} auf, beugt vor.
   \end{itemize}
 \end{frame}
 
