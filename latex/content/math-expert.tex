@@ -38,16 +38,9 @@
 
   \begin{lstlisting}
     \AtBeginDocument{ % wird bei \begin{document} ausgeführt
-      \let\symRe=\Re  % werden sonst wieder von unicode-math überschrieben
-      \RenewDocumentCommand \Re {}
-      {
-        \operatorname{Re}
-      }
-      \let\symIm=\Im
-      \RenewDocumentCommand \Im {}
-      {
-        \operatorname{Im}
-      }
+      % werden sonst wieder von unicode-math überschrieben
+      \RenewDocumentCommand \Re {} {\operatorname{Re}}
+      \RenewDocumentCommand \Im {} {\operatorname{Im}}
     }
   \end{lstlisting}
 
