@@ -9,7 +9,7 @@
   \end{enumerate}
   \begin{itemize}
     \item vergessen, Plots neu zu erstellen
-    \item zurück zu Schritt 1 ...  
+    \item zurück zu Schritt 1 ...
   \end{itemize}
 \end{frame}
 
@@ -78,7 +78,7 @@
     \item Wir wollen \texttt{plot.pdf} erzeugen (\texttt{target})
     \begin{itemize}
       \item \texttt{plot.pdf} hängt von \texttt{plot.py} und \texttt{data.txt} ab (\texttt{prerequisites})
-      \item Der Befehl, um \texttt{plot.pdf} aus den \texttt{prerequisites} zu erhalten ist \texttt{python plot.pdf}
+      \item Der Befehl, um \texttt{plot.pdf} aus den \texttt{prerequisites} zu erhalten ist \texttt{python plot.py}
     \end{itemize}
   \end{itemize}
 \end{frame}
@@ -193,15 +193,18 @@
 
   \begin{itemize}
     \item \texttt{| build} ist ein order-only Prerequisite: Alter wird ignoriert
-    \item Targets, die bei \texttt{.PHONY} genannt werden, entsprechen nicht Dateien (guter Stil)
+    \item Targets, die bei \texttt{.PHONY} genannt werden, erzeugen keine Dateien (guter Stil).
+        Bsp: \textbf{\texttt{clean}} löscht Dateien, wird versehentlich eine Datei clean erstellt,
+        soll trotzdem \textbf{\texttt{clean}} ausgeführt werden.
+        Nennung hier hebt die Verwirrung von \texttt{make} auf, beugt vor.
   \end{itemize}
 \end{frame}
 
-\begin{frame}[fragile]{Vergleich: Kuchen Backen}
+\begin{frame}[fragile]{Vergleich: Kuchen backen}
   \begin{center}
     \begin{lstmake}
     Kuchen: Teig Backen
-    
+
     Teig: Eier Mehl Zucker Milch Rumrosinen | Schüssel
         Eier schlagen
         Mehl, Zucker und Milch hinzugeben
@@ -227,13 +230,13 @@
 
 \begin{frame}[fragile]{Expert}
   Können mehrere unabhängige Auswertungen parallel ausgeführt werden? \\
-  → Ja: \texttt{make -j4} (nutzt 4 Prozesse gleichzeitig)
+  → Ja: \;\texttt{make -j4}\; (nutzt 4 Prozesse gleichzeitig, Anzahl beliebig)
 
   Problem: Manchmal führt \texttt{make} Skripte gleichzeitig zweimal aus (hier \texttt{plot.py})
   \begin{center}
     \begin{lstmake}
       all: report.txt
- 
+
       report.txt: plot1.pdf plot2.pdf
         touch report.txt
 
