@@ -3,21 +3,21 @@ include ../common/document.mk
 
 FIGURES := $(addprefix build/figures/, $(addsuffix .pdf, os programming interest))
 
-build/intro.pdf: $(FIGURES) $(addprefix build/figures/, editors.jpg vim.png emacs.png real_programmers.png matplotlib.png sympy.png scipy.png numpy.png atom.jpg)
+build/intro.pdf: $(FIGURES) $(addprefix build/figures/, editors.jpg vim.png nano.png real_programmers.png matplotlib.png sympy.png scipy.png numpy.png code.png)
 
 build/figures/os.pdf: script/answers.py data/2015.tsv
 	TEXINPUTS=$(shell pwd): python3 $<
 
 $(addprefix build/figures/, programming.pdf interest.pdf): build/figures/os.pdf
 
-build/figures/editors.jpg: | build/figures
-	wget http://www.manuelmagic.me/manuelsweb/resources/Geek/Text-editors/text_editors.jpg -O $@ --no-use-server-timestamps
+build/figures/nano.png: | build/figures
+	wget https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Gnu-nano.svg/480px-Gnu-nano.svg.png -O $@ --no-use-server-timestamps
+
+build/figures/code.png: | build/figures
+	wget https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Visual_Studio_Code_1.18_icon.svg/482px-Visual_Studio_Code_1.18_icon.svg.png -O $@ --no-use-server-timestamps
 
 build/figures/vim.png: | build/figures
 	wget https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/Vimlogo.svg/500px-Vimlogo.svg.png -O $@ --no-use-server-timestamps
-
-build/figures/emacs.png: | build/figures
-	wget https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Emacs-logo.svg/500px-Emacs-logo.svg.png -O $@ --no-use-server-timestamps
 
 build/figures/real_programmers.png: | build/figures
 	wget http://imgs.xkcd.com/comics/real_programmers.png -O $@ --no-use-server-timestamps
