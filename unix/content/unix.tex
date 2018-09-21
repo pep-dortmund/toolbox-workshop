@@ -159,7 +159,7 @@ drwxr-xr-x 20 maxnoe maxnoe 4.0K 29. Sep 11:19 Uni
   \end{tabu}
 \end{frame}
 
-\begin{frame}{\texttt{cat}, \texttt{less}, \texttt{grep}, \texttt{echo}}
+\begin{frame}[fragile]{\texttt{cat}, \texttt{less}, \texttt{grep}, \texttt{echo}}
   \begin{tabu}{>{\ttfamily}l X[,L]}
     cat \textit{file}                           & \enquote{concatenate}: gibt Inhalt einer (oder mehr) Datei(en) aus \\
     less \textit{file}                          & (besser als \texttt{more}): wie \texttt{cat}, aber navigabel \\
@@ -167,6 +167,28 @@ drwxr-xr-x 20 maxnoe maxnoe 4.0K 29. Sep 11:19 Uni
     grep -i \textit{pattern} \textit{file}      & \enquote{case insensitive} \\
     grep -r \textit{pattern} \textit{directory} & \enquote{recursive}: suche rekursiv in allen Dateien \\
     echo \textit{message}                       & gibt einen Text aus
+  \end{tabu}
+
+  Beispiel: Finde jedes Paket, dass wir in unseren Python-Skripten importieren:
+  
+  \begin{lstlisting}[language=bash]
+    $ grep -R --include='*.py' import
+    v52_leitungen/scripts/plot_lcrg.py:import pandas as pd
+    v52_leitungen/scripts/plot_lcrg.py:import matplotlib.pyplot as plt
+    v52_leitungen/scripts/plot_lcrg.py:import numpy as np
+    v52_leitungen/scripts/plot_lcrg.py:import yaml
+  \end{lstlisting}
+
+\end{frame}
+
+\begin{frame}[fragile]{\texttt{find}}
+  Sehr mächtiges Werkzeug, um Dateien und Ordner zu finden, und Befehle auszuführen.
+
+  \begin{tabu}{>{\ttfamily}l X[,L]}
+    find . & Rekursiv alle Dateien und Ordner im aktuellen Verzeichnis listen \\
+    find . -type f & Nur Dateien anzeigen \\
+    find . -name '*.py' & Alle Dateien, die mit \texttt{.py} enden \\
+    find . -exec <befehl> \textbackslash{}; & Befehl für jede gefundene Datei ausführen, \texttt{\{\}} wird durch den Dateinamen ersetzt \\
   \end{tabu}
 \end{frame}
 
@@ -178,6 +200,8 @@ drwxr-xr-x 20 maxnoe maxnoe 4.0K 29. Sep 11:19 Uni
     \textit{command1} | \textit{command2} & Ausgabe als Eingabe (Pipe)
   \end{tabu}
 \end{frame}
+
+
 
 \begin{frame}{Tastaturkürzel}
   \begin{tabu}{>{\ttfamily}l X[,L]}
@@ -231,7 +255,7 @@ drwxr-xr-x 20 maxnoe maxnoe 4.0K 29. Sep 11:19 Uni
         \item Shebang, das den ersten Treffer im \texttt{PATH} nutzt, statt festem Pfad: \texttt{\#!/usr/bin/env python}
       \end{itemize}
     \item Änderung über \texttt{export}:\\
-      \texttt{export PATH=/home/maxnoe/anaconda3/bin:\$PATH}
+      \texttt{export PATH=/home/maxnoe/.local/texlive/2018/bin/x86\_64-linux:\$PATH}
   \end{itemize} 
 \end{frame}
 
