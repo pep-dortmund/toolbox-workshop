@@ -3,7 +3,7 @@ include ../common/document.mk
 
 FIGURES := $(addprefix build/figures/, $(addsuffix .pdf, os programming interest))
 
-build/intro.pdf: $(FIGURES) $(addprefix build/figures/, editors.jpg vim.png nano.png real_programmers.png matplotlib.png sympy.png scipy.png numpy.png code.png)
+build/intro.pdf: $(FIGURES) $(addprefix build/figures/, vim.png nano.png real_programmers.png matplotlib.png sympy.png scipy.png numpy.png code.png)
 
 build/figures/os.pdf: script/answers.py data/2015.tsv
 	TEXINPUTS=$(shell pwd): python3 $<
