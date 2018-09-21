@@ -70,6 +70,11 @@
   \includegraphics{figures/programming.pdf}
 \end{frame}
 
+\begin{frame}{Programmiersprachen}
+  \centering
+  \includegraphics{figures/languages.pdf}
+\end{frame}
+
 \begin{frame}{Interessen}
   \centering
   \includegraphics{figures/interest.pdf}
@@ -118,46 +123,56 @@
       \begin{itemize}
         \item Paper/Arbeiten mit \LaTeX
         \item Programm-Code
+        \item Config-Files
         \item Notizen
-        \item Daten (z.B. im CSV-Format)
+        \item Daten (csv, json, yaml, …)
         \item Emails
       \end{itemize}
     \item Es lohnt sich also, einen guten Texteditor zu wählen und den Umgang damit zu erlernen!
     \item Das spart auf lange Sicht Zeit und macht die Arbeit angenehmer
+    \item Zwei Varianten: Terminal / GUI
   \end{itemize}
 \end{frame}
 
-\begin{frame}{Vim, Emacs, Atom}
+\begin{frame}{Was muss ein Editor können?}
+  In absteigender Wichtigkeit
+
+  \begin{itemize}
+    \item Zeilennummern
+    \item Syntax-Highlighting
+    \item Simple Autovervollständigung
+    \item Plugins / Anpassbarkeit
+    \item Linting (Warnhinweise für falschen Code)
+    \item Komplexe Autovervollständigung (Snippets, Library-Funktionen)
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Nano, Vim, GUIs}
   \begin{tabu}{@{} X[,C] @{} X[,C] @{} X[,C] @{}}
-    \includegraphics[width=0.75\linewidth]{figures/vim.png} &
-    \includegraphics[width=0.75\linewidth]{figures/emacs.png} &
-    \includegraphics[width=\linewidth]{figures/atom.jpg} \\
+    \textbf{\large Nano} & \textbf{\Large Vim} & \textbf{\Large VS Code} \\
+    \includegraphics[height=3.5cm]{figures/nano.png} &
+    \includegraphics[height=3.5cm]{figures/vim.png} &
+    \includegraphics[height=3.5cm]{figures/code.png} \\
+    \begin{itemize}
+      \item Einfacher Texteditor fürs Terminal
+      \item Auf fast jedem Unix-System vorhanden
+      \item Wenige Features, nicht erweiterbar
+    \end{itemize}
+    &
     \begin{itemize}
       \item Moden-basiert
       \item Erweiterbar
-      \item Unix-Philosophie
-      \item Auf jedem System vorhanden
+      \item Auf fast jedem Unix-System default
+      \item Harter Einstieg
     \end{itemize}
     &
     \begin{itemize}
-      \item Unglaublich erweiterbar
-      \item Enthält Mailprogramm
-      \item Modifier-Tasten
-      \item \enquote{Ein tolles Betriebssystem, dem nur ein guter Editor fehlt.}
-    \end{itemize}
-    &
-    \begin{itemize}
-      \item Neuer Editor von Github
+      \item GUI Editor von Microsoft
       \item Leichter zu bedienen
+      \item Batteries included
       \item Viele nützliche Plugins
-      \item Etwas langsam, da in Javascript geschrieben
     \end{itemize}
   \end{tabu}
-\end{frame}
-
-\begin{frame}
-  \centering
-  \includegraphics[height=0.97\textheight]{figures/editors.jpg}
 \end{frame}
 
 \begin{frame}{Obligatory XKCD → \url{http://xkcd.com}}
