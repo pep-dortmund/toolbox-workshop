@@ -1,0 +1,41 @@
+Diese Aufgabe soll verdeutlichen auf welche Weise (und in welchem Maße) Python die Arbeit
+bei der Auswertung von Messdaten reduzieren kann.
+
+Als Beispiel sollen hier aus den Volumina von unterschiedlichen Metallen das
+jeweilige Gewicht berechnet werden. Dabei sind die Dichten bekannt.
+
+Zu den hier verwendeten 'Messwerten'
+- gemessen wurden die Metalle Eisen und Kupfer
+- die Messwerte der Volumina von Eisen (in cm³) sind: 10.0, 16.7, 23.5, 28.5, 34.9
+- die Messwerte der Volumina von Kupfer (in cm³) sind: 10.0, 19.7, 28.6, 39.4, 50.1
+- die Dichte von Eisen ist 7.87 g/cm³
+- die Dichte von Kupfer ist 8.96 g/cm³
+
+Das Ziel ist es, jedes gemessene Volumen in die entsprechende Masse umzurechnen.
+
+Die aufwändigste Version der Lösung dieser Aufgabe befindet sich in der Datei 'evaluation-0.py'.
+Diese Version ist (wenn auch etwas übertrieben) in etwas die Lösung, die man mit Stift und Zettel 
+durchführen würde. In dieser Lösung werden die Möglichkeiten die Python bietet nicht ausgenutzt. 
+
+Mit fortlaufender Nummerierung werden Schritt für Schritt mehr dieser Möglichkeiten in die
+Auswertung eingebaut.
+In jeder der Dateien 'evaluation-N.py' befindet sich eine Version des Programms zur Auswertung,
+mit Erklärungen des letzten Veränderungsschritts.
+In den Dateien 'evaluation-N_Hinweise.py' befinden sich zusätzlich zum Code 
+Anregungen für den nächsten Veränderungsschritt, in den Kommentaren.
+
+Aufgabe:
+Versuche selbst die Version in 'evaluation-0.py' zu verbessern, in dem du mehr von den Python 
+'Bausteinen' verwendest die während des Workshops besprochen wurden.
+Schrecke nicht davor zurück Sachen auszuprobieren, wenn du dir nicht ganz sicher bist.
+
+Oder schau dir die unterschiedlichen Veränderungsschritte an und versuche nachzuvollziehen,
+was die Veränderung bewirken. Auch hier solltest du ausprobieren was dir einfällt, auch wenn
+mal was schiefgeht.
+
+Wichtig:
+Wenn du das Gefühl hast eine der Versionen nicht zu verstehen, ist das kein Problem.
+Programmieren zu lernen ist ein Prozess und auch die ersten Version dieses Programms
+reicht für die Auswertung von Praktikumsversuchen aus. 
+Wenn du etwas nicht verstehst, scheue dich nicht zu fragen, denn genau dafür der Workshop da!
+
