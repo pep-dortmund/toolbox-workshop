@@ -1,5 +1,5 @@
 In dieser Aufgabe machen wir uns mit Funktionen vertraut,
-d man auf Numpy arrays anwenden kann. Im einzlenen sind dies:
+d man auf Numpy arrays anwenden kann. Im einzelnen sind dies:
 
 np.sum
 np.diff
