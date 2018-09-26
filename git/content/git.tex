@@ -219,15 +219,16 @@
 
 \begin{frame}{Typischer Arbeitsablauf}
   \begin{enumerate}
-    \item Repository erzeugen oder klonen: \texttt{git init}, \texttt{git clone}
+    \item Neues Repo? Repository erzeugen oder klonen: \hfill\texttt{git init}, \texttt{git clone} \\
+      Repo schon da? Änderungen herunterladen: \hfill\texttt{git pull}
     \item Arbeiten
       \begin{enumerate}
         \item Dateien bearbeiten und testen
-        \item Änderungen vorbereiten: \texttt{git add}
-        \item Änderungen als \emph{commit} speichern: \texttt{git commit}
+        \item Änderungen vorbereiten: \hfill\texttt{git add}
+        \item Änderungen als \emph{commit} speichern: \hfill\texttt{git commit}
       \end{enumerate}
-    \item Commits anderer herunterladen und integrieren: \texttt{git pull}
-    \item Eigene Commits hochladen: \texttt{git push}
+    \item Commits anderer herunterladen und integrieren: \hfill\texttt{git pull}
+    \item Eigene Commits hochladen: \hfill\texttt{git push}
   \end{enumerate}
 \end{frame}
 
@@ -378,6 +379,7 @@
     \begin{itemize}
       \item kostenlose private Repos mit höchstens fünf Leuten
       \item keine Speicherbegrenzungen
+      \item Hängt was Oberfläche und Funktionen angeht, den beiden anderen weit hinterher
     \end{itemize}
     &
     \begin{itemize}
@@ -404,7 +406,7 @@
 
   SSH-Keys:
   \begin{enumerate}
-    \item \texttt{ssh-keygen}
+    \item \texttt{ssh-keygen -t rsa -b 4096 -o -a 100}
     \item Passwort wählen
     \item \texttt{cat \textasciitilde/.ssh/id\_rsa.pub}
     \item Ausgabe ist Public-Key, beim Server eintragen (im Browser)
