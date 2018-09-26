@@ -22,6 +22,7 @@ Folgende Themen sind Teil des Workshops:
 - up-to-date anaconda3 (using python 3.6.4)
 - poppler (for pdfseparate)
 - wget 
+- Python notebook extensions `pip install jupyter_contrib_nbextensions`
 
 ## Installation
 
