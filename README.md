@@ -22,11 +22,16 @@ Folgende Themen sind Teil des Workshops:
 - up-to-date anaconda3 (using python 3.6.4)
 - poppler (for pdfseparate)
 - wget 
+- jupyter_contrib_nbextensions
 
 ## Installation
 
 For TeXLive and anaconda, follow the installtion instruction on
 http://toolbox.pep-dortmund.org/install
+
+### Jupyter-Notebook extension
+
+- `pip install jupyter_contrib_nbextensions`
 
 ### MacOS 
 

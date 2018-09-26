@@ -3,7 +3,7 @@ include ../common/common.mk
 all: $(patsubst %.ipynb, %.html, $(wildcard *.ipynb))
 
 %.html: %.ipynb
-	jupyter-nbconvert --execute --allow-errors --to html $<
+	jupyter-nbconvert --execute --allow-errors --to html_embed $<
 
 muon_plot.png: muon_plot.py muon_data.txt
 	python3 $<
