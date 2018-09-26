@@ -406,7 +406,7 @@
 
   SSH-Keys:
   \begin{enumerate}
-    \item \texttt{ssh-keygen}
+    \item \texttt{ssh-keygen -t rsa -b 4096 -o -a 100}
     \item Passwort wählen
     \item \texttt{cat \textasciitilde/.ssh/id\_rsa.pub}
     \item Ausgabe ist Public-Key, beim Server eintragen (im Browser)
