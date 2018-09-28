@@ -8,11 +8,11 @@ def theory(phi, A0, b):
     return (A0 * b * np.sinc(b * np.sin(phi) / lambda_))**2
 
 
-L = np.loadtxt('L.txt')
+L = np.genfromtxt('L.txt')
 L *= 1e-2
 lambda_ = np.genfromtxt('lambda.txt')
 lambda_ *= 1e-9
-zeta, I = np.loadtxt('I.txt', unpack=True)
+zeta, I = np.genfromtxt('I.txt', unpack=True)
 zeta *= 1e-3
 I *= 1e-9
 
