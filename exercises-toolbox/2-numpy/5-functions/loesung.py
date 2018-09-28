@@ -67,7 +67,7 @@ print("\tnp.max(B, axis=(0,1)):", np.max(B, axis=(0, 1)))
 
 
 # Lösung zu 3)
-data = np.loadtxt("einkauf.txt")
+data = np.genfromtxt("einkauf.txt")
 
 print("Aufgabe 3)")
 print("Daten\n", data)

@@ -1,7 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-L, C, R = np.loadtxt('geraetedaten.txt', unpack=True)
+L, C, R = np.genfromtxt('geraetedaten.txt', unpack=True)
 L *= 1e-3
 C *= 1e-9
 

@@ -16,8 +16,10 @@ np.savetxt(
 
 x, y, e_y = np.genfromtxt('daten.txt', unpack=True)
 
+
 def f(x, a, b, c, d):
     return a * np.sin(b * x + c) + d
+
 
 parameters, pcov = curve_fit(f, x, y, sigma=e_y)
 print(parameters, np.sqrt(np.diag(pcov)), sep='\n')
