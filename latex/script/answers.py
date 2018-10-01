@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 plt.style.use('ggplot')
 plt.rcParams['font.family'] = 'sans-serif'
 
-answers = pd.read_csv('data/2017.csv')
+answers = pd.read_csv('data/2018.csv')
 
 os = answers['Betriebssystem'].value_counts()
 os /= os.sum()
