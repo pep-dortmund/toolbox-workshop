@@ -1,0 +1,17 @@
+make[1]: Entering directory '/home/physic/Documents/git/toolbox-workshop/python'
+jupyter-nbconvert --execute --allow-errors --to html_embed numeric-python.ipynb
+Traceback (most recent call last):
+  File "/home/physic/.local/anaconda3/bin/jupyter-nbconvert", line 11, in <module>
+    sys.exit(main())
+  File "/home/physic/.local/anaconda3/lib/python3.7/site-packages/jupyter_core/application.py", line 266, in launch_instance
+    return super(JupyterApp, cls).launch_instance(argv=argv, **kwargs)
+  File "/home/physic/.local/anaconda3/lib/python3.7/site-packages/traitlets/config/application.py", line 658, in launch_instance
+    app.start()
+  File "/home/physic/.local/anaconda3/lib/python3.7/site-packages/nbconvert/nbconvertapp.py", line 337, in start
+    self.convert_notebooks()
+  File "/home/physic/.local/anaconda3/lib/python3.7/site-packages/nbconvert/nbconvertapp.py", line 496, in convert_notebooks
+    cls = get_exporter(self.export_format)
+  File "/home/physic/.local/anaconda3/lib/python3.7/site-packages/nbconvert/exporters/base.py", line 113, in get_exporter
+    % (name, ', '.join(get_export_names())))
+ValueError: Unknown exporter "html_embed", did you mean one of: asciidoc, custom, html, latex, markdown, notebook, pdf, python, rst, script, slides?
+Makefile:6: recipe for target 'numeric-python.html' failed
