@@ -293,11 +293,6 @@
     git pull          & Commits herunterladen \\
     git push          & Commits hochladen
   \end{tabu}
-
-  \begin{itemize}
-    \item Aus der Installationsanleitung: \\
-      \texttt{git config --global pull.rebase true}
-  \end{itemize}
 \end{frame}
 
 \begin{frame}[fragile]{Achtung: Merge conflicts}
@@ -322,7 +317,7 @@
     \item Merge abschließen:
       \begin{enumerate}
         \item \texttt{git add …}
-        \item \texttt{git rebase --continue}
+        \item \texttt{git commit -m "Merge Konflikt gelöst"}
       \end{enumerate}
   \end{enumerate}
   Nützlich: \texttt{git config --global merge.conflictstyle diff3}
@@ -362,6 +357,28 @@
       *.pdf
       __pycache__/
     \end{lstlisting}
+\end{frame}
+
+\begin{frame}{Extra Slide für sauberere Projekt Historien: \texttt{git pull}\quad vs\quad\texttt{git pull --rebase} (optional)}
+    Vielfaches Merging und Merge Konflikte erzeugen eine etwas nichtlineare Projekt-Historie, denn:\\
+    \texttt{git pull} entspricht \texttt{git fetch origin; git merge …} (\to\;gemergter Branch bleibt erhalten)
+
+    Alternativ kann man \texttt{\textbf{git pull --rebase}} ausführen, welches (in etwa) äquivalent ist zu\\\texttt{git fetch origin; git rebase …} (\to\;lokale Commits werden auf neue Commits angewendet).
+
+    {\color{red} Achtung: Um einen Merge Konflikt bei \texttt{git pull --rebase} abzuschließen, muss \texttt{\textbf{git~rebase~--continue}} \emph{anstelle} von \texttt{git commit -m "..."} ausgeführt werden! Also einfach genau lesen was Git empfiehlt ;)}
+
+    Dies hat Vorteile:
+    \begin{itemize}
+        \item Die Projekt-Historie ist linearer
+        \item Es gibt weniger merge-commits
+    \end{itemize}
+    aber auch (kleinere) Nachteile:
+    \begin{itemize}
+        \item Es ist hinterher nicht mehr sichtbar, wer einen Merge Konflikt wie behoben hat
+        \item Die Abfolge der Commits entspricht nicht mehr der wahren Entwicklungshistorie
+    \end{itemize}
+    Entscheidet man sich für pulls mit Rebase als Standard, muss Git anders konfiguriert werden:\\
+    \texttt{\textbf{git config --global pull.rebase true}}, dann wird bei allen folgenden \texttt{git pull} Befehlen ein Rebase gemacht
 \end{frame}
 
 \begin{frame}{Hoster}
