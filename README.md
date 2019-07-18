@@ -1,4 +1,4 @@
-# PeP et al. Toolbox-Workshop
+# PeP et al. Toolbox-Workshop <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png" /></a>
 
 Dieses Repository enthält Materialien zum PeP et al. Toolbox-Workshop.
 
@@ -14,6 +14,11 @@ Folgende Themen sind Teil des Workshops:
    - Unix-Kommandozeile
  - Zweite Woche
    - Umgang mit LaTeX
+
+## License
+
+The programming code examples in this material are shared under the GnuGPLv3 license.
+The lecture material (e.g. jupyter notebooks) are shared under the Creative Commons Attribution-NonCommercial License: https://creativecommons.org/licenses/by-nc/4.0/legalcode.txt, so they cannot be used for commercial training / tutorials / lectures.
 
 
 # Build Requirements
