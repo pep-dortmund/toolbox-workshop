@@ -316,8 +316,9 @@
 \end{verbatim}
     \item Merge abschließen:
       \begin{enumerate}
-        \item \texttt{git add …}
-        \item \texttt{git commit -m "Merge Konflikt gelöst"}
+          \item \texttt{git add …} \quad (Files mit behobenen Konflikten)
+        \item \texttt{git commit} \quad\rightarrow\; Editor wird geöffnet
+        \item Vorgeschlagene Nachricht kann angenommen werden (In vim \texttt{":wq"} eintippen)
       \end{enumerate}
   \end{enumerate}
   Nützlich: \texttt{git config --global merge.conflictstyle diff3}
