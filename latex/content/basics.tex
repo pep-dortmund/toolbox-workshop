@@ -138,8 +138,7 @@
 
 
       \usepackage{fontspec}
-      \usepackage{polyglossia}
-      \setmainlanguage{german}
+      \usepackage[main=german]{babel}
 
       % mehr Pakete hier
 
@@ -148,13 +147,12 @@
       \usepackage{bookmark}
     \end{lstlisting}
   \Explanation
-    \vspace{0.5\baselineskip}
-    \strut
     Warnung, falls nochmal kompiliert werden muss. \\[\baselineskip]
-    Für Fonteinstellungen \\[\baselineskip]
+    Für Fonteinstellungen \\
     Deutsche Spracheinstellungen. \\[3\baselineskip]
     Für Hyperlinks (z.B. Inhaltsverzeichnis → Kapitel). \\
-    Erweiterte Bookmarks im PDF.
+    Bessere Bookmarks im PDF,
+    korrekte Seitenzahlen im Viewer wenn mehrere Numerierungen
   \end{CodeExplanation}
   Die Reihenfolge ist manchmal wichtig, z.B. damit Pakete die Spracheinstellung kennen.
 \end{frame}
@@ -215,8 +213,7 @@
 
     \usepackage{fontspec}
 
-    \usepackage{polyglossia}
-    \setmainlanguage{german}
+    \usepackage[main=german]{babel}
 
     % mehr Pakete hier
 
