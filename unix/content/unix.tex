@@ -55,6 +55,16 @@
   \end{itemize}
 \end{frame}
 
+
+\begin{frame}{Tastaturkürzel}
+  \begin{tabu}{>{\ttfamily}l X[,L]}
+    Ctrl-C & beendet das laufende Programm \\
+    Ctrl-D & EOF (end of file) eingeben, kann Programme beenden \\
+    Ctrl-L & leert den Bildschirm
+  \end{tabu}
+\end{frame}
+
+
 \begin{frame}{Dateisystem}
   \begin{columns}[onlytextwidth]
     \begin{column}{0.475\textwidth}
@@ -101,6 +111,24 @@
   \end{tikzpicture}
 \end{frame}
 
+
+
+\begin{frame}{\texttt{ls}}
+  \begin{tabu}{>{\ttfamily}l X[,L]}
+    ls [\textit{directory}] & \enquote{list}: zeigt den Inhalt eines Verzeichnisses an \\
+    ls -l                   & \enquote{long}: zeigt mehr Informationen über Dateien und Verzeichnisse \\
+    ls -a                   & \enquote{all}: zeigt auch versteckte Dateien (fangen mit \texttt{.} an)
+  \end{tabu}
+\end{frame}
+
+\begin{frame}{\texttt{man}, \texttt{pwd}, \texttt{cd}}
+  \begin{tabu}{>{\ttfamily}l X[,L]}
+    man \textit{topic}    & \enquote{manual}: zeigt die Hilfe für ein Programm \\
+    pwd                   & \enquote{print working directory}: zeigt das aktuelle Verzeichnis \\
+    cd \textit{directory} & \enquote{change directory}: wechselt in das angegebene Verzeichnis
+  \end{tabu}
+\end{frame}
+
 \begin{frame}[fragile]{User, Gruppen, Rechte}
   \begin{itemize}
     \item Jede Datei hat einen Besitzer und eine Gruppe
@@ -117,26 +145,43 @@ drwxr-xr-x 20 maxnoe maxnoe 4.0K 29. Sep 11:19 Uni
   r  u  e
      p  r
     \end{verbatim}
-    \item \texttt{r}: Lesen, \texttt{w}: Schreiben, \texttt{x}: Ausführen 
+    \item \texttt{r}: read, \texttt{w}: write, \texttt{x}: execute 
+    \item \texttt{u}: user, \texttt{g}: group, \texttt{o}: other, \texttt{a}: all 
     \item \texttt{d}: Ist Verzeichnis
   \end{itemize}
   
 \end{frame}
 
-\begin{frame}{\texttt{man}, \texttt{pwd}, \texttt{cd}}
+%% chmod frame
+\begin{frame}{\texttt{chmod}}
   \begin{tabu}{>{\ttfamily}l X[,L]}
-    man \textit{topic}    & \enquote{manual}: zeigt die Hilfe für ein Programm \\
-    pwd                   & \enquote{print working directory}: zeigt das aktuelle Verzeichnis \\
-    cd \textit{directory} & \enquote{change directory}: wechselt in das angegebene Verzeichnis
+    chmod \textit{[options] mode file1 ...}    & \enquote{change mode}: Verändert die klassischen Unix-Dateirechte  \\
+    chmod a+x beispiel.txt    & Beispiel: Fügt bei allen das Recht auf Ausführung hinzu \\
+    chmod \textit{[options] UGO file1 ...}    & \enquote{change mode}: Verändert die klassischen Unix-Dateirechte \\
+  \end{tabu}
+    \begin{itemize}
+        \item \texttt{0}: Keine,\item \texttt{1}: Nur Ausführen,\item \texttt{2}: Nur Schreiben,\item \texttt{3}: Schreiben und Ausführen,\item \texttt{4}: Nur Lesen,\item \texttt{5}: Lesen und Ausführen,\item \texttt{6}: Lesen und Schreiben,\item \texttt{7}: Voll 
+    \end{itemize}
+  \begin{tabu}{>{\ttfamily}l X[,L]}
+    chmod 111 beispiel.txt    & Beispiel: Für alle nur noch ausführbar \\
   \end{tabu}
 \end{frame}
 
-\begin{frame}{\texttt{ls}}
-  \begin{tabu}{>{\ttfamily}l X[,L]}
-    ls [\textit{directory}] & \enquote{list}: zeigt den Inhalt eines Verzeichnisses an \\
-    ls -l                   & \enquote{long}: zeigt mehr Informationen über Dateien und Verzeichnisse \\
-    ls -a                   & \enquote{all}: zeigt auch versteckte Dateien (fangen mit \texttt{.} an)
-  \end{tabu}
+\begin{frame}{Shell-Skripte}
+  \begin{itemize}
+    \item Datei enthält Befehle
+    \item Selbe Syntax wie Kommandozeile
+    \item Endung: keine oder \texttt{.sh}
+    \item Ausführung:
+      \begin{itemize}
+        \item \texttt{bash \textit{skript}}
+        \item \texttt{./\textit{skript}} (mit Shebang)
+      \end{itemize}
+    \item Shebang: erste Zeile enthält Pfad des Interpreters (muss absolut sein)
+      \begin{itemize}
+        \item \texttt{\#!/bin/bash}
+      \end{itemize}
+  \end{itemize}
 \end{frame}
 
 \begin{frame}{\texttt{mkdir}, \texttt{touch}}
@@ -202,15 +247,6 @@ drwxr-xr-x 20 maxnoe maxnoe 4.0K 29. Sep 11:19 Uni
 \end{frame}
 
 
-
-\begin{frame}{Tastaturkürzel}
-  \begin{tabu}{>{\ttfamily}l X[,L]}
-    Ctrl-C & beendet das laufende Programm \\
-    Ctrl-D & EOF (end of file) eingeben, kann Programme beenden \\
-    Ctrl-L & leert den Bildschirm
-  \end{tabu}
-\end{frame}
-
 \begin{frame}{Globbing}
   \begin{tabu}{>{\ttfamily}l X[,L]}
     *                         & wird ersetzt durch alle passenden Dateien \\
@@ -225,22 +261,6 @@ drwxr-xr-x 20 maxnoe maxnoe 4.0K 29. Sep 11:19 Uni
   \end{tabu}
 \end{frame}
 
-\begin{frame}{Shell-Skripte}
-  \begin{itemize}
-    \item Datei enthält Befehle
-    \item Selbe Syntax wie Kommandozeile
-    \item Endung: keine oder \texttt{.sh}
-    \item Ausführung:
-      \begin{itemize}
-        \item \texttt{bash \textit{skript}}
-        \item \texttt{./\textit{skript}} (mit Shebang)
-      \end{itemize}
-    \item Shebang: erste Zeile enthält Pfad des Interpreters (muss absolut sein)
-      \begin{itemize}
-        \item \texttt{\#!/bin/bash}
-      \end{itemize}
-  \end{itemize}
-\end{frame}
 
 \begin{frame}{Umgebungsvariablen}
   \begin{itemize}
@@ -255,7 +275,7 @@ drwxr-xr-x 20 maxnoe maxnoe 4.0K 29. Sep 11:19 Uni
         \item Shebang, das den ersten Treffer im \texttt{PATH} nutzt, statt festem Pfad: \texttt{\#!/usr/bin/env python}
       \end{itemize}
     \item Änderung über \texttt{export}:\\
-      \texttt{export PATH=/home/maxnoe/.local/texlive/2018/bin/x86\_64-linux:\$PATH}
+      \texttt{export PATH=\$HOME/.local/texlive/2019/bin/x86\_64-linux:\$PATH}
   \end{itemize} 
 \end{frame}
 
