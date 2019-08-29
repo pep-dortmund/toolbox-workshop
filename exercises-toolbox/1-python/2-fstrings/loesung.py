@@ -10,7 +10,7 @@ masses = [9.1, 10.29, 12.485, 130.01]
 print("Versuch:", title, "durchgeführt am", date)
 
 # Versuch 'Wiegen von Metallen' durchgeführt am 24.09.2018
-print("Versuch:", "'"+title+"'", "durchgeführt am", date)
+print("Versuch:", "'" + title+ "'", "durchgeführt am", date)
 
 # Für die 2. Aufgabe:
 print() # Für den Abstand zur letzten Lösung

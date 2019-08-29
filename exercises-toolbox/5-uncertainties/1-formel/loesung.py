@@ -7,7 +7,7 @@ z = ufloat(10, 1)
 
 Q = x**2 * sin(y) + z
 
-print('Q = {}'.format(Q))
+print(f'Q = {Q}')
 
 from sympy import var, sin
 
