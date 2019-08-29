@@ -4,22 +4,22 @@ Ziel der Übung ist es sich mit Numpy-Arrays vertraut zu machen.
 Die Ausgaben aufs Terminal müssen nicht genau so aussehen wie die, die durch die Datei 'loesung.py' erzeugt werden,
 es ist hauptsächlich wichtig, dass die Arrays die geforderte Gestalt haben.
 
-1) Erzeuge Arrays mit folgenden Werten und gib sie auf das Terminal aus. Für einige Arrays gibt es 
+1) Erzeuge Arrays mit folgenden Werten und gib sie auf das Terminal aus. Für einige Arrays gibt es
    eingebaute Numpy-Funktionen, die einem die Sache einfacher machen.
-    
+
     a) Erzeuge ein Array mit 3 Einträgen gleich 0.
     b) Erzeuge ein Array mit 4 Einträgen gleich 1.
     c) Erzeuge ein Array mit 5 Einträgen gleich 2.
-    d) Erzeuge ein Array mit den ersten 8 Primzahlen. 
+    d) Erzeuge ein Array mit den ersten 8 Primzahlen.
     e) Erzeuge ein Array mit den ganzen Zahlen von 0 bis 9.
     f) Erzeuge ein Array mit graden ganzen von 0 bis 18.
     g) Erzeuge ein Array mit elf Zahlen von 0 bis 5 im gleichen Abstand von einander. (Hierfür gibts zwei Möglichkeiten.)
     h) Erzeuge ein Array mit der Dimension 3x3 mit allen Einträgen gleich 3.
 
 
-2) Lass dir nun zusätzlich zu den Arrays auch ihre Länge ('length') und ihre Form ('shape') auf das Terminal ausgeben. 
+2) Lass dir nun zusätzlich zu den Arrays auch ihre Länge ('length') und ihre Form ('shape') auf das Terminal ausgeben.
 
-3) Versuche nun verschiedene dieser Arrays zu addieren. 
+3) Versuche nun verschiedene dieser Arrays zu addieren.
    Welche der Arrays von oben lassen sich addieren? Welche nicht? Warum?
 
 4) Mache nun aus Array b) ein 2D Array mit einem Eintrag in jeder Spalte, indem du die 'reshape' Methode verwendest.
@@ -30,6 +30,3 @@ es ist hauptsächlich wichtig, dass die Arrays die geforderte Gestalt haben.
 5*) Zusatzaufgabe:
     Addiere nun die neuen Arrays b) und c) aus Aufgabe 4). Und schaue dir das Ergebnis an.
     Was ist hier passiert?
-
-
-

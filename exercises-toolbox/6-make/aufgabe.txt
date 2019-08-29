@@ -7,4 +7,3 @@ Bonus:
 Schreibe das Makefile und das Programm so um, dass alle produzierten Dateien
 in einem Ordner mit dem Namen "build" erstellt werden.
 Wird das `clean`-Target dadurch einfacher?
-
