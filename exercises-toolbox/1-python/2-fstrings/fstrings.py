@@ -28,4 +28,3 @@ for metal, mass in zip(metals, masses):
 # Kupfer: 10.29
 # Zink: 12.485
 # Blei: 130.01
-

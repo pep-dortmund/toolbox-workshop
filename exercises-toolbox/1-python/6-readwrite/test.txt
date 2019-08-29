@@ -1,1 +1,1 @@
-Dies ist ein Beispiel
+42

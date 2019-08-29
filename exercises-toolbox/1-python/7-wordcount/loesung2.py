@@ -10,7 +10,12 @@ for word in words:
 
     counts[word] = freq + 1
 
-result = sorted(counts, key=counts.get, reverse=True)
 
-for key in result[:20]:
-    print("{}: {}".format(key, counts[key]))
+def get_count(x):
+    return x[1]
+
+
+result = sorted(counts.items(), key=get_count, reverse=True)
+
+for key, count in result[:20]:
+    print(f"{key}: {count}")

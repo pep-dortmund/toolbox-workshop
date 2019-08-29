@@ -5,4 +5,5 @@ def histogram(nums):
         else:
             print(num * '*')
 
+
 histogram([6, 2, -1, 10, 1, 8])
