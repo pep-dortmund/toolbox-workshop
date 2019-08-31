@@ -137,7 +137,7 @@
   \end{center}
 
   \begin{itemize}
-    \item Abhängigkeiten bilden einen DAG (directed acyclic graph/gerichteter azyklischer baum)
+    \item Abhängigkeiten bilden einen DAG (directed acyclic graph/gerichteter azyklischer Graph)
     \item Dateien werden neu erstellt, falls sie nicht existieren oder älter als ihre Prerequisites sind
     \item Prerequisites werden zuerst erstellt
     \item top-down Vorgehen
@@ -148,7 +148,7 @@
   \begin{tabu}{>{\ttfamily}l X[,L]}
     make \textit{target} & statt des ersten in der \texttt{Makefile} genannten Targets (meist \texttt{all}) nur \texttt{target} erstellen \\
     make -n              & dry run: Befehle anzeigen aber nicht ausführen \\
-    make -b              & Force: ausführen aller Schritte, ignorieren des Alters \\
+    make -b              & Force: ausführen aller Schritte, ignorieren des Alters aller Dateien \\
     make -p              & Datenbank aller Abhängigkeiten ausgeben
   \end{tabu}
   \begin{itemize}
