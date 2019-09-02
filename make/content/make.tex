@@ -39,7 +39,7 @@
     \item \textbf{Spart Zeit}: nur notwendige Operationen werden ausgeführt
   \end{itemize}
   \vspace{1em}
-  Idealfall: Eingabe von \texttt{make} erstellt komplettes Protokoll/Paper aus Daten
+  \textbf{Ziel:} Eingabe von \texttt{make} erstellt komplettes Protokoll/Paper aus Daten
 \end{frame}
 
 \begin{frame}[fragile]{Makefile}
@@ -137,7 +137,7 @@
   \end{center}
 
   \begin{itemize}
-    \item Abhängigkeiten bilden einen DAG (directed acyclic graph)
+    \item Abhängigkeiten bilden einen DAG (directed acyclic graph/gerichteter azyklischer Graph)
     \item Dateien werden neu erstellt, falls sie nicht existieren oder älter als ihre Prerequisites sind
     \item Prerequisites werden zuerst erstellt
     \item top-down Vorgehen
@@ -148,7 +148,7 @@
   \begin{tabu}{>{\ttfamily}l X[,L]}
     make \textit{target} & statt des ersten in der \texttt{Makefile} genannten Targets (meist \texttt{all}) nur \texttt{target} erstellen \\
     make -n              & dry run: Befehle anzeigen aber nicht ausführen \\
-    make -d              & debug: anzeigen, warum \texttt{make} sich so entschieden hat \\
+    make -b              & Force: ausführen aller Schritte, ignorieren des Alters aller Dateien \\
     make -p              & Datenbank aller Abhängigkeiten ausgeben
   \end{tabu}
   \begin{itemize}
@@ -204,26 +204,25 @@
 \begin{frame}[fragile]{Vergleich: Kuchen backen}
   \begin{center}
     \begin{lstmake}
-    Kuchen: Teig Backen
+    Kuchen: Teig Backofen
+        Ofen auf 140°C vorheizen
+        Teig in Backform geben und in den Ofen schieben
+        Kuchen nach 40 min herausnehmen
 
     Teig: Eier Mehl Zucker Milch Rumrosinen | Schüssel
         Eier schlagen
         Mehl, Zucker und Milch hinzugeben
         Rumrosinen unterrühren
 
-    Backen: Backofen
-        Ofen auf 140°C vorheizen
-        Teig in Backform geben und in den Ofen schieben
-        Kuchen nach 40 min herausnehmen
-
     Rumrosinen: Rum Rosinen
         Rosinen in Rum einlegen
         Vier Wochen stehen lassen
 
     Schüssel:
-	Rührschüssel auf den Tisch stellen, wenn nicht vorhanden
+        Rührschüssel auf den Tisch stellen, wenn nicht vorhanden
 
     clean:
+        Kuchen essen
         Küche sauber machen und aufräumen
     \end{lstmake}
   \end{center}

@@ -1,6 +1,20 @@
-Kuchen: Teig Backen
+Kuchen: Teig Backofen
+	@echo "\n\033[31mBacken\033[0m"
+	@echo "Backofen wird vorgeheizt"
+	@cat Backofen
+	@sleep 5
+	@echo "Kuchen wird gebacken..."
+	@sleep 5
+	@echo "Kuchen ist fertig"
+	@touch Kuchen
+	@echo "           The cake is a lie!" > Kuchen
+	@sleep 2
+	@clear -x
+	@cat Kuchen
+	@cat portal
 
 Teig: Milch Eier Mehl Zucker Rumrosinen | Schüssel
+	@echo "\n\033[31mTeig\033[0m"
 	@echo "Eier schlagen..."
 	@sleep 2
 	@cat Eier > Schüssel
@@ -17,28 +31,23 @@ Teig: Milch Eier Mehl Zucker Rumrosinen | Schüssel
 	@sleep 2
 	@cat Rumrosinen >> Schüssel
 	@echo "Teig ist fertig!"
-
-Backen: Backofen
-	@echo "Backofen wird vorgeheizt"
-	@sleep 5
-	@echo "Kuchen wird gebacken..."
-	@sleep 5
-	@echo "Kuchen ist fertig"
-	@touch kuchen
-	@echo "The cake is a lie!" > kuchen
+	@cat Schüssel
+	@sleep 1
 
 Rumrosinen: Rum Rosinen
+	@echo "\033[31mRumrosinen\033[0m"
 	@touch Rumrosinen
 	@echo "Rosinen werden in Rum eingelegt"
-	@echo "Vier Wochen warten......"
-	@sleep 10
 	@cat Rum     >> Rumrosinen
 	@cat Rosinen >> Rumrosinen
+	@cat Rumrosinen
+	@echo "Vier Wochen warten......"
+	@sleep 10
 
 Schüssel:
 	@touch Schüssel
 
 clean:
-	rm Schüssel
-	rm Rumrosinen
-	rm kuchen
+	rm -f Schüssel
+	rm -f Rumrosinen
+	rm -f Kuchen
