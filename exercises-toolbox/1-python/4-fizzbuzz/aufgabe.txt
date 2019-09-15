@@ -1,6 +1,6 @@
 # "Fizzbuzz"
 
-Eine beliebte Aufgabe in Bewerbungs-Interviews für Programmierer.
+Angeblich eine beliebte Aufgabe in Bewerbungsgesprächen für Programmierer.
 
 Aufgabe:
 

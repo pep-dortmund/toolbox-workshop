@@ -75,14 +75,3 @@ Ausgabe:
 Zu beachten ist, das hier beim runden nur die vierte Nachkommastelle verwendet
 wird, um zu entscheiden ob aufgerundet wird. Wenn man die 8 mit einer 4
 ersetzt, wird die 8 in der fünften Nachkommastelle nicht aufgerundet.
-
-
-
-
-
-
-
-
-
-
-
