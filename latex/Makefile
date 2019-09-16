@@ -29,7 +29,7 @@ MATTEX := $(addprefix build/figures/mattex, $(addsuffix .pdf, 1 2 3 4 5))
 
 build/latex.pdf: $(MATTEX) $(addprefix script/mattex, $(addsuffix .py, 1 2 3 4 5)) matplotlibrc header-matplotlib.tex
 
-$(FIGURES): script/answers.py data/2015.tsv
+$(FIGURES): script/answers.py data/2019.csv
 	TEXINPUTS=$(shell pwd): python3 $<
 
 build/figures/mattex%.pdf: script/mattex%.py matplotlibrc header-matplotlib.tex
