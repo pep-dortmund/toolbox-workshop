@@ -17,7 +17,7 @@ def operating_system(answers):
         startangle=-10,
         radius=1,
     )
-    ax.set_xlim(-1, 2)
+    ax.set_xlim(-1.3, 2)
     fig.savefig('build/figures/os.pdf')
 
 
@@ -36,7 +36,7 @@ def programming(answers):
         startangle=0,
         radius=1,
     )
-    ax.set_xlim(-1, 2)
+    ax.set_xlim(-1.3, 2)
     fig.savefig('build/figures/programming.pdf')
 
 
@@ -83,7 +83,7 @@ def interests(answers):
 
 
 if __name__ == '__main__':
-    answers = pd.read_csv('data/2018.csv')
+    answers = pd.read_csv('data/2019.csv')
     languages(answers)
     operating_system(answers)
     programming(answers)
