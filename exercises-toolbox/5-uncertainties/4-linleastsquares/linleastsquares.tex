@@ -26,7 +26,7 @@ Zur Anpassung einer Linearkombinationen aus Funktionen
 an $N$ Datenpunkte $(x_j, y_j)$ kann die analytische Methode der kleinsten Quadrate verwendet werden.
 Ziel ist es, die Parameter $a_i$ zu bestimmen, bei denen die Summe
 \begin{equation}
-  \sum_j^N\left( y_i - \sum_i^p a_i\cdot f_i(x_j)\right)^{\!\!\! 2}
+  \sum_j^N\left( y_j - \sum_i^p a_i\cdot f_i(x_j)\right)^{\!\!\! 2}
 \end{equation}
 minimal ist, der Funktionsgraph also minimal von den Datenpunkten abweicht.
 
@@ -72,17 +72,10 @@ Alternativ auch bei Wikipedia: \url{https://en.wikipedia.org/wiki/Linear_least_s
       \Psi(x) = a_1 \cos(x) + a_2 \sin(x)
     \end{equation}
     an die Daten in der Datei \texttt{daten.txt} durchführt.
-    Der Fehler der $y_i$ soll als $\sigma = \num{0.1}$ angenommen werden.
+    Die Unsicherheiten der $y_i$ soll als $\sigma = \num{0.1}$ angenommen werden.
 \end{enumerate}
 
 \subsection*{Tipps}
 
-Hilfreich könnte die NumPy-Datenstruktur \texttt{matrix} mit ihren Methoden
-\begin{itemize}
-    \item \texttt{.T},
-    \item \texttt{.I},
-    \item \texttt{.flat}
-\end{itemize}
-sein.
-
+Zum invertieren einer Matrix kann \texttt{numpy.linalg.inv} genutzt werden.
 \end{document}
