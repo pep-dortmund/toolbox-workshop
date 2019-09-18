@@ -124,12 +124,12 @@
   \end{tabu}
 \end{frame}
 
-\begin{frame}{\texttt{man}, \texttt{pwd}, \texttt{cd}}
+\begin{frame}{\texttt{man}, \texttt{pwd}, \texttt{cd}, }
   \begin{tabu}{>{\ttfamily}l X[,L]}
     man \textit{topic}    & \enquote{manual}: zeigt die Hilfe für ein Programm \\
     pwd                   & \enquote{print working directory}: zeigt das aktuelle Verzeichnis \\
     cd \textit{directory} & \enquote{change directory}: wechselt in das angegebene Verzeichnis\\
-    cd - & Wechselt ins vorherige Verzeichnis zurück
+    cd - & Wechselt ins vorherige Verzeichnis zurück \\
   \end{tabu}
 \end{frame}
 
@@ -157,10 +157,11 @@ drwxr-xr-x 20 maxnoe maxnoe 4.0K 29. Sep 11:19 Uni
 \end{frame}
 
 %% chmod frame
-\begin{frame}{\texttt{chmod}}
+\begin{frame}{\texttt{chmod}, \texttt{sudo}}
   \begin{tabu}{>{\ttfamily}l X[,L]}
     chmod \textit{[options] mode file1 ...}    & \enquote{change mode}: Verändert die klassischen Unix-Dateirechte  \\
     chmod a+x beispiel.txt    & Beispiel: Fügt bei allen das Recht auf Ausführung hinzu \\
+    sudo \textit{command} & \enquote{superuser do}: gibt Berechtigung einen Befehl  als \enquote{root}-User auszuführen\\
   \end{tabu}
 \end{frame}
 
