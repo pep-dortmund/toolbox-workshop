@@ -32,8 +32,8 @@ np.savetxt(
 )
 
 x = np.linspace(-0.03, 0.03, 100)
-plt.plot(x, theory(x, *popt), 'b-', label='Fit')
-plt.plot(phi, I, 'rx', label='Daten')
+plt.plot(x, theory(x, *popt), '-', label='Fit')
+plt.plot(phi, I, 'k.', label='Daten')
 plt.xlabel(r'$\varphi \,\, / \,\, \mathrm{rad}$')
 plt.ylabel(r'$I \,\, / \,\, \mathrm{A}$')
 plt.legend(loc='best')
