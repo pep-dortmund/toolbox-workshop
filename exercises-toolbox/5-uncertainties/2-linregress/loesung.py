@@ -1,6 +1,7 @@
 import numpy as np
 import uncertainties.unumpy as unp
 
+
 def linregress(x, y):
     assert len(x) == len(y)
 
@@ -18,6 +19,7 @@ def linregress(x, y):
     B_error = sigma_y * np.sqrt(np.sum(x**2) / Delta)
 
     return A, A_error, B, B_error
+
 
 def ulinregress(x, y):
     A, A_error, B, B_error = linregress(x, y)

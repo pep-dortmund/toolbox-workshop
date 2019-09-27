@@ -1,7 +1,5 @@
 import matplotlib.pyplot as plt
 import numpy as np
-from numpy.random import randn
-from scipy.optimize import curve_fit
 
 # Datenfile erzeugen
 np.random.seed(0)
@@ -18,14 +16,15 @@ np.savetxt(
 
 x, e_x, y, e_y = np.genfromtxt('4.txt', unpack=True)
 
-plt.errorbar(x, y, xerr=e_x, yerr=e_y, fmt='rx', label='Daten')
-
 t = np.linspace(-0.5, 2 * np.pi + 0.5)
 
-plt.plot(t, np.sin(t), 'b-', label='$\sin(t)$')
+plt.errorbar(x, y, xerr=e_x, yerr=e_y, fmt='k.', label='Daten')
+plt.plot(t, np.sin(t), label=r'$\sin(t)$')
+
 plt.xlim(t[0], t[-1])
 plt.xlabel(r'$t$')
 plt.ylabel(r'$f(t)$')
-plt.legend(loc='best')
+
+plt.legend()
 plt.tight_layout()
 plt.savefig('loesung.pdf')
