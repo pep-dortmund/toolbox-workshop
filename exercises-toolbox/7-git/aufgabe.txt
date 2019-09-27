@@ -7,7 +7,7 @@ Aufgabe 2:
 
 Mache dich mit git vertraut.
 Dazu haben wir ein Beispiel-Repository (repo) vorbereitet.
-Wir werden es anstelle eines Repositories auf bitbucket.org oder github.com verwenden.
+Wir werden es anstelle eines Repositories auf gitlab.com oder github.com verwenden.
 
 1. Erzeuge mittels "git clone" eine Kopie von "repo"
    Dazu kannst du z.B. in einen anderen Ordner gehen oder mittels "git clone repo <name>"
