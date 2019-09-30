@@ -1,0 +1,74 @@
+\documentclass[paper=landscape]{scrartcl}
+
+\usepackage[margin=1cm]{geometry}
+\usepackage{fontspec}
+\setsansfont{Fira Sans}
+\renewcommand{\familydefault}{\sfdefault}
+
+\usepackage{tikz}
+
+\usepackage{xcolor}
+\usepackage[colorlinks=true, urlcolor=blue!60!black]{hyperref}
+
+\begin{document}
+  
+  \begin{minipage}{0.25\textwidth}%
+    \includegraphics[width=\textwidth]{logos/pep.pdf}%
+  \end{minipage}%
+  \begin{minipage}{0.75\textwidth}%
+    \centering\fontsize{50}{60}\bfseries\selectfont Toolbox-Workshop 2019%
+  \end{minipage}%
+
+  \vspace{0.5cm}
+
+  \begin{center}
+    \Huge Ihr müsst im nächsten Semester Praktikums-Versuche machen? \\[0.5\baselineskip]
+    Wir machen es euch einfach(er)!
+  \end{center}
+  
+  \vspace{0.5cm}
+
+  \begin{center}
+    \huge \textbf{Praktikums-Versuche richtig auswerten!} \\[0.5\baselineskip]
+    23.–27.~September 2019, 13–17~Uhr, BCI ZE01
+  \end{center}
+  \vspace{0.5cm}
+  \begin{center}
+    \huge \textbf{Wissenschaftliche Arbeiten verfassen mit} \textrm{\LaTeX}\\[0.5\baselineskip]
+    30.~September–04.~Oktober~2019, 13–17~Uhr, BCI ZE01\\
+    \textcolor{red!80!black}{Am 1.10. in Chemie HS03}
+  \end{center}
+  \vspace{0.5cm}
+  \begin{center}
+    \large Software installieren und Umfrage ausfüllen: \\
+    \Huge \href{https://toolbox.pep-dortmund.org}{toolbox.pep-dortmund.org}
+  \end{center}
+
+  \begin{tikzpicture}[remember picture, overlay, shift=(current page.south)]
+    \node[anchor=center] at (-10, 5.5) {%
+      \includegraphics[height=2.0cm]{logos/python.pdf}%
+    };
+    \node[anchor=center] at (10.5, 12) {%
+      \includegraphics[height=2.0cm]{logos/git.png}%
+    };
+    \node[anchor=center] at (0, 2) {%
+      \includegraphics[height=1.8cm]{logos/matplotlib.png}%
+    };
+    \node[anchor=center] at (-11, 13) {%
+      \includegraphics[height=1.6cm]{logos/numpy.png}%
+    };
+    \node[anchor=center] at (-10, 2) {%
+      \includegraphics[width=8cm]{logos/uncertainties.png}%
+    };
+    \node[anchor=center] at (9.5, 5.5) {%
+      \includegraphics[height=2.2cm]{logos/scipy.png}%
+    };
+    \node[anchor=center] at (11.5, 9) {%
+      \fontsize{42}{45}\selectfont\texttt{make}%
+    };
+    \node[anchor=center] at (10, 2) {%
+      \fontsize{60}{80}\selectfont\rmfamily\LaTeX
+    };
+  \end{tikzpicture}
+
+\end{document}

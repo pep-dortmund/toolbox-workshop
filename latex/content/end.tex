@@ -15,7 +15,7 @@
       \TeX-Engines
     };
     \only<3>{
-      \node (here) at (-4.5,-2.6) {
+      \node (here) at (-4.4,-2.0) {
         Sie sind hier
       };
       \draw [->, >=Stealth] (here.east) -- ++(1.55,-0.85);
@@ -64,7 +64,7 @@
       \TeX-Formate
     };
     \only<3>{
-      \node (here) at (-4.3,-0.85) {
+      \node (here) at (-4.7,-0.85) {
         Sie sind hier
       };
       \draw [->, >=Stealth] (here.east) -- ++(3.08,0);
@@ -84,11 +84,11 @@
 
 \begin{frame}[fragile]{Möglichkeiten mit \LaTeX}
   \begin{description}[MusiXTeX, Lilypond]
-    \item[\href{http://mirrors.ctan.org/macros/latex/contrib/beamer/doc/beameruserguide.pdf}{\texttt{beamer}}] Präsentationen mit \LaTeX
     \item[\href{http://mirrors.ctan.org/macros/latex/contrib/koma-script/doc/scrguide.pdf}{\texttt{scrlettr2}}] Briefe
     \item[\href{http://mirrors.ctan.org/macros/musixtex/doc/musixdoc.pdf}{MusiXTeX}, \href{http://www.lilypond.org/}{Lilypond}] Notensatz
-    \item[\href{http://mirrors.ctan.org/graphics/pgf/base/doc/pgfmanual.pdf}{Ti\emph{k}Z}] Grafiken direkt in \LaTeX{} erstellen
-    \item[Poster] Verschiedene Pakete
+    \item[\texttt{IEEEtrantools}] Mächtigere Matheumgebungen
+    \item[Poster] \texttt{beamerposter}, \texttt{tcolorbox}
+    \item[todonotes] TODOs im Text, Liste am Ende, Platzhalter für Grafiken
   \end{description}
 \end{frame}
 

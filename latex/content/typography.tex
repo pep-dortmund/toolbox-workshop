@@ -16,9 +16,9 @@
 \begin{frame}[fragile]{\texttt{microtype}}
   \begin{itemize}
     \item Ihr werdet den Effekt kaum sehen
-    \item Das ist Absicht!
+    \item \textbf{Das ist Absicht}
     \item Kleine Korrekturen, die das Schriftbild verbessern
-    \item z.\,B. - etwas in den Rand hinein für homogenen Grauanteil
+    \item z.\,B. \enquote{-} etwas in den Rand hinein für homogenen Grauanteil
       \begin{Packages}
         \begin{lstlisting}
           \usepackage{microtype}
@@ -49,30 +49,33 @@
 \end{frame}
 
 \begin{frame}[fragile]{Geschützte Leerzeichen}
+  Es gibt Leerzeichen, an denen nicht umgebrochen werden soll. \\
   \begin{itemize}
-    \item Es gibt Leerzeichen an denen nicht umgebrochen werden soll
     \item Zwischen Titel und Name
     \item Bei Referenzen
-    \item Zweiteilige Abkürzungen (aber ein kleines!)
     \item Bei Datumsangaben
     \item Zweiteilige Ortsnamen
+    \item Zweiteilige Abkürzungen (kleines Leerzeichen)
     \item Zwischen Zahl und Einheit (→ \texttt{siunitx})
   \end{itemize}
+  Dafür gibt es die Tilde \lstinline+~+ (normaler Abstand) und \lstinline+\,+ (kleiner Abstand).
   \begin{CodeExample}{0.5}
     \begin{lstlisting}
       Prof.~Dr.~Dr.~Rhode
       Abbildung~\ref{fig:peplogo}
-      z.\,B.
       2.~Oktober~2014
       St.~Helena
+      z.\,B.\
+      \SI{3}{\newton\s}
     \end{lstlisting}
     \CodeResult
       \strut
       Prof.~Dr.~Dr.~Rhode \\
       Abbildung~\ref{fig:peplogo} \\
-      z.\,B. \\
       2.~Oktober~2014 \\
-      St.~Helena
+      St.~Helena \\
+      z.\,B.\ \\
+      \SI{3}{\newton\s}
   \end{CodeExample}
 \end{frame}
 
@@ -98,23 +101,22 @@
       \end{itemize}
     \item[-- Halbgeviertstrich (en-dash)]
       \begin{itemize}
-        \item Gedankenstrich: \lstinline+ Text -- oh, Gedankenstriche -- Text +
-        \item zwischen Namen von versch. Personen
+        \item Gedankenstrich (wird mit Leerzeichen abgetrennt)
+          \begin{lstlisting}
+              Text -- oh, Gedankenstriche -- Text
+          \end{lstlisting}
           \smallskip
+        \item zwischen Namen von versch. Personen
           \begin{lstlisting}
             Maxwell--Boltzmann-Verteilung
           \end{lstlisting}
           \smallskip
-        \item ist auch der Bis-Strich
-          \smallskip
-          \begin{lstlisting}
-            1 bis 10 ist 1--10
-          \end{lstlisting}
-          \smallskip
+        \item ist auch der Bis-Strich:
+          \lstinline+1--10+ → sprich \enquote{1 bis 10}
       \end{itemize}
     \item[--- Geviertstrich (em-dash)]
       \begin{itemize}
-          \item nicht im Deutschen, englischer Gedankenstrich
+          \item nicht im Deutschen genutzt, Gedankenstrich im Englischen
             \begin{lstlisting}
               text---oh, em-dashes---text
             \end{lstlisting}
@@ -133,7 +135,7 @@
   Falls ein Wort Striche enthält, trennt \LaTeX\ ausschließlich an diesen.\\
   So ermöglicht man mehr Trennung:
   \vspace{-0.5em}
-  \begin{CodeExample}{0.85}[Trennbare Striche]
+  \begin{CodeExample}{0.87}[Trennbare Striche]
     \begin{lstlisting}
       \-/ \-- \---
       Normal-Verteilung

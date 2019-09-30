@@ -5,6 +5,8 @@
 
 \begin{lrbox}{\mathfontsone}
   \begin{lstlisting}
+    \usepackage{fontspec}
+
     \usepackage{amsmath}   % unverzichtbare Mathe-Befehle
     \usepackage{amssymb}   % viele Mathe-Symbole
     \usepackage{mathtools} % Erweiterungen für amsmath
@@ -13,11 +15,11 @@
 
 \begin{lrbox}{\mathfontstwo}
   \begin{lstlisting}
+    \usepackage{fontspec}
+
     \usepackage{amsmath}   % unverzichtbare Mathe-Befehle
     \usepackage{amssymb}   % viele Mathe-Symbole
     \usepackage{mathtools} % Erweiterungen für amsmath
-
-    \usepackage{fontspec} % nach amssymb
 
     \usepackage[
 
@@ -26,16 +28,18 @@
 
 
     ]{unicode-math}      % "Does exactly what it says on the tin."
+    % Laden von OTF-Mathefonts
+    % Ermöglich Unicode Eingabe von Zeichen: α statt \alpha
   \end{lstlisting}
 \end{lrbox}
 
 \begin{lrbox}{\mathfontsthree}
   \begin{lstlisting}
+    \usepackage{fontspec}
+
     \usepackage{amsmath}   % unverzichtbare Mathe-Befehle
     \usepackage{amssymb}   % viele Mathe-Symbole
     \usepackage{mathtools} % Erweiterungen für amsmath
-
-    \usepackage{fontspec} % nach amssymb
 
     \usepackage[
       math-style=ISO,    % \
@@ -44,16 +48,18 @@
       nabla=upright,     % |
       partial=upright,   % /
     ]{unicode-math}      % "Does exactly what it says on the tin."
+    % Laden von OTF-Mathefonts
+    % Ermöglich Unicode Eingabe von Zeichen: α statt \alpha
   \end{lstlisting}
 \end{lrbox}
 
 \begin{lrbox}{\mathfontsfour}
   \begin{lstlisting}
+    \usepackage{fontspec}
+
     \usepackage{amsmath}   % unverzichtbare Mathe-Befehle
     \usepackage{amssymb}   % viele Mathe-Symbole
     \usepackage{mathtools} % Erweiterungen für amsmath
-
-    \usepackage{fontspec} % nach amssymb
 
     \usepackage[
       math-style=ISO,    % \
@@ -62,6 +68,8 @@
       nabla=upright,     % |
       partial=upright,   % /
     ]{unicode-math}      % "Does exactly what it says on the tin."
+    % Laden von OTF-Mathefonts
+    % Ermöglich Unicode Eingabe von Zeichen: α statt \alpha
 
     \setmathfont{Latin Modern Math}
     % \setmathfont{Tex Gyre Pagella Math} % alternativ
@@ -71,7 +79,7 @@
 \begin{frame}[fragile,t]{
   Benötigte Pakete
   \hfill
-  \doc{http://mirrors.ctan.org/macros/latex/required/amslatex/math/amsldoc.pdf}{amsmath}
+  \doc{http://mirrors.ctan.org/macros/latex/required/amsmath/amsldoc.pdf}{amsmath}
   \doc{http://mirrors.ctan.org/macros/latex/contrib/mathtools/mathtools.pdf}{mathtools}
   \doc{http://mirrors.ctan.org/macros/latex/contrib/unicode-math/unicode-math.pdf}{unicode-math}
 }
@@ -159,7 +167,7 @@
       \coloneq \eqcolon
       \to \iff \implies
       \mapsto \leadsto
-      \forall \exists \in \subset
+      \forall \exists \in \subset \cup \cap
     \end{lstlisting}
   \CodeResult
     \Umathbinbinspacing\textstyle=4mu
@@ -172,7 +180,7 @@
     $\coloneq \quad \eqcolon$ \\
     $\to \iff \implies$ \\
     $\mapsto \leadsto$ \\
-    $\forall \exists \in \subset$
+    $\forall \exists \in \subset \cup \cap$
   \end{CodeExample}
   \begin{CodeExample}{0.74}[Negierte Variante mit \texttt{n} bzw.\ \texttt{not}]
     \begin{lstlisting}
@@ -202,21 +210,44 @@
     \strut
     $x^2 \quad x_2 \quad x²$
   \end{CodeExample}
-  \begin{CodeExample}{0.60}[Lange o.\ doppelte Indizes/Exponenten]
-    \vspace{0.5\baselineskip}
-    \begin{lstlisting}[lineskip=0.5ex]
-      x^10               x^{10}
-      x^2^2              x^{2^2}
-      x_\sqrt[3]{2}      x_{\sqrt[3]{2}}
-    \end{lstlisting}
-  \CodeResult
-    \removedisplayskip
-    \begin{flalign*}
-      &x^10                 && x^{10} \\
-      &\text{\alert{error}} && x^{2^2} \\
-      &\text{\alert{error}} && \smash{x_{\sqrt[3]{2}}} \qquad\qquad
-    \end{flalign*}
-  \end{CodeExample}
+  \vspace{-3ex}
+  \begin{columns}[onlytextwidth]
+    \begin{column}{0.6\textwidth}
+      \begin{CodeExample}{0.50}[Falsch]
+        \vspace{0.5\baselineskip}
+        \begin{lstlisting}[lineskip=0.5ex]
+          x^10
+          x^2^2
+          x_\sqrt[3]{2}
+        \end{lstlisting}
+      \CodeResult
+        \removedisplayskip
+        \begin{flalign*}
+          & x^10 \\
+          & \text{\alert{\faExclamationTriangle{} Error \faExclamationTriangle{}}}\\
+          & \text{\alert{\faExclamationTriangle{} Error \faExclamationTriangle{}}}
+        \end{flalign*}
+      \end{CodeExample}
+    \end{column}%
+    \hfill%
+    \begin{column}{0.38\textwidth}
+      \begin{CodeExample}{0.70}[Richtig]
+        \vspace{0.5\baselineskip}
+        \begin{lstlisting}[lineskip=0.5ex]
+          x^{10}
+          x^{2^2}
+          x_{\sqrt[3]{2}}
+        \end{lstlisting}
+      \CodeResult
+        \removedisplayskip
+        \begin{flalign*}
+          & x^{10} \\
+          & x^{2^2} \\
+          & \smash{x_{\sqrt[3]{2}}}
+        \end{flalign*}
+      \end{CodeExample}
+    \end{column}%
+  \end{columns}
   \begin{CodeExample}{0.60}[Text in Indizes]
     \begin{lstlisting}
       falsch: x_{min},  richtig: x_\text{min}
@@ -225,7 +256,7 @@
     \strut
     falsch: $x_{min}$, \quad richtig: $x_\text{min}$
   \end{CodeExample}
-  \begin{CodeExample}{0.60}[Striche / linksseitig]
+  \begin{CodeExample}{0.60}[Striche \& Linksseitiges]
     \begin{lstlisting}
       x' x^' x'' x'^2
       {}^2 x
@@ -330,9 +361,6 @@
 
       \int_{0}^{1} f(x) \, \symup{d}x
 
-
-      \int x   \int_0 x  \int^{} x  \int_0^{} x
-      % LuaTeX Bug: immer obere Grenze angeben
     \end{lstlisting}
   \CodeResult
   \begin{minipage}[c][3\baselineskip][c]{0.9\textwidth}
@@ -346,9 +374,6 @@
     \end{minipage} \\\nointerlineskip
     \begin{minipage}[c][3\baselineskip][c]{\textwidth}
       $\displaystyle \int_{0}^{1} f(x) \, \symup{d}x $
-    \end{minipage}
-    \begin{minipage}[c][3\baselineskip][c]{\textwidth}
-      $\displaystyle \int x \quad \int_0 x \quad \int^{} x \quad \int_0^{} x$
     \end{minipage}
   \end{CodeExample}
 \end{frame}
@@ -573,6 +598,9 @@
             x_\text{min}
           \end{lstlisting}
       \end{itemize}
+    \item Vektoren und Matritzen: fett\\
+      \lstinline+$\symbf{r} = (0, 1, -1)^\top$+ $\symbf{r} = (0, 1, -1)^\top$
+
   \end{itemize}
 \end{frame}
 

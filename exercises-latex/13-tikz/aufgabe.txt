@@ -23,8 +23,8 @@ Guckt auch die Doku von `circuitikz` an,
 und baut den Schaltplan für einen gedämpften Schwingkreis
 mit
 C = 1 µF
-R = 50 Ω 
-L = 1 H 
+R = 50 Ω
+L = 1 H
 
 
 ## Aufgabe 4
@@ -36,6 +36,6 @@ Stellt mithilfe von Tikz die Bragg-Bedingung dar
 Zeichne eine Darstellung des Satz von Pythagoras mit Tikz
 
 Diese sollte folgende Elemente beinhalten
-* Beschriftungen der Kanten und des Rechten Winkels
+* Beschriftungen der Kanten und des rechten Winkels
 * Die Flächen der Quadrate
 

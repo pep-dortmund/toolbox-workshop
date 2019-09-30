@@ -2,8 +2,17 @@ HEADER := $(addprefix ../common/, header.tex packages.tex settings.tex settings-
 
 DOCUMENT := $(shell basename "$$(pwd)")
 
-build/$(DOCUMENT).pdf: $(DOCUMENT).tex $(HEADER) content/*.tex | build
-	@../common/tex.sh --tex-inputs "$(shell pwd)/../common/" $(BIBER) $(DOCUMENT).tex
+build/$(DOCUMENT).pdf: FORCE  | build
+	TEXINPUTS="$(shell pwd)/../common/:" \
+	max_print_line=1048576 \
+	latexmk -r $(shell pwd)/../common/latexmkrc \
+	$(DOCUMENT).tex
+
+preview: FORCE | build
+	TEXINPUTS="$(shell pwd)/../common/:" \
+	max_print_line=1048576 \
+	latexmk -pvc -r $(shell pwd)/../common/latexmkrc \
+	$(DOCUMENT).tex
 
 build/figures/%.pdf: figures/%.crop | build/figures
 	@../common/crop.py "$<" "$@"
@@ -11,10 +20,9 @@ build/figures/%.pdf: figures/%.crop | build/figures
 build build/figures:
 	mkdir -p build/figures
 
-fast:
-	@../common/tex.sh --tex-inputs "$(shell pwd)/../common/" --fast $(BIBER) $(DOCUMENT).tex
-
 clean:
 	rm -rf build
 
-.PHONY: all fast clean
+FORCE:
+
+.PHONY: all fast clean FORCE

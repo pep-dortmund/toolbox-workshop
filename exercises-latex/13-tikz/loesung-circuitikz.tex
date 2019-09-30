@@ -1,10 +1,10 @@
+\RequirePackage{luatex85}
 \documentclass[margin=5pt]{standalone}
 
+\usepackage[main=ngerman]{babel}
 
 \usepackage{mathtools}
 \usepackage{fontspec}
-\usepackage{polyglossia}
-\setmainlanguage{german}
 \usepackage[
   math-style=ISO,
   bold-style=ISO,
@@ -20,17 +20,17 @@
 
 \usepackage{tikz}
 \usepackage[
-  europeanresistors,  % follow DIN
-  americaninductors,  % foolow DIN, funny, isn't it?
+  europeanresistors, % follow DIN
+  americaninductors, % foolow DIN, funny, isn't it?
   siunitx,
 ]{circuitikz}
 
-\AtBeginDocument{%
-  \sisetup{%
+\AtBeginDocument{
+  \sisetup{
     math-rm=\mathrm,
     math-micro=µ, % AltGr+m = MICRO SIGN, Unicode: U+00B5
-  }%
-}%
+  }
+}
 
 \begin{document}
 

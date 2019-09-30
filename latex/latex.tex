@@ -1,5 +1,12 @@
 \input{header.tex}
 
+\usepackage[
+  backend=biber,
+  sorting=nyt,
+  sortlocale=de_DE.UTF-8,
+]{biblatex}
+
+
 \title[\LaTeX]{Verfassen wissenschaftlicher Texte mit \LaTeX}
 \titlegraphic{figures/latex-vs-word.pdf}
 
@@ -33,12 +40,7 @@
 
 \begin{document}
 
-{
-  \setbeamertemplate{footline}{}
-  \begin{frame}
-    \titlepage
-  \end{frame}
-}
+\maketitle
 
 \begin{frame}{Übersicht}
   \linespread{1.5}
@@ -82,6 +84,7 @@
 \input{content/latexmk.tex}
 \input{content/matplotlib.tex}
 \input{content/beamer.tex}
+\input{content/tikz.tex}
 \input{content/end.tex}
 
 \end{document}

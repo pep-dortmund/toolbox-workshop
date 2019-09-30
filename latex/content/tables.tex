@@ -5,15 +5,15 @@
   \hfill
   \doc{http://mirrors.ctan.org/macros/latex/contrib/booktabs/booktabs.pdf}{booktabs}
 }
-  \begin{columns}[t]
-    \begin{column}{0.33\textwidth}
+  \begin{columns}[t, onlytextwidth]
+    \begin{column}{0.30\textwidth}
       \begin{Packages}[equal height group=tabs]
         \begin{lstlisting}
           \usepackage{booktabs}
         \end{lstlisting}
       \end{Packages}
     \end{column}
-    \begin{column}{0.63\textwidth}
+    \begin{column}{0.68\textwidth}
     \begin{block}{Neue Klassenoption}[equal height group=tabs]
       \begin{lstlisting}
         \documentclass[…, captions=tableheading, …]{scrartcl}
@@ -149,6 +149,7 @@
         \begin{tabular}{S[table-format=3.1] S S S S}
           \toprule
           & \multicolumn{2}{c}{Technetium} & \multicolumn{2}{c}{Molybdän} \\
+          \cmidrule(lr){2-3}\cmidrule(lr){4-5} 
           {$\lambda \:/\: \si{\nano\meter}$}
           & {$\phi_1$} & {$\phi_2$} & {$\phi_1$} & {$\phi_2$} \\
           \midrule
@@ -172,6 +173,7 @@
       \begin{tabular}{S[table-format=3.1] S S S S}
         \toprule
         & \multicolumn{2}{c}{Technetium} & \multicolumn{2}{c}{Molybdän} \\
+        \cmidrule(lr){2-3}\cmidrule(lr){4-5} 
         {$\lambda \:/\: \si{\nano\meter}$}
         & {$\phi_1$} & {$\phi_2$} & {$\phi_1$} & {$\phi_2$} \\
         \midrule

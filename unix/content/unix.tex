@@ -22,67 +22,99 @@
 \end{frame}
 
 \begin{frame}{Motivation}
+  Die meisten Geräte basieren auf Unix
   \begin{itemize}
-    \item Die meisten Geräte basieren auf Unix
-      \begin{itemize}
-        \item Server, Cluster, Supercomputer
-        \item Smartphones
-        \item Router, Drucker, …
-      \end{itemize}
-    \item Wissenschaftliche Programme werden für Unix geschrieben
-      \begin{itemize}
-        \item Bedienung über Kommandozeile
-        \item Wichtige Programme haben keine GUIs
-        \item z.B. bei der Bachelorarbeit…
-      \end{itemize}
+    \item Server, Cluster, Supercomputer
+    \item Smartphones
+    \item Router, Drucker, …
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Motivation}
+  Wissenschaftliche Programme werden in der Regel für Unix geschrieben
+  \begin{itemize}
+    \item Bedienung über Kommandozeile
+    \item Wichtige Programme haben keine GUIs
+    \item z.\,B. bei der Bachelorarbeit…
   \end{itemize}
 \end{frame}
 
 \begin{frame}{Motivation}
   \begin{itemize}
-    \item Kommandozeile ist überlegenes Bedienkonzept
+    \item Kommandozeile ist in vielerlei Hinsicht überlegenes Bedienkonzept
       \begin{itemize}
         \item Die meiste Zeit beim Arbeiten verbringen wir im CLI
       \end{itemize}
-    \item GUI versteckt die Details
-      \begin{itemize}
-        \item Details werden wichtig
-        \item GUI kann versagen
-      \end{itemize}
+    \item GUIs verstecken die Details
     \item GUIs sind nicht böse oder schlecht, man muss nur wissen, was dahinter steckt
     \item In der Kommandozeile ist alles automatisierbar
       \begin{itemize}
         \item Wenn man etwas zum dritten Mal tut, sollte man ein Skript dafür schreiben
       \end{itemize}
+    \item Arbeiten in GUIs ist nur schwierig reproduzierbar
   \end{itemize}
 \end{frame}
+
 
 \begin{frame}{Dateisystem}
-  \begin{itemize}
-    \item bildet \emph{einen} Baum
+  \begin{columns}[onlytextwidth]
+    \begin{column}{0.475\textwidth}
       \begin{itemize}
-        \item beginnt bei \texttt{/} (root)
-        \item \texttt{/} trennt Teile eines Pfads
-        \item auf Groß-/Kleinschreibung achten!
+        \item bildet \emph{einen} Baum
+          \begin{itemize}
+            \item beginnt bei \texttt{/} (root)
+            \item \texttt{/} trennt Teile eines Pfads
+            \item auf Groß-/Kleinschreibung achten!
+          \end{itemize}
+        \item es gibt ein aktuelles Verzeichnis
+        \item relativer Pfad: vom akuellen Verzeichnis aus (Kein führender \alert{/})
+        \item absoluter Pfad: von \alert{/} aus
+        \item spezielle Verzeichnisse:
+          \begin{description}[\texttt{..}]
+            \item[\texttt{.}] das aktuelle Verzeichnis
+            \item[\texttt{..}] das Oberverzeichnis
+            \item[\texttt{\textasciitilde}] das Homeverzeichnis
+          \end{description}
       \end{itemize}
-    \item es gibt ein aktuelles Verzeichnis
-    \item relative vs. absolute Pfade
-    \item spezielle Verzeichnisse:
-      \begin{itemize}
-        \item \texttt{.} das aktuelle Verzeichnis
-        \item \texttt{..} das Oberverzeichnis
-        \item \texttt{\textasciitilde} das Homeverzeichnis
-      \end{itemize}
-  \end{itemize}
+    \end{column}
+  \end{columns}
+  \begin{tikzpicture}[
+      tree layout,
+      font=\ttfamily\bfseries\Large,
+      shift={(12, 5)},
+      remember picture,
+      overlay,
+    ]
+    \graph[grow down] {
+      "/" -> {
+        "home/" -> {
+          "mnoethe/" -> {
+            "Documents/" -> "Example.tex",
+            ".bashrc",
+          },
+          "jluckey/",
+        }, 
+        "etc/",
+        "data/"
+      }
+    };
+  \end{tikzpicture}
 \end{frame}
 
-\begin{frame}{\texttt{man}, \texttt{pwd}, \texttt{cd}}
+
+\begin{frame}{Tastaturkürzel}
   \begin{tabu}{>{\ttfamily}l X[,L]}
-    man \textit{topic}    & \enquote{manual}: zeigt die Hilfe für ein Programm \\
-    pwd                   & \enquote{print working directory}: zeigt das aktuelle Verzeichnis \\
-    cd \textit{directory} & \enquote{change directory}: wechselt in das angegebene Verzeichnis
+    Enter & Befehl ausführen \\
+    Ctrl-C & beendet das laufende Programm \\
+    Ctrl-D & EOF (end of file) eingeben, kann Programme die auf Eingaben warten beenden \\
+    Ctrl-L & leert den Bildschirm \\
+    $\uparrow \quad \downarrow$ & Befehlshistorie durchgehen\\
+    Ctrl-Shift-C & Kopieren von Text \\
+    Ctrl-Shift-V & Einfügen aus Zwischenablage \\
   \end{tabu}
 \end{frame}
+
+
 
 \begin{frame}{\texttt{ls}}
   \begin{tabu}{>{\ttfamily}l X[,L]}
@@ -90,6 +122,64 @@
     ls -l                   & \enquote{long}: zeigt mehr Informationen über Dateien und Verzeichnisse \\
     ls -a                   & \enquote{all}: zeigt auch versteckte Dateien (fangen mit \texttt{.} an)
   \end{tabu}
+\end{frame}
+
+\begin{frame}{\texttt{man}, \texttt{pwd}, \texttt{cd}, }
+  \begin{tabu}{>{\ttfamily}l X[,L]}
+    man \textit{topic}    & \enquote{manual}: zeigt die Hilfe für ein Programm \\
+    pwd                   & \enquote{print working directory}: zeigt das aktuelle Verzeichnis \\
+    cd \textit{directory} & \enquote{change directory}: wechselt in das angegebene Verzeichnis\\
+    cd - & Wechselt ins vorherige Verzeichnis zurück \\
+  \end{tabu}
+\end{frame}
+
+\begin{frame}[fragile]{User, Gruppen, Rechte}
+  \begin{itemize}
+    \item Jede Datei hat einen Besitzer und eine Gruppe
+    \item Lese-, Schreib- und Ausführungsrechte können einzeln vergeben werden
+    \begin{verbatim}
+-rwxr-xr-x  1 maxnoe maxnoe  177 15. Sep 13:37 toggle-touchpad.sh
+-rw-r--r--  1 maxnoe maxnoe  98K 29. Aug 15:52 trigger_arduino.jpg
+-rw-r--r--  1 maxnoe maxnoe  410 13. Jul 10:37 trigger.py
+drwxr-xr-x 20 maxnoe maxnoe 4.0K 29. Sep 11:19 Uni
+ \_/\_/\_/
+  U  G  O
+  s  r  t
+  e  o  h
+  r  u  e
+     p  r
+    \end{verbatim}
+    \item \texttt{r}: read, \texttt{w}: write, \texttt{x}: execute 
+    \item \texttt{u}: user, \texttt{g}: group, \texttt{o}: other, \texttt{a}: all 
+    \item \texttt{d}: Ist Verzeichnis
+  \end{itemize}
+  
+\end{frame}
+
+%% chmod frame
+\begin{frame}{\texttt{chmod}, \texttt{sudo}}
+  \begin{tabu}{>{\ttfamily}l X[,L]}
+    chmod \textit{[options] mode file1 ...}    & \enquote{change mode}: Verändert die klassischen Unix-Dateirechte  \\
+    chmod a+x beispiel.txt    & Beispiel: Fügt bei allen das Recht auf Ausführung hinzu \\
+    sudo \textit{command} & \enquote{superuser do}: führt einen Befehl als \enquote{root}-User aus \alert{Achtung}: Mit Vorsicht verwenden!\\
+  \end{tabu}
+\end{frame}
+
+\begin{frame}{Shell-Skripte}
+  \begin{itemize}
+    \item Datei enthält Befehle
+    \item Selbe Syntax wie Kommandozeile
+    \item Endung: keine oder \texttt{.sh}
+    \item Ausführung:
+      \begin{itemize}
+        \item \texttt{bash \textit{skript}}
+        \item \texttt{./\textit{skript}} (mit Shebang)
+      \end{itemize}
+    \item Shebang: erste Zeile enthält Pfad des Interpreters (muss absolut sein)
+      \begin{itemize}
+        \item \texttt{\#!/bin/bash}
+      \end{itemize}
+  \end{itemize}
 \end{frame}
 
 \begin{frame}{\texttt{mkdir}, \texttt{touch}}
@@ -112,7 +202,7 @@
   \end{tabu}
 \end{frame}
 
-\begin{frame}{\texttt{cat}, \texttt{less}, \texttt{grep}, \texttt{echo}}
+\begin{frame}[fragile]{\texttt{cat}, \texttt{less}, \texttt{grep}, \texttt{echo}}
   \begin{tabu}{>{\ttfamily}l X[,L]}
     cat \textit{file}                           & \enquote{concatenate}: gibt Inhalt einer (oder mehr) Datei(en) aus \\
     less \textit{file}                          & (besser als \texttt{more}): wie \texttt{cat}, aber navigabel \\
@@ -120,6 +210,28 @@
     grep -i \textit{pattern} \textit{file}      & \enquote{case insensitive} \\
     grep -r \textit{pattern} \textit{directory} & \enquote{recursive}: suche rekursiv in allen Dateien \\
     echo \textit{message}                       & gibt einen Text aus
+  \end{tabu}
+
+  Beispiel: Finde jedes Paket, dass wir in unseren Python-Skripten importieren:
+  
+  \begin{lstlisting}[language=bash]
+    $ grep -R --include='*.py' import
+    v52_leitungen/scripts/plot_lcrg.py:import pandas as pd
+    v52_leitungen/scripts/plot_lcrg.py:import matplotlib.pyplot as plt
+    v52_leitungen/scripts/plot_lcrg.py:import numpy as np
+    v52_leitungen/scripts/plot_lcrg.py:import yaml
+  \end{lstlisting}
+
+\end{frame}
+
+\begin{frame}[fragile]{\texttt{find}}
+  Sehr mächtiges Werkzeug, um Dateien und Ordner zu finden, und Befehle auszuführen.
+
+  \begin{tabu}{>{\ttfamily}l X[,L]}
+    find . & Rekursiv alle Dateien und Ordner im aktuellen Verzeichnis listen \\
+    find . -type f & Nur Dateien anzeigen \\
+    find . -name '*.py' & Alle Dateien, die mit \texttt{.py} enden \\
+    find . -exec <befehl> \textbackslash{}; & Befehl für jede gefundene Datei ausführen, \texttt{\{\}} wird durch den Dateinamen ersetzt \\
   \end{tabu}
 \end{frame}
 
@@ -132,13 +244,6 @@
   \end{tabu}
 \end{frame}
 
-\begin{frame}{Tastaturkürzel}
-  \begin{tabu}{>{\ttfamily}l X[,L]}
-    Ctrl-C & beendet das laufende Programm \\
-    Ctrl-D & EOF (end of file) eingeben, kann Programme beenden \\
-    Ctrl-L & leert den Bildschirm
-  \end{tabu}
-\end{frame}
 
 \begin{frame}{Globbing}
   \begin{tabu}{>{\ttfamily}l X[,L]}
@@ -154,22 +259,6 @@
   \end{tabu}
 \end{frame}
 
-\begin{frame}{Shell-Skripte}
-  \begin{itemize}
-    \item Datei enthält Befehle
-    \item Selbe Syntax wie Kommandozeile
-    \item Endung: keine oder \texttt{.sh}
-    \item Ausführung:
-      \begin{itemize}
-        \item \texttt{bash \textit{skript}}
-        \item \texttt{./\textit{skript}} (mit Shebang)
-      \end{itemize}
-    \item Shebang: erste Zeile enthält Pfad des Interpreters (muss absolut sein)
-      \begin{itemize}
-        \item \texttt{\#!/bin/bash}
-      \end{itemize}
-  \end{itemize}
-\end{frame}
 
 \begin{frame}{Umgebungsvariablen}
   \begin{itemize}
@@ -184,7 +273,7 @@
         \item Shebang, das den ersten Treffer im \texttt{PATH} nutzt, statt festem Pfad: \texttt{\#!/usr/bin/env python}
       \end{itemize}
     \item Änderung über \texttt{export}:\\
-      \texttt{export PATH=/home/maxnoe/anaconda3/bin:\$PATH}
+      \texttt{export PATH=\$HOME/.local/texlive/2019/bin/x86\_64-linux:\$PATH}
   \end{itemize} 
 \end{frame}
 

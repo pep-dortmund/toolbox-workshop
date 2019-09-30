@@ -1,4 +1,4 @@
-\section{\TeX\ in \texttt{matplotlib}}
+\section{\TeX\ in \texttt{matplotlib} in \TeX}
 
 \begin{frame}[fragile]{\TeX\ in \texttt{matplotlib} (1)}
   \lstinputpython[firstline=3]{script/mattex1.py}
@@ -18,7 +18,7 @@
   \lstpythoninline+plt.figure(figsize=(4.76, 2.94))+
   \begin{itemize}
     \item Größe der Zeichenfläche setzen (in Zoll)
-    \item Breite des textes kann mit \lstinline+\the\textwidth+ ins Dokument geschrieben werden
+    \item Breite des Textes kann mit \lstinline+\the\textwidth+ ins Dokument geschrieben werden
     \item $1\,\mathrm{in} = \num{72.27}\,\mathrm{pt}$
     \item Goldener Schnitt für Höhe
     \item Für \texttt{scrartcl} mit Standardeinstellungen: \texttt{5.78, 3.57}
@@ -65,9 +65,19 @@
       \end{itemize}
     \item Lösung: \texttt{TEXINPUTS} setzen!
     \item \texttt{TEXINPUTS=\$(pwd): python script/mattex4.py}
-    \item \texttt{Makefile}: \texttt{TEXINPUTS=\$(shell pwd): python script/mattex4.py}
+    \item \texttt{Makefile}: \texttt{TEXINPUTS=\$\$(pwd): python script/mattex4.py}
   \end{itemize}
   \vspace*{-1em}
+\end{frame}
+
+\begin{frame}[fragile]{Windows}
+  \begin{lstmake}
+    build/document.pdf: ...
+        TEXINPUTS=build: ...
+
+    build/figures/mattex4.pdf: script/mattex4.py
+        TEXINPUTS=$(pwd): python script/mattex4.py
+  \end{lstmake}
 \end{frame}
 
 \AddToShipoutPictureFG*{\ShowFramePicture}

@@ -1,13 +1,49 @@
 \section{Zahlen und Einheiten}
 
+\begin{frame}[fragile]{Zahlen und Einheiten}
+  \begin{itemize}
+    \item Regeln zur Benutzung der SI-Einheiten: \\
+      \url{http://www.bipm.org/utils/common/pdf/si_brochure_8_en.pdf}
+    \item Einheiten werden aufrecht gesetzt
+    \item Zwischen Zahl und Einheit steht ein kleines Leerzeichen
+    \item Ab 5 Stellen wird ein kleines Leerzeichen als 1000er Trennzeichen genutzt:
+  \end{itemize}
+
+  \begin{CodeExample}{0.7}[Zahl mit Einheit]
+    \begin{lstlisting}
+      $5\,\mathrm{kg}$
+    \end{lstlisting}
+    \CodeResult
+    $5\,\mathrm{kg}$
+  \end{CodeExample}
+  \begin{CodeExample}{0.7}[Zahl mit mehr als vier Stellen]
+    \begin{lstlisting}
+      $10\,000$
+    \end{lstlisting}
+    \CodeResult
+    $10\,000$
+  \end{CodeExample}
+  \begin{CodeExample}{0.7}[Zehnerpotenz mit Unsicherheit in Klammern]
+    \begin{lstlisting}
+      $(5{,}34 \pm 0{,}54) \cdot 10^{-3}\,\mathrm{GeV}$
+    \end{lstlisting}
+    \CodeResult
+    $(5{,}34 \pm 0{,}54) \cdot 10^{-3}\,\mathrm{GeV}$
+  \end{CodeExample}
+  
+  \onslide<2->{%
+  \begin{center}
+    \LARGE  Das muss einfacher gehen
+  \end{center}
+  }
+\end{frame}
+
 \begin{frame}[fragile]{
   Das \texttt{siunitx}-Paket
   \hfill
   \doc{http://mirrors.ctan.org/macros/latex/contrib/siunitx/siunitx.pdf}{siunitx}
 }
 \begin{itemize}
-    \item Einheiten werden aufrecht gesetzt
-    \item Zwischen Zahl und Einheit steht ein kleines Leerzeichen \lstinline+$5\,\mathrm{kg}$+
     \item \texttt{siunitx} stellt Befehle zur Verfügung, die das korrekte Setzen von Zahlen und Einheiten stark vereinfachen
     \item Funktioniert in Fließtext und Matheumgebung
     \item[$\color{vertexDarkRed}\Rightarrow$] Dieses Paket sollte \alert{immer} und für \alert{jede} Zahl mit oder ohne Einheit verwendet werden.
@@ -22,6 +58,8 @@
         % per-mode=reciprocal,      % m s^{-1}
         % output-decimal-marker=.,         % . statt , für Dezimalzahlen
       ]{siunitx}
+      % Fix missing micro sign with TL2017
+      \sisetup{math-micro=\text{µ},text-micro=µ}
     \end{lstlisting}
   \end{Packages}
 \end{frame}
@@ -111,7 +149,7 @@
 \end{frame}
 
 \begin{frame}[fragile]{\texttt{siunitx}: Zahl mit Einheit: \lstinline+\\SI+}
-  \begin{CodeExample}{0.6}[\lstinline+\\SI+ {=} Kombination aus \lstinline+\\num+ und \lstinline+\\si+]
+  \begin{CodeExample}{0.72}[\lstinline+\\SI+ {=} Kombination aus \lstinline+\\num+ und \lstinline+\\si+]
     \begin{lstlisting}
       \SI{5}{\percent}
       \SI{10}{\celsius}
@@ -127,12 +165,19 @@
     \item[1. Argument] Kann alles, was \lstinline+\num+ kann
     \item[2. Argument] Kann alles, was \lstinline+\si+ kann
   \end{description}
-  \begin{CodeExample}{0.6}[Winkel]
+  \begin{CodeExample}{0.72}[Winkel]
     \begin{lstlisting}
+      \ang{5;;}
+      \ang{;5;}
+      \ang{;;5}
+      \ang{5;55;}
       \ang{5;55;59}
     \end{lstlisting}
   \CodeResult
-    \strut
-    \ang{5;55;59}
+    \strut\ang{5;;}\\
+    \strut\ang{;5;}\\
+    \strut\ang{;;5}\\
+    \strut\ang{5;55;}\\
+    \strut\ang{5;55;59}\\
   \end{CodeExample}
 \end{frame}

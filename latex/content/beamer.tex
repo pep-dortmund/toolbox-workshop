@@ -8,20 +8,19 @@
   \begin{itemize}
     \item Dokumentenklasse für Präsentationen
     \item \lstinline+frame+-Umgebung erzeugt eine Folie
-    \item Bei Nutzung mit \lstinline+fontspec+ und \lstinline+unicode-math+ muss die Option \texttt{professionalfonts} gesetzt werden.
-    \item Aussehen wird durch \enquote{themes} gesteuert.
-    \item Viele themes werden mit \TeX-Live mitgeliefert.
-    \item Sehen leider alle fast gleich aus.
+    \item Bei Nutzung mit \lstinline+fontspec+ und \lstinline+unicode-math+ muss das \texttt{fonttheme} \texttt{professionalfonts} genutzt werden.
+    \item Aussehen wird durch \enquote{themes} gesteuert
+    \item Viele themes werden mit \TeX-Live mitgeliefert
+    \item Sehen leider alle fast gleich aus
+    \item Alternativen: z.\,B.~\texttt{mtheme}
   \end{itemize}
 \end{frame}
 
-\begin{frame}[fragile]{Minimal-Beispiel}
+\begin{BeamerCodeFrame}[fragile]{Minimal-Beispiel}
   \begin{center}
     \begin{lstlisting}
-      \documentclass[
-        professionalfonts,
-      ]{beamer}
-
+      \documentclass[aspectratio=1610]{beamer}
+      \usefonttheme{professionalfonts}
       \usepackage{fontspec}
       \usepackage[
         math-style=ISO,
@@ -39,9 +38,9 @@
       \end{document}
     \end{lstlisting}
   \end{center}
-\end{frame}
+\end{BeamerCodeFrame}
 
-\begin{frame}[fragile]{Mehrere Spalten}
+\begin{BeamerCodeFrame}[fragile]{Mehrere Spalten}
   \begin{itemize}
     \item \texttt{columns}-Umgebung für Bereich mit mehreren Spalten
     \item Option \texttt{onlytextwidth} damit nichts in den Rand ragt
@@ -66,9 +65,9 @@
       \end{columns}
     \end{lstlisting}
   \end{center}
-\end{frame}
+\end{BeamerCodeFrame}
 
-\begin{frame}[fragile]{Blöcke}
+\begin{BeamerCodeFrame}[fragile]{Blöcke}
   \begin{itemize}
     \item (Zu?) Oft genutztes Element in \texttt{beamer}-Präsentationen
     \item Standardblöcke können nicht viel → \texttt{tcolorbox}
@@ -98,9 +97,9 @@
       Block Body
     \end{alertblock}
   \end{CodeExample}
-\end{frame}
+\end{BeamerCodeFrame}
 
-\begin{frame}[fragile]{Nervige Buttons abschalten}
+\begin{BeamerCodeFrame}[fragile]{Nervige Buttons abschalten}
   \begin{center}
     \begin{lstlisting}
       \documentclass[…]{beamer}
@@ -117,12 +116,12 @@
       \end{document}
     \end{lstlisting}
   \end{center}
-\end{frame}
+\end{BeamerCodeFrame}
 
-\begin{frame}[fragile]{\texttt{siunitx} mit beamer}
+\begin{BeamerCodeFrame}[fragile]{\texttt{siunitx} mit beamer}
   \begin{center}
     \begin{lstlisting}
-      \documentclass[professionalfonts]{beamer}
+      \documentclass[aspectratio=1610]{beamer}
       %  …
       %  packages here
       %  …
@@ -143,4 +142,4 @@
       \end{document}
     \end{lstlisting}
   \end{center}
-\end{frame}
+\end{BeamerCodeFrame}

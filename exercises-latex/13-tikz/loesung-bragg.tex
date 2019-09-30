@@ -1,3 +1,4 @@
+\RequirePackage{luatex85}
 \documentclass{standalone}
 
 \usepackage{mathtools}
@@ -13,16 +14,20 @@
 \usepackage{tikz}
 
 \begin{document}
-\renewcommand\d{1cm}
-\newcommand\ang{30}
+
 \begin{tikzpicture}
+  \renewcommand\d{1cm}
+  \newcommand\ang{30}
+
   \foreach \y in {0, -\d}
   {
     \draw[thick, red] (0, \y) -- +(180-\ang: 4cm);
     \draw[thick, red] (0, \y) -- +(\ang: 4cm);
   }
+
   \tikzset{dot/.style={shape=circle,fill=black,scale=0.3}}
   \draw[thick, blue] (270 - \ang: {cos(\ang)} * \d) -- (0, -\d) node[anchor=north east] {$\symup{\Delta}s$}; 
+
   \foreach \y in {0, -\d}
   {
     \draw[dotted, thin] (-3.1, \y) -- (3.1, \y); 
@@ -31,6 +36,7 @@
       \node[dot] at (\x, \y) {};
     }
   }
+
   \draw (5mm, 0) arc [start angle=0, end angle=\ang, radius=5mm];
   \node at (\ang/2: 8mm) {$θ$};
   \draw (0, 0) -- (270 - \ang: {cos(\ang)} * \d);
@@ -38,4 +44,5 @@
   \draw[dashed, thin] (0, 1) -- (0, -1*\d);
   \draw[<->] (-2.5, 0) -- +(0, -\d) node[left, midway] {$d$}; 
 \end{tikzpicture}
+
 \end{document}

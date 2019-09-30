@@ -33,7 +33,7 @@
       \usepackage{grffile}
     \end{lstlisting}
   \end{Packages}
-  \begin{CodeExample}{0.60}
+  \begin{CodeExample}{0.65}
     \begin{lstlisting}
       \begin{figure}
         \centering
@@ -142,15 +142,18 @@
       In Abbildung \ref{fig:logos} sehen Sie zwei Logos.
       In Abbildung \ref{fig:pep2} sehen Sie das PeP-Logo.
       In Abbildung \subref{fig:pep2} sehen Sie das PeP-Logo.
+      In \autoref{fig:pep2} sehen Sie das PeP-Logo.
     \end{lstlisting}
     \CodeResult
       \strut
-      In Abbildung \ref{fig:logos} sehen Sie zwei Logos. \\[\baselineskip]
-      In Abbildung \ref{fig:pep2} sehen Sie das PeP-Logo. \\[\baselineskip]
-      In Abbildung \subref{fig:pep2} sehen Sie das PeP-Logo.
+      In Abbildung~\ref{fig:logos} sehen Sie zwei Logos. \\[\baselineskip]
+      In Abbildung~\ref{fig:pep2} sehen Sie das PeP-Logo. \\[\baselineskip]
+      In Abbildung~\subref{fig:pep2} sehen Sie das PeP-Logo.\\[\baselineskip]
+      In Abbildung~\ref{fig:pep2} sehen Sie das PeP-Logo.
   \end{CodeExample}
   \vspace{2em}
-  \lstinline+\subref+ nur in \lstinline+\caption{…}+ zu Subfigures sinvoll.
+  \lstinline+\subref+ nur in \lstinline+\caption{…}+ zu Subfigures sinvoll. \\
+  \lstinline+\autoref+ erfordert eine Sprachoption für \lstinline+hyperref+: \lstinline+\usepackage[german, …]{hyperref}+  \\
 \end{frame}
 
 \begin{frame}[fragile]{Positionen der Gleitumgebungen}

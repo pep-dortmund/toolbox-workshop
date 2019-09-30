@@ -1,2 +1,0 @@
-Schreibe eine Makefile, die beim Aufruf von `make` die Dateien plot.pdf und parameter.txt erstellt.
-Sie sollte die Dateien neu erstellen, falls eines der Abhängigkeiten (auswertung.py, L.txt, lambda.txt, I.txt) geändert wird.

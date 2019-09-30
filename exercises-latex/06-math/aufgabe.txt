@@ -1,4 +1,4 @@
-Hinweis: Falls ihr die hier benötigten Gesetze
+Hinweis: Falls Ihr die hier benötigten Gesetze
          und Gleichungen nicht mehr wisst,
          werft einen Blick in das PDF der Musterlösung.
          (Nicht in die .tex ;))
@@ -9,9 +9,10 @@ Aufgabe 1:
   vor.
 
 Aufgabe 2:
-  Setzt das Biot–Savart-Gesetz. Erklärt darunter im Fließtext
-  die darin vorkommenden Größen und Konstanten.
-  Versucht dafür die $-Umgebung und weitere Umgebungen zu verwenden, die ihr kennen gelernt habt.
+  Setzt das Biot–Savart-Gesetz.
+  Erklärt darunter im Fließtext die darin vorkommenden Größen und Konstanten.
+  Versucht dafür die $-Umgebung und weitere Umgebungen zu verwenden,
+  die Ihr kennen gelernt habt.
 
 Aufgabe 3:
   Setzt die Formel für die gaußsche Fehlerfortpflanzung.
@@ -21,8 +22,7 @@ Aufgabe 4:
   Dabei sollen jeweils die homogenen bzw. die inhomogen
   Gleichungen in einer Zeile stehen und die Gleichungen für
   E bzw. B untereinander.
-  Richtet die Gleichungen jeweils Vertikal am Gleicheitszeichen
-  aus.
+  Richtet die Gleichungen jeweils Vertikal am Gleicheitszeichen aus.
 
 Aufgabe 5:
   Leitet aus den Maxwellgleichungen im Vakuum die Wellengleichung
@@ -43,4 +43,4 @@ Aufgabe 8:
   Funktion mit n Parametern.
 
 Aufgabe 9:
-  Setzt die DGL für den gedämpften Harmonischen Oszillator sowie seine Lösung.
+  Setzt die DGL für den gedämpften harmonischen Oszillator sowie ihre Lösung.

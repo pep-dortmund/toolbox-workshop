@@ -1,0 +1,18 @@
+Entnommen aus Versuch 354.
+Ziel ist es, Exponentialfunktionen an die Maxima und Minima der abklingenden Schwingung zu fitten.
+Dabei sollte die Funktion
+
+e(x) = a * exp(b * x) + c
+
+sein.
+
+Dazu gibt es in scipy.signal die Funktion
+
+find_peaks(y, prominence, distance, ...)
+
+Dabei ist y ein Array von Werten, in denen Peaks gefunden werden sollen.
+Die Funktion bekommt weitere Optionen, um die Ergebnisse einzuschränken.
+Wichtig sind zum Beispiel `prominence` und `distance`.
+
+Frage:
+Wie findet man mit der Funktion Minima?

@@ -10,10 +10,6 @@
 % Warnung, falls nochmal kompiliert werden muss
 \usepackage[aux]{rerunfilecheck}
 
-% deutsche Spracheinstellungen
-\usepackage{polyglossia}
-\setmainlanguage{german}
-
 % unverzichtbare Mathe-Befehle
 \usepackage{amsmath}
 % viele Mathe-Symbole
@@ -24,6 +20,18 @@
 % Fonteinstellungen
 \usepackage{fontspec}
 % Latin Modern Fonts werden automatisch geladen
+% Alternativ zum Beispiel:
+%\setromanfont{Libertinus Serif}
+%\setsansfont{Libertinus Sans}
+%\setmonofont{Libertinus Mono}
+
+% Wenn man andere Schriftarten gesetzt hat,
+% sollte man das Seiten-Layout neu berechnen lassen
+\recalctypearea{}
+
+% deutsche Spracheinstellungen
+\usepackage[main=ngerman]{babel}
+
 
 \usepackage[
   math-style=ISO,    % ┐
@@ -39,14 +47,17 @@
 
 % traditionelle Fonts für Mathematik
 \setmathfont{Latin Modern Math}
+% Alternativ zum Beispiel:
+%\setmathfont{Libertinus Math}
+
 \setmathfont{XITS Math}[range={scr, bfscr}]
 \setmathfont{XITS Math}[range={cal, bfcal}, StylisticSet=1]
 
 % Zahlen und Einheiten
 \usepackage[
-  locale=DE,                 % deutsche Einstellungen
-  separate-uncertainty=true, % immer Fehler mit \pm
-  per-mode=reciprocal,       % ^-1 für inverse Einheiten
+  locale=DE,                   % deutsche Einstellungen
+  separate-uncertainty=true,   % immer Fehler mit \pm
+  per-mode=symbol-or-fraction, % / in inline math, fraction in display math
 ]{siunitx}
 
 % chemische Formeln
@@ -73,7 +84,7 @@
   below,   % unterhalb der Section aber auf der selben Seite ist ok
 ]{placeins}
 
-% Seite drehen für breite Tabellen
+% Seite drehen für breite Tabellen: landscape Umgebung
 \usepackage{pdflscape}
 
 % Captions schöner machen.
@@ -106,6 +117,7 @@
 
 % Hyperlinks im Dokument
 \usepackage[
+  german,
   unicode,        % Unicode in PDF-Attributen erlauben
   pdfusetitle,    % Titel, Autoren und Datum als PDF-Attribute
   pdfcreator={},  % ┐ PDF-Attribute säubern
@@ -117,17 +129,11 @@
 % Trennung von Wörtern mit Strichen
 \usepackage[shortcuts]{extdash}
 
-\author{
-  AUTOR A%
-  \texorpdfstring{
-    \\
-    \href{mailto:authorA@udo.edu}{authorA@udo.edu}
-  }{}%
-  \texorpdfstring{\and}{, }
-  AUTOR B%
-  \texorpdfstring{
-    \\
-    \href{mailto:authorB@udo.edu}{authorB@udo.edu}
-  }{}%
+\author{%
+  AUTOR A\\%
+  \href{mailto:authorA@udo.edu}{authorA@udo.edu}%
+  \and%
+  AUTOR B\\%
+  \href{mailto:authorB@udo.edu}{authorB@udo.edu}%
 }
 \publishers{TU Dortmund – Fakultät Physik}

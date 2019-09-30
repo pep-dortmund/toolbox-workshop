@@ -3,11 +3,9 @@ figure.figsize : 4.76, 2.94  # 5.78, 3.57 für scrartcl
 font.family : serif
 font.size : 11  # standard Textgröße in scrartcl
 legend.fontsize : medium
-pgf.rcfonts : False
-pgf.texsystem : lualatex
-pgf.preamble : \input{header-matplotlib.tex}
-savefig.bbox : tight    # savefig(bbox_inches=...)
-savefig.pad_inches : 0  # savefig(pad_inches=...)
-text.usetex : True
 xtick.labelsize : 9
 ytick.labelsize : 9
+pgf.rcfonts : False
+text.usetex : True
+pgf.texsystem : lualatex
+pgf.preamble : \input{header-matplotlib.tex}

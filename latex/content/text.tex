@@ -124,26 +124,25 @@
   So macht man es richtig:
   \begin{Packages}
     \begin{lstlisting}
-      \usepackage[autostyle]{csquotes}    % nach polyglossia
-      \setotherlanguages{english, french} % andere Sprachen laden
+      % babel mit anderen Sprachen laden
+      \usepackage[main=ngerman, english, french]{babel}
+      \usepackage[autostyle]{csquotes}    % babel
     \end{lstlisting}
   \end{Packages}
   \begin{CodeExample}{0.60}
     \begin{lstlisting}
       foo \enquote{bar} baz
       \enquote{foo \enquote{bar} baz}
-      \textenglish{\enquote{foo}}
-      \textfrench{\enquote{foo}}
+      \foreignlanguage{english}{\enquote{foo}}
+      \foreignlanguage{french}{\enquote{foo}}
       \textcquote{root}{foo}
     \end{lstlisting}
   \CodeResult
     \strut
     foo \enquote{bar} baz \\
     \enquote{foo \enquote{bar} baz} \\
-    \textenglish{\enquote{foo}} \\
-    \textfrench{ \enquote{foo}} \\
+    \foreignlanguage{english}{\enquote{foo}}\\
+    \foreignlanguage{french}{\enquote{foo}}\\
     \textcquote{root}{foo}
-    % work around polyglossia bug #68
-    \directlua{polyglossia.desactivate_frpt()}
   \end{CodeExample}
 \end{frame}

@@ -1,0 +1,3 @@
+$out_dir = "build";
+$pdflatex = "lualatex -interaction=batchmode -halt-on-error %O %S";
+$pdf_mode = 1;

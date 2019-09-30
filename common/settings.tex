@@ -29,8 +29,8 @@
   breaklines=true,
   keepspaces=true,
   showlines=true,
-  aboveskip=0em,
-  belowskip=0em,
+  aboveskip=0pt,
+  belowskip=0pt,
 }
 
 \input{settings-lst-cs.tex}
@@ -44,3 +44,12 @@
          \expandafter\lst@Literate\lst@literate{}\relax\z@
      \fi}
 \makeatother
+
+\tikzset{
+  invisible/.style={opacity=0,text opacity=0},
+  visible on/.style={alt={#1{}{invisible}}},
+  alt/.code args={<#1>#2#3}{%
+    \alt<#1>{\pgfkeysalso{#2}}{\pgfkeysalso{#3}} % \pgfkeysalso doesn't change the path
+  },
+}
+\setbeamertemplate{bibliography item}{\insertbiblabel}

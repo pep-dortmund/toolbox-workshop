@@ -17,6 +17,6 @@ y = x ** np.sin(x)
 
 plt.plot(x, y)
 plt.xlabel(r'$\alpha / \si{\ohm}$')
-plt.tight_layout(pad=0)  # pad=0 in matplotlibrc leider nicht möglich
+# in matplotlibrc leider (noch) nicht möglich
+plt.tight_layout(pad=0, h_pad=1.08, w_pad=1.08)
 plt.savefig('build/figures/mattex5.pdf')
-

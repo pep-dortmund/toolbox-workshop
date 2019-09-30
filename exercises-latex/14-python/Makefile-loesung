@@ -1,3 +1,0 @@
-all:
-	mkdir -p build
-	touch build/loesung.pdf

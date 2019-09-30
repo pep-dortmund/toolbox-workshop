@@ -17,6 +17,6 @@ y = x ** np.sin(x)
 plt.figure(figsize=(4.76, 2.94))
 plt.plot(x, y)
 plt.xlabel(r'$\alpha / \si{\ohm}$')
-plt.tight_layout(pad=0)
-plt.savefig('build/figures/mattex3.pdf',
-            bbox_inches='tight', pad_inches=0)
+
+plt.tight_layout(pad=0, h_pad=1.08, w_pad=1.08)
+plt.savefig('build/figures/mattex3.pdf')

@@ -137,9 +137,8 @@
       \usepackage[aux]{rerunfilecheck}
 
 
-      \usepackage{polyglossia}
-      \setmainlanguage{german}
       \usepackage{fontspec}
+      \usepackage[main=ngerman]{babel}
 
       % mehr Pakete hier
 
@@ -148,12 +147,12 @@
       \usepackage{bookmark}
     \end{lstlisting}
   \Explanation
-    \strut
     Warnung, falls nochmal kompiliert werden muss. \\[\baselineskip]
-  Deutsche Spracheinstellungen. \\[\baselineskip]
-    Für Fonteinstellungen \\[3\baselineskip]
+    Für Fonteinstellungen \\
+    Deutsche Spracheinstellungen. \\[3\baselineskip]
     Für Hyperlinks (z.B. Inhaltsverzeichnis → Kapitel). \\
-    Erweiterte Bookmarks im PDF.
+    Bessere Bookmarks im PDF,
+    korrekte Seitenzahlen im Viewer wenn mehrere Numerierungen
   \end{CodeExplanation}
   Die Reihenfolge ist manchmal wichtig, z.B. damit Pakete die Spracheinstellung kennen.
 \end{frame}
@@ -182,36 +181,40 @@
 }
   Standardeinstellung sind die Latin-Modern-Fonts.
   \vspace{1em}
-  \begin{CodeExplanation}{0.48}[Latin Modern][Alternativ: Tex Gyre]
+  \begin{CodeExplanation}{0.48}[Latin Modern][Alternativ zum Beispiel: Libertinus]
     \begin{lstlisting}
       \usepackage{fontspec}
     \end{lstlisting}
   \Explanation
     \begin{lstlisting}
       \usepackage{fontspec}
-      \setmainfont{Tex Gyre Termes}
-      \setsansfont{Tex Gyre Heros}
-      \setmonofont{Tex Gyre Cursor}
+      \setmainfont{Libertinus Serif}
+      \setsansfont{Libertinus Sans}
+      \setmonofont{Libertinus Mono}
     \end{lstlisting}
   \end{CodeExplanation}
   \begin{itemize}
-    \item Jede System-Schriftart kann genutzt
-    \item \alert{Das ist i.A. nicht sinnvoll: \fontspec{Comic Sans MS} Hallo Welt in Comic Sans!}
+    \item Jede System-Schriftart kann genutzt werden
+    \item \alert{Das ist i.A. nicht sinnvoll: \IfFontExistsTF{Comic Sans MS}{\fontspec{Comic Sans MS} Hallo Welt in Comic Sans!}{Herzlichen Glückwunsch, diese PDF ist ohne \enquote{Comic Sans} gebaut worden!}}
     \item Schriften müssen zueinander passen
     \item Schriften müssen alle benötigten Sonderzeichen enthalten
     \item Bei Änderung auch Mathefont anpassen → später
+    \item Welche Schriftarten zueinander passen ist eine Wissenschaft für sich.
   \end{itemize}
 \end{frame}
 
 \begin{frame}[fragile]{Gerüst}
+  \alert{VORSICHT BEIM KOPIEREN AUS PDFs! Besser selbst tippen}
+
   \begin{lstlisting}
     \documentclass{scrartcl}
 
     \usepackage[aux]{rerunfilecheck}
-    \usepackage{polyglossia}
-    \setmainlanguage{german}
 
     \usepackage{fontspec}
+
+    \usepackage[main=ngerman]{babel}
+
     % mehr Pakete hier
 
     \usepackage[unicode]{hyperref}

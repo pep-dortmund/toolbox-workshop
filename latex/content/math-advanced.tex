@@ -1,6 +1,38 @@
 \section{Fortgeschrittener Formelsatz}
 
-\begin{frame}[fragile]{
+\begin{frame}[fragile]{Displaystil vs.\ Textstil}
+  
+  \LaTeX{} besitzt zwei Stile zum darstellen von Formeln
+  \begin{description}
+    \item[textstyle] Standardmäßig in \lstinline+$...$+. Kleiner, weniger hoch.
+    \item[displaystyle] Formeln werden in der vollen Höhe dargestellt, standardmäßig in allen Mathematik-Umgebungen.
+  \end{description}
+
+  \begin{CodeExample}{0.70}[Integral]
+    \begin{lstlisting}
+      $\int_0^1 x^2$
+
+      $\displaystyle\int_0^1 x^2$
+    \end{lstlisting}
+  \CodeResult
+    \strut
+    $\int_0^1 x^2$ \\[0.5\baselineskip]
+    $\displaystyle\int_0^1 x^2$
+  \end{CodeExample}
+
+  \begin{CodeExample}{0.70}[Bruch]
+    \begin{lstlisting}
+      $\frac{1}{1 + \frac{1}{x^2}}$
+
+      $\displaystyle\frac{1}{1 + \frac{1}{x^2}}$
+    \end{lstlisting}
+  \CodeResult
+    $\frac{1}{1 + \frac{1}{x^2}}$\\[0.5\baselineskip]
+    $\displaystyle\frac{1}{1 + \frac{1}{x^2}}$
+  \end{CodeExample}
+\end{frame}
+
+\begin{frame}[fragile]{%
   Matrizen
   \hfill
   \doc{http://mirrors.ctan.org/macros/latex/required/amslatex/math/amsldoc.pdf}{amsmath}
@@ -118,7 +150,10 @@
 \end{frame}
 
 \begin{frame}[fragile]{Fallunterscheidungen}
-  Befehle mit * aktivieren den Textmodus nach dem \lstinline+&+.
+  \begin{itemize}
+    \item Umgebungen mit \lstinline+*+ aktivieren den Textmodus nach dem \lstinline+&+. 
+    \item Umgebungen mit \lstinline+d+ am Anfang nutzen den Displaystil
+  \end{itemize}
   \begin{CodeExample}{0.55}
     \begin{lstlisting}
       f(x) =
@@ -186,12 +221,12 @@
 \end{frame}
 
 \begin{frame}[fragile]{\lstinline+\\underbrace+}
-  \begin{CodeExample}{0.58}
+  \begin{CodeExample}{0.65}
     \begin{lstlisting}
-      f(x)= \underbrace{g(x)}
-        _{x + x^2 + x^3}
-      + \overbrace{h(x)}
-        ^{\mathclap{\text{mehr Erklärung}}}
+      f(x)=
+      \underbrace{g(x)}_{x + x^2 + x^3}
+      +
+      \overbrace{h(x)}^{\mathclap{\text{mehr Erklärung}}}
       + 2
     \end{lstlisting}
   \CodeResult
@@ -252,7 +287,7 @@
 \end{frame}
 
 \begin{frame}[fragile]{\lstinline+\\vphantom+}
-  \begin{CodeExample}{0.70}
+  \begin{CodeExample}{0.8}
     \begin{lstlisting}
       \begin{align*}
         f = {} & \left( \frac{1}{2} \right. \\
