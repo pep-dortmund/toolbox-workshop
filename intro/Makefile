@@ -32,7 +32,7 @@ build/figures/scipy.png: | build/figures
 	wget https://raw.githubusercontent.com/scipy/scipy-sphinx-theme/master/_static/scipyshiny_small.png -O $@ --no-use-server-timestamps
 
 build/figures/numpy.png: | build/figures
-	wget http://www.numpy.org/_static/numpy_logo.png -O $@ --no-use-server-timestamps
+	wget https://numpy.org/doc/stable/_static/numpy_logo.png -O $@ --no-use-server-timestamps
 
 build/figures/atom.jpg: | build/figures
 	wget https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Atom_editor_logo.svg/2000px-Atom_editor_logo.svg.png -O $@ --no-use-server-timestamps
