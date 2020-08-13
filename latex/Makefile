@@ -19,7 +19,7 @@ build/figures/knuth.jpg: | build/figures
 build/figures/lamport.jpg: | build/figures
 	wget http://amturing.acm.org/images/Lamport_2.jpg -O $@ --no-use-server-timestamps
 
-build/latex.pdf: $(addprefix build/figures/, $(addsuffix .jpg, knuth lamport))
+#build/latex.pdf: $(addprefix build/figures/, $(addsuffix .jpg, knuth lamport))
 
 build/latex.pdf: examples.bib
 
