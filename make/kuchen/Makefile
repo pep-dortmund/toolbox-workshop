@@ -16,22 +16,26 @@ Kuchen: Teig Backofen
 Teig: Milch Eier Mehl Zucker Rumrosinen | Schüssel
 	@echo "\n\033[31mTeig\033[0m"
 	@echo "Eier schlagen..."
+	@cat Eier
 	@sleep 2
 	@cat Eier > Schüssel
-	@echo "Milch hinzugeben..."
+	@echo "\nMilch hinzugeben..."
+	@cat Milch
 	@sleep 2
 	@cat Milch >> Schüssel
-	@echo "Zucker hinzugeben..."
+	@echo "\nZucker hinzugeben..."
+	@cat Zucker
 	@sleep 2
 	@cat Zucker >> Schüssel
-	@echo "Mehl hinzugeben..."
+	@echo "\nMehl hinzugeben..."
+	@cat Mehl
 	@sleep 2
 	@cat Mehl >> Schüssel
-	@echo "Rumrosinen unterrühren..."
+	@echo "\nRumrosinen unterrühren..."
+	@cat Rumrosinen
 	@sleep 2
 	@cat Rumrosinen >> Schüssel
 	@echo "Teig ist fertig!"
-	@cat Schüssel
 	@sleep 1
 
 Rumrosinen: Rum Rosinen
