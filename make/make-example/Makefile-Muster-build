@@ -1,0 +1,25 @@
+all: build/report.pdf
+
+build/plot1.pdf: plot1.py data.txt | build
+	python plot1.py
+
+build/plot2.pdf: plot2.py data.txt data2.txt | build
+	python plot2.py
+
+build/report.pdf: build/plot1.pdf build/plot2.pdf report.tex | build
+	 lualatex \
+	  --output-directory=build \
+	  --interaction=batchmode \
+	report.tex
+
+build:
+	mkdir -p build
+
+clean:
+	rm -rf build
+	rm -f plot1.pdf
+	rm -f plot2.pdf
+
+FORCE:
+
+.PHONY: all clean

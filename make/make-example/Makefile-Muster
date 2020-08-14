@@ -1,0 +1,23 @@
+all: report.pdf
+
+plot1.pdf: plot1.py data.txt
+	python plot1.py
+
+plot2.pdf: plot2.py data.txt data2.txt
+	python plot2.py
+
+report.pdf: plot1.pdf plot2.pdf report.tex
+	 lualatex \
+	  --interaction=batchmode \
+	report.tex
+
+clean:
+	rm -f plot1.pdf
+	rm -f plot2.pdf
+	rm -f report.aux
+	rm -f report.log
+	rm -f report.pdf
+
+FORCE:
+
+.PHONY: all clean
