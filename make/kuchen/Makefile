@@ -1,5 +1,5 @@
 Kuchen: Teig Backofen
-	@echo "\n\033[31mBacken\033[0m"
+	@echo -e "\n\033[31mBacken\033[0m"
 	@echo "Backofen wird vorgeheizt"
 	@cat Backofen
 	@sleep 5
@@ -14,24 +14,24 @@ Kuchen: Teig Backofen
 	@cat portal
 
 Teig: Milch Eier Mehl Zucker Rumrosinen | Schüssel
-	@echo "\n\033[31mTeig\033[0m"
+	@echo -e "\n\033[31mTeig\033[0m"
 	@echo "Eier schlagen..."
 	@cat Eier
 	@sleep 2
 	@cat Eier > Schüssel
-	@echo "\nMilch hinzugeben..."
+	@echo -e "\nMilch hinzugeben..."
 	@cat Milch
 	@sleep 2
 	@cat Milch >> Schüssel
-	@echo "\nZucker hinzugeben..."
+	@echo -e "\nZucker hinzugeben..."
 	@cat Zucker
 	@sleep 2
 	@cat Zucker >> Schüssel
-	@echo "\nMehl hinzugeben..."
+	@echo -e "\nMehl hinzugeben..."
 	@cat Mehl
 	@sleep 2
 	@cat Mehl >> Schüssel
-	@echo "\nRumrosinen unterrühren..."
+	@echo -e "\nRumrosinen unterrühren..."
 	@cat Rumrosinen
 	@sleep 2
 	@cat Rumrosinen >> Schüssel
@@ -39,7 +39,7 @@ Teig: Milch Eier Mehl Zucker Rumrosinen | Schüssel
 	@sleep 1
 
 Rumrosinen: Rum Rosinen
-	@echo "\033[31mRumrosinen\033[0m"
+	@echo -e "\033[31mRumrosinen\033[0m"
 	@touch Rumrosinen
 	@echo "Rosinen werden in Rum eingelegt"
 	@cat Rum     >> Rumrosinen
