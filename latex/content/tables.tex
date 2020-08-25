@@ -198,8 +198,7 @@
         S[table-format=3.1]
         @{${}\pm{}$}
         S[table-format=2.1,
-          table-number-alignment=left % bei langen Tabellenköpfen
-        ]
+          table-number-alignment=left]
       }
         \toprule
         \multicolumn{2}{c}{$x_{\text{Widerstand}
@@ -214,6 +213,7 @@
     \end{lstlisting}
   \CodeResult<valign=center>
     \begin{center}
+      Ohne \texttt{alignment}
       \begin{tabular}{
         S[table-format=3.1]
         @{${}\pm{}$}
@@ -228,7 +228,7 @@
         684.0 &  8.2 \\
         \bottomrule
       \end{tabular}
-      ~ \\ \vspace{2em}
+      ~ \\ \vspace{2em} Mit \texttt{alignment}
       \begin{tabular}{
         S[table-format=3.1]
         @{${}\pm{}$}
