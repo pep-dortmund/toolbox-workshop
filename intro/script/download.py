@@ -26,26 +26,11 @@ participants = [get_data(p) for p in data['participants']]
 with open('data/toolbox2020.json', 'w') as f:
     json.dump(participants, f, indent=2)
 
-list = []
-for participant in participants:
-    if (participant['installieren'] == True):
-        list.append(participant['os'])
-os = pd.Series(list).value_counts()
-print("Installieren\t", os.sum())
-print(os)
 
-list = []
-for participant in participants:
-    if (participant['toolbox'] == True):
-        list.append(participant['os'])
-os = pd.Series(list).value_counts()
-print("\nToolbox\t\t", os.sum())
-print(os)
+keys = ['os', 'installieren', 'toolbox', 'latex']
+df = pd.DataFrame([{k: p[k] for k in keys} for p in participants])
 
-list = []
-for participant in participants:
-    if (participant['latex'] == True):
-        list.append(participant['os'])
-os = pd.Series(list).value_counts()
-print("\nLatex\t\t", os.sum())
-print(os)
+for part in ('installieren', 'toolbox', 'latex'):
+    print('\n')
+    print(part, '\t\t', df[df[part]]['os'].value_counts().sum())
+    print(df[df[part]]['os'].value_counts())

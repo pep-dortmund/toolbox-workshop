@@ -7,11 +7,11 @@ plt.rcParams['font.family'] = 'sans-serif'
 
 
 def operating_system(answers):
-    list = []
+    liste = []
     for participant in answers:
         if (participant['toolbox'] == True):
-            list.append(participant['os'])
-    os = pd.Series(list).value_counts()
+            liste.append(participant['os'])
+    os = pd.Series(liste).value_counts()
     os /= os.sum()
 
     fig = plt.figure(figsize=(5.5, 3.3))
@@ -27,11 +27,11 @@ def operating_system(answers):
 
 
 def programming(answers):
-    list = []
+    liste = []
     for participant in answers:
         if (participant['toolbox'] == True):
-            list.append(participant['skill'])
-    programming = pd.Series(list)
+            liste.append(participant['skill'])
+    programming = pd.Series(liste)
     programming = programming.str.replace(',', ',\n')
 
     programming = programming.value_counts()
@@ -50,34 +50,30 @@ def programming(answers):
 
 
 def languages(answers):
-    list = []
+    liste = []
     for participant in answers:
-        if (participant['toolbox'] == True and participant['skill'] != 'Noch nie programmiert'):
-            str = ''
-            if (participant['languages']['c'] == True):
-                str += 'C;'
-            if (participant['languages']['cpp'] == True):
-                str += 'C++;'
-            if (participant['languages']['fortran'] == True):
-                str += 'Fortran;'
-            if (participant['languages']['haskell'] == True):
-                str += 'Haskell;'
-            if (participant['languages']['java'] == True):
-                str += 'Java;'
-            if (participant['languages']['javascript'] == True):
-                str += 'JavaScript;'
-            if (participant['languages']['pascal'] == True):
-                str += 'Pascal;'
-            if (participant['languages']['python'] == True):
-                str += 'Python;'
-            if (participant['languages']['other'] != ''):
-                str += participant['languages']['other'].replace(', ', ';')
-                str = str.replace('#', '\#')
-            if (str != ''):
-                if (str[-1] == ';'):
-                    str = str[:-1]
-                list.append(str)
-    languages = pd.Series(list)
+        if (participant['toolbox'] == True):
+            for language, answer in participant['languages'].items():
+                if (answer and language == 'other'):
+                    answer = answer.replace(', ', ';')
+                    answer = answer.replace('#', '\#')
+                    liste.append(answer)
+                if answer:
+                    liste.append(language)
+    languages = pd.Series(liste)
+    languages.replace(
+        {
+            'c': 'C',
+            'cpp': 'C++',
+            'fortran': 'Fortran',
+            'haskell': 'Haskell',
+            'java': 'Java',
+            'javascript': 'JavaScript',
+            'pascal': 'Pascal',
+            'python': 'Python'
+        },
+        inplace=True
+    )
     counts = pd.Series(languages.str.split(';').sum()).value_counts()
 
     fig = plt.figure(figsize=(5.5, 3.3))
@@ -89,24 +85,25 @@ def languages(answers):
 
 
 def interests(answers):
-    list = []
+    liste = []
     for participant in answers:
         if (participant['toolbox'] == True):
-            if (participant['toolbox_interests']['cli'] == True):
-                list.append('Unix')
-            if (participant['toolbox_interests']['git'] == True):
-                list.append('Git')
-            if (participant['toolbox_interests']['make'] == True):
-                list.append('Make')
-            if (participant['toolbox_interests']['plotting'] == True):
-                list.append('Plots')
-            if (participant['toolbox_interests']['python'] == True):
-                list.append('Auswerten')
-            if (participant['toolbox_interests']['uncertainties'] == True):
-                list.append('Auto-Fehlerrechnung')
-    interest = pd.Series(list)
+            for topic, interest in participant['toolbox_interests'].items():
+                if interest:
+                    liste.append(topic)
+    interest = pd.Series(liste)
+    interest.replace(
+        {
+            'cli': 'Unix',
+            'git': 'Git',
+            'make': 'Make',
+            'plotting': 'Plots',
+            'python': 'Auswerten',
+            'uncertainties': 'Auto-Fehlerrechnung'
+        },
+        inplace=True
+    )
     interest = interest.value_counts()
-
     fig, ax = plt.subplots(1, 1, figsize=(5.5, 3.3))
 
     interest.plot.barh(ax=ax)
