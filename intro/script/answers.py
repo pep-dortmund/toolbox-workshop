@@ -89,16 +89,6 @@ def languages(answers):
 
 
 def interests(answers):
-    """
-    "toolbox_interests": {
-        "cli": false,
-        "git": false,
-        "make": false,
-        "plotting": false,
-        "python": false,
-        "uncertainties": false
-    }
-    """
     list = []
     for participant in answers:
         if (participant['toolbox'] == True):
