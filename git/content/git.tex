@@ -158,7 +158,7 @@
         },
       ]{
         "Erstabgabe" [visible on=<4->, green!60!black, x=4];
-        a <- b <- c <- d <- master [vertexDarkRed];
+		a <- b <- c <- d <- master [vertexDarkRed];
         f[visible on=<2>] ->[visble on=<2>] -> a;
         "Erstabgabe"[visible on=<2>] ->[visible on=<3>] c;
       };
@@ -207,7 +207,8 @@
     \item<2-> \textcolor{vertexDarkRed}{Branch}: benannter Zeiger auf einen Commit
       \begin{itemize}
         \item Entwicklungszweig
-        \item Im Praktikum reicht bereits die Standard-Branch: \texttt{master}
+		\item Im Praktikum reicht bereits die Standard-Branch: \texttt{master} 
+			(Auf github ab Okt. 2020: \texttt{main})
         \item Wandert weiter
       \end{itemize}
     \item<4-> \textcolor{green!60!black}{Tag}: unveränderbarer Zeiger auf einen Commit
