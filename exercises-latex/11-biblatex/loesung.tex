@@ -7,6 +7,10 @@
 \usepackage[main=ngerman]{babel}
 
 
+% fix for a  bug in biblatex 2020-09-17
+% TODO: remove when the next version of biblatex is out
+\usepackage{etoolbox}
+\providetoggle{blx@lang@captions@english}
 \usepackage[
   style=alphabetic,
 ]{biblatex}
