@@ -85,6 +85,8 @@
 }
   \begin{Packages}
     \begin{lstlisting}
+      % fix for a biblatex bug, TODO: remove after next biblatex release
+      \providetoggle{blx@lang@captions@english}
       \usepackage{biblatex} % nach babel
       \addbibresource{lit.bib}
     \end{lstlisting}
