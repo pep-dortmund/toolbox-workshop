@@ -1,12 +1,17 @@
 import pandas as pd
 import matplotlib.pyplot as plt
-
+import json
+from pprint import pprint
 plt.style.use('ggplot')
 plt.rcParams['font.family'] = 'sans-serif'
 
 
 def operating_system(answers):
-    os = answers['Betriebssystem'].value_counts()
+    list = []
+    for participant in answers:
+        if (participant['toolbox'] == True):
+            list.append(participant['os'])
+    os = pd.Series(list).value_counts()
     os /= os.sum()
 
     fig = plt.figure(figsize=(5.5, 3.3))
@@ -22,7 +27,11 @@ def operating_system(answers):
 
 
 def programming(answers):
-    programming = answers['Programmierkentnisse']
+    list = []
+    for participant in answers:
+        if (participant['toolbox'] == True):
+            list.append(participant['skill'])
+    programming = pd.Series(list)
     programming = programming.str.replace(',', ',\n')
 
     programming = programming.value_counts()
@@ -36,42 +45,76 @@ def programming(answers):
         startangle=0,
         radius=1,
     )
-    ax.set_xlim(-1.3, 2)
+#    ax.set_xlim(-1.5, 1.5)
     fig.savefig('build/figures/programming.pdf')
 
 
 def languages(answers):
-    languages = answers['Programmiersprachen'].dropna()
-
+    list = []
+    for participant in answers:
+        if (participant['toolbox'] == True and participant['skill'] != 'Noch nie programmiert'):
+            str = ''
+            if (participant['languages']['c'] == True):
+                str += 'C;'
+            if (participant['languages']['cpp'] == True):
+                str += 'C++;'
+            if (participant['languages']['fortran'] == True):
+                str += 'Fortran;'
+            if (participant['languages']['haskell'] == True):
+                str += 'Haskell;'
+            if (participant['languages']['java'] == True):
+                str += 'Java;'
+            if (participant['languages']['javascript'] == True):
+                str += 'JavaScript;'
+            if (participant['languages']['pascal'] == True):
+                str += 'Pascal;'
+            if (participant['languages']['python'] == True):
+                str += 'Python;'
+            if (participant['languages']['other'] != ''):
+                str += participant['languages']['other'].replace(', ', ';')
+                str = str.replace('#', '\#')
+            if (str != ''):
+                if (str[-1] == ';'):
+                    str = str[:-1]
+                list.append(str)
+    languages = pd.Series(list)
     counts = pd.Series(languages.str.split(';').sum()).value_counts()
 
     fig = plt.figure(figsize=(5.5, 3.3))
     ax = fig.add_subplot(1, 1, 1)
 
     counts.sort_values(ascending=True).plot.barh(ax=ax, color='C1')
-    fig.tight_layout(pad=0)
-    fig.savefig('build/figures/languages.pdf')
+    plt.tight_layout(pad=0)
+    plt.savefig('build/figures/languages.pdf')
 
 
 def interests(answers):
-    interest = pd.Series([
-        elem
-        for row in answers['Mich interessiert besonders'].str.split(';')
-        for elem in row
-    ])
-
-    interest.replace(
-        {
-            'Umgang mit der Kommandozeile': 'Unix',
-            'Zusammenarbeiten / Versionskontrolle mit Git': 'Git',
-            'Versuchsauswertung mit Python / Numpy / Scipy': 'Auswerten',
-            'Qualitativ hochwertige Plots erstellen mit Matplotlib': 'Plots',
-            'Automatisierung/Reproduzierbarkeit mit Make': 'Make',
-            'Automatisierung der Fehlerrechnung mit Uncertainties und SymPy': 'Auto-Fehlerrechnung',
-        },
-        inplace=True,
-    )
-
+    """
+    "toolbox_interests": {
+        "cli": false,
+        "git": false,
+        "make": false,
+        "plotting": false,
+        "python": false,
+        "uncertainties": false
+    }
+    """
+    list = []
+    for participant in answers:
+        if (participant['toolbox'] == True):
+            if (participant['toolbox_interests']['cli'] == True):
+                list.append('Unix')
+            if (participant['toolbox_interests']['git'] == True):
+                list.append('Git')
+            if (participant['toolbox_interests']['make'] == True):
+                list.append('Make')
+            if (participant['toolbox_interests']['plotting'] == True):
+                list.append('Plots')
+            if (participant['toolbox_interests']['python'] == True):
+                list.append('Auswerten')
+            if (participant['toolbox_interests']['uncertainties'] == True):
+                list.append('Auto-Fehlerrechnung')
+    interest = pd.Series(list)
     interest = interest.value_counts()
 
     fig, ax = plt.subplots(1, 1, figsize=(5.5, 3.3))
@@ -83,8 +126,9 @@ def interests(answers):
 
 
 if __name__ == '__main__':
-    answers = pd.read_csv('data/2019.csv')
-    languages(answers)
-    operating_system(answers)
-    programming(answers)
-    interests(answers)
+    with open('data/toolbox2020.json', 'r') as read_file:
+        data = json.load(read_file)
+    languages(data)
+    operating_system(data)
+    programming(data)
+    interests(data)
