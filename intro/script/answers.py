@@ -54,7 +54,7 @@ def languages(answers):
     for participant in answers:
         if participant['toolbox'] is True:
             for language, answer in participant['languages'].items():
-                if answer and language is 'other':
+                if answer and language == 'other':
                     answer = answer.replace(', ', ';')
                     answer = answer.replace('#', '\#')
                     liste.append(answer)
