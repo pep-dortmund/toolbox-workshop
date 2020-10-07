@@ -9,7 +9,7 @@ plt.rcParams['font.family'] = 'sans-serif'
 def operating_system(answers):
     liste = []
     for participant in answers:
-        if (participant['toolbox'] == True):
+        if participant['toolbox'] is True:
             liste.append(participant['os'])
     os = pd.Series(liste).value_counts()
     os /= os.sum()
@@ -29,7 +29,7 @@ def operating_system(answers):
 def programming(answers):
     liste = []
     for participant in answers:
-        if (participant['toolbox'] == True):
+        if participant['toolbox'] is True:
             liste.append(participant['skill'])
     programming = pd.Series(liste)
     programming = programming.str.replace(',', ',\n')
@@ -52,9 +52,9 @@ def programming(answers):
 def languages(answers):
     liste = []
     for participant in answers:
-        if (participant['toolbox'] == True):
+        if participant['toolbox'] is True:
             for language, answer in participant['languages'].items():
-                if (answer and language == 'other'):
+                if answer and language is 'other':
                     answer = answer.replace(', ', ';')
                     answer = answer.replace('#', '\#')
                     liste.append(answer)
@@ -87,7 +87,7 @@ def languages(answers):
 def interests(answers):
     liste = []
     for participant in answers:
-        if (participant['toolbox'] == True):
+        if participant['toolbox'] is True:
             for topic, interest in participant['toolbox_interests'].items():
                 if interest:
                     liste.append(topic)
