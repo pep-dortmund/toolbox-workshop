@@ -149,10 +149,12 @@
   \Explanation
     Warnung, falls nochmal kompiliert werden muss. \\[\baselineskip]
     Für Fonteinstellungen \\
-    Deutsche Spracheinstellungen. \\[3\baselineskip]
+    Deutsche Spracheinstellungen. \\
+    Mehreren Sprache: \texttt{english, ngerman} \\
+    Hauptsprache als letztes \\[\baselineskip]
     Für Hyperlinks (z.B. Inhaltsverzeichnis → Kapitel). \\
     Bessere Bookmarks im PDF,
-    korrekte Seitenzahlen im Viewer wenn mehrere Numerierungen
+    korrekte Seitenzahlen im Viewer, wenn mehrere Numerierungen
   \end{CodeExplanation}
   Die Reihenfolge ist manchmal wichtig, z.B. damit Pakete die Spracheinstellung kennen.
 \end{frame}
@@ -213,7 +215,7 @@
 
     \usepackage{fontspec}
 
-    \usepackage[main=ngerman]{babel}
+    \usepackage[ngerman]{babel}
 
     % mehr Pakete hier
 
