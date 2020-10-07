@@ -135,14 +135,16 @@
       \enquote{foo \enquote{bar} baz}
       \foreignlanguage{english}{\enquote{foo}}
       \foreignlanguage{french}{\enquote{foo}}
-      \textcquote{root}{foo}
+      % siehe Kapitel über Bibliographie
+      \textcquote{numpy}{foo}
     \end{lstlisting}
   \CodeResult
     \strut
     foo \enquote{bar} baz \\
     \enquote{foo \enquote{bar} baz} \\
     \foreignlanguage{english}{\enquote{foo}}\\
-    \foreignlanguage{french}{\enquote{foo}}\\
-    \textcquote{root}{foo}
+    \foreignlanguage{french}{\enquote{foo}}\\[\baselineskip]
+    % siehe Kapitel über Bibliographie
+    \textcquote{numpy}{foo}
   \end{CodeExample}
 \end{frame}
