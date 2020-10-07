@@ -10,7 +10,7 @@ with open('../intro/data/toolbox2020.json', 'r') as read_file:
 
 liste = []
 for participant in answers:
-    if (participant['latex'] == True):
+    if participant['latex'] is True:
         liste.append(participant['os'])
 os = pd.Series(liste).value_counts()
 os /= os.sum()
@@ -29,7 +29,7 @@ fig.savefig('build/figures/os.pdf')
 
 liste = []
 for participant in answers:
-    if (participant['latex'] == True):
+    if participant['latex'] is True:
         liste.append(participant['latex_level'])
 experience = pd.Series(liste)
 
@@ -48,7 +48,7 @@ fig.savefig('build/figures/experience.pdf')
 
 liste = []
 for participant in answers:
-    if (participant['latex'] == True):
+    if participant['latex'] is True:
         for topic, interest in participant['latex_interests'].items():
             if interest:
                 liste.append(topic)
