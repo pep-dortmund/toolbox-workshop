@@ -23,8 +23,8 @@ The lecture material (e.g. jupyter notebooks) are shared under the Creative Comm
 
 # Build Requirements
 
-- up-to-date TeXLive 2018 (pretest at the moment)
-- up-to-date anaconda3 (using python 3.6.4)
+- up-to-date TeXLive 2020
+- up-to-date anaconda3 (using python 3.8)
 - poppler (for pdfseparate)
 - wget 
 - Python notebook extensions `pip install jupyter_contrib_nbextensions`
