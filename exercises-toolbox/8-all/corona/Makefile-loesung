@@ -1,0 +1,7 @@
+loesung-faelle-pro-tag.pdf: loesung.py FB53-Coronafallzahlen.csv
+	python loesung.py
+loesung-insgesamt.pdf: loesung-faelle-pro-tag.pdf
+loesung-aktuell.pdf: loesung-faelle-pro-tag.pdf
+
+FB53-Coronafallzahlen.csv:
+	wget https://opendata.dortmund.de/OpenDataConverter/download/Gesundheit/FB53-Coronafallzahlen.csv
