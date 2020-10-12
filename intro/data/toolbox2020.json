@@ -2584,9 +2584,9 @@
     }
   },
   {
-    "installieren": true,
+    "installieren": false,
     "languages": {
-      "c": false,
+      "c": true,
       "cpp": true,
       "fortran": false,
       "haskell": false,
@@ -2599,11 +2599,11 @@
     "latex": true,
     "latex_interests": {
       "beamer": false,
-      "bib": true,
-      "math": true,
+      "bib": false,
+      "math": false,
       "text": false,
-      "tikz": true,
-      "toc": false
+      "tikz": false,
+      "toc": true
     },
     "latex_level": "Schon mal ausprobiert",
     "os": "Windows",
@@ -2613,10 +2613,162 @@
     "submit": true,
     "toolbox": true,
     "toolbox_interests": {
+      "cli": false,
+      "git": false,
+      "make": true,
+      "plotting": false,
+      "python": false,
+      "uncertainties": false
+    }
+  },
+  {
+    "installieren": true,
+    "languages": {
+      "c": false,
+      "cpp": true,
+      "fortran": false,
+      "haskell": false,
+      "java": false,
+      "javascript": false,
+      "other": "",
+      "pascal": false,
+      "python": false
+    },
+    "latex": true,
+    "latex_interests": {
+      "beamer": false,
+      "bib": false,
+      "math": false,
+      "text": false,
+      "tikz": false,
+      "toc": false
+    },
+    "latex_level": "Schon mal ausprobiert",
+    "os": "Windows",
+    "other_interesets": "",
+    "remarks": "",
+    "skill": "Schon mal programmiert, aber noch nicht in Python",
+    "submit": true,
+    "toolbox": true,
+    "toolbox_interests": {
+      "cli": false,
+      "git": false,
+      "make": false,
+      "plotting": false,
+      "python": false,
+      "uncertainties": false
+    }
+  },
+  {
+    "installieren": false,
+    "languages": {
+      "c": false,
+      "cpp": false,
+      "fortran": false,
+      "haskell": false,
+      "java": true,
+      "javascript": false,
+      "other": "",
+      "pascal": false,
+      "python": false
+    },
+    "latex": true,
+    "latex_interests": {
+      "beamer": true,
+      "bib": true,
+      "math": true,
+      "text": true,
+      "tikz": true,
+      "toc": false
+    },
+    "latex_level": "Noch nie geh\u00f6rt",
+    "os": "Windows",
+    "other_interesets": "",
+    "remarks": "",
+    "skill": "Schon mal programmiert, aber noch nicht in Python",
+    "submit": true,
+    "toolbox": true,
+    "toolbox_interests": {
       "cli": true,
       "git": true,
       "make": true,
       "plotting": true,
+      "python": true,
+      "uncertainties": true
+    }
+  },
+  {
+    "installieren": false,
+    "languages": {
+      "c": false,
+      "cpp": true,
+      "fortran": false,
+      "haskell": false,
+      "java": false,
+      "javascript": false,
+      "other": "",
+      "pascal": false,
+      "python": false
+    },
+    "latex": true,
+    "latex_interests": {
+      "beamer": false,
+      "bib": false,
+      "math": false,
+      "text": false,
+      "tikz": false,
+      "toc": false
+    },
+    "latex_level": "Noch nie geh\u00f6rt",
+    "os": "Windows",
+    "other_interesets": "",
+    "remarks": "",
+    "skill": "Schon mal programmiert, aber noch nicht in Python",
+    "submit": true,
+    "toolbox": true,
+    "toolbox_interests": {
+      "cli": false,
+      "git": false,
+      "make": false,
+      "plotting": false,
+      "python": false,
+      "uncertainties": false
+    }
+  },
+  {
+    "installieren": true,
+    "languages": {
+      "c": false,
+      "cpp": false,
+      "fortran": false,
+      "haskell": false,
+      "java": false,
+      "javascript": false,
+      "other": "",
+      "pascal": false,
+      "python": false
+    },
+    "latex": true,
+    "latex_interests": {
+      "beamer": false,
+      "bib": false,
+      "math": false,
+      "text": false,
+      "tikz": false,
+      "toc": false
+    },
+    "latex_level": "Noch nie geh\u00f6rt",
+    "os": "macOS",
+    "other_interesets": "",
+    "remarks": "",
+    "skill": "Noch nie programmiert",
+    "submit": true,
+    "toolbox": true,
+    "toolbox_interests": {
+      "cli": false,
+      "git": true,
+      "make": false,
+      "plotting": false,
       "python": true,
       "uncertainties": true
     }
@@ -2693,6 +2845,44 @@
       "git": false,
       "make": false,
       "plotting": false,
+      "python": true,
+      "uncertainties": true
+    }
+  },
+  {
+    "installieren": true,
+    "languages": {
+      "c": false,
+      "cpp": true,
+      "fortran": false,
+      "haskell": false,
+      "java": false,
+      "javascript": false,
+      "other": "",
+      "pascal": false,
+      "python": true
+    },
+    "latex": true,
+    "latex_interests": {
+      "beamer": false,
+      "bib": true,
+      "math": true,
+      "text": false,
+      "tikz": true,
+      "toc": false
+    },
+    "latex_level": "Schon mal ausprobiert",
+    "os": "Windows",
+    "other_interesets": "",
+    "remarks": "",
+    "skill": "Schon mal programmiert, auch in Python",
+    "submit": true,
+    "toolbox": true,
+    "toolbox_interests": {
+      "cli": true,
+      "git": true,
+      "make": true,
+      "plotting": true,
       "python": true,
       "uncertainties": true
     }
