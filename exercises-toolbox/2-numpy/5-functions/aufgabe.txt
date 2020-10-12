@@ -1,5 +1,5 @@
 In dieser Aufgabe machen wir uns mit Funktionen vertraut,
-d man auf Numpy arrays anwenden kann. Im einzelnen sind dies:
+die man auf Numpy arrays anwenden kann. Im einzelnen sind dies:
 
 np.sum
 np.diff
@@ -26,7 +26,7 @@ zu haben wie das ganze funktioniert.
    B = np.array([[2, 1, 2, 1, 2], [1, 2, 1, 2, 1], [3, 1, 3, 1, 3]])
    angewendet werden. Bei mehrdimensionalen Arrays gibt es unteranderem
    ein weiteres Argument für die obigen Funktionen.
-   Dieses keywordargument heißt 'axis' und kann bei 2D Arrays wie folgt verwendet werden: 
+   Dieses keywordargument heißt 'axis' und kann bei 2D Arrays wie folgt verwendet werden:
    np.sum(B, axis=0)
    np.sum(B, axis=1)
    np.sum(B, axis=(0, 1))

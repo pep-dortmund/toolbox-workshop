@@ -1,4 +1,4 @@
-In der Pythondatei Schiffeversenken.py ist ein 10x10 Numpy-Array definiert. Dieses behandeln
+In der Pythondatei vorlage.py ist ein 10x10 Numpy-Array definiert. Dieses behandeln
 wir wie das Spielfeld im Spiel Schiffeversenken. Die Schiffe sind in diesem Fall die waagerechten,
 bzw. senkrechten Gruppen von Zahlen großer als Null (die Nullen
 stehen für das Wasser). Die Zahlen die die Schiffe bilden stehen dabei für die Länge der Schiffe.
