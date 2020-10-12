@@ -158,6 +158,21 @@
     \item[UTF-8] Encoding um Unicode-Text in Bytes zu speichern
   \end{description}
 
+\end{frame}
+
+\begin{frame}[c]{Zeilenende}
+
+  Windows und Unix-Systeme verwenden unterschiedliche Konventionen für ein Zeilenende.
+
+  \begin{description}
+    \item[Unix] \lstinline+\\n+ / \texttt{LF} (Linefeed)
+    \item[Windows] \lstinline+\\r\\n+ / \texttt{CR LF} (Carriage Return + Linefeed).
+  \end{description}
+
+  VS Code erkennt auf allen Betriebssystemen welche Konvention im aktuellen File genutzt
+  wird und behält sie bei.
+
+  Empfehlung: immer Unix-Konvention nutzen
 
 \end{frame}
 
