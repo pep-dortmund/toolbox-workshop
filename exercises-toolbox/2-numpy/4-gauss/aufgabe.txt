@@ -7,4 +7,5 @@ Informiere dich in der Numpy-Dokumentation
 
 http://docs.scipy.org/doc/numpy/reference/
 
-wie man mit Numpy Zufallszahlen erstellen kann (Tipp: verwende das Modul "numpy.random").
+wie man mit Numpy Zufallszahlen erstellen kann.
+Tipp: Verwende das Modul "numpy.random".
