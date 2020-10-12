@@ -5,7 +5,7 @@ FIGURES := $(addprefix build/figures/, $(addsuffix .pdf, os programming interest
 
 build/intro.pdf: $(FIGURES) $(addprefix build/figures/, vim.png nano.png real_programmers.png code.png)
 
-build/figures/os.pdf: script/answers.py data/2019.csv
+build/figures/os.pdf: script/answers.py data/toolbox2020.json
 	TEXINPUTS=$(shell pwd): python3 $<
 
 $(addprefix build/figures/, programming.pdf interest.pdf): build/figures/os.pdf

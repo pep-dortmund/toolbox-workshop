@@ -138,6 +138,44 @@
   \end{itemize}
 \end{frame}
 
+\begin{frame}[c]{Textdateien und Unicode}
+  Was ist eigentlich eine Textdatei?
+
+  \begin{itemize}
+    \item In einer Datei stehen immer Binärdaten in Bytes, 1 Byte = 8 Bit, 0-255
+    \item Es gibt (gab) viele Varianten, Text in Binärdaten umzuwandeln (Encoding)
+    \item Heute sollte immer Unicode enkodiert als \texttt{utf-8} verwendet werden
+  \end{itemize}
+
+  \begin{description}
+    \item[Unicode] 
+      \begin{itemize}
+        \item Sammlung von Schriftzeichen, Buchstaben, Akzente, Emojis, ... 
+        \item Aus allen Sprachen.
+        \item Ordnet Zeichen \enquote{Codepoints} zu
+        \item Beispiele: \texttt{LATIN SMALL LETTER A}: 97, \texttt{PILE OF POO}: 128169
+      \end{itemize}
+    \item[UTF-8] Encoding um Unicode-Text in Bytes zu speichern
+  \end{description}
+
+\end{frame}
+
+\begin{frame}[c]{Zeilenende}
+
+  Windows und Unix-Systeme verwenden unterschiedliche Konventionen für ein Zeilenende.
+
+  \begin{description}
+    \item[Unix] \lstinline+\\n+ / \texttt{LF} (Linefeed)
+    \item[Windows] \lstinline+\\r\\n+ / \texttt{CR LF} (Carriage Return + Linefeed).
+  \end{description}
+
+  VS Code erkennt auf allen Betriebssystemen welche Konvention im aktuellen File genutzt
+  wird und behält sie bei.
+
+  Empfehlung: immer Unix-Konvention nutzen
+
+\end{frame}
+
 \begin{frame}{Was muss ein Editor können?}
   In absteigender Wichtigkeit
 
