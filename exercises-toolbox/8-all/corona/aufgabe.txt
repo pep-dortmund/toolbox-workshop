@@ -1,0 +1,25 @@
+Unter
+- https://opendata.dortmund.de/OpenDataConverter/download/Gesundheit/FB53-Coronafallzahlen.csv
+können die Verlaufszahlen der Coronafälle der Stadt Dortmund
+als csv-Datei heruntergeladen werden.
+
+In `geruest.py` ist ein Vorschlag wie die Daten eingelesen werden können.
+Schaut in der Dokumentation nach, was die einzelnen Punkte bedeuten.
+
+Erstellt mit den Werten 3 Balkendiagramme mit den folgenden Inhalten:
+
+1. Diagramm:
+- Fälle pro Tag
+- 7-Tage Inzidenz
+
+2. Diagramm:
+- Fälle gesamt
+- Genesene gesamt
+- Verstorbene gesamt
+- Verstorbene (andere Gründe) gesamt
+
+3. Diagramm (pro Tag):
+- Erkrankte
+- stationäre Fälle
+- intensivmedizinisch behandelte Fälle
+- beatmete Fälle
