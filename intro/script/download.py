@@ -12,12 +12,19 @@ r = requests.get(
 r.raise_for_status()
 
 data = r.json()
-
+remarks = []
+other_interests = []
 
 def get_data(p):
     data = p['data'].copy()
     del data['name']
     del data['email']
+    if data['remarks'] != '':
+        remarks.append(data['remarks'])
+    if data['other_interesets'] != '':
+        other_interests.append(data['other_interesets'])
+    del data['remarks']
+    del data['other_interesets']
 
     return data
 
@@ -34,3 +41,6 @@ for part in ('installieren', 'toolbox', 'latex'):
     print('\n')
     print(part, '\t\t', df[df[part]]['os'].value_counts().sum())
     print(df[df[part]]['os'].value_counts())
+
+print('Anmerkungen:', *remarks, sep='\n\t')
+print('\nWeitere Interessen:', *other_interests, sep='\n\t')
