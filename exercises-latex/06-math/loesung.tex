@@ -27,16 +27,16 @@
 
 Das Magnetfeld $\symbf{B}$ am Ort $\symbf{r}$ eines stromdurchflossenen Leiters ergibt sich zu
 \begin{equation}
-  \symbf{B}(\symbf{r}) = \frac{\mu_0}{4 \symup{\pi}}
+  \symbf{B}(\symbf{r}) = \frac{\symup{\mu}_0}{4 \symup{\pi}}
     \int_V \symbf{j}(\symbf{r}') \times \frac{\symbf{r} - \symbf{r}'}{\lvert \symbf{r} - \symbf{r}' \rvert^3} \, \symup{d}V' .
 \end{equation}
-Hierbei bezeichnet $\symbf{j}$ die Stromdichte am Ort $\symbf{r}'$ und $\mu_0$ die magnetische Feldkonstante.
+Hierbei bezeichnet $\symbf{j}$ die Stromdichte am Ort $\symbf{r}'$ und $\symup{\mu}_0$ die magnetische Feldkonstante.
 
 \section{Fehlerfortpflanunzung}
 
 \begin{equation}
   \sigma_f = \sqrt{
-    \sum\limits_{i = 1}^N
+    \sum_{i = 1}^N
       \left( \frac{\partial f}{\partial x_i} \sigma_i \right)^{\!\! 2}
   }
 \end{equation}
@@ -44,10 +44,11 @@ Hierbei bezeichnet $\symbf{j}$ die Stromdichte am Ort $\symbf{r}'$ und $\mu_0$ d
 \section{Die vier Maxwellgleichungen}
 
 \begin{align}
-  \nabla \cdot  \symbf{E} &= \frac{\rho}{\varepsilon_0} &
+  \nabla \cdot  \symbf{E} &= \frac{\rho}{\symup{\varepsilon}_0} &
   \nabla \cdot  \symbf{B} &= 0 \\
   \nabla \times \symbf{E} &= - \partial_t \symbf{B} &
-  \nabla \times \symbf{B} &= \mu_0 \symbf{j} + \mu_0 \varepsilon_0 \partial_t \symbf{E}
+  \nabla \times \symbf{B} &= \symup{\mu}_0 \symbf{j}
+    + \symup{\mu}_0 \symup{\varepsilon}_0 \partial_t \symbf{E}
 \end{align}
 
 \section{Wellengleichung}
@@ -57,7 +58,7 @@ Im Vakuum gelten $\rho = 0$ und $\symbf{j} = 0$, womit sich die Maxwellgleichung
   \nabla \cdot  \symbf{E} &= 0 \label{eqn:max1} \\
   \nabla \cdot  \symbf{B} &= 0 \label{eqn:max2} \\
   \nabla \times \symbf{E} &= - \partial_t \symbf{B} \label{eqn:max3} \\
-  \nabla \times \symbf{B} &= \mu_0 \varepsilon_0 \partial_t \symbf{E} \label{eqn:max4}
+  \nabla \times \symbf{B} &= \symup{\mu}_0 \symup{\varepsilon}_0 \partial_t \symbf{E} \label{eqn:max4}
 \end{align}
 reduzieren.
 Nach erneuter Anwendung der Rotation auf \eqref{eqn:max3} ergibt sich
@@ -71,7 +72,7 @@ Nach dem Satz von Schwarz lassen sich die partiellen Ableitungen vertauschen, wa
 führt.
 Wir setzen auf der rechten Seite \eqref{eqn:max4} ein:
 \begin{equation}
-  \nabla \times \left( \nabla \times \symbf{E} \right) = - \mu_0 \varepsilon_0 \partial_t^2 \symbf{E} .
+  \nabla \times \left( \nabla \times \symbf{E} \right) = - \symup{\mu}_0 \symup{\varepsilon}_0 \partial_t^2 \symbf{E} .
 \end{equation}
 Aus der linken Seite wird mit
 \begin{equation}
@@ -79,16 +80,16 @@ Aus der linken Seite wird mit
 \end{equation}
 und Ausnutzen von \eqref{eqn:max1}
 \begin{equation}
-  - \increment\symbf{E} = -\mu_0 \varepsilon_0 \partial_t^2 \symbf{E} .
+  - \increment\symbf{E} = -\symup{\mu}_0 \symup{\varepsilon}_0 \partial_t^2 \symbf{E} .
 \end{equation}
 Dies ist die Wellengleichung für das elektrische Feld, in der sich die Lichtgeschwindigkeit
 \begin{equation}
-  c = \frac{1}{\sqrt{\mu_0 \varepsilon_0}}
+  \symup{c} = \frac{1}{\sqrt{\symup{\mu}_0 \symup{\varepsilon}_0}}
 \end{equation}
 identifizieren lässt.
 Damit können wir
 \begin{equation}
-  \left(\increment - \frac{1}{c^2} \frac{\partial^2}{\partial t^2} \right) \! \symbf{E} = 0
+  \left(\increment - \frac{1}{\symup{c}^2} \frac{\partial^2}{\partial t^2} \right) \! \symbf{E} = 0
 \end{equation}
 schreiben.
 
@@ -111,7 +112,7 @@ Gruppen- und Phasengeschwindigkeit:
 \section{Multipolentwicklung}
 
 \begin{equation}
-  \Phi(\symbf{r}) = \frac{1}{4 \symup{\pi} \varepsilon_0} \left(
+  \Phi(\symbf{r}) = \frac{1}{4 \symup{\pi} \symup{\varepsilon}_0} \left(
     \frac{Q}{r} + \frac{\symbf{r} \cdot \symbf{p}}{r^3}
     + \frac{1}{2} \sum_{k, l} Q_{k l} \frac{r_k r_l}{r^5} + \dotsb
   \right) ,
@@ -135,7 +136,7 @@ wobei
 \section{Harmonischer Oszillator}
 
 \begin{equation}
-  \ddot{x} + 2 \gamma \dot{x} + \omega_0^2 x = 0 
+  \ddot{x} + 2 \gamma \dot{x} + \omega_0^2 x = 0
 \end{equation}
 Reelle Lösung:
 \begin{equation}
