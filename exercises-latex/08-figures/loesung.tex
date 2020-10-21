@@ -47,30 +47,27 @@ In Abbildung \ref{fig:plot1} ist ein schöner Plot zu sehen.
 
 In Abbildung \ref{fig:subfigs} enthält zwei schöne Plots.
 Abbildung \ref{fig:plot2} ist der schönste aller Plots.
-\begin{figure}
-  \hspace*{\fill}
-  \begin{subfigure}{0.40\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{plot2.pdf}
-    \caption{Schöner Plot 2.}
-    \label{fig:plot2}
-  \end{subfigure}
-  \hspace*{\fill}
-  \begin{subfigure}{0.40\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{plot3.pdf}
-    \caption{Schöner Plot 3.}
-    \label{fig:plot3}
-  \end{subfigure}
-  \hspace*{\fill}
-  \caption{
+
+\begin{figure}%
+  \begin{subfigure}{0.475\textwidth}%
+    \includegraphics[width=\textwidth]{plot2.pdf}%
+    \caption{Schöner Plot 2.}%
+    \label{fig:plot2}%
+  \end{subfigure}%
+  \hfill%
+  \begin{subfigure}{0.475\textwidth}%
+    \centering%
+    \includegraphics[width=\textwidth]{plot3.pdf}%
+    \caption{Schöner Plot 3.}%
+    \label{fig:plot3}%
+  \end{subfigure}%
+  \caption{%
     Zwei schöne Plots, Abbildung \subref{fig:plot2} und Abbildung \subref{fig:plot3}.
     Um die Breite dieser Caption zu demonstrieren, muss man sie noch viel länger machen. 
     So langsam sollte es ausreichen.
     Aber die Schriftgröße und auch die Plots an sich sind zu klein.
     Nicht einfach Plots herunterskalieren!
-  }
-  \label{fig:subfigs}
+  }\label{fig:subfigs}%
 \end{figure}
 
 \end{document}
