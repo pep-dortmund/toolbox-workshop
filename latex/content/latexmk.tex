@@ -29,9 +29,8 @@
   \begin{block}{Im \texttt{Makefile}}
     \begin{lstmake}
       build/file.pdf: FORCE plots... tabellen...
-            TEXINPUTS=build: \
-            BIBINPUTS=build: \
-            max_print_line=1048576 \
+          TEXINPUTS=build: \
+          max_print_line=1048576 \
           latexmk \
             --lualatex \
             --output-directory=build \

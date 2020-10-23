@@ -13,16 +13,14 @@
   \begin{block}{Aufrufe}
     \begin{lstlisting}[language=, keywordstyle={}]
       TEXINPUTS=build: lualatex --output-directory=build file.tex
-      BIBINPUTS=build: biber build/file.bcf
+      biber build/file.bcf
     \end{lstlisting}
   \end{block}
   \vspace*{-0.5em}
   \begin{itemize}
     \item \texttt{TEXINPUTS}, \texttt{BIBINPUTS}: Suchpfade für \TeX- und \texttt{.bib}-Dateien
     \item Elemente getrennt mit \texttt{:}, der erste Treffer wird genommen (wie \texttt{PATH})
-      \begin{itemize}
-        \item Auf Windows muss man \texttt{:} durch \texttt{;} ersetzen
-      \end{itemize}
+    \item Hilfreich um z.\,B.\ den Header nur einmal für alle Protokolle abzuspeichern. (Siehe latex-template)
     \item \texttt{TEXINPUTS} auch für \lstinline+\includegraphics+
     \item \texttt{:} am Ende der Liste: Standardsuchpfade anhängen (wichtig!)
     \item \texttt{.} (der aktuelle Ordner) ist am Anfang der Standardliste, braucht man also nicht selbst angeben
