@@ -1,7 +1,15 @@
 loesung-faelle-pro-tag.pdf: loesung.py FB53-Coronafallzahlen.csv
+	MATPLOTLIBRC=loesung-matplotlibrc \
+	TEXINPUTS="$$(pwd):" \
 	python loesung.py
 loesung-insgesamt.pdf: loesung-faelle-pro-tag.pdf
 loesung-aktuell.pdf: loesung-faelle-pro-tag.pdf
 
 FB53-Coronafallzahlen.csv:
 	wget https://opendata.dortmund.de/OpenDataConverter/download/Gesundheit/FB53-Coronafallzahlen.csv
+
+clean:
+	rm -rf FB53-Coronafallzahlen.csv
+	rm -rf loesung-aktuell.pdf
+	rm -rf loesung-faelle-pro-tag.pdf
+	rm -rf loesung-insgesamt.pdf
