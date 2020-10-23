@@ -66,47 +66,49 @@
     \usepackage{subcaption}
     \end{lstlisting}
   \end{Packages}
-  \begin{EmulateArticle}
-    \begin{figure}
-      \centering
-      \begin{subfigure}{0.48\textwidth}
-        \centering
-        \includegraphics[height=0.75cm]{logos/pep.pdf}
-        \caption{PeP-Logo.}
-        \label{fig:pep2}
-      \end{subfigure}
-      \begin{subfigure}{0.48\textwidth}
-        \centering
-        \includegraphics[height=0.75cm]{logos/tu.pdf}
-        \caption{Das TU-Logo.}
-        \label{fig:TU}
-      \end{subfigure}
-      \caption{Zwei Logos, Abbildung \subref{fig:TU}: das TU-Logo.}\label{fig:logos}
-    \end{figure}
+  \begin{EmulateArticle}%
+    \begin{figure}%
+      \begin{subfigure}{0.48\textwidth}%
+        \centering%
+        \includegraphics[height=0.75cm]{logos/pep.pdf}%
+        \caption{PeP-Logo.}%
+        \label{fig:pep2}%
+      \end{subfigure}%
+      \hfill%
+      \begin{subfigure}{0.48\textwidth}%
+        \centering%
+        \includegraphics[height=0.75cm]{logos/tu.pdf}%
+        \caption{Das TU-Logo.}%
+        \label{fig:TU}%
+      \end{subfigure}%
+      \caption{Zwei Logos, Abbildung \subref{fig:TU}: das TU-Logo.}\label{fig:logos}%
+    \end{figure}%
   \end{EmulateArticle}
 \end{frame}
 
 \begin{frame}[fragile]{Subfigures: Code}
-  \vspace{-3pt}
+  In \LaTeX{} wirkt ein Zeilenende wie ein Leerzeichen,
+  dies ist oft unerwünscht und kann durch ein \% am Ende der Zeile behoben werden.
+
   \begin{block}{Code}
     \begin{lstlisting}
-      \begin{figure}
-        \centering
-        \begin{subfigure}{0.48\textwidth}
-          \centering
-          \includegraphics[height=0.75cm]{logos/pep.pdf}
-          \caption{PeP-Logo.}
-          \label{fig:pep2}
-        \end{subfigure}
-        \begin{subfigure}{0.48\textwidth}
-          \centering
-          \includegraphics[height=0.75cm]{logos/tu.pdf}
-          \caption{Das TU-Logo.}
-          \label{fig:TU}
-        \end{subfigure}
-        \caption{Zwei Logos, Abbildung \subref{fig:TU}: Das TU-Logo.}
-        \label{fig:logos}
-      \end{figure}
+      \begin{figure}%
+        \begin{subfigure}{0.48\textwidth}%
+          \centering%
+          \includegraphics[height=0.75cm]{logos/pep.pdf}%
+          \caption{PeP-Logo.}%
+          \label{fig:pep2}%
+        \end{subfigure}%
+        \hfill% Fills available space in the center -> space between figures
+        \begin{subfigure}{0.48\textwidth}%
+          \centering%
+          \includegraphics[height=0.75cm]{logos/tu.pdf}%
+          \caption{Das TU-Logo.}%
+          \label{fig:TU}%
+        \end{subfigure}%
+        \caption{Zwei Logos, Abbildung \subref{fig:TU}: Das TU-Logo.}%
+        \label{fig:logos}%
+      \end{figure}%
     \end{lstlisting}
   \end{block}
 \end{frame}
