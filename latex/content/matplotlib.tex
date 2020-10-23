@@ -70,16 +70,6 @@
   \vspace*{-1em}
 \end{frame}
 
-\begin{frame}[fragile]{Windows}
-  \begin{lstmake}
-    build/document.pdf: ...
-        TEXINPUTS=build: ...
-
-    build/figures/mattex4.pdf: script/mattex4.py
-        TEXINPUTS=$(pwd): python script/mattex4.py
-  \end{lstmake}
-\end{frame}
-
 \AddToShipoutPictureFG*{\ShowFramePicture}
 \begin{frame}{Ergebnis (4)}
   \centering
