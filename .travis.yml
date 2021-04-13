@@ -24,7 +24,7 @@ install:
 
   # install texlive minimal with what we need
   - |
-    python -m install_texlive -p $HOME/texlive -t 2020 --collections='-acfghuDFG' \
+    python -m install_texlive -p $HOME/texlive -t 2021 --collections='-acfghuDFG' \
     -i 'koma-script,babel,babel-french,csquotes,placeins,enumitem,biber,biblatex,siunitx,beamer,xpatch,blindtext,standalone,circuitikz,tikz-feynman,xstring,fontawesome5,mleftright,mhchem,tabulary,tabu,varwidth,lstaddons,tcolorbox,mwe,fira,firamath,firamath-otf,xits,threeparttable,environ,trimspaces,pgfopts,ncctools'
   # we need graphs from this document
   - export PATH=$HOME/texlive/2020/bin/x86_64-linux:$PATH
