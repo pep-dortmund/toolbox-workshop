@@ -23,10 +23,10 @@ The lecture material (e.g. jupyter notebooks) are shared under the Creative Comm
 
 # Build Requirements
 
-- up-to-date TeXLive 2020
+- up-to-date TeXLive 2021
 - up-to-date anaconda3 (using python 3.8)
 - poppler (for pdfseparate)
-- wget 
+- wget
 - Python notebook extensions `pip install jupyter_contrib_nbextensions`
 
 ## Installation
@@ -34,7 +34,7 @@ The lecture material (e.g. jupyter notebooks) are shared under the Creative Comm
 For TeXLive and anaconda, follow the installtion instruction on
 http://toolbox.pep-dortmund.org/install
 
-### MacOS 
+### MacOS
 
 - `brew install poppler wget`
 
