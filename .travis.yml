@@ -4,6 +4,9 @@ dist: focal
 # we install anaconda, so no need to use python
 language: generic
 
+env:
+  TEXLIVE_VERSION: 2021
+
 # install poppler
 addons:
   apt:
@@ -24,10 +27,10 @@ install:
 
   # install texlive minimal with what we need
   - |
-    python -m install_texlive -p $HOME/texlive -t 2021 --collections='-acfghuDFG' \
+    python -m install_texlive -p $HOME/texlive -t $TEXLIVE_VERSION --collections='-acfghuDFG' \
     -i 'koma-script,babel,babel-french,csquotes,placeins,enumitem,biber,biblatex,siunitx,beamer,xpatch,blindtext,standalone,circuitikz,tikz-feynman,xstring,fontawesome5,mleftright,mhchem,tabulary,tabu,varwidth,lstaddons,tcolorbox,mwe,fira,firamath,firamath-otf,xits,threeparttable,environ,trimspaces,pgfopts,ncctools'
+  - export PATH=$HOME/texlive/$TEXLIVE_VERSION/bin/x86_64-linux:$PATH
   # we need graphs from this document
-  - export PATH=$HOME/texlive/2020/bin/x86_64-linux:$PATH
   - tlmgr install --with-doc tex-overview
 
 script:
