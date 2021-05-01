@@ -1,15 +1,23 @@
-loesung-faelle-pro-tag.pdf: loesung.py FB53-Coronafallzahlen.csv
+all: build/loesung-faelle-pro-tag.pdf \
+	build/loesung-insgesamt.pdf \
+	build/loesung-aktuell.pdf 
+		
+
+build/loesung-faelle-pro-tag.pdf: loesung.py FB53-Coronafallzahlen.csv | build
 	MATPLOTLIBRC=loesung-matplotlibrc \
 	TEXINPUTS="$$(pwd):" \
 	python loesung.py
-loesung-insgesamt.pdf: loesung-faelle-pro-tag.pdf
-loesung-aktuell.pdf: loesung-faelle-pro-tag.pdf
+build/loesung-insgesamt.pdf: build/loesung-faelle-pro-tag.pdf
+build/loesung-aktuell.pdf: build/loesung-faelle-pro-tag.pdf
 
 FB53-Coronafallzahlen.csv:
 	wget https://opendata.dortmund.de/OpenDataConverter/download/Gesundheit/FB53-Coronafallzahlen.csv
 
 clean:
-	rm -rf FB53-Coronafallzahlen.csv
-	rm -rf loesung-aktuell.pdf
-	rm -rf loesung-faelle-pro-tag.pdf
-	rm -rf loesung-insgesamt.pdf
+	rm -f FB53-Coronafallzahlen.csv
+	rm -rf build
+
+build:
+	mkdir -p build
+
+.PHONY: all clean
