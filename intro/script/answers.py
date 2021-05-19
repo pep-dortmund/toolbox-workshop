@@ -44,6 +44,7 @@ def programming(answers):
         labels=programming.keys(),
         startangle=0,
         radius=1,
+        normalize=False,
     )
 #    ax.set_xlim(-1.5, 1.5)
     fig.savefig('build/figures/programming.pdf')
