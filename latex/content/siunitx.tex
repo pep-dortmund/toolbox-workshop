@@ -101,69 +101,69 @@
   \end{CodeExample}
 \end{frame}
 
-\begin{frame}[fragile]{\texttt{siunitx}: Einheiten mit \lstinline+\\si+}
+\begin{frame}[fragile]{\texttt{siunitx}: Einheiten mit \lstinline+\\unit+}
   \begin{CodeExample}{0.8}[Einheiten]
     \begin{lstlisting}
-      \si{\meter\per\second}
-      \si[per-mode=fraction]{\meter\per\second}
-      \si{\meter\per\second\squared}
-      \si[per-mode=reciprocal]{\gram\per\cubic\centi\meter}
-      \si{\kelvin\tothe{4}}
+      \unit{\meter\per\second}
+      \unit[per-mode=fraction]{\meter\per\second}
+      \unit{\meter\per\second\squared}
+      \unit[per-mode=reciprocal]{\gram\per\cubic\centi\meter}
+      \unit{\kelvin\tothe{4}}
     \end{lstlisting}
   \CodeResult
     \strut
-    \si{\meter\per\second} \\
-    \si[per-mode=fraction]{\meter\per\second} \\
-    \si{\meter\per\second\squared} \\
-    \si[per-mode=reciprocal]{\gram\per\cubic\centi\meter} \\
-    \si{\kelvin\tothe{4}}
+    \unit{\meter\per\second} \\
+    \unit[per-mode=fraction]{\meter\per\second} \\
+    \unit{\meter\per\second\squared} \\
+    \unit[per-mode=reciprocal]{\gram\per\cubic\centi\meter} \\
+    \unit{\kelvin\tothe{4}}
   \end{CodeExample}
   \begin{CodeExample}{0.80}[\texttt{per-mode=symbol-or-fraction}]
     \begin{lstlisting}
       \begin{equation}
-        \si{\kilo\gram\meter\per\second\squared}
+        \unit{\kilo\gram\meter\per\second\squared}
       \end{equation}
-      $\si{\kilo\gram\meter\per\second\squared}$
+      $\unit{\kilo\gram\meter\per\second\squared}$
     \end{lstlisting}
   \CodeResult
     \removedisplayskip
     \begin{minipage}[c][3\baselineskip][c]{\textwidth}
       \begin{equation}
-        \si{\kilo\gram\meter\per\second\squared}
+        \unit{\kilo\gram\meter\per\second\squared}
       \end{equation}
     \end{minipage}
-    $\si{\kilo\gram\meter\per\second\squared}$
+    $\unit{\kilo\gram\meter\per\second\squared}$
   \end{CodeExample}
   \begin{CodeExample}{0.80}[Meter mal Sekunde oder Millisekunde?]
     \begin{lstlisting}
-      \si{\milli\second}
-      \si{\meter\second}
-      \si[inter-unit-product=\cdot]{\meter\second}
+      \unit{\milli\second}
+      \unit{\meter\second}
+      \unit[inter-unit-product=\cdot]{\meter\second}
     \end{lstlisting}
   \CodeResult
     \strut
-    \si{\milli\second} \\
-    \si{\meter\second} \\
-    \si[inter-unit-product=\cdot]{\meter\second}
+    \unit{\milli\second} \\
+    \unit{\meter\second} \\
+    \unit[inter-unit-product=\cdot]{\meter\second}
   \end{CodeExample}
 \end{frame}
 
-\begin{frame}[fragile]{\texttt{siunitx}: Zahl mit Einheit: \lstinline+\\SI+}
-  \begin{CodeExample}{0.72}[\lstinline+\\SI+ {=} Kombination aus \lstinline+\\num+ und \lstinline+\\si+]
+\begin{frame}[fragile]{\texttt{siunitx}: Physikalische Größe, eine Zahl mit Einheit: \lstinline+\\qty+}
+  \begin{CodeExample}{0.72}[\lstinline+\\qty+ {=} Kombination aus \lstinline+\\num+ und \lstinline+\\unit+]
     \begin{lstlisting}
-      \SI{5}{\percent}
-      \SI{10}{\celsius}
-      \SI{2.5(1)e6}{\kilo\gram\square\meter\per\second\squared}
+      \qty{5}{\percent}
+      \qty{10}{\degreeCelsius}
+      \qty{2.5(1)e6}{\kilo\gram\square\meter\per\second\squared}
     \end{lstlisting}
   \CodeResult
     \strut
-    \SI{5}{\percent} \\
-    \SI{10}{\celsius} \\
-    \SI{2.5(1)e6}{\kilo\gram\square\meter\per\second\squared}
+    \qty{5}{\percent} \\
+    \qty{10}{\degreeCelsius} \\
+    \qty{2.5(1)e6}{\kilo\gram\square\meter\per\second\squared}
   \end{CodeExample}
   \begin{description}
     \item[1. Argument] Kann alles, was \lstinline+\num+ kann
-    \item[2. Argument] Kann alles, was \lstinline+\si+ kann
+    \item[2. Argument] Kann alles, was \lstinline+\unit+ kann
   \end{description}
   \begin{CodeExample}{0.72}[Winkel]
     \begin{lstlisting}

@@ -9,8 +9,8 @@ from uncertainties.unumpy import (
 from curve_fit import ucurve_fit
 
 
-def make_SI(num, unit, exp='', figures=None):
-    ''' Format an uncertainties ufloat as a \SI quantity '''
+def make_qty(num, unit, exp='', figures=None):
+    ''' Format an uncertainties ufloat as a \qty quantity '''
     if np.any(stds([num])):
         if figures is None:
             figures = ''
@@ -18,4 +18,4 @@ def make_SI(num, unit, exp='', figures=None):
     else:
         x = '{0:.{1:}f}'.format(num, figures)
 
-    return r'\SI{{{}{}}}{{{}}}'.format(x, exp, unit)
+    return r'\qty{{{}{}}}{{{}}}'.format(x, exp, unit)
