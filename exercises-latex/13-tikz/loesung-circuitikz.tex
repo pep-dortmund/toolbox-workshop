@@ -25,13 +25,6 @@
   siunitx,
 ]{circuitikz}
 
-\AtBeginDocument{
-  \sisetup{
-    math-rm=\mathrm,
-    math-micro=µ, % AltGr+m = MICRO SIGN, Unicode: U+00B5
-  }
-}
-
 \begin{document}
 
 \begin{tikzpicture}
@@ -39,5 +32,5 @@
     to[C=1<\micro\farad>] (4, 4)
     to[L=1<\henry>] (0, 4) -- (0, 0);
 \end{tikzpicture}
-  
+
 \end{document}
