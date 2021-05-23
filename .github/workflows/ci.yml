@@ -32,4 +32,4 @@ jobs:
         run: make
 
       - name: check for errors
-        run: ! grep -R --include='*.log' '^!' -A 5 -B 5
+        run: "! grep -R --include='*.log' '^!' -A 5 -B 5"
