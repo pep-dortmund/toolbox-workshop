@@ -19,7 +19,7 @@ jobs:
 
       - name: Setup
         run: |
-          sudo apt-get install --yes poppler-utils 
+          sudo apt-get install --yes poppler-utils
           source $CONDA/etc/profile.d/conda.sh
           conda install --yes matplotlib numpy pandas requests scipy sympy
           pip install uncertainties jupyter_contrib_nbextensions "$INSTALL_TL_URL"

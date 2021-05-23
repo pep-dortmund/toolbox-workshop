@@ -1,6 +1,8 @@
 koma-script
 babel
 babel-french
+babel-german
+babel-english
 csquotes
 placeins
 enumitem
@@ -33,6 +35,5 @@ trimspaces
 pgfopts
 ncctools
 latexmk
-luatex-bin
 luatex
 lualatex-math
