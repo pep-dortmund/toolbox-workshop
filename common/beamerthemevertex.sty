@@ -80,8 +80,12 @@
 \newfontfamily\Light{Fira Sans Light}%
 \newfontfamily\Regular{Fira Sans}%
 \newfontfamily\Bold{Fira Sans Medium}%
-\setsansfont[BoldFont={Fira Sans Medium}]{Fira Sans Light}%
-\setmonofont[Contextuals=Alternate]{Fira Code}%
+\setsansfont[
+  BoldFont=Fira Sans Medium,
+  BoldItalicFont=Fira Sans Medium Italic,
+  ItalicFont=Fira Sans Light Italic
+]{Fira Sans Light}
+\setmonofont{Fira Mono}%
 \setmathfont{Fira Math}
 \setbeamerfont{title}{family=\Light,size=\fontsize{30}{30}}
 \setbeamerfont{subtitle}{family=\Light,size=\fontsize{18}{20}}

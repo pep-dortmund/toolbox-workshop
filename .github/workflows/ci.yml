@@ -1,0 +1,35 @@
+name: CI
+
+on: [push, pull_request]
+
+env:
+  TEXLIVE_VERSION: 2021
+  MPLBACKEND: Agg
+  INSTALL_TL_URL: https://github.com/maxnoe/texlive-batch-installation/archive/v0.3.0.tar.gz
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.9
+
+      - name: Setup
+        run: |
+          sudo apt-get install --yes poppler-utils 
+          source $CONDA/etc/profile.d/conda.sh
+          conda install --yes matplotlib numpy pandas requests scipy sympy
+          pip install uncertainties jupyter_contrib_nbextensions "$INSTALL_TL_URL"
+          python -m install_texlive -p $HOME/texlive -t $TEXLIVE_VERSION --collections='-a' --package-file tex-packages.txt --update
+          echo "$HOME/texlive/$TEXLIVE_VERSION/bin/x86_64-linux" >> $GITHUB_PATH
+          # need the documentation here for the graphics
+          tlmgr install --with-doc tex-overview
+
+      - name: Build
+        run: make
+
+      - name: check for errors
+        run: ! grep -R --include='*.log' '^!' -A 5 -B 5
