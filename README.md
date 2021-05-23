@@ -24,15 +24,26 @@ The lecture material (e.g. jupyter notebooks) are shared under the Creative Comm
 # Build Requirements
 
 - up-to-date TeXLive 2021
-- up-to-date anaconda3 (using python 3.8)
+- up-to-date anaconda3 (using python 3.9)
 - poppler (for pdfseparate)
 - wget
-- Python notebook extensions `pip install jupyter_contrib_nbextensions`
 
 ## Installation
 
 For TeXLive and anaconda, follow the installtion instruction on
 http://toolbox.pep-dortmund.org/install
+
+Create the environment with the required packages using
+
+```
+conda env create -f environment.yml
+```
+
+and activate it each time you are working in this project using
+
+```
+conda activate toolbox
+```
 
 ### MacOS
 

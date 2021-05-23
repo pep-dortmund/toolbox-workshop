@@ -1,3 +1,6 @@
+INTERACTION=batchmode
+
+
 all: \
 	build/loesung-pythagoras.pdf \
 	build/loesung-nikolaus.pdf \
@@ -9,7 +12,7 @@ all: \
 build/loesung-pythagoras.pdf: loesung-pythagoras.tex | build
 	lualatex \
 		--output-directory=build \
-		--interaction=batchmode \
+		--interaction=${INTERACTION} \
 		--halt-on-error \
 		loesung-pythagoras.tex
 
@@ -17,33 +20,33 @@ build/loesung-pythagoras.pdf: loesung-pythagoras.tex | build
 build/loesung-mm-paper.pdf: loesung-mm-paper.tex | build
 	lualatex \
 		--output-directory=build \
-		--interaction=batchmode \
+		--interaction=${INTERACTION} \
 		--halt-on-error \
 		loesung-mm-paper.tex
 	lualatex \
 		--output-directory=build \
-		--interaction=batchmode \
+		--interaction=${INTERACTION} \
 		--halt-on-error \
 		loesung-mm-paper.tex
 
 build/loesung-nikolaus.pdf: loesung-nikolaus.tex | build
 	lualatex \
 		--output-directory=build \
-		--interaction=batchmode \
+		--interaction=${INTERACTION} \
 		--halt-on-error \
 		loesung-nikolaus.tex
 
 build/loesung-bragg.pdf: loesung-bragg.tex | build
 	lualatex \
 		--output-directory=build \
-		--interaction=batchmode \
+		--interaction=${INTERACTION} \
 		--halt-on-error \
 		loesung-bragg.tex
 
 build/loesung-circuitikz.pdf: loesung-circuitikz.tex | build
 	lualatex \
 		--output-directory=build \
-		--interaction=batchmode \
+		--interaction=${INTERACTION} \
 		--halt-on-error \
 		loesung-circuitikz.tex
 
