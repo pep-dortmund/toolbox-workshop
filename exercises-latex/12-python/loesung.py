@@ -9,8 +9,8 @@ from uncertainties.unumpy import (
 from curve_fit import ucurve_fit
 
 
-def make_SI(num, unit, exp='', figures=None):
-    ''' Format an uncertainties ufloat as a \SI quantity '''
+def make_qty(num, unit, exp='', figures=None):
+    ''' Format an uncertainties ufloat as a \qty quantity '''
     if np.any(stds([num])):
         if figures is None:
             figures = ''
@@ -18,7 +18,7 @@ def make_SI(num, unit, exp='', figures=None):
     else:
         x = '{0:.{1:}f}'.format(num, figures)
 
-    return r'\SI{{{}{}}}{{{}}}'.format(x, exp, unit)
+    return r'\qty{{{}{}}}{{{}}}'.format(x, exp, unit)
 
 
 t, U, U_err = np.genfromtxt('data.txt', unpack=True)
@@ -43,8 +43,8 @@ plt.errorbar(
     label='Daten',
 )
 plt.xlim(t_plot[0] * 1e3, t_plot[-1] * 1e3)
-plt.xlabel(r'$t \:/\: \si{\milli\second}$')
-plt.ylabel(r'$U \:/\: \si{\kilo\volt}$')
+plt.xlabel(r'$t \mathbin{/} \unit{\milli\second}$')
+plt.ylabel(r'$U \mathbin{/} \unit{\kilo\volt}$')
 plt.legend(loc='best')
 plt.tight_layout(pad=0, h_pad=1.08, w_pad=1.08)
 plt.savefig('build/loesung-plot.pdf')
@@ -66,8 +66,8 @@ table_header = r'''
     S[table-format=1.2]
   }
     \toprule
-    {$t \:/\: \si{\milli\second}$} & \multicolumn{2}{c}{$U \:/\: \si{\kilo\volt}$\hspace*{3em}} &
-    {$t \:/\: \si{\milli\second}$} & \multicolumn{2}{c}{$U \:/\: \si{\kilo\volt}$} \\
+    {$t \mathbin{/} \unit{\milli\second}$} & \multicolumn{2}{c}{$U \:/\: \unit{\kilo\volt}$\hspace*{3em}} &
+    {$t \mathbin{/} \unit{\milli\second}$} & \multicolumn{2}{c}{$U \:/\: \unit{\kilo\volt}$} \\
     \midrule
 '''
 
@@ -88,13 +88,13 @@ with open('build/loesung-table.tex', 'w') as f:
 a, b, c, d = params
 
 with open('build/loesung-a.tex', 'w') as f:
-    f.write(make_SI(a * 1e-3, r'\kilo\volt'))
+    f.write(make_qty(a * 1e-3, r'\kilo\volt'))
 
 with open('build/loesung-b.tex', 'w') as f:
-    f.write(make_SI(b * 1e-3, r'\kilo\hertz'))
+    f.write(make_qty(b * 1e-3, r'\kilo\hertz'))
 
 with open('build/loesung-c.tex', 'w') as f:
-    f.write(make_SI(c, ''))
+    f.write(make_qty(c, ''))
 
 with open('build/loesung-d.tex', 'w') as f:
-    f.write(make_SI(d * 1e-3, r'\kilo\volt'))
+    f.write(make_qty(d * 1e-3, r'\kilo\volt'))

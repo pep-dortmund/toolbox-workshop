@@ -15,13 +15,13 @@ Teile die Daten dabei in zwei Spalten auf, damit die Tabelle nicht zu lang wird.
 
 Schreibe auch die Ergebnisse für die Fitparameter in .tex-Dateien in der Form
 
-        \SI{1+-2e3}{\meter} .
+        \qty{1+-2e3}{\meter} .
 
 Dabei ist e3 aber nicht unbedingt nötig in dieser Aufgabe.
 
 Nutze dazu die Funktion
 
-        make_SI(num, unit, exp='', figures=None) .
+        make_qty(num, unit, exp='', figures=None) .
 
 Dabei gibt num den Wert (mit Fehler) an.
 unit ist die Einheit in der Form eines Strings mit siunitx-Einheitenbefehlen.

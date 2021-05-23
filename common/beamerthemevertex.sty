@@ -80,8 +80,12 @@
 \newfontfamily\Light{Fira Sans Light}%
 \newfontfamily\Regular{Fira Sans}%
 \newfontfamily\Bold{Fira Sans Medium}%
-\setsansfont[BoldFont={Fira Sans Medium}]{Fira Sans Light}%
-\setmonofont[Contextuals=Alternate]{Fira Code}%
+\setsansfont[
+  BoldFont=Fira Sans Medium,
+  BoldItalicFont=Fira Sans Medium Italic,
+  ItalicFont=Fira Sans Light Italic
+]{Fira Sans Light}
+\setmonofont{Fira Mono}%
 \setmathfont{Fira Math}
 \setbeamerfont{title}{family=\Light,size=\fontsize{30}{30}}
 \setbeamerfont{subtitle}{family=\Light,size=\fontsize{18}{20}}
@@ -196,13 +200,13 @@
 \else%
   \usebeamerfont{footline}%
   \begin{beamercolorbox}[wd=1\paperwidth, ht=2.5ex, dp=1ex]{footline}
-    \begin{beamercolorbox}[wd=0.2\paperwidth, ht=2.5ex, dp=1ex, left, leftskip=1em]{author in head/foot}%
+    \begin{beamercolorbox}[wd=0.33333\paperwidth, ht=2.5ex, dp=1ex, left, leftskip=1em]{author in head/foot}%
     \strut\insertshortauthor%
     \ifx\insershortinstitute\@empty\else%
     ~–~\insertshortinstitute%
     \fi%
     \end{beamercolorbox}%
-    \begin{beamercolorbox}[wd=0.6\paperwidth, ht=2.5ex, dp=1ex, center]{section in head/foot}%
+    \begin{beamercolorbox}[wd=0.33333\paperwidth, ht=2.5ex, dp=1ex, center]{section in head/foot}%
       \strut\insertshorttitle%
       \ifx\insertsubsectionhead\@empty%
         \ifx\insertsectionhead\@empty%
@@ -214,7 +218,7 @@
       \fi%
     \end{beamercolorbox}%
   \fi%
-  \begin{beamercolorbox}[wd=0.2\paperwidth, ht=2.5ex, dp=1ex, right, rightskip=1em]{page number in head/foot}%
+  \begin{beamercolorbox}[wd=0.33333\paperwidth, ht=2.5ex, dp=1ex, right, rightskip=1em]{page number in head/foot}%
     \strut\insertframenumber{}\if@totalframes / \inserttotalframenumber{}\fi%
   \end{beamercolorbox}%
 \end{beamercolorbox}%

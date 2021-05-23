@@ -4,12 +4,12 @@ Aufgabe 1:
 
 Aufgabe 2:
   a) Erzeugt Ausgaben für
-    \SI{27.23(1)e3}{\meter\per\second}
+    \qty{27.23(1)e3}{\meter\per\second}
 
     und
 
     \begin{equation}
-      \SI{27.23(1)e3}{\meter\per\second}
+      \qty{27.23(1)e3}{\meter\per\second}
     \end{equation}
 
   b) Ladet nun die Option "locale=DE", wie ändert sich die Ausgabe?
