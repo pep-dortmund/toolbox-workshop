@@ -96,85 +96,15 @@
   \end{tikzpicture}
 \end{frame}
 
-
-\begin{frame}{Tastaturkürzel}
-  \begin{tabu}{>{\ttfamily}l X[,L]}
-    Enter & Befehl ausführen \\
-    Ctrl-C & beendet das laufende Programm \\
-    Ctrl-D & EOF (end of file) eingeben, kann Programme die auf Eingaben warten beenden \\
-    Ctrl-L & leert den Bildschirm \\
-    $\uparrow \quad \downarrow$ & Befehlshistorie durchgehen\\
-    Ctrl-Shift-C & Kopieren von Text \\
-    Ctrl-Shift-V & Einfügen aus Zwischenablage \\
-  \end{tabu}
-\end{frame}
-
-
-
-\begin{frame}{\texttt{ls}}
+\begin{frame}{\texttt{ls}, \texttt{cd}, \texttt{pwd}}
   \begin{tabu}{>{\ttfamily}l X[,L]}
     ls [\textit{directory}] & \enquote{list}: zeigt den Inhalt eines Verzeichnisses an \\
     ls -l                   & \enquote{long}: zeigt mehr Informationen über Dateien und Verzeichnisse \\
-    ls -a                   & \enquote{all}: zeigt auch versteckte Dateien (fangen mit \texttt{.} an)
-  \end{tabu}
-\end{frame}
-
-\begin{frame}{\texttt{man}, \texttt{pwd}, \texttt{cd}, }
-  \begin{tabu}{>{\ttfamily}l X[,L]}
-    man \textit{topic}    & \enquote{manual}: zeigt die Hilfe für ein Programm \\
-    pwd                   & \enquote{print working directory}: zeigt das aktuelle Verzeichnis \\
+    ls -a                   & \enquote{all}: zeigt auch versteckte Dateien (fangen mit \texttt{.} an) \\
     cd \textit{directory} & \enquote{change directory}: wechselt in das angegebene Verzeichnis\\
     cd - & Wechselt ins vorherige Verzeichnis zurück \\
+    pwd                   & \enquote{print working directory}: zeigt das aktuelle Verzeichnis \\
   \end{tabu}
-\end{frame}
-
-\begin{frame}[fragile]{User, Gruppen, Rechte}
-  \begin{itemize}
-    \item Jede Datei hat einen Besitzer und eine Gruppe
-    \item Lese-, Schreib- und Ausführungsrechte können einzeln vergeben werden
-    \begin{verbatim}
--rwxr-xr-x  1 maxnoe maxnoe  177 15. Sep 13:37 toggle-touchpad.sh
--rw-r--r--  1 maxnoe maxnoe  98K 29. Aug 15:52 trigger_arduino.jpg
--rw-r--r--  1 maxnoe maxnoe  410 13. Jul 10:37 trigger.py
-drwxr-xr-x 20 maxnoe maxnoe 4.0K 29. Sep 11:19 Uni
- \_/\_/\_/
-  U  G  O
-  s  r  t
-  e  o  h
-  r  u  e
-     p  r
-    \end{verbatim}
-    \item \texttt{r}: read, \texttt{w}: write, \texttt{x}: execute 
-    \item \texttt{u}: user, \texttt{g}: group, \texttt{o}: other, \texttt{a}: all 
-    \item \texttt{d}: Ist Verzeichnis
-  \end{itemize}
-  
-\end{frame}
-
-%% chmod frame
-\begin{frame}{\texttt{chmod}, \texttt{sudo}}
-  \begin{tabu}{>{\ttfamily}l X[,L]}
-    chmod \textit{[options] mode file1 ...}    & \enquote{change mode}: Verändert die klassischen Unix-Dateirechte  \\
-    chmod a+x beispiel.txt    & Beispiel: Fügt bei allen das Recht auf Ausführung hinzu \\
-    sudo \textit{command} & \enquote{superuser do}: führt einen Befehl als \enquote{root}-User aus \alert{Achtung}: Mit Vorsicht verwenden!\\
-  \end{tabu}
-\end{frame}
-
-\begin{frame}{Shell-Skripte}
-  \begin{itemize}
-    \item Datei enthält Befehle
-    \item Selbe Syntax wie Kommandozeile
-    \item Endung: keine oder \texttt{.sh}
-    \item Ausführung:
-      \begin{itemize}
-        \item \texttt{bash \textit{skript}}
-        \item \texttt{./\textit{skript}} (mit Shebang)
-      \end{itemize}
-    \item Shebang: erste Zeile enthält Pfad des Interpreters (muss absolut sein)
-      \begin{itemize}
-        \item \texttt{\#!/bin/bash}
-      \end{itemize}
-  \end{itemize}
 \end{frame}
 
 \begin{frame}{\texttt{mkdir}, \texttt{touch}}
