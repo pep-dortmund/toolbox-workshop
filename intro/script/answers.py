@@ -114,7 +114,7 @@ def interests(answers):
 
 
 if __name__ == '__main__':
-    with open('data/toolbox2020.json', 'r') as read_file:
+    with open('data/toolbox2021.json', 'r') as read_file:
         data = json.load(read_file)
     languages(data)
     operating_system(data)

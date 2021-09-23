@@ -5,7 +5,7 @@ import json
 plt.style.use('ggplot')
 plt.rcParams['font.family'] = 'sans-serif'
 
-with open('../intro/data/toolbox2020.json', 'r') as read_file:
+with open('../intro/data/toolbox2021.json', 'r') as read_file:
     answers = json.load(read_file)
 
 liste = []
