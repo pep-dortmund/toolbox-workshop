@@ -89,7 +89,6 @@
   Einzige Herausforderung: Man muss lernen, damit umzugehen
 \end{frame}
 
-\headlineframe{Das Repository}
 \begin{frame}{Zentrales Konzept: Das Repository}
   \begin{itemize}
     \item Erzeugen mit \texttt{git init}
@@ -107,31 +106,14 @@
         minimum height=1.2cm,
       },
     ]
-    \node (wd) at (0, 0) [gitstep, fill=red!20, visible on=<1->] {Working directory};
-    \node (idx) [gitstep, fill=yellow!20, visible on=<2->, below=0.4cm of wd] {Staging};
-    \node (hist) [gitstep, fill=green!20, visible on=<3->, below=0.4cm of idx] {History};
-    \draw[thick,->, visible on=<4->] (wd.east) to[out=0,in=0] node[right] {\texttt{git add}} (idx.east);
-    \draw[thick,->, visible on=<4->] (idx.west) to[out=180,in=180] node[left] {\texttt{git commit}} (hist.west);
-  \end{tikzpicture}
-\end{frame}
-\begin{frame}{Zentrales Konzept: Das Repository}
-  \centering
-  \begin{tikzpicture}[
-      line width=1.5,
-      gitstep/.style={
-        draw,
-        rounded corners,
-        thick,
-        minimum width=4cm,
-        minimum height=1.2cm,
-      },
-    ]
-    \node (wd) at (0, 0) [gitstep, fill=red!20, visible on=<1->] {Working directory};
-    \node (idx) [gitstep, fill=yellow!20, below=0.4cm of wd] {Staging};
-    \node (hist) [gitstep, fill=green!20, below=0.4cm of idx] {History};
-    \node [right=1cm of wd, text width=0.5\textwidth, align=flush left] {Aktuelles Arbeitsverzeichnis, Inhalt des Ordners im Dateisystem.};
-    \node [right=1cm of idx, text width=0.5\textwidth, align=flush left] {Änderungen, die für den nächsten commit vorgemerkt sind.};
-    \node [right=1cm of hist, text width=0.5\textwidth, align=flush left] {Gespeicherte Historie des Projekts. Alle jemals gemachten Änderungen. Ein Baum von Commits.};
+    \node (wd) at (0, 0) [gitstep, fill=red!20, visible on=<1->, align=center] {Working directory \\{\includegraphics[width=.03\textwidth]{figures/paper.png}}};
+    \node (idx) [gitstep, fill=yellow!20, below=0.4cm of wd, visible on=<2->, align=center] {Staging \\{\includegraphics[width=.03\textwidth]{figures/baggage.png}}};
+    \node (hist) [gitstep, fill=green!20, below=0.4cm of idx, visible on=<3->, align=center] {History \\{\includegraphics[width=.03\textwidth]{figures/baggage.png}\hspace{0.1cm}\includegraphics[width=.03\textwidth]{figures/baggage.png}\hspace{0.1cm}\includegraphics[width=.03\textwidth]{figures/baggage.png}}};
+    \node [right=1cm of wd, text width=0.5\textwidth, align=flush left, visible on=<1->] {Aktuelles Arbeitsverzeichnis, Inhalt des Ordners im Dateisystem.};
+    \node [right=1cm of idx, text width=0.5\textwidth, align=flush left, visible on=<2->] {Änderungen, die für einen \enquote{commit} vorgemerkt sind.};
+    \node [right=1cm of hist, text width=0.5\textwidth, align=flush left, visible on=<3->] {Gespeicherte \emph{Historie} des Projekts. Alle jemals gemachten Änderungen. Ein Baum von Commits.};
+    \draw[thick,->, visible on=<4->] (wd.west) to[out=180,in=180] node[left] {\texttt{git add}} (idx.west);
+    \draw[thick,->, visible on=<5->] (idx.west) to[out=180,in=180] node[left] {\texttt{git commit}} (hist.west);
   \end{tikzpicture}
 \end{frame}
 
@@ -139,8 +121,8 @@
   Remotes sind zentrale Stellen, z.\,B. Server auf denen die History gespeichert wird.
   \begin{center}
   \begin{tikzpicture}[line width=1.5]
-    \node (hist) [draw,rounded corners,thick,minimum width=4cm,minimum height=1.2cm,fill=green!20] {History};
-    \node (remote) [below=0.4cm of hist,draw,rounded corners,thick,minimum width=4cm,minimum height=1.2cm,fill=blue!20] {Remote};
+    \node (hist) [draw,rounded corners,thick,minimum width=4cm,minimum height=1.2cm,fill=green!20, align=center] {History \\{\includegraphics[width=.03\textwidth]{figures/baggage.png}\hspace{0.1cm}\includegraphics[width=.03\textwidth]{figures/baggage.png}\hspace{0.1cm}\includegraphics[width=.03\textwidth]{figures/baggage.png}}};
+    \node (remote) [below=0.4cm of hist,draw,rounded corners,thick,minimum width=4cm,minimum height=1.2cm,fill=blue!20, align=center] {Remote \\{\includegraphics[width=.03\textwidth]{figures/baggage.png}\hspace{0.1cm}\includegraphics[width=.03\textwidth]{figures/baggage.png}\hspace{0.1cm}\includegraphics[width=.03\textwidth]{figures/baggage.png}\hspace{0.03\textwidth}\includegraphics[width=.03\textwidth]{figures/baggage.png}}};
     \draw[thick,->] (hist.east) to[out=0,in=0] node[right] {\texttt{git push}} (remote.east);
     \draw[thick,->] (remote.west) to[out=180,in=180] node[left] {\texttt{git pull}} (hist.west);
   \end{tikzpicture}
