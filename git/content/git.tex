@@ -121,8 +121,9 @@
   Remotes sind zentrale Stellen, z.\,B. Server auf denen die History gespeichert wird.
   \begin{center}
   \begin{tikzpicture}[line width=1.5]
-    \node (hist) [draw,rounded corners,thick,minimum width=4cm,minimum height=1.2cm,fill=green!20, align=center] {History \\{\includegraphics[width=.03\textwidth]{figures/baggage.png}\hspace{0.1cm}\includegraphics[width=.03\textwidth]{figures/baggage.png}\hspace{0.1cm}\includegraphics[width=.03\textwidth]{figures/baggage.png}}};
-    \node (remote) [below=0.4cm of hist,draw,rounded corners,thick,minimum width=4cm,minimum height=1.2cm,fill=blue!20, align=center] {Remote \\{\includegraphics[width=.03\textwidth]{figures/baggage.png}\hspace{0.1cm}\includegraphics[width=.03\textwidth]{figures/baggage.png}\hspace{0.1cm}\includegraphics[width=.03\textwidth]{figures/baggage.png}\hspace{0.03\textwidth}\includegraphics[width=.03\textwidth]{figures/baggage.png}}};
+    \node (hist) [draw,rounded corners,thick,minimum width=4cm,minimum height=1.2cm,fill=green!20, align=center] {Eure History \\{\includegraphics[width=.03\textwidth]{figures/baggage.png}\hspace{0.1cm}\includegraphics[width=.03\textwidth]{figures/baggage.png}\hspace{0.1cm}\includegraphics[width=.03\textwidth]{figures/baggage.png}}};
+    \node (remote) [below=0.4cm of hist,draw,rounded corners,thick,minimum width=4cm,minimum height=1.2cm,fill=red!20, align=center] {Remote \\{\includegraphics[width=.03\textwidth]{figures/baggage.png}\hspace{0.1cm}\includegraphics[width=.03\textwidth]{figures/baggage.png}\hspace{0.1cm}\includegraphics[width=.03\textwidth]{figures/baggage.png}\hspace{0.03\textwidth}\includegraphics[width=.03\textwidth]{figures/baggage.png}}};
+    \node (hist2) [below=0.4cm of remote,draw,rounded corners,thick,minimum width=4cm,minimum height=1.2cm,fill=blue!20, align=center] {History eures Partners \\{\includegraphics[width=.03\textwidth]{figures/baggage.png}\hspace{0.1cm}\includegraphics[width=.03\textwidth]{figures/baggage.png}\hspace{0.1cm}\includegraphics[width=.03\textwidth]{figures/baggage.png}}};
     \draw[thick,->] (hist.east) to[out=0,in=0] node[right] {\texttt{git push}} (remote.east);
     \draw[thick,->] (remote.west) to[out=180,in=180] node[left] {\texttt{git pull}} (hist.west);
   \end{tikzpicture}
