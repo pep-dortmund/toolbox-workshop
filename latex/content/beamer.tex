@@ -117,29 +117,3 @@
     \end{lstlisting}
   \end{center}
 \end{BeamerCodeFrame}
-
-\begin{BeamerCodeFrame}[fragile]{\texttt{siunitx} mit beamer}
-  \begin{center}
-    \begin{lstlisting}
-      \documentclass[aspectratio=1610]{beamer}
-      %  …
-      %  packages here
-      %  …
-
-      \usepackage{siunitx}
-
-      \AtBeginDocument{
-        \sisetup{
-          math-rm=\mathrm,
-          math-micro=µ, % AltGr+m = MICRO SIGN, Unicode: U+00B5
-        }
-      }
-
-      \begin{document}
-        \begin{frame}{title}
-          \SI{5}{\micro\ohm}
-        \end{frame}
-      \end{document}
-    \end{lstlisting}
-  \end{center}
-\end{BeamerCodeFrame}

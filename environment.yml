@@ -1,0 +1,16 @@
+name: toolbox
+channels:
+  - defaults
+dependencies:
+  - python=3.9
+  - pip
+  - matplotlib
+  - numpy
+  - pandas
+  - requests
+  - scipy
+  - sympy
+  - pip:
+    - uncertainties
+    - jupyter_contrib_nbextensions
+    - https://github.com/maxnoe/texlive-batch-installation/archive/v0.3.0.tar.gz

@@ -6,14 +6,14 @@ y = x ** np.sin(x)
 
 plt.subplot(1, 2, 1)
 plt.plot(x, y, label='Kurve')
-plt.xlabel(r'$\alpha \:/\: \si{\ohm}$')
-plt.ylabel(r'$y \:/\: \si{\micro\joule}$')
+plt.xlabel(r'$\alpha \mathbin{/} \unit{\ohm}$')
+plt.ylabel(r'$y \mathbin{/} \unit{\micro\joule}$')
 plt.legend(loc='best')
 
 plt.subplot(1, 2, 2)
 plt.plot(x, y, label='Kurve')
-plt.xlabel(r'$\alpha \:/\: \si{\ohm}$')
-plt.ylabel(r'$y \:/\: \si{\micro\joule}$')
+plt.xlabel(r'$\alpha \mathbin{/} \unit{\ohm}$')
+plt.ylabel(r'$y \mathbin{/} \unit{\micro\joule}$')
 plt.legend(loc='best')
 
 # in matplotlibrc leider (noch) nicht möglich

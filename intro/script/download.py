@@ -4,7 +4,7 @@ import requests
 import pandas as pd
 
 r = requests.get(
-    'https://registration.pep-dortmund.org/events/4/participants',
+    'https://registration.pep-dortmund.org/events/11/participants',
     headers={'accept': 'application/json'},
     auth=(input('Username: '), getpass())
 )
@@ -30,7 +30,7 @@ def get_data(p):
 
 participants = [get_data(p) for p in data['participants']]
 
-with open('data/toolbox2020.json', 'w') as f:
+with open('data/toolbox2021.json', 'w') as f:
     json.dump(participants, f, indent=2)
 
 

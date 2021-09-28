@@ -1,0 +1,38 @@
+name: CI
+
+on: [push, pull_request]
+
+env:
+  TEXLIVE_VERSION: 2021
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.9
+
+      - name: Setup
+        run: |
+          sudo apt-get install --yes poppler-utils
+          source $CONDA/etc/profile.d/conda.sh
+          conda env update -n base -f environment.yml
+          conda activate
+          python -m install_texlive -p $HOME/texlive -t $TEXLIVE_VERSION --collections='-a' --package-file tex-packages.txt --update
+
+          # add to path for following steps
+          echo "$HOME/texlive/$TEXLIVE_VERSION/bin/x86_64-linux" >> $GITHUB_PATH
+          "$HOME/texlive/$TEXLIVE_VERSION/bin/x86_64-linux/tlmgr" install --with-doc tex-overview
+
+      - name: Build
+        run: |
+          source $CONDA/etc/profile.d/conda.sh
+          conda activate
+          make
+
+      - name: check for errors
+        if: always()
+        run: "! grep -R --include='*.log' '^!' -A 5 -B 5"

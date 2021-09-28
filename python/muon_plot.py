@@ -89,7 +89,7 @@ ax.legend(
     ["Messwerte", "Fit", r"$1\sigma$-Umgebung ($\times 10$)"],
     loc="best",
 )
-ax.set_xlabel(r"$t \mathbin{/} \si{\micro\second}$")
+ax.set_xlabel(r"$t \mathbin{/} \unit{\micro\second}$")
 ax.set_ylabel(r"Zählrate")
 ax.set_xlim(0, 11)
 ax.set_ylim(-50, 500)

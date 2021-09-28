@@ -44,6 +44,7 @@ def programming(answers):
         labels=programming.keys(),
         startangle=0,
         radius=1,
+        normalize=False,
     )
 #    ax.set_xlim(-1.5, 1.5)
     fig.savefig('build/figures/programming.pdf')
@@ -113,7 +114,7 @@ def interests(answers):
 
 
 if __name__ == '__main__':
-    with open('data/toolbox2020.json', 'r') as read_file:
+    with open('data/toolbox2021.json', 'r') as read_file:
         data = json.load(read_file)
     languages(data)
     operating_system(data)
