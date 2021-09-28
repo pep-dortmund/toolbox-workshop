@@ -1,13 +1,13 @@
+import matplotlib.pyplot as plt
 import numpy as np
 from scipy.optimize import curve_fit
-import matplotlib.pyplot as plt
 
 # Datenfile erzeugen
-np.random.seed(42)
+rng = np.random.default_rng(42)
 N = 50
 data_x = np.linspace(0, 2 * np.pi, N)
-error_y = np.random.lognormal(-1, 0.2, size=N)
-data_y = np.random.normal(np.sin(data_x), error_y)
+error_y = rng.lognormal(-1, 0.2, size=N)
+data_y = rng.normal(np.sin(data_x), error_y)
 np.savetxt(
     'daten.txt',
     np.column_stack([data_x, data_y, error_y]),

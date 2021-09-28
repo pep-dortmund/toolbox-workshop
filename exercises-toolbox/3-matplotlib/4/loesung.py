@@ -2,12 +2,12 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 # Datenfile erzeugen
-np.random.seed(0)
+rng = np.random.default_rng(0)
 N = 20
-error_x = np.random.lognormal(-2, 0.05, size=N)
-data_x = np.random.normal(np.linspace(0, 2 * np.pi, N), error_x)
-error_y = np.random.lognormal(-1.2, 0.3, size=N)
-data_y = np.random.normal(np.sin(data_x), error_y)
+error_x = rng.lognormal(-2, 0.05, size=N)
+data_x = rng.normal(np.linspace(0, 2 * np.pi, N), error_x)
+error_y = rng.lognormal(-1.2, 0.3, size=N)
+data_y = rng.normal(np.sin(data_x), error_y)
 np.savetxt(
     '4.txt',
     np.column_stack([data_x, error_x, data_y, error_y]),

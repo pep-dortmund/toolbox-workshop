@@ -6,8 +6,9 @@ import uncertainties.unumpy as unp
 
 def create_data():
     ''' Create the data file '''
+    rng = np.random.default_rng()
     x = np.linspace(0, 2 * np.pi)
-    y = 3 * np.sin(x) + 2 * np.cos(x) + np.random.normal(0, 0.2, len(x))
+    y = 3 * np.sin(x) + 2 * np.cos(x) + rng.normal(0, 0.2, len(x))
     np.savetxt("daten.txt", np.column_stack([x, y]), header="x y")
 
 
@@ -48,12 +49,14 @@ if __name__ == '__main__':
 
     x_plot = np.linspace(-0.1, 2 * np.pi + 0.1, 100)
 
-    plt.errorbar(x, unp.nominal_values(y), yerr=unp.std_devs(y), fmt='k+', label="Daten")
-    plt.plot(
-        x_plot,
-        unp.nominal_values(linear_combination(x_plot, functions, params)),
-        label="Fit"
-    )
+    plt.errorbar(x,
+                 unp.nominal_values(y),
+                 yerr=unp.std_devs(y),
+                 fmt='k+',
+                 label="Daten")
+    plt.plot(x_plot,
+             unp.nominal_values(linear_combination(x_plot, functions, params)),
+             label="Fit")
     plt.xlabel(r'$x$')
     plt.ylabel(r'$y$')
     plt.xlim(-0.1, 2 * np.pi + 0.1)
