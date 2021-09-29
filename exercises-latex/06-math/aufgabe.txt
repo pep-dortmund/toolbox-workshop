@@ -4,7 +4,8 @@ Hinweis: Falls Ihr die hier benötigten Gesetze
          (Nicht in die .tex ;))
 
 Aufgabe 1:
-  Ladet zusätzlich zum Gerüst die benötigten Pakete
+  Erstellt ein neues LaTeX Document.
+  Ladet zusätzlich zum Gerüst in `geruest.tex` die benötigten Pakete
   für Mathematik und nehmt die empfohlenen Einstellungen
   vor.
 
