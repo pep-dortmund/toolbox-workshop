@@ -205,7 +205,7 @@
     \item<2-> \textcolor{vertexDarkRed}{Branch}: benannter Zeiger auf einen Commit
       \begin{itemize}
         \item Entwicklungszweig
-		\item Im Praktikum reicht bereits die Standard-Branch: \texttt{master} 
+		\item Im Praktikum reicht bereits die Standard-Branch: \texttt{master}
 			(Auf github ab Okt. 2020: \texttt{main})
         \item Wandert weiter
       \end{itemize}
@@ -424,9 +424,14 @@
 
   SSH-Keys:
   \begin{enumerate}
-    \item \texttt{ssh-keygen -t rsa -b 4096 -o -a 100}
+    \item \texttt{ssh-keygen -t ed25519 -C "your_email@example.com"}
     \item Passwort wählen
     \item \texttt{cat \textasciitilde/.ssh/id\_rsa.pub}
     \item Ausgabe ist Public-Key, beim Server eintragen (im Browser)
   \end{enumerate}
+\end{frame}
+
+\begin{frame}{SSH-Keys mit WSL}
+  \texttt{echo 'eval \$(ssh-agent -s)' >> \textasciitilde/.bashrc}
+  \texttt{echo 'AddKeysToAgent yes' >> \textasciitilde/.ssh/config}
 \end{frame}
