@@ -430,13 +430,9 @@
     \item Ausgabe ist Public-Key, beim Server eintragen (im Browser)
   \end{enumerate}
   Bei Windows mit WSL noch:
-  \begin{enumerate}[5.]
+  \begin{enumerate}
+    \setcounter{enumi}{4}
     \item \texttt{echo 'eval \$(ssh-agent -s)' >> \textasciitilde/.bashrc}
     \item \texttt{echo 'AddKeysToAgent yes' >> \textasciitilde/.ssh/config}
   \end{enumerate}
-\end{frame}
-
-\begin{frame}{SSH-Keys mit WSL}
-  \texttt{echo 'eval \$(ssh-agent -s)' >> \textasciitilde/.bashrc}
-  \texttt{echo 'AddKeysToAgent yes' >> \textasciitilde/.ssh/config}
 \end{frame}
