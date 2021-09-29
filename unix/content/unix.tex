@@ -32,37 +32,77 @@
 \end{frame}
 
 \begin{frame}{Terminal-Emulatoren}
-  \begin{itemize}
-    \item Terminals sind im ursprünglichen Sinne Hardware und wurden durch den Personal Computer ersetzt
-    \item Terminal-Emulatoren oder auch Terminalprogramme sind Programme die Terminals auf einem PC emulieren
-    \item Beispiele für graphische Terminal-Emulatoren unter Linux sind: 
-    \begin{itemize}
-      \item xterm
-      \item GNOME Terminal
-      \item kitty
-      \item tilix, etc.
-    \end{itemize}
-    \item Beispiele für graphische Terminal-Emulatoren unter macOS sind: 
-    \begin{itemize}
-      \item Terminal 
-      \item iTerm2
-    \end{itemize}
-    \item Beispiele für graphische Terminal-Emulatoren unter Windows sind: 
-    \begin{itemize}
-      \item Windows Konsole
-      \item Windows Terminal
-    \end{itemize}
+  \begin{columns}
+    \begin{column}{0.5\textwidth}
+      \begin{itemize}
+        \item Terminals sind im ursprünglichen Sinne Hardware und wurden durch den Personal Computer ersetzt
+        \item Terminal-Emulatoren oder auch Terminalprogramme sind Programme die Terminals auf einem PC emulieren
+        \item Beispiele für graphische Terminal-Emulatoren sind:
+        \begin{tabu}{X[,L] | X[,L] | X[,L]}
+          Linux & Windows & macOS \\
+          \hline
+          xterm  & Windows Konsole & iTerm2  \\
+          \hline
+          GNOME Terminal & Windows Terminal & Terminal \\
+          \hline
+          kitty & ConEmu & - \\
+          \hline
+          tilix & - & - \\
+        \end{tabu}
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+      \begin{figure}
+        \includegraphics[width=0.7\textwidth]{images/iterm2.jpg}
+      \caption*{iTerm2 on macOS}
+      \end{figure}
+      \begin{figure}
+        \includegraphics[width=0.7\textwidth]{images/gnome-terminal.jpg}
+      \caption*{GNOME Terminal on Linux}
+      \end{figure}
+    \end{column}
+  \end{columns}
   
-  \end{itemize}
+\end{frame}
+
+\begin{frame}{Tastaturkürzel}
+  Es gibt verschiedene Tastenkürzel, die sich je nach Terminal-Emulator unterscheiden
+  \vspace{1em}\\ 
+  \begin{tabu}{>{\ttfamily}l | >{\ttfamily}l | >{\ttfamily}l | X[,L]}
+    iTerm2 & Windows Terminal & Gnome-Terminal & Befehl \\
+    \hline
+    Enter & Enter & Enter & Befehl ausführen \\
+    Ctrl-C & Ctrl-C & Ctrl-C & beendet das laufende Programm \\
+    Ctrl-D & Ctrl-D & Ctrl-D & EOF (end of file) eingeben, kann Programme die auf Eingaben warten beenden \\
+    Ctrl-L & Ctrl-L & Ctrl-L & leert den Bildschirm \\
+    $\uparrow \quad \downarrow$ & $\uparrow \quad \downarrow$ & $\uparrow \quad \downarrow$ & Befehlshistorie durchgehen\\
+    Cmd-C& Ctrl-C & Ctrl-Shift-C & Kopieren von Text \\
+    Cmd-V& Ctrl-V & Ctrl-Shift-V & Einfügen aus Zwischenablage \\
+  \end{tabu}
 \end{frame}
 
 \begin{frame}{Shells}
-  \begin{itemize}
-    \item Shells sind die äußerste Ebene des Betriebsystems (OS), daher der Name \textit{shell}
-    \item Funktionen der grafische Shells sind z.B. Desktopumgebungen, Start Menüs und die Taskbar, aber das unterscheidet sich natürlich je nach OS 
-    \item Command-Line Shells sind Programme die in den Terminal-Emulatoren  laufen und die Verbindung zum OS darstellen
-    \item Typische Command-Line Shells sind bash, zsh, Powershell, cmd.exe, fish, etc.
-  \end{itemize}
+  \begin{columns}
+    \begin{column}{0.5\textwidth}
+      \begin{itemize}
+        \item Shells sind die äußerste Ebene des Betriebsystems (OS), daher der Name \textit{shell}
+        \item Funktionen der grafische Shells sind z.B. Desktopumgebungen, Start Menüs und die Taskbar, aber das unterscheidet sich natürlich je nach OS 
+        \item Command-Line Shells sind Programme die in den Terminal-Emulatoren  laufen und die Verbindung zum OS darstellen
+        \item Typische Command-Line Shells sind bash, zsh, Powershell, cmd.exe, fish, etc.
+      \end{itemize} 
+    \end{column}
+    \begin{column}{0.5\textwidth}
+      \begin{figure}
+        \includegraphics[width=0.7\textwidth]{images/zsh_shell.jpg}
+      \caption*{zsh-Shell mit oh-my-zsh agnoster Theme}
+      \end{figure}
+      \begin{figure}
+        \includegraphics[width=0.7\textwidth]{images/bash_shell.jpg}
+      \caption*{bash-Shell}
+      \end{figure}
+    \end{column}
+  \end{columns}
+  
 \end{frame}
 
 
@@ -195,18 +235,6 @@
   \begin{tabu}{>{\ttfamily}l c >{\ttfamily}l}
     *.log           & → & foo.log bar.log \\
     foo.\{tex,pdf\} & → & foo.tex foo.pdf
-  \end{tabu}
-\end{frame}
-
-\begin{frame}{Tastaturkürzel}
-  \begin{tabu}{>{\ttfamily}l X[,L]}
-    Enter & Befehl ausführen \\
-    Ctrl-C & beendet das laufende Programm \\
-    Ctrl-D & EOF (end of file) eingeben, kann Programme die auf Eingaben warten beenden \\
-    Ctrl-L & leert den Bildschirm \\
-    $\uparrow \quad \downarrow$ & Befehlshistorie durchgehen\\
-    Ctrl-Shift-C & Kopieren von Text \\
-    Ctrl-Shift-V & Einfügen aus Zwischenablage \\
   \end{tabu}
 \end{frame}
 
