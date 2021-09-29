@@ -67,7 +67,7 @@
 
 \begin{frame}
     \centering
-    \includegraphics[width=0.7\textwidth]{logos/git.pdf}
+    \includegraphics[width=0.7\textwidth]{logos/git_logo.pdf}
 
     \vspace{1em}
 
@@ -424,10 +424,15 @@
 
   SSH-Keys:
   \begin{enumerate}
-    \item \texttt{ssh-keygen -t ed25519 -C "your_email@example.com"}
+    \item \texttt{ssh-keygen -t ed25519 -C "your\_email@example.com"}
     \item Passwort wählen
     \item \texttt{cat \textasciitilde/.ssh/id\_rsa.pub}
     \item Ausgabe ist Public-Key, beim Server eintragen (im Browser)
+  \end{enumerate}
+  Bei Windows mit WSL noch:
+  \begin{enumerate}[5.]
+    \item \texttt{echo 'eval \$(ssh-agent -s)' >> \textasciitilde/.bashrc}
+    \item \texttt{echo 'AddKeysToAgent yes' >> \textasciitilde/.ssh/config}
   \end{enumerate}
 \end{frame}
 
