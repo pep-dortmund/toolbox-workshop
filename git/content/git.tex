@@ -132,10 +132,10 @@
 
 \begin{frame}{Konzept: Commits}
   \begin{itemize}
-    \item \enquote{Änderungspaket}
-    \item Gibt an, was sich seit dem letzten Stand (Commit) verändert hat
-    \item Beispiel: Datei main.py wurde in Zeile 3 editiert
+    \item Stand des Repositories zu einem Zeitpunkt
     \item Erlaubt das Hinzufügen von Kommentaren: Was wurde getan seit dem letzten Commit?
+    \item Platzsparend: Nur die Änderungen zum letzten Commit werden
+      gespeichert.
   \end{itemize}
   \begin{tikzpicture}
     \node (commit1) at (0, 0) {{\includegraphics[width=0.2\textwidth]{figures/baggage.png}}};
@@ -407,7 +407,7 @@
 \begin{frame}[fragile]{SSH-Keys}
   Git kann auf mehrere Arten mit einem Server kommunizieren:
   \begin{description}
-    \item[HTTPS] 
+    \item[HTTPS]
       \begin{itemize}
         \item Mit Nutzername / Passwort:
           War lange die einfachste Möglichkeit. Wird aber von GitHub aus Sicherheitsgründen nicht mehr einfach unterstützt.
