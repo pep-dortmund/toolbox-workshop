@@ -130,22 +130,6 @@
   \end{center}
 \end{frame}
 
-\begin{frame}{Konzept: Commits}
-  \begin{itemize}
-    \item \enquote{Änderungspaket}
-    \item Gibt an, was sich seit dem letzten Stand (Commit) verändert hat
-    \item Beispiel: Datei main.py wurde in Zeile 3 editiert
-    \item Erlaubt das Hinzufügen von Kommentaren: Was wurde getan seit dem letzten Commit?
-  \end{itemize}
-  \begin{tikzpicture}
-    \node (commit1) at (0, 0) {{\includegraphics[width=0.2\textwidth]{figures/baggage.png}}};
-    \node (commit2) at (8, 0) {{\includegraphics[width=0.2\textwidth]{figures/baggage.png}}};
-    \node (commit1_text) [below=0.5cm of commit1] {\texttt{Commit 1}};
-    \node (commit2_text) [below=0.5cm of commit2] {\texttt{Commit 2}};
-    \draw[arr] (commit1) -- (commit2);
-  \end{tikzpicture}
-\end{frame}
-
 \begin{frame}{History}
   \only<1>{
     \begin{tikzpicture}
