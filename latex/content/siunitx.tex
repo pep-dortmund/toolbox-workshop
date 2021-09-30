@@ -58,13 +58,11 @@
         % per-mode=reciprocal,      % m s^{-1}
         % output-decimal-marker=.,         % . statt , für Dezimalzahlen
       ]{siunitx}
-      % Fix missing micro sign with TL2017
-      \sisetup{math-micro=\text{µ},text-micro=µ}
     \end{lstlisting}
   \end{Packages}
 \end{frame}
 
-\begin{frame}[fragile]{\texttt{siunitx}: Zahlen mit \lstinline+\\num+}
+\begin{frame}[fragile]{\texttt{siunitx}: Zahlen mit \texttt{\backslash num}}
   \begin{CodeExample}{0.7}[Zahlen mit automatischen 3er-Gruppen]
     \begin{lstlisting}
       \num{1.23456}
@@ -101,7 +99,7 @@
   \end{CodeExample}
 \end{frame}
 
-\begin{frame}[fragile]{\texttt{siunitx}: Einheiten mit \lstinline+\\unit+}
+\begin{frame}[fragile]{\texttt{siunitx}: Einheiten mit \texttt{\backslash unit}}
   \begin{CodeExample}{0.8}[Einheiten]
     \begin{lstlisting}
       \unit{\meter\per\second}
@@ -148,7 +146,7 @@
   \end{CodeExample}
 \end{frame}
 
-\begin{frame}[fragile]{\texttt{siunitx}: Physikalische Größe, eine Zahl mit Einheit: \lstinline+\\qty+}
+\begin{frame}[fragile]{\texttt{siunitx}: Physikalische Größe, eine Zahl mit Einheit: \texttt{\backslash qty}}
   \begin{CodeExample}{0.72}[\lstinline+\\qty+ {=} Kombination aus \lstinline+\\num+ und \lstinline+\\unit+]
     \begin{lstlisting}
       \qty{5}{\percent}
