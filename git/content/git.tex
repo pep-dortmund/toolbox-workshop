@@ -156,7 +156,7 @@
         },
       ]{
         "Erstabgabe" [visible on=<4->, green!60!black, x=4];
-		a <- b <- c <- d <- master [vertexDarkRed];
+		a <- b <- c <- d <- main [vertexDarkRed];
         f[visible on=<2>] ->[visble on=<2>] -> a;
         "Erstabgabe"[visible on=<2>] ->[visible on=<3>] c;
       };
@@ -172,7 +172,7 @@
       ]{
         "Erstabgabe" [visible on=<4->, green!60!black, x=4];
         a <- b <- c <- {
-          d <- master [vertexDarkRed],
+          d <- main [vertexDarkRed],
           e <- foo [vertexDarkRed]
         };
         "Erstabgabe"[visible on=<3>] ->[visible on=<3>] c;
@@ -188,7 +188,7 @@
         },
       ] {
         "Erstabgabe" [visible on=<4->, green!60!black, x=4],
-        a <- b <- c <- d <- {e <- f, g [x=0.5]} <- h <- {i <-[visible on=<2->] master [vertexDarkRed, visible on=<3->], j <-[visible on=<2->] foo [vertexDarkRed, visible on=<3->]};
+        a <- b <- c <- d <- {e <- f, g [x=0.5]} <- h <- {i <-[visible on=<2->] main [vertexDarkRed, visible on=<3->], j <-[visible on=<2->] foo [vertexDarkRed, visible on=<3->]};
         "Erstabgabe" ->[visible on=<4->] e ;
       };
     \end{tikzpicture}
@@ -205,7 +205,7 @@
     \item<2-> \textcolor{vertexDarkRed}{Branch}: benannter Zeiger auf einen Commit
       \begin{itemize}
         \item Entwicklungszweig
-		\item Im Praktikum reicht bereits die Standard-Branch: \texttt{master}
+		\item Im Praktikum reicht bereits die Standard-Branch: \texttt{main}
 			(Auf github ab Okt. 2020: \texttt{main})
         \item Wandert weiter
       \end{itemize}
