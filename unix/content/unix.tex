@@ -38,27 +38,45 @@
         \item Terminals sind im ursprünglichen Sinne Hardware und wurden durch den Personal Computer ersetzt
         \item Terminal-Emulatoren oder auch Terminalprogramme sind Programme die Terminals auf einem PC emulieren
         \item Beispiele für graphische Terminal-Emulatoren sind:
-        \begin{tabu}{X[,L] | X[,L] | X[,L]}
-          Linux & Windows & macOS \\
-          \hline
-          xterm  & Windows Konsole & iTerm2  \\
-          \hline
-          GNOME Terminal & Windows Terminal & Terminal \\
-          \hline
-          kitty & ConEmu & - \\
-          \hline
-          tilix & - & - \\
-        \end{tabu}
+        \begin{columns}[t, onlytextwidth]
+          \begin{column}{0.1\textwidth}
+          \end{column}
+          \begin{column}{0.3\textwidth}
+          \textbf{Linux}
+          \begin{itemize}
+              \item xterm
+              \item GNOME Terminal
+              \item kitty
+              \item tilix
+          \end{itemize}
+          \end{column}
+          \hfill
+          \begin{column}{0.3\textwidth}
+          \textbf{Windows}
+          \begin{itemize}
+              \item Windows Konsole
+              \item Windows Terminal
+          \end{itemize}
+          \end{column}
+          \hfill
+          \begin{column}{0.3\textwidth}
+          \textbf{macOS}
+          \begin{itemize}
+              \item iTerm2
+              \item Terminal
+          \end{itemize}
+          \end{column}
+          \end{columns}
       \end{itemize}
     \end{column}
     \begin{column}{0.5\textwidth}
       \begin{figure}
         \includegraphics[width=0.7\textwidth]{images/iterm2.jpg}
-      \caption*{iTerm2 on macOS}
+      \caption*{iTerm2 in macOS}
       \end{figure}
       \begin{figure}
         \includegraphics[width=0.7\textwidth]{images/gnome-terminal.jpg}
-      \caption*{GNOME Terminal on Linux}
+      \caption*{GNOME Terminal in Linux}
       \end{figure}
     \end{column}
   \end{columns}
