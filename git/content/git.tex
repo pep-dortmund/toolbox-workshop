@@ -404,26 +404,34 @@
   \end{center}
 \end{frame}
 
-\begin{frame}{SSH-Keys}
+\begin{frame}[fragile]{SSH-Keys}
   Git kann auf mehrere Arten mit einem Server kommunizieren:
-  \begin{itemize}
-    \item HTTPS: funktioniert immer, keine Einstellungen erforderlich, Passwort muss für jede Kommunikation eingegeben werden
-    \item SSH: Keys müssen erzeugt und eingestellt werden, Passwort für den Key muss nur einmal pro Session eingegeben werden.
-  \end{itemize}
+  \begin{description}
+    \item[HTTPS] 
+      \begin{itemize}
+        \item Mit Nutzername / Passwort:
+          War lange die einfachste Möglichkeit. Wird aber von GitHub aus Sicherheitsgründen nicht mehr einfach unterstützt.
+        \item Mit \enquote{Personal Access Token}. Neues Verfahren für GitHub über HTTPS.
+      \end{itemize}
+    \item[SSH]: Keys müssen erzeugt und eingestellt werden, Passwort für den Key muss wenn ein \enquote{SSH-Agent} verwendent wird nur einmal pro Session eingegeben werden.
+  \end{description}
 
   SSH-Keys:
   \begin{enumerate}
-    \item \texttt{ssh-keygen -t ed25519 -C "your\_email@example.com"}
+    \item \lstinline[language=]+ssh-keygen -t ed25519 -C "your_email@example.com"+
     \item Passwort wählen
-    \item \texttt{cat \textasciitilde/.ssh/id\_rsa.pub}
+    \item \lstinline[language=]+cat ~/.ssh/id_ed25519.pub+
     \item Ausgabe ist Public-Key, beim Server eintragen (im Browser)
   \end{enumerate}
-  Bei Windows mit WSL noch:
+
+  Für den Agent, falls noch nicht vom Betriebsystem eingerichtet (z.\,B.\ Windows mit WSL):
   \begin{enumerate}
     \setcounter{enumi}{4}
-    \item \texttt{echo 'eval \$(ssh-agent -s)' >> \textasciitilde/.bashrc}
-    \item \texttt{echo 'AddKeysToAgent yes' >> \textasciitilde/.ssh/config}
+    \item \lstinline[language=]+echo 'eval $(ssh-agent -s)' >> ~/.bashrc+
+    \item \lstinline[language=]+echo 'AddKeysToAgent yes' >> ~/.ssh/config+
   \end{enumerate}
+
+  Doku: \url{https://docs.github.com/en/authentication/connecting-to-github-with-ssh}
 \end{frame}
 
 \begin{frame}{Extra Slide für sauberere Projekt Historien: \texttt{git pull --rebase} (optional)}
