@@ -7,7 +7,7 @@
   \begin{itemize}
     \item Verwaltung von Versionen
     \item Speicherung der \enquote{Geschichte} eines Projekts
-    \item Es ist jederzeit möglich auf eine ältere Version zurückzukehren
+    \item Es ist jederzeit möglich, auf eine ältere Version zurückzukehren
     \item Es ist möglich, sich die Unterschiede zwischen Versionen anzeigen zu lassen
     \item Backup
   \end{itemize}
@@ -67,7 +67,7 @@
 
 \begin{frame}
     \centering
-    \includegraphics[width=0.7\textwidth]{logos/git.pdf}
+    \includegraphics[width=0.7\textwidth]{logos/git_logo.pdf}
 
     \vspace{1em}
 
@@ -89,7 +89,6 @@
   Einzige Herausforderung: Man muss lernen, damit umzugehen
 \end{frame}
 
-\headlineframe{Das Repository}
 \begin{frame}{Zentrales Konzept: Das Repository}
   \begin{itemize}
     \item Erzeugen mit \texttt{git init}
@@ -107,31 +106,14 @@
         minimum height=1.2cm,
       },
     ]
-    \node (wd) at (0, 0) [gitstep, fill=red!20, visible on=<1->] {Working directory};
-    \node (idx) [gitstep, fill=yellow!20, visible on=<2->, below=0.4cm of wd] {Staging};
-    \node (hist) [gitstep, fill=green!20, visible on=<3->, below=0.4cm of idx] {History};
-    \draw[thick,->, visible on=<4->] (wd.east) to[out=0,in=0] node[right] {\texttt{git add}} (idx.east);
-    \draw[thick,->, visible on=<4->] (idx.west) to[out=180,in=180] node[left] {\texttt{git commit}} (hist.west);
-  \end{tikzpicture}
-\end{frame}
-\begin{frame}{Zentrales Konzept: Das Repository}
-  \centering
-  \begin{tikzpicture}[
-      line width=1.5,
-      gitstep/.style={
-        draw,
-        rounded corners,
-        thick,
-        minimum width=4cm,
-        minimum height=1.2cm,
-      },
-    ]
-    \node (wd) at (0, 0) [gitstep, fill=red!20, visible on=<1->] {Working directory};
-    \node (idx) [gitstep, fill=yellow!20, below=0.4cm of wd] {Staging};
-    \node (hist) [gitstep, fill=green!20, below=0.4cm of idx] {History};
-    \node [right=1cm of wd, text width=0.5\textwidth, align=flush left] {Aktuelles Arbeitsverzeichnis, Inhalt des Ordners im Dateisystem.};
-    \node [right=1cm of idx, text width=0.5\textwidth, align=flush left] {Änderungen, die für den nächsten commit vorgemerkt sind.};
-    \node [right=1cm of hist, text width=0.5\textwidth, align=flush left] {Gespeicherte Historie des Projekts. Alle jemals gemachten Änderungen. Ein Baum von Commits.};
+    \node (wd) at (0, 0) [gitstep, fill=red!20, visible on=<1->, align=center] {Working directory \\{\includegraphics[width=.03\textwidth]{figures/paper.png}}};
+    \node (idx) [gitstep, fill=yellow!20, below=0.4cm of wd, visible on=<2->, align=center] {Staging \\{\includegraphics[width=.03\textwidth]{figures/baggage.png}}};
+    \node (hist) [gitstep, fill=green!20, below=0.4cm of idx, visible on=<3->, align=center] {History \\{\includegraphics[width=.03\textwidth]{figures/baggage.png}\hspace{0.1cm}\includegraphics[width=.03\textwidth]{figures/baggage.png}\hspace{0.1cm}\includegraphics[width=.03\textwidth]{figures/baggage.png}}};
+    \node [right=1cm of wd, text width=0.5\textwidth, align=flush left, visible on=<1->] {Aktuelles Arbeitsverzeichnis, Inhalt des Ordners im Dateisystem.};
+    \node [right=1cm of idx, text width=0.5\textwidth, align=flush left, visible on=<2->] {Änderungen, die für einen \enquote{commit} vorgemerkt sind.};
+    \node [right=1cm of hist, text width=0.5\textwidth, align=flush left, visible on=<3->] {Gespeicherte \emph{Historie} des Projekts. Alle jemals gemachten Änderungen. Ein Baum von Commits.};
+    \draw[thick,->, visible on=<4->] (wd.west) to[out=180,in=180] node[left] {\texttt{git add}} (idx.west);
+    \draw[thick,->, visible on=<5->] (idx.west) to[out=180,in=180] node[left] {\texttt{git commit}} (hist.west);
   \end{tikzpicture}
 \end{frame}
 
@@ -139,14 +121,29 @@
   Remotes sind zentrale Stellen, z.\,B. Server auf denen die History gespeichert wird.
   \begin{center}
   \begin{tikzpicture}[line width=1.5]
-    \node (hist) [draw,rounded corners,thick,minimum width=4cm,minimum height=1.2cm,fill=green!20] {History};
-    \node (remote) [below=0.4cm of hist,draw,rounded corners,thick,minimum width=4cm,minimum height=1.2cm,fill=blue!20] {Remote};
+    \node (hist) [draw,rounded corners,thick,minimum width=4cm,minimum height=1.2cm,fill=green!20, align=center] {Eure History \\{\includegraphics[width=.03\textwidth]{figures/baggage.png}\hspace{0.1cm}\includegraphics[width=.03\textwidth]{figures/baggage.png}\hspace{0.1cm}\includegraphics[width=.03\textwidth]{figures/baggage.png}}};
+    \node (remote) [below=0.4cm of hist,draw,rounded corners,thick,minimum width=4cm,minimum height=1.2cm,fill=red!20, align=center] {Remote \\{\includegraphics[width=.03\textwidth]{figures/baggage.png}\hspace{0.1cm}\includegraphics[width=.03\textwidth]{figures/baggage.png}\hspace{0.1cm}\includegraphics[width=.03\textwidth]{figures/baggage.png}\hspace{0.03\textwidth}\includegraphics[width=.03\textwidth]{figures/baggage.png}}};
+    \node (hist2) [visible on=<2->,below=0.4cm of remote,draw,rounded corners,thick,minimum width=4cm,minimum height=1.2cm,fill=blue!20, align=center] {History eures Partners \\{\includegraphics[width=.03\textwidth]{figures/baggage.png}\hspace{0.1cm}\includegraphics[width=.03\textwidth]{figures/baggage.png}\hspace{0.1cm}\includegraphics[width=.03\textwidth]{figures/baggage.png}}};
     \draw[thick,->] (hist.east) to[out=0,in=0] node[right] {\texttt{git push}} (remote.east);
     \draw[thick,->] (remote.west) to[out=180,in=180] node[left] {\texttt{git pull}} (hist.west);
   \end{tikzpicture}
   \end{center}
 \end{frame}
 
+\begin{frame}{Konzept: Commits}
+  \begin{itemize}
+    \item Stand des Repositories zu einem Zeitpunkt
+    \item Erlaubt das Hinzufügen von Kommentaren: Was wurde getan seit dem letzten Commit?
+    \item Sind die \textit{Versionen} des Repositories
+  \end{itemize}
+  \begin{tikzpicture}
+    \node (commit1) at (0, 0) {{\includegraphics[width=0.2\textwidth]{figures/baggage.png}}};
+    \node (commit2) at (8, 0) {{\includegraphics[width=0.2\textwidth]{figures/baggage.png}}};
+    \node (commit1_text) [below=0.5cm of commit1] {\texttt{Commit 1}};
+    \node (commit2_text) [below=0.5cm of commit2] {\texttt{Commit 2}};
+    \draw[arr] (commit1) -- (commit2);
+  \end{tikzpicture}
+\end{frame}
 
 \begin{frame}{History}
   \only<1>{
@@ -158,7 +155,7 @@
         },
       ]{
         "Erstabgabe" [visible on=<4->, green!60!black, x=4];
-		a <- b <- c <- d <- master [vertexDarkRed];
+		a <- b <- c <- d <- main [vertexDarkRed];
         f[visible on=<2>] ->[visble on=<2>] -> a;
         "Erstabgabe"[visible on=<2>] ->[visible on=<3>] c;
       };
@@ -174,7 +171,7 @@
       ]{
         "Erstabgabe" [visible on=<4->, green!60!black, x=4];
         a <- b <- c <- {
-          d <- master [vertexDarkRed],
+          d <- main [vertexDarkRed],
           e <- foo [vertexDarkRed]
         };
         "Erstabgabe"[visible on=<3>] ->[visible on=<3>] c;
@@ -190,7 +187,7 @@
         },
       ] {
         "Erstabgabe" [visible on=<4->, green!60!black, x=4],
-        a <- b <- c <- d <- {e <- f, g [x=0.5]} <- h <- {i <-[visible on=<2->] master [vertexDarkRed, visible on=<3->], j <-[visible on=<2->] foo [vertexDarkRed, visible on=<3->]};
+        a <- b <- c <- d <- {e <- f, g [x=0.5]} <- h <- {i <-[visible on=<2->] main [vertexDarkRed, visible on=<3->], j <-[visible on=<2->] foo [vertexDarkRed, visible on=<3->]};
         "Erstabgabe" ->[visible on=<4->] e ;
       };
     \end{tikzpicture}
@@ -207,7 +204,7 @@
     \item<2-> \textcolor{vertexDarkRed}{Branch}: benannter Zeiger auf einen Commit
       \begin{itemize}
         \item Entwicklungszweig
-		\item Im Praktikum reicht bereits die Standard-Branch: \texttt{master} 
+		\item Im Praktikum reicht bereits der Standard-Branch: \texttt{main}
 			(Auf github ab Okt. 2020: \texttt{main})
         \item Wandert weiter
       \end{itemize}
@@ -233,7 +230,15 @@
   \end{enumerate}
 \end{frame}
 
-\begin{frame}{\texttt{git init}, \texttt{git clone}}
+\begin{frame}{Zum selber ausprobieren und Lernen:}
+  \begin{figure}
+    \centering
+    \includegraphics[width=.6\textwidth]{figures/learngitbranching.png}
+  \end{figure}
+  \texttt{https://learngitbranching.js.org/}
+\end{frame}
+
+\begin{frame}{Der Start: \texttt{git init}, \texttt{git clone}}
   \begin{tabu}{>{\ttfamily}l X[,L]}
     git init               & initialisiert ein \texttt{git}-Repo im jetzigen Verzeichnis \\
     git clone \textit{url} & klont das Repo aus \texttt{\textit{url}} \\
@@ -241,17 +246,18 @@
   \end{tabu}
 \end{frame}
 
-\begin{frame}{\texttt{git status}, \texttt{git log}}
+\begin{frame}{Was passiert in Git: \texttt{git status}, \texttt{git log}}
   \begin{tabu}{>{\ttfamily}l X[,L]}
     git status & zeigt Status des Repos (welche Dateien sind neu, gelöscht, verschoben, bearbeitet) \\
     git log    & listet Commits in aktuellem Branch
   \end{tabu}
 \end{frame}
 
-\begin{frame}{\texttt{git add}, \texttt{git mv}, \texttt{git rm}, \texttt{git reset}}
+\begin{frame}{Staging Bereich: \texttt{git add}, \texttt{git mv}, \texttt{git rm}, \texttt{git reset}}
   \begin{tabu}{>{\ttfamily}l X[,L]}
     git add \textit{file} … & fügt Dateien/Verzeichnisse zum Staging-Bereich hinzu \\
     git add -p …            & fügt Teile einer Datei zum Staging-Bereich hinzu \\
+    git add -u …            & fügt \emph{alle} von Git getrackten und vom User veränderten Dateien zum Staging-Bereich hinzu\\
     git mv                  & wie \texttt{mv} (automatisch in Staging)\\
     git rm                  & wie \texttt{rm} (automatisch in Staging) \\
     git reset \textit{file} & entfernt Dateien/Verzeichnisse aus Staging
@@ -289,7 +295,9 @@
   \end{itemize}
 \end{frame}
 
-\begin{frame}{\texttt{git pull}, \texttt{git push}}
+
+
+\begin{frame}{Mit der remote History (dem Server) interagieren}
   \begin{tabu}{>{\ttfamily}l X[,L]}
     git pull          & Commits herunterladen \\
     git push          & Commits hochladen
@@ -325,14 +333,14 @@
   Nützlich: \texttt{git config --global merge.conflictstyle diff3}
 \end{frame}
 
-\begin{frame}{\texttt{git checkout}}
+\begin{frame}{Zu früheren Versionen zurückkehren}
   \begin{tabu}{>{\ttfamily}l X[,L]}
     git checkout \textit{commit} & Commit ins Arbeitsverzeichnis laden \\
-    git checkout \textit{file}   & Änderungen an Dateien verwerfen (zum letzten Commit zurückkehren)
+    git restore \textit{filename} & Änderungen an Dateien verwerfen (zum letzten Commit zurückkehren)
   \end{tabu}
 \end{frame}
 
-\begin{frame}{\texttt{git stash}}
+\begin{frame}{Kurz an was anderem Arbeiten}
   \begin{tabu}{>{\ttfamily}l X[,L]}
     git stash     & Änderungen kurz zur Seite schieben \\
     git stash pop & Änderungen zurückholen aus Stash
@@ -361,27 +369,6 @@
     \end{lstlisting}
 \end{frame}
 
-\begin{frame}{Extra Slide für sauberere Projekt Historien: \texttt{git pull}\quad vs\quad\texttt{git pull --rebase} (optional)}
-    Vielfaches Merging und Merge Konflikte erzeugen eine etwas nichtlineare Projekt-Historie, denn:\\
-    \texttt{git pull} entspricht \texttt{git fetch origin; git merge …} (\to\;gemergter Branch bleibt erhalten)
-
-    Alternativ kann man \texttt{\textbf{git pull --rebase}} ausführen, welches (in etwa) äquivalent ist zu\\\texttt{git fetch origin; git rebase …} (\to\;lokale Commits werden auf neue Commits angewendet).
-
-    {\color{red} Achtung: Um einen Merge Konflikt bei \texttt{git pull --rebase} abzuschließen, muss \texttt{\textbf{git~rebase~--continue}} \emph{anstelle} von \texttt{git commit -m "..."} ausgeführt werden! Also einfach genau lesen was Git empfiehlt ;)}
-
-    Dies hat Vorteile:
-    \begin{itemize}
-        \item Die Projekt-Historie ist linearer
-        \item Es gibt weniger merge-commits
-    \end{itemize}
-    aber auch (kleinere) Nachteile:
-    \begin{itemize}
-        \item Es ist hinterher nicht mehr sichtbar, wer einen Merge Konflikt wie behoben hat
-        \item Die Abfolge der Commits entspricht nicht mehr der wahren Entwicklungshistorie
-    \end{itemize}
-    Entscheidet man sich für pulls mit Rebase als Standard, muss Git anders konfiguriert werden:\\
-    \texttt{\textbf{git config --global pull.rebase true}}, dann wird bei allen folgenden \texttt{git pull} Befehlen ein Rebase gemacht
-\end{frame}
 
 \begin{frame}{Hoster}
   \begin{tabu}{@{} X[,C] @{} X[,C] @{} X[,C] @{}}
@@ -416,18 +403,54 @@
   \end{center}
 \end{frame}
 
-\begin{frame}{SSH-Keys}
+\begin{frame}[fragile]{SSH-Keys}
   Git kann auf mehrere Arten mit einem Server kommunizieren:
-  \begin{itemize}
-    \item HTTPS: funktioniert immer, keine Einstellungen erforderlich, Passwort muss für jede Kommunikation eingegeben werden
-    \item SSH: Keys müssen erzeugt und eingestellt werden, Passwort für den Key muss nur einmal pro Session eingegeben werden.
-  \end{itemize}
+  \begin{description}
+    \item[HTTPS]
+      \begin{itemize}
+        \item Mit Nutzername / Passwort:
+          War lange die einfachste Möglichkeit. Wird aber von GitHub aus Sicherheitsgründen nicht mehr einfach unterstützt.
+        \item Mit \enquote{Personal Access Token}. Neues Verfahren für GitHub über HTTPS.
+      \end{itemize}
+    \item[SSH]: Keys müssen erzeugt und eingestellt werden, Passwort für den Key muss wenn ein \enquote{SSH-Agent} verwendent wird nur einmal pro Session eingegeben werden.
+  \end{description}
 
   SSH-Keys:
   \begin{enumerate}
-    \item \texttt{ssh-keygen -t rsa -b 4096 -o -a 100}
+    \item \lstinline[language=]+ssh-keygen -t ed25519 -C "your_email@example.com"+
     \item Passwort wählen
-    \item \texttt{cat \textasciitilde/.ssh/id\_rsa.pub}
+    \item \lstinline[language=]+cat ~/.ssh/id_ed25519.pub+
     \item Ausgabe ist Public-Key, beim Server eintragen (im Browser)
   \end{enumerate}
+
+  Für den Agent, falls noch nicht vom Betriebsystem eingerichtet (z.\,B.\ Windows mit WSL):
+  \begin{enumerate}
+    \setcounter{enumi}{4}
+    \item \lstinline[language=]+echo 'eval $(ssh-agent -s)' >> ~/.bashrc+
+    \item \lstinline[language=]+echo 'AddKeysToAgent yes' >> ~/.ssh/config+
+  \end{enumerate}
+
+  Doku: \url{https://docs.github.com/en/authentication/connecting-to-github-with-ssh}
+\end{frame}
+
+\begin{frame}{Extra Slide für sauberere Projekt Historien: \texttt{git pull --rebase} (optional)}
+    Vielfaches Merging und Merge Konflikte erzeugen eine etwas nichtlineare Projekt-Historie, denn:\\
+    \texttt{git pull} entspricht \texttt{git fetch origin; git merge …} (\to\;gemergter Branch bleibt erhalten)
+
+    Alternativ kann man \texttt{\textbf{git pull --rebase}} ausführen, welches (in etwa) äquivalent ist zu\\\texttt{git fetch origin; git rebase …} (\to\;lokale Commits werden auf neue Commits angewendet).
+
+    {\color{red} Achtung: Um einen Merge Konflikt bei \texttt{git pull --rebase} abzuschließen, muss \texttt{\textbf{git~rebase~--continue}} \emph{anstelle} von \texttt{git commit -m "..."} ausgeführt werden! Also einfach genau lesen was Git empfiehlt ;)}
+
+    Dies hat Vorteile:
+    \begin{itemize}
+        \item Die Projekt-Historie ist linearer
+        \item Es gibt weniger merge-commits
+    \end{itemize}
+    aber auch (kleinere) Nachteile:
+    \begin{itemize}
+        \item Es ist hinterher nicht mehr sichtbar, wer einen Merge Konflikt wie behoben hat
+        \item Die Abfolge der Commits entspricht nicht mehr der wahren Entwicklungshistorie
+    \end{itemize}
+    Entscheidet man sich für pulls mit Rebase als Standard, muss Git anders konfiguriert werden:\\
+    \texttt{\textbf{git config --global pull.rebase true}}, dann wird bei allen folgenden \texttt{git pull} Befehlen ein Rebase gemacht
 \end{frame}
