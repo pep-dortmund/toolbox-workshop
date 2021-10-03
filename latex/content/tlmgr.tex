@@ -1,0 +1,36 @@
+\section{\texttt{tlmgr}}
+
+\begin{frame}[fragile]{
+  \texttt{tlmgr} - \TeX Live (Paket) Manager
+}
+  \begin{itemize}
+    \item \TeX-Live kommt mit einem eigenen Verwaltungstool
+    \item Neue Pakete installieren, updaten, suchen, ...
+  \end{itemize}
+
+  \begin{block}{Ein neues Paket installieren}
+    Wenn man die Dokumentation auch haben möchte, \texttt{--with-doc} nutzen:
+    \begin{center}
+      \texttt{tlmgr install [--with-doc] <name>}
+    \end{center}
+  \end{block}
+
+  \begin{block}{Welches Paket muss ich installieren?}
+
+    \begin{center}
+      \texttt{tlmgr search --global --file booktabs.sty}
+    \end{center}
+    Findet heraus, welches Paket eine bestimmte Datei zur Verfügung stellt.
+
+    Hilfreich bei Fehlermeldungen wie \texttt{booktabs.sty not found}.
+  \end{block}
+
+  \begin{block}{Updates installieren}
+    \begin{center}
+      \texttt{tlmgr update --self --all --forcibly-removed}
+    \end{center}
+  \end{block}
+
+  Besonders wichtig, wenn man nicht das ganze TeX-Live installiert hat,
+  um Platz zu sparen.
+\end{frame}
