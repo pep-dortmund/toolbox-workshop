@@ -18,8 +18,8 @@ Folge des Journals: 504
 Online-Referenz
 Autor: Senyuk, B.
 Titel: Liquid Crystals: a Simple View on a Complex Matter
-Datum: 2013-12-17
-URL : http://dept.kent.edu/spie/liquidcrystals/
+Datum: 2020-10-07
+URL : https://www.personal.kent.edu/~bisenyuk/liquidcrystals/index.html
 
 Doktorarbeit
 Autor: Martin, Karen Villazor
