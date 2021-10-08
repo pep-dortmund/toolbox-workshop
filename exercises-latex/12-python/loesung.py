@@ -30,18 +30,18 @@ def f(t, a, b, c, d):
     return a * np.sin(b * t + c) + d
 
 
-params = ucurve_fit(f, t, U, p0=[1, 1e3, 0, 0])
+params = ucurve_fit(f, t, U, p0=[1e3, 1e3, 0, 0])
 
 t_plot = np.linspace(-0.5, 2 * np.pi + 0.5, 1000) * 1e-3
 
-plt.plot(t_plot * 1e3, f(t_plot, *noms(params)) * 1e-3, 'b-', label='Fit')
 plt.errorbar(
     t * 1e3,
     noms(U) * 1e-3,
     yerr=stds(U) * 1e-3,
-    fmt='r_',
+    fmt='k_',
     label='Daten',
 )
+plt.plot(t_plot * 1e3, f(t_plot, *noms(params)) * 1e-3, '-', label='Fit')
 plt.xlim(t_plot[0] * 1e3, t_plot[-1] * 1e3)
 plt.xlabel(r'$t \mathbin{/} \unit{\milli\second}$')
 plt.ylabel(r'$U \mathbin{/} \unit{\kilo\volt}$')
