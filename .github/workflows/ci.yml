@@ -31,7 +31,7 @@ jobs:
         run: |
           source $CONDA/etc/profile.d/conda.sh
           conda activate
-          make
+          make -j 2
 
       - name: check for errors
         if: always()
