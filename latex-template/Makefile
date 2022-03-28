@@ -1,7 +1,7 @@
 all:
-	make -C vXXX
+	$(MAKE) -C vXXX
 
 clean:
-	make -C vXXX clean
+	$(MAKE) -C vXXX clean
 
 .PHONY: all clean
