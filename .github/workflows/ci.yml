@@ -27,6 +27,9 @@ jobs:
           echo "$HOME/texlive/$TEXLIVE_VERSION/bin/x86_64-linux" >> $GITHUB_PATH
           "$HOME/texlive/$TEXLIVE_VERSION/bin/x86_64-linux/tlmgr" install --with-doc tex-overview
 
+          # generate the lualatex font cache, otherwise it is done in parallel when calling make
+          "$HOME/texlive/$TEXLIVE_VERSION/bin/x86_64-linux/luaotfload-tool" --update --force
+
       - name: Build
         run: |
           source $CONDA/etc/profile.d/conda.sh
