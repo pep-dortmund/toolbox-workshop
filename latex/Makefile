@@ -19,10 +19,13 @@ build/latex.pdf: $(FIGURES)
 
 MATTEX := $(addprefix build/figures/mattex, $(addsuffix .pdf, 1 2 3 4 5))
 
-build/latex.pdf: $(MATTEX) $(addprefix script/mattex, $(addsuffix .py, 1 2 3 4 5)) matplotlibrc header-matplotlib.tex
+build/latex.pdf: $(MATTEX) $(addprefix script/mattex, $(addsuffix .py, 1 2 3 4 5)) script/matplotlibrc header-matplotlib.tex
 
 $(FIGURES): script/answers.py ../intro/data/toolbox2021.json
-	TEXINPUTS=$(shell pwd): python $<
+	TEXINPUTS=$$(pwd): python $<
 
-build/figures/mattex%.pdf: script/mattex%.py matplotlibrc header-matplotlib.tex
-	TEXINPUTS=$(shell pwd): python $<
+build/figures/mattex%.pdf: script/mattex%.py script/matplotlibrc header-matplotlib.tex
+	TEXINPUTS=$$(pwd): python $<
+
+build/figures/mattex5.pdf: script/mattex5.py script/matplotlibrc header-matplotlib.tex
+	TEXINPUTS=$$(pwd): MATPLOTLIBRC=script/matplotlibrc python $<

@@ -1,10 +1,8 @@
 import matplotlib as mpl
-mpl.rcdefaults()
-import matplotlib as mpl
-mpl.use('pgf')
+mpl.use('pgf')                                     # <-- Use LaTeX Backend
 import matplotlib.pyplot as plt
 import numpy as np
-mpl.rcParams.update({
+mpl.rcParams.update({                              # <-- Set matplotlib options
     'font.family': 'serif',
     'text.usetex': True,
     'pgf.rcfonts': False,
@@ -14,9 +12,9 @@ mpl.rcParams.update({
 
 x = np.linspace(0, 10, 1000)
 y = x ** np.sin(x)
-plt.figure(figsize=(4.76, 2.94))
+plt.figure(figsize=(6.022, 3.39))
 plt.plot(x, y)
-plt.xlabel(r'$\alpha \mathbin{/} \unit{\ohm}$')
+plt.xlabel(r'$\alpha \mathbin{/} \unit{\ohm}$')   # <-- We can use siunitx now!
 
 plt.tight_layout(pad=0, h_pad=1.08, w_pad=1.08)
 plt.savefig('build/figures/mattex3.pdf')

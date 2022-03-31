@@ -1,5 +1,3 @@
-import matplotlib as mpl
-mpl.rcdefaults()
 
 
 import matplotlib.pyplot as plt

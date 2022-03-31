@@ -1,17 +1,17 @@
 \section{\TeX\ in \texttt{matplotlib} in \TeX}
 
 \begin{frame}[fragile]{\TeX\ in \texttt{matplotlib} (1)}
-  \lstinputpython[firstline=3]{script/mattex1.py}
+  \lstinputpython{script/mattex1.py}
 \end{frame}
 
 \AddToShipoutPictureFG*{\ShowFramePicture}
-\begin{frame}{Ergebnis (1)}
-  \centering
-  \includegraphics{figures/mattex1.pdf}
+\begin{frame}{Ergebnis (1)}%
+  \centering%
+  \includegraphics{figures/mattex1.pdf}%
 \end{frame}
 
 \begin{frame}[fragile]{\TeX\ in \texttt{matplotlib} (2)}
-  \lstinputpython[firstline=3]{script/mattex2.py}
+  \lstinputpython{script/mattex2.py}
 \end{frame}
 
 \begin{frame}[fragile]{Bildgröße}
@@ -35,23 +35,23 @@
 \end{frame}
 
 \AddToShipoutPictureFG*{\ShowFramePicture}
-\begin{frame}{Ergebnis (2)}
-  \centering
-  \includegraphics{figures/mattex2.pdf}
+\begin{frame}{Ergebnis (2)}%
+  \centering%
+  \includegraphics{figures/mattex2.pdf}%
 \end{frame}
 
 \begin{frame}[fragile]{\TeX\ in \texttt{matplotlib} (3)}
-  \lstinputpython[firstline=3]{script/mattex3.py}
+  \lstinputpython{script/mattex3.py}
 \end{frame}
 
 \AddToShipoutPictureFG*{\ShowFramePicture}
-\begin{frame}{Ergebnis (3)}
-  \centering
-  \includegraphics{figures/mattex3.pdf}
+\begin{frame}{Ergebnis (3)}%
+  \centering%
+  \includegraphics{figures/mattex3.pdf}%
 \end{frame}
 
 \begin{frame}[fragile]{\TeX\ in \texttt{matplotlib} (4)}
-  \lstinputpython[firstline=3]{script/mattex4.py}
+  \lstinputpython{script/mattex4.py}
 \end{frame}
 
 \begin{frame}[fragile]{\texttt{header-matplotlib.tex}}
@@ -87,12 +87,12 @@
 \end{frame}
 
 \begin{frame}[fragile]{\TeX\ in \texttt{matplotlib} (5)}
-  \lstinputpython[firstline=3]{script/mattex5.py}
+  \lstinputpython{script/mattex5.py}
 \end{frame}
 
 \begin{frame}[fragile]{\texttt{matplotlibrc}}
   \lstMatplotlibrcSettings
-  \lstinputlisting{matplotlibrc.txt}
+  \lstinputlisting{script/matplotlibrc}
 
   \begin{itemize}
     \item Datei heißt \texttt{matplotlibrc} ohne Endung!
@@ -100,6 +100,7 @@
       \begin{itemize}
         \item nicht unbedingt gleich dem Ordner, wo das Skript liegt
       \end{itemize}
+    \item Alternativ: \texttt{MATPLOTLIBRC} Umgebungsvariable auf Pfad zur Datei setzen
   \end{itemize}
 \end{frame}
 
