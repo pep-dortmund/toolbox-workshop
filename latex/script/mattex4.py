@@ -1,6 +1,4 @@
 import matplotlib as mpl
-mpl.rcdefaults()
-import matplotlib as mpl
 mpl.use('pgf')
 import matplotlib.pyplot as plt
 import numpy as np
@@ -9,12 +7,12 @@ mpl.rcParams.update({
     'text.usetex': True,
     'pgf.rcfonts': False,
     'pgf.texsystem': 'lualatex',
-    'pgf.preamble': r'\input{header-matplotlib.tex}',
+    'pgf.preamble': r'\input{header-matplotlib.tex}',  # <-- move header to file
 })
 
 x = np.linspace(0, 10, 1000)
 y = x ** np.sin(x)
-plt.figure(figsize=(4.76, 2.94))
+plt.figure(figsize=(6.022, 3.39))
 plt.plot(x, y)
 plt.xlabel(r'$\alpha \mathbin{/} \unit{\ohm}$')
 

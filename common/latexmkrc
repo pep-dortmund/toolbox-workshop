@@ -1,3 +1,11 @@
 $out_dir = "build";
-$pdflatex = "lualatex -interaction=\${INTERACTION:-batchmode} -halt-on-error %O %S";
-$pdf_mode = 1;
+
+# use lualatex
+$pdf_mode = 4;
+
+# lualatex options
+$lualatex = "lualatex -interaction=\${INTERACTION:-batchmode} -halt-on-error %O %S";
+
+# ignore lualatex font cache, which leads to latexmk thinking it needs
+# to rerun document indefinitely in concurrent builds (we use two cores in the CI and more is possible locally)
+$hash_calc_ignore_pattern{'luc'}='^';
