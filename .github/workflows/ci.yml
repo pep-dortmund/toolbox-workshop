@@ -3,17 +3,18 @@ name: CI
 on: [push, pull_request]
 
 env:
-  TEXLIVE_VERSION: 2021
+  TEXLIVE_VERSION: 2022
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
+
       - name: Set up Python
-        uses: actions/setup-python@v2
+        uses: actions/setup-python@v3
         with:
-          python-version: 3.9
+          python-version: "3.10"
 
       - name: Setup
         run: |
