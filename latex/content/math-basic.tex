@@ -13,7 +13,7 @@
   \only<4>{\inputminted{latex}{content/math_preamble4.tex}}%
 \end{frame}
 
-\begin{frame}[fragile]{\mintinline{latex}+\$...\$+-Umgebung}
+\begin{frame}[fragile]{\mintinline{latex}+$...$+-Umgebung}
   Aktiviert den Mathematikmodus im Fließtext.
 
   \begin{CodeExample}{0.6}[\TeX{} sorgt für gute Abstände]
@@ -25,7 +25,7 @@
     $x    =     5$, $y=3$
   \end{CodeExample}
 
-  \begin{CodeExample}{0.6}[Satzzeichen u.\ Bindestriche gehören nicht in \mintinline{latex}+\$...\$+]
+  \begin{CodeExample}{0.6}[Satzzeichen u.\ Bindestriche gehören nicht in \mintinline{latex}+$...$+]
     \begin{minted}{latex}
       Dies ist eine Variable: $x$.
       Liste von Variablen $x$, $y$, $z$.
@@ -136,8 +136,7 @@
   \begin{columns}[onlytextwidth]
     \begin{column}{0.6\textwidth}
       \begin{CodeExample}{0.50}[Falsch]
-        \vspace{0.5\baselineskip}
-        \begin{minted}{latex}
+        \begin{minted}[baselinestretch=1.5]{latex}
           x^10
           x^2^2
           x_\sqrt[3]{2}
@@ -154,8 +153,7 @@
     \hfill%
     \begin{column}{0.38\textwidth}
       \begin{CodeExample}{0.70}[Richtig]
-        \vspace{0.5\baselineskip}
-        \begin{minted}{latex}
+        \begin{minted}[baselinestretch=1.5]{latex}
           x^{10}
           x^{2^2}
           x_{\sqrt[3]{2}}

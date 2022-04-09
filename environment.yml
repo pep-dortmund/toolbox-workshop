@@ -14,3 +14,4 @@ dependencies:
     - uncertainties
     - jupyter_contrib_nbextensions
     - https://github.com/maxnoe/texlive-batch-installation/archive/v0.3.0.tar.gz
+    - ./pygments_style
