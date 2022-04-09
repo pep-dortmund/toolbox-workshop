@@ -1,7 +1,7 @@
 \section{\TeX\ in \texttt{matplotlib} in \TeX}
 
 \begin{frame}[fragile]{\TeX\ in \texttt{matplotlib} (1)}
-  \lstinputpython{script/mattex1.py}
+  \inputminted{python}{script/mattex1.py}
 \end{frame}
 
 \AddToShipoutPictureFG*{\ShowFramePicture}
@@ -11,23 +11,23 @@
 \end{frame}
 
 \begin{frame}[fragile]{\TeX\ in \texttt{matplotlib} (2)}
-  \lstinputpython{script/mattex2.py}
+  \inputminted{python}{script/mattex2.py}
 \end{frame}
 
 \begin{frame}[fragile]{Bildgröße}
-  \lstpythoninline+plt.figure(figsize=(4.76, 2.94))+
+  \mintinline{python}+plt.figure(figsize=(4.76, 2.94))+
   \begin{itemize}
     \item Größe der Zeichenfläche setzen (in Zoll)
-    \item Breite des Textes kann mit \lstinline+\the\textwidth+ ins Dokument geschrieben werden
+    \item Breite des Textes kann mit \mintinline{latex}+\the\textwidth+ ins Dokument geschrieben werden
     \item $1\,\mathrm{in} = \num{72.27}\,\mathrm{pt}$
     \item Goldener Schnitt für Höhe
     \item Für \texttt{scrartcl} mit Standardeinstellungen: \texttt{5.78, 3.57}
   \end{itemize}
 
-  \begin{lstpython}
+  \begin{minted}{python}
     plt.tight_layout(pad=0)
     plt.savefig(..., bbox_inches='tight', pad_inches=0)
-  \end{lstpython}
+  \end{minted}
   \begin{itemize}
     \item Weiße Leerräume am Rand eliminieren
     \item Inhalt des Bilds ist genauso breit wie der Text
@@ -41,7 +41,7 @@
 \end{frame}
 
 \begin{frame}[fragile]{\TeX\ in \texttt{matplotlib} (3)}
-  \lstinputpython{script/mattex3.py}
+  \inputminted{python}{script/mattex3.py}
 \end{frame}
 
 \AddToShipoutPictureFG*{\ShowFramePicture}
@@ -51,11 +51,11 @@
 \end{frame}
 
 \begin{frame}[fragile]{\TeX\ in \texttt{matplotlib} (4)}
-  \lstinputpython{script/mattex4.py}
+  \inputminted{python}{script/mattex4.py}
 \end{frame}
 
 \begin{frame}[fragile]{\texttt{header-matplotlib.tex}}
-  \lstinputlisting{header-matplotlib.tex}
+  \inputminted{latex}{header-matplotlib.tex}
 
   \vspace*{-0.5em}
   \begin{itemize}
@@ -71,13 +71,13 @@
 \end{frame}
 
 \begin{frame}[fragile]{Windows}
-  \begin{lstmake}
+  \begin{minted}{make}
     build/document.pdf: ...
         TEXINPUTS=build: ...
 
     build/figures/mattex4.pdf: script/mattex4.py
         TEXINPUTS=$(pwd): python script/mattex4.py
-  \end{lstmake}
+  \end{minted}
 \end{frame}
 
 \AddToShipoutPictureFG*{\ShowFramePicture}
@@ -87,12 +87,11 @@
 \end{frame}
 
 \begin{frame}[fragile]{\TeX\ in \texttt{matplotlib} (5)}
-  \lstinputpython{script/mattex5.py}
+  \inputminted{python}{script/mattex5.py}
 \end{frame}
 
 \begin{frame}[fragile]{\texttt{matplotlibrc}}
-  \lstMatplotlibrcSettings
-  \lstinputlisting{script/matplotlibrc}
+  \inputminted{text}{script/matplotlibrc}
 
   \begin{itemize}
     \item Datei heißt \texttt{matplotlibrc} ohne Endung!

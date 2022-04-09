@@ -5,7 +5,7 @@
   \begin{columns}[onlytextwidth, t]
     \begin{column}{0.50\textwidth}
       \begin{block}{Code}
-        \begin{lstlisting}
+        \begin{minted}{latex}
           \documentclass[optionen]{klasse}
             % .
             % Präambel
@@ -14,11 +14,11 @@
           \begin{document}
             % Inhalt des Dokuments
           \end{document}
-        \end{lstlisting}
+        \end{minted}
       \end{block}
     \end{column}
     \begin{column}{0.48\textwidth}
-      \begin{block}{\lstinline+\\documentclass+}
+      \begin{block}{\mintinline{latex}+\documentclass+}
         Vorlage wählen, mit Optionen anpassen.
       \end{block}
       \begin{block}{Präambel}
@@ -32,12 +32,12 @@
 \end{frame}
 \begin{frame}[fragile]{Hallo Welt}
   \begin{CodeExample}{0.5}
-    \begin{lstlisting}
+    \begin{minted}{latex}
       \documentclass{minimal}
       \begin{document}
         Hallo Welt!
       \end{document}
-    \end{lstlisting}
+    \end{minted}
   \CodeResult
     \begin{minipage}[c][4\baselineskip][c]{\textwidth}
       \strut
@@ -49,23 +49,23 @@
 \begin{frame}[fragile]{Syntax: Befehle}
   \LaTeX-Befehle beginnen stets mit einem \verb+\+ (Backslash).
 
-  Obligatorische Argumente stehen in \lstinline+{ }+, optionale Argumente stehen in \lstinline+[ ]+.
+  Obligatorische Argumente stehen in \mintinline{latex}+{ }+, optionale Argumente stehen in \mintinline{latex}+[ ]+.
     \begin{block}{Syntax}
-      \begin{lstlisting}
+      \begin{minted}{latex}
         \befehl[optional]{obligatorisch}
         \befehl*[optional]{obligatorisch}
-      \end{lstlisting}
+      \end{minted}
     \end{block}
 
   \verb+*+ ruft häufig eine Alternativform des Befehls auf.
   \begin{CodeExplanation}{0.53}[Code][Erklärung]
-    \begin{lstlisting}
+    \begin{minted}{latex}
       \documentclass[paper=a4]{scrartcl}
 
       \tableofcontents
       \frac{1}{2}
       % Kommentar
-    \end{lstlisting}
+    \end{minted}
   \Explanation
     \strut
     Dokumentenklasse \texttt{scrartcl},\\
@@ -81,20 +81,20 @@
     \item Einstellungen für Bereich des Dokuments
     \item Extrem vielseitig
     \item Können ggfs.\ auch Optionen übergeben bekommen
-    \item Oft auch Alternativform mit \lstinline+*+
+    \item Oft auch Alternativform mit \mintinline{latex}+*+
   \end{itemize}
   \begin{CodeExplanation}{0.65}[Syntax][Beispiel]
-    \begin{lstlisting}
+    \begin{minted}{latex}
       \begin{Umgebung}[optional]{obligatorisch}
         % .
       \end{Umgebung}
-    \end{lstlisting}
+    \end{minted}
     \Explanation
-    \begin{lstlisting}
+    \begin{minted}{latex}
       \begin{flushright}
         % .
       \end{flushright}
-    \end{lstlisting}
+    \end{minted}
   \end{CodeExplanation}
 \end{frame}
 
@@ -106,24 +106,24 @@
   \begin{columns}[onlytextwidth, t]
     \begin{column}{0.48\textwidth}
       \begin{block}{Geht:}
-        \begin{lstlisting}
+        \begin{minted}{latex}
           \begin{document}
             \begin{flushright}
               % .
             \end{flushright}
           \end{document}
-        \end{lstlisting}
+        \end{minted}
       \end{block}
     \end{column}
     \begin{column}{0.48\textwidth}
       \begin{alertblock}{Geht nicht:}
-        \begin{lstlisting}
+        \begin{minted}{latex}
           \begin{itemize}
             \begin{enumerate}
               % .
           \end{itemize}
             \end{enumerate}
-        \end{lstlisting}
+        \end{minted}
       \end{alertblock}
     \end{column}
   \end{columns}
@@ -133,7 +133,7 @@
   Die hier aufgezählten Pakete sollten immer geladen werden, da sie wesentliche Funktionen bieten und wichtige Einstellungen vornehmen.
   \vspace{-1em}
   \begin{CodeExplanation}{0.52}[Paket][Funktion]
-    \begin{lstlisting}
+    \begin{minted}{latex}
       \usepackage[aux]{rerunfilecheck}
 
 
@@ -145,7 +145,7 @@
       \usepackage[unicode]{hyperref}
 
       \usepackage{bookmark}
-    \end{lstlisting}
+    \end{minted}
   \Explanation
     Warnung, falls nochmal kompiliert werden muss. \\[\baselineskip]
     Für Fonteinstellungen \\
@@ -170,9 +170,9 @@
     \item Schnell global mit Klassenoptionen anpassbar
   \end{itemize}
   \begin{block}{Fürs Praktikum empfohlenene Klasse}
-    \begin{lstlisting}
+    \begin{minted}{latex}
       \documentclass[…]{scrartcl}
-    \end{lstlisting}
+    \end{minted}
   \end{block}
 \end{frame}
 
@@ -184,16 +184,16 @@
   Standardeinstellung sind die Latin-Modern-Fonts.
   \vspace{1em}
   \begin{CodeExplanation}{0.48}[Latin Modern][Alternativ zum Beispiel: Libertinus]
-    \begin{lstlisting}
+    \begin{minted}{latex}
       \usepackage{fontspec}
-    \end{lstlisting}
+    \end{minted}
   \Explanation
-    \begin{lstlisting}
+    \begin{minted}{latex}
       \usepackage{fontspec}
       \setmainfont{Libertinus Serif}
       \setsansfont{Libertinus Sans}
       \setmonofont{Libertinus Mono}
-    \end{lstlisting}
+    \end{minted}
   \end{CodeExplanation}
   \begin{itemize}
     \item Jede System-Schriftart kann genutzt werden
@@ -208,7 +208,7 @@
 \begin{frame}[fragile]{Gerüst}
   \alert{VORSICHT BEIM KOPIEREN AUS PDFs! Besser selbst tippen}
 
-  \begin{lstlisting}
+  \begin{minted}{latex}
     \documentclass{scrartcl}
 
     \usepackage[aux]{rerunfilecheck}
@@ -226,7 +226,7 @@
     \begin{document}
       % Text hier
     \end{document}
-  \end{lstlisting}
+  \end{minted}
 \end{frame}
 
 \begin{frame}[fragile]{Das Ausgabedokument erstellen}
@@ -235,9 +235,9 @@
 
   \begin{block}{\LaTeX-Dokument kompilieren}
     Terminal öffnen:
-    \begin{lstlisting}
+    \begin{minted}{latex}
       lualatex MeinDokument.tex
-    \end{lstlisting}
+    \end{minted}
   \end{block}
 
   \begin{alertblock}{Vorsicht!}

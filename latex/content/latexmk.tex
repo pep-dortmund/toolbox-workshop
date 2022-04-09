@@ -14,9 +14,9 @@
   \end{itemize}
 
   \begin{block}{Aufruf auf der Kommandozeile}
-    \begin{lstlisting}
+    \begin{minted}{latex}
       latexmk --lualatex --output-directory=build --interaction=nonstopmode --halt-on-error file.tex
-    \end{lstlisting}
+    \end{minted}
   \end{block}
 
   \begin{itemize}
@@ -27,7 +27,7 @@
 
 \begin{frame}[fragile]{\texttt{latexmk} im \texttt{Makefile}}
   \begin{block}{Im \texttt{Makefile}}
-    \begin{lstmake}
+    \begin{minted}{make}
       build/file.pdf: FORCE plots... tabellen...
           TEXINPUTS=build: \
           max_print_line=1048576 \
@@ -41,7 +41,7 @@
       FORCE:
 
       .PHONY: FORCE all clean
-    \end{lstmake}
+    \end{minted}
   \end{block}
 
   \begin{itemize}

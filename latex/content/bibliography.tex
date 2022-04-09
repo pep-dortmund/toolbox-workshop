@@ -10,9 +10,9 @@
     \item Referenzen in \texttt{.bib}-Dateien
   \end{itemize}
   \begin{block}{Neue Klassenoption}
-    \begin{lstlisting}
+    \begin{minted}{latex}
       \documentclass[…, bibliography=totoc, …]{scrartcl}
-    \end{lstlisting}
+    \end{minted}
   \end{block}
 \end{frame}
 
@@ -49,19 +49,19 @@
     \item Typen haben Pflichtfelder und weitere optionale Felder
     \item Viele Felder fordern ein bestimmtes Format, z.\,B.\ Autorenlisten, Daten
       \begin{description}[Seitenzahlen]
-        \item[Namensliste] \lstinline+Nachname1, Vorname1 and Nachname2, Vorname2 and others+
-        \item[Datum] \lstinline+YYYY-MM-DD+ (ISO8601)
-        \item[Seitenzahlen] \lstinline+X--Y+
+        \item[Namensliste] \mintinline{latex}+Nachname1, Vorname1 and Nachname2, Vorname2 and others+
+        \item[Datum] \mintinline{latex}+YYYY-MM-DD+ (ISO8601)
+        \item[Seitenzahlen] \mintinline{latex}+X--Y+
       \end{description}
   \end{itemize}
 
   \begin{block}{Allgemeine Syntax von BibTeX-Einträgen}
-    \begin{lstlisting}
+    \begin{minted}{latex}
       @TYPE{entryname,
         field1 = {value2},
         field2 = {value2},
       }
-    \end{lstlisting}
+    \end{minted}
   \end{block}
 
 
@@ -74,19 +74,19 @@
 \end{frame}
 
 
-\begin{frame}[fragile]{Anleitungen: \lstinline+@manual+}
+\begin{frame}[fragile]{Anleitungen: \mintinline{latex}+@manual+}
   \begin{block}{Pflichtfelder}
     \texttt{title}, \hspace{2em}
     \texttt{year} oder \texttt{date}
   \end{block}
 
   \begin{block}{Beispiel}
-    \lstinputlisting[firstline=56, lastline=60]{examples.bib}
+    \inputminted[firstline=56, lastline=60]{bibtex}{examples.bib}
   \end{block}
   \fullcite{fp01}
 \end{frame}
 
-\begin{frame}[fragile]{Journal-Artikel: \lstinline+@article+}
+\begin{frame}[fragile]{Journal-Artikel: \mintinline{latex}+@article+}
   \begin{block}{Pflichtfelder}
     \texttt{author}, \hspace{2em}
     \texttt{title}, \hspace{2em}
@@ -95,13 +95,13 @@
   \end{block}
 
   \begin{block}{Beispiel}
-    \lstinputlisting[firstline=1, lastline=13]{examples.bib}
+    \inputminted[firstline=1, lastline=13]{bibtex}{examples.bib}
   \end{block}
 
   \fullcite{photoeffekt}
 \end{frame}
 
-\begin{frame}[fragile]{Bücher: \lstinline+@book+}
+\begin{frame}[fragile]{Bücher: \mintinline{latex}+@book+}
   \begin{block}{Pflichtfelder}
     \texttt{author}, \hspace{2em}
     \texttt{title}, \hspace{2em}
@@ -109,28 +109,28 @@
   \end{block}
 
   \begin{block}{Beispiel}
-    \lstinputlisting[firstline=15, lastline=22]{examples.bib}
+    \inputminted[firstline=15, lastline=22]{bibtex}{examples.bib}
   \end{block}
 
   \fullcite{gelb1}
 \end{frame}
 
-\begin{frame}[fragile]{Abschlussarbeiten: \lstinline+@thesis+, \lstinline+@phdthesis+, \lstinline+@mastersthesis+}
+\begin{frame}[fragile]{Abschlussarbeiten: \mintinline{latex}+@thesis+, \mintinline{latex}+@phdthesis+, \mintinline{latex}+@mastersthesis+}
   \begin{block}{Pflichtfelder}
     \texttt{author}, \hspace{2em}
     \texttt{title}, \hspace{2em}
     \texttt{institution},  \hspace{2em}
     \texttt{year} oder \texttt{date},  \hspace{2em}
-    \texttt{type} (nur für \lstinline+thesis+)
+    \texttt{type} (nur für \mintinline{latex}+thesis+)
   \end{block}
 
   \begin{block}{Beispiel}
-    \lstinputlisting[firstline=24, lastline=35]{examples.bib}
+    \inputminted[firstline=24, lastline=35]{bibtex}{examples.bib}
   \end{block}
   \fullcite{phd_mnoethe}
 \end{frame}
 
-\begin{frame}[fragile]{Konferenz-Proceedings: \lstinline+@inproceedings+}
+\begin{frame}[fragile]{Konferenz-Proceedings: \mintinline{latex}+@inproceedings+}
   \begin{block}{Pflichtfelder}
     \texttt{author}, \hspace{2em}
     \texttt{title}, \hspace{2em}
@@ -139,31 +139,31 @@
   \end{block}
 
   \begin{block}{Beispiel}
-    \lstinputlisting[firstline=37, lastline=46]{examples.bib}
+    \inputminted[firstline=37, lastline=46]{bibtex}{examples.bib}
   \end{block}
   \fullcite{hillas}
 \end{frame}
 
-\begin{frame}[fragile]{Online-Quellen: \lstinline+@online+}
+\begin{frame}[fragile]{Online-Quellen: \mintinline{latex}+@online+}
   \begin{block}{Pflichtfelder}
     \texttt{title}, \hspace{2em}
     \texttt{url} oder \texttt{doi} oder \texttt{eprint}
   \end{block}
 
   \begin{block}{Beispiel}
-    \lstinputlisting[firstline=48, lastline=54]{examples.bib}
+    \inputminted[firstline=48, lastline=54]{bibtex}{examples.bib}
   \end{block}
   \fullcite{toolbox-dualboot}
 \end{frame}
 
-\begin{frame}[fragile]{Software: \lstinline+@software+}
+\begin{frame}[fragile]{Software: \mintinline{latex}+@software+}
   \begin{block}{Pflichtfelder}
     \texttt{title}, \hspace{2em}
     \texttt{year} oder \texttt{date}
   \end{block}
 
   \begin{block}{Beispiel}
-    \lstinputlisting[firstline=62, lastline=67]{examples.bib}
+    \inputminted[firstline=62, lastline=67]{bibtex}{examples.bib}
   \end{block}
   \fullcite{python}
 \end{frame}
@@ -176,7 +176,7 @@
 
   \begin{block}{Beispiel}
     \footnotesize
-    \lstinputlisting[firstline=69, lastline=85]{examples.bib}
+    \inputminted[firstline=69, lastline=85]{bibtex}{examples.bib}
   \end{block}
 
   \fullcite{numpy}
@@ -189,7 +189,7 @@
 
   \begin{block}{Beispiel}
     \footnotesize
-    \lstinputlisting[firstline=88, lastline=107]{examples.bib}
+    \inputminted[firstline=88, lastline=107]{bibtex}{examples.bib}
   \end{block}
 
   \fullcite{higgs}
@@ -201,18 +201,18 @@
   \doc{http://mirrors.ctan.org/macros/latex/contrib/biblatex/doc/biblatex.pdf}{biblatex}
 }
   \begin{Packages}
-    \begin{lstlisting}
+    \begin{minted}{latex}
       \usepackage{biblatex} % nach babel
       \addbibresource{lit.bib}
-    \end{lstlisting}
+    \end{minted}
   \end{Packages}
   \begin{CodeExample}{0.60}[Zitieren]
-    \begin{lstlisting}
+    \begin{minted}{latex}
       \cite{numpy}
       \cite[20]{numpy}
       \cite[1--3]{numpy}
       \cite{gelb1, fp01}
-    \end{lstlisting}
+    \end{minted}
   \CodeResult
     \cite{numpy} \\
     \cite[20]{numpy} \\
@@ -220,11 +220,11 @@
     \cite{gelb1, fp01}
   \end{CodeExample}
   \begin{block}{Verzeichnis ausgeben}
-    \begin{lstlisting}
+    \begin{minted}{latex}
       \nocite{numpy}     % ins Verzeichnis, obwohl nicht explizit zitiert
       \nocite{*}         % alles aus .bib ins Verzeichnis
       \printbibliography
-    \end{lstlisting}
+    \end{minted}
   \end{block}
 \end{frame}
 
@@ -251,11 +251,11 @@
   \vspace{10pt}
   Also:
   \begin{block}{Aufrufe mit Literaturverzeichnis}
-    \begin{lstlisting}
+    \begin{minted}{latex}
        lualatex file.tex
        biber file.bcf
        lualatex file.tex
-    \end{lstlisting}
+    \end{minted}
   \end{block}
 \end{frame}
 
@@ -273,8 +273,8 @@
     \item Setzen mit \texttt{style=…} als Option für \texttt{biblatex}
   \end{itemize}
   \begin{block}{Code}
-    \begin{lstlisting}
+    \begin{minted}{latex}
       \usepackage[style=alphabetic]{biblatex}
-    \end{lstlisting}
+    \end{minted}
   \end{block}
 \end{frame}

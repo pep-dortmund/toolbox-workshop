@@ -8,7 +8,7 @@
     \item Unnummerierte Listen: \texttt{itemize}
   \end{itemize}
   \begin{CodeExample}{0.48}
-    \begin{lstlisting}
+    \begin{minted}{latex}
       \begin{itemize}
         \item Punkt 1
         \item Punkt 2
@@ -18,7 +18,7 @@
           \end{itemize}
         \item[→] Punkt 3
       \end{itemize}
-    \end{lstlisting}
+    \end{minted}
   \CodeResult
     \begin{minipage}[c][9\baselineskip][c]{\textwidth}
       \begin{itemize}
@@ -37,7 +37,7 @@
 \begin{frame}[fragile]{Aufzählungen: Enumerate}
   Für nummerierte Listen wird \texttt{enumerate} genutzt.
   \begin{CodeExample}{0.48}
-    \begin{lstlisting}
+    \begin{minted}{latex}
       \begin{enumerate}
         \item Punkt 1
         \item Punkt 2
@@ -47,7 +47,7 @@
           \end{enumerate}
         \item Punkt 3
       \end{enumerate}
-    \end{lstlisting}
+    \end{minted}
   \CodeResult
     \begin{minipage}[c][9\baselineskip][c]{\textwidth}
       \begin{enumerate}
@@ -65,14 +65,14 @@
 
 \begin{frame}[fragile]{Aufzählungen: Description}
   Zur Beschreibung von Stichwörtern wird \texttt{description} benutzt, dabei wird das
-Stichwort \lstinline+\item+ als optionales Argument übergeben.
+Stichwort \mintinline{latex}+\item+ als optionales Argument übergeben.
   \begin{CodeExample}{0.48}
-    \begin{lstlisting}
+    \begin{minted}{latex}
       \begin{description}
         \item[\LaTeX] gut
         \item[Word] böse
       \end{description}
-    \end{lstlisting}
+    \end{minted}
   \CodeResult
     \begin{minipage}[c][4\baselineskip][c]{\textwidth}
       \begin{description}

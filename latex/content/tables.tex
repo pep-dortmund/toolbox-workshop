@@ -8,16 +8,16 @@
   \begin{columns}[t, onlytextwidth]
     \begin{column}{0.30\textwidth}
       \begin{Packages}[equal height group=tabs]
-        \begin{lstlisting}
+        \begin{minted}{latex}
           \usepackage{booktabs}
-        \end{lstlisting}
+        \end{minted}
       \end{Packages}
     \end{column}
     \begin{column}{0.68\textwidth}
     \begin{block}{Neue Klassenoption}[equal height group=tabs]
-      \begin{lstlisting}
+      \begin{minted}{latex}
         \documentclass[…, captions=tableheading, …]{scrartcl}
-      \end{lstlisting}
+      \end{minted}
     \end{block}
     \end{column}
   \end{columns}
@@ -26,7 +26,7 @@
     \begin{column}{0.60\textwidth}
       \fontsize{8}{6}
       \begin{block}{Code}
-        \begin{lstlisting}
+        \begin{minted}{latex}
           \begin{table}
             \centering
             \caption{Eine Tabelle mit Messdaten.}
@@ -41,7 +41,7 @@
               \bottomrule
             \end{tabular}
           \end{table}
-        \end{lstlisting}
+        \end{minted}
       \end{block}
     \end{column}
     \begin{column}{0.36\textwidth}
@@ -49,7 +49,7 @@
         \item Äußere \texttt{table}-Umgebung behandelt Tabelle wie ein float
         \item Innere \texttt{tabular}-Umgebung für eigentlichen Tabelleninhalt
         \item \texttt{l}, \texttt{c} oder \texttt{r} geben Ausrichtung der einzelnen Spalten an
-        \item \lstinline+\caption+, \lstinline+\label+ oberhalb von \texttt{tabular}
+        \item \mintinline{latex}+\caption+, \mintinline{latex}+\label+ oberhalb von \texttt{tabular}
       \end{itemize}
     \end{column}
   \end{columns}
@@ -84,7 +84,7 @@
 }
   \fontsize{8}{6}
   \begin{block}{Code}
-    \begin{lstlisting}
+    \begin{minted}{latex}
       \begin{table}
         \centering
         \caption{Eine schöne Tabelle mit Messdaten.}
@@ -102,7 +102,7 @@
           \bottomrule
         \end{tabular}
       \end{table}
-    \end{lstlisting}
+    \end{minted}
   \end{block}
 \end{frame}
 
@@ -126,22 +126,22 @@
     \end{table}
   \end{EmulateArticle}
   \begin{itemize}
-    \item \texttt{S}-Spalte eröffnet mehr Ausrichtungsmöglichkeiten mit \lstinline+\sisetup+ und \lstinline+[...]+
+    \item \texttt{S}-Spalte eröffnet mehr Ausrichtungsmöglichkeiten mit \mintinline{latex}+\sisetup+ und \mintinline{latex}+[...]+
     \item \texttt{s}-Spalte für Einheiten
     \item Standard: Ausrichtung an Dezimalkomma
-    \item Spaltennamen durch \lstinline+{ }+ schützen
+    \item Spaltennamen durch \mintinline{latex}+{ }+ schützen
   \end{itemize}
 \end{frame}
 
 \begin{frame}[fragile]{Gruppieren von mehreren Spalten}
   \begin{block}{Kommandostruktur}
-    \begin{lstlisting}
+    \begin{minted}{latex}
       \multicolumn{#Spalten}{Ausrichtung}{Inhalt}
-    \end{lstlisting}
+    \end{minted}
   \end{block}
   \fontsize{8}{6}
   \begin{block}{Beispiel}
-    \begin{lstlisting}
+    \begin{minted}{latex}
       \begin{table}
         \centering
         \caption{Messdaten für dubiose Elemente.}
@@ -160,7 +160,7 @@
           \bottomrule
         \end{tabular}
       \end{table}
-    \end{lstlisting}
+    \end{minted}
   \end{block}
 \end{frame}
 
@@ -193,7 +193,7 @@
 
 \begin{frame}[fragile]{Unsicherheiten in Tabellen}
   \begin{CodeExample}{0.67}
-    \begin{lstlisting}
+    \begin{minted}{latex}
       \begin{tabular}{
         S[table-format=3.1]
         @{${}\pm{}$}
@@ -208,7 +208,7 @@
         684.0 &  8.2 \\
         \bottomrule
       \end{tabular}
-    \end{lstlisting}
+    \end{minted}
   \CodeResult<valign=center>
     \begin{center}
       \begin{tabular}{
@@ -228,5 +228,5 @@
     \end{center}
   \end{CodeExample}
   \vspace{5pt}
-  \lstinline+@{…}+ ersetzt den Spaltenabstand durch \texttt{…}
+  \mintinline{latex}+@{…}+ ersetzt den Spaltenabstand durch \texttt{…}
 \end{frame}

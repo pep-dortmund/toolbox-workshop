@@ -9,17 +9,17 @@
     \item Hauptsächlich Grafiken und Tabellen
     \item Position wird von \LaTeX{} automatisch bestimmt
     \item Nicht auf früherer Seite als umgebender Text
-    \item Bekommen meist \lstinline+\caption+ und \lstinline+\label+
+    \item Bekommen meist \mintinline{latex}+\caption+ und \mintinline{latex}+\label+
   \end{itemize}
   \begin{Packages}
-    \begin{lstlisting}
+    \begin{minted}{latex}
       % Floats innerhalb einer Section halten
       \usepackage[section, below]{placeins}
       \usepackage[…]{caption} % Captions schöner machen
-    \end{lstlisting}
+    \end{minted}
   \end{Packages}
 
-  \lstinline+\FloatBarrier+ kann benutzt werden, um alle vorigen Floats zu setzen.
+  \mintinline{latex}+\FloatBarrier+ kann benutzt werden, um alle vorigen Floats zu setzen.
 \end{frame}
 
 \begin{frame}[fragile]{
@@ -28,19 +28,19 @@
   \doc{http://mirrors.ctan.org/macros/latex/required/graphics/grfguide.pdf}{graphicx}
 }
   \begin{Packages}
-    \begin{lstlisting}
+    \begin{minted}{latex}
       \usepackage{graphicx}
-    \end{lstlisting}
+    \end{minted}
   \end{Packages}
   \begin{CodeExample}{0.65}
-    \begin{lstlisting}
+    \begin{minted}{latex}
       \begin{figure}
         \centering
         \includegraphics[width=\textwidth]{logos/pep.pdf}
         \caption{Das Pep-Logo.}
         \label{fig:peplogo}
       \end{figure}
-    \end{lstlisting}
+    \end{minted}
   \CodeResult
     \begin{figure}
       \centering
@@ -51,8 +51,8 @@
   \end{CodeExample}
   \vspace{5pt}
   \begin{itemize}
-    \item Auch möglich: \lstinline+height=...+, \lstinline+scale=...+
-    \item \lstinline+\caption+ endet immer mit einem Punkt.
+    \item Auch möglich: \mintinline{latex}+height=...+, \mintinline{latex}+scale=...+
+    \item \mintinline{latex}+\caption+ endet immer mit einem Punkt.
   \end{itemize}
 \end{frame}
 
@@ -62,9 +62,9 @@
   \doc{http://mirror.physik-pool.tu-berlin.de/pub/CTAN/macros/latex/contrib/caption/subcaption.pdf}{subcaption}
 }
   \begin{Packages}
-    \begin{lstlisting}
+    \begin{minted}{latex}
     \usepackage{subcaption}
-    \end{lstlisting}
+    \end{minted}
   \end{Packages}
   \begin{EmulateArticle}%
     \begin{figure}%
@@ -91,7 +91,7 @@
   dies ist oft unerwünscht und kann durch ein \% am Ende der Zeile behoben werden.
 
   \begin{block}{Code}
-    \begin{lstlisting}
+    \begin{minted}{latex}
       \begin{figure}%
         \begin{subfigure}{0.48\textwidth}%
           \centering%
@@ -109,19 +109,19 @@
         \caption{Zwei Logos, Abbildung \subref{fig:TU}: Das TU-Logo.}%
         \label{fig:logos}%
       \end{figure}%
-    \end{lstlisting}
+    \end{minted}
   \end{block}
 \end{frame}
 
 \begin{frame}[fragile]{Referenzen}
   \begin{block}{Code}
-    \begin{lstlisting}
+    \begin{minted}{latex}
       \section{Messung mit Apparatur 2}
       \label{sec:apparatur2}
       % .
       \section{Auswertung}
       Wie in \ref{sec:apparatur2} beschrieben, ...
-    \end{lstlisting}
+    \end{minted}
   \end{block}
   \begin{itemize}
     \item Auch für Gleichungen, Grafiken, Tabellen
@@ -132,19 +132,19 @@
         \item[Abbildungen] \texttt{fig:}
         \item[Tabellen]    \texttt{tab:}
       \end{description}
-    \item Bei Gleichungen: \lstinline+\eqref+ statt \lstinline+\ref+ → setzt Klammern: \eqref{eqn:maxwell1}
-    \item \lstinline+\label+ immer nach dem, worauf verwiesen wird
+    \item Bei Gleichungen: \mintinline{latex}+\eqref+ statt \mintinline{latex}+\ref+ → setzt Klammern: \eqref{eqn:maxwell1}
+    \item \mintinline{latex}+\label+ immer nach dem, worauf verwiesen wird
   \end{itemize}
 \end{frame}
 
 \begin{frame}[fragile]{\texttt{\backslash ref} vs. \texttt{\backslash subref}}
   \begin{CodeExample}{0.47}
-    \begin{lstlisting}
+    \begin{minted}{latex}
       In Abbildung \ref{fig:logos} sehen Sie zwei Logos.
       In Abbildung \ref{fig:pep2} sehen Sie das PeP-Logo.
       In Abbildung \subref{fig:pep2} sehen Sie das PeP-Logo.
       In \autoref{fig:pep2} sehen Sie das PeP-Logo.
-    \end{lstlisting}
+    \end{minted}
     \CodeResult
       \strut
       In Abbildung~\ref{fig:logos} sehen Sie zwei Logos. \\[\baselineskip]
@@ -153,8 +153,8 @@
       In Abbildung~\ref{fig:pep2} sehen Sie das PeP-Logo.
   \end{CodeExample}
   \vspace{2em}
-  \lstinline+\subref+ nur in \lstinline+\caption{…}+ zu Subfigures sinvoll. \\
-  \lstinline+\autoref+ erfordert eine Sprachoption für \lstinline+hyperref+: \lstinline+\usepackage[german, …]{hyperref}+  \\
+  \mintinline{latex}+\subref+ nur in \mintinline{latex}+\caption{…}+ zu Subfigures sinvoll. \\
+  \mintinline{latex}+\autoref+ erfordert eine Sprachoption für \mintinline{latex}+hyperref+: \mintinline{latex}+\usepackage[german, …]{hyperref}+  \\
 \end{frame}
 
 \begin{frame}[fragile]{Positionen der Gleitumgebungen}
@@ -172,12 +172,12 @@
   \end{itemize}
 
   \begin{Packages}
-    \begin{lstlisting}
+    \begin{minted}{latex}
       \usepackage{scrhack} % nach \documentclass
 
       \usepackage{float}
       \floatplacement{figure}{htbp}
       \floatplacement{table}{htbp}
-    \end{lstlisting}
+    \end{minted}
   \end{Packages}
 \end{frame}

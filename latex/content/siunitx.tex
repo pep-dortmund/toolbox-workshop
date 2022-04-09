@@ -10,23 +10,23 @@
   \end{itemize}
 
   \begin{CodeExample}{0.7}[Zahl mit Einheit]
-    \begin{lstlisting}
+    \begin{minted}{latex}
       $5\,\mathrm{kg}$
-    \end{lstlisting}
+    \end{minted}
     \CodeResult
     $5\,\mathrm{kg}$
   \end{CodeExample}
   \begin{CodeExample}{0.7}[Zahl mit mehr als vier Stellen]
-    \begin{lstlisting}
+    \begin{minted}{latex}
       $10\,000$
-    \end{lstlisting}
+    \end{minted}
     \CodeResult
     $10\,000$
   \end{CodeExample}
   \begin{CodeExample}{0.7}[Zehnerpotenz mit Unsicherheit in Klammern]
-    \begin{lstlisting}
+    \begin{minted}{latex}
       $(5{,}34 \pm 0{,}54) \cdot 10^{-3}\,\mathrm{GeV}$
-    \end{lstlisting}
+    \end{minted}
     \CodeResult
     $(5{,}34 \pm 0{,}54) \cdot 10^{-3}\,\mathrm{GeV}$
   \end{CodeExample}
@@ -49,7 +49,7 @@
     \item[$\color{vertexDarkRed}\Rightarrow$] Dieses Paket sollte \alert{immer} und für \alert{jede} Zahl mit oder ohne Einheit verwendet werden.
 \end{itemize}
   \begin{Packages}
-    \begin{lstlisting}
+    \begin{minted}{latex}
       \usepackage[
         locale=DE,
         separate-uncertainty=true,  % Immer Unsicherheit mit ±
@@ -58,37 +58,37 @@
         % per-mode=reciprocal,      % m s^{-1}
         % output-decimal-marker=.,         % . statt , für Dezimalzahlen
       ]{siunitx}
-    \end{lstlisting}
+    \end{minted}
   \end{Packages}
 \end{frame}
 
 \begin{frame}[fragile]{\texttt{siunitx}: Zahlen mit \texttt{\backslash num}}
   \begin{CodeExample}{0.7}[Zahlen mit automatischen 3er-Gruppen]
-    \begin{lstlisting}
+    \begin{minted}{latex}
       \num{1.23456}
       \num{987654321}
-    \end{lstlisting}
+    \end{minted}
   \CodeResult
     \strut
     \num{1.23456} \\
     \num{987654321}
   \end{CodeExample}
   \begin{CodeExample}{0.7}[Einfaches Eingeben von 10er Potenzen]
-    \begin{lstlisting}
+    \begin{minted}{latex}
       \num{6.022e23}
-    \end{lstlisting}
+    \end{minted}
   \CodeResult
     \strut
     \num{6.022e23}
   \end{CodeExample}
   \begin{CodeExample}{0.7}[Angabe von Unsicherheiten]
-    \begin{lstlisting}
+    \begin{minted}{latex}
       \num{1.54 +- 0.1}
       \num{1.54(10)}
       \num{1.54 \pm 0.1}
       \num[separate-uncertainty=false]{1.54 +- 0.1}
       \num{3.5(1)e6}
-    \end{lstlisting}
+    \end{minted}
   \CodeResult
     \strut
     \num{1.54 +- 0.1} \\
@@ -101,13 +101,13 @@
 
 \begin{frame}[fragile]{\texttt{siunitx}: Einheiten mit \texttt{\backslash unit}}
   \begin{CodeExample}{0.8}[Einheiten]
-    \begin{lstlisting}
+    \begin{minted}{latex}
       \unit{\meter\per\second}
       \unit[per-mode=fraction]{\meter\per\second}
       \unit{\meter\per\second\squared}
       \unit[per-mode=reciprocal]{\gram\per\cubic\centi\meter}
       \unit{\kelvin\tothe{4}}
-    \end{lstlisting}
+    \end{minted}
   \CodeResult
     \strut
     \unit{\meter\per\second} \\
@@ -117,12 +117,12 @@
     \unit{\kelvin\tothe{4}}
   \end{CodeExample}
   \begin{CodeExample}{0.80}[\texttt{per-mode=symbol-or-fraction}]
-    \begin{lstlisting}
+    \begin{minted}{latex}
       \begin{equation}
         \unit{\kilo\gram\meter\per\second\squared}
       \end{equation}
       $\unit{\kilo\gram\meter\per\second\squared}$
-    \end{lstlisting}
+    \end{minted}
   \CodeResult
     \removedisplayskip
     \begin{minipage}[c][3\baselineskip][c]{\textwidth}
@@ -133,11 +133,11 @@
     $\unit{\kilo\gram\meter\per\second\squared}$
   \end{CodeExample}
   \begin{CodeExample}{0.80}[Meter mal Sekunde oder Millisekunde?]
-    \begin{lstlisting}
+    \begin{minted}{latex}
       \unit{\milli\second}
       \unit{\meter\second}
       \unit[inter-unit-product=\cdot]{\meter\second}
-    \end{lstlisting}
+    \end{minted}
   \CodeResult
     \strut
     \unit{\milli\second} \\
@@ -147,12 +147,12 @@
 \end{frame}
 
 \begin{frame}[fragile]{\texttt{siunitx}: Physikalische Größe, eine Zahl mit Einheit: \texttt{\backslash qty}}
-  \begin{CodeExample}{0.72}[\lstinline+\\qty+ {=} Kombination aus \lstinline+\\num+ und \lstinline+\\unit+]
-    \begin{lstlisting}
+  \begin{CodeExample}{0.72}[\mintinline{latex}+\qty+ {=} Kombination aus \mintinline{latex}+\num+ und \mintinline{latex}+\unit+]
+    \begin{minted}{latex}
       \qty{5}{\percent}
       \qty{10}{\degreeCelsius}
       \qty{2.5(1)e6}{\kilo\gram\square\meter\per\second\squared}
-    \end{lstlisting}
+    \end{minted}
   \CodeResult
     \strut
     \qty{5}{\percent} \\
@@ -160,17 +160,17 @@
     \qty{2.5(1)e6}{\kilo\gram\square\meter\per\second\squared}
   \end{CodeExample}
   \begin{description}
-    \item[1. Argument] Kann alles, was \lstinline+\num+ kann
-    \item[2. Argument] Kann alles, was \lstinline+\unit+ kann
+    \item[1. Argument] Kann alles, was \mintinline{latex}+\num+ kann
+    \item[2. Argument] Kann alles, was \mintinline{latex}+\unit+ kann
   \end{description}
   \begin{CodeExample}{0.72}[Winkel]
-    \begin{lstlisting}
+    \begin{minted}{latex}
       \ang{5;;}
       \ang{;5;}
       \ang{;;5}
       \ang{5;55;}
       \ang{5;55;59}
-    \end{lstlisting}
+    \end{minted}
   \CodeResult
     \strut\ang{5;;}\\
     \strut\ang{;5;}\\

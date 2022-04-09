@@ -1,11 +1,11 @@
 \subsection{Makros}
 
 \begin{frame}[fragile]{Eigene \LaTeX-Kommandos}
-  Nach 20 Mal \lstinline+\symup{e}+ oder \lstinline+\symup{i}+ schreiben hat man keine Lust mehr.
+  Nach 20 Mal \mintinline{latex}+\symup{e}+ oder \mintinline{latex}+\symup{i}+ schreiben hat man keine Lust mehr.
 
   \vspace{2em}
   \begin{CodeExplanation}{0.45}
-    \begin{lstlisting}
+    \begin{minted}{latex}
       % in Präambel
       \usepackage{expl3}
       \usepackage{xparse}
@@ -17,13 +17,13 @@
       }
 
       \ExplSyntaxOff
-    \end{lstlisting}
+    \end{minted}
   \Explanation
     \strut \\[0.5\baselineskip]
     experimental \LaTeX3 \\[2\baselineskip]
     bequeme Syntax für Definition von Befehlen \\[1\baselineskip]
-    Befehl \lstinline+\I+ definieren, keine Argumente \\
-    Ergebnis von \lstinline+\I+ \\[2\baselineskip]
+    Befehl \mintinline{latex}+\I+ definieren, keine Argumente \\
+    Ergebnis von \mintinline{latex}+\I+ \\[2\baselineskip]
     Syntax wieder ausschalten, wichtig!
   \end{CodeExplanation}
 \end{frame}
@@ -33,41 +33,41 @@
   \hfill
   \doc{http://mirrors.ctan.org/macros/latex/contrib/l3packages/xparse.pdf}{xparse}
 }
-  \lstinline+\ExplSyntaxOn+
+  \mintinline{latex}+\ExplSyntaxOn+
   \begin{itemize}
     \item Leerzeichen werden völlig ignoriert
-    \item \lstinline+~+ gibt ein Leerzeichen
+    \item \mintinline{latex}+~+ gibt ein Leerzeichen
   \end{itemize}
 
-  \lstinline+\NewDocumentCommand \Befehl {Argumente} { Code }+
+  \mintinline{latex}+\NewDocumentCommand \Befehl {Argumente} { Code }+
   \begin{itemize}
-    \item \lstinline+\Befehl+ sollte nicht vorher existieren
+    \item \mintinline{latex}+\Befehl+ sollte nicht vorher existieren
     \item Argumente: ab \texttt{1} nummeriert
       \begin{description}
-        \item[m] (mandatory) Pflichtargument (in \lstinline+{}+)
-        \item[O\{foo\}] optional mit Standardwert \texttt{foo} (in \lstinline+[]+)
+        \item[m] (mandatory) Pflichtargument (in \mintinline{latex}+{}+)
+        \item[O\{foo\}] optional mit Standardwert \texttt{foo} (in \mintinline{latex}+[]+)
       \end{description}
     \item Weitere Argumenttypen in der Doku
-    \item Argument im Code mit \lstinline+#1+ usw. verwenden
-    \item \lstinline+##+ gibt ein echtes \lstinline+#+
+    \item Argument im Code mit \mintinline{latex}+#1+ usw. verwenden
+    \item \mintinline{latex}+##+ gibt ein echtes \mintinline{latex}+#+
   \end{itemize}
 \end{frame}
 
-\begin{frame}[fragile]{Beispiel: \lstinline[texcsstyle=*\color{white}]+\\dif+}
-  \begin{lstlisting}
+\begin{frame}[fragile]{Beispiel: \mintinline{latex}+\dif+}
+  \begin{minted}{latex}
     \NewDocumentCommand \dif {m}
     {
       \mathinner{\symup{d} #1}
     }
-  \end{lstlisting}
+  \end{minted}
 
   \begin{CodeExample}{0.65}<valign=center>
-    \begin{lstlisting}
+    \begin{minted}{latex}
       \begin{equation}
         \int^{} \dif{x} \dif{^2 \symbf{y}} x^2
             |\symbf{y}|
       \end{equation}
-    \end{lstlisting}
+    \end{minted}
   \CodeResult
     \begin{equation}
       \int^{} \dif{x} \dif{^2 \symbf{y}} x^2 |\symbf{y}|
@@ -79,17 +79,17 @@
   Dabei sind $\symup{D}$, $\symup{\delta}$, $\symup{\Delta}$ gerade, weil sie keine Variablen sind.
 
   \begin{CodeExample}{0.5}
-    \begin{lstlisting}
+    \begin{minted}{latex}
       \dif{x} \Dif{x} \del{x} \Del{x}
-    \end{lstlisting}
+    \end{minted}
   \CodeResult
     \strut
     $\dif{x} \Dif{x} \del{x} \Del{x}$
   \end{CodeExample}
 \end{frame}
 
-\begin{frame}[fragile]{Beispiel: \lstinline[texcsstyle=*\color{white}]+\\v+}
-  \begin{lstlisting}
+\begin{frame}[fragile]{Beispiel: \mintinline{latex}+\v+}
+  \begin{minted}{latex}
     \let\vaccent=\v              % alten Befehl kopieren
     \RenewDocumentCommand \v {}  % Befehl überschreiben
     {
@@ -99,15 +99,15 @@
         \symbf                   % Mathemodus
       }
     }
-  \end{lstlisting}
+  \end{minted}
 
   \begin{CodeExample}{0.65}
-    \begin{lstlisting}
+    \begin{minted}{latex}
       \v{a}
       \begin{equation}
         \int^{} \dif{x} \dif{^2 \v{y}} x^2 |\v{y}|
       \end{equation}
-    \end{lstlisting}
+    \end{minted}
   \CodeResult
     \strut
     \v{a}
@@ -118,7 +118,7 @@
 \end{frame}
 
 \begin{frame}[fragile]{Beispiel: Umgebung}
-  \begin{lstlisting}
+  \begin{minted}{latex}
     \NewDocumentEnvironment {CenterStrip} {O{\textwidth} m}
     {                                              % Code für \begin
       \begin{minipage}[c][#2\baselineskip][c]{#1}
@@ -127,10 +127,10 @@
       \ignorespacesafterend  % Einrückung von Text nach Umgebung vermeiden
       % #1 und #2 können auch hier benutzt werden
     }
-  \end{lstlisting}
+  \end{minted}
 
   \begin{CodeExample}{0.5}
-    \begin{lstlisting}
+    \begin{minted}{latex}
       \begin{CenterStrip}{3}
         vertikal zentriert!
       \end{CenterStrip}
@@ -140,7 +140,7 @@
           [0.6\textwidth]{4}
         vertikal zentriert!
       \end{CenterStrip}
-    \end{lstlisting}
+    \end{minted}
   \CodeResult
     \begin{CenterStrip}{3}
       \strut
@@ -155,15 +155,15 @@
   \end{CodeExample}
 \end{frame}
 
-\begin{frame}[fragile]{Alt: \lstinline[texcsstyle=*\color{white}]+\\newcommand+}
+\begin{frame}[fragile]{Alt: \mintinline{latex}+\newcommand+}
   Alte Befehle, die man häufig trifft:
-  \begin{lstlisting}
+  \begin{minted}{latex}
     \newcommand*\Befehl[Anzahl Argumente]{Code}
     \newcommand*\Befehl[Anzahl Argumente][Default]{Code}
     \newenvironment*{Umgebung}[Anzahl Argumente]{\begin-Code}{\end-Code}
-  \end{lstlisting}
+  \end{minted}
   \begin{itemize}
     \item Nur ein optionales Argument möglich, muss erstes Argument sein
-    \item \lstinline+\end+-Code kann Argumente nicht benutzen
+    \item \mintinline{latex}+\end+-Code kann Argumente nicht benutzen
   \end{itemize}
 \end{frame}

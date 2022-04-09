@@ -6,9 +6,9 @@
     \item Standard ist Einzug
     \item halbzeiliger vertikaler Abstand mit:
       \begin{block}{Klassenoption}
-        \begin{lstlisting}
+        \begin{minted}{latex}
           \documentclass[parskip=half, ...]{scrartcl}
-        \end{lstlisting}
+        \end{minted}
       \end{block}
   \end{itemize}
 \end{frame}
@@ -20,29 +20,29 @@
     \item Kleine Korrekturen, die das Schriftbild verbessern
     \item z.\,B. \enquote{-} etwas in den Rand hinein für homogenen Grauanteil
       \begin{Packages}
-        \begin{lstlisting}
+        \begin{minted}{latex}
           \usepackage{microtype}
-        \end{lstlisting}
+        \end{minted}
       \end{Packages}
   \end{itemize}
 \end{frame}
 
 \begin{frame}[fragile]{Schönere Brüche im Text}
   \begin{Packages}
-    \begin{lstlisting}
+    \begin{minted}{latex}
       \usepackage{xfrac}
-    \end{lstlisting}
+    \end{minted}
   \end{Packages}
   \begin{itemize}
-    \item Problem: \lstinline+\frac{1}{2}+ zu hoch
+    \item Problem: \mintinline{latex}+\frac{1}{2}+ zu hoch
     \item unschöne Alternative: 1/2
-    \item schön: \lstinline+\sfrac{1}{2}+
+    \item schön: \mintinline{latex}+\sfrac{1}{2}+
   \end{itemize}
   \begin{CodeExample}{0.5}
-    \begin{lstlisting}
+    \begin{minted}{latex}
       \sfrac{1}{2}
       \sfrac{$\symup{\pi}$}{2}
-    \end{lstlisting}
+    \end{minted}
   \CodeResult
     \includegraphics[scale=0.8]{figures/xfrac.pdf}
   \end{CodeExample}
@@ -58,16 +58,16 @@
     \item Zweiteilige Abkürzungen (kleines Leerzeichen)
     \item Zwischen Zahl und Einheit (→ \texttt{siunitx})
   \end{itemize}
-  Dafür gibt es die Tilde \lstinline+~+ (normaler Abstand) und \lstinline+\,+ (kleiner Abstand).
+  Dafür gibt es die Tilde \mintinline{latex}+~+ (normaler Abstand) und \mintinline{latex}+\,+ (kleiner Abstand).
   \begin{CodeExample}{0.5}
-    \begin{lstlisting}
+    \begin{minted}{latex}
       Prof.~Dr.~Dr.~Rhode
       Abbildung~\ref{fig:peplogo}
       2.~Oktober~2014
       St.~Helena
       z.\,B.\
       \qty{3}{\newton\meter}
-    \end{lstlisting}
+    \end{minted}
     \CodeResult
       \strut
       Prof.~Dr.~Dr.~Rhode \\
@@ -82,9 +82,9 @@
 \begin{frame}[fragile]{Striche}
   Es gibt vier verschiedene Striche:
   \begin{CodeExample}{0.49}
-    \begin{lstlisting}
+    \begin{minted}{latex}
       - $-$ -- ---
-    \end{lstlisting}
+    \end{minted}
   \CodeResult
     \strut
     - $-$ -- ---
@@ -95,31 +95,31 @@
       \begin{itemize}
         \item Bindestrich
         \item zwischen Doppelnamen der selben Person
-          \begin{lstlisting}
+          \begin{minted}{latex}
             Levi-Civita-Symbol
-          \end{lstlisting}
+          \end{minted}
       \end{itemize}
     \item[-- Halbgeviertstrich (en-dash)]
       \begin{itemize}
         \item Gedankenstrich (wird mit Leerzeichen abgetrennt)
-          \begin{lstlisting}
+          \begin{minted}{latex}
               Text -- oh, Gedankenstriche -- Text
-          \end{lstlisting}
+          \end{minted}
           \smallskip
         \item zwischen Namen von versch. Personen
-          \begin{lstlisting}
+          \begin{minted}{latex}
             Maxwell--Boltzmann-Verteilung
-          \end{lstlisting}
+          \end{minted}
           \smallskip
         \item ist auch der Bis-Strich:
-          \lstinline+1--10+ → sprich \enquote{1 bis 10}
+          \mintinline{latex}+1--10+ → sprich \enquote{1 bis 10}
       \end{itemize}
     \item[--- Geviertstrich (em-dash)]
       \begin{itemize}
           \item nicht im Deutschen genutzt, Gedankenstrich im Englischen
-            \begin{lstlisting}
+            \begin{minted}{latex}
               text---oh, em-dashes---text
-            \end{lstlisting}
+            \end{minted}
       \end{itemize}
   \end{description}
 \end{frame}
@@ -127,20 +127,20 @@
 \begin{frame}[fragile]{Trennung bei Strichen}
   \vspace*{-2em}
   \begin{Packages}
-    \begin{lstlisting}
+    \begin{minted}{latex}
       \usepackage[shortcuts]{extdash} % nach hyperref, bookmark
-    \end{lstlisting}
+    \end{minted}
   \end{Packages}
 
   Falls ein Wort Striche enthält, trennt \LaTeX\ ausschließlich an diesen.\\
   So ermöglicht man mehr Trennung:
   \vspace{-0.5em}
   \begin{CodeExample}{0.87}[Trennbare Striche]
-    \begin{lstlisting}
+    \begin{minted}{latex}
       \-/ \-- \---
       Normal-Verteilung
       Normal\-/Verteilung
-    \end{lstlisting}
+    \end{minted}
   \CodeResult
     \strut
     - -- --- \\
@@ -149,10 +149,10 @@
   \end{CodeExample}
 
   So verhindert man die Trennung an den Strichen:
-  \begin{lstlisting}
+  \begin{minted}{latex}
     \=/ \== \===
     $x$\=/Achse
-  \end{lstlisting}
+  \end{minted}
 \end{frame}
 
 \begin{frame}[fragile]{Silbentrennung}
@@ -161,12 +161,12 @@
     \item Manche Fachwörter sollten nicht nach deutschen Regeln getrennt werden
   \end{itemize}
   \begin{block}{Trennung für Wort vorgeben}
-    \begin{lstlisting}
+    \begin{minted}{latex}
       % Präambel
       \hyphenation{Dia-mag-ne-tis-mus hy-phen-ate hy-phen-a-tion}
       % statt Di-a-mag-ne-tis-mus
 
       hy\-phen\-ate % im Text
-    \end{lstlisting}
+    \end{minted}
   \end{block}
 \end{frame}

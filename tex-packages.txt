@@ -29,8 +29,6 @@ koma-script
 latex
 latex-bin
 latexmk
-listings
-lstaddons
 luacode
 lualatex-math
 luatex

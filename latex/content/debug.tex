@@ -1,6 +1,6 @@
 \subsection{Debug}
 
-\begin{frame}[fragile]{\lstinline+\\overfullrule+}
+\begin{frame}[fragile]{\mintinline{latex}+\overfullrule+}
   \fbox{
     \begin{minipage}{10em}
       \mbox{fooooooooooooooooooooo}
@@ -8,15 +8,15 @@
   }
 
   \vspace{\baselineskip}
-  \begin{lstlisting}
+  \begin{minted}{latex}
     Overfull \hbox (14.97614pt too wide) in paragraph at lines 10--10
-  \end{lstlisting}
+  \end{minted}
   Wo genau ist die problematische Stelle?
 
   \vspace{\baselineskip}
-  \begin{lstlisting}
+  \begin{minted}{latex}
     \setlength\overfullrule{5pt}
-  \end{lstlisting}
+  \end{minted}
 
   \setlength\overfullrule{5pt}
   \fbox{
@@ -31,13 +31,13 @@
 
 \begin{frame}[fragile]{\texttt{draft}}
   Entweder als Option für die Dokumentklasse
-  \begin{lstlisting}
+  \begin{minted}{latex}
     \documentclass[…, draft, …]{…}
-  \end{lstlisting}
+  \end{minted}
   oder auch nur für ein Bild
-  \begin{lstlisting}
+  \begin{minted}{latex}
     \includegraphics[draft, height=2cm]{logos/pep.pdf}
-  \end{lstlisting}
+  \end{minted}
   \includegraphics[draft, height=2cm]{logos/pep.pdf}
 
   Vorteile:
@@ -52,9 +52,9 @@
   Manchmal möchte man den Textbereich auf der Seite grafisch sehen.
 
   Das geht mit
-  \begin{lstlisting}
+  \begin{minted}{latex}
     \usepackage{showframe}
-  \end{lstlisting}
+  \end{minted}
 \end{frame}
 
 \directlua{lvd = require("lua-visual-debug")}
@@ -63,9 +63,9 @@
   Manchmal möchte man sicher gehen, dass Sachen ausgerichtet sind oder die richtige Größe haben.
   
   Dabei hilft
-  \begin{lstlisting}
+  \begin{minted}{latex}
     \usepackage{lua-visual-debug}
-  \end{lstlisting}
+  \end{minted}
 
   \vspace{2\baselineskip}
   Hier noch eine Gleichung

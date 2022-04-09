@@ -1,22 +1,22 @@
 \subsection{Breites}
 
-\begin{frame}[fragile]{\lstinline+\\OverfullCenter+}
-  \begin{lstlisting}
+\begin{frame}[fragile]{\mintinline{latex}+\OverfullCenter+}
+  \begin{minted}{latex}
   \includegraphics[width=\textwidth+15pt]{figures/Panorama.jpg}
-  \end{lstlisting}
+  \end{minted}
   \rlap{\includegraphics[width=\textwidth+15pt]{figures/Panorama.jpg}}
   Bild oder Tabelle ist zu breit, passt aber auf die Seite.\\
   Wie kriegt man es in die Mitte?
-  \begin{lstlisting}
+  \begin{minted}{latex}
   \OverfullCenter{\includegraphics[width=\textwidth+15pt]{figures/Panorama.jpg}}
-  \end{lstlisting}
+  \end{minted}
   \OverfullCenter{\includegraphics[width=\textwidth+15pt]{figures/Panorama.jpg}}
 
   \begin{block}{Code}
-    \begin{lstlisting}
+    \begin{minted}{latex}
       \NewDocumentCommand \OverfullCenter {+m} {
         \noindent\makebox[\linewidth]{#1} }
-    \end{lstlisting}
+    \end{minted}
   \end{block}
 \end{frame}
 
@@ -25,18 +25,18 @@
   \begin{columns}[onlytextwidth, t]
     \begin{column}{0.50\textwidth}
       \begin{Packages}
-        \begin{lstlisting}
+        \begin{minted}{latex}
           \usepackage{pdflscape}
-        \end{lstlisting}
+        \end{minted}
       \end{Packages}
       \begin{block}{Code}
-        \begin{lstlisting}
+        \begin{minted}{latex}
           \begin{landscape}
             \begin{table}
               % .
             \end{table}
           \end{landscape}
-        \end{lstlisting}
+        \end{minted}
       \end{block}
     \end{column}
     \begin{column}{0.46\textwidth}

@@ -1,28 +1,28 @@
 \subsection{\texttt{\textbackslash texorpdfstring}}
 
-\begin{frame}[fragile]{\lstinline[texcsstyle=*\color{white}]+\\texorpdfstring+}
+\begin{frame}[fragile]{\mintinline{latex}+\texorpdfstring+}
   \begin{block}{Motivation}
     \begin{itemize}
-      \item \texttt{hyperref} bezieht den Text für seine Bookmarks, z.B. aus \lstinline+\section{ }+
+      \item \texttt{hyperref} bezieht den Text für seine Bookmarks, z.B. aus \mintinline{latex}+\section{ }+
       \item[→] Bookmarks mögen meist keine \LaTeX-Befehle
       \item \texttt{hyperref} fängt vieles ab, aber nicht alles
       \item
-        \lstinline!\section{$\alpha + 1$}! ergibt Fehlermeldung:
-        \begin{lstlisting}
+        \mintinline{latex}!\section{$\alpha + 1$}! ergibt Fehlermeldung:
+        \begin{minted}{latex}
           Package hyperref Warning:
           Token not allowed in a PDFDocEncoded string:
           ! Improper alphabetic constant.
-        \end{lstlisting}
+        \end{minted}
     \end{itemize}
   \end{block}
   \begin{block}{Lösung}
-    \begin{lstlisting}
+    \begin{minted}{latex}
       \texorpdfstring{LaTeX-Code}{Unicode-Äquivalent}
-    \end{lstlisting}
+    \end{minted}
   \end{block}
   \begin{block}{Beipiel}
-    \begin{lstlisting}[escapechar=|]
-      \section{\texorpdfstring{$\alpha + 1$}{|\textsf{α}| + 1}}
-    \end{lstlisting}
+    \begin{minted}{latex}
+      \section{\texorpdfstring{$\alpha + 1$}{α + 1}}
+    \end{minted}
   \end{block}
 \end{frame}

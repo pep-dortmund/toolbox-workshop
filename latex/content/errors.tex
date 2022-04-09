@@ -5,23 +5,23 @@
     \item Fehlermeldungen anfangs (und teils auch später) etwas kryptisch.
   \end{itemize}
   \begin{block}{Code}
-    \begin{lstlisting}
+    \begin{minted}{latex}
       Ich begrüße euch mit einem \enqote{Hallo Welt}
-    \end{lstlisting}
+    \end{minted}
   \end{block}
   \begin{figure}
     \centering
-    \begin{lstlisting}[keywordstyle={}, texcsstyle={}]
+    \begin{minted}{text}
       (/usr/local/texlive/2015/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg))
       ! Undefined control sequence.
       l.8 Ich begrüße euch mit einem \enqote
                                        {Hallo Welt}!
       462 words of node memory still in use:
-    \end{lstlisting}
+    \end{minted}
   \end{figure}
   \huge
   \begin{itemize}
-    \item<2->[$\Rightarrow$] Vertippt (es fehlt ein \verb+u+ in \lstinline+\enquote+)
+    \item<2->[$\Rightarrow$] Vertippt (es fehlt ein \verb+u+ in \mintinline{latex}+\enquote+)
   \end{itemize}
 \end{frame}
 

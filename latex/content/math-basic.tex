@@ -1,81 +1,3 @@
-\newsavebox{\mathfontsone}
-\newsavebox{\mathfontstwo}
-\newsavebox{\mathfontsthree}
-\newsavebox{\mathfontsfour}
-
-\begin{lrbox}{\mathfontsone}
-  \begin{lstlisting}
-    \usepackage{fontspec}
-
-    \usepackage{amsmath}   % unverzichtbare Mathe-Befehle
-    \usepackage{amssymb}   % viele Mathe-Symbole
-    \usepackage{mathtools} % Erweiterungen für amsmath
-  \end{lstlisting}
-\end{lrbox}
-
-\begin{lrbox}{\mathfontstwo}
-  \begin{lstlisting}
-    \usepackage{fontspec}
-
-    \usepackage{amsmath}   % unverzichtbare Mathe-Befehle
-    \usepackage{amssymb}   % viele Mathe-Symbole
-    \usepackage{mathtools} % Erweiterungen für amsmath
-
-    \usepackage[
-
-
-
-
-
-    ]{unicode-math}      % "Does exactly what it says on the tin."
-    % Laden von OTF-Mathefonts
-    % Ermöglich Unicode Eingabe von Zeichen: α statt \alpha
-  \end{lstlisting}
-\end{lrbox}
-
-\begin{lrbox}{\mathfontsthree}
-  \begin{lstlisting}
-    \usepackage{fontspec}
-
-    \usepackage{amsmath}   % unverzichtbare Mathe-Befehle
-    \usepackage{amssymb}   % viele Mathe-Symbole
-    \usepackage{mathtools} % Erweiterungen für amsmath
-
-    \usepackage[
-      math-style=ISO,    % \
-      bold-style=ISO,    % |
-      sans-style=italic, % | ISO-Standard folgen
-      nabla=upright,     % |
-      partial=upright,   % /
-    ]{unicode-math}      % "Does exactly what it says on the tin."
-    % Laden von OTF-Mathefonts
-    % Ermöglich Unicode Eingabe von Zeichen: α statt \alpha
-  \end{lstlisting}
-\end{lrbox}
-
-\begin{lrbox}{\mathfontsfour}
-  \begin{lstlisting}
-    \usepackage{fontspec}
-
-    \usepackage{amsmath}   % unverzichtbare Mathe-Befehle
-    \usepackage{amssymb}   % viele Mathe-Symbole
-    \usepackage{mathtools} % Erweiterungen für amsmath
-
-    \usepackage[
-      math-style=ISO,    % \
-      bold-style=ISO,    % |
-      sans-style=italic, % | ISO-Standard folgen
-      nabla=upright,     % |
-      partial=upright,   % /
-    ]{unicode-math}      % "Does exactly what it says on the tin."
-    % Laden von OTF-Mathefonts
-    % Ermöglich Unicode Eingabe von Zeichen: α statt \alpha
-
-    \setmathfont{Latin Modern Math}
-    % \setmathfont{Tex Gyre Pagella Math} % alternativ
-  \end{lstlisting}
-\end{lrbox}
-
 \begin{frame}[fragile,t]{
   Benötigte Pakete
   \hfill
@@ -85,30 +7,30 @@
 }
 
   \vspace{5pt}
-  \only<1>{\usebox{\mathfontsone}}
-  \only<2>{\usebox{\mathfontstwo}}
-  \only<3>{\usebox{\mathfontsthree}}
-  \only<4>{\usebox{\mathfontsfour}}
+  \only<1>{\inputminted{latex}{content/math_preamble1.tex}}%
+  \only<2>{\inputminted{latex}{content/math_preamble2.tex}}%
+  \only<3>{\inputminted{latex}{content/math_preamble3.tex}}%
+  \only<4>{\inputminted{latex}{content/math_preamble4.tex}}%
 \end{frame}
 
-\begin{frame}[fragile]{\lstinline+\$...\$+-Umgebung}
+\begin{frame}[fragile]{\mintinline{latex}+\$...\$+-Umgebung}
   Aktiviert den Mathematikmodus im Fließtext.
 
   \begin{CodeExample}{0.6}[\TeX{} sorgt für gute Abstände]
-    \begin{lstlisting}
+    \begin{minted}{latex}
       $x    =     5$, $y=3$
-    \end{lstlisting}
+    \end{minted}
   \CodeResult
     \strut
     $x    =     5$, $y=3$
   \end{CodeExample}
 
-  \begin{CodeExample}{0.6}[Satzzeichen u.\ Bindestriche gehören nicht in \lstinline+\$...\$+]
-    \begin{lstlisting}
+  \begin{CodeExample}{0.6}[Satzzeichen u.\ Bindestriche gehören nicht in \mintinline{latex}+\$...\$+]
+    \begin{minted}{latex}
       Dies ist eine Variable: $x$.
       Liste von Variablen $x$, $y$, $z$.
       $y$-Achse, $x$-$y$-Ebene
-    \end{lstlisting}
+    \end{minted}
   \CodeResult
     \strut
     Dies ist eine Variable: $x$. \\
@@ -116,12 +38,12 @@
     $y$-Achse, $x$-$y$-Ebene
   \end{CodeExample}
   \begin{CodeExample}{0.6}[Vorsicht bei der Höhe von Formeln im Text]
-    \begin{lstlisting}
+    \begin{minted}{latex}
       Text ohne eine Bedeutung.
       Mit einer Formel:
       $\frac{1}{1- \frac{1}{1 - x}}$
       Text ohne eine Bedeutung.
-    \end{lstlisting}
+    \end{minted}
   \CodeResult
     \hrule
     Text ohne eine Bedeutung.
@@ -135,14 +57,14 @@
 
 \begin{frame}[fragile]{Griechisch und mehr}
   \begin{CodeExample}{0.72}
-    \begin{lstlisting}
+    \begin{minted}{latex}
       \epsilon \theta \kappa \pi \rho \sigma \phi
       \varepsilon \vartheta \varkappa \varpi \varrho \varsigma \varphi
       \Alpha \Beta \Gamma
       \hbar \imath \jmath \ell
       \partial \nabla \square \increment
       \infty \diameter
-    \end{lstlisting}
+    \end{minted}
   \CodeResult
     \strut
     \Umathordordspacing\textstyle=4mu
@@ -158,7 +80,7 @@
 \begin{frame}[fragile]{Operatoren und Relationen}
   \vspace{-1em}
   \begin{CodeExample}{0.74}
-    \begin{lstlisting}
+    \begin{minted}{latex}
       + - / \cdot \times
       \pm \mp
       < > \leq \geq
@@ -168,7 +90,7 @@
       \to \iff \implies
       \mapsto \leadsto
       \forall \exists \in \subset \cup \cap
-    \end{lstlisting}
+    \end{minted}
   \CodeResult
     \Umathbinbinspacing\textstyle=4mu
     \Umathrelrelspacing\textstyle=4mu
@@ -183,18 +105,18 @@
     $\forall \exists \in \subset \cup \cap$
   \end{CodeExample}
   \begin{CodeExample}{0.74}[Negierte Variante mit \texttt{n} bzw.\ \texttt{not}]
-    \begin{lstlisting}
+    \begin{minted}{latex}
       \neq \nsime \nexists \nni \notin
-    \end{lstlisting}
+    \end{minted}
   \CodeResult
     \Umathbinbinspacing\textstyle=4mu
     \Umathrelrelspacing\textstyle=4mu
   $\neq \nsime \nexists \nni \notin$
   \end{CodeExample}
   \begin{CodeExample}{0.74}[Häufig möchte man etwas über eine Relation schreiben:]
-    \begin{lstlisting}
+    \begin{minted}{latex}
       \stackrel{!}{=} \stackrel{\text{def}}{=}
-    \end{lstlisting}
+    \end{minted}
   \CodeResult
   \vspace{2ex}
   $\smash{\stackrel{!}{=} \quad \stackrel{\text{def}}{=}}$
@@ -203,9 +125,9 @@
 
 \begin{frame}[fragile]{Indizes / Exponenten}
   \begin{CodeExample}{0.60}
-    \begin{lstlisting}
+    \begin{minted}{latex}
       x^2 x_2 x²
-    \end{lstlisting}
+    \end{minted}
   \CodeResult
     \strut
     $x^2 \quad x_2 \quad x²$
@@ -215,11 +137,11 @@
     \begin{column}{0.6\textwidth}
       \begin{CodeExample}{0.50}[Falsch]
         \vspace{0.5\baselineskip}
-        \begin{lstlisting}[lineskip=0.5ex]
+        \begin{minted}{latex}
           x^10
           x^2^2
           x_\sqrt[3]{2}
-        \end{lstlisting}
+        \end{minted}
       \CodeResult
         \removedisplayskip
         \begin{flalign*}
@@ -233,11 +155,11 @@
     \begin{column}{0.38\textwidth}
       \begin{CodeExample}{0.70}[Richtig]
         \vspace{0.5\baselineskip}
-        \begin{lstlisting}[lineskip=0.5ex]
+        \begin{minted}{latex}
           x^{10}
           x^{2^2}
           x_{\sqrt[3]{2}}
-        \end{lstlisting}
+        \end{minted}
       \CodeResult
         \removedisplayskip
         \begin{flalign*}
@@ -249,30 +171,30 @@
     \end{column}%
   \end{columns}
   \begin{CodeExample}{0.60}[Text in Indizes]
-    \begin{lstlisting}
+    \begin{minted}{latex}
       falsch: x_{min},  richtig: x_\text{min}
-    \end{lstlisting}
+    \end{minted}
   \CodeResult
     \strut
     falsch: $x_{min}$, \quad richtig: $x_\text{min}$
   \end{CodeExample}
   \begin{CodeExample}{0.60}[Striche \& Linksseitiges]
-    \begin{lstlisting}
+    \begin{minted}{latex}
       x' x^' x'' x'^2
       {}^2 x
-    \end{lstlisting}
+    \end{minted}
   \CodeResult
     \strut
     $x' \quad x^{'} \quad x'' \quad x'^2$ \\
     ${}^2 x$
   \end{CodeExample}
   \vspace*{-1pt}
-  Nur wenige Befehle können ohne \lstinline+{ }+ im Index stehen.
+  Nur wenige Befehle können ohne \mintinline{latex}+{ }+ im Index stehen.
 \end{frame}
 
 \begin{frame}[fragile]{Akzente}
   \begin{CodeExample}{0.70}
-    \begin{lstlisting}
+    \begin{minted}{latex}
       \bar{x}
       \hat{x}
       \tilde{x}
@@ -280,7 +202,7 @@
       \mathring{x}
       \dot{x} \ddot{x} \dddot{x} \ddddot{x}
       \underline{xy} \overline{xy}
-    \end{lstlisting}
+    \end{minted}
   \CodeResult
     \strut
     \Umathordordspacing\textstyle=4mu
@@ -294,10 +216,10 @@
   \end{CodeExample}
 
   \begin{CodeExample}{0.7}[{Auf Position des Akzents achten:}]
-    \begin{lstlisting}
+    \begin{minted}{latex}
       \hat{x_\text{min}}
       \hat{x}_\text{min}
-    \end{lstlisting}
+    \end{minted}
   \CodeResult
     \strut
     \Umathordordspacing\textstyle=4mu
@@ -308,13 +230,13 @@
 
 \begin{frame}[fragile]{Funktionen}
   \begin{CodeExample}{0.65}
-    \begin{lstlisting}
+    \begin{minted}{latex}
       x \sin y
       x \sin(y)
       \cos \tan \exp \ln \log_{10}(x)
 
       \lim_{x \to \infty} x^2
-    \end{lstlisting}
+    \end{minted}
   \CodeResult
     \strut
     $x \sin y$ \\
@@ -324,7 +246,7 @@
   \end{CodeExample}
   \vspace*{-2pt}
   \begin{CodeExample}{0.65}[Man kann auch eigene Funktionen definieren:]
-    \begin{lstlisting}
+    \begin{minted}{latex}
       % direkt in der Matheumgebung:
       \operatorname{xyz}_i(a)
       \operatorname*{xyz}_i(a)
@@ -335,7 +257,7 @@
       % dann überall im Dokument nutzbar:
       \xyz_i(a)
       \Xyz_i(a)
-    \end{lstlisting}
+    \end{minted}
   \CodeResult
     \strut \\
     $\operatorname{xyz}_i(a)$ \\
@@ -349,7 +271,7 @@
 \begin{frame}[fragile]{Große Operatoren}
   \begin{CodeExample}{0.65}
     \vspace{\baselineskip}
-    \begin{lstlisting}
+    \begin{minted}{latex}
       \sum_{i=0}^\infty x_i
 
 
@@ -361,7 +283,7 @@
 
       \int_{0}^{1} f(x) \, \symup{d}x
 
-    \end{lstlisting}
+    \end{minted}
   \CodeResult
   \begin{minipage}[c][3\baselineskip][c]{0.9\textwidth}
       $\displaystyle \sum_{i=0}^\infty x_i$
@@ -381,12 +303,12 @@
 \begin{frame}[fragile]{Auslassungspunkte}
   Auslassungspunkte sind sehr … wichtig.
   \begin{CodeExample}{0.5}
-    \begin{lstlisting}
+    \begin{minted}{latex}
       a_1,    \dotsc , a_n
       a_1 +   \dotsb + a_n
       a_1     \dotsm   a_n
       \int^{} \dotsi \int^{}
-    \end{lstlisting}
+    \end{minted}
   \CodeResult
     \strut
     $a_1,    \dotsc , a_n$ \\
@@ -397,13 +319,13 @@
 
   Für andere Fälle gibt es Befehle mit festen Positionen:
   \begin{CodeExample}{0.5}
-    \begin{lstlisting}
+    \begin{minted}{latex}
       x \ldots x
       x \cdots x
         \vdots
         \ddots
         \adots
-    \end{lstlisting}
+    \end{minted}
   \CodeResult
     \strut
     $x \ldots x$ \\
@@ -413,7 +335,7 @@
     $\adots$
   \end{CodeExample}
 
-  Im Text kann man einfach \lstinline+\dots+ benutzen.
+  Im Text kann man einfach \mintinline{latex}+\dots+ benutzen.
 \end{frame}
 
 \begin{frame}[fragile]{
@@ -422,14 +344,14 @@
   \doc{http://mirrors.ctan.org/macros/latex/contrib/unicode-math/unicode-math.pdf}{unicode-math}
 }
   \begin{CodeExample}{0.70}
-    \begin{lstlisting}
+    \begin{minted}{latex}
       x \alpha \symup{x \alpha}
       \symbf{x\alpha}
       \symbfsf{x \alpha}
       \symbb{R N 1 0 x}
       \symcal{I A O} \symbfcal{I A O}
       \symfrak{A B c} \symbffrak{A B c}
-    \end{lstlisting}
+    \end{minted}
   \CodeResult
     \strut
     \Umathordordspacing\textstyle=4mu
@@ -443,11 +365,11 @@
 
   Für mehrbuchstabige Bezeichungen gibt es andere Befehle:
   \begin{CodeExample}{0.70}
-    \begin{lstlisting}
+    \begin{minted}{latex}
       Re \mathit{Re}
       diff \quad \mathit{diff}
       \mathbf{NP} \subseteq \mathbf{PSPACE}
-    \end{lstlisting}
+    \end{minted}
   \CodeResult
     \strut
     $Re \quad \mathit{Re}$ \\
@@ -460,14 +382,14 @@
   Manchmal muss man manuell eingreifen, um das Spacing zu perfektionieren.
   \vspace{-1em}
   \begin{CodeExample}{0.48}
-    \begin{lstlisting}
+    \begin{minted}{latex}
       % Kein Space
       \,
       \:
       \;
       \quad
       \qquad
-    \end{lstlisting}
+    \end{minted}
   \CodeResult
     \strut
     $\Rightarrow\mspace{-2mu} \Leftarrow$ \\
@@ -480,20 +402,20 @@
   Negativer Space um zu viel Platz zu korrigieren:
   \vspace{-1em}
   \begin{CodeExample}{0.48}
-    \begin{lstlisting}
+    \begin{minted}{latex}
       % kein Space
       \! % negativer \,
-    \end{lstlisting}
+    \end{minted}
   \CodeResult
     \strut
     $\Rightarrow\mspace{-2mu} \Leftarrow$ \\
     $\Rightarrow\mspace{-2mu} \!\Leftarrow$
   \end{CodeExample}
   \begin{CodeExample}{0.48}
-    \begin{lstlisting}
+    \begin{minted}{latex}
       ^2       ^{\!\! 2}
 
-    \end{lstlisting}
+    \end{minted}
   \CodeResult
     \begin{minipage}[c][2\baselineskip][c]{\textwidth}
       ${\displaystyle \left( \frac{2^2}{2} \right)^2}$
@@ -506,10 +428,10 @@
 \begin{frame}[fragile]{Klammern}
   \vspace{-1.5em}
   \begin{CodeExample}{0.71}
-    \begin{lstlisting}
+    \begin{minted}{latex}
       (x) [x] \{x\} \langle x\rangle
       \lvert x\rvert \lVert x\rVert
-    \end{lstlisting}
+    \end{minted}
   \CodeResult
     \strut
     \Umathcloseopenspacing\textstyle=4mu
@@ -518,11 +440,11 @@
   \end{CodeExample}
 
   \begin{CodeExample}{0.71}[Häufig braucht man größere Klammern]
-    \begin{lstlisting}
+    \begin{minted}{latex}
       \bigl(x\bigr) \Bigl(x\Bigr) \biggl(x\biggr) \Biggl(x\Biggr)
 
       \bigl<x\bigr> \bigl|x\bigr| \bigl\|x\bigr\|
-    \end{lstlisting}
+    \end{minted}
   \CodeResult
     \begin{minipage}[c][2\baselineskip][c]{\textwidth}
       $\bigl(x\bigr) \Bigl(x\Bigr) \biggl(x\biggr) \Biggl(x\Biggr)$
@@ -533,28 +455,28 @@
 
 \begin{frame}[fragile]{Klammern: Automatische Größe}
   \begin{itemize}
-    \item Größe des Ausdrucks zwischen \lstinline+\left+ und \lstinline+\right+ bestimmt Größe der Klammern
-    \item Ein \lstinline+\left+ muss in der gleichen Zeile wieder mit \lstinline+\right+ geschlossen werden
-    \item \lstinline+\left.+ oder \lstinline+\right.+ falls nur eine Klammer gewünscht wird
+    \item Größe des Ausdrucks zwischen \mintinline{latex}+\left+ und \mintinline{latex}+\right+ bestimmt Größe der Klammern
+    \item Ein \mintinline{latex}+\left+ muss in der gleichen Zeile wieder mit \mintinline{latex}+\right+ geschlossen werden
+    \item \mintinline{latex}+\left.+ oder \mintinline{latex}+\right.+ falls nur eine Klammer gewünscht wird
   \end{itemize}
   \begin{CodeExample}{0.76}
-    \begin{lstlisting}
+    \begin{minted}{latex}
       \left(\frac{1}{2} \right) \left(\frac{1}{2}\right.
 
 
       \left\{x \,\middle|\, x<\frac{1}{2} \right\}
-    \end{lstlisting}
+    \end{minted}
   \CodeResult
     $\left(\frac{1}{2}\right) \qquad \left(\frac{1}{2}\right.$ \\[2\baselineskip]
       $\left\{ x \, \middle| \, x < \frac{1}{2} \right\}$
   \end{CodeExample}
 
   \begin{CodeExample}{0.76}[Hat kein optimales Spacing:]
-    \begin{lstlisting}
+    \begin{minted}{latex}
       \sin(x)
       \sin\left(x\right)
       \sin\!\left(x\right)
-    \end{lstlisting}
+    \end{minted}
   \CodeResult
     \strut
     $\sin(x)$ \\
@@ -582,24 +504,24 @@
       \begin{itemize}
         \item Konstanten: $\symup{e}$, $\symup{i}$, $\symup{\pi}$
           \smallskip
-          \begin{lstlisting}
+          \begin{minted}{latex}
             $\symup{e}$, $\symup{i}$, $\symup{\pi}$
-          \end{lstlisting}
+          \end{minted}
           \medskip
         \item Infinitesimales: $\symup{d}x$
           \smallskip
-          \begin{lstlisting}
+          \begin{minted}{latex}
             $\symup{d}x$
-          \end{lstlisting}
+          \end{minted}
           \medskip
         \item Indizes wie \enquote{min} oder \enquote{max}
           \smallskip
-          \begin{lstlisting}
+          \begin{minted}{latex}
             x_\text{min}
-          \end{lstlisting}
+          \end{minted}
       \end{itemize}
     \item Vektoren und Matritzen: fett\\
-      \lstinline+$\symbf{r} = (0, 1, -1)^\top$+ $\symbf{r} = (0, 1, -1)^\top$
+      \mintinline{latex}+$\symbf{r} = (0, 1, -1)^\top$+ $\symbf{r} = (0, 1, -1)^\top$
 
   \end{itemize}
 \end{frame}
@@ -620,11 +542,11 @@
   \vspace{1em}
   \qquad
   \begin{minipage}{0.8\textwidth}
-    \begin{lstlisting}
+    \begin{minted}{latex}
       \int_0^1   \int_0^{\symup{\pi}}   \int_0^{2 \symup{\pi}}
       r^2 \sin(\vartheta)
       \, \symup{d}\varphi \, \symup{d}\vartheta \, \symup{d}r
       = \frac{4}{3} \symup{\pi}
-    \end{lstlisting}
+    \end{minted}
   \end{minipage}
 \end{frame}

@@ -4,16 +4,16 @@
 
   \LaTeX{} besitzt zwei Stile zum darstellen von Formeln
   \begin{description}
-    \item[textstyle] Standardmäßig in \lstinline+$...$+. Kleiner, weniger hoch.
+    \item[textstyle] Standardmäßig in \mintinline{latex}+$...$+. Kleiner, weniger hoch.
     \item[displaystyle] Formeln werden in der vollen Höhe dargestellt, standardmäßig in allen Mathematik-Umgebungen.
   \end{description}
 
   \begin{CodeExample}{0.70}[Integral]
-    \begin{lstlisting}
+    \begin{minted}{latex}
       $\int_0^1 x^2$
 
       $\displaystyle\int_0^1 x^2$
-    \end{lstlisting}
+    \end{minted}
   \CodeResult
     \strut
     $\int_0^1 x^2$ \\[0.5\baselineskip]
@@ -21,11 +21,11 @@
   \end{CodeExample}
 
   \begin{CodeExample}{0.70}[Bruch]
-    \begin{lstlisting}
+    \begin{minted}{latex}
       $\frac{1}{1 + \frac{1}{x^2}}$
 
       $\displaystyle\frac{1}{1 + \frac{1}{x^2}}$
-    \end{lstlisting}
+    \end{minted}
   \CodeResult
     $\frac{1}{1 + \frac{1}{x^2}}$\\[0.5\baselineskip]
     $\displaystyle\frac{1}{1 + \frac{1}{x^2}}$
@@ -39,10 +39,10 @@
   \doc{http://mirrors.ctan.org/macros/latex/contrib/mathtools/mathtools.pdf}{mathtools}
 }
   \begin{CodeExample}{0.70}[Matrizen (und damit Vektoren) werden fett geschrieben.]
-    \begin{lstlisting}
+    \begin{minted}{latex}
       \symbf{M}^\top     \symbf{M}^*
       \symbf{M}^\dagger  \symbf{M}^{-1}  M_{12}
-    \end{lstlisting}
+    \end{minted}
   \CodeResult
     \strut
     $\symbf{M}^\top    \quad \symbf{M}^*$ \\
@@ -51,12 +51,12 @@
 
   \fontsize{8}{0.8\baselineskip}\selectfont
   \begin{CodeExample}{0.70}[Verschiedene Klammern]
-    \begin{lstlisting}
+    \begin{minted}{latex}
       \begin{pmatrix} \begin{bmatrix} \begin{Bmatrix}
         x & y \\        -1 \\           -1 \\
         z & abc          2               2
       \end{pmatrix}   \end{bmatrix}   \end{Bmatrix}
-    \end{lstlisting}
+    \end{minted}
   \CodeResult<valign=center>
     $\displaystyle
       \begin{pmatrix}
@@ -73,8 +73,8 @@
       \end{Bmatrix}
     $
   \end{CodeExample}
-  \begin{CodeExample}{0.60}[Unterschiedliche Ausrichtung mit \lstinline+*+]
-    \begin{lstlisting}
+  \begin{CodeExample}{0.60}[Unterschiedliche Ausrichtung mit \mintinline{latex}+*+]
+    \begin{minted}{latex}
       \begin{pmatrix*}[l]     \begin{pmatrix*}[c]
          1 & -1 \\               1 & -1 \\
         -1 &  2                 -1 &  2
@@ -83,7 +83,7 @@
          1 & -1 \\
         -1 &  2
       \end{pmatrix*}
-    \end{lstlisting}
+    \end{minted}
   \CodeResult
     \begin{CenterStrip}{4}
       $\displaystyle
@@ -112,9 +112,9 @@
 \end{frame}
 
 \begin{frame}[fragile]{Unnötigen Leerraum loswerden}
-  \lstinline+mathtools+ stellt zwei wichtige Befehle, um Leerraum zu eliminieren:
-  \begin{CodeExample}{0.7}[\lstinline+\\mathclap+]
-    \begin{lstlisting}
+  \mintinline{latex}+mathtools+ stellt zwei wichtige Befehle, um Leerraum zu eliminieren:
+  \begin{CodeExample}{0.7}[\mintinline{latex}+\mathclap+]
+    \begin{minted}{latex}
       \lim_{x\to\infty} f(x)
 
       \lim_{\mathclap{x\to\infty}} f(x)
@@ -122,7 +122,7 @@
       \sum_{i \in \{1, 2, 3, 4, 5\}} i
 
       \sum_{\mathclap{i \in \{1, 2, 3, 4, 5\}}} i
-    \end{lstlisting}
+    \end{minted}
   \CodeResult
     \begin{minipage}[t][2\baselineskip][t]{\textwidth}
       $\displaystyle \lim_{x\to\infty} f(x)$
@@ -138,10 +138,10 @@
     \end{minipage}
   \end{CodeExample}
 
-  \begin{CodeExample}{0.7}[\lstinline+\\cramped+]
-    \begin{lstlisting}
+  \begin{CodeExample}{0.7}[\mintinline{latex}+\cramped+]
+    \begin{minted}{latex}
       2^{2^2} \cramped{2^{2^2}}
-    \end{lstlisting}
+    \end{minted}
   \CodeResult
     \strut
     $2^{2^2} \cramped{2^{2^2}}$
@@ -151,11 +151,11 @@
 
 \begin{frame}[fragile]{Fallunterscheidungen}
   \begin{itemize}
-    \item Umgebungen mit \lstinline+*+ aktivieren den Textmodus nach dem \lstinline+&+.
-    \item Umgebungen mit \lstinline+d+ am Anfang nutzen den Displaystil
+    \item Umgebungen mit \mintinline{latex}+*+ aktivieren den Textmodus nach dem \mintinline{latex}+&+.
+    \item Umgebungen mit \mintinline{latex}+d+ am Anfang nutzen den Displaystil
   \end{itemize}
   \begin{CodeExample}{0.55}
-    \begin{lstlisting}
+    \begin{minted}{latex}
       f(x) =
       \begin{cases}
          x ,         & x \ge 0 \\
@@ -167,7 +167,7 @@
         \int_0^1 x , & sonst
       \end{drcases*}
       \ne - \lvert x \rvert
-    \end{lstlisting}
+    \end{minted}
   \CodeResult
     \begin{CenterStrip}{5}
       \centering
@@ -194,9 +194,9 @@
 \end{frame}
 
 \begin{frame}[fragile]{Textausrichtung in \texttt{align}-Umgebung}
-  \lstinline+\intertext+ erhält die Ausrichtung der \lstinline+align+-Umgebung.
+  \mintinline{latex}+\intertext+ erhält die Ausrichtung der \mintinline{latex}+align+-Umgebung.
   \begin{CodeExample}{0.60}
-    \begin{lstlisting}
+    \begin{minted}{latex}
       Es gilt
       \begin{align*}
         f  &= xyz , \\
@@ -206,7 +206,7 @@
         g  &= \symup{e}^x
       \end{align*}
       gelöst wird.
-    \end{lstlisting}
+    \end{minted}
   \CodeResult
     Es gilt
     \begin{align*}
@@ -222,13 +222,13 @@
 
 \begin{frame}[fragile]{Ergänzende Erklärungen für Formeln}
   \begin{CodeExample}{0.65}
-    \begin{lstlisting}
+    \begin{minted}{latex}
       f(x)=
       \underbrace{g(x)}_{x + x^2 + x^3}
       +
       \overbrace{h(x)}^{\mathclap{\text{mehr Erklärung}}}
       + 2
-    \end{lstlisting}
+    \end{minted}
   \CodeResult
     \begin{equation*}
       f(x)= \underbrace{g(x)}_{x + x^2 + x^3}
@@ -241,13 +241,13 @@
 
 \begin{frame}[fragile]{Ausrichtung trotz fehlender Symbole mit \texttt{\backslash phantom}}
   \begin{CodeExample}{0.60}
-    \begin{lstlisting}
+    \begin{minted}{latex}
       \begin{align*}
         f_{123} &=          2  x + 3y + z \\
         g       &= \phantom{2} x + 3y + z \\
         h       &=             x + 3y + z
       \end{align*}
-    \end{lstlisting}
+    \end{minted}
   \CodeResult%
   \removedisplayskip
     \begin{align*}
@@ -257,7 +257,7 @@
     \end{align*}
   \end{CodeExample}
   \begin{CodeExample}{0.60}
-    \begin{lstlisting}
+    \begin{minted}{latex}
       \begin{align*}
         f &=           \frac{1}{2}  x\\
         g &= \hphantom{\frac{1}{2}} x\\
@@ -266,7 +266,7 @@
         f &=           \frac{1}{2}  x\\
         g &=  \phantom{\frac{1}{2}} x
       \end{align*}
-    \end{lstlisting}
+    \end{minted}
   \CodeResult
     \mathtoolsset{shortvdotsadjustbelow=1.8em}
     \removedisplayskip
@@ -283,17 +283,17 @@
     \end{align*}
     \end{minipage}%
   \end{CodeExample}
-  \lstinline+\hphantom+ wirkt nur horizontal und hat keine Höhe. \\
+  \mintinline{latex}+\hphantom+ wirkt nur horizontal und hat keine Höhe. \\
 \end{frame}
 
 \begin{frame}[fragile]{Ausrichtung vertikaler Umbrüche mit \texttt{\backslash vphantom}}
   \begin{CodeExample}{0.8}
-    \begin{lstlisting}
+    \begin{minted}{latex}
       \begin{align*}
         f = {} & \left( \frac{1}{2} \right. \\
                & \left. \vphantom{\frac{1}{2}} + x \right)^{\!\! 2}
       \end{align*}
-    \end{lstlisting}
+    \end{minted}
   \CodeResult
     \removedisplayskip
     \begin{align*}
@@ -302,5 +302,5 @@
     \end{align*}
   \end{CodeExample}
   \vspace{5pt}
-  \lstinline+\vphantom+ wirkt nur vertikal und hat keine Breite.
+  \mintinline{latex}+\vphantom+ wirkt nur vertikal und hat keine Breite.
 \end{frame}

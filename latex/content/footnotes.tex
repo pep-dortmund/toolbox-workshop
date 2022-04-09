@@ -2,11 +2,11 @@
 
 \begin{frame}[fragile]{Fußnoten}
   \begin{CodeExample}{0.5}
-    \begin{lstlisting}
+    \begin{minted}{latex}
       In diesem Versuch werden
       PMTs\footnote{Photo-Multiplier-Tubes}
       eingesetzt.
-    \end{lstlisting}
+    \end{minted}
     \CodeResult
       In diesem Versuch werden
       PMTs\footnote{\rmfamily Photo-Multiplier-Tubes}
@@ -20,22 +20,22 @@
 
 \begin{frame}[fragile]{Fußnoten in Floats}
   \begin{alertblock}{Vorsicht bei Float-Umgebungen!}
-    \begin{lstlisting}
+    \begin{minted}{latex}
       \begin{figure}
         \includegraphics[height=0.5cm]{pep.pdf}
         \caption{Bla\protect\footnotemark}
       \end{figure}
       \footnotetext{Unsinnige Caption.}
-    \end{lstlisting}
+    \end{minted}
   \end{alertblock}
   \vspace{-1pt}
   \begin{itemize}
-    \item \lstinline+\footnotemark+ an der Stelle wo die Fußnote sein soll
-    \item In einer \lstinline+\caption+ muss dem \lstinline+\footnotemark+ ein \lstinline+\protect+ vorangestellt werden.
+    \item \mintinline{latex}+\footnotemark+ an der Stelle wo die Fußnote sein soll
+    \item In einer \mintinline{latex}+\caption+ muss dem \mintinline{latex}+\footnotemark+ ein \mintinline{latex}+\protect+ vorangestellt werden.
       \begin{itemize}
-        \item Aufpassen, wenn man eine \lstinline+\listoffigures+ hat
+        \item Aufpassen, wenn man eine \mintinline{latex}+\listoffigures+ hat
       \end{itemize}
-    \item \lstinline+\footnotetext{...}+ außerhalb der Umgebung für den Text der Fußnote
+    \item \mintinline{latex}+\footnotetext{...}+ außerhalb der Umgebung für den Text der Fußnote
     \item Fußnoten in Abbildungen sollten vermieden werden.
   \end{itemize}
 \end{frame}
