@@ -57,12 +57,12 @@
   \linespread{1.0}
 \end{frame}
 
-\begin{frame}{Geschichte}
-  \begin{columns}
-    \begin{column}{0.73\textwidth}
+\begin{frame}[c]{Geschichte}
+  \begin{columns}[c, onlytextwidth]%
+    \begin{column}{0.73\textwidth}%
       \TeX:
       \begin{itemize}
-        \item Geschrieben von Donald E. Knuth 1978, um sein Buch \enquote{The Art of Computer Programming} zu setzen.
+        \item Geschrieben von Donald E. Knuth 1978,\\ um sein Buch \enquote{The Art of Computer Programming} zu setzen.
         \item Auf Aussprache achten!
         \item Version (2021): $3.141592653 → \symup{π}$
         \item Viele Erweiterungen: \eTeX, \pdfTeX, \XeTeX, \LuaTeX
@@ -75,12 +75,14 @@
         \item Version (1994): \LaTeXe
         \item \LaTeX3 seit Anfang der Neunziger in Arbeit…
       \end{itemize}
-    \end{column}
-    \begin{column}{0.23\textwidth}
-      \includegraphics[width=0.9\textwidth]{logos/knuth.jpg}\\
-      \includegraphics[width=0.9\textwidth]{logos/lamport.jpg}
-    \end{column}
-  \end{columns}
+    \end{column}%
+    \hfill%
+    \begin{column}{0.23\textwidth}%
+      \centering%
+      \includegraphics[width=0.8\textwidth]{logos/knuth.jpg}\\%
+      \includegraphics[width=0.8\textwidth]{logos/lamport.jpg}%
+    \end{column}%
+  \end{columns}%
 \end{frame}
 
 \begin{frame}{Dieser Kurs}
