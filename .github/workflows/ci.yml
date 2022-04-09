@@ -32,6 +32,10 @@ jobs:
           # generate the lualatex font cache, otherwise it is done in parallel when calling make
           luaotfload-tool --update --force
 
+          # copy latexmkrc to make sure its used also for vXXX
+          mkdir -p ~/.config/latexmk
+          cp common/latexmkrc ~/.config/latexmk/
+
       - name: Build
         run: |
           source $CONDA/etc/profile.d/conda.sh
