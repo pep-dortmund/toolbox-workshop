@@ -1,0 +1,18 @@
+\usepackage{fontspec}
+
+\usepackage{amsmath}   % unverzichtbare Mathe-Befehle
+\usepackage{amssymb}   % viele Mathe-Symbole
+\usepackage{mathtools} % Erweiterungen für amsmath
+
+\usepackage[
+  math-style=ISO,    % \
+  bold-style=ISO,    % |
+  sans-style=italic, % | ISO-Standard folgen
+  nabla=upright,     % |
+  partial=upright,   % /
+]{unicode-math}      % "Does exactly what it says on the tin."
+% Laden von OTF-Mathefonts
+% Ermöglich Unicode Eingabe von Zeichen: α statt \alpha
+
+\setmathfont{Latin Modern Math}
+% \setmathfont{Tex Gyre Pagella Math} % alternativ

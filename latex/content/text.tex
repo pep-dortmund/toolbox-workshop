@@ -2,7 +2,7 @@
 
 \begin{frame}[fragile]{Text schreiben}
   \begin{block}{Beispiel}
-    \begin{lstlisting}
+    \begin{minted}{latex}
       % Präambel
       \begin{document}
         Hallo, Welt!
@@ -15,7 +15,7 @@
         Ein Absatz wird mit einer leeren Code-Zeile
         markiert.
       \end{document}
-    \end{lstlisting}
+    \end{minted}
   \end{block}
 \end{frame}
 
@@ -23,17 +23,17 @@
   \begin{itemize}
     \item Höchstens ein Satz pro Code-Zeile
     \item Absätze werden durch eine Leerzeile markiert
-    \item Im Fließtext sollten keine Umbrüche mit \lstinline+\\+ erzwungen werden
+    \item Im Fließtext sollten keine Umbrüche mit \mintinline{latex}+\\+ erzwungen werden
   \end{itemize}
   \begin{alertblock}{Sonderzeichen}
     Viele Sonderzeichen sind \LaTeX-Steuerzeichen.
     Damit diese im Text genutzt werden können, muss meist ein \verb+\+ vorangestellt oder ein Befehl genutzt werden.
   \end{alertblock}
   \begin{CodeExample}{0.7}
-    \begin{lstlisting}
+    \begin{minted}{latex}
       \# \$ \% \& \_ \{ \}
       \textbackslash \textasciicircum \textasciitilde
-    \end{lstlisting}
+    \end{minted}
   \CodeResult
     \strut
     \# \$ \% \& \_ \{ \} \\
@@ -44,7 +44,7 @@
 \begin{frame}[fragile]{Textauszeichnung}
   Änderungen der Schrifteigenschaften sind mit diesen Befehlen möglich:
   \begin{CodeExample}{0.60}
-    \begin{lstlisting}
+    \begin{minted}{latex}
       \textit{kursiv} \emph{kursiv}
       \textbf{fett}
       \textbf{\textit{fett-kursiv}}
@@ -52,7 +52,7 @@
       \texttt{Mono-Schrift}
       \textsf{Sans-Serif-Schrift}
       \textsc{Kapitälchen}
-    \end{lstlisting}
+    \end{minted}
   \CodeResult
     \strut
     \textit{kursiv} \emph{kursiv} \\
@@ -69,15 +69,15 @@
 \end{frame}
 
 \begin{frame}[fragile]{Schriftgrößen}
-  Gelten immer für den aktuellen Block, z.\,B. in einer Umgebung oder zwischen \lstinline+{ }+
+  Gelten immer für den aktuellen Block, z.\,B. in einer Umgebung oder zwischen \mintinline{latex}+{ }+
   \begin{CodeExample}{0.48}
-    \begin{lstlisting}
+    \begin{minted}{latex}
       {\tiny tiny}
       {\small small}
       {\normalsize normal}
       {\large large}
       {\huge huge}
-    \end{lstlisting}
+    \end{minted}
   \CodeResult
     \begin{minipage}[c][5\baselineskip][c]{\textwidth}
       {\tiny tiny}
@@ -89,23 +89,23 @@
   \end{CodeExample}
   \vspace{1em}
   \begin{block}{Alle Größen}
-    \begin{lstlisting}
+    \begin{minted}{latex}
       \tiny, \scriptsize, \footnotesize, \small, \normalsize, \large, \Large, \LARGE, \huge, \Huge
-    \end{lstlisting}
+    \end{minted}
   \end{block}
   Auch diese Befehle sollten nur über semantischen Markup benutzt werden.
 \end{frame}
 
 \begin{frame}[fragile]{Inhalt auslagern}
   \begin{block}{Code}
-    \begin{lstlisting}
+    \begin{minted}{latex}
       \input{header.tex}
       \begin{document}
         \input{Teil1.tex}
         \input{Teil2.tex}
         % .
       \end{document}
-    \end{lstlisting}
+    \end{minted}
   \end{block}
   \begin{itemize}
     \item Verschachtelung möglich
@@ -123,21 +123,21 @@
   Die richtigen Anführungszeichen, wo die Satzzeichen hingehören und vieles mehr hängt von der Sprache ab.
   So macht man es richtig:
   \begin{Packages}
-    \begin{lstlisting}
+    \begin{minted}{latex}
       % babel mit anderen Sprachen laden
       \usepackage[english, french, ngerman]{babel}
       \usepackage[autostyle]{csquotes}    % babel
-    \end{lstlisting}
+    \end{minted}
   \end{Packages}
   \begin{CodeExample}{0.60}
-    \begin{lstlisting}
+    \begin{minted}{latex}
       foo \enquote{bar} baz
       \enquote{foo \enquote{bar} baz}
       \foreignlanguage{english}{\enquote{foo}}
       \foreignlanguage{french}{\enquote{foo}}
       % siehe Kapitel über Bibliographie
       \textcquote{numpy}{foo}
-    \end{lstlisting}
+    \end{minted}
   \CodeResult
     \strut
     foo \enquote{bar} baz \\

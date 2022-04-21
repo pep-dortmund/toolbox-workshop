@@ -362,11 +362,11 @@
     \end{itemize}
     Beispiel:
     \vspace{1em}
-    \begin{lstlisting}[language=, keywordstyle={}]
+    \begin{minted}{text}
       build/
       *.pdf
       __pycache__/
-    \end{lstlisting}
+    \end{minted}
 \end{frame}
 
 
@@ -417,17 +417,17 @@
 
   SSH-Keys:
   \begin{enumerate}
-    \item \lstinline[language=]+ssh-keygen -t ed25519 -C "your_email@example.com"+
+    \item \mintinline{text}+ssh-keygen -t ed25519 -C "your_email@example.com"+
     \item Passwort wählen
-    \item \lstinline[language=]+cat ~/.ssh/id_ed25519.pub+
+    \item \mintinline{text}+cat ~/.ssh/id_ed25519.pub+
     \item Ausgabe ist Public-Key, beim Server eintragen (im Browser)
   \end{enumerate}
 
   Für den Agent, falls noch nicht vom Betriebsystem eingerichtet (z.\,B.\ Windows mit WSL):
   \begin{enumerate}
     \setcounter{enumi}{4}
-    \item \lstinline[language=]+echo 'eval $(ssh-agent -s)' >> ~/.bashrc+
-    \item \lstinline[language=]+echo 'AddKeysToAgent yes' >> ~/.ssh/config+
+    \item \mintinline{text}+echo 'eval $(ssh-agent -s)' >> ~/.bashrc+
+    \item \mintinline{text}+echo 'AddKeysToAgent yes' >> ~/.ssh/config+
   \end{enumerate}
 
   Doku: \url{https://docs.github.com/en/authentication/connecting-to-github-with-ssh}

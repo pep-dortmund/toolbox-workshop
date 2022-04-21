@@ -88,11 +88,15 @@
 \usepackage{pdflscape}
 
 \usepackage{fancyvrb}
-\usepackage{listings}
-\usepackage{lstautogobble}
+\usepackage[outputdir=build]{minted}
+\setminted{
+  autogobble,
+  breaklines,
+  stripnl=true,
+}
+\usemintedstyle{toolbox}
 
 \usepackage[
-  listings,
   theorems,
   many,
 ]{tcolorbox}
@@ -107,42 +111,7 @@
   shadows,
   shapes,
 }
-% fix for pgf not finding its libraries, see https://tex.stackexchange.com/questions/453132/fresh-install-of-tl2018-no-tikz-graph-drawing-libraries-found
-\usepackage{luacode}
-\begin{luacode}
-  function pgf_lookup_and_require(name)
-    local sep = '/'
-    if string.find(os.getenv('PATH'),';') then
-      sep = '\string\\'
-    end
-    local function lookup(name)
-      local sub = name:gsub('%.',sep)
-      local find_func = function (name, suffix)
-        if resolvers then
-          local n = resolvers.findfile (name.."."..suffix, suffix) -- changed
-          return (not (n == '')) and n or nil
-        else
-          return kpse.find_file(name,suffix)
-        end
-      end
-      if find_func(sub, 'lua') then
-        require(name)
-      elseif find_func(sub, 'clua') then
-        collectgarbage('stop')
-        require(name)
-        collectgarbage('restart')
-      else
-        return false
-      end
-      return true
-    end
-    return
-      lookup('pgf.gd.' .. name .. '.library') or
-      lookup('pgf.gd.' .. name) or
-      lookup(name .. '.library') or
-      lookup(name)
-  end
-\end{luacode}
+
 \usegdlibrary{trees}
 \usepackage[compat=1.1.0]{tikz-feynman}
 

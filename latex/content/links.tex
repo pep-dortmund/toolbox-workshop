@@ -2,28 +2,28 @@
 \begin{frame}[fragile]{Links und Mail-Adressen}
   \begin{itemize}
     \item Es ist sehr empfehlenswert, auf der Titelseite eure Mailadressen anzugeben!
-    \item \texttt{hyperref} stellt den \lstinline+\href{link}{text}+ Befehl
-    \item \lstinline+\url{url}+ = \lstinline+\href{url}{url}+
+    \item \texttt{hyperref} stellt den \mintinline{latex}+\href{link}{text}+ Befehl
+    \item \mintinline{latex}+\url{url}+ = \mintinline{latex}+\href{url}{url}+
   \end{itemize}
   \vspace{-0.6em}
-  \begin{CodeExample}{0.5}
-    \begin{lstlisting}
-      \href{www.google.de}{Google}
+  \begin{CodeExample}{0.75}
+    \begin{minted}{latex}
+      \href{https://www.google.de}{Google}
       \href{mailto:max@mustermann.de}{max@mustermann.de}
-    \end{lstlisting}
+    \end{minted}
   \CodeResult
     \strut
     \href{www.google.de}{Google}\\
     \href{mailto:max@mustermann.de}{max@mustermann.de}
   \end{CodeExample}
   \begin{block}{Autoren mit Mailadressen:}
-    \begin{lstlisting}
+    \begin{minted}{latex}
     \author{
       Max Mustermann\\
       \texorpdfstring{\href{mailto:max@mustermann.de}{max@mustermann.de}\and}{,}
       Felix Mustermann\\
       \texorpdfstring{\href{mailto:felix@mustermann.de}{felix@mustermann.de}}{}
     }
-    \end{lstlisting}
+    \end{minted}
   \end{block}
 \end{frame}

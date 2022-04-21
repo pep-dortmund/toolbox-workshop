@@ -7,8 +7,8 @@
 }
   \begin{itemize}
     \item Dokumentenklasse für Präsentationen
-    \item \lstinline+frame+-Umgebung erzeugt eine Folie
-    \item Bei Nutzung mit \lstinline+fontspec+ und \lstinline+unicode-math+ muss das \texttt{fonttheme} \texttt{professionalfonts} genutzt werden.
+    \item \mintinline{latex}+frame+-Umgebung erzeugt eine Folie
+    \item Bei Nutzung mit \mintinline{latex}+fontspec+ und \mintinline{latex}+unicode-math+ muss das \texttt{fonttheme} \texttt{professionalfonts} genutzt werden.
     \item Aussehen wird durch \enquote{themes} gesteuert
     \item Viele themes werden mit \TeX-Live mitgeliefert
     \item Sehen leider alle fast gleich aus
@@ -18,7 +18,7 @@
 
 \begin{BeamerCodeFrame}[fragile]{Minimal-Beispiel}
   \begin{center}
-    \begin{lstlisting}
+    \begin{minted}{latex}
       \documentclass[aspectratio=1610]{beamer}
       \usefonttheme{professionalfonts}
       \usepackage{fontspec}
@@ -36,7 +36,7 @@
           Hallo Welt!
         \end{frame}
       \end{document}
-    \end{lstlisting}
+    \end{minted}
   \end{center}
 \end{BeamerCodeFrame}
 
@@ -54,7 +54,7 @@
     \item \texttt{column}-Umgebung erzeugt Spalte, Breite ist Pflichtargument
   \end{itemize}
   \begin{center}
-    \begin{lstlisting}
+    \begin{minted}{latex}
       \begin{columns}[onlytextwidth]
         \begin{column}{0.45\textwidth}
           Hallo
@@ -63,7 +63,7 @@
           Welt
         \end{column}
       \end{columns}
-    \end{lstlisting}
+    \end{minted}
   \end{center}
 \end{BeamerCodeFrame}
 
@@ -73,7 +73,7 @@
     \item Standardblöcke können nicht viel → \texttt{tcolorbox}
   \end{itemize}
   \begin{CodeExample}{0.5}
-    \begin{lstlisting}
+    \begin{minted}{latex}
       \begin{block}{Titel}
         Block Body
       \end{block}
@@ -85,7 +85,7 @@
       \begin{alertblock}{Titel}
         Block Body
       \end{alertblock}
-    \end{lstlisting}
+    \end{minted}
   \CodeResult
     \begin{block}{Titel}
       Block Body
@@ -101,7 +101,7 @@
 
 \begin{BeamerCodeFrame}[fragile]{Nervige Buttons abschalten}
   \begin{center}
-    \begin{lstlisting}
+    \begin{minted}{latex}
       \documentclass[…]{beamer}
       %  …
       %  packages here
@@ -114,6 +114,6 @@
           Hallo Welt!
         \end{frame}
       \end{document}
-    \end{lstlisting}
+    \end{minted}
   \end{center}
 \end{BeamerCodeFrame}

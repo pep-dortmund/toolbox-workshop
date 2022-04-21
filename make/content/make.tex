@@ -53,10 +53,10 @@
   \end{itemize}
   \begin{block}{Rule}
     \centering
-    \begin{lstmake}
+    \begin{minted}{make}
       target: prerequisites
           recipe
-    \end{lstmake}
+    \end{minted}
   \end{block}
   \begin{description}
     \item[\texttt{\hphantom{prerequisites}\llap{target}}] Datei(en), die von dieser Rule erzeugt werden
@@ -70,10 +70,10 @@
 
 \begin{frame}[fragile]{Einfachstes Beispiel}
   \begin{center}
-    \begin{lstmake}
+    \begin{minted}{make}
       plot.pdf: plot.py data.txt
           python plot.py
-    \end{lstmake}
+    \end{minted}
   \end{center}
   \begin{itemize}
     \item Wir wollen \texttt{plot.pdf} erzeugen (\texttt{target})
@@ -86,7 +86,7 @@
 
 \begin{frame}[fragile]{Beispiel}
   \begin{center}
-    \begin{lstmake}
+    \begin{minted}{make}
       all: report.pdf  # convention
 
       plot.pdf: plot.py data.txt
@@ -96,7 +96,7 @@
           lualatex report.tex
 
       report.pdf: plot.pdf  # add prerequisite
-    \end{lstmake}
+    \end{minted}
   \end{center}
   \vspace{1em}
 
@@ -160,10 +160,10 @@
   (Nützliche) Konvention: \texttt{make clean} löscht alle vom \texttt{Makefile} erstellten Dateien/Ordner.
 
   \begin{center}
-    \begin{lstmake}
+    \begin{minted}{make}
       clean:
           rm plot.pdf report.pdf
-    \end{lstmake}
+    \end{minted}
   \end{center}
 
   Das Projekt sollte dann so aussehen, wie vor dem ersten Ausführen von \texttt{make}.
@@ -173,7 +173,7 @@
   \texttt{build}-Ordner: Projekt sauber halten
 
   \begin{center}
-    \begin{lstmake}
+    \begin{minted}{make}
       all: build/report.pdf
 
       build/plot.pdf: plot.py data.txt | build
@@ -189,7 +189,7 @@
           rm -rf build
 
       .PHONY: all clean
-    \end{lstmake}
+    \end{minted}
   \end{center}
 
   \begin{itemize}
@@ -203,7 +203,7 @@
 
 \begin{frame}[fragile]{Vergleich: Kuchen backen}
   \begin{center}
-    \begin{lstmake}
+    \begin{minted}{make}
     Kuchen: Teig Backofen
         Ofen auf 140°C vorheizen
         Teig in Backform geben und in den Ofen schieben
@@ -224,7 +224,7 @@
     clean:
         Kuchen essen
         Küche sauber machen und aufräumen
-    \end{lstmake}
+    \end{minted}
   \end{center}
 \end{frame}
 
@@ -234,7 +234,7 @@
 
   Problem: Manchmal führt \texttt{make} Skripte gleichzeitig zweimal aus (hier \texttt{plot.py})
   \begin{center}
-    \begin{lstmake}
+    \begin{minted}{make}
       all: report.txt
 
       report.txt: plot1.pdf plot2.pdf
@@ -242,18 +242,18 @@
 
       plot1.pdf plot2.pdf: plot.py data.txt
         python plot.py  # plot.py produziert sowohl plot1.pdf als auch plot2.pdf
-    \end{lstmake}
+    \end{minted}
   \end{center}
 
   Lösung: manuell synchronisieren
   \begin{center}
     $\vdots$ \\
-    \begin{lstmake}
+    \begin{minted}{make}
       plot1.pdf: plot.py data.txt
           python plot.py
 
       plot2.pdf: plot1.pdf
-    \end{lstmake}
+    \end{minted}
   \end{center}
 
   Wenn man \texttt{plot2.pdf} aber nicht \texttt{plot1.pdf} löscht, kann \texttt{make} nicht mehr \texttt{plot2.pdf} erstellen.

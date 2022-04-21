@@ -3,25 +3,25 @@
 \begin{frame}[fragile]{\texttt{build}-Ordner}
   \LuaTeX\ und \texttt{biber} bieten Optionen an, um einen \texttt{build}-Ordner zu benutzen.
   \begin{block}{Aufrufe}
-    \begin{lstlisting}[language=, keywordstyle={}]
+    \begin{minted}{text}
       lualatex --output-directory=build file.tex
       biber build/file.bcf
-    \end{lstlisting}
+    \end{minted}
   \end{block}
 
   Um Dateien aus dem \texttt{build}-Ordner zu finden (Plots, Tabellen):
   \begin{block}{Aufrufe}
-    \begin{lstlisting}[language=, keywordstyle={}]
+    \begin{minted}{text}
       TEXINPUTS=build: lualatex --output-directory=build file.tex
       biber build/file.bcf
-    \end{lstlisting}
+    \end{minted}
   \end{block}
   \vspace*{-0.5em}
   \begin{itemize}
     \item \texttt{TEXINPUTS}, \texttt{BIBINPUTS}: Suchpfade für \TeX- und \texttt{.bib}-Dateien
     \item Elemente getrennt mit \texttt{:}, der erste Treffer wird genommen (wie \texttt{PATH})
     \item Hilfreich um z.\,B.\ den Header nur einmal für alle Protokolle abzuspeichern. (Siehe latex-template)
-    \item \texttt{TEXINPUTS} auch für \lstinline+\includegraphics+
+    \item \texttt{TEXINPUTS} auch für \mintinline{latex}+\includegraphics+
     \item \texttt{:} am Ende der Liste: Standardsuchpfade anhängen (wichtig!)
     \item \texttt{.} (der aktuelle Ordner) ist am Anfang der Standardliste, braucht man also nicht selbst angeben
     \item Endet ein Element mit \texttt{//}, werden auch alle Unterordner durchsucht
@@ -32,22 +32,22 @@
   In Makefiles will man keine Interaktion.
 
   \begin{block}{Keine Interaktion}
-    \begin{lstlisting}[language=, keywordstyle={}]
+    \begin{minted}{text}
       lualatex --interaction=nonstopmode file.tex
-    \end{lstlisting}
+    \end{minted}
   \end{block}
 
   \begin{block}{Beim ersten Fehler abbrechen}
-    \begin{lstlisting}[language=, keywordstyle={}]
+    \begin{minted}{text}
       lualatex --interaction=nonstopmode --halt-on-error file.tex
-    \end{lstlisting}
+    \end{minted}
   \end{block}
 
   Neben \texttt{nonstopmode} gibt es auch \texttt{batchmode}, was die Ausgabe nur in der \texttt{.log}-Datei speichert, aber nicht ausgibt.
 
   \begin{block}{Log schöner machen}
-    \begin{lstlisting}[language=, keywordstyle={}]
+    \begin{minted}{text}
      max_print_line=1048576 lualatex file.tex
-    \end{lstlisting}
+    \end{minted}
   \end{block}
 \end{frame}

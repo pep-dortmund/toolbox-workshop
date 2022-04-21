@@ -29,8 +29,6 @@ koma-script
 latex
 latex-bin
 latexmk
-listings
-lstaddons
 luacode
 lualatex-math
 luatex
@@ -40,6 +38,7 @@ mathtools
 metalogo
 mhchem
 microtype
+minted
 mleftright
 mwe
 ncctools
@@ -64,3 +63,8 @@ xits
 xkeyval
 xpatch
 xstring
+fvextra
+upquote
+lineno
+catchfile
+framed

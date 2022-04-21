@@ -4,11 +4,11 @@
   Manchmal braucht man einen Script-Font oder einen zweiten kalligraphischen.
   \vspace{1em}
   \begin{CodeExample}{0.83}
-    \begin{lstlisting}
+    \begin{minted}{latex}
       \symcal{IA} \symbfcal{IA} % Latin Modern
       \symcal{IA} \symbfcal{IA} % XITS Math, StylisticSet=1
       \symscr{IA} \symbfscr{IA} % XITS Math
-    \end{lstlisting}
+    \end{minted}
   \CodeResult
     \Umathordordspacing\textstyle=4mu
                            $\symcal{I A} \symbfcal{I A}$ \\
@@ -17,70 +17,70 @@
   \end{CodeExample}
 
   \begin{block}{Mathe-Fonts einstellen}
-    \begin{lstlisting}
+    \begin{minted}{latex}
       \setmathfont{XITS Math}[range={scr, bfscr}]
       \setmathfont{XITS Math}[range={cal, bfcal}, StylisticSet=1]
-    \end{lstlisting}
+    \end{minted}
   \end{block}
 \end{frame}
 
-\begin{frame}[fragile]{\lstinline[texcsstyle=*\color{white}]+\\Re+, \lstinline[texcsstyle=*\color{white}]+\\Im+}
-  \lstinline+\Re+ und \lstinline+\Im+ sehen nicht aus, wie erwartet:
+\begin{frame}[fragile]{\titlecmd{Re}, \titlecmd{Im}}
+  \mintinline{latex}+\Re+ und \mintinline{latex}+\Im+ sehen nicht aus, wie erwartet:
   \vspace*{-1.2em}
   \begin{CodeExample}{0.5}
-    \begin{lstlisting}
+    \begin{minted}{latex}
       \Re z    \Im z
-    \end{lstlisting}
+    \end{minted}
   \CodeResult
     \strut
     $\symRe z \qquad \symIm z$
   \end{CodeExample}
 
-  \begin{lstlisting}
+  \begin{minted}{latex}
     \AtBeginDocument{ % wird bei \begin{document} ausgeführt
       % werden sonst wieder von unicode-math überschrieben
       \RenewDocumentCommand \Re {} {\operatorname{Re}}
       \RenewDocumentCommand \Im {} {\operatorname{Im}}
     }
-  \end{lstlisting}
+  \end{minted}
 
   \vspace{-0.5em}
   Besser:
   \vspace*{-1.2em}
   \begin{CodeExample}{0.5}
-    \begin{lstlisting}
+    \begin{minted}{latex}
       \Re z    \Im z
-    \end{lstlisting}
+    \end{minted}
   \CodeResult
     \strut
     $\Re z \qquad \Im z$
   \end{CodeExample}
 \end{frame}
 
-\begin{frame}[fragile]{Richtiges Spacing für \lstinline[texcsstyle=*\color{white}]+\\left+, \lstinline[texcsstyle=*\color{white}]+\\right+}
+\begin{frame}[fragile]{Richtiges Spacing für \titlecmd{left}, \titlecmd{right}}
   \begin{Packages}
-    \begin{lstlisting}
+    \begin{minted}{latex}
       \usepackage{mleftright}
-    \end{lstlisting}
+    \end{minted}
   \end{Packages}
 
   \vspace*{-\baselineskip}
   \begin{CodeExample}{0.5}
-    \begin{lstlisting}
+    \begin{minted}{latex}
       \sin  \left( x  \right) y
       \sin \mleft( x \mright) y
-    \end{lstlisting}
+    \end{minted}
   \CodeResult
     \strut
     $\sin  \left( x  \right) y$ \\
     $\sin \mleft( x \mright) y$
   \end{CodeExample}
 
-  Man kann natürlich eigene kurze Makros für \lstinline+\mleft+ und \lstinline+\mright+ definieren. \\
-  Beispiel:\lstinline+\l+ und \lstinline+\r+ (Textbedeutungen beachten!).
+  Man kann natürlich eigene kurze Makros für \mintinline{latex}+\mleft+ und \mintinline{latex}+\mright+ definieren. \\
+  Beispiel:\mintinline{latex}+\l+ und \mintinline{latex}+\r+ (Textbedeutungen beachten!).
 
   \vspace*{0.5em}
-  \begin{lstlisting}
+  \begin{minted}{latex}
     \let\ltext=\l
     \RenewDocumentCommand \l {}
     {
@@ -91,17 +91,17 @@
     {
       \TextOrMath{ \raccent }{ \mright }
     }
-  \end{lstlisting}
+  \end{minted}
 \end{frame}
 
-\begin{frame}[fragile]{\lstinline[texcsstyle=*\color{white}]+\\DeclarePairedDelimiter+}
+\begin{frame}[fragile]{\titlecmd{DeclarePairedDelimiter}}
   \begin{itemize}
-    \item Mit dem \texttt{mathtools}-Befehl \lstinline+\DeclarePairedDelimiter+ können Befehle erzeugen werden, die Symbole um Ausdrücke setzen
-    \item Automatische \lstinline+*+-Variante, die mitwächst
+    \item Mit dem \texttt{mathtools}-Befehl \mintinline{latex}+\DeclarePairedDelimiter+ können Befehle erzeugen werden, die Symbole um Ausdrücke setzen
+    \item Automatische \mintinline{latex}+*+-Variante, die mitwächst
     \item Automatisch richtiges Spacing
   \end{itemize}
   \begin{CodeExample}{0.7}
-    \begin{lstlisting}
+    \begin{minted}{latex}
       % in Präambel
       \DeclarePairedDelimiter{\abs}{\lvert}{\rvert}
       \DeclarePairedDelimiter{\norm}{\lVert}{\rVert}
@@ -112,7 +112,7 @@
 
       \sin\abs*{\frac{1}{2}}
       \sin\left|\frac{1}{2}\right|
-    \end{lstlisting}
+    \end{minted}
   \CodeResult
     \vspace{5\baselineskip}
     \strut
@@ -123,29 +123,29 @@
   \end{CodeExample}
 \end{frame}
 
-\begin{frame}[fragile]{\lstinline[texcsstyle=*\color{white}]+\\bra, \\ket, \\braket+}
+\begin{frame}[fragile]{\titlecmd{bra}, \titlecmd{ket}, \titlecmd{braket}}
   Schonmal für Physik IV und Quantenmechanik vormerken.
 
   \begin{block}{In der Präambel}
-    \begin{lstlisting}
+    \begin{minted}{latex}
       \DeclarePairedDelimiter{\bra}{\langle}{\rvert}
       \DeclarePairedDelimiter{\ket}{\lvert}{\rangle}
       % <name> <#arguments> <left> <right> <body>
       \DeclarePairedDelimiterX{\braket}[2]{\langle}{\rangle}{
         #1 \delimsize| #2
       }
-    \end{lstlisting}
+    \end{minted}
   \end{block}
   \begin{itemize}
-    \item \lstinline+\delimsize+ gibt Größe der äußeren Klammern in \texttt{<body>}
+    \item \mintinline{latex}+\delimsize+ gibt Größe der äußeren Klammern in \texttt{<body>}
   \end{itemize}
 
   \begin{CodeExample}{0.7}
-    \begin{lstlisting}
+    \begin{minted}{latex}
       \bra{\Psi}
       \ket{\Psi}
       \braket*{\Psi_1}{\Psi_2}
-    \end{lstlisting}
+    \end{minted}
   \CodeResult
     \strut
     $\bra{\Psi}$ \\
@@ -154,10 +154,10 @@
   \end{CodeExample}
 \end{frame}
 
-\begin{frame}[fragile]{\lstinline[texcsstyle=*\color{white}]+\\delimitershortfall+}
+\begin{frame}[fragile]{\titlecmd{delimitershortfall}}
   Klammern wachsen nicht immer:
   \begin{CodeExample}{0.8}
-    \begin{lstlisting}
+    \begin{minted}{latex}
       \left(  \left(  \left(  \left(
         x
       \right) \right) \right) \right)
@@ -168,7 +168,7 @@
       \left(  \left(  \left(  \left(
         x
       \right) \right) \right) \right)
-    \end{lstlisting}
+    \end{minted}
   \CodeResult
     \begin{CenterStrip}{3}
       $\left( \left( \left( \left( x \right) \right) \right) \right)$

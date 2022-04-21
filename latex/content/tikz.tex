@@ -6,7 +6,7 @@
   \doc{http://mirrors.ctan.org/graphics/pgf/base/doc/pgfmanual.pdf}{tikz/pgf}
 }
   \begin{Packages}
-    \lstinline+\usepackage{tikz}+
+    \mintinline{latex}+\usepackage{tikz}+
   \end{Packages}
   \begin{itemize}
     \item \alert{T}i\textit{k}z \alert{i}st \alert{k}ein \alert{Z}eichenprogramm
@@ -21,11 +21,11 @@
     \item Basis-Einheit ist \unit{\centi\meter}
   \end{itemize}
   \begin{CodeExample}{0.7}
-    \begin{lstlisting}
+    \begin{minted}{latex}
       \begin{tikzpicture}
         \draw[thick, ->] (0, 0) -- (1, 0);
       \end{tikzpicture}
-    \end{lstlisting}
+    \end{minted}
   \CodeResult
   \strut\\
     \begin{tikzpicture}
@@ -35,25 +35,25 @@
 \end{frame}
 \begin{frame}[fragile]{Kleine Beispiele}
   \begin{CodeExample}{0.8}[\texttt{cycle}]
-    \begin{lstlisting}
+    \begin{minted}{latex}
       \begin{tikzpicture}
         \draw[thick] (0, 0) -- (1, 0) -- (1, 1) -- cycle;
       \end{tikzpicture}
-    \end{lstlisting}
+    \end{minted}
   \CodeResult
     \begin{tikzpicture}
         \draw[thick] (0, 0) -- (1, 0) -- (1, 1) -- cycle;
     \end{tikzpicture}
   \end{CodeExample}
   \begin{CodeExample}{0.8}[Polarkoordinaten]
-    \begin{lstlisting}
+    \begin{minted}{latex}
       \begin{tikzpicture}
         \foreach\ang in {0, 45, 90, 135, 180, 215, 270, 315}
         {
           \draw (0, 0) -- (\ang: 10pt);
         }
       \end{tikzpicture}
-    \end{lstlisting}
+    \end{minted}
   \CodeResult
     \begin{tikzpicture}
       \foreach\ang in {0, 45, 90, 135, 180, 215, 270, 315}
@@ -66,14 +66,14 @@
 
 \begin{frame}[fragile]{Kleine Beispiele}
   \begin{CodeExample}{0.8}[\texttt{nodes}]
-    \begin{lstlisting}
+    \begin{minted}{latex}
       \begin{tikzpicture}
         \draw[thick] (0, 0)
           -- (1, 0) node[midway, below] {$a$}
           -- (1, 1) node[midway, right] {$b$}
           -- cycle  node[midway, above left] {$c$};
       \end{tikzpicture}
-    \end{lstlisting}
+    \end{minted}
   \CodeResult
     \begin{tikzpicture}
       \draw[thick] (0, 0)
@@ -86,16 +86,16 @@
 
 \begin{frame}[fragile]{Tikz-Feynman}
   \begin{Packages}
-    \lstinline+\usepackage{tikz-feynman}+
+    \mintinline{latex}+\usepackage{tikz-feynman}+
   \end{Packages}
   \begin{CodeExample}{0.65}[Tree-Graph]
-    \begin{lstlisting}
+    \begin{minted}{latex}
       \feynmandiagram [horizontal=a to b] {
         i1 -- [fermion] a -- [fermion] i2,
         a -- [photon] b,
         f1 -- [fermion] b -- [fermion] f2,
       };
-    \end{lstlisting}
+    \end{minted}
   \CodeResult
     \feynmandiagram [horizontal=a to b] {
       i1 -- [fermion] a -- [fermion] i2,
@@ -107,7 +107,7 @@
 
 \begin{frame}[fragile]{Tikz-Feynman}
   \begin{CodeExample}{0.65}[Tree-Graph]
-    \begin{lstlisting}
+    \begin{minted}{latex}
       \feynmandiagram [horizontal=a to b] {
         i1 [particle=$\symup{e}^-$]
           -- [fermion] a
@@ -117,7 +117,7 @@
           -- [fermion] b
           -- [fermion] f2 [particle=$\symup{μ}^+$],
       };
-    \end{lstlisting}
+    \end{minted}
   \CodeResult
     \feynmandiagram [horizontal=a to b] {
       i1 [particle=$\symup{e}^-$] -- [fermion] a -- [fermion] i2 [particle=$\symup{e}^+$],

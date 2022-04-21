@@ -98,19 +98,21 @@
 
   \vspace{10pt}
   \centering
-  \begin{BVerbatim}[gobble=4]
-    \DeclareRobustCommand{\LaTeX}{%
-      L\kern-.36em%
-      {\sbox\z@ T%
-        \vbox to\ht\z@{\hbox{%
-          \check@mathfonts
-          \fontsize\sf@size\z@
-          \math@fontsfalse\selectfont A}%
-          \vss}%
-      }%
-      \kern-.15em%
-      \TeX}
-  \end{BVerbatim}
+  \begin{minipage}{0.5\textwidth}
+    \begin{minted}{tex}
+      \DeclareRobustCommand{\LaTeX}{%
+        L\kern-.36em%
+        {\sbox\z@ T%
+          \vbox to\ht\z@{\hbox{%
+            \check@mathfonts
+            \fontsize\sf@size\z@
+            \math@fontsfalse\selectfont A}%
+            \vss}%
+        }%
+        \kern-.15em%
+        \TeX}
+    \end{minted}
+  \end{minipage}
 
   \begin{center}
     \Huge

@@ -2,27 +2,27 @@
 
 \begin{frame}[fragile]{Titelseite und Metadaten}
   \LaTeX\ erstellt automatisch eine Titelei aus den Metadaten. \\
-  Mit der Klassenoption \lstinline{titlepage=firstiscover} wird diese  als eigene Seite gesetzt.
+  Mit der Klassenoption \mintinline{latex}{titlepage=firstiscover} wird diese  als eigene Seite gesetzt.
 
   \begin{block}{Neue Klassenoption}
-    \begin{lstlisting}
+    \begin{minted}{latex}
       \documentclass[…, titlepage=firstiscover, …]{scrartcl}
-    \end{lstlisting}
+    \end{minted}
   \end{block}
 
   \begin{block}{Empfehlung fürs Praktikum:}
-    \begin{lstlisting}
+    \begin{minted}{latex}
       \title{101 Titel des Versuchs}
       % Mehrere Autoren mit \and:
       \author{Max Mustermann \and Maria Musterfrau}
       \date{Durchführung: 26.09.2014, Abgabe: 29.09.2014}
-    \end{lstlisting}
+    \end{minted}
   \end{block}
 
   \begin{block}{Titelseite generieren}
-    \begin{lstlisting}
+    \begin{minted}{latex}
       \maketitle
-    \end{lstlisting}
+    \end{minted}
   \end{block}
 \end{frame}
 
@@ -31,29 +31,29 @@
   Diese werden automatisch nummeriert und in entsprechend größerer und fetter Schrift gesetzt.
 
   \begin{block}{Gliederungsebenen für \texttt{scrartcl}}
-    \begin{lstlisting}
+    \begin{minted}{latex}
       \section{Überschrift}
       \subsection{Überschrift}
       \subsubsection{Überschrift}
       \paragraph{Überschrift}    % wird nicht nummeriert
       \subparagraph{Überschrift} % wird nicht nummeriert
-    \end{lstlisting}
+    \end{minted}
   \end{block}
   \begin{block}{Höhere Gliederungsebenen für \texttt{scrreprt} und \texttt{scrbook}}
-    \begin{lstlisting}
+    \begin{minted}{latex}
       \part{Überschrift}
       \chapter{Überschrift}
       \section{Überschrift}
-    \end{lstlisting}
+    \end{minted}
   \end{block}
 \end{frame}
 
 \begin{frame}[fragile]{Inhaltsverzeichnis}
   Aus den Gliederungselementen kann automatisch das Inhaltsverzeichnis erzeugt werden.
   \begin{block}{Inhaltsverzeichnis generieren}
-    \begin{lstlisting}
+    \begin{minted}{latex}
       \tableofcontents
       \newpage
-    \end{lstlisting}
+    \end{minted}
   \end{block}
 \end{frame}

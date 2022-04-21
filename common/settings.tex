@@ -13,37 +13,8 @@
   bottomtitle=-1mm,
   sharp corners,
   before upper={\raggedright},
-  before title={\raggedright\lstset{texcsstyle=*\color{white}}},
+  before title={\raggedright},
 }
-
-\lstset{
-  autogobble,
-  language={[LaTeX]TeX},
-  basicstyle=\ttfamily,
-  texcsstyle=*\color{vertexDarkRed},
-  keywordstyle=\color{cyan},
-  commentstyle=\color{darkgray},
-  otherkeywords={$,$, &, \{, \}, \[, \],  ^, _},
-  morekeywords={}, % do not remove even though empty
-  columns=fullflexible,
-  breaklines=true,
-  keepspaces=true,
-  showlines=true,
-  aboveskip=0pt,
-  belowskip=0pt,
-}
-
-\input{settings-lst-cs.tex}
-\input{settings-lst-literate.tex}
-
-% http://tex.stackexchange.com/a/267701/32665
-% "Rehook" literate char table.
-\makeatletter
-\lst@AddToHook{SelectCharTable}
-    {\ifx\lst@literate\@empty\else
-         \expandafter\lst@Literate\lst@literate{}\relax\z@
-     \fi}
-\makeatother
 
 \tikzset{
   invisible/.style={opacity=0,text opacity=0},
