@@ -13,7 +13,7 @@ arg = np.deg2rad(arg)
 x = np.linspace(150e3, 350e3, 1000)
 Z_theor = np.sqrt(R ** 2 + (L * x - 1 / (C * x)) ** 2)
 
-plt.figure(constrained_layout)
+plt.figure(constrained_layout=True)
 plt.plot(x * 1e-3, Z_theor, label="Theoriekurve")
 plt.plot(omega * 1e-3, Z, "x", label="Messwerte")
 plt.yscale("log")

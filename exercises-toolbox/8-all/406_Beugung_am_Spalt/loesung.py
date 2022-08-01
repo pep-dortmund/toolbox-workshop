@@ -26,7 +26,7 @@ A0, b = correlated_values(params, cov)
 print("A0 =", A0)
 print("b =", b)
 
-x = np.linspace(-0.03, 0.03, 100)0
+x = np.linspace(-0.03, 0.03, 100)
 plt.figure(constrained_layout=True)
 plt.plot(x, theory(x, *params), label="Fit")
 plt.plot(phi, I, "x", label="Daten")
