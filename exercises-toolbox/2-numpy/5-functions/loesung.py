@@ -24,7 +24,6 @@ print("\tnp.min(A):", np.min(A))
 print("\tnp.max(A):", np.max(A))
 
 
-
 B = np.array([[2, 1, 2, 1, 2], [1, 2, 1, 2, 1], [3, 1, 3, 1, 3]])
 
 print("Aufgabe 2)")

@@ -3,11 +3,12 @@ import numpy as np
 
 x = np.linspace(0, 1)
 
-plt.plot(x, x**2, label=r'$x^2$')
-plt.plot(x, x**5, 'x', label=r'$x^5$')
+plt.figure(constrained_layout=True)
 
-plt.legend(loc='best')
-plt.xlabel(r'$x$')
+plt.plot(x, x ** 2, label=r"$x^2$")
+plt.plot(x, x ** 5, "x", label=r"$x^5$")
 
-plt.tight_layout()
-plt.savefig('loesung.pdf')
+plt.legend(loc="best")
+plt.xlabel(r"$x$")
+
+plt.savefig("loesung.pdf")
