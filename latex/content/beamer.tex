@@ -53,7 +53,7 @@
       \end{description}
     \item \texttt{column}-Umgebung erzeugt Spalte, Breite ist Pflichtargument
   \end{itemize}
-  \begin{center}
+  \begin{CodeExample}{0.5}
     \begin{minted}{latex}
       \begin{columns}[onlytextwidth]
         \begin{column}{0.45\textwidth}
@@ -64,7 +64,16 @@
         \end{column}
       \end{columns}
     \end{minted}
-  \end{center}
+  \CodeResult
+    \begin{columns}[onlytextwidth]
+      \begin{column}{0.45\textwidth}
+        Hallo
+      \end{column}
+      \begin{column}{0.45\textwidth}
+        Welt
+      \end{column}
+    \end{columns}
+  \end{CodeExample}
 \end{BeamerCodeFrame}
 
 \begin{BeamerCodeFrame}[fragile]{Blöcke}

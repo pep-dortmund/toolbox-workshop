@@ -25,7 +25,7 @@
   \end{itemize}
 
   \begin{minted}{python}
-    plt.tight_layout(pad=0)
+    plt.figure(constrained_layout=True)
     plt.savefig(..., bbox_inches='tight', pad_inches=0)
   \end{minted}
   \begin{itemize}
@@ -70,15 +70,15 @@
   \vspace*{-1em}
 \end{frame}
 
-\begin{frame}[fragile]{Windows}
-  \begin{minted}{make}
-    build/document.pdf: ...
-        TEXINPUTS=build: ...
-
-    build/figures/mattex4.pdf: script/mattex4.py
-        TEXINPUTS=$(pwd): python script/mattex4.py
-  \end{minted}
-\end{frame}
+%\begin{frame}[fragile]{Windows}
+%  \begin{minted}{make}
+%    build/document.pdf: ...
+%        TEXINPUTS=build: ...
+%
+%    build/figures/mattex4.pdf: script/mattex4.py
+%        TEXINPUTS=$(pwd): python script/mattex4.py
+%  \end{minted}
+%\end{frame}
 
 \AddToShipoutPictureFG*{\ShowFramePicture}
 \begin{frame}{Ergebnis (4)}
