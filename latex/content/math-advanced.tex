@@ -38,7 +38,8 @@
   \doc{https://ftp.gwdg.de/pub/ctan/macros/latex/required/amsmath/amsldoc.pdf}{amsmath}
   \doc{http://mirrors.ctan.org/macros/latex/contrib/mathtools/mathtools.pdf}{mathtools}
 }
-  \begin{CodeExample}{0.70}[Matrizen (und damit Vektoren) werden fett geschrieben.]
+  \fontsize{8}{0.8\baselineskip}\selectfont
+  \begin{CodeExample}{0.65}[Matrizen (und damit Vektoren) werden fett geschrieben.]
     \begin{minted}{latex}
       \symbf{M}^\top     \symbf{M}^*
       \symbf{M}^\dagger  \symbf{M}^{-1}  M_{12}
@@ -49,8 +50,7 @@
     $\symbf{M}^\dagger \quad \symbf{M}^{-1} \quad M_{12}$
   \end{CodeExample}
 
-  \fontsize{8}{0.8\baselineskip}\selectfont
-  \begin{CodeExample}{0.70}[Verschiedene Klammern]
+  \begin{CodeExample}{0.65}[Verschiedene Klammern]
     \begin{minted}{latex}
       \begin{pmatrix} \begin{bmatrix} \begin{Bmatrix}
         x & y \\        -1 \\           -1 \\
@@ -73,7 +73,7 @@
       \end{Bmatrix}
     $
   \end{CodeExample}
-  \begin{CodeExample}{0.60}[Unterschiedliche Ausrichtung mit \mintinline{latex}+*+]
+  \begin{CodeExample}{0.65}[Unterschiedliche Ausrichtung mit \mintinline{latex}+*+]
     \begin{minted}{latex}
       \begin{pmatrix*}[l]     \begin{pmatrix*}[c]
          1 & -1 \\               1 & -1 \\
@@ -128,7 +128,7 @@
       $\displaystyle \lim_{x\to\infty} f(x)$
     \end{minipage} \\\nointerlineskip
     \begin{minipage}[t][2\baselineskip][t]{\textwidth}
-      $\displaystyle \lim_{\mathclap{x\to\infty}} f(x)$
+      $\displaystyle \; \lim_{\mathclap{x\to\infty}} f(x)$
     \end{minipage} \\\nointerlineskip
     \begin{minipage}[t][2\baselineskip][t]{\textwidth}
       $\displaystyle\sum_{i \in \{1, 2, 3, 4, 5\}} i$
@@ -157,7 +157,7 @@
   \begin{CodeExample}{0.55}
     \begin{minted}{latex}
       f(x) =
-      \begin{cases}
+      \begin{cases} % rcases zum Spiegeln
          x ,         & x \ge 0 \\
         \int_0^1 x , & \text{sonst}
       \end{cases}
