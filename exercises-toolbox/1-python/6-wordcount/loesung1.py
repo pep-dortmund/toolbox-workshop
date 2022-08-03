@@ -1,4 +1,4 @@
-with open('text.txt') as f:
+with open("text.txt") as f:
     words = f.read().split()
 
 counts = dict()

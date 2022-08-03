@@ -5,9 +5,9 @@ for x in data:
     avg += x
 avg = avg / len(data)
 
-print('Der Mittelwert ist ', avg)
+print("Der Mittelwert ist ", avg)
 
 # this is easier:
 avg = sum(data) / len(data)
 
-print('Der Mittelwert ist ', avg)
+print("Der Mittelwert ist ", avg)

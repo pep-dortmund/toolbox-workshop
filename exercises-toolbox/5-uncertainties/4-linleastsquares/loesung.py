@@ -5,7 +5,7 @@ import uncertainties.unumpy as unp
 
 
 def create_data():
-    ''' Create the data file '''
+    """Create the data file"""
     rng = np.random.default_rng()
     x = np.linspace(0, 2 * np.pi)
     y = 3 * np.sin(x) + 2 * np.cos(x) + rng.normal(0, 0.2, len(x))
@@ -30,7 +30,7 @@ def linear_combination(x, functions, params):
     return np.sum([p * f(x) for p, f in zip(params, functions)], axis=0)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     create_data()
 
     x, y = np.genfromtxt("daten.txt", unpack=True)
@@ -45,20 +45,20 @@ if __name__ == '__main__':
 
     for i, param in enumerate(params):
         # for ufloat formatting see https://pythonhosted.org/uncertainties/user_guide.html
-        print(f'p_{i} = {param:P}')
+        print(f"p_{i} = {param:P}")
 
     x_plot = np.linspace(-0.1, 2 * np.pi + 0.1, 100)
 
-    plt.errorbar(x,
-                 unp.nominal_values(y),
-                 yerr=unp.std_devs(y),
-                 fmt='k+',
-                 label="Daten")
-    plt.plot(x_plot,
-             unp.nominal_values(linear_combination(x_plot, functions, params)),
-             label="Fit")
-    plt.xlabel(r'$x$')
-    plt.ylabel(r'$y$')
+    plt.errorbar(
+        x, unp.nominal_values(y), yerr=unp.std_devs(y), fmt="k+", label="Daten"
+    )
+    plt.plot(
+        x_plot,
+        unp.nominal_values(linear_combination(x_plot, functions, params)),
+        label="Fit",
+    )
+    plt.xlabel(r"$x$")
+    plt.ylabel(r"$y$")
     plt.xlim(-0.1, 2 * np.pi + 0.1)
     plt.legend()
-    plt.savefig('loesung.pdf')
+    plt.savefig("loesung.pdf")

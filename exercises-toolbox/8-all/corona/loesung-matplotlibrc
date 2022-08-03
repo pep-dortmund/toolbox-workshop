@@ -1,5 +1,6 @@
 backend : pgf
 figure.figsize : 5.78, 3.57
+figure.constrained_layout.use : True
 font.family : serif
 font.size : 11
 legend.fontsize : medium

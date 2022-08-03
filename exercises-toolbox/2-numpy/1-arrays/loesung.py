@@ -4,13 +4,13 @@ import numpy as np
 
 a = np.zeros(shape=3)
 b = np.ones(shape=4)
-c = 2*np.ones(shape=5)
+c = 2 * np.ones(shape=5)
 d = np.array([2, 3, 5, 7, 11, 13, 17, 19])
 e = np.arange(0, 10)
 f = np.arange(0, 20, 2)
 g0 = np.linspace(0, 5, num=11)
 g1 = np.arange(0, 5.5, step=0.5)
-h = 3*np.ones(shape=(3, 3))
+h = 3 * np.ones(shape=(3, 3))
 
 
 array_names = ["a", "b", "c", "d", "e", "f", "g0", "g1", "h"]

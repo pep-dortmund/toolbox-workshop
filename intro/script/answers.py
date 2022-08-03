@@ -14,7 +14,7 @@ def operating_system(answers):
     os = pd.Series(liste).value_counts()
     os /= os.sum()
 
-    fig = plt.figure(figsize=(5.5, 3.3))
+    fig = plt.figure(figsize=(5.5, 3.3), constrained_layout=True)
     ax = fig.add_axes([0, 0, 1, 1], aspect=1)
     ax.pie(
         os.values,
@@ -37,7 +37,7 @@ def programming(answers):
     programming = programming.value_counts()
     programming /= programming.sum()
 
-    fig = plt.figure(figsize=(5.5, 3.3))
+    fig = plt.figure(figsize=(5.5, 3.3), constrained_layout=True)
     ax = fig.add_axes([0, 0, 1, 1], aspect=1)
     ax.pie(
         programming.values,
@@ -77,11 +77,10 @@ def languages(answers):
     )
     counts = pd.Series(languages.str.split(';').sum()).value_counts()
 
-    fig = plt.figure(figsize=(5.5, 3.3))
+    fig = plt.figure(figsize=(5.5, 3.3), constrained_layout=True)
     ax = fig.add_subplot(1, 1, 1)
 
     counts.sort_values(ascending=True).plot.barh(ax=ax, color='C1')
-    plt.tight_layout(pad=0)
     plt.savefig('build/figures/languages.pdf')
 
 
@@ -105,11 +104,10 @@ def interests(answers):
         inplace=True
     )
     interest = interest.value_counts()
-    fig, ax = plt.subplots(1, 1, figsize=(5.5, 3.3))
+    fig, ax = plt.subplots(1, 1, figsize=(5.5, 3.3), constrained_layout=True)
 
     interest.plot.barh(ax=ax)
 
-    fig.tight_layout()
     fig.savefig('build/figures/interest.pdf')
 
 
