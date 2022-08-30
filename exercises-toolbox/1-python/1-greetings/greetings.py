@@ -1,10 +1,7 @@
-names = ['World', 'Toolbox Workshop', 'Kevin']
+names = ["World", "Toolbox Workshop", "Kevin"]
 
 
 # hier ergänzen
-
-
-
 
 
 # Gewünschte Ausgabe:

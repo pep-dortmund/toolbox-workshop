@@ -10,6 +10,8 @@ def ucurve_fit(f, x, y, **kwargs):
     else:
         sigma = unp.std_devs(y)
 
-    popt, pcov = scipy.optimize.curve_fit(f, x, unp.nominal_values(y), sigma=sigma, **kwargs)
+    popt, pcov = scipy.optimize.curve_fit(
+        f, x, unp.nominal_values(y), sigma=sigma, **kwargs
+    )
 
     return unc.correlated_values(popt, pcov)

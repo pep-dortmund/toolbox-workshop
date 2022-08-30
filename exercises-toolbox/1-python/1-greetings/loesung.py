@@ -1,4 +1,4 @@
-names = ['World', 'Toolbox Workshop', 'Kevin']
+names = ["World", "Toolbox Workshop", "Kevin"]
 
 for name in names:
-    print('Hello ' + name)
+    print("Hello " + name)

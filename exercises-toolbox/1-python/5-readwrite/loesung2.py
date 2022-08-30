@@ -1,2 +1,2 @@
-with open('test.txt', 'w') as f:
+with open("test.txt", "w") as f:
     f.write(str(42))

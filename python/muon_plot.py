@@ -35,7 +35,7 @@ print("τ=", 1 / Lamb)
 t_plot = np.linspace(0, 11, 1000)
 y_plot = u_decay_with_background(t_plot, N0, Lamb, U)
 
-fig = plt.figure(figsize=(15 / 2.54, 10 / 2.54))
+fig = plt.figure(figsize=(15 / 2.54, 10 / 2.54), constrained_layout=True)
 ax = fig.add_subplot(1, 1, 1)
 
 data = ax.errorbar(
@@ -43,18 +43,18 @@ data = ax.errorbar(
     N,
     yerr=N_err,
     xerr=np.diff(t)[0] / 2,
-    color='k',
+    color="k",
     label="Messwerte",
-    ls='',
+    ls="",
     lw=1,
 )
-fit, = ax.plot(t_plot, nom(y_plot), 'r-', label="Fit", lw=1)
+(fit,) = ax.plot(t_plot, nom(y_plot), "r-", label="Fit", lw=1)
 
 ax.fill_between(
     t_plot,
     nom(y_plot) - 10 * std(y_plot),
     nom(y_plot) + 10 * std(y_plot),
-    color='r',
+    color="r",
     alpha=0.3,
     lw=0,
 )
@@ -71,18 +71,18 @@ ax.annotate(
     "Fit: scipy",
     xy=(t[50], N[50]),
     xytext=(t[50] + 0.5, N[50] + 30),
-    color='r',
+    color="r",
 )
 
 ax.annotate(
     "Fehlerrechnung: uncertainties",
     xy=(t[20], N[20]),
     xytext=(t[20] + 0.5, N[20] + 30),
-    color='r',
+    color="r",
     alpha=0.3,
 )
 
-proxy = Rectangle((0, 0), 0, 0, color='r', alpha=0.3, linewidth=0)
+proxy = Rectangle((0, 0), 0, 0, color="r", alpha=0.3, linewidth=0)
 
 ax.legend(
     [data, fit, proxy],
@@ -93,5 +93,4 @@ ax.set_xlabel(r"$t \mathbin{/} \unit{\micro\second}$")
 ax.set_ylabel(r"Zählrate")
 ax.set_xlim(0, 11)
 ax.set_ylim(-50, 500)
-fig.tight_layout()
-fig.savefig("build/muon_plot.png", dpi=150)
+fig.savefig("build/muon_plot.png", dpi=300)
