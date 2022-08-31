@@ -13,12 +13,12 @@ Aufgabe 2:
     \end{equation}
 
   b) Ladet nun die Option "locale=DE", wie ändert sich die Ausgabe?
-    Tipp: mit \sisetup{} lassen sich Optionen auch nach dem Laden
-    des Pakets einstellen.
+     Tipp: mit \sisetup{} lassen sich Optionen auch nach dem Laden
+     des Pakets einstellen.
   c) Ladet zusätzlich die Option "separate-uncertainty=true",
-	wie verändert sich die Ausgabe?
+	   wie verändert sich die Ausgabe?
   d) Ladet zusätzlich die Option "per-mode=symbol-or-fraction",
-    wie ändert sich die Ausgabe?
+     wie ändert sich die Ausgabe?
 
 Aufgabe 3:
   Vergleicht die Ausgaben von:
