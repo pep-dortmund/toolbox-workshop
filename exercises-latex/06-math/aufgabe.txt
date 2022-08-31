@@ -1,7 +1,7 @@
 Hinweis: Falls Ihr die hier benötigten Gesetze
          und Gleichungen nicht mehr wisst,
          werft einen Blick in das PDF der Musterlösung.
-         (Nicht in die .tex ;))
+         [Nicht in die .tex ;)]
 
 Aufgabe 1:
   Erstellt ein neues LaTeX Document.

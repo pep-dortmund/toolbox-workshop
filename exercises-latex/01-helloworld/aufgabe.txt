@@ -3,5 +3,4 @@ Aufgabe 1:
     "Hello, World!"
   enthält.
 
-  Nutzt dazu das vorgestellte "Gerüst" und kompiliert
-  mit lualatex.
+  Nutzt dazu die gestellte Datei `geruest.tex` und kompiliert mit lualatex.

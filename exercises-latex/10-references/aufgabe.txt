@@ -1,4 +1,4 @@
 Aufgabe:
-  Baue die Referenzen so in vorlage.tex ein, dass es so aussieht wie in loesung.pdf.
+  Baue die Referenzen so in `vorlage.tex` ein, dass es so aussieht wie in `loesung.pdf`.
 
 Hinweis: Achte darauf, dass die labels durch die Präfixe "sec, eqn, tab, fig" gut unterscheidbar sind.
