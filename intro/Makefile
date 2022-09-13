@@ -14,7 +14,7 @@ build/figures/nano.png: | build/figures
 	wget https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Gnu-nano.svg/480px-Gnu-nano.svg.png -O $@ --no-use-server-timestamps
 
 build/figures/code.png: | build/figures
-	wget https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Visual_Studio_Code_1.18_icon.svg/482px-Visual_Studio_Code_1.18_icon.svg.png -O $@ --no-use-server-timestamps
+	wget https://code.visualstudio.com/assets/images/code-stable.png -O $@ --no-use-server-timestamps
 
 build/figures/vim.png: | build/figures
 	wget https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/Vimlogo.svg/500px-Vimlogo.svg.png -O $@ --no-use-server-timestamps
