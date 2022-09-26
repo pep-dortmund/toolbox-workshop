@@ -30,7 +30,7 @@
     \CodeResult
     $(5{,}34 \pm 0{,}54) \cdot 10^{-3}\,\mathrm{GeV}$
   \end{CodeExample}
-  
+
   \onslide<2->{%
   \begin{center}
     \LARGE  Das muss einfacher gehen
@@ -63,7 +63,7 @@
 \end{frame}
 
 \begin{frame}[fragile]{\texttt{siunitx}: Zahlen mit \texttt{\backslash num}}
-  \begin{CodeExample}{0.7}[Zahlen mit automatischen 3er-Gruppen]
+  \begin{CodeExample}{0.74}[Zahlen mit automatischen 3er-Gruppen]
     \begin{minted}{latex}
       \num{1.23456}
       \num{987654321}
@@ -73,7 +73,7 @@
     \num{1.23456} \\
     \num{987654321}
   \end{CodeExample}
-  \begin{CodeExample}{0.7}[Einfaches Eingeben von 10er Potenzen]
+  \begin{CodeExample}{0.74}[Einfaches Eingeben von 10er Potenzen]
     \begin{minted}{latex}
       \num{6.022e23}
     \end{minted}
@@ -81,7 +81,7 @@
     \strut
     \num{6.022e23}
   \end{CodeExample}
-  \begin{CodeExample}{0.7}[Angabe von Unsicherheiten]
+  \begin{CodeExample}{0.74}[Angabe von Unsicherheiten]
     \begin{minted}{latex}
       \num{1.54 +- 0.1}
       \num{1.54(10)}
@@ -100,7 +100,7 @@
 \end{frame}
 
 \begin{frame}[fragile]{\texttt{siunitx}: Einheiten mit \texttt{\backslash unit}}
-  \begin{CodeExample}{0.8}[Einheiten]
+  \begin{CodeExample}{0.74}[Einheiten]
     \begin{minted}{latex}
       \unit{\meter\per\second}
       \unit[per-mode=fraction]{\meter\per\second}
@@ -116,7 +116,7 @@
     \unit[per-mode=reciprocal]{\gram\per\cubic\centi\meter} \\
     \unit{\kelvin\tothe{4}}
   \end{CodeExample}
-  \begin{CodeExample}{0.80}[\texttt{per-mode=symbol-or-fraction}]
+  \begin{CodeExample}{0.74}[\texttt{per-mode=symbol-or-fraction}]
     \begin{minted}{latex}
       \begin{equation}
         \unit{\kilo\gram\meter\per\second\squared}
@@ -132,7 +132,7 @@
     \end{minipage}
     $\unit{\kilo\gram\meter\per\second\squared}$
   \end{CodeExample}
-  \begin{CodeExample}{0.80}[Meter mal Sekunde oder Millisekunde?]
+  \begin{CodeExample}{0.74}[Meter mal Sekunde oder Millisekunde?]
     \begin{minted}{latex}
       \unit{\milli\second}
       \unit{\meter\second}
@@ -147,7 +147,7 @@
 \end{frame}
 
 \begin{frame}[fragile]{\texttt{siunitx}: Physikalische Größe, eine Zahl mit Einheit: \texttt{\backslash qty}}
-  \begin{CodeExample}{0.72}[\mintinline{latex}+\qty+ {=} Kombination aus \mintinline{latex}+\num+ und \mintinline{latex}+\unit+]
+  \begin{CodeExample}{0.74}[\mintinline{latex}+\qty+ {=} Kombination aus \mintinline{latex}+\num+ und \mintinline{latex}+\unit+]
     \begin{minted}{latex}
       \qty{5}{\percent}
       \qty{10}{\degreeCelsius}
@@ -163,19 +163,19 @@
     \item[1. Argument] Kann alles, was \mintinline{latex}+\num+ kann
     \item[2. Argument] Kann alles, was \mintinline{latex}+\unit+ kann
   \end{description}
-  \begin{CodeExample}{0.72}[Winkel]
+  \begin{CodeExample}{0.74}[Winkel]
     \begin{minted}{latex}
       \ang{5;;}
       \ang{;5;}
       \ang{;;5}
       \ang{5;55;}
-      \ang{5;55;59}
+      \ang{51;29;28}N \ang{7;24;48}E
     \end{minted}
   \CodeResult
     \strut\ang{5;;}\\
     \strut\ang{;5;}\\
     \strut\ang{;;5}\\
     \strut\ang{5;55;}\\
-    \strut\ang{5;55;59}\\
+    \strut\ang{51;29;28}N \, \ang{7;24;48}E\\
   \end{CodeExample}
 \end{frame}

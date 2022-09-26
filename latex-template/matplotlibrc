@@ -3,6 +3,7 @@ backend : pgf
 
 # Größe der Zeichenfläche in Zoll
 figure.figsize : 5.78, 3.57
+figure.constrained_layout.use : True
 
 # Serifenfont benutzen
 font.family : serif

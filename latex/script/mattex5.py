@@ -13,6 +13,5 @@ y = x ** np.sin(x)
 
 plt.plot(x, y)
 plt.xlabel(r'$\alpha \mathbin{/} \unit{\ohm}$')
-# in matplotlibrc leider (noch) nicht möglich
-plt.tight_layout(pad=0, h_pad=1.08, w_pad=1.08)
-plt.savefig('build/figures/mattex5.pdf')
+
+plt.savefig('build/figures/mattex5.pdf', bbox_inches='tight', pad_inches=0)

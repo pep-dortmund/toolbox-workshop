@@ -38,6 +38,14 @@
   \end{frame}
 }
 
+\makeatletter
+\patchcmd{\beamer@sectionintoc}
+  {\vfill}
+  {\vskip\itemsep}
+  {}
+  {}
+\makeatother
+
 \begin{document}
 
 \maketitle
@@ -81,8 +89,8 @@
 \input{content/footnotes.tex}
 \input{content/bibliography.tex}
 \input{content/advanced.tex}
-\input{content/tlmgr.tex}
 \input{content/latexmk.tex}
+\input{content/tlmgr.tex}
 \input{content/matplotlib.tex}
 \input{content/beamer.tex}
 \input{content/tikz.tex}
