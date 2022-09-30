@@ -68,3 +68,4 @@ upquote
 lineno
 catchfile
 framed
+pdfcol
