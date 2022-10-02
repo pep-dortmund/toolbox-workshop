@@ -2,7 +2,7 @@
 
 1. Aufgabe:
 Öffne die Datei "fstrings.py".
-In dieser befinden sich der Titel eines Vesuchs, das Datum an dem der
+In dieser befinden sich der Titel eines Versuchs, das Datum an dem der
 Versuch durchgeführt wurde und zwei Listen mit Messwerten.
 Ziel ist es zunächst die Ausgabe einer Überschrift mit dem 
 Versuchstitle und dem Datum zu erzeugen.
@@ -38,7 +38,7 @@ String-Formatierung bedeutet, dass man in einem einzelnen String vorgibt, wo und
 die Werte von Variablen eingesetzt werden sollen. Man gibt also die Formatierung der Ausgabe vor.
 Die neuste Möglichkeit zur String-Formatierung sind sogenannte f-strings.
 
-Ersätze die vorherigen Argumente der Funktion print() druch einen f-string der die selbe Ausgabe
+Ersetze die vorherigen Argumente der Funktion print() durch einen f-string der die selbe Ausgabe
 erzeugt. Ein leerer f-string mit ist bereits eingetragen, Änderungen müssen nur zwischen die 
 Anführungszeichen eingetragen werden.
 

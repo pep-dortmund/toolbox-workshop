@@ -29,7 +29,7 @@ L = 1 H
 
 ## Aufgabe 4
 
-Stellt mithilfe von Tikz die Bragg-Bedingung dar
+Stellt mithilfe von Tikz die Bragg-Bedingung dar.
 
 ## Aufgabe 5
 

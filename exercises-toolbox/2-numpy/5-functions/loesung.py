@@ -75,7 +75,7 @@ sum_per_person = np.sum(data, axis=0)
 print("\nSumme pro Person:", sum_per_person)
 
 mean_per_person = np.mean(data, axis=0)
-print("\nÜber die Tage gemittele Ausgaben pro Person:\n", mean_per_person)
+print("\nÜber die Tage gemittelte Ausgaben pro Person:\n", mean_per_person)
 
 sum_data = np.sum(data)
 print("\nGesamtsumme:", sum_data)
@@ -105,7 +105,7 @@ sum_per_person = np.sum(data, axis=0, keepdims=True)
 print("\nSumme pro Person:", sum_per_person)
 
 mean_per_person = np.mean(data, axis=0, keepdims=True)
-print("\nÜber die Tage gemittele Ausgaben pro Person:\n", mean_per_person)
+print("\nÜber die Tage gemittelte Ausgaben pro Person:\n", mean_per_person)
 
 sum_data = np.sum(data, keepdims=True)
 print("\nGesamtsumme:", sum_data)

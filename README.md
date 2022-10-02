@@ -30,7 +30,7 @@ The lecture material (e.g. jupyter notebooks) are shared under the Creative Comm
 
 ## Installation
 
-For TeXLive and anaconda, follow the installtion instruction on
+For TeXLive and anaconda, follow the installation instruction on
 http://toolbox.pep-dortmund.org/install
 
 Create the environment with the required packages using

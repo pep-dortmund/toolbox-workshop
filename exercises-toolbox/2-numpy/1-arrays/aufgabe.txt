@@ -13,7 +13,7 @@ es ist hauptsächlich wichtig, dass die Arrays die geforderte Gestalt haben.
     d) Erzeuge ein Array mit den ersten 8 Primzahlen.
     e) Erzeuge ein Array mit den ganzen Zahlen von 0 bis 9.
     f) Erzeuge ein Array mit geraden ganzen Zahlen von 0 bis 18.
-    g) Erzeuge ein Array mit elf Zahlen von 0 bis 5 im gleichen Abstand von einander. (Hierfür gibts zwei Möglichkeiten.)
+    g) Erzeuge ein Array mit elf Zahlen von 0 bis 5 im gleichen Abstand von einander. (Hierfür gibt es zwei Möglichkeiten.)
     h) Erzeuge ein Array mit der Dimension 3x3 mit allen Einträgen gleich 3.
 
 

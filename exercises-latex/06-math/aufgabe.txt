@@ -23,7 +23,7 @@ Aufgabe 4:
   Dabei sollen jeweils die homogenen bzw. die inhomogen
   Gleichungen in einer Zeile stehen und die Gleichungen für
   E bzw. B untereinander.
-  Richtet die Gleichungen jeweils Vertikal am Gleicheitszeichen aus.
+  Richtet die Gleichungen jeweils Vertikal am Gleichheitszeichen aus.
 
 Aufgabe 5:
   Leitet aus den Maxwellgleichungen im Vakuum die Wellengleichung

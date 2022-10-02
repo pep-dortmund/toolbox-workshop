@@ -38,7 +38,7 @@ zu haben wie das ganze funktioniert.
 
 3) In der Datei einkauf.txt sind die Kosten für die Einkäufe einer
    Studenten-WG eingetragen. Jeder der fünf Mitbewohner hält darin
-   für jeden Tag des Monats fest, wie viel er ausgegben hat.
+   für jeden Tag des Monats fest, wie viel er ausgegeben hat.
 
    a) Wie viel hat jeder Mitbewohner in diesem Monat insgesamt (im Mittel) ausgegeben.
       Wie viel haben alle fünf zusammen in diesem Monat ausgegeben.
