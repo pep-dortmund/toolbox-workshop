@@ -55,19 +55,25 @@
 \end{frame}
 
 \begin{frame}[fragile]{\texttt{header-matplotlib.tex}}
-  \inputminted{latex}{header-matplotlib.tex}
-
-  \vspace*{-0.5em}
-  \begin{itemize}
-    \item \TeX\ wird von \texttt{matplotlib} in \texttt{/tmp} ausgeführt
+  \begin{columns}[onlytextwidth]%
+    \begin{column}{0.35\textwidth}%
+      \small
+      \inputminted{latex}{header-matplotlib.tex}
+    \end{column}%
+    \hfill%
+    \begin{column}{0.645\textwidth}%
       \begin{itemize}
-        \item Datei kann nicht gefunden werden
+        \item \TeX\ wird von \texttt{matplotlib} in \texttt{/tmp} ausgeführt
+          \begin{itemize}
+            \item Datei kann nicht gefunden werden
+          \end{itemize}
+        \item Lösung: \texttt{TEXINPUTS} setzen!
+        \item \texttt{TEXINPUTS=\$(pwd): python script/mattex4.py}
+        \item \texttt{Makefile}:\\
+          \texttt{TEXINPUTS=\$\$(pwd): python script/mattex4.py}
       \end{itemize}
-    \item Lösung: \texttt{TEXINPUTS} setzen!
-    \item \texttt{TEXINPUTS=\$(pwd): python script/mattex4.py}
-    \item \texttt{Makefile}: \texttt{TEXINPUTS=\$\$(pwd): python script/mattex4.py}
-  \end{itemize}
-  \vspace*{-1em}
+    \end{column}%
+  \end{columns}%
 \end{frame}
 
 %\begin{frame}[fragile]{Windows}
