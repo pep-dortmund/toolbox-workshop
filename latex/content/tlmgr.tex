@@ -8,6 +8,20 @@
     \item Neue Pakete installieren, updaten, suchen, ...
   \end{itemize}
 
+
+  \begin{block}{Updates installieren}
+    \begin{center}
+      \texttt{tlmgr update --self --all --forcibly-removed}
+    \end{center}
+  \end{block}
+\end{frame}
+
+\begin{frame}[fragile]{
+  \texttt{tlmgr} - \TeX Live (Paket) Manager
+}
+  Besonders wichtig, wenn man nicht das ganze TeX-Live installiert hat,
+  um Platz zu sparen.
+
   \begin{block}{Ein neues Paket installieren}
     Wenn man die Dokumentation auch haben möchte, \texttt{--with-doc} nutzen:
     \begin{center}
@@ -15,8 +29,13 @@
     \end{center}
   \end{block}
 
-  \begin{block}{Welches Paket muss ich installieren?}
+  \begin{block}{Dokumentation für ein bereits installiertes Paket installieren}
+    \begin{center}
+      \texttt{tlmgr install --with-doc --reinstall <name>}
+    \end{center}
+  \end{block}
 
+  \begin{block}{Welches Paket muss ich installieren?}
     \begin{center}
       \texttt{tlmgr search --global --file booktabs.sty}
     \end{center}
@@ -24,13 +43,4 @@
 
     Hilfreich bei Fehlermeldungen wie \texttt{booktabs.sty not found}.
   \end{block}
-
-  \begin{block}{Updates installieren}
-    \begin{center}
-      \texttt{tlmgr update --self --all --forcibly-removed}
-    \end{center}
-  \end{block}
-
-  Besonders wichtig, wenn man nicht das ganze TeX-Live installiert hat,
-  um Platz zu sparen.
 \end{frame}
