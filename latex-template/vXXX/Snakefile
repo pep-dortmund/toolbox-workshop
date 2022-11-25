@@ -4,7 +4,7 @@ rule all:
     input:
         f"build/v{number}.pdf"
 
-rule BUILD:
+rule build:
     input:
         ancient("build")
     output:
@@ -29,7 +29,7 @@ rule latex:
     shell:
         f"TEXINPUTS=..: BIBINPUTS=..: max_print_line=1048576 latexmk --lualatex --output-directory=build --interaction=nonstopmode --halt-on-error v{number}.tex"
 
-rule CLEAN:
+rule clean:
     input:
         "build/"
     shell:

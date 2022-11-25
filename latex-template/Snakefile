@@ -1,0 +1,7 @@
+rule all:
+    shell:
+        "snakemake -c1 -s vXXX/Snakefile -d vXXX"
+
+rule clean:
+    shell:
+        "snakemake -c1 -s vXXX/Snakefile -d vXXX clean"
