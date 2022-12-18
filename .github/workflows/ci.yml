@@ -45,3 +45,16 @@ jobs:
       - name: check for errors
         if: always()
         run: "! grep -R --include='*.log' '^!' -A 5 -B 5"
+
+      - name: Prepare Upload
+        run: |
+          mkdir toolbox-material
+          cp **/build/*.pdf toolbox-material
+          cp **/build/*.zip toolbox-material
+          ls -lh toolbox-material
+
+      - uses: actions/upload-artifact@v3
+        name: Upload Material
+        with:
+          name: Toolbox Material
+          path: toolbox-material/*
