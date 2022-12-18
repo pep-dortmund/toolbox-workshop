@@ -29,7 +29,7 @@ jobs:
           export PATH="$HOME/texlive/$TEXLIVE_VERSION/bin/x86_64-linux:$PATH"
           tlmgr install --with-doc tex-overview
 
-          curl -LO L https://www.wfonts.com/download/data/2014/06/05/comic-sans-ms/comic-sans-ms.zip
+          curl -LO https://www.wfonts.com/download/data/2014/06/05/comic-sans-ms/comic-sans-ms.zip
           unzip comic-sans-ms.zip -d $HOME/.local/share/fonts
           rm comic-sans-ms.zip
           fc-cache
