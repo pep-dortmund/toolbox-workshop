@@ -1,7 +1,28 @@
 rule all:
-    shell:
-        "snakemake -c1 -s vXXX/Snakefile -d vXXX"
+    input:
+        "vXXX/build/vXXX.pdf"
 
-rule clean:
+rule create_plot:
+    input:
+        "v{number}/plot.py"
+    output:
+        "v{number}/build/plot.pdf",
+        directory("v{number}/build")
     shell:
-        "snakemake -c1 -s vXXX/Snakefile -d vXXX clean"
+        "TEXINPUTS=$(pwd)/.: MATPLOTLIBRC=matplotlibrc python {input}"
+
+rule create_pdf:
+    input:
+        "v{number}/v{number}.tex",
+        directory("v{number}/build"),
+        "v{number}/build/plot.pdf"
+    output:
+        "v{number}/build/v{number}.pdf"
+    shell:
+        """
+        TEXINPUTS=..: BIBINPUTS=..: max_print_line=1048576 latexmk \
+         --lualatex \
+         --output-directory={input[1]} \
+         --interaction=nonstopmode \
+         --halt-on-error {input[0]}
+        """
