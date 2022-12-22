@@ -16,4 +16,4 @@ plt.xlabel(r"$\alpha \mathbin{/} \unit{\ohm}$")
 plt.ylabel(r"$y \mathbin{/} \unit{\micro\joule}$")
 plt.legend(loc="best")
 
-plt.savefig("vXXX/build/plot.pdf")
+plt.savefig("build/plot.pdf")

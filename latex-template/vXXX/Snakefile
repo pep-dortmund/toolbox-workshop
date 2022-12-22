@@ -1,0 +1,29 @@
+rule all:
+    input:
+        "build/vXXX.pdf"
+
+rule create_plot:
+    input:
+        "plot.py"
+    output:
+        "build/plot.pdf"
+    shell:
+        """
+        TEXINPUTS=$(pwd)/..: MATPLOTLIBRC=../matplotlibrc python {input}
+        """
+
+rule create_pdf:
+    input:
+        "v{number}.tex",
+        "build",
+        "build/plot.pdf"
+    output:
+        "build/v{number}.pdf"
+    shell:
+        """
+        TEXINPUTS=..: BIBINPUTS=..: max_print_line=1048576 latexmk \
+         --lualatex \
+         --output-directory={input[1]} \
+         --interaction=nonstopmode \
+         --halt-on-error {input[0]}
+        """
