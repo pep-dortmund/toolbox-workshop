@@ -15,7 +15,6 @@ rule create_plot:
 rule create_pdf:
     input:
         "v{number}.tex",
-        "build",
         "build/plot.pdf"
     output:
         "build/v{number}.pdf"
@@ -23,7 +22,11 @@ rule create_pdf:
         """
         TEXINPUTS=..: BIBINPUTS=..: max_print_line=1048576 latexmk \
          --lualatex \
-         --output-directory={input[1]} \
+         --output-directory=build \
          --interaction=nonstopmode \
          --halt-on-error {input[0]}
         """
+
+rule clean:
+    shell:
+        "rm -rf build/"
