@@ -29,6 +29,13 @@ jobs:
           export PATH="$HOME/texlive/$TEXLIVE_VERSION/bin/x86_64-linux:$PATH"
           tlmgr install --with-doc tex-overview
 
+          curl -LO https://www.wfonts.com/download/data/2014/06/05/comic-sans-ms/comic-sans-ms.zip
+          unzip comic-sans-ms.zip -d $HOME/.local/share/fonts
+          rm comic-sans-ms.zip
+          fc-cache
+          fc-list 'Comic Sans MS' | grep Comic
+
+
           # generate the lualatex font cache, otherwise it is done in parallel when calling make
           luaotfload-tool --update --force
 
@@ -45,3 +52,16 @@ jobs:
       - name: check for errors
         if: always()
         run: "! grep -R --include='*.log' '^!' -A 5 -B 5"
+
+      - name: Prepare Upload
+        run: |
+          mkdir toolbox-material
+          cp **/build/*.pdf toolbox-material
+          cp **/build/*.zip toolbox-material
+          ls -lh toolbox-material
+
+      - uses: actions/upload-artifact@v3
+        name: Upload Material
+        with:
+          name: Toolbox Material
+          path: toolbox-material/*
