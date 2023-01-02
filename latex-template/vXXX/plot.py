@@ -14,6 +14,6 @@ plt.subplot(1, 2, 2)
 plt.plot(x, y, label="Kurve")
 plt.xlabel(r"$\alpha \mathbin{/} \unit{\ohm}$")
 plt.ylabel(r"$y \mathbin{/} \unit{\micro\joule}$")
-plt.legend(loc="best")
+plt.legend()
 
 plt.savefig("build/plot.pdf")

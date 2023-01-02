@@ -15,6 +15,6 @@ x, y, z = var("x y z")
 
 Q = x ** 2 * sin(y) + z
 
-print(Q.diff(x))
-print(Q.diff(y))
-print(Q.diff(z))
+print(f"d/dx {Q} = {Q.diff(x)}")
+print(f"d/dy {Q} = {Q.diff(y)}")
+print(f"d/dz {Q} = {Q.diff(z)}")

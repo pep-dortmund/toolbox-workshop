@@ -8,7 +8,7 @@ np.savetxt("3.txt", np.column_stack([data_x, data_y]), header="x y")
 
 x, y = np.genfromtxt("3.txt", unpack=True)
 
-plt.figure(constrained_layout=True)
+plt.figure(layout="constrained")
 
 plt.subplot(1, 2, 1)
 plt.plot(x, y, ".")

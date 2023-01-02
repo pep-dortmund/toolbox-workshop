@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 
 x = np.linspace(0, 2 * np.pi, 100)
 
-plt.figure(constrained_layout=True)
+plt.figure(layout="constrained")
 
 for A in (-1, -0.5, 0.5, 1):
     plt.plot(x, A * np.cos(x), label=f"$A = {A}$")
