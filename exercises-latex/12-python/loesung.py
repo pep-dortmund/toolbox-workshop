@@ -45,7 +45,7 @@ plt.plot(t_plot * 1e3, f(t_plot, *noms(params)) * 1e-3, '-', label='Fit')
 plt.xlim(t_plot[0] * 1e3, t_plot[-1] * 1e3)
 plt.xlabel(r'$t \mathbin{/} \unit{\milli\second}$')
 plt.ylabel(r'$U \mathbin{/} \unit{\kilo\volt}$')
-plt.legend(loc='best')
+plt.legend()
 plt.savefig('build/loesung-plot.pdf')
 
 t1, t2 = np.array_split(t * 1e3, 2)
