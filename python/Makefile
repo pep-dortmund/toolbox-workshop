@@ -3,7 +3,7 @@ include ../common/common.mk
 all: $(addprefix build/, $(patsubst %.ipynb, %.html, $(wildcard *.ipynb)))
 
 
-# build/python.html: build/muon_plot.png
+build/python.html: build/muon_plot.png
 
 build/%.html: %.ipynb
 	jupyter-nbconvert --output-dir=build --execute --allow-errors --to html --template classic $<
