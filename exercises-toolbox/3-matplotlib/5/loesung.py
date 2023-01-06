@@ -14,7 +14,13 @@ plt.xlabel(r"$x$")
 
 plt.xticks(
     np.arange(0, 2.1 * np.pi, np.pi / 2),
-    [r"$0$", r"$\frac{1}{2}\pi$", r"$\pi$", r"$\frac{3}{2}\pi$", r"$2\pi$"],
+    [
+        r"$0$",
+        r"$\frac{1}{2}\pi$",
+        r"$\pi$", 
+        r"$\frac{3}{2}\pi$",
+        r"$2\pi$"
+    ],
 )
 
 plt.legend()
