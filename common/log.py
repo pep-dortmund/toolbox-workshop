@@ -13,33 +13,33 @@ lines.reverse()
 def parse_path_page(lines):
     global paths, pages, page
     parts = [
-        r'\)',
+        r"\)",
         r'\(([^ "()]+|"[^"]+")',
-        r'\[[0-9]*',
-        r'\]',
-        r'<[^>]*>',
-        r'\{[^}]*\}',
-        r'\((using write cache|using read cache|load luc): [^)]*\)',
-        r'ABD: EveryShipout initializing macros',
+        r"\[[0-9]*",
+        r"\]",
+        r"<[^>]*>",
+        r"\{[^}]*\}",
+        r"\((using write cache|using read cache|load luc): [^)]*\)",
+        r"ABD: EveryShipout initializing macros",
         r'luatex-hyphen: using data file: ([^ ")]+|"[^"]+")',
-        r'luatex-hyphen: info: no hyphenation exceptions for this language',
-        r'luatex-hyphen: loading patterns and exceptions for: [^ ]+ \([^)]+\)',
-        r'(Inserting (`|\')[^\']+\' )?at position [0-9]+ in (`|\')[^\']+\'\.?',
-        r'Removing  (`|\')[^\']+\' from (`|\')[^\']+\'\.?',
-        r'luaotfload \| db : Font names database loaded from [^(]+',
-        r'luaotfload \| load : Lookup/name: [^(]+',
-        r'Lua module: [^()[\]]+',
+        r"luatex-hyphen: info: no hyphenation exceptions for this language",
+        r"luatex-hyphen: loading patterns and exceptions for: [^ ]+ \([^)]+\)",
+        r"(Inserting (`|\')[^\']+\' )?at position [0-9]+ in (`|\')[^\']+\'\.?",
+        r"Removing  (`|\')[^\']+\' from (`|\')[^\']+\'\.?",
+        r"luaotfload \| db : Font names database loaded from [^(]+",
+        r"luaotfload \| load : Lookup/name: [^(]+",
+        r"Lua module: [^()[\]]+",
     ]
-    if not re.match(r'^ ?(({}) ?)+$'.format('|'.join(parts)), lines[-1]):
+    if not re.match(r"^ ?(({}) ?)+$".format("|".join(parts)), lines[-1]):
         return None
     line = lines.pop()
     for match in re.findall(r'\)|\((?:[^ "()]+|"[^"]+")|\[[0-9]+|\]', line):
-        if match == ")" and len(paths) > 1: # should not happen
+        if match == ")" and len(paths) > 1:  # should not happen
             paths.pop()
         elif match[0] == "(":
             paths.append(match[1:].strip('"'))
         elif match == "]":
-            if page is not None: # this can happen: there are also empty []
+            if page is not None:  # this can happen: there are also empty []
                 pages.append(int(page))
             page = None
         elif match[0] == "[":
@@ -48,7 +48,7 @@ def parse_path_page(lines):
 
 
 def parse_latex2_error(lines):
-    match = re.match(r'^! (?:LaTeX|Class|Package) (?:([^ ]+) )?Error: ', lines[-1])
+    match = re.match(r"^! (?:LaTeX|Class|Package) (?:([^ ]+) )?Error: ", lines[-1])
     if not match:
         return None
     message = [lines.pop()]
@@ -58,9 +58,9 @@ def parse_latex2_error(lines):
         if not line:
             empties += 1
         if line.rstrip() == " ...":
-            message.pop() # See the first-argument package documentation for explanation.
-            message.pop() # Type  H <return>  for immediate help.
-            message.pop() # empty
+            message.pop()  # See the first-argument package documentation for explanation.
+            message.pop()  # Type  H <return>  for immediate help.
+            message.pop()  # empty
         else:
             message.append(line)
     message.pop()
@@ -71,13 +71,17 @@ def parse_latex2_error(lines):
 
 
 def parse_latex2(lines):
-    match = re.match(r'^(?:LaTeX|Class|Package) (?:([^ ]+) )?(Warning|Info): ', lines[-1])
+    match = re.match(
+        r"^(?:LaTeX|Class|Package) (?:([^ ]+) )?(Warning|Info): ", lines[-1]
+    )
     if not match:
         return None
     if match.groups()[0]:
         continuation = "({})".format(match.groups()[0])
     else:
-        continuation = " " * len(match.string[match.start():match.end()])  # LaTeX (Warning|Info)
+        continuation = " " * len(
+            match.string[match.start() : match.end()]
+        )  # LaTeX (Warning|Info)
     message = [lines.pop()]
     while lines[-1].startswith(continuation):
         message.append(lines.pop())
@@ -88,7 +92,7 @@ def parse_latex2(lines):
 
 
 def parse_latex3_error(lines):
-    if lines[-1] != r'!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!':
+    if lines[-1] != r"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!":
         return None
     lines.pop()
     lines.pop()
@@ -101,7 +105,7 @@ def parse_latex3_error(lines):
             continue
         if line in [
             "|'''''''''''''''''''''''''''''''''''''''''''''''",
-            "|..............................................."
+            "|...............................................",
         ]:
             continue
         if line[:2] in ["! ", "| "]:
@@ -115,8 +119,8 @@ def parse_latex3_error(lines):
 
 def parse_latex3(lines):
     types = {
-        r'*************************************************': "warning",
-        r'.................................................': "info",
+        r"*************************************************": "warning",
+        r".................................................": "info",
     }
     if lines[-1] not in types:
         return None
@@ -132,7 +136,7 @@ def parse_latex3(lines):
 
 
 def parse_tex_error(lines):
-    if not re.match(r'^!', lines[-1]):
+    if not re.match(r"^!", lines[-1]):
         return None
     message = [lines.pop()]
     while lines and lines[-1]:
@@ -144,7 +148,7 @@ def parse_tex_error(lines):
 
 
 def parse_box(lines):
-    if not re.match(r'^(?:Over|Under)full \\(?:h|v)box', lines[-1]):
+    if not re.match(r"^(?:Over|Under)full \\(?:h|v)box", lines[-1]):
         return None
     message = [lines.pop()]
     if "paragraph" in message[0]:
@@ -183,9 +187,9 @@ while lines:
         lines.pop()
 
 if paths:
-    print('log.py: paths non-empty: ' + str(paths))
+    print("log.py: paths non-empty: " + str(paths))
 if page:
-    print('log.py: page non-None: ' + str(page))
+    print("log.py: page non-None: " + str(page))
 
 
 def filter_info(message):
@@ -196,15 +200,19 @@ def filter_info(message):
 
 def filter_unicode_math_mathtools(message):
     if message["type"] == "latex3/warning" and message["message"][0] in [
-            r'unicode-math warning: "mathtools-colon"',
-            r'unicode-math warning: "mathtools-overbracket"',
-        ]:
+        r'unicode-math warning: "mathtools-colon"',
+        r'unicode-math warning: "mathtools-overbracket"',
+    ]:
         return None
     return message
 
 
 def filter_biblatex_footnotes(message):
-    if message["type"] == "latex2/warning" and message["message"][0] == r'Package biblatex Warning: Patching footnotes failed.':
+    if (
+        message["type"] == "latex2/warning"
+        and message["message"][0]
+        == r"Package biblatex Warning: Patching footnotes failed."
+    ):
         return None
     return message
 
@@ -212,30 +220,44 @@ def filter_biblatex_footnotes(message):
 def filter_latex2_rerun_tex(message):
     global exit_code
     warnings = [
-        r'^LaTeX Warning: Label\(s\) may have changed\. Rerun to get cross-references right\.$',
+        r"^LaTeX Warning: Label\(s\) may have changed\. Rerun to get cross-references right\.$",
         r"^Package rerunfilecheck Warning: File `[^']+' has changed\.( Rerun\.)?$",
-        r'^Package biblatex Warning: Please rerun LaTeX\.$',
+        r"^Package biblatex Warning: Please rerun LaTeX\.$",
     ]
-    if message["type"] == "latex2/warning" and any(re.match(warning, message["message"][0]) for warning in warnings):
+    if message["type"] == "latex2/warning" and any(
+        re.match(warning, message["message"][0]) for warning in warnings
+    ):
         exit_code |= 2
     return message
 
 
 def filter_biblatex_rerun_biber(message):
     global exit_code
-    if message["type"] == "latex2/warning" and message["message"][0] == r'Package biblatex Warning: Please (re)run Biber on the file:':
+    if (
+        message["type"] == "latex2/warning"
+        and message["message"][0]
+        == r"Package biblatex Warning: Please (re)run Biber on the file:"
+    ):
         exit_code |= 4
     return message
 
 
 def filter_csquotes_polyglossia(message):
-    if message["type"] == "latex2/warning" and message["message"][0] == "Package csquotes Warning: Using preliminary 'polyglossia' interface.":
+    if (
+        message["type"] == "latex2/warning"
+        and message["message"][0]
+        == "Package csquotes Warning: Using preliminary 'polyglossia' interface."
+    ):
         return None
     return message
 
 
 def filter_caption_compatibility(message):
-    if message["type"] == "latex2/warning" and message["message"][0] == "Package caption Warning: Forced redefinition of \caption since the":
+    if (
+        message["type"] == "latex2/warning"
+        and message["message"][0]
+        == "Package caption Warning: Forced redefinition of \caption since the"
+    ):
         return None
     return message
 
@@ -262,13 +284,15 @@ for message in messages_copy:
     else:
         messages.append(message)
 
+
 def relativise_path(path):
-    if path.startswith('./'):
+    if path.startswith("./"):
         path = path[2:]
     if not os.path.isabs(path):
         return path
     rel = os.path.relpath(os.path.abspath(path))
     return path if "../.." in rel else rel
+
 
 for message in messages:
     if message["path"] is not None:
