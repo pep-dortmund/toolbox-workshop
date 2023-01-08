@@ -5,7 +5,7 @@ x = ufloat(4.56, 0.2)
 y = ufloat(2.11, 0.3)
 z = ufloat(10, 1)
 
-Q = x ** 2 * sin(y) + z
+Q = x**2 * sin(y) + z
 
 print(f"Q = {Q}")
 
@@ -13,7 +13,7 @@ from sympy import var, sin
 
 x, y, z = var("x y z")
 
-Q = x ** 2 * sin(y) + z
+Q = x**2 * sin(y) + z
 
 print(f"d/dx {Q} = {Q.diff(x)}")
 print(f"d/dy {Q} = {Q.diff(y)}")

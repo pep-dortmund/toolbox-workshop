@@ -5,11 +5,11 @@ import uncertainties.unumpy as unp
 
 
 def ucurve_fit(f, x, y, **kwargs):
-    '''
+    """
     Uncertainties wrapper around curve_fit
     y can be a uarray with uncertainties
     and the parameters are returned as uncertainties.correlated_values
-    '''
+    """
     if np.any(unp.std_devs(y) == 0):
         sigma = None
     else:
