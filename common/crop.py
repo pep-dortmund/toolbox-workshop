@@ -30,7 +30,7 @@ if len(s) > 3:
 print(r"pdfseparate -f {0} -l {0} {1} {2}".format(page, source, out_file))
 p = subprocess.Popen(["pdfseparate", "-f", page, "-l", page, source, out_file], stdout=subprocess.PIPE)
 p.communicate()
-print(r"pdfcrop2.pl --mode absolute --margins "{0}" {1} {1}".format(box, out_file))
+print(r"pdfcrop2.pl --mode absolute --margins '{0}' {1} {1}".format(box, out_file))
 p = subprocess.Popen(["perl", pdfcrop, "--mode", "absolute", "--margins", box, out_file, out_file], stdout=subprocess.PIPE)
 p.communicate()
 if auto:
