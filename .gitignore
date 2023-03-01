@@ -1,4 +1,5 @@
 .snakemake
+test.txt
 build
 .ipynb_checkpoints
 *.pyc
