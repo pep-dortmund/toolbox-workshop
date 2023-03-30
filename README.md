@@ -23,8 +23,8 @@ The lecture material (e.g. jupyter notebooks) are shared under the Creative Comm
 
 # Build Requirements
 
-- up-to-date TeXLive 2022
-- up-to-date anaconda3 (using python 3.9) or miniconda with packages in `environment.yml`
+- up-to-date TeXLive 2023
+- up-to-date anaconda3 (using python 3.10) or miniconda with packages in `environment.yml`
 - poppler (for pdfseparate)
 - wget
 
