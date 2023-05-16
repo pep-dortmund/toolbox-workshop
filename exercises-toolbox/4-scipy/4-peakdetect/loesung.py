@@ -22,7 +22,7 @@ print(parameters_max, np.sqrt(np.diag(pcov_max)), sep="\n")
 parameters_min, pcov_min = curve_fit(e, t[mins], U[mins])
 print(parameters_min, np.sqrt(np.diag(pcov_min)), sep="\n")
 
-plt.figure(constrained_layout=True)
+plt.figure(layout="constrained")
 
 plt.plot(t, U, "k-", label="Gedämpfte Schwingung")
 
@@ -34,6 +34,6 @@ plt.plot(t[mins], U[mins], "o", color="C1", label="Minima")
 
 plt.xlabel(r"$t \ / \ \mathrm{ms}$")
 plt.ylabel(r"$U \ / \ \mathrm{V}$")
-plt.legend(loc="best")
+plt.legend()
 plt.xlim(0, 0.3)
 plt.savefig("loesung.pdf")

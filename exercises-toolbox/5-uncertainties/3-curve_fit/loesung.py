@@ -11,12 +11,7 @@ def ucurve_fit(f, x, y, **kwargs):
         sigma = unp.std_devs(y)
 
     popt, pcov = scipy.optimize.curve_fit(
-        f,
-        x,
-        unp.nominal_values(y),
-        sigma=sigma,
-        absolute_sigma=True,
-        **kwargs,
+        f, x, unp.nominal_values(y), sigma=sigma, absolute_sigma=True, **kwargs
     )
 
     return unc.correlated_values(popt, pcov)

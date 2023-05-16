@@ -18,7 +18,7 @@ x, e_x, y, e_y = np.genfromtxt("4.txt", unpack=True)
 
 t = np.linspace(-0.5, 2 * np.pi + 0.5)
 
-plt.figure(constrained_layout=True)
+plt.figure(layout="constrained")
 
 plt.errorbar(x, y, xerr=e_x, yerr=e_y, fmt="k.", label="Daten")
 plt.plot(t, np.sin(t), label=r"$\sin(t)$")

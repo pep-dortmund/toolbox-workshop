@@ -3,7 +3,7 @@ import numpy as np
 
 x = np.linspace(0, 2 * np.pi)
 
-plt.figure(constrained_layout=True)
+plt.figure(layout="constrained")
 
 plt.plot(x, np.sin(x), label=r"$\sin(x)$")
 plt.plot(x, np.cos(x), label=r"$\cos(x)$")

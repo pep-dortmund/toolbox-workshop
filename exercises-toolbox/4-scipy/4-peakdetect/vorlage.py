@@ -8,7 +8,7 @@ parameters_max = #
 parameters_min = #
 
 # Dieser Code erzeugt den Plot
-plt.figure(constrained_layout=True)
+plt.figure(layout="constrained")
 
 plt.plot(t, U, 'b-', label='Gedämpfte Schwingung')
 
@@ -20,6 +20,6 @@ plt.plot(x, e(x, *parameters_min), 'y-', label='Untere Einhüllende')
 
 plt.xlabel(r'$t \ / \ \mathrm{ms}$')
 plt.ylabel(r'$U \ / \ \mathrm{V}$')
-plt.legend(loc='best')
+plt.legend()
 plt.xlim(0, 0.3)
 plt.savefig('loesung.pdf')
