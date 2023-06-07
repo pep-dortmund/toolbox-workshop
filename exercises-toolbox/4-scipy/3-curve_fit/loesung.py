@@ -24,17 +24,17 @@ def f(x, a, b, c, d):
 parameters, pcov = curve_fit(f, x, y, sigma=e_y)
 print(parameters, np.sqrt(np.diag(pcov)), sep="\n")
 
-plt.figure(constrained_layout=True)
+fig, ax = plt.subplots(1, 1, constrained_layout=True)
 
-plt.errorbar(x, y, yerr=e_y, fmt="k.", label="Daten")
+ax.errorbar(x, y, yerr=e_y, fmt="k.", label="Daten")
 
 t = np.linspace(-0.5, 2 * np.pi + 0.5, 500)
-plt.plot(t, f(t, *parameters), label="Fit")
-plt.plot(t, np.sin(t), "--", label="Original")
+ax.plot(t, f(t, *parameters), label="Fit")
+ax.plot(t, np.sin(t), "--", label="Original")
 
-plt.xlim(t[0], t[-1])
-plt.xlabel(r"$t$")
-plt.ylabel(r"$f(t)$")
-plt.legend(loc="best")
+ax.set_xlim(t[0], t[-1])
+ax.set_xlabel(r"$t$")
+ax.set_ylabel(r"$f(t)$")
+ax.set_legend(loc="best")
 
-plt.savefig("loesung.pdf")
+fig.savefig("loesung.pdf")
