@@ -24,9 +24,12 @@ print(popt, np.sqrt(np.diag(pcov)), sep="\n")
 np.savetxt("build/parameter.txt", np.column_stack([popt, np.sqrt(np.diag(pcov))]))
 
 x = np.linspace(-0.03, 0.03, 100)
-plt.plot(x, theory(x, *popt), "-", label="Fit")
-plt.plot(phi, I, "k.", label="Daten")
-plt.xlabel(r"$\varphi \,\, / \,\, \mathrm{rad}$")
-plt.ylabel(r"$I \,\, / \,\, \mathrm{A}$")
-plt.legend(loc="best")
-plt.savefig("build/plot.pdf")
+
+fig, ax = plt.subplots(1, 1, constrained_layout=True)
+
+ax.plot(x, theory(x, *popt), "-", label="Fit")
+ax.plot(phi, I, "k.", label="Daten")
+ax.set_xlabel(r"$\varphi \,\, / \,\, \mathrm{rad}$")
+ax.set_ylabel(r"$I \,\, / \,\, \mathrm{A}$")
+ax.legend(loc="best")
+fig.savefig("build/plot.pdf")

@@ -14,26 +14,26 @@ t *= 1e3
 maxs, properties = find_peaks(U, prominence=1, distance=100)
 mins, properties = find_peaks(-U, prominence=1, distance=100)
 
-x = np.linspace(0, plt.xlim()[1], 500)
-
 parameters_max, pcov_max = curve_fit(e, t[maxs], U[maxs])
 print(parameters_max, np.sqrt(np.diag(pcov_max)), sep="\n")
 
 parameters_min, pcov_min = curve_fit(e, t[mins], U[mins])
 print(parameters_min, np.sqrt(np.diag(pcov_min)), sep="\n")
 
-plt.figure(constrained_layout=True)
+fig, ax = plt.subplots(1, 1, constrained_layout=True)
 
-plt.plot(t, U, "k-", label="Gedämpfte Schwingung")
+x = np.linspace(0, ax.get_xlim()[1], 500)
 
-plt.plot(x, e(x, *parameters_max), label="Obere Einhüllende")
-plt.plot(t[maxs], U[maxs], "o", color="C0", label="Maxima")
+ax.plot(t, U, "k-", label="Gedämpfte Schwingung")
 
-plt.plot(x, e(x, *parameters_min), label="Untere Einhüllende")
-plt.plot(t[mins], U[mins], "o", color="C1", label="Minima")
+ax.plot(x, e(x, *parameters_max), label="Obere Einhüllende")
+ax.plot(t[maxs], U[maxs], "o", color="C0", label="Maxima")
 
-plt.xlabel(r"$t \ / \ \mathrm{ms}$")
-plt.ylabel(r"$U \ / \ \mathrm{V}$")
-plt.legend(loc="best")
-plt.xlim(0, 0.3)
-plt.savefig("loesung.pdf")
+ax.plot(x, e(x, *parameters_min), label="Untere Einhüllende")
+ax.plot(t[mins], U[mins], "o", color="C1", label="Minima")
+
+ax.set_xlabel(r"$t \ / \ \mathrm{ms}$")
+ax.set_ylabel(r"$U \ / \ \mathrm{V}$")
+ax.set_xlim(0, 0.3)
+ax.legend(loc="best")
+fig.savefig("loesung.pdf")
