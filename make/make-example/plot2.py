@@ -3,6 +3,7 @@ import matplotlib.pyplot as plt
 
 data = np.genfromtxt("data.txt", unpack=True)
 data2 = np.genfromtxt("data2.txt", unpack=True)
-plt.plot(data, data2)
-plt.savefig("plot2.pdf")
+fig, ax = plt.subplots(1, 1, constrained_layout=True)
+ax.plot(data, data2)
+fig.savefig("plot2.pdf")
 # plt.savefig('build/plot2.pdf')

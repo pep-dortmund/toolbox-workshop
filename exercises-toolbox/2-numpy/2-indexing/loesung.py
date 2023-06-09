@@ -22,8 +22,10 @@ field = np.array(
 print("Spielfeld zu Beginn des Spiels:")
 print(field)
 
-mat = plt.matshow(field, cmap="Set1", vmax=5, vmin=-1)
-plt.savefig("Spielfeld_Beginn.pdf")
+fig, ax = plt.subplots(1, 1, constrained_layout=True)
+mat = ax.matshow(field, cmap="Set1", vmax=5, vmin=-1)
+fig.savefig("Spielfeld_Beginn.pdf")
+ax.cla()
 
 # Lösung für Aufgabe 1:
 
@@ -54,5 +56,5 @@ field[:7:3, 2:6:3] = -1
 print("Spielfeld zum Ende des Spiels:")
 print(field)
 
-mat = plt.matshow(field, cmap="Set1", vmax=5, vmin=-1)
-plt.savefig("Spielfeld_Ende.pdf")
+mat = ax.matshow(field, cmap="Set1", vmax=5, vmin=-1)
+fig.savefig("Spielfeld_Ende.pdf")

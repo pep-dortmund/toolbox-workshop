@@ -34,19 +34,21 @@ params = ucurve_fit(f, t, U, p0=[1e3, 1e3, 0, 0])
 
 t_plot = np.linspace(-0.5, 2 * np.pi + 0.5, 1000) * 1e-3
 
-plt.errorbar(
+fig, ax = plt.subplots(1, 1, constrained_layout=True)
+
+ax.errorbar(
     t * 1e3,
     noms(U) * 1e-3,
     yerr=stds(U) * 1e-3,
     fmt='k_',
     label='Daten',
 )
-plt.plot(t_plot * 1e3, f(t_plot, *noms(params)) * 1e-3, '-', label='Fit')
-plt.xlim(t_plot[0] * 1e3, t_plot[-1] * 1e3)
-plt.xlabel(r'$t \mathbin{/} \unit{\milli\second}$')
-plt.ylabel(r'$U \mathbin{/} \unit{\kilo\volt}$')
-plt.legend(loc='best')
-plt.savefig('build/loesung-plot.pdf')
+ax.plot(t_plot * 1e3, f(t_plot, *noms(params)) * 1e-3, '-', label='Fit')
+ax.set_xlim(t_plot[0] * 1e3, t_plot[-1] * 1e3)
+ax.set_xlabel(r'$t \mathbin{/} \unit{\milli\second}$')
+ax.set_ylabel(r'$U \mathbin{/} \unit{\kilo\volt}$')
+ax.legend(loc='best')
+fig.savefig('build/loesung-plot.pdf')
 
 t1, t2 = np.array_split(t * 1e3, 2)
 U1, U2 = np.array_split(U * 1e-3, 2)
