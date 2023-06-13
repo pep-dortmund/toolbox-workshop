@@ -16,6 +16,6 @@ y = x ** np.sin(x)
 fig, ax = plt.subplots(1, 1, layout="constrained")
 
 ax.plot(x, y)
-ax.set_xlabel(r'$\alpha / \Omega$')
+ax.set_xlabel(r"$\alpha / \Omega$")
 
-fig.savefig('build/figures/mattex1.pdf')
+fig.savefig("build/figures/mattex1.pdf")

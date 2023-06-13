@@ -8,12 +8,9 @@ N = 50
 data_x = np.linspace(0, 2 * np.pi, N)
 error_y = rng.lognormal(-1, 0.2, size=N)
 data_y = rng.normal(np.sin(data_x), error_y)
-np.savetxt(
-    "daten.txt",
-    np.column_stack([data_x, data_y, error_y]),
-    header="x y y_err",
-)
+np.savetxt("daten.txt", np.column_stack([data_x, data_y, error_y]), header="x y y_err")
 
+# Ab hier beginnt die Lösung
 x, y, e_y = np.genfromtxt("daten.txt", unpack=True)
 
 

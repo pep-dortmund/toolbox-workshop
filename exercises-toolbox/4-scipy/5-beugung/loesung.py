@@ -18,13 +18,11 @@ I *= 1e-9
 zeta_0 = zeta[np.argmax(I)]
 phi = (zeta - zeta_0) / L
 
-parameters, pcov = curve_fit(
-    theory,
-    phi,
-    I,
-    p0=[np.sqrt(np.max(I)) / 1e-4, 1e-4],
-)
+parameters, pcov = curve_fit(theory, phi, I, p0=[np.sqrt(np.max(I)) / 1e-4, 1e-4])
 print(parameters, np.sqrt(np.diag(pcov)), sep="\n")
+print(
+    f"Die Spaltbreite b beträgt ({parameters[1]:.6f} ± {np.sqrt(np.diag(pcov))[1]:.6f}) m."
+)
 
 x = np.linspace(-0.03, 0.03, 100)
 

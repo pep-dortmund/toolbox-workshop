@@ -13,6 +13,6 @@ y = x ** np.sin(x)
 
 fig, ax = plt.subplots(1, 1, layout="constrained")
 ax.plot(x, y)
-ax.set_xlabel(r'$\alpha \mathbin{/} \unit{\ohm}$')
+ax.set_xlabel(r"$\alpha \mathbin{/} \unit{\ohm}$")
 
-fig.savefig('build/figures/mattex5.pdf', bbox_inches='tight', pad_inches=0)
+fig.savefig("build/figures/mattex5.pdf", bbox_inches="tight", pad_inches=0)

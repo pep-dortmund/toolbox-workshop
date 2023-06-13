@@ -23,6 +23,7 @@ lambda_ = -A
 print("λ =", lambda_)
 
 x = np.linspace(0, 4000)
+
 fig, ax = plt.subplots(1, 1, layout="constrained")
 ax.plot(x, np.exp(noms(A * x + B)), label="Regressionsgerade")
 ax.errorbar(t, noms(N), yerr=stds(N), fmt="x", label="Messwerte")
