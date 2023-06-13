@@ -34,7 +34,7 @@ params = ucurve_fit(f, t, U, p0=[1e3, 1e3, 0, 0])
 
 t_plot = np.linspace(-0.5, 2 * np.pi + 0.5, 1000) * 1e-3
 
-fig, ax = plt.subplots(1, 1, constrained_layout=True)
+fig, ax = plt.subplots(1, 1, layout="constrained")
 
 ax.errorbar(
     t * 1e3,

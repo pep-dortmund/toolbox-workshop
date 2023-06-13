@@ -27,7 +27,7 @@ print("A0 =", A0)
 print("b =", b)
 
 x = np.linspace(-0.03, 0.03, 100)
-fig, ax = plt.subplots(1, 1, constrained_layout=True)
+fig, ax = plt.subplots(1, 1, layout="constrained")
 ax.plot(x, theory(x, *params), label="Fit")
 ax.plot(phi, I, "x", label="Daten")
 ax.set_xlabel(r"$\varphi \,\, / \,\, \mathrm{rad}$")

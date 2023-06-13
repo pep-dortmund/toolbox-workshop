@@ -24,7 +24,7 @@ print(field)
 
 # Was das hier ist lernen wir noch, kann getrost ignoriert werden.
 # In der Zwischenzeit, die Kurzfassung: Das 'macht' die Bilder. ;-)
-fig, ax = plt.subplots(1, 1, constrained_layout=True)
+fig, ax = plt.subplots(1, 1, layout="constrained")
 ax.matshow(field, cmap="Set1", vmax=5, vmin=-1)
 fig.savefig("Spielfeld_Beginn.pdf")
 

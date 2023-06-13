@@ -35,7 +35,7 @@ print("τ=", 1 / Lamb)
 t_plot = np.linspace(0, 11, 1000)
 y_plot = u_decay_with_background(t_plot, N0, Lamb, U)
 
-fig = plt.figure(figsize=(15 / 2.54, 10 / 2.54), constrained_layout=True)
+fig = plt.figure(figsize=(15 / 2.54, 10 / 2.54), layout="constrained")
 ax = fig.add_subplot(1, 1, 1)
 
 data = ax.errorbar(

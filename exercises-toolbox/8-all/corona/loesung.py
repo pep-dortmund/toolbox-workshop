@@ -18,7 +18,7 @@ n_positive_tests = np.convolve(
     data["Zuwachs_positiver_Testergebnisse_zum_Vortag"], np.ones(7)
 )[:-6]
 
-fig, ax = plt.subplots(1, 1, constrained_layout=True)
+fig, ax = plt.subplots(1, 1, layout="constrained")
 
 ax.bar(
     data["Datum"],

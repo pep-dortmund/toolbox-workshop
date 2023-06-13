@@ -17,7 +17,7 @@ A, B, C = ucurve_fit(Ur, r, U)
 print(A, B, C, sep="\n")
 
 x = np.linspace(r[0] - 0.002, 1.6, 1000)
-fig, ax = plt.subplots(1, 1, constrained_layout=True)
+fig, ax = plt.subplots(1, 1, layout="constrained")
 
 ax.plot(x, noms(Ur(x, A, B, C)), label="Ausgleichskurve")
 ax.plot(r, U, "x", label="Messwerte")

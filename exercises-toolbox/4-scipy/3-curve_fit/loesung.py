@@ -24,7 +24,7 @@ def f(x, a, b, c, d):
 parameters, pcov = curve_fit(f, x, y, sigma=e_y)
 print(parameters, np.sqrt(np.diag(pcov)), sep="\n")
 
-fig, ax = plt.subplots(1, 1, constrained_layout=True)
+fig, ax = plt.subplots(1, 1, layout="constrained")
 
 ax.errorbar(x, y, yerr=e_y, fmt="k.", label="Daten")
 

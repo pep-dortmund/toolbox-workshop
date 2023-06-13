@@ -20,7 +20,7 @@ print(parameters_max, np.sqrt(np.diag(pcov_max)), sep="\n")
 parameters_min, pcov_min = curve_fit(e, t[mins], U[mins])
 print(parameters_min, np.sqrt(np.diag(pcov_min)), sep="\n")
 
-fig, ax = plt.subplots(1, 1, constrained_layout=True)
+fig, ax = plt.subplots(1, 1, layout="constrained")
 
 x = np.linspace(0, ax.get_xlim()[1], 500)
 

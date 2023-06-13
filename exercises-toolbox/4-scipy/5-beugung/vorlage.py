@@ -13,7 +13,7 @@ parameters, cov = #
 # Hier wird der Plot erstellt
 x = np.linspace(-0.03, 0.03, 100)
 
-fig, ax = plt.subplots(1, 1, constrained_layout=True)
+fig, ax = plt.subplots(1, 1, layout="constrained")
 
 ax.plot(x, theory(x, *parameters), '-', label='Fit')
 ax.plot(phi, I, 'k.', label='Daten')

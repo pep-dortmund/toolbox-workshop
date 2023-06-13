@@ -13,7 +13,7 @@ arg = np.deg2rad(arg)
 x = np.linspace(150e3, 350e3, 1000)
 Z_theor = np.sqrt(R ** 2 + (L * x - 1 / (C * x)) ** 2)
 
-fig, ax = plt.subplots(1, 1, constrained_layout=True)
+fig, ax = plt.subplots(1, 1, layout="constrained")
 ax.plot(x * 1e-3, Z_theor, label="Theoriekurve")
 ax.plot(omega * 1e-3, Z, "x", label="Messwerte")
 ax.set_yscale("log")
@@ -30,7 +30,7 @@ phi1 = np.arctan(1 / R * (L * x - 1 / (C * x)))
 phi2 = -phi1
 Z_theor = np.sqrt(R ** 2 + (L * x - 1 / (C * x)) ** 2)
 
-fig, ax = plt.subplots(1, 1, constrained_layout=True, subplot_kw={"projection": "polar"})
+fig, ax = plt.subplots(1, 1, layout="constrained", subplot_kw={"projection": "polar"})
 ax.plot(phi1, Z_theor, "C0", label="Theoriekurve")
 ax.plot(phi2, Z_theor, "C0")
 ax.plot(arg, Z, "C1x", label="Messwerte")

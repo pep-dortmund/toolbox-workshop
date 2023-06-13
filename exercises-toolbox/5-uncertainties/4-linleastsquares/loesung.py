@@ -49,7 +49,7 @@ if __name__ == "__main__":
 
     x_plot = np.linspace(-0.1, 2 * np.pi + 0.1, 100)
 
-    fig, ax = plt.subplots(1, 1, constrained_layout=True)
+    fig, ax = plt.subplots(1, 1, layout="constrained")
 
     ax.errorbar(
         x, unp.nominal_values(y), yerr=unp.std_devs(y), fmt="k+", label="Daten"

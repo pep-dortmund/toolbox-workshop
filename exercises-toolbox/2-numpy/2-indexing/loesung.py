@@ -22,7 +22,7 @@ field = np.array(
 print("Spielfeld zu Beginn des Spiels:")
 print(field)
 
-fig, ax = plt.subplots(1, 1, constrained_layout=True)
+fig, ax = plt.subplots(1, 1, layout="constrained")
 mat = ax.matshow(field, cmap="Set1", vmax=5, vmin=-1)
 fig.savefig("Spielfeld_Beginn.pdf")
 ax.cla()

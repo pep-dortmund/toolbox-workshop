@@ -28,7 +28,7 @@ print(parameters, np.sqrt(np.diag(pcov)), sep="\n")
 
 x = np.linspace(-0.03, 0.03, 100)
 
-fig, ax = plt.subplots(1, 1, constrained_layout=True)
+fig, ax = plt.subplots(1, 1, layout="constrained")
 
 ax.plot(x, theory(x, *parameters), "-", label="Fit")
 ax.plot(phi, I, "k.", label="Daten")

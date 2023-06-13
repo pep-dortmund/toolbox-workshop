@@ -8,7 +8,7 @@ parameters_max = #
 parameters_min = #
 
 # Dieser Code erzeugt den Plot
-fig, ax = plt.subplots(1, 1, constrained_layout=True)
+fig, ax = plt.subplots(1, 1, layout="constrained")
 
 ax.plot(t, U, 'b-', label='Gedämpfte Schwingung')
 
