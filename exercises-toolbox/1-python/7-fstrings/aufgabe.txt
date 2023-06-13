@@ -5,7 +5,7 @@
 In dieser befinden sich der Titel eines Versuchs, das Datum an dem der
 Versuch durchgeführt wurde und zwei Listen mit Messwerten.
 Ziel ist es zunächst die Ausgabe einer Überschrift mit dem 
-Versuchstitle und dem Datum zu erzeugen.
+Versuchstitel und dem Datum zu erzeugen.
 
 Versuch: Wiegen von Metallen durchgeführt am 24.09.2018
 
@@ -31,7 +31,7 @@ Ausgabe:
 a b c
 
 2. Aufgabe:
-Vorallem mit vielen Variablen werden die print() Argumente oft lang und unverständlich.
+Vor allem mit vielen Variablen werden die print() Argumente oft lang und unverständlich.
 Extras wie Anführungszeichen sind eine zusätzlichen Komplikation.
 Daher bietet Python mehrere Möglichkeiten zur String-Formatierung an.
 String-Formatierung bedeutet, dass man in einem einzelnen String vorgibt, wo und wie

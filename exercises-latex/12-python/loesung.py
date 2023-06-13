@@ -43,7 +43,7 @@ ax.errorbar(
     fmt="k_",
     label="Daten",
 )
-ax.plot(t_plot * 1e3, f(t_plot, *noms(params)) * 1e-3, '-', label='Fit')
+ax.plot(t_plot * 1e3, f(t_plot, *noms(params)) * 1e-3, "-", label="Fit")
 ax.set_xlim(t_plot[0] * 1e3, t_plot[-1] * 1e3)
 ax.set_xlabel(r"$t \mathbin{/} \unit{\milli\second}$")
 ax.set_ylabel(r"$U \mathbin{/} \unit{\kilo\volt}$")

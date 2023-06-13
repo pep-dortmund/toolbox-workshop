@@ -9,13 +9,13 @@ from uncertainties.unumpy import (
 from curve_fit import ucurve_fit
 
 
-def make_qty(num, unit, exp='', figures=None):
-    ''' Format an uncertainties ufloat as a \qty quantity '''
+def make_qty(num, unit, exp="", figures=None):
+    """Format an uncertainties ufloat as a \qty quantity"""
     if np.any(stds([num])):
         if figures is None:
-            figures = ''
-        x = '{0:.{1:}uf}'.format(num, figures).replace('/', '')
+            figures = ""
+        x = "{0:.{1:}uf}".format(num, figures).replace("/", "")
     else:
-        x = '{0:.{1:}f}'.format(num, figures)
+        x = "{0:.{1:}f}".format(num, figures)
 
-    return r'\qty{{{}{}}}{{{}}}'.format(x, exp, unit)
+    return r"\qty{{{}{}}}{{{}}}".format(x, exp, unit)

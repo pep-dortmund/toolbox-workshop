@@ -22,7 +22,6 @@ ax.set_ylabel(r"$|Z| \,/\, \mathrm{\Omega}$")
 ax.set_ylim(20, 1e3)
 ax.legend(loc="lower right")
 fig.savefig("loesung-log.pdf")
-
 fig.clf()
 
 x = np.linspace(2 * np.pi * 27e1, 2 * np.pi * 50e4, 1000)
