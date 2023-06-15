@@ -32,6 +32,6 @@ ax.plot(t, np.sin(t), "--", label="Original")
 ax.set_xlim(t[0], t[-1])
 ax.set_xlabel(r"$t$")
 ax.set_ylabel(r"$f(t)$")
-ax.set_legend(loc="best")
+ax.legend()
 
 fig.savefig("loesung.pdf")
