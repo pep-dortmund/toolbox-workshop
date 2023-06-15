@@ -15,8 +15,9 @@ mpl.rcParams.update(                             # <-- Set matplotlib options
 x = np.linspace(0, 10, 1000)
 y = x ** np.sin(x)
 # set figure size and use constrained_layout
-plt.figure(figsize=(6.022, 3.39), layout="constrained")
-plt.plot(x, y)
-plt.xlabel(r"$\alpha \mathbin{/} \unit{\ohm}$")  # <-- We can use siunitx now!
+fig = plt.figure(figsize=(6.022, 3.39), layout="constrained")
+ax = fig.add_subplot(111)
+ax.plot(x, y)
+ax.set_xlabel(r"$\alpha \mathbin{/} \unit{\ohm}$")  # <-- We can use siunitx now!
 
-plt.savefig("build/figures/mattex3.pdf", bbox_inches="tight", pad_inches=0)
+fig.savefig("build/figures/mattex3.pdf", bbox_inches="tight", pad_inches=0)

@@ -18,14 +18,14 @@ x, e_x, y, e_y = np.genfromtxt("4.txt", unpack=True)
 
 t = np.linspace(-0.5, 2 * np.pi + 0.5)
 
-plt.figure(layout="constrained")
+fig, ax = plt.subplots(1, 1, layout="constrained")
 
-plt.errorbar(x, y, xerr=e_x, yerr=e_y, fmt="k.", label="Daten")
-plt.plot(t, np.sin(t), label=r"$\sin(t)$")
+ax.errorbar(x, y, xerr=e_x, yerr=e_y, fmt="k.", label="Daten")
+ax.plot(t, np.sin(t), label=r"$\sin(t)$")
 
-plt.xlim(t[0], t[-1])
-plt.xlabel(r"$t$")
-plt.ylabel(r"$f(t)$")
+ax.set_xlim(t[0], t[-1])
+ax.set_xlabel(r"$t$")
+ax.set_ylabel(r"$f(t)$")
 
-plt.legend()
-plt.savefig("loesung.pdf")
+ax.legend()
+fig.savefig("loesung.pdf")

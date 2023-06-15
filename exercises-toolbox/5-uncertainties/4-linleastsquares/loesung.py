@@ -49,16 +49,18 @@ if __name__ == "__main__":
 
     x_plot = np.linspace(-0.1, 2 * np.pi + 0.1, 100)
 
-    plt.errorbar(
+    fig, ax = plt.subplots(1, 1, layout="constrained")
+
+    ax.errorbar(
         x, unp.nominal_values(y), yerr=unp.std_devs(y), fmt="k+", label="Daten"
     )
-    plt.plot(
+    ax.plot(
         x_plot,
         unp.nominal_values(linear_combination(x_plot, functions, params)),
         label="Fit",
     )
-    plt.xlabel(r"$x$")
-    plt.ylabel(r"$y$")
-    plt.xlim(-0.1, 2 * np.pi + 0.1)
-    plt.legend()
-    plt.savefig("loesung.pdf")
+    ax.set_xlabel(r"$x$")
+    ax.set_ylabel(r"$y$")
+    ax.set_xlim(-0.1, 2 * np.pi + 0.1)
+    ax.legend()
+    fig.savefig("loesung.pdf")

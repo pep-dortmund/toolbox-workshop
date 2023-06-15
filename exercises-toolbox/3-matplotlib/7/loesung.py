@@ -3,13 +3,13 @@ import matplotlib.pyplot as plt
 
 x = np.linspace(0, 2 * np.pi, 100)
 
-plt.figure(layout="constrained")
+fig, ax = plt.subplots(1, 1, layout="constrained")
 
 for A in (-1, -0.5, 0.5, 1):
-    plt.plot(x, A * np.cos(x), label=f"$A = {A}$")
+    ax.plot(x, A * np.cos(x), label=f"$A = {A}$")
 
-plt.legend()
-plt.xlim(0, 2 * np.pi)
-plt.xlabel("$x$")
-plt.ylabel(r"$A \cos(x)$")
-plt.savefig("loesung.pdf")
+ax.legend()
+ax.set_xlim(0, 2 * np.pi)
+ax.set_xlabel("$x$")
+ax.set_ylabel(r"$A \cos(x)$")
+fig.savefig("loesung.pdf")

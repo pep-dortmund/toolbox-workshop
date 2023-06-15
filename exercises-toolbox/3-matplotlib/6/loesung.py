@@ -3,11 +3,11 @@ import matplotlib.pyplot as plt
 
 x = np.linspace(0, 1, 100)
 
-plt.figure(layout="constrained")
+fig, ax = plt.subplots(1, 1, layout="constrained")
 
 for n in range(1, 11):
-    plt.plot(x, x**n, label=f"$x^{{{n}}}$")
+    ax.plot(x, x**n, label=f"$x^{{{n}}}$")
 
-plt.legend(loc="upper left")
-plt.xlabel("$x$")
-plt.savefig("loesung.pdf")
+ax.legend(loc="upper left")
+ax.set_xlabel("$x$")
+fig.savefig("loesung.pdf")

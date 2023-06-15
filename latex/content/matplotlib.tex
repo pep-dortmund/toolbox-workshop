@@ -25,8 +25,8 @@
   \end{itemize}
 
   \begin{minted}{python}
-    plt.figure(constrained_layout=True)
-    plt.savefig(..., bbox_inches='tight', pad_inches=0)
+    fig = plt.figure(layout="constrained")
+    fig.savefig(..., bbox_inches='tight', pad_inches=0)
   \end{minted}
   \begin{itemize}
     \item Weiße Leerräume am Rand eliminieren

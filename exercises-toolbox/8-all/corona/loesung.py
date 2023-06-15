@@ -18,20 +18,22 @@ n_positive_tests = np.convolve(
     data["Zuwachs_positiver_Testergebnisse_zum_Vortag"], np.ones(7)
 )[:-6]
 
-plt.bar(
+fig, ax = plt.subplots(1, 1, layout="constrained")
+
+ax.bar(
     data["Datum"],
     data["Zuwachs_positiver_Testergebnisse_zum_Vortag"],
     label="Positive Fälle",
 )
 
-plt.plot(
+ax.plot(
     data["Datum"],
     n_positive_tests / dortmund,
     "k.",
     markersize=3,
     label="7-Tage Inzidenz Do",
 )
-plt.plot(
+ax.plot(
     data["Datum"],
     n_positive_tests / rki,
     "c.",
@@ -39,28 +41,28 @@ plt.plot(
     label="7-Tage Inzidenz RKI",
 )
 
-plt.plot([-1, data["Datum"].size], [35, 35], "-g", linewidth=0.5)
-plt.plot([-1, data["Datum"].size], [50, 50], "-y", linewidth=0.5)
-plt.plot([-1, data["Datum"].size], [75, 75], "-r", linewidth=0.5)
+ax.plot([-1, data["Datum"].size], [35, 35], "-g", linewidth=0.5)
+ax.plot([-1, data["Datum"].size], [50, 50], "-y", linewidth=0.5)
+ax.plot([-1, data["Datum"].size], [75, 75], "-r", linewidth=0.5)
 
-plt.title(
+fig.suptitle(
     "Fälle pro Tag mit 7-Tage-Inzidenz, \n Stadt Dortmund: "
     + r"$\num{603609}$ Einwohner, RKI: $\num{588250}$ Einwohner"
 )
-plt.legend(loc="upper center")
-plt.xticks(data["Datum"][::14], data["Datum"][::14], rotation=90)
-plt.xlim(-1, data["Datum"].size)
-plt.savefig("build/loesung-faelle-pro-tag.pdf")
-plt.clf()
+ax.legend(loc="upper center")
+ax.set_xticks(data["Datum"][::14], data["Datum"][::14], rotation=90)
+ax.set_xlim(-1, data["Datum"].size)
+fig.savefig("build/loesung-faelle-pro-tag.pdf")
+ax.cla()
 
-plt.plot(
+ax.plot(
     data["Datum"],
     n_positive_tests / dortmund,
     "k.",
     markersize=3,
     label="7-Tage Inzidenz Do",
 )
-plt.plot(
+ax.plot(
     data["Datum"],
     n_positive_tests / rki,
     "c.",
@@ -68,59 +70,59 @@ plt.plot(
     label="7-Tage Inzidenz RKI",
 )
 
-plt.plot([-1, data["Datum"].size], [35, 35], "-g", linewidth=0.5)
-plt.plot([-1, data["Datum"].size], [50, 50], "-y", linewidth=0.5)
-plt.plot([-1, data["Datum"].size], [75, 75], "-r", linewidth=0.5)
+ax.plot([-1, data["Datum"].size], [35, 35], "-g", linewidth=0.5)
+ax.plot([-1, data["Datum"].size], [50, 50], "-y", linewidth=0.5)
+ax.plot([-1, data["Datum"].size], [75, 75], "-r", linewidth=0.5)
 
-plt.title(
+fig.suptitle(
     "7-Tage-Inzidenz, \n Stadt Dortmund: "
     + r"$\num{603609}$ Einwohner, RKI: $\num{588250}$ Einwohner"
 )
-plt.legend(loc="upper center")
-plt.xticks(data["Datum"][::14], data["Datum"][::14], rotation=90)
-plt.xlim(-1, data["Datum"].size)
-plt.ylim(0, np.max(n_positive_tests / rki) * 1.05)
-plt.savefig("build/loesung-inzidenz.pdf")
-plt.clf()
+ax.legend(loc="upper center")
+ax.set_xticks(data["Datum"][::14], data["Datum"][::14], rotation=90)
+ax.set_xlim(-1, data["Datum"].size)
+ax.set_ylim(0, np.max(n_positive_tests / rki) * 1.05)
+fig.savefig("build/loesung-inzidenz.pdf")
+ax.cla()
 
-plt.title("Gesamtzahl an Fällen")
-plt.bar(
+fig.suptitle("Gesamtzahl an Fällen")
+ax.bar(
     data["Datum"], data["positive_Testergebnisse_insgesamt"], label="positive Tests"
 )
-plt.bar(data["Datum"], data["genesene_Personen_gesamt"], label="Genesene")
-plt.bar(
+ax.bar(data["Datum"], data["genesene_Personen_gesamt"], label="Genesene")
+ax.bar(
     data["Datum"],
     50 * data["ursächlich_an_COVID19_Verstorbene"],
     label=r"Verstorbene $\cdot 50$",
 )
-plt.bar(
+ax.bar(
     data["Datum"],
     50 * data["aufgrund_anderer_Ursachen_Verstorbene"],
     label=r"an anderer Ursache Verstorbene $\cdot 50$",
 )
-plt.legend()
-plt.xticks(data["Datum"][::14], data["Datum"][::14], rotation=90)
-plt.xlim(-1, data["Datum"].size)
-plt.ylim(0, np.max(data["positive_Testergebnisse_insgesamt"]) * 1.05)
-plt.savefig("build/loesung-insgesamt.pdf")
-plt.clf()
+ax.legend()
+ax.set_xticks(data["Datum"][::14], data["Datum"][::14], rotation=90)
+ax.set_xlim(-1, data["Datum"].size)
+ax.set_ylim(0, np.max(data["positive_Testergebnisse_insgesamt"]) * 1.05)
+fig.savefig("build/loesung-insgesamt.pdf")
+ax.cla()
 
-plt.title("Aktuelle Fälle pro Tag")
-plt.bar(data["Datum"], data["aktuell_erkrankte_Personen"], label="erkrankt")
-plt.bar(
+fig.suptitle("Aktuelle Fälle pro Tag")
+ax.bar(data["Datum"], data["aktuell_erkrankte_Personen"], label="erkrankt")
+ax.bar(
     data["Datum"],
     data["darunter_aktuell_stationär_behandelte_Personen"],
     label="stationär",
 )
-plt.bar(
+ax.bar(
     data["Datum"],
     data["darunter_aktuell_intensivmedizinisch_behandelte_Personen"],
     label="intensiv",
 )
-plt.bar(data["Datum"], data["darunter_aktuell_beatmete_Personen"], label="beatmet")
-plt.legend()
-plt.xticks(data["Datum"][::14], data["Datum"][::14], rotation=90)
-plt.xlim(-1, data["Datum"].size)
-plt.ylim(0, np.max(data["aktuell_erkrankte_Personen"]) * 1.05)
-plt.savefig("build/loesung-aktuell.pdf")
-plt.clf()
+ax.bar(data["Datum"], data["darunter_aktuell_beatmete_Personen"], label="beatmet")
+ax.legend()
+ax.set_xticks(data["Datum"][::14], data["Datum"][::14], rotation=90)
+ax.set_xlim(-1, data["Datum"].size)
+ax.set_ylim(0, np.max(data["aktuell_erkrankte_Personen"]) * 1.05)
+fig.savefig("build/loesung-aktuell.pdf")
+fig.clf()
