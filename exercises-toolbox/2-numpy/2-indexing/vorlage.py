@@ -25,7 +25,7 @@ print(field)
 # Was das hier ist lernen wir noch, kann getrost ignoriert werden.
 # In der Zwischenzeit, die Kurzfassung: Das 'macht' die Bilder. ;-)
 fig, ax = plt.subplots(1, 1, layout="constrained")
-ax.matshow(field, cmap="Set1", vmax=5, vmin=-1)
+mat = ax.matshow(field, cmap="Set1", vmax=5, vmin=-1)
 fig.savefig("Spielfeld_Beginn.pdf")
 
 # Hier die Lösung für Aufgabe 1 und 2 eintragen (ein Beispiel ist angegeben):
@@ -39,6 +39,5 @@ print(field)
 
 # Was das hier ist lernen wir noch, kann getrost ignoriert werden.
 # In der Zwischenzeit, die Kurzfassung: Das 'macht' die Bilder. ;-)
-ax.cla()
-ax.matshow(field, cmap="Set1", vmax=5, vmin=-1)
+mat.set_array(field)
 fig.savefig("Spielfeld_Ende.pdf")
