@@ -3,20 +3,21 @@
 \begin{frame}[fragile]{
   Tabellen
   \hfill
-  \doc{http://mirrors.ctan.org/macros/latex/contrib/booktabs/booktabs.pdf}{booktabs}
+  \doc{http://mirrors.ctan.org/macros/latex/contrib/tabularray/tabularray.pdf}{tabularray}
 }
   \begin{columns}[t, onlytextwidth]
-    \begin{column}{0.30\textwidth}
+    \begin{column}{0.33\textwidth}
       \begin{Packages}[equal height group=tabs]
         \begin{minted}{latex}
-          \usepackage{booktabs}
+          \usepackage{tabularray}
+          \UseTblrLibrary{booktabs}
         \end{minted}
       \end{Packages}
     \end{column}
-    \begin{column}{0.68\textwidth}
+    \begin{column}{0.66\textwidth}
     \begin{block}{Neue Klassenoption}[equal height group=tabs]
       \begin{minted}{latex}
-        \documentclass[…, captions=tableheading, …]{scrartcl}
+        \documentclass[…, captions=tableheading]{scrartcl}
       \end{minted}
     \end{block}
     \end{column}
@@ -31,7 +32,7 @@
             \centering
             \caption{Eine Tabelle mit Messdaten.}
             \label{tab:some_data}
-            \begin{tabular}{c c c c c}
+            \begin{tblr}{colspec={c c c c c}}
               \toprule
               $f$ & $l_\text{start}$ & $l_1$ & $l_{\text{kor},1}$ & $B_1$ \\
               \midrule
@@ -39,7 +40,7 @@
               300 & 1.27 & 2.42 & 0.13 &  41.14 \\
               500 & 1.21 & 1.70 & 0.25 & 168.73 \\
               \bottomrule
-            \end{tabular}
+            \end{tblr}
           \end{table}
         \end{minted}
       \end{block}
@@ -47,9 +48,9 @@
     \begin{column}{0.36\textwidth}
       \begin{itemize}
         \item Äußere \texttt{table}-Umgebung behandelt Tabelle wie ein float
-        \item Innere \texttt{tabular}-Umgebung für eigentlichen Tabelleninhalt
-        \item \texttt{l}, \texttt{c} oder \texttt{r} geben Ausrichtung der einzelnen Spalten an
-        \item \mintinline{latex}+\caption+, \mintinline{latex}+\label+ oberhalb von \texttt{tabular}
+        \item Innere \texttt{tblr}-Umgebung für eigentlichen Tabelleninhalt
+        \item \texttt{colspec} mit Keys \texttt{l}, \texttt{c} oder \texttt{r} gibt Ausrichtungen der einzelnen Spalten an
+        \item \mintinline{latex}+\caption+, \mintinline{latex}+\label+ oberhalb von \texttt{tblr}
       \end{itemize}
     \end{column}
   \end{columns}
@@ -60,7 +61,7 @@
     \begin{table}
       \centering
       \caption{Eine Tabelle mit Messdaten.}
-      \begin{tabular}{c c c c c}
+      \begin{tblr}{colspec={c c c c c}}
         \toprule
         $f$ & $l_\text{start}$ & $l_1$ & $l_{\text{kor},1}$ & $B_1$ \\
         \midrule
@@ -68,7 +69,7 @@
         300 & 1.27 & 2.42 & 0.13 &  41.14 \\
         500 & 1.21 & 1.70 & 0.25 & 168.73 \\
         \toprule
-      \end{tabular}
+      \end{tblr}
     \end{table}
   \end{EmulateArticle}
   \begin{itemize}
@@ -83,6 +84,12 @@
   \doc{http://mirrors.ctan.org/macros/latex/contrib/siunitx/siunitx.pdf}{siunitx}
 }
   \fontsize{8}{6}
+  \begin{block}{Benötigte Paketoption}
+    \begin{minted}{latex}
+       \UseTblrLibrary{siunitx} % Lädt siunitx und definiert die S-Spalte
+     \end{minted}
+  \end{block}
+
   \begin{block}{Code}
     \begin{minted}{latex}
       \begin{table}
@@ -90,7 +97,7 @@
         \caption{Eine schöne Tabelle mit Messdaten.}
         \label{tab:some_data}
         \sisetup{table-format=1.2}
-        \begin{tabular}{S[table-format=3.0] S S S S[table-format=3.2]}
+        \begin{tblr}{colspec={S[table-format=3.0] S S S S[table-format=3.2]}}
           \toprule
           {$f$} & {$l_\text{start}$} & {$l_1$} & {$l_{\text{kor},1}$} & {$B_1$} \\
           \midrule
@@ -100,7 +107,7 @@
           400 & 1.28 & 1.47 & 0.20 &  53.76 \\
           500 & 1.21 & 1.70 & 0.25 & 168.73 \\
           \bottomrule
-        \end{tabular}
+        \end{tblr}
       \end{table}
     \end{minted}
   \end{block}
@@ -112,9 +119,9 @@
       \centering
       \caption{Eine schöne Tabelle mit Messdaten.}
       \sisetup{table-format=1.2}
-      \begin{tabular}{S[table-format=3.0] S S S S[table-format=3.2]}
+      \begin{tblr}{colspec={S[table-format=3.0] S S S S[table-format=3.2]}}
         \toprule
-        {$f$} & {$l_\text{start}$} & {$l_1$} & {$l_{\text{kor},1}$} & {$B_1$} \\
+        {{{$f$}}} & {{{$l_\text{start}$}}} & {{{$l_1$}}} & {{{$l_{\text{kor},1}$}}} & {{{$B_1$}}} \\
         \midrule
         100 & 1.14 & 3.51 & 0.00 &   4.30 \\
         200 & 1.30 & 2.99 & 0.06 &  25.98 \\
@@ -122,21 +129,21 @@
         400 & 1.28 & 1.47 & 0.20 &  53.76 \\
         500 & 1.21 & 1.70 & 0.25 & 168.73 \\
         \bottomrule
-      \end{tabular}
+      \end{tblr}
     \end{table}
   \end{EmulateArticle}
   \begin{itemize}
     \item \texttt{S}-Spalte eröffnet mehr Ausrichtungsmöglichkeiten mit \mintinline{latex}+\sisetup+ und \mintinline{latex}+[...]+
     %\item \texttt{s}-Spalte für Einheiten
     \item Standard: Ausrichtung an Dezimalkomma
-    \item Spaltennamen durch \mintinline{latex}+{ }+ schützen
+    \item Spaltennamen durch \mintinline{latex}+{{{ }}}+ schützen (\textbf{drei} geschweifte Klammern)
   \end{itemize}
 \end{frame}
 
 \begin{frame}[fragile]{Gruppieren von mehreren Spalten}
   \begin{block}{Kommandostruktur}
     \begin{minted}{latex}
-      \multicolumn{#Spalten}{Ausrichtung}{Inhalt}
+      \SetCell[c=#Spalten]{Ausrichtung} Inhalt
     \end{minted}
   \end{block}
   \fontsize{8}{6}
@@ -146,19 +153,19 @@
         \centering
         \caption{Messdaten für dubiose Elemente.}
         \sisetup{table-format=2.1}
-        \begin{tabular}{S[table-format=3.1] S S S S}
+        \begin{tblr}{colspec={S[table-format=3.1] S S S S}}
           \toprule
-          & \multicolumn{2}{c}{Technetium} & \multicolumn{2}{c}{Molybdän} \\
-          \cmidrule(lr){2-3}\cmidrule(lr){4-5}
-          {$\lambda \mathbin{/} \unit{\nano\meter}$}
-          & {$\phi_1$} & {$\phi_2$} & {$\phi_1$} & {$\phi_2$} \\
+          & \SetCell[c=2]{c} {{{Technetium}}} & & \SetCell[c=2]{c} {{{Molybdän}}} & \\
+          \cmidrule[lr]{2-3}\cmidrule[lr]{4-5}
+          {{{$\lambda \mathbin{/} \unit{\nano\meter}$}}}
+          & {{{$\phi_1$}}} & {{{$\phi_2$}}} & {{{$\phi_1$}}} & {{{$\phi_2$}}} \\
           \midrule
           663.0 & 12.1 & 14.4 & 13.1 & 16.9 \\
           670.0 & 10.9 & 12.9 & 11.8 & 15.7 \\
           678.0 &  9.1 & 11.4 & 10.3 & 14.6 \\
           684.0 &  8.2 & 10.2 &  9.5 & 13.5 \\
           \bottomrule
-        \end{tabular}
+        \end{tblr}
       \end{table}
     \end{minted}
   \end{block}
@@ -170,19 +177,19 @@
       \centering
       \caption{Messdaten für dubiose Elemente.}
       \sisetup{table-format=2.1}
-      \begin{tabular}{S[table-format=3.1] S S S S}
+      \begin{tblr}{colspec={S[table-format=3.1] S S S S}}
         \toprule
-        & \multicolumn{2}{c}{Technetium} & \multicolumn{2}{c}{Molybdän} \\
-        \cmidrule(lr){2-3}\cmidrule(lr){4-5}
-        {$\lambda \mathbin{/} \unit{\nano\meter}$}
-        & {$\phi_1$} & {$\phi_2$} & {$\phi_1$} & {$\phi_2$} \\
+        & \SetCell[c=2]{c} {{{Technetium}}} & & \SetCell[c=2]{c} {{{Molybdän}}} & \\
+        \cmidrule[lr]{2-3}\cmidrule[lr]{4-5}
+        {{{$\lambda \mathbin{/} \unit{\nano\meter}$}}}
+        & {{{$\phi_1$}}} & {{{$\phi_2$}}} & {{{$\phi_1$}}} & {{{$\phi_2$}}} \\
         \midrule
         663.0 & 12.1 & 14.4 & 13.1 & 16.9 \\
         670.0 & 10.9 & 12.9 & 11.8 & 15.7 \\
         678.0 &  9.1 & 11.4 & 10.3 & 14.6 \\
         684.0 &  8.2 & 10.2 &  9.5 & 13.5 \\
         \bottomrule
-      \end{tabular}
+      \end{tblr}
     \end{table}
   \end{EmulateArticle}
 
@@ -192,41 +199,51 @@
 \end{frame}
 
 \begin{frame}[fragile]{Unsicherheiten in Tabellen}
-  \begin{CodeExample}{0.67}
+  \begin{block}{Neue Option}
     \begin{minted}{latex}
-      \begin{tabular}{
-        S[table-format=3.1]
-        @{${}\pm{}$}
-        S[table-format=2.1]
-      }
-        \toprule
-        \multicolumn{2}{c}{$x \mathbin{/} \unit{\ohm}$} \\
-        \midrule
-        663.0 & 12.1 \\
-        670.0 & 10.9 \\
-        678.0 &  9.1 \\
-        684.0 &  8.2 \\
-        \bottomrule
-      \end{tabular}
+      vline{Spalte(n)} = {Zeile(n)}{text=Symbol}
     \end{minted}
-  \CodeResult<valign=center>
-    \begin{center}
-      \begin{tabular}{
-        S[table-format=3.1]
-        @{${}\pm{}$}
-        S[table-format=2.1]
-      }
+  \end{block}
+  \begin{block}{Beispiel}
+    \begin{minted}{latex}
+      \begin{tblr}{
+          colspec = {S[table-format=3.1] S[table-format=2.1]},
+          vline{2} = {2}{-}{text=\clap{$\pm$}}
+        }
         \toprule
-        \multicolumn{2}{c}{$x \mathbin{/} \unit{\ohm}$} \\
+        \SetCell[c=2]{c} {{{$x \mathbin{/} \unit{\ohm}$}}} \\
         \midrule
         663.0 & 12.1 \\
         670.0 & 10.9 \\
         678.0 &  9.1 \\
         684.0 &  8.2 \\
         \bottomrule
-      \end{tabular}
-    \end{center}
-  \end{CodeExample}
+      \end{tblr}
+    \end{minted}
+  \end{block}
+\end{frame}
+
+\begin{frame}{Resultat}
+  \begin{center}
+    \begin{tblr}{
+        colspec = {S[table-format=3.1] S[table-format=2.1]},
+        vline{2} = {2}{-}{text=\clap{$\pm$}}
+      }
+      \toprule
+      \SetCell[c=2]{c} {{{$x \mathbin{/} \unit{\ohm}$}}} \\
+      \midrule
+      663.0 & 12.1 \\
+      670.0 & 10.9 \\
+      678.0 &  9.1 \\
+      684.0 &  8.2 \\
+      \bottomrule
+    \end{tblr}
+  \end{center}
   \vspace{5pt}
-  \mintinline{latex}+@{…}+ ersetzt den Spaltenabstand durch \texttt{…}
+  \begin{itemize}
+    \item Die Option \mintinline{latex}+vline{2}={2}{-}{text=…}+ ersetzt den Spaltenabstand vor der zweiten Spalte durch \texttt{…}
+    \item Die zusätzliche Option \mintinline{latex}+{{-}}+ hinter der Zeilenangabe sorgt dafür, dass dies für alle Zeilen passiert.
+    \item Explizite Zeilen-/Spaltenangaben: \mintinline{latex}+vline{2,3}={4,5}{text=…}+ (vierte und fünfte Zeile der Spaltenabstände zwei und drei)
+    \item \alert{Darf nur im Header der \texttt{tblr}-Umgebung verwendet werden.}
+  \end{itemize}
 \end{frame}
