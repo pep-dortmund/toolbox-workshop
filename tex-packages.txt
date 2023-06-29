@@ -50,7 +50,7 @@ siunitx
 standalone
 standalone
 tabu
-tabulary
+tabularray
 tcolorbox
 texdoc
 threeparttable
