@@ -42,6 +42,7 @@ minted
 mleftright
 mwe
 ncctools
+ninecolors
 oberdiek
 pdflscape
 pgfopts
