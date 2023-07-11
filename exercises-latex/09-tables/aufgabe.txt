@@ -9,6 +9,17 @@ Aufgabe 2:
   Daten aus `data_error.txt`. Setzt zwischen Wert und Fehler
   ein +/-, wie auf den Folien besprochen.
 
+Fortgeschritten:
+  In der Datei `data_long.txt` wurde die Messreihe aus Aufgabe 1
+  fortgesetzt. Erstellt nun mit Hilfe der longtblr-Umgebung eine
+  lange Tabelle mit den Daten aus dieser Datei. Denkt dabei daran,
+  die richtigen Optionen im Header der Tabelle zu setzen.
+
 Tipp:
   Ein guter Texteditor macht die Aufgabe viel leichter.
   Finde heraus, wie dein Editor z.B. eine Spalte aus & einfügen kann.
+
+Tipp für die fortgeschrittene Aufgabe:
+  Damit die Tabelle nicht irgendwo platziert wird, bietet es sich an,
+  den Befehl \newpage oder \pagebreak zu verwenden und die Tabellen aus
+  den Aufgaben 1 und 2 mit der Option [!h] zu versehen.

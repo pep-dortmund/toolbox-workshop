@@ -33,12 +33,18 @@
 \usepackage{tabularray}
 \UseTblrLibrary{booktabs, siunitx}
 
+% Tabularray settings
+\DefTblrTemplate{contfoot-text}{normal}{Weiter auf der nächsten Seite}
+\SetTblrTemplate{contfoot-text}{normal}
+\DefTblrTemplate{conthead-text}{normal}{(Fortsetzung)}
+\SetTblrTemplate{conthead-text}{normal}
+
 \usepackage[unicode]{hyperref}
 \usepackage{bookmark}
 
 \begin{document}
 
-\begin{table}
+\begin{table}[!h]
   \centering
   \caption{
     Eine Tabelle mit Messdaten.
@@ -47,7 +53,7 @@
   \input{loesung-table.tex}
 \end{table}
 
-\begin{table}
+\begin{table}[!h]
   \centering
   \caption{Eine Tabelle mit Messwerten und Unsicherheiten.}
   \begin{tblr}{
@@ -81,5 +87,10 @@
     \bottomrule
   \end{tblr}
 \end{table}
+
+\pagebreak
+
+\section*{Fortgeschritten}
+\input{loesung-long_table.tex}
 
 \end{document}
