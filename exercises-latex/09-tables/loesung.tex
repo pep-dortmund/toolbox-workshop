@@ -30,7 +30,15 @@
   per-mode=symbol-or-fraction,
 ]{siunitx}
 
-\usepackage{booktabs}
+\usepackage{placeins}
+\usepackage{tabularray}
+\UseTblrLibrary{booktabs, siunitx}
+
+% Tabularray settings
+\DefTblrTemplate{contfoot-text}{normal}{Weiter auf der nächsten Seite}
+\SetTblrTemplate{contfoot-text}{normal}
+\DefTblrTemplate{conthead-text}{normal}{(Fortsetzung)}
+\SetTblrTemplate{conthead-text}{normal}
 
 \usepackage[unicode]{hyperref}
 \usepackage{bookmark}
@@ -49,13 +57,13 @@
 \begin{table}
   \centering
   \caption{Eine Tabelle mit Messwerten und Unsicherheiten.}
-  \begin{tabular}{
-      S[table-format=2.2]
-      @{${}\pm{}$}
-      S[table-format=1.2]
+  \begin{tblr}{
+      colspec = {S[table-format=2.2] S[table-format=1.2]},
+      row{1} = {guard, mode=math},
+      vline{2} = {2}{-}{text=\clap{$\pm$}}
   }
     \toprule
-    \multicolumn{2}{c}{$x \mathbin{/} \unit{\meter}$} \\
+    \SetCell[c=2]{c} x \mathbin{/} \unit{\meter} \\
     \midrule
      9.29 & 0.79 \\
      7.6  & 1.7  \\
@@ -78,7 +86,12 @@
     10.53 & 0.42 \\
      8.5  & 2.0  \\
     \bottomrule
-  \end{tabular}
+  \end{tblr}
 \end{table}
+
+\FloatBarrier
+
+\section*{Fortgeschritten}
+\input{loesung-long_table.tex}
 
 \end{document}
