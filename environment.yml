@@ -1,8 +1,8 @@
 name: toolbox
 channels:
-  - defaults
+  - conda-forge
 dependencies:
-  - python=3.10
+  - python=3.11
   - pip
   - matplotlib
   - numpy
@@ -10,8 +10,10 @@ dependencies:
   - requests
   - scipy
   - sympy
+  - uncertainties
+  - jupyter
+  - notebook
+  - ipython
   - pip:
-    - uncertainties
     - jupyter_contrib_nbextensions
-    - https://github.com/maxnoe/texlive-batch-installation/archive/v0.3.0.tar.gz
     - ./pygments_style
