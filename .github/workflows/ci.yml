@@ -1,6 +1,12 @@
 name: CI
 
-on: [push, pull_request]
+on:
+  push:
+    branches:
+      - main
+    tags:
+      - "**"
+  pull_request:
 
 env:
   TEXLIVE_VERSION: 2023
@@ -8,20 +14,17 @@ env:
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
       - uses: actions/checkout@v3
 
-      - name: Set up Python
-        uses: actions/setup-python@v3
+      - uses: mamba-org/setup-micromamba@v1
         with:
-          python-version: "3.10"
+          environment-file: environment.yml
 
       - name: Setup
         run: |
           sudo apt-get install --yes poppler-utils
-          source $CONDA/etc/profile.d/conda.sh
-          conda env update -n base -f environment.yml
-          conda activate
           pip install https://github.com/maxnoe/texlive-batch-installation/archive/v0.3.2.tar.gz
           python -m install_texlive -p $HOME/texlive -t $TEXLIVE_VERSION --collections='-a' --package-file tex-packages.txt --update -v
 
