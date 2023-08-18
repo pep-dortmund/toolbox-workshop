@@ -6,7 +6,7 @@ all: $(addprefix build/, $(patsubst %.ipynb, %.html, $(wildcard *.ipynb)))
 build/python.html: build/muon_plot.png
 
 build/%.html: %.ipynb
-	jupyter-nbconvert --output-dir=build --execute --allow-errors --to html --template classic $<
+	jupyter-nbconvert --output-dir=build --execute --allow-errors --to html --embed-images --template classic $<
 
 build/muon_plot.png: muon_plot.py data/muon_data.txt
 	TEXINPUTS=$$(pwd): MATPLOTLIBRC=matplotlibrc_muon python3 $<
