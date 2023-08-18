@@ -15,6 +15,12 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
+    defaults:
+      run:
+        # We need login shells (-l) for micromamba to work.
+        shell: bash -leo pipefail {0}
+
+
     steps:
       - uses: actions/checkout@v3
 
