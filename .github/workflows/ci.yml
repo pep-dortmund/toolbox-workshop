@@ -1,28 +1,41 @@
 name: CI
 
-on: [push, pull_request]
+on:
+  push:
+    branches:
+      - main
+    tags:
+      - "**"
+  pull_request:
 
 env:
   TEXLIVE_VERSION: 2023
+  TERM: xterm
+  # silences warnings from jupyter about not being able to debug the stdlib
+  PYDEVD_DISABLE_FILE_VALIDATION: 1
 
 jobs:
   build:
     runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        # We need login shells (-l) for micromamba to work.
+        shell: bash -leo pipefail {0}
+
+
     steps:
       - uses: actions/checkout@v3
 
-      - name: Set up Python
-        uses: actions/setup-python@v3
+      - uses: mamba-org/setup-micromamba@v1
         with:
-          python-version: "3.10"
+          environment-file: environment.yml
 
       - name: Setup
         run: |
           sudo apt-get install --yes poppler-utils
-          source $CONDA/etc/profile.d/conda.sh
-          conda env update -n base -f environment.yml
-          conda activate
-          python -m install_texlive -p $HOME/texlive -t $TEXLIVE_VERSION --collections='-a' --package-file tex-packages.txt --update
+          pip install https://github.com/maxnoe/texlive-batch-installation/archive/v0.3.2.tar.gz
+          python -m install_texlive -p $HOME/texlive -t $TEXLIVE_VERSION --collections='-a' --package-file tex-packages.txt --update -v
 
           # add to path for following steps
           echo "$HOME/texlive/$TEXLIVE_VERSION/bin/x86_64-linux" >> $GITHUB_PATH
@@ -43,10 +56,17 @@ jobs:
           mkdir -p ~/.config/latexmk
           cp common/latexmkrc ~/.config/latexmk/
 
+      - name: Check Setup
+        run: |
+          echo "which python"
+          which python
+          echo "python --version"
+          python --version
+          echo "conda list"
+          conda list
+
       - name: Build
         run: |
-          source $CONDA/etc/profile.d/conda.sh
-          conda activate
           make -j 2
 
       - name: check for errors
@@ -58,6 +78,7 @@ jobs:
           mkdir toolbox-material
           cp **/build/*.pdf toolbox-material
           cp **/build/*.zip toolbox-material
+          cp python/build/*.html toolbox-material
           ls -lh toolbox-material
 
       - uses: actions/upload-artifact@v3

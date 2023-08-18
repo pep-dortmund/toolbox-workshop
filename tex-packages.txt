@@ -24,6 +24,7 @@ firamath-otf
 float
 fontawesome5
 fontspec
+hyph-utf8
 infwarerr
 koma-script
 latex
