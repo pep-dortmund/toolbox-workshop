@@ -76,6 +76,7 @@ jobs:
           mkdir toolbox-material
           cp **/build/*.pdf toolbox-material
           cp **/build/*.zip toolbox-material
+          cp python/build/*.html toolbox-material
           ls -lh toolbox-material
 
       - uses: actions/upload-artifact@v3
