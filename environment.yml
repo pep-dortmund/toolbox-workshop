@@ -15,5 +15,4 @@ dependencies:
   - notebook
   - ipython
   - pip:
-    - jupyter_contrib_nbextensions
     - ./pygments_style
