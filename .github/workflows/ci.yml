@@ -23,7 +23,7 @@ jobs:
           conda env update -n base -f environment.yml
           conda activate
           pip install https://github.com/maxnoe/texlive-batch-installation/archive/v0.3.2.tar.gz
-          python -m install_texlive -p $HOME/texlive -t $TEXLIVE_VERSION --collections='-a' --package-file tex-packages.txt --update
+          python -m install_texlive -p $HOME/texlive -t $TEXLIVE_VERSION --collections='-a' --package-file tex-packages.txt --update -v
 
           # add to path for following steps
           echo "$HOME/texlive/$TEXLIVE_VERSION/bin/x86_64-linux" >> $GITHUB_PATH
