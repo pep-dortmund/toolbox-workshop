@@ -54,10 +54,17 @@ jobs:
           mkdir -p ~/.config/latexmk
           cp common/latexmkrc ~/.config/latexmk/
 
+      - name: Check Setup
+        run: |
+          echo "which python"
+          which python
+          echo "python --version"
+          python --version
+          echo "conda list"
+          conda list
+
       - name: Build
         run: |
-          source $CONDA/etc/profile.d/conda.sh
-          conda activate
           make -j 2
 
       - name: check for errors
