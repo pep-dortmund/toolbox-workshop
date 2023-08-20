@@ -16,3 +16,7 @@ def ucurve_fit(f, x, y, **kwargs):
     …
     … = scipy.optimize.curve_fit(…, **kwargs)
     …
+
+Überprüfe deine Wrapper-Implementation an den Daten in daten.txt und fitte diese an
+A * cos(B * x) + C.
+Plotte den Fit zusammen mit den originalen Daten.
