@@ -30,15 +30,8 @@
   per-mode=symbol-or-fraction,
 ]{siunitx}
 
-\usepackage{placeins}
 \usepackage{tabularray}
 \UseTblrLibrary{booktabs, siunitx}
-
-% Tabularray settings
-\DefTblrTemplate{contfoot-text}{normal}{Weiter auf der nächsten Seite}
-\SetTblrTemplate{contfoot-text}{normal}
-\DefTblrTemplate{conthead-text}{normal}{(Fortsetzung)}
-\SetTblrTemplate{conthead-text}{normal}
 
 \usepackage[unicode]{hyperref}
 \usepackage{bookmark}
@@ -88,10 +81,5 @@
     \bottomrule
   \end{tblr}
 \end{table}
-
-\FloatBarrier
-
-\section*{Fortgeschritten}
-\input{loesung-long_table.tex}
 
 \end{document}

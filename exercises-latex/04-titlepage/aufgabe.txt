@@ -1,9 +1,12 @@
 Aufgabe 1:
-  Setzt in eurem Dokument die Meta-Angaben
+  Setze in deinem Dokument die Meta-Angaben
     author
     title
     date
-  für euren ersten Praktikumsversuch.
+  für deinen ersten Praktikumsversuch.
 
-  Erstellt das PDF-Dokument so, dass die Titelangaben (Titel, Autor, Datum, etc.)
+  Erstelle das PDF-Dokument so, dass die Titelangaben (Titel, Autor, Datum, etc.)
   auf einer eigenen Titelseite ausgeben werden.
+
+Falls du nicht weißt, was dein erster Versuch sein wird,
+kannst du "v101 - Das Trägheitsmoment" nehmen.

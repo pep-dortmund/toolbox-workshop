@@ -1,9 +1,9 @@
 Aufgabe 1:
-  Ladet das Paket siunitx in eurer Präambel
+  Lade das Paket siunitx in deiner Präambel
   ohne Einstellungen.
 
 Aufgabe 2:
-  a) Erzeugt Ausgaben für
+  a) Erzeuge Ausgaben für
     \qty{27.23(1)e3}{\meter\per\second}
 
     und
@@ -12,26 +12,26 @@ Aufgabe 2:
       \qty{27.23(1)e3}{\meter\per\second}
     \end{equation}
 
-  b) Ladet nun die Option "locale=DE", wie ändert sich die Ausgabe?
-     Tipp: mit \sisetup{} lassen sich Optionen auch nach dem Laden
+  b) Lade nun die Option "locale=DE", wie ändert sich die Ausgabe?
+     Tipp: Mit \sisetup{} lassen sich Optionen auch nach dem Laden
      des Pakets einstellen.
-  c) Ladet zusätzlich die Option "separate-uncertainty=true",
+  c) Lade zusätzlich die Option "separate-uncertainty=true",
 	   wie verändert sich die Ausgabe?
-  d) Ladet zusätzlich die Option "per-mode=symbol-or-fraction",
+  d) Lade zusätzlich die Option "per-mode=symbol-or-fraction",
      wie ändert sich die Ausgabe?
 
 Aufgabe 3:
-  Vergleicht die Ausgaben von:
+  Vergleiche die Ausgaben von:
     $0,2$ und $\num{0,2}$
     $10000$ und $\num{10000}$
     $3,1415926$ und $\num{3,1415926}$
 
-  Wie würdet ihr ohne siunitx die Ausgabe von
+  Wie würdest du ohne siunitx die Ausgabe von
     \num{1,234(5)e3}
   erreichen?
 
 Aufgabe 4:
-  Setzt folgende Größen mit siunitx:
+  Setze folgende Größen mit siunitx:
     511 keV
     1*10^-10 m
     3*10^8 m/s

@@ -1,23 +1,22 @@
 Aufgabe 1:
-  Ladet die benötigten Pakete zum Einbinden von Grafiken.
-  Fügt "plot1.pdf" in die Datei ein und gebt dem Plot eine
-  Abbildungsunterschrift und ein Label. Bezieht Euch
+  Lade die benötigten Pakete zum Einbinden von Grafiken.
+  Füge "plot1.pdf" in die Datei ein und gib dem Plot eine
+  Abbildungsunterschrift und ein Label. Beziehe dich auch
   im Text auf die Grafik.
 
 Aufgabe 2:
   Erstelle eine Abbildung, die "plot2.pdf" und "plot3.pdf"
   nebeneinander enthält. Dabei soll jeder Plot eine eigene
-  Abbildungsunterschrift und ein eigenes Label bekommen
-  sowie die ganze Abbildung eine gemeinsame. Bezieht euch so-
-  wohl auf die ganze Abbildung als auch auf einen Teil im
-  Text.
+  Abbildungsunterschrift und ein eigenes Label bekommen,
+  sowie die ganze Abbildung eine gemeinsame. Beziehe dich im Text
+  sowohl auf die ganze Abbildung, als auch auf einen Teil.
 
   Warum ist es nicht gut, die beiden Plots auf diese Weise
   einzubinden?
 
 Aufgabe 3:
-  Ändert das Erscheinungsbild der Abbildungsunterschriften.
-  Schlagt dazu in der "caption"-Dokumentation nach, wie ihr:
+  Ändere das Erscheinungsbild der Abbildungsunterschriften.
+  Schlage dazu in der "caption"-Dokumentation nach, wie du:
     1. Das Label "Abbildung x:" fett setzt
     2. Die Schriftgröße verkleinert
     3. Die Breite für Abbildungsunterschriften schmaler
@@ -26,4 +25,4 @@ Aufgabe 3:
   (und Tabellenüberschriften) deutlicher vom Fließtext abheben.
 
 Aufgabe 4:
-  Ändert die Ausrichtung der Caption-Texte am Label.
+  Ändere die Ausrichtung der Caption-Texte am Label.
