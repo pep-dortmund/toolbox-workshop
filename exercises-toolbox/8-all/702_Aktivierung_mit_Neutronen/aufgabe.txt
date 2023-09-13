@@ -1,3 +1,7 @@
+# Neutronen
+
+Aufgabe:
+
 Ziel ist es, die Zerfallskonstante λ von Indium zu bestimmen.
 Dazu wurde zuerst die Nullrate N_0 mit der Messzeit Δt_0 gemessen.
 Dann wurde die Rate N_g mit der Messzeit Δ_t wiederholt gemessen.
@@ -8,7 +12,8 @@ N = N_g - N_0 / Δt_0 * Δt
 log(N) = A * t + B
 λ = -A
 
-Erstelle einen halblogarithmischen Plot von N gegen t, der die Messpunkte mit Fehlerbalken und die Regressionsgerade beinhaltet.
+Erstelle einen halblogarithmischen Plot von N gegen t,
+der die Messpunkte mit Fehlerbalken und die Regressionsgerade beinhaltet.
 Benutze für die lineare Regression die Funktion ulinregress aus der mitgelieferten Datei linregress.py.
 Sie kann folgendermaßen eingebunden werden:
 
