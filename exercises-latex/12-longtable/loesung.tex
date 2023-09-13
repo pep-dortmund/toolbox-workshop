@@ -1,0 +1,97 @@
+\documentclass[
+  captions=tableheading,
+]{scrartcl}
+
+\usepackage{scrhack}
+
+\usepackage[aux]{rerunfilecheck}
+
+\usepackage{fontspec}
+
+\usepackage[ngerman]{babel}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathtools}
+
+
+\usepackage[
+  math-style=ISO,
+  bold-style=ISO,
+  sans-style=italic,
+  nabla=upright,
+  partial=upright,
+  mathrm=sym,
+]{unicode-math}
+
+\usepackage[
+  locale=DE,
+  separate-uncertainty=true,
+  per-mode=symbol-or-fraction,
+]{siunitx}
+
+\usepackage{placeins}
+\usepackage{tabularray}
+\UseTblrLibrary{booktabs, siunitx}
+
+% Tabularray settings
+\DefTblrTemplate{contfoot-text}{normal}{Weiter auf der nächsten Seite}
+\SetTblrTemplate{contfoot-text}{normal}
+\DefTblrTemplate{conthead-text}{normal}{(Fortsetzung)}
+\SetTblrTemplate{conthead-text}{normal}
+
+\usepackage[unicode]{hyperref}
+\usepackage{bookmark}
+
+\begin{document}
+
+\begin{table}
+  \centering
+  \caption{
+    Eine Tabelle mit Messdaten.
+    Wir werden später lernen, wie man sie zentriert.
+  }
+  \input{loesung-table.tex}
+\end{table}
+
+\begin{table}
+  \centering
+  \caption{Eine Tabelle mit Messwerten und Unsicherheiten.}
+  \begin{tblr}{
+      colspec = {S[table-format=2.2] S[table-format=1.2]},
+      row{1} = {guard, mode=math},
+      vline{2} = {2}{-}{text=\clap{$\pm$}}
+  }
+    \toprule
+    \SetCell[c=2]{c} x \mathbin{/} \unit{\meter} \\
+    \midrule
+     9.29 & 0.79 \\
+     7.6  & 1.7  \\
+    16.4  & 6.5  \\
+    10.03 & 0.51 \\
+     9.0  & 1.7  \\
+    10.5  & 1.1  \\
+    10.49 & 0.29 \\
+    10.5  & 1.6  \\
+     9.9  & 1.2  \\
+    10.64 & 0.80 \\
+     9.3  & 1.0  \\
+     9.28 & 0.88 \\
+    10.96 & 0.69 \\
+    10.48 & 0.72 \\
+     9.8  & 1.4  \\
+     9.58 & 0.33 \\
+    10.2  & 2.1  \\
+    10.31 & 0.91 \\
+    10.53 & 0.42 \\
+     8.5  & 2.0  \\
+    \bottomrule
+  \end{tblr}
+\end{table}
+
+\FloatBarrier
+
+\section*{Fortgeschritten}
+\input{loesung-long_table.tex}
+
+\end{document}
