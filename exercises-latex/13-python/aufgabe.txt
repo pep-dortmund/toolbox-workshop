@@ -1,0 +1,33 @@
+Fitte die Daten aus `daten.txt` (t, U, U_err) mit der Funktion
+
+        f(x) = a * sin(b * x + c) + d .
+
+Benutze dazu ucurve_fit aus der Datei `curve_fit.py`.
+Geeignete Startwerte sind a=1, b=1e3, c=d=0.
+
+Plotte die Daten und die gefittete Funktion.
+Verwende das pgf-Backend und eine matplotlibrc sowie die nötigen LaTeX-Pakete,
+um die Beschriftung schön zu machen.
+
+
+Teile die Daten dabei in zwei Spalten auf, damit die Tabelle nicht zu lang wird.
+
+
+Schreibe auch die Ergebnisse für die Fitparameter in .tex-Dateien in der Form
+
+        \qty{1+-2e3}{\meter} .
+
+Dabei ist 'e3' aber nicht unbedingt nötig in dieser Aufgabe.
+
+Nutze dazu die Funktion
+
+        make_qty(num, unit, exp='', figures=None) .
+
+Dabei gibt num den Wert (mit Fehler) an.
+unit ist die Einheit in der Form eines Strings mit siunitx-Einheitenbefehlen.
+exp ist optional und gibt einen Exponenten in der Form 'e3' an.
+
+
+Schreibe ein Protokoll, in dem du den Plot, die Tabelle und die Fitergebnisse (als Formeln) einbindest.
+
+Schreibe ein Makefile, das alle Dateien neu erstellen kann.

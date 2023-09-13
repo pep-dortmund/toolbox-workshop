@@ -1,0 +1,38 @@
+\RequirePackage{luatex85}
+\documentclass{standalone}
+
+\usepackage{mathtools}
+\usepackage{fontspec}
+\usepackage[
+  math-style=ISO,
+  bold-style=ISO,
+  sans-style=italic,
+  nabla=upright,
+  partial=upright,
+  mathrm=sym,
+]{unicode-math}
+\setmathfont{Latin Modern Math}
+\usepackage{tikz}
+
+\begin{document}
+\begin{tikzpicture}
+  \newcommand\width{3cm}
+  \newcommand\height{2cm}
+
+  \coordinate (A) at (\width, \height);
+  \coordinate (B) at (0, 0);
+  \coordinate (C) at (\width, 0);
+  \coordinate (D) at (-\height, \width);
+  \coordinate (E) at (-\height + \width, \width + \height);
+
+  \draw[thick] (A) -- (B) node[midway,  below right] {$c$}
+            -- (C) node[midway, above] {$a$}
+            -- cycle node[midway, left] {$b$};
+  \draw[dashed] (A) rectangle +(\height, -\height) node [pos=0.5] {$b^2$};
+  \draw[dashed] (B) rectangle +(\width, -\width) node [pos=0.5] {$a^2$};
+  \draw[dashed] (B) -- (D) -- (E) -- (A) -- cycle;
+  \path (B) -- (E) node[midway, anchor=center] {$c^2$};
+  \draw (C) ++ (0, 3mm) arc [start angle=90, end angle=180, radius=3mm];
+  \node[xshift=-1mm, yshift=1mm] at (C) {$\cdot$};
+\end{tikzpicture}
+\end{document}

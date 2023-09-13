@@ -1,0 +1,35 @@
+\input{loesung-header.tex}
+
+\begin{document}
+
+\section{Messwerte und Auswertung}
+
+Die Messdaten befinden sich in Tabelle~\ref{tab:data}.
+Die Ergebnisse des Fits an die Funktion
+\begin{equation}
+  U(t) = a \sin(b t + c) + d
+\end{equation}
+sind
+\begin{align}
+  a &= \input{loesung-a.tex} \\
+  b &= \input{loesung-b.tex} \\
+  c &= \input{loesung-c.tex} \\
+  d &= \input{loesung-d.tex} .
+\end{align}
+Die Messdaten und das Ergebnis des Fits sind in Abbildung~\ref{fig:plot} geplottet.
+
+\begin{table}
+  \centering
+  \caption{Messdaten.}
+  \label{tab:data}
+  \input{loesung-table.tex}
+\end{table}
+
+\begin{figure}
+  \centering
+  \includegraphics{loesung-plot.pdf}
+  \caption{Messdaten und Fitergebnis.}
+  \label{fig:plot}
+\end{figure}
+
+\end{document}
