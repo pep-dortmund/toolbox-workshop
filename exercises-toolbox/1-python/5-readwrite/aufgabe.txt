@@ -1,4 +1,4 @@
-Aufgabe: read write
+# read write
 
 Öffne die Python-Dokumentation unter
 
@@ -8,6 +8,8 @@ Versuche herauszufinden, wie man eine Datei in Python öffnet.
 Schlage außerdem nach, wie man Text aus einer Datei ausliest oder in eine Datei schreibt.
 
 Tipp: Suche nach Informationen zur Funktion "open()".
+
+Aufgabe:
 
 1. Lesen
 Schreibe ein Python-Skript, welches den Inhalt der Datei "test.txt" ausgibt.
