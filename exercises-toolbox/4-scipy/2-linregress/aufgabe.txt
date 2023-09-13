@@ -1,3 +1,7 @@
+# linregress
+
+Aufgabe:
+
 Schreibe eine Funktion linregress, die eine lineare Regression auf gegebene Datenpunkte anwendet.
 Die lineare Regression ist ein analytischer Fit der Daten an die Funktion y = A * x + B.
 
