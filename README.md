@@ -1,6 +1,6 @@
-# PeP et al. Toolbox-Workshop <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png" /></a> [![CI](https://github.com/pep-dortmund/toolbox-workshop/actions/workflows/ci.yml/badge.svg)](https://github.com/pep-dortmund/toolbox-workshop/actions/workflows/ci.yml)
+# PeP et al. Toolbox Workshop <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png" /></a> [![CI](https://github.com/pep-dortmund/toolbox-workshop/actions/workflows/ci.yml/badge.svg)](https://github.com/pep-dortmund/toolbox-workshop/actions/workflows/ci.yml)
 
-Dieses Repository enthält Materialien zum PeP et al. Toolbox-Workshop.
+Dieses Repository enthält Materialien zum PeP et al. Toolbox Workshop.
 
 Folgende Themen sind Teil des Workshops:
 
