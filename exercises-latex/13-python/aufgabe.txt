@@ -17,7 +17,7 @@ Schreibe auch die Ergebnisse für die Fitparameter in .tex-Dateien in der Form
 
         \qty{1+-2e3}{\meter} .
 
-Dabei ist e3 aber nicht unbedingt nötig in dieser Aufgabe.
+Dabei ist 'e3' aber nicht unbedingt nötig in dieser Aufgabe.
 
 Nutze dazu die Funktion
 
@@ -28,6 +28,6 @@ unit ist die Einheit in der Form eines Strings mit siunitx-Einheitenbefehlen.
 exp ist optional und gibt einen Exponenten in der Form 'e3' an.
 
 
-Schreibe ein Protokoll, in der Du den Plot, die Tabelle und die Fitergebnisse (als Formeln) einbindest.
+Schreibe ein Protokoll, in dem du den Plot, die Tabelle und die Fitergebnisse (als Formeln) einbindest.
 
 Schreibe ein Makefile, das alle Dateien neu erstellen kann.

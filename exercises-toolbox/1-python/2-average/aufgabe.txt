@@ -1,6 +1,6 @@
 # Average
 
-Aufgabe: 
+Aufgabe:
 
 In der beiliegenden Python-Datei `average.py` ist eine Liste mit Zahlen vorbereitet.
 Berechne ihren arithmetischen Mittelwert und gib ihn aus.

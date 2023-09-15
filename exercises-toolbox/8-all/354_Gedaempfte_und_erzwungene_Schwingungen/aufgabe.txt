@@ -1,5 +1,10 @@
+# Schwingungen
+
+Aufgabe:
+
 Hier soll die Frequenzabhängigkeit der Impedanz eines RCL-Kreises untersucht werden.
-Es werden Messwerte aus impedanz.txt mit Theoriekurven verglichen, die mit den Gerätedaten aus geraetedaten.txt berechnet werden.
+Es werden Messwerte aus impedanz.txt mit Theoriekurven verglichen,
+die mit den Gerätedaten aus geraetedaten.txt berechnet werden.
 Dabei gilt:
 
 arg(Z(ω)) = arctan(1 / R * (Lω - 1 / (Cω)))

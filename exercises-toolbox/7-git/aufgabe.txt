@@ -1,3 +1,5 @@
+# git
+
 Aufgabe 1:
 
 Lade mittels "git clone https://github.com/pep-dortmund/toolbox-workshop" die Materialien für diesen
@@ -43,4 +45,4 @@ Wir werden es anstelle eines Repositories auf gitlab.com oder github.com verwend
     Teste, ob das reibungslos funktioniert.
 
 11. Bonus: Versuche einen merge conflict herbeizuführen, indem du in beiden deiner Kopien dieselbe Zeile änderst
-    und 10. wiederhost.
+    und 10. wiederholst.

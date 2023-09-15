@@ -5,12 +5,12 @@
 In dieser befinden sich der Titel eines Versuchs, das Datum an dem der
 Versuch durchgeführt wurde und zwei Listen mit Messwerten.
 Ziel ist es zunächst die Ausgabe einer Überschrift mit dem 
-Versuchstitel und dem Datum zu erzeugen.
+Versuchstitel und dem Datum zu erzeugen:
 
-Versuch: Wiegen von Metallen durchgeführt am 24.09.2018
+    Versuch: Wiegen von Metallen durchgeführt am 24.09.2018
 
 Alternative Ausgabe mit Anführungszeichen als kleine Steigerung:
-Versuch: 'Wiegen von Metallen' durchgeführt am 24.09.2018
+    Versuch: 'Wiegen von Metallen' durchgeführt am 24.09.2018
 
 Natürlich kann man hier einfach den Text kopieren und ausgeben,
 Ziel ist es aber die Variablen `title` und `date` zu verwenden.
@@ -32,15 +32,15 @@ a b c
 
 2. Aufgabe:
 Vor allem mit vielen Variablen werden die print() Argumente oft lang und unverständlich.
-Extras wie Anführungszeichen sind eine zusätzlichen Komplikation.
+Extras wie Anführungszeichen sind eine zusätzliche Komplikation.
 Daher bietet Python mehrere Möglichkeiten zur String-Formatierung an.
 String-Formatierung bedeutet, dass man in einem einzelnen String vorgibt, wo und wie
 die Werte von Variablen eingesetzt werden sollen. Man gibt also die Formatierung der Ausgabe vor.
 Die neuste Möglichkeit zur String-Formatierung sind sogenannte f-strings.
 
-Ersetze die vorherigen Argumente der Funktion print() durch einen f-string der die selbe Ausgabe
-erzeugt. Ein leerer f-string mit `""` ist bereits eingetragen, Änderungen müssen nur
-zwischen den Anführungszeichen eingetragen werden.
+Ersetze die vorherigen Argumente der Funktion print() durch einen f-string, der dieselbe Ausgabe
+erzeugt. Ein leerer f-string ist bereits in fstrings.py eingetragen, Änderungen müssen nur zwischen den 
+Anführungszeichen eingetragen werden.
 
 Tipp:
 Variablen werden in f-strings automatisch durch ihren Wert ersetzt, wenn man diese in geschweifte
@@ -73,5 +73,5 @@ Ausgabe:
 123.45679
 
 Zu beachten ist, dass hier beim Runden nur die vierte Nachkommastelle verwendet
-wird, um zu entscheiden ob aufgerundet wird. Wenn man die 8 mit einer 4
+wird, um zu entscheiden, ob aufgerundet wird. Wenn man die 8 mit einer 4
 ersetzt, wird die 8 in der fünften Nachkommastelle nicht aufgerundet.

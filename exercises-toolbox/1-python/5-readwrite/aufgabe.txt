@@ -11,6 +11,8 @@ Schlage außerdem nach, wie man Text aus einer Datei ausliest oder in eine Datei
 
 Tipp: Suche nach Informationen zur Funktion "open()".
 
+Aufgabe:
+
 1. Lesen
 Schreibe ein Python-Skript, welches den Inhalt der Datei "test.txt" ausgibt.
 Teste dein Skript mit einer Beispieldatei.
