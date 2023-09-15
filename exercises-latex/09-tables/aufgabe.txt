@@ -1,25 +1,14 @@
 Aufgabe 1:
-  Erstellt mithilfe der Pakete siunitx und tabularray eine
-  Tabelle aus den Daten in `data.txt`. Denkt daran, Einheiten
+  Erstelle mithilfe der Pakete siunitx und tabularray eine
+  Tabelle aus den Daten in `data.txt`. Denke daran, Einheiten
   für Größen anzugeben und ausreichend viel Platz für alle
   Spalten zu reservieren.
 
 Aufgabe 2:
-  Erstellt mittels siunitx und tabularray eine Tabelle mit den
-  Daten aus `data_error.txt`. Setzt zwischen Wert und Fehler
+  Erstelle mittels siunitx und tabularray eine Tabelle mit den
+  Daten aus `data_error.txt`. Setze zwischen Wert und Fehler
   ein +/-, wie auf den Folien besprochen.
-
-Fortgeschritten:
-  In der Datei `data_long.txt` wurde die Messreihe aus Aufgabe 1
-  fortgesetzt. Erstellt nun mit Hilfe der longtblr-Umgebung eine
-  lange Tabelle mit den Daten aus dieser Datei. Denkt dabei daran,
-  die richtigen Optionen im Header der Tabelle zu setzen.
 
 Tipp:
   Ein guter Texteditor macht die Aufgabe viel leichter.
   Finde heraus, wie dein Editor z.B. eine Spalte aus & einfügen kann.
-
-Tipp für die fortgeschrittene Aufgabe:
-  Damit die Tabelle nicht irgendwo, sondern nach den beide Tabellen aus
-  den Aufgaben 1 und 2 platziert wird, bietet es sich an, vor der langen
-  Tabelle den Befehl \FloatBarrier aus dem Paket `placeins` zu setzen.

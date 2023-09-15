@@ -1,3 +1,5 @@
+# fehlerfortpflanzung
+
 Aufgabe:
 Es sind einige fehlerbehaftete Messwerte gegeben:
 

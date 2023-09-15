@@ -1,3 +1,5 @@
+# beugung
+
 In dieser Aufgabe wird die Beugung an einem Einzelspalt untersucht (Versuch 406).
 
 Ziel ist es, die Breite b des Spaltes aus den Messwerten zu bestimmen.

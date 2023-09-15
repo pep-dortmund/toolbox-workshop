@@ -1,2 +1,0 @@
-loesung.pdf: loesung.py I.txt L.txt lambda.txt
-	python loesung.py
