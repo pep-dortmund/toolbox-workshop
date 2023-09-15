@@ -1,4 +1,6 @@
-# read write
+# Read Write
+
+Aufgabe: 
 
 Öffne die Python-Dokumentation unter
 

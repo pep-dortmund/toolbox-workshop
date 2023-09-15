@@ -1,4 +1,4 @@
-# wordcount
+# Wordcount
 
 Aufgabe:
 

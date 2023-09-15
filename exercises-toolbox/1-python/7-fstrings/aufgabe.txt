@@ -1,4 +1,4 @@
-# fstrings
+# f-strings
 
 1. Aufgabe:
 Öffne die Datei "fstrings.py".
@@ -13,7 +13,7 @@ Alternative Ausgabe mit Anführungszeichen als kleine Steigerung:
     Versuch: 'Wiegen von Metallen' durchgeführt am 24.09.2018
 
 Natürlich kann man hier einfach den Text kopieren und ausgeben,
-Ziel ist es aber die Variablen title und date zu verwenden.
+Ziel ist es aber die Variablen `title` und `date` zu verwenden.
 
 Tipp:
 Die Funktion print() kann mehrere (unbegrenzt viele) Argumente verarbeiten.
@@ -38,8 +38,8 @@ String-Formatierung bedeutet, dass man in einem einzelnen String vorgibt, wo und
 die Werte von Variablen eingesetzt werden sollen. Man gibt also die Formatierung der Ausgabe vor.
 Die neuste Möglichkeit zur String-Formatierung sind sogenannte f-strings.
 
-Ersetze die vorherigen Argumente der Funktion print() durch einen f-string der dieselbe Ausgabe
-erzeugt. Ein leerer f-string ist bereits in fstrings.py eingetragen, Änderungen müssen nur zwischen die 
+Ersetze die vorherigen Argumente der Funktion print() durch einen f-string, der dieselbe Ausgabe
+erzeugt. Ein leerer f-string ist bereits in fstrings.py eingetragen, Änderungen müssen nur zwischen den 
 Anführungszeichen eingetragen werden.
 
 Tipp:
@@ -72,6 +72,6 @@ print(f"{x:.5f}"
 Ausgabe:
 123.45679
 
-Zu beachten ist, dass hier beim runden nur die vierte Nachkommastelle verwendet
+Zu beachten ist, dass hier beim Runden nur die vierte Nachkommastelle verwendet
 wird, um zu entscheiden, ob aufgerundet wird. Wenn man die 8 mit einer 4
 ersetzt, wird die 8 in der fünften Nachkommastelle nicht aufgerundet.
