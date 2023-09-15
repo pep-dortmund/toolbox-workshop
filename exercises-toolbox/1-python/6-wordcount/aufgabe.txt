@@ -1,4 +1,6 @@
-Aufgabe: wordcount
+# Wordcount
+
+Aufgabe:
 
 Die Beispieldatei "text.txt" enthält das erste Kapitel eines bekannten Kinderbuchs.
 Schreibe ein Python-Skript "wordcount.py", welches zählt wie oft jedes Wort im Text vorkommt.

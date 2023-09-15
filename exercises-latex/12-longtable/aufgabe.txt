@@ -1,0 +1,13 @@
+Aufgabe:
+Kopiere deine .tex Dateien aus Übung 9.
+
+Ergänze deine Datei mit einer dritten Tabelle.
+In der Datei `data_long.txt` wurde die Messreihe aus Aufgabe 1
+fortgesetzt. Erstelle nun mit Hilfe der longtblr-Umgebung eine
+lange Tabelle mit den Daten aus dieser Datei. Denke dabei daran,
+die richtigen Optionen im Header der Tabelle zu setzen.
+
+Tipp:
+  Damit die Tabelle nicht irgendwo, sondern nach den beide Tabellen aus
+  den Aufgaben 1 und 2 platziert wird, bietet es sich an, vor der langen
+  Tabelle den Befehl \FloatBarrier aus dem Paket `placeins` zu setzen.

@@ -10,4 +10,7 @@ linleastsquares.pdf: linleastsquares.tex
 	mv build/linleastsquares.pdf .
 	rm -r build
 
-.PHONY: all
+clean:
+	rm -rf linleastsquares.pdf loesung.pdf daten.txt
+
+.PHONY: all clean

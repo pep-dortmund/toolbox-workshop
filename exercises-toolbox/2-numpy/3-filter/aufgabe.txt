@@ -1,4 +1,6 @@
-Aufgabe: Filter
+# Filter
+
+Aufgabe:
 
 In der Datei "data.txt" befinden sich Datenpunkte (genannt x und y).
 

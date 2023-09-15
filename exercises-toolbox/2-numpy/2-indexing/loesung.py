@@ -24,7 +24,7 @@ print(field)
 
 fig, ax = plt.subplots(1, 1, layout="constrained")
 mat = ax.matshow(field, cmap="Set1", vmax=5, vmin=-1)
-fig.savefig("Spielfeld_Beginn.pdf")
+fig.savefig("Spielfeld_Loesung_Beginn.pdf")
 
 # Lösung für Aufgabe 1:
 
@@ -56,4 +56,4 @@ print("Spielfeld zum Ende des Spiels:")
 print(field)
 
 mat.set_array(field)
-fig.savefig("Spielfeld_Ende.pdf")
+fig.savefig("Spielfeld_Loesung_Ende.pdf")
