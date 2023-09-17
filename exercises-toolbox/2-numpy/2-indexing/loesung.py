@@ -48,9 +48,10 @@ field[4:8, 8] = -1
 # 5er Schiff:
 field[8, 3:8] = -1
 
-# Lösung für Aufgaben 2:
+# Lösung für Aufgabe 2:
 field[:7:3, 2:6:3] = -1
 
+# Mit Masken geht alles noch einfacher!
 
 print("Spielfeld zum Ende des Spiels:")
 print(field)
