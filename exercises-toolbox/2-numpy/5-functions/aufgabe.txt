@@ -1,7 +1,7 @@
 # functions
 
-In dieser Aufgabe machen wir uns mit Funktionen vertraut,
-die man auf Numpy arrays anwenden kann. Im Einzelnen sind dies:
+In dieser Aufgabe machen wir uns mit NumPy-Funktionen vertraut
+die man auf NumPy-Arrays anwenden kann. Im Einzelnen sind dies:
 
 np.sum
 np.diff
