@@ -1,22 +1,35 @@
 \section{Text erstellen}
 
 \begin{frame}[fragile]{Text schreiben}
-  \begin{block}{Beispiel}
+  \begin{CodeExample}{0.5}
     \begin{minted}{latex}
       % Präambel
       \begin{document}
-        Hallo, Welt!
-
-        Dies ist ein dummer Beispieltext.
-        Er soll zeigen, dass \LaTeX{} sich nicht um
-        Zeilenumbrüche im Code    oder    zu viele
-        Leerzeichen kümmert.
-
-        Ein Absatz wird mit einer leeren Code-Zeile
-        markiert.
+      Hallo, Welt!
+    
+      Dies ist ein dummer Beispieltext.
+      Er soll zeigen, dass \LaTeX{} sich
+      nicht um Zeilenumbrüche im Code
+      oder    zu      viele
+      Leerzeichen kümmert.
+  
+      Ein Absatz wird mit einer leeren
+      Code-Zeile markiert.  
       \end{document}
     \end{minted}
-  \end{block}
+  \CodeResult
+    \strut
+    Hallo, Welt!
+    
+    Dies ist ein dummer Beispieltext.
+    Er soll zeigen, dass \LaTeX{} sich
+    nicht um Zeilenumbrüche im Code
+    oder    zu      viele
+    Leerzeichen kümmert.
+
+    Ein Absatz wird mit einer
+    leeren Code-Zeile markiert.
+  \end{CodeExample}
 \end{frame}
 
 \begin{frame}[fragile]{Konventionen für Text}
