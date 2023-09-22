@@ -43,11 +43,10 @@ def programming(answers):
     ax.pie(
         programming.values,
         labels=programming.keys(),
-        startangle=0,
+        startangle=-30,
         radius=1,
         normalize=False,
     )
-    #    ax.set_xlim(-1.5, 1.5)
     fig.savefig("build/figures/programming.pdf")
 
 
@@ -113,7 +112,7 @@ def interests(answers):
 
 
 if __name__ == "__main__":
-    with open("data/toolbox2022.json", "r") as read_file:
+    with open("data/toolbox2023.json", "r") as read_file:
         data = json.load(read_file)
     languages(data)
     operating_system(data)

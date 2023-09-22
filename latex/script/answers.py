@@ -5,7 +5,7 @@ import json
 plt.style.use("ggplot")
 plt.rcParams["font.family"] = "sans-serif"
 
-with open("../intro/data/toolbox2022.json", "r") as read_file:
+with open("../intro/data/toolbox2023.json", "r") as read_file:
     answers = json.load(read_file)
 
 liste = []
@@ -20,7 +20,7 @@ ax = fig.add_axes([0, 0, 1, 1], aspect=1)
 ax.pie(
     os.values,
     labels=os.index,
-    startangle=-10,
+    startangle=20,
     radius=1,
     center=(0, 0),
 )
