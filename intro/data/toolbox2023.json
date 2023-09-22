@@ -1,0 +1,2444 @@
+[
+  {
+    "installieren": false,
+    "languages": {
+      "cpp": true,
+      "fortran": false,
+      "java": false,
+      "matlab": false,
+      "other": "",
+      "python": false
+    },
+    "latex": true,
+    "latex_interests": {
+      "beamer": false,
+      "bib": true,
+      "math": true,
+      "text": true,
+      "tikz": false,
+      "toc": true
+    },
+    "latex_level": "Schon mal ausprobiert",
+    "os": "macOS",
+    "skill": "Schon mal programmiert, aber noch nicht in Python.",
+    "submit": true,
+    "toolbox": true,
+    "toolbox_interests": {
+      "cli": true,
+      "git": true,
+      "make": true,
+      "plotting": true,
+      "python": true,
+      "uncertainties": false
+    }
+  },
+  {
+    "installieren": true,
+    "languages": {
+      "cpp": true,
+      "fortran": false,
+      "java": false,
+      "matlab": false,
+      "other": "",
+      "python": false
+    },
+    "latex": true,
+    "latex_interests": {
+      "beamer": false,
+      "bib": true,
+      "math": true,
+      "text": true,
+      "tikz": true,
+      "toc": true
+    },
+    "latex_level": "Noch nie geh\u00f6rt",
+    "os": "Windows 11",
+    "skill": "Schon mal programmiert, aber noch nicht in Python.",
+    "submit": true,
+    "toolbox": true,
+    "toolbox_interests": {
+      "cli": true,
+      "git": true,
+      "make": true,
+      "plotting": true,
+      "python": true,
+      "uncertainties": true
+    }
+  },
+  {
+    "installieren": false,
+    "languages": {
+      "cpp": true,
+      "fortran": false,
+      "java": false,
+      "matlab": true,
+      "other": "",
+      "python": false
+    },
+    "latex": true,
+    "latex_interests": {
+      "beamer": false,
+      "bib": false,
+      "math": false,
+      "text": false,
+      "tikz": false,
+      "toc": false
+    },
+    "latex_level": "Noch nie geh\u00f6rt",
+    "os": "Windows 11",
+    "skill": "Schon mal programmiert, aber noch nicht in Python.",
+    "submit": true,
+    "toolbox": true,
+    "toolbox_interests": {
+      "cli": true,
+      "git": true,
+      "make": true,
+      "plotting": true,
+      "python": true,
+      "uncertainties": true
+    }
+  },
+  {
+    "installieren": false,
+    "languages": {
+      "cpp": true,
+      "fortran": false,
+      "java": false,
+      "matlab": true,
+      "other": "",
+      "python": false
+    },
+    "latex": true,
+    "latex_interests": {
+      "beamer": false,
+      "bib": true,
+      "math": true,
+      "text": false,
+      "tikz": true,
+      "toc": false
+    },
+    "latex_level": "Noch nie geh\u00f6rt",
+    "os": "Windows 10",
+    "skill": "Schon mal programmiert, aber noch nicht in Python.",
+    "submit": true,
+    "toolbox": true,
+    "toolbox_interests": {
+      "cli": false,
+      "git": false,
+      "make": false,
+      "plotting": false,
+      "python": true,
+      "uncertainties": true
+    }
+  },
+  {
+    "installieren": false,
+    "languages": {
+      "cpp": false,
+      "fortran": false,
+      "java": true,
+      "matlab": false,
+      "other": "",
+      "python": false
+    },
+    "latex": true,
+    "latex_interests": {
+      "beamer": false,
+      "bib": true,
+      "math": true,
+      "text": false,
+      "tikz": false,
+      "toc": true
+    },
+    "latex_level": "Noch nie geh\u00f6rt",
+    "os": "Windows 11",
+    "skill": "Schon mal programmiert, aber noch nicht in Python.",
+    "submit": true,
+    "toolbox": true,
+    "toolbox_interests": {
+      "cli": true,
+      "git": false,
+      "make": false,
+      "plotting": false,
+      "python": false,
+      "uncertainties": true
+    }
+  },
+  {
+    "installieren": true,
+    "languages": {
+      "cpp": true,
+      "fortran": false,
+      "java": false,
+      "matlab": false,
+      "other": "",
+      "python": false
+    },
+    "latex": true,
+    "latex_interests": {
+      "beamer": false,
+      "bib": false,
+      "math": false,
+      "text": false,
+      "tikz": false,
+      "toc": false
+    },
+    "latex_level": "Noch nie geh\u00f6rt",
+    "os": "Windows 10",
+    "skill": "Schon mal programmiert, aber noch nicht in Python.",
+    "submit": true,
+    "toolbox": true,
+    "toolbox_interests": {
+      "cli": false,
+      "git": false,
+      "make": false,
+      "plotting": false,
+      "python": false,
+      "uncertainties": false
+    }
+  },
+  {
+    "installieren": false,
+    "languages": {
+      "cpp": true,
+      "fortran": false,
+      "java": false,
+      "matlab": true,
+      "other": "",
+      "python": false
+    },
+    "latex": true,
+    "latex_interests": {
+      "beamer": false,
+      "bib": false,
+      "math": false,
+      "text": false,
+      "tikz": false,
+      "toc": false
+    },
+    "latex_level": "Schon mal ausprobiert",
+    "os": "macOS",
+    "skill": "Schon mal programmiert, aber noch nicht in Python.",
+    "submit": true,
+    "toolbox": true,
+    "toolbox_interests": {
+      "cli": true,
+      "git": false,
+      "make": false,
+      "plotting": true,
+      "python": true,
+      "uncertainties": false
+    }
+  },
+  {
+    "installieren": true,
+    "languages": {
+      "cpp": false,
+      "fortran": false,
+      "java": true,
+      "matlab": false,
+      "other": "",
+      "python": false
+    },
+    "latex": true,
+    "latex_interests": {
+      "beamer": false,
+      "bib": false,
+      "math": false,
+      "text": false,
+      "tikz": false,
+      "toc": false
+    },
+    "latex_level": "Noch nie geh\u00f6rt",
+    "os": "Windows 11",
+    "skill": "Schon mal programmiert, aber noch nicht in Python.",
+    "submit": true,
+    "toolbox": true,
+    "toolbox_interests": {
+      "cli": false,
+      "git": false,
+      "make": false,
+      "plotting": false,
+      "python": false,
+      "uncertainties": false
+    }
+  },
+  {
+    "installieren": false,
+    "languages": {
+      "cpp": true,
+      "fortran": false,
+      "java": false,
+      "matlab": false,
+      "other": "C#",
+      "python": false
+    },
+    "latex": true,
+    "latex_interests": {
+      "beamer": false,
+      "bib": false,
+      "math": false,
+      "text": false,
+      "tikz": false,
+      "toc": false
+    },
+    "latex_level": "Noch nie geh\u00f6rt",
+    "os": "macOS",
+    "skill": "Schon mal programmiert, aber noch nicht in Python.",
+    "submit": true,
+    "toolbox": true,
+    "toolbox_interests": {
+      "cli": false,
+      "git": false,
+      "make": false,
+      "plotting": false,
+      "python": false,
+      "uncertainties": false
+    }
+  },
+  {
+    "installieren": false,
+    "languages": {
+      "cpp": false,
+      "fortran": false,
+      "java": true,
+      "matlab": false,
+      "other": "",
+      "python": true
+    },
+    "latex": true,
+    "latex_interests": {
+      "beamer": false,
+      "bib": true,
+      "math": true,
+      "text": true,
+      "tikz": false,
+      "toc": false
+    },
+    "latex_level": "Noch nie geh\u00f6rt",
+    "os": "macOS",
+    "skill": "Noch nie programmiert.",
+    "submit": true,
+    "toolbox": true,
+    "toolbox_interests": {
+      "cli": false,
+      "git": false,
+      "make": false,
+      "plotting": false,
+      "python": true,
+      "uncertainties": true
+    }
+  },
+  {
+    "installieren": false,
+    "languages": {
+      "cpp": false,
+      "fortran": false,
+      "java": true,
+      "matlab": false,
+      "other": "",
+      "python": false
+    },
+    "latex": true,
+    "latex_interests": {
+      "beamer": false,
+      "bib": false,
+      "math": true,
+      "text": false,
+      "tikz": true,
+      "toc": false
+    },
+    "latex_level": "Noch nie geh\u00f6rt",
+    "os": "Windows 10",
+    "skill": "Schon mal programmiert, aber noch nicht in Python.",
+    "submit": true,
+    "toolbox": true,
+    "toolbox_interests": {
+      "cli": true,
+      "git": true,
+      "make": false,
+      "plotting": false,
+      "python": true,
+      "uncertainties": true
+    }
+  },
+  {
+    "installieren": false,
+    "languages": {
+      "cpp": false,
+      "fortran": false,
+      "java": true,
+      "matlab": false,
+      "other": "",
+      "python": false
+    },
+    "latex": true,
+    "latex_interests": {
+      "beamer": false,
+      "bib": false,
+      "math": false,
+      "text": false,
+      "tikz": false,
+      "toc": true
+    },
+    "latex_level": "Noch nie geh\u00f6rt",
+    "os": "macOS",
+    "skill": "Schon mal programmiert, aber noch nicht in Python.",
+    "submit": true,
+    "toolbox": true,
+    "toolbox_interests": {
+      "cli": false,
+      "git": true,
+      "make": false,
+      "plotting": false,
+      "python": true,
+      "uncertainties": false
+    }
+  },
+  {
+    "installieren": true,
+    "languages": {
+      "cpp": false,
+      "fortran": false,
+      "java": true,
+      "matlab": false,
+      "other": "",
+      "python": false
+    },
+    "latex": true,
+    "latex_interests": {
+      "beamer": false,
+      "bib": true,
+      "math": true,
+      "text": true,
+      "tikz": true,
+      "toc": true
+    },
+    "latex_level": "Schon mal ausprobiert",
+    "os": "Windows 11",
+    "skill": "Schon mal programmiert, aber noch nicht in Python.",
+    "submit": true,
+    "toolbox": true,
+    "toolbox_interests": {
+      "cli": true,
+      "git": true,
+      "make": true,
+      "plotting": true,
+      "python": true,
+      "uncertainties": true
+    }
+  },
+  {
+    "installieren": false,
+    "languages": {
+      "cpp": true,
+      "fortran": false,
+      "java": false,
+      "matlab": true,
+      "other": "",
+      "python": true
+    },
+    "latex": true,
+    "latex_interests": {
+      "beamer": false,
+      "bib": false,
+      "math": false,
+      "text": false,
+      "tikz": false,
+      "toc": true
+    },
+    "latex_level": "Schon mal ausprobiert",
+    "os": "Windows 11",
+    "skill": "Schon mal programmiert, auch in Python.",
+    "submit": true,
+    "toolbox": true,
+    "toolbox_interests": {
+      "cli": true,
+      "git": false,
+      "make": false,
+      "plotting": true,
+      "python": true,
+      "uncertainties": false
+    }
+  },
+  {
+    "installieren": false,
+    "languages": {
+      "cpp": false,
+      "fortran": false,
+      "java": false,
+      "matlab": false,
+      "other": "",
+      "python": false
+    },
+    "latex": true,
+    "latex_interests": {
+      "beamer": false,
+      "bib": false,
+      "math": true,
+      "text": true,
+      "tikz": false,
+      "toc": true
+    },
+    "latex_level": "Noch nie geh\u00f6rt",
+    "os": "Windows 10",
+    "skill": "Noch nie programmiert.",
+    "submit": true,
+    "toolbox": true,
+    "toolbox_interests": {
+      "cli": true,
+      "git": false,
+      "make": false,
+      "plotting": true,
+      "python": true,
+      "uncertainties": false
+    }
+  },
+  {
+    "installieren": false,
+    "languages": {
+      "cpp": true,
+      "fortran": false,
+      "java": false,
+      "matlab": false,
+      "other": "",
+      "python": false
+    },
+    "latex": true,
+    "latex_interests": {
+      "beamer": false,
+      "bib": true,
+      "math": true,
+      "text": true,
+      "tikz": true,
+      "toc": true
+    },
+    "latex_level": "Noch nie geh\u00f6rt",
+    "os": "Windows 10",
+    "skill": "Schon mal programmiert, aber noch nicht in Python.",
+    "submit": true,
+    "toolbox": true,
+    "toolbox_interests": {
+      "cli": true,
+      "git": false,
+      "make": false,
+      "plotting": false,
+      "python": true,
+      "uncertainties": true
+    }
+  },
+  {
+    "installieren": false,
+    "languages": {
+      "cpp": true,
+      "fortran": false,
+      "java": true,
+      "matlab": false,
+      "other": "",
+      "python": true
+    },
+    "latex": true,
+    "latex_interests": {
+      "beamer": false,
+      "bib": true,
+      "math": true,
+      "text": false,
+      "tikz": true,
+      "toc": true
+    },
+    "latex_level": "Noch nie geh\u00f6rt",
+    "os": "Windows 11",
+    "skill": "Schon mal programmiert, auch in Python.",
+    "submit": true,
+    "toolbox": true,
+    "toolbox_interests": {
+      "cli": false,
+      "git": true,
+      "make": false,
+      "plotting": true,
+      "python": true,
+      "uncertainties": true
+    }
+  },
+  {
+    "installieren": false,
+    "languages": {
+      "cpp": true,
+      "fortran": false,
+      "java": true,
+      "matlab": false,
+      "other": "",
+      "python": false
+    },
+    "latex": true,
+    "latex_interests": {
+      "beamer": false,
+      "bib": true,
+      "math": true,
+      "text": false,
+      "tikz": true,
+      "toc": true
+    },
+    "latex_level": "Noch nie geh\u00f6rt",
+    "os": "macOS",
+    "skill": "Schon mal programmiert, aber noch nicht in Python.",
+    "submit": true,
+    "toolbox": true,
+    "toolbox_interests": {
+      "cli": true,
+      "git": true,
+      "make": false,
+      "plotting": true,
+      "python": true,
+      "uncertainties": true
+    }
+  },
+  {
+    "installieren": false,
+    "languages": {
+      "cpp": true,
+      "fortran": false,
+      "java": false,
+      "matlab": true,
+      "other": "",
+      "python": false
+    },
+    "latex": true,
+    "latex_interests": {
+      "beamer": false,
+      "bib": true,
+      "math": true,
+      "text": false,
+      "tikz": true,
+      "toc": false
+    },
+    "latex_level": "Schon mal ausprobiert",
+    "os": "Windows 10",
+    "skill": "Schon mal programmiert, aber noch nicht in Python.",
+    "submit": true,
+    "toolbox": true,
+    "toolbox_interests": {
+      "cli": false,
+      "git": false,
+      "make": false,
+      "plotting": false,
+      "python": true,
+      "uncertainties": true
+    }
+  },
+  {
+    "installieren": false,
+    "languages": {
+      "cpp": false,
+      "fortran": false,
+      "java": true,
+      "matlab": false,
+      "other": "",
+      "python": false
+    },
+    "latex": true,
+    "latex_interests": {
+      "beamer": false,
+      "bib": true,
+      "math": false,
+      "text": false,
+      "tikz": false,
+      "toc": true
+    },
+    "latex_level": "Noch nie geh\u00f6rt",
+    "os": "Windows 10",
+    "skill": "Schon mal programmiert, aber noch nicht in Python.",
+    "submit": true,
+    "toolbox": true,
+    "toolbox_interests": {
+      "cli": false,
+      "git": false,
+      "make": false,
+      "plotting": true,
+      "python": true,
+      "uncertainties": false
+    }
+  },
+  {
+    "installieren": false,
+    "languages": {
+      "cpp": false,
+      "fortran": false,
+      "java": true,
+      "matlab": false,
+      "other": "",
+      "python": false
+    },
+    "latex": true,
+    "latex_interests": {
+      "beamer": false,
+      "bib": true,
+      "math": false,
+      "text": false,
+      "tikz": false,
+      "toc": true
+    },
+    "latex_level": "Noch nie geh\u00f6rt",
+    "os": "Windows 10",
+    "skill": "Schon mal programmiert, aber noch nicht in Python.",
+    "submit": true,
+    "toolbox": true,
+    "toolbox_interests": {
+      "cli": false,
+      "git": false,
+      "make": false,
+      "plotting": true,
+      "python": true,
+      "uncertainties": false
+    }
+  },
+  {
+    "installieren": false,
+    "languages": {
+      "cpp": true,
+      "fortran": false,
+      "java": false,
+      "matlab": false,
+      "other": "",
+      "python": false
+    },
+    "latex": true,
+    "latex_interests": {
+      "beamer": false,
+      "bib": true,
+      "math": true,
+      "text": true,
+      "tikz": true,
+      "toc": true
+    },
+    "latex_level": "Schon mal ausprobiert",
+    "os": "Windows 11",
+    "skill": "Schon mal programmiert, aber noch nicht in Python.",
+    "submit": true,
+    "toolbox": true,
+    "toolbox_interests": {
+      "cli": false,
+      "git": false,
+      "make": false,
+      "plotting": true,
+      "python": true,
+      "uncertainties": true
+    }
+  },
+  {
+    "installieren": false,
+    "languages": {
+      "cpp": true,
+      "fortran": false,
+      "java": true,
+      "matlab": true,
+      "other": "",
+      "python": false
+    },
+    "latex": true,
+    "latex_interests": {
+      "beamer": false,
+      "bib": false,
+      "math": false,
+      "text": false,
+      "tikz": false,
+      "toc": false
+    },
+    "latex_level": "Schon mal ausprobiert",
+    "os": "Windows 11",
+    "skill": "Schon mal programmiert, aber noch nicht in Python.",
+    "submit": true,
+    "toolbox": true,
+    "toolbox_interests": {
+      "cli": false,
+      "git": false,
+      "make": false,
+      "plotting": false,
+      "python": true,
+      "uncertainties": false
+    }
+  },
+  {
+    "installieren": true,
+    "languages": {
+      "cpp": false,
+      "fortran": false,
+      "java": true,
+      "matlab": false,
+      "other": "",
+      "python": false
+    },
+    "latex": true,
+    "latex_interests": {
+      "beamer": false,
+      "bib": false,
+      "math": false,
+      "text": false,
+      "tikz": false,
+      "toc": false
+    },
+    "latex_level": "Noch nie geh\u00f6rt",
+    "os": "Windows 10",
+    "skill": "Schon mal programmiert, aber noch nicht in Python.",
+    "submit": true,
+    "toolbox": true,
+    "toolbox_interests": {
+      "cli": true,
+      "git": true,
+      "make": true,
+      "plotting": true,
+      "python": true,
+      "uncertainties": true
+    }
+  },
+  {
+    "installieren": false,
+    "languages": {
+      "cpp": false,
+      "fortran": false,
+      "java": true,
+      "matlab": false,
+      "other": "",
+      "python": false
+    },
+    "latex": true,
+    "latex_interests": {
+      "beamer": false,
+      "bib": false,
+      "math": true,
+      "text": true,
+      "tikz": false,
+      "toc": false
+    },
+    "latex_level": "Noch nie geh\u00f6rt",
+    "os": "Windows 10",
+    "skill": "Schon mal programmiert, aber noch nicht in Python.",
+    "submit": true,
+    "toolbox": true,
+    "toolbox_interests": {
+      "cli": false,
+      "git": false,
+      "make": false,
+      "plotting": true,
+      "python": true,
+      "uncertainties": true
+    }
+  },
+  {
+    "installieren": false,
+    "languages": {
+      "cpp": true,
+      "fortran": false,
+      "java": true,
+      "matlab": false,
+      "other": "",
+      "python": false
+    },
+    "latex": true,
+    "latex_interests": {
+      "beamer": false,
+      "bib": false,
+      "math": false,
+      "text": false,
+      "tikz": false,
+      "toc": false
+    },
+    "latex_level": "Noch nie geh\u00f6rt",
+    "os": "Windows 11",
+    "skill": "Schon mal programmiert, aber noch nicht in Python.",
+    "submit": true,
+    "toolbox": true,
+    "toolbox_interests": {
+      "cli": false,
+      "git": false,
+      "make": false,
+      "plotting": false,
+      "python": false,
+      "uncertainties": false
+    }
+  },
+  {
+    "installieren": false,
+    "languages": {
+      "cpp": true,
+      "fortran": false,
+      "java": true,
+      "matlab": false,
+      "other": "C#",
+      "python": false
+    },
+    "latex": true,
+    "latex_interests": {
+      "beamer": false,
+      "bib": false,
+      "math": false,
+      "text": false,
+      "tikz": false,
+      "toc": false
+    },
+    "latex_level": "Schon mal ausprobiert",
+    "os": "Windows 10",
+    "skill": "Schon mal programmiert, aber noch nicht in Python.",
+    "submit": true,
+    "toolbox": true,
+    "toolbox_interests": {
+      "cli": true,
+      "git": true,
+      "make": true,
+      "plotting": true,
+      "python": true,
+      "uncertainties": true
+    }
+  },
+  {
+    "installieren": false,
+    "languages": {
+      "cpp": true,
+      "fortran": false,
+      "java": false,
+      "matlab": false,
+      "other": "",
+      "python": false
+    },
+    "latex": true,
+    "latex_interests": {
+      "beamer": false,
+      "bib": false,
+      "math": false,
+      "text": false,
+      "tikz": false,
+      "toc": false
+    },
+    "latex_level": "Noch nie geh\u00f6rt",
+    "os": "macOS",
+    "skill": "Schon mal programmiert, aber noch nicht in Python.",
+    "submit": true,
+    "toolbox": true,
+    "toolbox_interests": {
+      "cli": false,
+      "git": false,
+      "make": false,
+      "plotting": false,
+      "python": false,
+      "uncertainties": false
+    }
+  },
+  {
+    "installieren": false,
+    "languages": {
+      "cpp": true,
+      "fortran": false,
+      "java": false,
+      "matlab": true,
+      "other": "",
+      "python": false
+    },
+    "latex": true,
+    "latex_interests": {
+      "beamer": false,
+      "bib": true,
+      "math": false,
+      "text": false,
+      "tikz": false,
+      "toc": false
+    },
+    "latex_level": "Noch nie geh\u00f6rt",
+    "os": "Windows 10",
+    "skill": "Schon mal programmiert, aber noch nicht in Python.",
+    "submit": true,
+    "toolbox": true,
+    "toolbox_interests": {
+      "cli": false,
+      "git": false,
+      "make": false,
+      "plotting": false,
+      "python": true,
+      "uncertainties": true
+    }
+  },
+  {
+    "installieren": false,
+    "languages": {
+      "cpp": true,
+      "fortran": false,
+      "java": false,
+      "matlab": false,
+      "other": "",
+      "python": false
+    },
+    "latex": true,
+    "latex_interests": {
+      "beamer": false,
+      "bib": false,
+      "math": false,
+      "text": false,
+      "tikz": false,
+      "toc": false
+    },
+    "latex_level": "Schon mal ausprobiert",
+    "os": "Windows 10",
+    "skill": "Schon mal programmiert, aber noch nicht in Python.",
+    "submit": true,
+    "toolbox": true,
+    "toolbox_interests": {
+      "cli": false,
+      "git": false,
+      "make": false,
+      "plotting": false,
+      "python": false,
+      "uncertainties": false
+    }
+  },
+  {
+    "installieren": false,
+    "languages": {
+      "cpp": true,
+      "fortran": false,
+      "java": true,
+      "matlab": false,
+      "other": "",
+      "python": true
+    },
+    "latex": true,
+    "latex_interests": {
+      "beamer": false,
+      "bib": true,
+      "math": false,
+      "text": false,
+      "tikz": true,
+      "toc": false
+    },
+    "latex_level": "Noch nie geh\u00f6rt",
+    "os": "Windows 11",
+    "skill": "Schon mal programmiert, auch in Python.",
+    "submit": true,
+    "toolbox": true,
+    "toolbox_interests": {
+      "cli": false,
+      "git": false,
+      "make": true,
+      "plotting": false,
+      "python": false,
+      "uncertainties": true
+    }
+  },
+  {
+    "installieren": false,
+    "languages": {
+      "cpp": false,
+      "fortran": false,
+      "java": true,
+      "matlab": false,
+      "other": "",
+      "python": false
+    },
+    "latex": true,
+    "latex_interests": {
+      "beamer": false,
+      "bib": false,
+      "math": true,
+      "text": true,
+      "tikz": true,
+      "toc": true
+    },
+    "latex_level": "Noch nie geh\u00f6rt",
+    "os": "macOS",
+    "skill": "Schon mal programmiert, aber noch nicht in Python.",
+    "submit": true,
+    "toolbox": true,
+    "toolbox_interests": {
+      "cli": true,
+      "git": true,
+      "make": true,
+      "plotting": true,
+      "python": true,
+      "uncertainties": true
+    }
+  },
+  {
+    "installieren": false,
+    "languages": {
+      "cpp": false,
+      "fortran": false,
+      "java": true,
+      "matlab": false,
+      "other": "",
+      "python": false
+    },
+    "latex": true,
+    "latex_interests": {
+      "beamer": false,
+      "bib": false,
+      "math": false,
+      "text": false,
+      "tikz": false,
+      "toc": true
+    },
+    "latex_level": "Noch nie geh\u00f6rt",
+    "os": "Windows 10",
+    "skill": "Schon mal programmiert, aber noch nicht in Python.",
+    "submit": true,
+    "toolbox": true,
+    "toolbox_interests": {
+      "cli": false,
+      "git": false,
+      "make": false,
+      "plotting": false,
+      "python": true,
+      "uncertainties": false
+    }
+  },
+  {
+    "installieren": true,
+    "languages": {
+      "cpp": false,
+      "fortran": false,
+      "java": false,
+      "matlab": true,
+      "other": "",
+      "python": false
+    },
+    "latex": true,
+    "latex_interests": {
+      "beamer": false,
+      "bib": false,
+      "math": false,
+      "text": false,
+      "tikz": false,
+      "toc": false
+    },
+    "latex_level": "Noch nie geh\u00f6rt",
+    "os": "Windows 10",
+    "skill": "Schon mal programmiert, aber noch nicht in Python.",
+    "submit": true,
+    "toolbox": true,
+    "toolbox_interests": {
+      "cli": false,
+      "git": false,
+      "make": false,
+      "plotting": false,
+      "python": true,
+      "uncertainties": false
+    }
+  },
+  {
+    "installieren": false,
+    "languages": {
+      "cpp": true,
+      "fortran": false,
+      "java": true,
+      "matlab": true,
+      "other": "",
+      "python": true
+    },
+    "latex": true,
+    "latex_interests": {
+      "beamer": false,
+      "bib": false,
+      "math": false,
+      "text": false,
+      "tikz": false,
+      "toc": false
+    },
+    "latex_level": "Noch nie geh\u00f6rt",
+    "os": "Windows 11",
+    "skill": "Schon mal programmiert, auch in Python.",
+    "submit": true,
+    "toolbox": true,
+    "toolbox_interests": {
+      "cli": false,
+      "git": false,
+      "make": false,
+      "plotting": false,
+      "python": true,
+      "uncertainties": false
+    }
+  },
+  {
+    "installieren": true,
+    "languages": {
+      "cpp": false,
+      "fortran": false,
+      "java": true,
+      "matlab": false,
+      "other": "",
+      "python": false
+    },
+    "latex": true,
+    "latex_interests": {
+      "beamer": false,
+      "bib": true,
+      "math": true,
+      "text": false,
+      "tikz": true,
+      "toc": false
+    },
+    "latex_level": "Noch nie geh\u00f6rt",
+    "os": "Windows 10",
+    "skill": "Schon mal programmiert, aber noch nicht in Python.",
+    "submit": true,
+    "toolbox": true,
+    "toolbox_interests": {
+      "cli": false,
+      "git": false,
+      "make": false,
+      "plotting": false,
+      "python": true,
+      "uncertainties": true
+    }
+  },
+  {
+    "installieren": true,
+    "languages": {
+      "cpp": false,
+      "fortran": false,
+      "java": true,
+      "matlab": false,
+      "other": "",
+      "python": false
+    },
+    "latex": true,
+    "latex_interests": {
+      "beamer": true,
+      "bib": true,
+      "math": true,
+      "text": true,
+      "tikz": true,
+      "toc": true
+    },
+    "latex_level": "Noch nie geh\u00f6rt",
+    "os": "Windows 11",
+    "skill": "Schon mal programmiert, aber noch nicht in Python.",
+    "submit": true,
+    "toolbox": true,
+    "toolbox_interests": {
+      "cli": true,
+      "git": true,
+      "make": true,
+      "plotting": true,
+      "python": true,
+      "uncertainties": true
+    }
+  },
+  {
+    "installieren": true,
+    "languages": {
+      "cpp": false,
+      "fortran": false,
+      "java": false,
+      "matlab": false,
+      "other": "",
+      "python": false
+    },
+    "latex": true,
+    "latex_interests": {
+      "beamer": false,
+      "bib": false,
+      "math": false,
+      "text": false,
+      "tikz": true,
+      "toc": false
+    },
+    "latex_level": "Noch nie geh\u00f6rt",
+    "os": "Windows 10",
+    "skill": "Noch nie programmiert.",
+    "submit": true,
+    "toolbox": true,
+    "toolbox_interests": {
+      "cli": false,
+      "git": false,
+      "make": false,
+      "plotting": true,
+      "python": true,
+      "uncertainties": false
+    }
+  },
+  {
+    "installieren": true,
+    "languages": {
+      "cpp": true,
+      "fortran": true,
+      "java": true,
+      "matlab": true,
+      "other": "",
+      "python": true
+    },
+    "latex": true,
+    "latex_interests": {
+      "beamer": true,
+      "bib": true,
+      "math": true,
+      "text": true,
+      "tikz": true,
+      "toc": true
+    },
+    "latex_level": "Noch nie geh\u00f6rt",
+    "os": "Windows 10",
+    "skill": "Noch nie programmiert.",
+    "submit": true,
+    "toolbox": true,
+    "toolbox_interests": {
+      "cli": true,
+      "git": true,
+      "make": true,
+      "plotting": true,
+      "python": true,
+      "uncertainties": true
+    }
+  },
+  {
+    "installieren": true,
+    "languages": {
+      "cpp": true,
+      "fortran": false,
+      "java": false,
+      "matlab": false,
+      "other": "",
+      "python": false
+    },
+    "latex": true,
+    "latex_interests": {
+      "beamer": true,
+      "bib": true,
+      "math": false,
+      "text": false,
+      "tikz": true,
+      "toc": true
+    },
+    "latex_level": "Schon mal ausprobiert",
+    "os": "Windows 11",
+    "skill": "Schon mal programmiert, aber noch nicht in Python.",
+    "submit": true,
+    "toolbox": true,
+    "toolbox_interests": {
+      "cli": true,
+      "git": true,
+      "make": true,
+      "plotting": true,
+      "python": true,
+      "uncertainties": true
+    }
+  },
+  {
+    "installieren": false,
+    "languages": {
+      "cpp": true,
+      "fortran": false,
+      "java": true,
+      "matlab": false,
+      "other": "",
+      "python": false
+    },
+    "latex": false,
+    "latex_interests": {
+      "beamer": false,
+      "bib": false,
+      "math": false,
+      "text": false,
+      "tikz": false,
+      "toc": false
+    },
+    "latex_level": "Schon mal ausprobiert",
+    "os": "Windows 11",
+    "skill": "Schon mal programmiert, aber noch nicht in Python.",
+    "submit": true,
+    "toolbox": true,
+    "toolbox_interests": {
+      "cli": false,
+      "git": false,
+      "make": false,
+      "plotting": false,
+      "python": false,
+      "uncertainties": false
+    }
+  },
+  {
+    "installieren": false,
+    "languages": {
+      "cpp": true,
+      "fortran": false,
+      "java": false,
+      "matlab": false,
+      "other": "",
+      "python": false
+    },
+    "latex": false,
+    "latex_interests": {
+      "beamer": false,
+      "bib": false,
+      "math": false,
+      "text": false,
+      "tikz": false,
+      "toc": false
+    },
+    "latex_level": "Noch nie geh\u00f6rt",
+    "os": "Windows 11",
+    "skill": "Schon mal programmiert, aber noch nicht in Python.",
+    "submit": true,
+    "toolbox": true,
+    "toolbox_interests": {
+      "cli": false,
+      "git": false,
+      "make": false,
+      "plotting": false,
+      "python": true,
+      "uncertainties": false
+    }
+  },
+  {
+    "installieren": false,
+    "languages": {
+      "cpp": true,
+      "fortran": false,
+      "java": true,
+      "matlab": false,
+      "other": "",
+      "python": false
+    },
+    "latex": true,
+    "latex_interests": {
+      "beamer": false,
+      "bib": false,
+      "math": false,
+      "text": false,
+      "tikz": false,
+      "toc": false
+    },
+    "latex_level": "Noch nie geh\u00f6rt",
+    "os": "Windows 10",
+    "skill": "Schon mal programmiert, aber noch nicht in Python.",
+    "submit": true,
+    "toolbox": true,
+    "toolbox_interests": {
+      "cli": false,
+      "git": false,
+      "make": false,
+      "plotting": false,
+      "python": false,
+      "uncertainties": false
+    }
+  },
+  {
+    "installieren": true,
+    "languages": {
+      "cpp": false,
+      "fortran": false,
+      "java": false,
+      "matlab": false,
+      "other": "",
+      "python": false
+    },
+    "latex": true,
+    "latex_interests": {
+      "beamer": false,
+      "bib": true,
+      "math": true,
+      "text": true,
+      "tikz": true,
+      "toc": false
+    },
+    "latex_level": "Noch nie geh\u00f6rt",
+    "os": "Windows 11",
+    "skill": "Noch nie programmiert.",
+    "submit": true,
+    "toolbox": true,
+    "toolbox_interests": {
+      "cli": true,
+      "git": true,
+      "make": true,
+      "plotting": true,
+      "python": true,
+      "uncertainties": true
+    }
+  },
+  {
+    "installieren": false,
+    "languages": {
+      "cpp": false,
+      "fortran": false,
+      "java": false,
+      "matlab": false,
+      "other": "",
+      "python": false
+    },
+    "latex": true,
+    "latex_interests": {
+      "beamer": false,
+      "bib": true,
+      "math": false,
+      "text": false,
+      "tikz": true,
+      "toc": false
+    },
+    "latex_level": "Noch nie geh\u00f6rt",
+    "os": "Windows 10",
+    "skill": "Schon mal programmiert, aber noch nicht in Python.",
+    "submit": true,
+    "toolbox": true,
+    "toolbox_interests": {
+      "cli": true,
+      "git": false,
+      "make": false,
+      "plotting": true,
+      "python": true,
+      "uncertainties": true
+    }
+  },
+  {
+    "installieren": true,
+    "languages": {
+      "cpp": false,
+      "fortran": false,
+      "java": true,
+      "matlab": false,
+      "other": "",
+      "python": true
+    },
+    "latex": true,
+    "latex_interests": {
+      "beamer": true,
+      "bib": true,
+      "math": true,
+      "text": true,
+      "tikz": false,
+      "toc": false
+    },
+    "latex_level": "Schon mal ausprobiert",
+    "os": "macOS",
+    "skill": "Schon mal programmiert, auch in Python.",
+    "submit": true,
+    "toolbox": true,
+    "toolbox_interests": {
+      "cli": true,
+      "git": true,
+      "make": true,
+      "plotting": true,
+      "python": true,
+      "uncertainties": true
+    }
+  },
+  {
+    "installieren": false,
+    "languages": {
+      "cpp": true,
+      "fortran": false,
+      "java": false,
+      "matlab": false,
+      "other": "",
+      "python": false
+    },
+    "latex": true,
+    "latex_interests": {
+      "beamer": false,
+      "bib": false,
+      "math": false,
+      "text": false,
+      "tikz": false,
+      "toc": false
+    },
+    "latex_level": "Noch nie geh\u00f6rt",
+    "os": "Windows 11",
+    "skill": "Schon mal programmiert, aber noch nicht in Python.",
+    "submit": true,
+    "toolbox": true,
+    "toolbox_interests": {
+      "cli": false,
+      "git": false,
+      "make": false,
+      "plotting": false,
+      "python": false,
+      "uncertainties": false
+    }
+  },
+  {
+    "installieren": false,
+    "languages": {
+      "cpp": true,
+      "fortran": false,
+      "java": false,
+      "matlab": false,
+      "other": "",
+      "python": false
+    },
+    "latex": true,
+    "latex_interests": {
+      "beamer": true,
+      "bib": true,
+      "math": true,
+      "text": false,
+      "tikz": true,
+      "toc": false
+    },
+    "latex_level": "Noch nie geh\u00f6rt",
+    "os": "Windows 11",
+    "skill": "Schon mal programmiert, aber noch nicht in Python.",
+    "submit": true,
+    "toolbox": true,
+    "toolbox_interests": {
+      "cli": true,
+      "git": false,
+      "make": true,
+      "plotting": true,
+      "python": true,
+      "uncertainties": true
+    }
+  },
+  {
+    "installieren": false,
+    "languages": {
+      "cpp": true,
+      "fortran": false,
+      "java": false,
+      "matlab": false,
+      "other": "",
+      "python": false
+    },
+    "latex": true,
+    "latex_interests": {
+      "beamer": false,
+      "bib": false,
+      "math": true,
+      "text": true,
+      "tikz": true,
+      "toc": true
+    },
+    "latex_level": "Noch nie geh\u00f6rt",
+    "os": "Windows 10",
+    "skill": "Schon mal programmiert, aber noch nicht in Python.",
+    "submit": true,
+    "toolbox": true,
+    "toolbox_interests": {
+      "cli": false,
+      "git": false,
+      "make": true,
+      "plotting": true,
+      "python": true,
+      "uncertainties": false
+    }
+  },
+  {
+    "installieren": false,
+    "languages": {
+      "cpp": true,
+      "fortran": false,
+      "java": false,
+      "matlab": false,
+      "other": "",
+      "python": true
+    },
+    "latex": true,
+    "latex_interests": {
+      "beamer": false,
+      "bib": true,
+      "math": false,
+      "text": false,
+      "tikz": true,
+      "toc": true
+    },
+    "latex_level": "Schon mal ausprobiert",
+    "os": "Windows 11",
+    "skill": "Schon mal programmiert, auch in Python.",
+    "submit": true,
+    "toolbox": true,
+    "toolbox_interests": {
+      "cli": false,
+      "git": false,
+      "make": true,
+      "plotting": true,
+      "python": false,
+      "uncertainties": true
+    }
+  },
+  {
+    "installieren": false,
+    "languages": {
+      "cpp": false,
+      "fortran": false,
+      "java": true,
+      "matlab": true,
+      "other": "",
+      "python": false
+    },
+    "latex": false,
+    "latex_interests": {
+      "beamer": false,
+      "bib": false,
+      "math": false,
+      "text": false,
+      "tikz": false,
+      "toc": false
+    },
+    "latex_level": "Noch nie geh\u00f6rt",
+    "os": "Windows 10",
+    "skill": "Schon mal programmiert, aber noch nicht in Python.",
+    "submit": true,
+    "toolbox": true,
+    "toolbox_interests": {
+      "cli": false,
+      "git": false,
+      "make": false,
+      "plotting": true,
+      "python": true,
+      "uncertainties": false
+    }
+  },
+  {
+    "installieren": false,
+    "languages": {
+      "cpp": false,
+      "fortran": false,
+      "java": true,
+      "matlab": false,
+      "other": "",
+      "python": false
+    },
+    "latex": true,
+    "latex_interests": {
+      "beamer": true,
+      "bib": true,
+      "math": true,
+      "text": true,
+      "tikz": true,
+      "toc": true
+    },
+    "latex_level": "Schon mal ausprobiert",
+    "os": "macOS",
+    "skill": "Noch nie programmiert.",
+    "submit": true,
+    "toolbox": false,
+    "toolbox_interests": {
+      "cli": false,
+      "git": false,
+      "make": false,
+      "plotting": false,
+      "python": false,
+      "uncertainties": false
+    }
+  },
+  {
+    "installieren": false,
+    "languages": {
+      "cpp": false,
+      "fortran": false,
+      "java": false,
+      "matlab": false,
+      "other": "",
+      "python": false
+    },
+    "latex": false,
+    "latex_interests": {
+      "beamer": false,
+      "bib": false,
+      "math": false,
+      "text": false,
+      "tikz": false,
+      "toc": false
+    },
+    "latex_level": "Schon mal ausprobiert",
+    "os": "macOS",
+    "skill": "Noch nie programmiert.",
+    "submit": true,
+    "toolbox": true,
+    "toolbox_interests": {
+      "cli": true,
+      "git": true,
+      "make": true,
+      "plotting": true,
+      "python": true,
+      "uncertainties": true
+    }
+  },
+  {
+    "installieren": false,
+    "languages": {
+      "cpp": true,
+      "fortran": false,
+      "java": true,
+      "matlab": false,
+      "other": "",
+      "python": false
+    },
+    "latex": true,
+    "latex_interests": {
+      "beamer": false,
+      "bib": false,
+      "math": true,
+      "text": true,
+      "tikz": false,
+      "toc": false
+    },
+    "latex_level": "Schon mal ausprobiert",
+    "os": "Windows 10",
+    "skill": "Schon mal programmiert, aber noch nicht in Python.",
+    "submit": true,
+    "toolbox": true,
+    "toolbox_interests": {
+      "cli": false,
+      "git": false,
+      "make": false,
+      "plotting": false,
+      "python": true,
+      "uncertainties": false
+    }
+  },
+  {
+    "installieren": false,
+    "languages": {
+      "cpp": true,
+      "fortran": false,
+      "java": false,
+      "matlab": false,
+      "other": "",
+      "python": false
+    },
+    "latex": true,
+    "latex_interests": {
+      "beamer": false,
+      "bib": true,
+      "math": true,
+      "text": true,
+      "tikz": true,
+      "toc": true
+    },
+    "latex_level": "Schon mal ausprobiert",
+    "os": "macOS",
+    "skill": "Schon mal programmiert, aber noch nicht in Python.",
+    "submit": true,
+    "toolbox": true,
+    "toolbox_interests": {
+      "cli": true,
+      "git": true,
+      "make": true,
+      "plotting": true,
+      "python": true,
+      "uncertainties": true
+    }
+  },
+  {
+    "installieren": false,
+    "languages": {
+      "cpp": false,
+      "fortran": false,
+      "java": true,
+      "matlab": false,
+      "other": "",
+      "python": false
+    },
+    "latex": true,
+    "latex_interests": {
+      "beamer": false,
+      "bib": true,
+      "math": false,
+      "text": false,
+      "tikz": false,
+      "toc": false
+    },
+    "latex_level": "Noch nie geh\u00f6rt",
+    "os": "Windows 11",
+    "skill": "Schon mal programmiert, aber noch nicht in Python.",
+    "submit": true,
+    "toolbox": true,
+    "toolbox_interests": {
+      "cli": false,
+      "git": false,
+      "make": false,
+      "plotting": false,
+      "python": true,
+      "uncertainties": false
+    }
+  },
+  {
+    "installieren": false,
+    "languages": {
+      "cpp": false,
+      "fortran": false,
+      "java": true,
+      "matlab": false,
+      "other": "SQL, Assembly",
+      "python": false
+    },
+    "latex": true,
+    "latex_interests": {
+      "beamer": false,
+      "bib": false,
+      "math": true,
+      "text": false,
+      "tikz": false,
+      "toc": true
+    },
+    "latex_level": "Noch nie geh\u00f6rt",
+    "os": "Windows 10",
+    "skill": "Schon mal programmiert, aber noch nicht in Python.",
+    "submit": true,
+    "toolbox": true,
+    "toolbox_interests": {
+      "cli": false,
+      "git": false,
+      "make": true,
+      "plotting": false,
+      "python": true,
+      "uncertainties": true
+    }
+  },
+  {
+    "installieren": false,
+    "languages": {
+      "cpp": false,
+      "fortran": false,
+      "java": false,
+      "matlab": false,
+      "other": "",
+      "python": true
+    },
+    "latex": false,
+    "latex_interests": {
+      "beamer": false,
+      "bib": false,
+      "math": false,
+      "text": false,
+      "tikz": false,
+      "toc": false
+    },
+    "latex_level": "Noch nie geh\u00f6rt",
+    "os": "Windows 10",
+    "skill": "Noch nie programmiert.",
+    "submit": true,
+    "toolbox": true,
+    "toolbox_interests": {
+      "cli": true,
+      "git": true,
+      "make": true,
+      "plotting": true,
+      "python": true,
+      "uncertainties": true
+    }
+  },
+  {
+    "installieren": false,
+    "languages": {
+      "cpp": false,
+      "fortran": false,
+      "java": false,
+      "matlab": false,
+      "other": "",
+      "python": false
+    },
+    "latex": false,
+    "latex_interests": {
+      "beamer": false,
+      "bib": false,
+      "math": false,
+      "text": false,
+      "tikz": false,
+      "toc": false
+    },
+    "latex_level": "Noch nie geh\u00f6rt",
+    "os": "Windows 10",
+    "skill": "Noch nie programmiert.",
+    "submit": true,
+    "toolbox": false,
+    "toolbox_interests": {
+      "cli": false,
+      "git": false,
+      "make": false,
+      "plotting": false,
+      "python": false,
+      "uncertainties": false
+    }
+  },
+  {
+    "installieren": true,
+    "languages": {
+      "cpp": false,
+      "fortran": false,
+      "java": true,
+      "matlab": false,
+      "other": "",
+      "python": false
+    },
+    "latex": true,
+    "latex_interests": {
+      "beamer": false,
+      "bib": true,
+      "math": true,
+      "text": false,
+      "tikz": false,
+      "toc": true
+    },
+    "latex_level": "Noch nie geh\u00f6rt",
+    "os": "macOS",
+    "skill": "Noch nie programmiert.",
+    "submit": true,
+    "toolbox": true,
+    "toolbox_interests": {
+      "cli": false,
+      "git": false,
+      "make": false,
+      "plotting": false,
+      "python": true,
+      "uncertainties": false
+    }
+  },
+  {
+    "installieren": true,
+    "languages": {
+      "cpp": false,
+      "fortran": false,
+      "java": true,
+      "matlab": false,
+      "other": "C",
+      "python": false
+    },
+    "latex": true,
+    "latex_interests": {
+      "beamer": true,
+      "bib": false,
+      "math": true,
+      "text": true,
+      "tikz": true,
+      "toc": true
+    },
+    "latex_level": "Noch nie geh\u00f6rt",
+    "os": "Windows 11",
+    "skill": "Schon mal programmiert, aber noch nicht in Python.",
+    "submit": true,
+    "toolbox": true,
+    "toolbox_interests": {
+      "cli": true,
+      "git": true,
+      "make": true,
+      "plotting": true,
+      "python": true,
+      "uncertainties": true
+    }
+  },
+  {
+    "installieren": true,
+    "languages": {
+      "cpp": false,
+      "fortran": false,
+      "java": false,
+      "matlab": false,
+      "other": "",
+      "python": false
+    },
+    "latex": true,
+    "latex_interests": {
+      "beamer": false,
+      "bib": true,
+      "math": true,
+      "text": true,
+      "tikz": true,
+      "toc": true
+    },
+    "latex_level": "Schon mal ausprobiert",
+    "os": "Windows 10",
+    "skill": "Noch nie programmiert.",
+    "submit": true,
+    "toolbox": true,
+    "toolbox_interests": {
+      "cli": false,
+      "git": false,
+      "make": false,
+      "plotting": true,
+      "python": true,
+      "uncertainties": true
+    }
+  },
+  {
+    "installieren": false,
+    "languages": {
+      "cpp": true,
+      "fortran": false,
+      "java": true,
+      "matlab": false,
+      "other": "",
+      "python": false
+    },
+    "latex": true,
+    "latex_interests": {
+      "beamer": false,
+      "bib": true,
+      "math": true,
+      "text": true,
+      "tikz": true,
+      "toc": true
+    },
+    "latex_level": "Noch nie geh\u00f6rt",
+    "os": "Was exotisches",
+    "skill": "Schon mal programmiert, aber noch nicht in Python.",
+    "submit": true,
+    "toolbox": true,
+    "toolbox_interests": {
+      "cli": true,
+      "git": false,
+      "make": true,
+      "plotting": true,
+      "python": true,
+      "uncertainties": true
+    }
+  },
+  {
+    "installieren": false,
+    "languages": {
+      "cpp": false,
+      "fortran": false,
+      "java": true,
+      "matlab": false,
+      "other": "",
+      "python": false
+    },
+    "latex": true,
+    "latex_interests": {
+      "beamer": true,
+      "bib": true,
+      "math": true,
+      "text": true,
+      "tikz": true,
+      "toc": true
+    },
+    "latex_level": "Noch nie geh\u00f6rt",
+    "os": "Windows 10",
+    "skill": "Schon mal programmiert, aber noch nicht in Python.",
+    "submit": true,
+    "toolbox": true,
+    "toolbox_interests": {
+      "cli": true,
+      "git": true,
+      "make": true,
+      "plotting": true,
+      "python": true,
+      "uncertainties": true
+    }
+  },
+  {
+    "installieren": false,
+    "languages": {
+      "cpp": true,
+      "fortran": false,
+      "java": true,
+      "matlab": true,
+      "other": "",
+      "python": true
+    },
+    "latex": true,
+    "latex_interests": {
+      "beamer": false,
+      "bib": true,
+      "math": false,
+      "text": false,
+      "tikz": false,
+      "toc": true
+    },
+    "latex_level": "Schon mal ausprobiert",
+    "os": "Windows 10",
+    "skill": "Schon mal programmiert, auch in Python.",
+    "submit": true,
+    "toolbox": true,
+    "toolbox_interests": {
+      "cli": false,
+      "git": false,
+      "make": true,
+      "plotting": false,
+      "python": true,
+      "uncertainties": true
+    }
+  },
+  {
+    "installieren": true,
+    "languages": {
+      "cpp": true,
+      "fortran": false,
+      "java": false,
+      "matlab": true,
+      "other": "",
+      "python": true
+    },
+    "latex": true,
+    "latex_interests": {
+      "beamer": true,
+      "bib": false,
+      "math": true,
+      "text": false,
+      "tikz": false,
+      "toc": false
+    },
+    "latex_level": "Schon mal ausprobiert",
+    "os": "Windows 11",
+    "skill": "Schon mal programmiert, auch in Python.",
+    "submit": true,
+    "toolbox": true,
+    "toolbox_interests": {
+      "cli": true,
+      "git": true,
+      "make": false,
+      "plotting": true,
+      "python": true,
+      "uncertainties": false
+    }
+  },
+  {
+    "installieren": true,
+    "languages": {
+      "cpp": true,
+      "fortran": false,
+      "java": false,
+      "matlab": false,
+      "other": "",
+      "python": false
+    },
+    "latex": true,
+    "latex_interests": {
+      "beamer": false,
+      "bib": false,
+      "math": false,
+      "text": false,
+      "tikz": false,
+      "toc": false
+    },
+    "latex_level": "Noch nie geh\u00f6rt",
+    "os": "macOS",
+    "skill": "Schon mal programmiert, aber noch nicht in Python.",
+    "submit": true,
+    "toolbox": true,
+    "toolbox_interests": {
+      "cli": false,
+      "git": false,
+      "make": false,
+      "plotting": false,
+      "python": true,
+      "uncertainties": true
+    }
+  },
+  {
+    "installieren": false,
+    "languages": {
+      "cpp": true,
+      "fortran": false,
+      "java": false,
+      "matlab": false,
+      "other": "",
+      "python": false
+    },
+    "latex": true,
+    "latex_interests": {
+      "beamer": false,
+      "bib": false,
+      "math": true,
+      "text": false,
+      "tikz": false,
+      "toc": true
+    },
+    "latex_level": "Schon mal ausprobiert",
+    "os": "Windows 10",
+    "skill": "Schon mal programmiert, aber noch nicht in Python.",
+    "submit": true,
+    "toolbox": true,
+    "toolbox_interests": {
+      "cli": false,
+      "git": false,
+      "make": false,
+      "plotting": true,
+      "python": true,
+      "uncertainties": true
+    }
+  },
+  {
+    "installieren": false,
+    "languages": {
+      "cpp": false,
+      "fortran": false,
+      "java": true,
+      "matlab": false,
+      "other": "",
+      "python": false
+    },
+    "latex": true,
+    "latex_interests": {
+      "beamer": false,
+      "bib": true,
+      "math": false,
+      "text": false,
+      "tikz": false,
+      "toc": true
+    },
+    "latex_level": "Noch nie geh\u00f6rt",
+    "os": "Windows 11",
+    "skill": "Schon mal programmiert, aber noch nicht in Python.",
+    "submit": true,
+    "toolbox": true,
+    "toolbox_interests": {
+      "cli": false,
+      "git": true,
+      "make": false,
+      "plotting": true,
+      "python": true,
+      "uncertainties": true
+    }
+  },
+  {
+    "installieren": false,
+    "languages": {
+      "cpp": false,
+      "fortran": false,
+      "java": false,
+      "matlab": false,
+      "other": "",
+      "python": true
+    },
+    "latex": true,
+    "latex_interests": {
+      "beamer": false,
+      "bib": true,
+      "math": false,
+      "text": false,
+      "tikz": false,
+      "toc": true
+    },
+    "latex_level": "TeXpert",
+    "os": "Windows 10",
+    "skill": "Schon mal programmiert, auch in Python.",
+    "submit": true,
+    "toolbox": true,
+    "toolbox_interests": {
+      "cli": false,
+      "git": true,
+      "make": false,
+      "plotting": false,
+      "python": true,
+      "uncertainties": false
+    }
+  },
+  {
+    "installieren": true,
+    "languages": {
+      "cpp": false,
+      "fortran": false,
+      "java": false,
+      "matlab": false,
+      "other": "",
+      "python": false
+    },
+    "latex": true,
+    "latex_interests": {
+      "beamer": false,
+      "bib": false,
+      "math": false,
+      "text": false,
+      "tikz": false,
+      "toc": false
+    },
+    "latex_level": "Noch nie geh\u00f6rt",
+    "os": "macOS",
+    "skill": "Noch nie programmiert.",
+    "submit": true,
+    "toolbox": true,
+    "toolbox_interests": {
+      "cli": false,
+      "git": false,
+      "make": false,
+      "plotting": false,
+      "python": false,
+      "uncertainties": false
+    }
+  },
+  {
+    "installieren": false,
+    "languages": {
+      "cpp": true,
+      "fortran": false,
+      "java": false,
+      "matlab": false,
+      "other": "",
+      "python": false
+    },
+    "latex": true,
+    "latex_interests": {
+      "beamer": false,
+      "bib": true,
+      "math": false,
+      "text": true,
+      "tikz": false,
+      "toc": true
+    },
+    "latex_level": "Noch nie geh\u00f6rt",
+    "os": "Windows 10",
+    "skill": "Schon mal programmiert, aber noch nicht in Python.",
+    "submit": true,
+    "toolbox": true,
+    "toolbox_interests": {
+      "cli": false,
+      "git": false,
+      "make": false,
+      "plotting": false,
+      "python": true,
+      "uncertainties": true
+    }
+  },
+  {
+    "installieren": true,
+    "languages": {
+      "cpp": false,
+      "fortran": false,
+      "java": false,
+      "matlab": false,
+      "other": "",
+      "python": false
+    },
+    "latex": true,
+    "latex_interests": {
+      "beamer": false,
+      "bib": false,
+      "math": false,
+      "text": false,
+      "tikz": false,
+      "toc": true
+    },
+    "latex_level": "Noch nie geh\u00f6rt",
+    "os": "Windows 11",
+    "skill": "Noch nie programmiert.",
+    "submit": true,
+    "toolbox": true,
+    "toolbox_interests": {
+      "cli": false,
+      "git": false,
+      "make": false,
+      "plotting": true,
+      "python": true,
+      "uncertainties": false
+    }
+  },
+  {
+    "installieren": false,
+    "languages": {
+      "cpp": false,
+      "fortran": false,
+      "java": false,
+      "matlab": false,
+      "other": "",
+      "python": false
+    },
+    "latex": true,
+    "latex_interests": {
+      "beamer": false,
+      "bib": false,
+      "math": false,
+      "text": false,
+      "tikz": false,
+      "toc": false
+    },
+    "latex_level": "Noch nie geh\u00f6rt",
+    "os": "Windows 11",
+    "skill": "Noch nie programmiert.",
+    "submit": true,
+    "toolbox": true,
+    "toolbox_interests": {
+      "cli": false,
+      "git": false,
+      "make": false,
+      "plotting": false,
+      "python": true,
+      "uncertainties": true
+    }
+  }
+]
