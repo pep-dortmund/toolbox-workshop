@@ -5,7 +5,7 @@ FIGURES := $(addprefix build/figures/, $(addsuffix .pdf, os programming interest
 
 build/intro.pdf: $(FIGURES) $(addprefix build/figures/, \
 	vim.png nano.png real_programmers.png code.png windows.png macos.png tux.jpg\
-	fedora.png archlinux.png ubuntu.png debian.png 
+	fedora.png archlinux.png ubuntu.png debian.pdf \
 	)
 
 build/figures/os.pdf: script/answers.py data/toolbox2023.json ../common/matplotlibrc ../common/header-matplotlib.tex
