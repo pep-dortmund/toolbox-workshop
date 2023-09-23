@@ -15,7 +15,7 @@ def operating_system(answers):
     os = pd.Series(liste).value_counts()
     os /= os.sum()
 
-    fig = plt.figure(figsize=(5.5, 3.3), layout="constrained")
+    fig = plt.figure(figsize=(5.5, 3.3), layout="none")
     ax = fig.add_axes([0, 0, 1, 1], aspect=1)
     ax.pie(
         os.values,
@@ -38,7 +38,7 @@ def programming(answers):
     programming = programming.value_counts()
     programming /= programming.sum()
 
-    fig = plt.figure(figsize=(5.5, 3.3), layout="constrained")
+    fig = plt.figure(figsize=(5.5, 3.3), layout="none")
     ax = fig.add_axes([0, 0, 1, 1], aspect=1)
     ax.pie(
         programming.values,

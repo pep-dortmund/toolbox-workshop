@@ -5,8 +5,8 @@ FIGURES := $(addprefix build/figures/, $(addsuffix .pdf, os programming interest
 
 build/intro.pdf: $(FIGURES) $(addprefix build/figures/, vim.png nano.png real_programmers.png code.png)
 
-build/figures/os.pdf: script/answers.py data/toolbox2020.json
-	TEXINPUTS=$(shell pwd): python3 $<
+build/figures/os.pdf: script/answers.py data/toolbox2023.json ../common/matplotlibrc ../common/header-matplotlib.tex
+	MATPLOTLIBRC=../common/matplotlibrc TEXINPUTS=$$(pwd)/../common: python3 $<
 
 $(addprefix build/figures/, programming.pdf interest.pdf): build/figures/os.pdf
 
