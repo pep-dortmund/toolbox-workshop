@@ -40,8 +40,7 @@ build/figures/tux.jpg: | build/figures
 	convert build/figures/tux-original.jpg -trim $@
 
 build/figures/debian.pdf: | build/figures
-	wget https://www.debian.org/logos/openlogo.pdf -O build/figures/debian-original.pdf
-	@../common/crop.py build/figures/debian-original.pdf $@
+	wget https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Debian-OpenLogo.svg/581px-Debian-OpenLogo.svg.png -O build/figures/debian-openlogo.png
 
 build/figures/ubuntu.png: build/figures
 	wget -O $@ --no-use-server-timestamps https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Ubuntu_logo.svg/600px-Ubuntu_logo.svg.png
