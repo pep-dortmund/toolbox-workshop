@@ -299,9 +299,52 @@
   \end{description}
 \end{frame}
 
-\section{Editoren}
+\section{Betriebssysteme \& Editoren}
 
-\headlineframe{And now for something completely different…}
+\headlineframe{Betriebssysteme}
+\begin{frame}{Betriebssysteme}
+  \begin{tblr}{
+      colspec={X[c, m] X[c, m] X[c, m]},
+      row{1}={font=\bfseries\Large}
+    }
+    \raisebox{-0.5\height}{\includegraphics[width=\linewidth]{build/figures/windows.png}} &
+    \raisebox{-0.5\height}{\includegraphics[height=2cm]{build/figures/macos.png}} &
+    \raisebox{-0.5\height}{\includegraphics[height=2cm]{build/figures/tux.jpg}} Linux \\
+    Proprietäres Betriebssystem von Microsoft & Proprietäres Betriebssystem von Apple & Open Source Betriebssystem \emph{Kernel} \\
+    Läuft auf den meisten Geräten & Läuft nur auf Apple Geräten & Läuft auf den meisten Geräten \\
+    NT Kernel & Unix / BSD & Unix \\
+    & & Viele verschiedene \emph{Distributionen}\\
+  \end{tblr}
+
+  Viele kommerzielle Software unterstützt nur Windows und/oder macOS.
+
+  Man kann mehrere Betriebssysteme auf dem gleichen Rechner installieren. Nativ (Dual-Boot) oder in \enquote{Virtuellen Maschinen}.
+
+  Windows 10 \& 11 bringen das \emph{Windows Subsystem for Linux} mit, eine integrierte Linux VM.
+\end{frame}
+
+\begin{frame}{Linux-Distributionen}
+  Eine Linux-Distribution kombiniert den Linux-Kernel mit weiterer Software. Hauptsächlich:
+  \begin{itemize}
+    \item Desktop-Umgebung(en)
+    \item Paket-Manager und zugehörige Server mit Software
+  \end{itemize}
+
+  Es gibt viele \enquote{Familien} von Linux-Distributionen, die sich die gleichen oder ähnliche Tools teilen:
+  \begin{center}
+    \raisebox{-0.5\height}{\includegraphics[height=1.5cm]{build/figures/debian-openlogo.png}}
+    \hspace{0.5cm}\raisebox{-0.5\height}{\includegraphics[height=1cm]{build/figures/ubuntu.png}} \\[1\baselineskip]
+
+    \raisebox{-0.5\height}{\includegraphics[height=1.5cm]{build/figures/fedora.png}}~{\Huge Fedora}
+    \hspace{0.5cm}\raisebox{-0.5\height}{\includegraphics[height=1.5cm]{build/figures/archlinux.png}}
+  \end{center}
+
+  Für den Einstieg empfehlen wir die aktuellen Versionen von Ubuntu oder Fedora.
+
+  Alle zwei Jahre erscheint eine Ubuntu-Version mit 5 Jahren Support (LTS), aktuell: 22.04.
+
+  \url{https://distrowatch.com/} 
+\end{frame}
 
 \headlineframe{Texteditoren}
 
