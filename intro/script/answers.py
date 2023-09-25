@@ -15,7 +15,7 @@ def operating_system(answers):
     os = pd.Series(liste).value_counts()
     os /= os.sum()
 
-    fig = plt.figure(figsize=(5.5, 3.3), layout="constrained")
+    fig = plt.figure(figsize=(5.5, 3.3), layout="none")
     ax = fig.add_axes([0, 0, 1, 1], aspect=1)
     ax.pie(
         os.values,
@@ -38,16 +38,15 @@ def programming(answers):
     programming = programming.value_counts()
     programming /= programming.sum()
 
-    fig = plt.figure(figsize=(5.5, 3.3), layout="constrained")
+    fig = plt.figure(figsize=(5.5, 3.3), layout="none")
     ax = fig.add_axes([0, 0, 1, 1], aspect=1)
     ax.pie(
         programming.values,
         labels=programming.keys(),
-        startangle=0,
+        startangle=-30,
         radius=1,
         normalize=False,
     )
-    #    ax.set_xlim(-1.5, 1.5)
     fig.savefig("build/figures/programming.pdf")
 
 
@@ -113,7 +112,7 @@ def interests(answers):
 
 
 if __name__ == "__main__":
-    with open("data/toolbox2022.json", "r") as read_file:
+    with open("data/toolbox2023.json", "r") as read_file:
         data = json.load(read_file)
     languages(data)
     operating_system(data)

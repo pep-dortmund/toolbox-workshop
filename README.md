@@ -1,6 +1,6 @@
-# PeP et al. Toolbox-Workshop <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png" /></a> [![CI](https://github.com/pep-dortmund/toolbox-workshop/actions/workflows/ci.yml/badge.svg)](https://github.com/pep-dortmund/toolbox-workshop/actions/workflows/ci.yml)
+# PeP et al. Toolbox Workshop <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png" /></a> [![CI](https://github.com/pep-dortmund/toolbox-workshop/actions/workflows/ci.yml/badge.svg)](https://github.com/pep-dortmund/toolbox-workshop/actions/workflows/ci.yml)
 
-Dieses Repository enthält Materialien zum PeP et al. Toolbox-Workshop.
+Dieses Repository enthält Materialien zum PeP et al. Toolbox Workshop.
 
 Folgende Themen sind Teil des Workshops:
 
@@ -30,19 +30,19 @@ The lecture material (e.g. jupyter notebooks) are shared under the Creative Comm
 
 ## Installation
 
-For TeXLive and anaconda, follow the installation instruction on
+For TeXLive and mamba, follow the installation instruction on
 http://toolbox.pep-dortmund.org/install
 
 Create the environment with the required packages using
 
 ```
-conda env create -f environment.yml
+mamba env create -f environment.yml
 ```
 
 and activate it each time you are working in this project using
 
 ```
-conda activate toolbox
+mamba activate toolbox
 ```
 
 ### MacOS

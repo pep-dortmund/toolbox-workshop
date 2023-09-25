@@ -1,6 +1,6 @@
 Aufgabe 1:
-  Erstellt mit LaTeX ein PDF-Dokument, das
+  Erstelle mit LaTeX ein PDF-Dokument, das
     "Hello, World!"
   enthält.
 
-  Nutzt dazu die gestellte Datei `geruest.tex` und kompiliert mit lualatex.
+  Nutze dazu die gestellte Datei `geruest.tex` und kompiliere mit lualatex.

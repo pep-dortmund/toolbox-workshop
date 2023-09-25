@@ -1,7 +1,10 @@
-In der Pythondatei vorlage.py ist ein 10x10 Numpy-Array definiert. Dieses behandeln
-wir wie das Spielfeld im Spiel Schiffeversenken. Die Schiffe sind in diesem Fall die waagerechten,
-bzw. senkrechten Gruppen von Zahlen großer als Null (die Nullen
-stehen für das Wasser). Die Zahlen die die Schiffe bilden stehen dabei für die Länge der Schiffe.
+# Indexing
+
+In der Pythondatei vorlage.py ist ein 10x10 Numpy-Array definiert.
+Dieses behandeln wir wie das Spielfeld im Spiel Schiffe versenken.
+Die Schiffe sind in diesem Fall die waagerechten, bzw. senkrechten
+Gruppen von Zahlen großer als Null (die Nullen stehen für das Wasser).
+Die Zahlen, die die Schiffe bilden, stehen dabei für die Länge der Schiffe.
 Es gibt folgende Schiffe:
 
 6 1er-Schiffe
@@ -10,17 +13,18 @@ Es gibt folgende Schiffe:
 2 4er-Schiffe
 1 5er-Schiff
 
-Die Datei 'vorlage.py' enthält bereits den notwendigen code und muss nur noch um die
-die Lösung ergänzt werden. Durch Ausführen dieser Datei kann auch
+Die Datei 'vorlage.py' enthält bereits den notwendigen code und muss nur noch um
+die Lösung ergänzt werden. Durch das Ausführen dieser Datei kann auch
 Schritt für Schritt der Fortschritt überprüft werden.
-Durch Ausführen der Datei wird das Spielfeld auf das Terminal ausgegeben,
+Ebenfalls wird dann das Spielfeld auf das Terminal ausgegeben,
 zusätzlich wird auch noch ein Bild erzeugt, um einen besseren Überblick zu bekommen.
 
+Aufgaben:
 
 1) Für 2er-, 3er-, 4er- und 5er-Schiffe:
-   Versuche mit Hilfe von Array Indexing und Slicing, jeweils ein Schiff aufeinmal zu treffen,
-   in dem die entsprechenden Elemente auf -1 setzt.
+   Versuche, mithilfe von Array Indexing und Slicing, jeweils ein Schiff auf einmal zu treffen,
+   indem du die entsprechenden Elemente auf -1 setzt.
 
 
 2) Für 1er-Schiffe:
-   Versuche alle 1er-Schiffe aufeinmal zu treffen.
+   Versuche alle 1er-Schiffe auf einmal zu treffen.

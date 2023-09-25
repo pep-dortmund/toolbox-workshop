@@ -23,7 +23,7 @@ print("Spielfeld zu Beginn des Spiels:")
 print(field)
 
 # Was das hier ist lernen wir noch, kann getrost ignoriert werden.
-# In der Zwischenzeit, die Kurzfassung: Das 'macht' die Bilder. ;-)
+# In der Zwischenzeit die Kurzfassung: Das 'macht' die Bilder.
 fig, ax = plt.subplots(1, 1, layout="constrained")
 mat = ax.matshow(field, cmap="Set1", vmax=5, vmin=-1)
 fig.savefig("Spielfeld_Beginn.pdf")
@@ -38,6 +38,6 @@ print("Spielfeld zum Ende des Spiels:")
 print(field)
 
 # Was das hier ist lernen wir noch, kann getrost ignoriert werden.
-# In der Zwischenzeit, die Kurzfassung: Das 'macht' die Bilder. ;-)
+# In der Zwischenzeit die Kurzfassung: Das 'macht' die Bilder.
 mat.set_array(field)
 fig.savefig("Spielfeld_Ende.pdf")

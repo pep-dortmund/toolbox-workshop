@@ -1,4 +1,6 @@
-Aufgabe: gauss
+# gauss
+
+Aufgabe:
 
 Erstelle 1000 gaußverteilte Werte mit Mittelwert 1 und Standardabweichung 2.
 Berechne die Summe aller Werte und gib sie aus.

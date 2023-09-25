@@ -6,11 +6,11 @@ Tipps:
 
 ## Aufgabe 1
 
-Malt das Haus vom Nikolaus ohne „den Stift abzusetzen“.
+Male das Haus vom Nikolaus ohne „den Stift abzusetzen“.
 
 ## Aufgabe 2
-Erstellt DIN A4 Millimeter Papier (1cm Rand)
-Ihr solltet unterschiedliche Markierungen für 10 mm, 5 mm und 1 mm
+Erstelle DIN A4 Millimeter Papier (1cm Rand)
+Setze unterschiedliche Markierungen für 10 mm, 5 mm und 1 mm.
 
 Tipps:
 * das Paket `geometry` und seine `margin` option
@@ -19,8 +19,8 @@ Tipps:
 
 ## Aufgabe 3
 
-Guckt auch die Doku von `circuitikz` an,
-und baut den Schaltplan für einen gedämpften Schwingkreis
+Schaue dir auch die Doku von `circuitikz` an,
+und baue den Schaltplan für einen gedämpften Schwingkreis
 mit
 C = 1 µF
 R = 50 Ω
@@ -29,7 +29,7 @@ L = 1 H
 
 ## Aufgabe 4
 
-Stellt mithilfe von Tikz die Bragg-Bedingung dar.
+Stelle mithilfe von Tikz die Bragg-Bedingung dar.
 
 ## Aufgabe 5
 

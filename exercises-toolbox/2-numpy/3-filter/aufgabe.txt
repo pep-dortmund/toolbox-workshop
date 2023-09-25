@@ -1,9 +1,11 @@
-Aufgabe: Filter
+# Filter
+
+Aufgabe:
 
 In der Datei "data.txt" befinden sich Datenpunkte (genannt x und y).
 
 Schreibe ein Skript, das folgende Fragen beantwortet:
 
 1. Wie viele der Wertepaare erfüllen die Eigenschaft x > 0?
-2. Betrachte nur Wertepaare mit x > 0: Was sind Mittelwert
+2. Betrachte nur Wertepaare mit x < 0: Was sind Mittelwert
    und Standardabweichung der entsprechenden y-Werte?

@@ -1,4 +1,9 @@
-Schreibe einen Wrapper für scipy.optimize.curve_fit, der die Ein- und Ausgabe mittels uncertainties vereinfacht.
+# ucurve_fit
+
+Aufgabe:
+
+Schreibe einen Wrapper für scipy.optimize.curve_fit,
+der die Ein- und Ausgabe mittels uncertainties vereinfacht.
 
 Die Funktion sollte es erlauben, fehlerbehaftete y-Werte einzugeben.
 Diese Fehler können im Fit berücksichtigt werden, in dem sie als Keyword-Argument sigma an curve_fit übergeben werden.

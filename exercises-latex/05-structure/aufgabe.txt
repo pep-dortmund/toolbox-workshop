@@ -1,5 +1,5 @@
 Aufgabe 1:
-  Kopiert eure Lösung aus Aufgabe 4 und fügt zusätzlich
+  Kopiere deine Lösung aus Aufgabe 4 und füge zusätzlich
   die Gliederung für das Protokoll ein.
   Diese sieht üblicherweise so aus:
     1 Theorie
@@ -13,4 +13,4 @@ Aufgabe 1:
     4 Diskussion
 
 Aufgabe 2:
-  Erstellt das Inhaltsverzeichnis und kompiliert.
+  Erstelle das Inhaltsverzeichnis und kompiliere die PDF.

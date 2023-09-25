@@ -1,8 +1,9 @@
 include ../common/common.mk
-
-BIBER := --biber
-
 include ../common/document.mk
+
+
+MATPLOTLIBRC :=  ../common/matplotlibrc
+MPLHEADER := ../common/header-matplotlib.tex
 
 FIGURES := $(addprefix build/figures/, $(addsuffix .pdf, os experience))
 
@@ -19,13 +20,13 @@ build/latex.pdf: $(FIGURES)
 
 MATTEX := $(addprefix build/figures/mattex, $(addsuffix .pdf, 1 2 3 4 5))
 
-build/latex.pdf: $(MATTEX) $(addprefix script/mattex, $(addsuffix .py, 1 2 3 4 5)) script/matplotlibrc header-matplotlib.tex
+build/latex.pdf: $(MATTEX)
 
-$(FIGURES): script/answers.py ../intro/data/toolbox2021.json
-	TEXINPUTS=$$(pwd): python $<
+$(FIGURES): script/answers.py ../intro/data/toolbox2023.json ${MATPLOTLIBRC} ${MPLHEADER}
+	TEXINPUTS=$$(pwd)/../common: MATPLOTLIBRC=${MATPLOTLIBRC} python $<
 
-build/figures/mattex%.pdf: script/mattex%.py script/matplotlibrc header-matplotlib.tex
-	TEXINPUTS=$$(pwd): python $<
+build/figures/mattex%.pdf: script/mattex%.py
+	TEXINPUTS=$$(pwd)/../common: python $<
 
-build/figures/mattex5.pdf: script/mattex5.py script/matplotlibrc header-matplotlib.tex
-	TEXINPUTS=$$(pwd): MATPLOTLIBRC=script/matplotlibrc python $<
+build/figures/mattex5.pdf: script/mattex5.py ${MATPLOTLIBRC} ${MPLHEADER}
+	TEXINPUTS=$$(pwd)/../common: MATPLOTLIBRC=${MATPLOTLIBRC} python $<

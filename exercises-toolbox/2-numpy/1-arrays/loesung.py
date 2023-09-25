@@ -52,7 +52,7 @@ print(f"Array f.reshape(-1, 1):\n{f_2d}")
 
 
 # Aufgabe 5)
-# Das was hier passiert nennt sich 'numpy-broadcasting' und ist eine sehr 'mächtiges' feature von numpy arrays.
+# Das, was hier passiert nennt sich 'numpy-broadcasting' und ist eine sehr 'mächtiges' feature von numpy arrays.
 # Es ist nicht notwendig dieses Feature von Anfang an zu verstehen, es erweist sich nur irgendwann als
 # sehr nützlich.
 # Details findest du in der Dokumentation: https://numpy.org/doc/stable/user/basics.broadcasting.html
