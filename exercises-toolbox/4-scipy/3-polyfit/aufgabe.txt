@@ -1,0 +1,4 @@
+Führe einmal `python loesung.py` aus, um die Daten zu erzeugen.
+
+Fitte die Daten aus daten.txt (x, y, y_err) an ein Polynom zweiten Grades.
+Nutze hierfür np.polyfit.
