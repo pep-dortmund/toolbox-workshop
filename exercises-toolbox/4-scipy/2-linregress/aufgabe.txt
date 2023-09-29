@@ -16,6 +16,8 @@ B_error = σ_y * sqrt((Σx²) / Δ)
 
 Nutze folgendes Gerüst:
 
+import numpy as np
+
 def linregress(x, y):
     …
     return A, A_error, B, B_error

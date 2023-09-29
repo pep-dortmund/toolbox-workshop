@@ -21,4 +21,5 @@ def linregress(x, y):
 
 
 if __name__ == "__main__":
-    print(linregress([1, 2, 3, 4], [1, 2.5, 3, 3.5]))
+    x, y = np.genfromtxt("data.txt", unpack=True)
+    print(linregress(x, y))
