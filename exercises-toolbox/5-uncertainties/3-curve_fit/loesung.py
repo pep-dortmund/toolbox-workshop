@@ -1,5 +1,5 @@
-import numpy as np
 import matplotlib.pyplot as plt
+import numpy as np
 import scipy.optimize
 import uncertainties as unc
 import uncertainties.unumpy as unp
@@ -20,6 +20,7 @@ def ucurve_fit(f, x, y, **kwargs):
 
 def f(x, a, b, c):
     return a * np.cos(x * b) + c
+
 
 # Generate data
 length = 100
