@@ -8,6 +8,7 @@ z = ufloat(10, 1)
 Q = x**2 * sin(y) + z
 
 print(f"Q = {Q}")
+print(Q.n, Q.s)
 
 from sympy import var, sin
 
