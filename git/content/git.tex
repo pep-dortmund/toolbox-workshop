@@ -2,26 +2,56 @@
 \tikzstyle{arr}=[line width=1mm,draw=black,-triangle 45]
 \tabulinesep=4pt
 
-\headlineframe{Versionskontrolle}
-\begin{frame}[c]{Was ist das?}
+\begin{frame}[c]{Was ist Versionskontrolle?}
   \begin{itemize}
-    \item Verwaltung von Versionen
-    \item Speicherung der \enquote{Geschichte} eines Projekts
-    \item Es ist jederzeit möglich, auf eine ältere Version zurückzukehren
-    \item Es ist möglich, sich die Unterschiede zwischen Versionen anzeigen zu lassen
-    \item Backup
+    \item Versionskontrollsoftware speichert Änderungen an Dokumenten / Dateien
+    \item Das kann fast alles sein:
+      \begin{itemize}
+        \item Software
+        \item Rechtliche Dokumente
+        \item Dokumentation
+        \item Wissenschaftliche Veröffentlichungen
+        \item Bilder
+        \item Baupläne, CAD-Zeichnungen
+        \item ...
+      \end{itemize}
+    \item Ein \emph{Schnappschuss} eines Projektes nennt man \emph{Revision}
+    \item Alle Revisionen zusammen bilden die \emph{Geschichte} des Projekts
   \end{itemize}
-  \vspace{1cm}
-  \begin{center}
-    \Large\alert{Wichtige Voraussetzungen für korrektes wissenschaftliches Arbeiten, \\ auch wenn man alleine arbeitet}
-  \end{center}
+\end{frame}
+
+\begin{frame}[c]{Warum also Versionskontrolle nutzen?}
+  \begin{itemize}
+    \item Erlaubt, an eine beliebige Revision zurückzukehren
+    \item Kann die Unterschiede zwischen Revisionen anzeigen
+    \item Macht Zusammenarbeit an Projekten einfacher
+    \item Dient auch als Backup
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[c]{Warum also Versionskontrolle nutzen?}
+  Versionskontrollsoftware macht die Beantwortung der folgenden Fragen einfach:
+  \begin{description}[Warum?]
+    \item[Was?] Was wurde von Revision \emph{A} auf Revision \emph{B} geändert
+    \item[Wer?] Wer hat eine Änderung gemacht? Wer hat alles zum Projekt beigetragen?
+    \item[Warum?] Warum wurde diese Änderung gemacht?
+    \item[Wann?] Wann wurde ein bestimmter Bug eingeführt bzw. behoben?
+  \end{description}
+
+  \onslide<2>{%
+    \begin{center}%
+      \Large\color{vertexDarkRed}%
+      Versionskontrolle ist eine fundamentale Bedingung\\
+      für nachvollziehbare, reproduzierbare Wissenschaft.%
+    \end{center}
+  }
 \end{frame}
 
 \headlineframe{Wie arbeitet man am besten an einem Protokoll zusammen?}
 
-\headlineframe{Idee: Austausch über Mails}
+\headlineframe{Idee: Austausch über Mails / Messenger}
 
-\begin{frame}{Mails: Probleme}
+\begin{frame}{Mails / Messenger: Probleme}
   \centering
   \begin{tikzpicture}
     \node (alice) at (0, 0) {\includegraphics[width=0.2\textwidth]{figures/text.pdf}};
@@ -39,9 +69,12 @@
   \textbf{\Large Fazit: Eine sehr unbequeme / riskante Lösung}
 \end{frame}
 
-\headlineframe{Idee: Austausch über Dropbox}
+\headlineframe{%
+  Idee: Austausch über Cloud Speicher\\[\baselineskip]
+  Dropbox, Google Drive, OneDrive, Nextcloud, iCloud, ...%
+}
 
-\begin{frame}{Dropbox: Probleme}
+\begin{frame}{Cloud Speicher: Probleme}
   \centering
   \begin{tikzpicture}
     \node (alice) at (0, 0) {\includegraphics[width=0.2\textwidth]{figures/text.pdf}};
@@ -76,6 +109,7 @@
       \item Ursprünglich entwickelt, um den Programmcode des Linux-Kernels zu verwalten (Linus Torvalds)
       \item Hat sich gegenüber ähnlichen Programmen (SVN, mercurial) durchgesetzt
       \item Wird in der Regel über die Kommandozeile benutzt
+      \item Es gibt auch Plugins für Editoren, z.B. VS Code
     \end{itemize}
 \end{frame}
 
@@ -149,6 +183,8 @@
   \only<1>{
     \begin{tikzpicture}
       \graph [
+        grow right=1.5cm,
+        node distance=0.5cm,
         nodes={
           blue!70!black,
           node font=\ttfamily,
@@ -164,6 +200,8 @@
   \only<2>{
     \begin{tikzpicture}
       \graph [
+        grow right=1.5cm,
+        node distance=0.5cm,
         nodes={
           blue!70!black,
           node font=\ttfamily,
@@ -172,7 +210,7 @@
         "Erstabgabe" [visible on=<4->, green!60!black, x=4];
         a <- b <- c <- {
           d <- main [vertexDarkRed],
-          e <- foo [vertexDarkRed]
+          e <- "fix\_plot" [vertexDarkRed]
         };
         "Erstabgabe"[visible on=<3>] ->[visible on=<3>] c;
       };
@@ -181,14 +219,18 @@
   \only<3->{
     \begin{tikzpicture}
       \graph [
+        grow right=1.5cm,
         nodes={
           blue!70!black,
           node font=\ttfamily,
         },
       ] {
-        "Erstabgabe" [visible on=<4->, green!60!black, x=4],
-        a <- b <- c <- d <- {e <- f, g [x=0.5]} <- h <- {i <-[visible on=<2->] main [vertexDarkRed, visible on=<3->], j <-[visible on=<2->] foo [vertexDarkRed, visible on=<3->]};
-        "Erstabgabe" ->[visible on=<4->] e ;
+        "Erstabgabe" [visible on=<4->, green!60!black, x=6],
+        a <- b <- c <- {
+          d <- f,
+          e <- g [x=0.5],
+        } <- h <- {i <-[visible on=<2->] main [vertexDarkRed, visible on=<3->], j <-[visible on=<2->] "fix\_formula" [vertexDarkRed, visible on=<3->]};
+        "Erstabgabe" ->[visible on=<4->] f;
       };
     \end{tikzpicture}
   }
@@ -204,8 +246,8 @@
     \item<2-> \textcolor{vertexDarkRed}{Branch}: benannter Zeiger auf einen Commit
       \begin{itemize}
         \item Entwicklungszweig
-		\item Im Praktikum reicht bereits der Standard-Branch: \texttt{main}
-		    \item Wandert weiter
+		\item Im Praktikum reicht meist der Standard-Branch: \texttt{main}
+		    \item Wandert weiter mit dem aktuellsten Commit
       \end{itemize}
     \item<4-> \textcolor{green!60!black}{Tag}: unveränderbarer Zeiger auf einen Commit
       \begin{itemize}
@@ -238,17 +280,22 @@
 \end{frame}
 
 \begin{frame}{Der Start: \texttt{git init}, \texttt{git clone}}
-  \begin{tabu}{>{\ttfamily}l X[,L]}
+  \begin{tblr}{
+      colspec = {l X[l]},
+      column{1} = {font=\ttfamily},
+      row{3} = {font=\color{lightgray}},
+    }
     git init               & initialisiert ein \texttt{git}-Repo im jetzigen Verzeichnis \\
     git clone \textit{url} & klont das Repo aus \texttt{\textit{url}} \\
-    rm -rf .git            & löscht alle Spuren von \texttt{git} aus dem Repo
-  \end{tabu}
+    rm -rf .git            & löscht alle Spuren von \texttt{git} aus dem Repository, nicht reversibel ohne Backup, wird eigentlich nie gebraucht
+  \end{tblr}
 \end{frame}
 
 \begin{frame}{Was passiert in Git: \texttt{git status}, \texttt{git log}}
   \begin{tabu}{>{\ttfamily}l X[,L]}
-    git status & zeigt Status des Repos (welche Dateien sind neu, gelöscht, verschoben, bearbeitet) \\
-    git log    & listet Commits in aktuellem Branch
+    git status    & zeigt Status des Repos (welche Dateien sind neu, gelöscht, verschoben, bearbeitet) \\
+    git status -s & Kurzform von \texttt{git status}, zeigt Liste von geänderten Dateien \\
+    git log      & listet Commits in aktuellem Branch. Hat viele Optionen.
   \end{tabu}
 \end{frame}
 
@@ -276,7 +323,7 @@
     git commit                       & erzeugt Commit aus jetzigem Staging-Bereich, öffnet Editor für Commit-Message \\
     git commit -m "\textit{message}" & Commit mit \texttt{\textit{message}} als Message \\
     git commit --amend               & letzten Commit ändern (fügt aktuellen Staging hinzu, Message bearbeitbar) \\
-    & \alert{\bfseries Niemals commits ändern, die schon gepusht sind!}
+    & \alert{\bfseries Niemals commits ändern, die schon in den \texttt{main} branch gepusht sind!}
   \end{tabu}
 
   \begin{itemize}
@@ -293,8 +340,6 @@
     \item Hochgeladene Commits sollte man nicht mehr ändern
   \end{itemize}
 \end{frame}
-
-
 
 \begin{frame}{Mit der remote History (dem Server) interagieren}
   \begin{tabu}{>{\ttfamily}l X[,L]}
@@ -393,6 +438,9 @@
       \item kann man selbst auf einem eigenen Server betreiben
     \end{itemize}
   \end{tabu}
+
+  Weitere Open Source Optionen, auch zum selbst hosten: Gitea, Forgejo
+
   \begin{center}
     \onslide<2->{%
       \Large%
@@ -452,4 +500,13 @@
     \end{itemize}
     Entscheidet man sich für pulls mit Rebase als Standard, muss Git anders konfiguriert werden:\\
     \texttt{\textbf{git config --global pull.rebase true}}, dann wird bei allen folgenden \texttt{git pull} Befehlen ein Rebase gemacht
+\end{frame}
+
+\begin{frame}{Video-Aufzeichnung}
+  Im Rahmen einer Schulung ist 2021 eine Videoaufzeichnung einer ausführlicheren Git-Einführung angefertigt worden, die auf diesem Kurs basiert:
+
+  \begin{description}
+    \item[Teil 1] \url{https://www.youtube.com/watch?v=R2BCOtPwtXc}
+    \item[Teil 2] \url{https://www.youtube.com/watch?v=ZEcklfIp6Og}
+  \end{description}
 \end{frame}
