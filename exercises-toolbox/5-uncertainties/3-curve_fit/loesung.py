@@ -24,7 +24,7 @@ def f(x, a, b, c):
 # Generate data
 length = 100
 x = np.linspace(0, 3 * np.pi, length)
-rng = np.random.default_rng()
+rng = np.random.default_rng(seed=42)
 y1 = rng.normal(0.0, 0.2, length)
 y2 = np.abs(rng.normal(0.0, 0.2, length))
 
