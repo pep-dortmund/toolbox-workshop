@@ -18,12 +18,6 @@ Nutze folgendes Gerüst:
 
 import numpy as np
 
-rng = np.random.default_rng(seed=42)
-x = rng.random(10)
-y = 1.6 * x + 0.2 * rng.uniform(-1,1, len(x))
-
 def linregress(x, y):
     …
     return A, A_error, B, B_error
-
-print(linregress(x,y))

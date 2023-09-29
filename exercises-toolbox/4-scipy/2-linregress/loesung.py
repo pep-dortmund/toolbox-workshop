@@ -1,8 +1,5 @@
 import numpy as np
 
-rng = np.random.default_rng(seed=42)
-x = rng.random(10)
-y = 1.6 * x + 0.2 * rng.uniform(-1,1, len(x))
 
 def linregress(x, y):
     assert len(x) == len(y)
@@ -24,4 +21,5 @@ def linregress(x, y):
 
 
 if __name__ == "__main__":
+    x, y = np.genfromtxt("data.txt", unpack=True)
     print(linregress(x, y))
