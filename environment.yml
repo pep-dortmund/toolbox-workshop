@@ -16,5 +16,6 @@ dependencies:
   - ipython
   - nbstripout
   - black
+  - black-jupyter
   - pip:
     - ./pygments_style
