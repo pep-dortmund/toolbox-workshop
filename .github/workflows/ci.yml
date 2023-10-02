@@ -56,6 +56,10 @@ jobs:
           mkdir -p ~/.config/latexmk
           cp common/latexmkrc ~/.config/latexmk/
 
+          # add pre-commit to CI workflow
+          pre-commit install
+          pre-commit
+
       - name: Check Setup
         run: |
           echo "which python"
