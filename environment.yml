@@ -15,5 +15,6 @@ dependencies:
   - notebook
   - ipython
   - nbstripout
+  - black
   - pip:
     - ./pygments_style
