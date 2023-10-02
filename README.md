@@ -61,8 +61,10 @@ mamba activate toolbox
 
 ## Working with git
 
-We use the github workflow in this repository, see <https://guides.github.com/introduction/flow/>.
+Before your first commit, make sure to run ``pre-commit install`` to set up our ``pre-commit hooks`` run
+every time you commit. This ensures code quality before pushing.
 
+We use the github workflow in this repository, see <https://guides.github.com/introduction/flow/>.
 In short, to contribute:
 
 1. Create a new branch and switch to it using `git switch -c <name>`
