@@ -14,6 +14,7 @@ dependencies:
   - jupyter
   - notebook
   - ipython
+  - pre-commit
   - nbstripout
   - black
   - black-jupyter
