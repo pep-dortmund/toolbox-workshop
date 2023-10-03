@@ -4,8 +4,13 @@ repos:
     hooks:
       - id: black
         language_version: python3.11
-      - id: black-jupyter
-        language_version: python3.11
+  - repo: https://github.com/nbQA-dev/nbQA
+    rev: 1.7.0
+    hooks:
+      - id: nbqa-black
+        additional_dependencies: [black==23.9.1]
+      - id: nbqa-pyupgrade
+        additional_dependencies: [pyupgrade==2.7.3]
   - repo: https://github.com/pycqa/flake8
     rev: 6.1.0
     hooks:
