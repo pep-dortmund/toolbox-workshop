@@ -1,14 +1,13 @@
 Aufgabe 1:
-  Erstelle mithilfe der Pakete siunitx und tabularray eine
-  Tabelle aus den Daten in `data.txt`. Denke daran, Einheiten
-  für Größen anzugeben und ausreichend viel Platz für alle
-  Spalten zu reservieren.
+  Erstelle mithilfe der Pakete siunitx und tabularray eine Tabelle aus den
+  Daten in `data.txt`. Denke daran, Einheiten für Größen anzugeben und
+  ausreichend viel Platz für alle Spalten zu reservieren.
 
 Aufgabe 2:
-  Erstelle mittels siunitx und tabularray eine Tabelle mit den
-  Daten aus `data_error.txt`. Setze zwischen Wert und Fehler
-  ein +/-, wie auf den Folien besprochen.
+  Erstelle mittels siunitx und tabularray eine Tabelle mit den Daten aus
+  `data_error.txt`. Setze zwischen Wert und Fehler ein +/-, wie auf den Folien
+  besprochen.
 
 Tipp:
-  Ein guter Texteditor macht die Aufgabe viel leichter.
-  Finde heraus, wie dein Editor z.B. eine Spalte aus & einfügen kann.
+  Ein guter Texteditor macht die Aufgabe viel leichter. Finde heraus, wie dein
+  Editor z.B. eine Spalte aus & einfügen kann.

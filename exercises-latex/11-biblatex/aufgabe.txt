@@ -1,6 +1,8 @@
 Aufgabe:
   Erstelle eine `lit.bib` Datei mit den Quellen aus der Datei `quellen.txt`.
-  Binde die notwendigen Pakete ein und denke dir 3 beliebige Sätze aus, in denen du auf die Quellen verweist.
-  Die Verweise sollten ein normaler, einer mit einem Seitenintervall und einer, in dem du auf mehrere Quellen verweist sein.
+  Binde die notwendigen Pakete ein und denke dir 3 beliebige Sätze aus, in
+  denen du auf die Quellen verweist. Die Verweise sollten ein normaler, einer
+  mit einem Seitenintervall und einer, in dem du auf mehrere Quellen verweist
+  sein.
 
 Hinweis: Wähle als Stil "alphabetic".

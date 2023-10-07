@@ -2,8 +2,8 @@ Aufgabe 1:
 Erstelle eine Präsentation mit:
 * Titelseite inkl. Autor, Titel, Datum
 * Übersicht („Inhaltsverzeichnis“)
-* Folie mit einer Erklärung für einen Plot,
-  Erklärung und Plot sollten nebeneinander stehen.
+* Folie mit einer Erklärung für einen Plot, Erklärung und Plot sollten
+  nebeneinander stehen.
 * Folie mit je einer Box für die vier Maxwell-Gleichungen
 
 Aufgabe 2:

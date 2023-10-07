@@ -8,5 +8,5 @@ Aufgabe 1:
   Erstelle das PDF-Dokument so, dass die Titelangaben (Titel, Autor, Datum, etc.)
   auf einer eigenen Titelseite ausgegeben werden.
 
-Falls du nicht weißt, was dein erster Versuch sein wird,
-kannst du "v101 - Das Trägheitsmoment" nehmen.
+Falls du nicht weißt, was dein erster Versuch sein wird, kannst du "v101 - Das
+Trägheitsmoment" nehmen.
