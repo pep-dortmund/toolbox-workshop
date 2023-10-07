@@ -1,6 +1,7 @@
 # beugung
 
-In dieser Aufgabe wird die Beugung an einem Einzelspalt untersucht (Versuch 406).
+In dieser Aufgabe wird die Beugung an einem Einzelspalt untersucht 
+(Versuch 406).
 
 Ziel ist es, die Breite b des Spaltes aus den Messwerten zu bestimmen.
 Dabei gilt:
@@ -12,7 +13,8 @@ I(φ) = (A₀ * b * sinc(b * sin(φ) / λ))²
 
 sinc(x) = sin(x) / x, sinc(0) = 1, Achtung, nicht durch 0 teilen!
 
-Die Breite b des Spaltes ist in der Größenordnung von 1e-4 m (Tipp: Anfangswerte für den Fit).
+Die Breite b des Spaltes ist in der Größenordnung von 1e-4 m 
+(Tipp: Anfangswerte für den Fit).
 
 Nützliche Funktionen (Dokumentation googlen…):
 numpy.sinc (teilt nicht durch 0…)
