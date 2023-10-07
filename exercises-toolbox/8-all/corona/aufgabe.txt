@@ -1,7 +1,9 @@
-Unter
-- https://opendata.dortmund.de/OpenDataConverter/download/Gesundheit/FB53-Coronafallzahlen.csv
-können die Verlaufszahlen der Coronafälle der Stadt Dortmund
-als csv-Datei heruntergeladen werden.
+Unter der URL
+
+https://opendata.dortmund.de/OpenDataConverter/download/Gesundheit/FB53-Coronafallzahlen.csv
+
+können die Verlaufszahlen der Coronafälle der Stadt Dortmund als csv-Datei
+heruntergeladen werden.
 
 In `geruest.py` ist ein Vorschlag wie die Daten eingelesen werden können.
 Schaut in der Dokumentation nach, was die einzelnen Punkte bedeuten.
