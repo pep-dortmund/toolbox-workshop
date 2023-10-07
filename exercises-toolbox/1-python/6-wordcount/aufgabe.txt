@@ -2,11 +2,14 @@
 
 Aufgabe:
 
-Die Beispieldatei "text.txt" enthält das erste Kapitel eines bekannten Kinderbuchs.
-Schreibe ein Python-Skript "wordcount.py", welches zählt wie oft jedes Wort im Text vorkommt.
+Die Beispieldatei "text.txt" enthält das erste Kapitel eines bekannten
+Kinderbuchs. Schreibe ein Python-Skript "wordcount.py", welches zählt wie oft
+jedes Wort im Text vorkommt.
 
-Das Skript soll die 20 häufigsten Wörter (und die Anzahl) absteigend nach Häufigkeit ausgeben.
+Das Skript soll die 20 häufigsten Wörter (und die Anzahl) absteigend nach
+Häufigkeit ausgeben.
 
-Als "Wort" sollen in dieser Aufgabe alle Abfolgen von Zeichen zählen, die von Leerzeichen getrennt werden.
+Als "Wort" sollen in dieser Aufgabe alle Abfolgen von Zeichen zählen, die von
+Leerzeichen getrennt werden.
 
 Welche Datenstruktur bietet sich zum Abspeichern der Häufigkeiten an?
