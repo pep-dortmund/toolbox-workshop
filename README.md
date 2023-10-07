@@ -60,9 +60,14 @@ mamba activate toolbox
 
 
 ## Working with git
+We are using `black` and `nbqa-black` as auto-formatters for to ensure code quality. 
+To make sure these tools are running every time you make a commit, set up our 
+``pre-commit hook`` via
+```
+$ pre-commit install
+```
+before your first commit.
 
-Before your first commit, make sure to run ``pre-commit install`` to set up our ``pre-commit hooks`` run
-every time you commit. This ensures code quality before pushing.
 
 We use the github workflow in this repository, see <https://guides.github.com/introduction/flow/>.
 In short, to contribute:
