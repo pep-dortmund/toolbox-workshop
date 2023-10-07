@@ -66,7 +66,9 @@ To make sure these tools are running every time you make a commit, set up our
 ```
 $ pre-commit install
 ```
-before your first commit.
+before your first commit. The `pre-commit hook` will run the auto-formatters and
+reject a commit if any of the checks fail. Any failing checks can then be solved
+by fixing issues reported by the `pre-commit hook`.
 
 
 We use the github workflow in this repository, see <https://guides.github.com/introduction/flow/>.
