@@ -11,7 +11,7 @@ Aufgabe 2:
       \qty{27.23(1)e3}{\meter\per\second}
     \end{equation}
 
-  b) Lade nun die Option "locale=DE". Wie ändert sich die Ausgabe? 
+  b) Lade nun die Option "locale=DE". Wie ändert sich die Ausgabe?
      Tipp: Mit \sisetup{} lassen sich Optionen auch nach dem Laden des Pakets
      einstellen.
   c) Lade zusätzlich die Option "separate-uncertainty=true". Wie verändert sich

@@ -1,5 +1,3 @@
-\tabulinesep=4pt
-
 \begin{frame}{Motivation}
   Die meisten Geräte basieren auf Unix
   \begin{itemize}
@@ -85,9 +83,13 @@
 
 \begin{frame}{Tastaturkürzel}
   Es gibt verschiedene Tastenkürzel, die sich je nach Terminal-Emulator unterscheiden
-  \vspace{1em}\\ 
-  \begin{tabu}{>{\ttfamily}l | >{\ttfamily}l | >{\ttfamily}l | X[,L]}
-    iTerm2 & Windows Terminal & Gnome-Terminal & Befehl \\
+  \vspace{1em}\\
+  \begin{tblr}{
+      colspec = {l l l X[l]},
+      column{1-3} = {font=\ttfamily},
+      vline{2-4} = {solid}
+    }
+     iTerm2 & Windows Terminal & Gnome-Terminal & Befehl \\
     \hline
     Enter & Enter & Enter & Befehl ausführen \\
     Ctrl-C & Ctrl-C & Ctrl-C & beendet das laufende Programm \\
@@ -96,7 +98,7 @@
     $\uparrow \quad \downarrow$ & $\uparrow \quad \downarrow$ & $\uparrow \quad \downarrow$ & Befehlshistorie durchgehen\\
     Cmd-C& Ctrl-C & Ctrl-Shift-C & Kopieren von Text \\
     Cmd-V& Ctrl-V & Ctrl-Shift-V & Einfügen aus Zwischenablage \\
-  \end{tabu}
+  \end{tblr}
 \end{frame}
 
 \begin{frame}{Shells}
@@ -170,39 +172,51 @@
 \end{frame}
 
 \begin{frame}{\texttt{ls}, \texttt{cd}, \texttt{pwd}}
-  \begin{tabu}{>{\ttfamily}l X[,L]}
+  \begin{tblr}{
+      colspec = {l X[l]},
+      column{1} = {font=\ttfamily},
+    }
     ls [\textit{directory}] & \enquote{list}: zeigt den Inhalt eines Verzeichnisses an \\
     ls -l                   & \enquote{long}: zeigt mehr Informationen über Dateien und Verzeichnisse \\
     ls -a                   & \enquote{all}: zeigt auch versteckte Dateien (fangen mit \texttt{.} an) \\
     cd \textit{directory} & \enquote{change directory}: wechselt in das angegebene Verzeichnis\\
     cd - & Wechselt ins vorherige Verzeichnis zurück \\
     pwd                   & \enquote{print working directory}: zeigt das aktuelle Verzeichnis \\
-  \end{tabu}
+  \end{tblr}
 \end{frame}
 
 \begin{frame}{\texttt{mkdir}, \texttt{touch}}
-  \begin{tabu}{>{\ttfamily}l X[,L]}
+  \begin{tblr}{
+      colspec = {l X[l]},
+      column{1} = {font=\ttfamily},
+    }
     mkdir \textit{directory}    & \enquote{make directory}: erstellt ein neues Verzeichnis \\
     mkdir -p \textit{directory} & \enquote{parent}: erstellt auch alle notwendigen Oberverzeichnisse \\
     touch \textit{file}         & erstellt eine leere Datei, falls sie noch nicht existiert \\
                                 & ändert Bearbeitungsdatum auf \enquote{jetzt}
-  \end{tabu}
+  \end{tblr}
 \end{frame}
 
 \begin{frame}{\texttt{cp}, \texttt{mv}, \texttt{rm}, \texttt{rmdir}}
-  \begin{tabu}{>{\ttfamily}l X[,L]}
+  \begin{tblr}{
+      colspec = {l X[l]},
+      column{1} = {font=\ttfamily},
+    }
     cp \textit{source} \textit{destination}    & \enquote{copy}: kopiert eine Datei \\
     cp -r \textit{source} \textit{destination} & \enquote{recursive}: kopiert ein Verzeichnis rekursiv \\
     mv \textit{source} \textit{destination}     & \enquote{move}: verschiebt eine Datei (Umbenennung) \\
     rm \textit{file}                           & \enquote{remove}: löscht eine Datei (Es gibt keinen Papierkorb!) \\
     rm -r \textit{directory}                   & \enquote{recursive}: löscht ein Verzeichnis rekursiv \\
     rmdir \textit{directory}                   & \enquote{remove directory}: löscht ein \emph{leeres} Verzeichnis
-  \end{tabu}
+  \end{tblr}
 \end{frame}
 
 
 \begin{frame}[fragile]{\texttt{man}, \texttt{cat}, \texttt{less}, \texttt{grep}, \texttt{echo}}
-  \begin{tabu}{>{\ttfamily}l X[,L]}
+  \begin{tblr}{
+      colspec = {l X[l]},
+      column{1} = {font=\ttfamily},
+    }
     man \textit{topic}    & \enquote{manual}: zeigt die Hilfe für ein Programm \\
     cat \textit{file}                           & \enquote{concatenate}: gibt Inhalt einer (oder mehr) Datei(en) aus \\
     less \textit{file}                          & (besser als \texttt{more}): wie \texttt{cat}, aber navigabel \\
@@ -210,7 +224,7 @@
     grep -i \textit{pattern} \textit{file}      & \enquote{case insensitive} \\
     grep -r \textit{pattern} \textit{directory} & \enquote{recursive}: suche rekursiv in allen Dateien \\
     echo \textit{message}                       & gibt einen Text aus
-  \end{tabu}
+  \end{tblr}
 
   Beispiel: Finde jedes Paket, dass wir in unseren Python-Skripten importieren:
 
@@ -225,12 +239,15 @@
 \begin{frame}[fragile]{\texttt{find}}
   Sehr mächtiges Werkzeug, um Dateien und Ordner zu finden, und Befehle auszuführen.
 
-  \begin{tabu}{>{\ttfamily}l X[,L]}
+  \begin{tblr}{
+      colspec = {l X[l]},
+      column{1} = {font=\ttfamily},
+    }
     find . & Rekursiv alle Dateien und Ordner im aktuellen Verzeichnis listen \\
     find . -type f & Nur Dateien anzeigen \\
     find . -name '*.py' & Alle Dateien, die mit \texttt{.py} enden \\
     find . -exec <befehl> \textbackslash{}; & Befehl für jede gefundene Datei ausführen, wird dabei \texttt{\{\}} eingesetzt wird dies durch den Dateinamen ersetzt \\
-  \end{tabu}
+  \end{tblr}
   Beispiel: Schreibe eine Nachricht zu den gefundenen Dateien (hier exemplarisch in einem Verzeichnis, das nur die Datei \texttt{example.py} enthält):
   \begin{minted}{bash}
      $ find *.py -exec echo "Found file: {}" \;
@@ -239,26 +256,35 @@
 \end{frame}
 
 \begin{frame}{Ein- und Ausgabe}
-  \begin{tabu}{>{\ttfamily}l X[,L]}
+  \begin{tblr}{
+      colspec = {l X[l]},
+      column{1} = {font=\ttfamily},
+    }
     \textit{command} > \textit{file}      & überschreibt Datei mit Ausgabe \\
     \textit{command} >> \textit{file}     & fügt Ausgabe einer Datei hinzu \\
     \textit{command} < \textit{file}      & Datei als Eingabe \\
     \textit{command1} | \textit{command2} & Ausgabe als Eingabe (Pipe)
-  \end{tabu}
+  \end{tblr}
 \end{frame}
 
 \begin{frame}{Globbing}
-  \begin{tabu}{>{\ttfamily}l X[,L]}
-    *                         & wird ersetzt durch alle passenden Dateien \\
+  \begin{tblr}{
+      colspec = {l X[l]},
+      column{1} = {font=\ttfamily},
+    }
+    {*}                       & wird ersetzt durch alle passenden Dateien \\
     \{\textit{a},\textit{b}\} & bildet alle Kombinationen
-  \end{tabu}
+  \end{tblr}
 
   \vspace{2cm}
   Beispiele:\\[10pt]
-  \begin{tabu}{>{\ttfamily}l c >{\ttfamily}l}
-    *.log           & → & foo.log bar.log \\
+  \begin{tblr}{
+      colspec = {l c l},
+      column{odd} = {font=\ttfamily}
+    }
+    {*}.log           & → & foo.log bar.log \\
     foo.\{tex,pdf\} & → & foo.tex foo.pdf
-  \end{tabu}
+  \end{tblr}
 \end{frame}
 
 \begin{frame}[fragile]{User, Gruppen, Rechte}
@@ -286,11 +312,14 @@ drwxr-xr-x 20 maxnoe maxnoe 4.0K 29. Sep 11:19 Uni
 
 %% chmod frame
 \begin{frame}{\texttt{chmod}, \texttt{sudo}}
-  \begin{tabu}{>{\ttfamily}l X[,L]}
+  \begin{tblr}{
+      colspec = {l X[l]},
+      column{1} = {font=\ttfamily}
+    }
     chmod \textit{[options] mode file1 ...}    & \enquote{change mode}: Verändert die klassischen Unix-Dateirechte  \\
     chmod a+x beispiel.txt    & Beispiel: Fügt bei allen das Recht auf Ausführung hinzu \\
     sudo \textit{command} & \enquote{superuser do}: führt einen Befehl als \enquote{root}-User aus \alert{Achtung}: Mit Vorsicht verwenden!\\
-  \end{tabu}
+  \end{tblr}
 \end{frame}
 
 \begin{frame}{Shell-Skripte}

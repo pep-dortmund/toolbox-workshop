@@ -422,7 +422,10 @@
 \end{frame}
 
 \begin{frame}{Nano, Vim, GUIs}
-  \begin{tabu}{@{} X[,C] @{} X[,C] @{} X[,C] @{}}
+  \begin{tblr}{
+      colspec = {X[c] X[c] X[c]},
+      measure=vbox,
+    }
     \textbf{\large Nano} & \textbf{\Large Vim} & \textbf{\Large Visual Studio Code} \\
     \includegraphics[height=3cm]{figures/nano.png} &
     \includegraphics[height=3cm]{figures/vim.png} &
@@ -446,7 +449,8 @@
       \item Batteries included
       \item Viele nützliche Plugins
     \end{itemize}
-  \end{tabu}
+    \\
+  \end{tblr}
 \end{frame}
 
 \begin{frame}{Obligatory XKCD → \url{http://xkcd.com}}

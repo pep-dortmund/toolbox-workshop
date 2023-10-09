@@ -1,6 +1,6 @@
 Hinweis: Falls du die hier benötigten Gesetze und Gleichungen nicht mehr weißt,
          kannst du einen Blick in die PDF der Musterlösung werfen. 
-         [Nicht in die .tex;)]
+         (Nicht in die .tex)
 
 Aufgabe 1:
   Erstelle ein neues LaTeX Dokument. Lade zusätzlich zum Gerüst in

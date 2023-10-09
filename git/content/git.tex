@@ -1,6 +1,5 @@
 \newcommand{\mail}{\includegraphics[width=0.2\textwidth]{figures/mail.pdf}}
 \tikzstyle{arr}=[line width=1mm,draw=black,-triangle 45]
-\tabulinesep=4pt
 
 \begin{frame}[c]{Was ist Versionskontrolle?}
   \begin{itemize}
@@ -292,39 +291,51 @@
 \end{frame}
 
 \begin{frame}{Was passiert in Git: \texttt{git status}, \texttt{git log}}
-  \begin{tabu}{>{\ttfamily}l X[,L]}
+  \begin{tblr}{
+      colspec = {l X[l]},
+      column{1} = {font=\ttfamily}, 
+    }
     git status    & zeigt Status des Repos (welche Dateien sind neu, gelöscht, verschoben, bearbeitet) \\
     git status -s & Kurzform von \texttt{git status}, zeigt Liste von geänderten Dateien \\
     git log      & listet Commits in aktuellem Branch. Hat viele Optionen.
-  \end{tabu}
+  \end{tblr}
 \end{frame}
 
 \begin{frame}{Staging Bereich: \texttt{git add}, \texttt{git mv}, \texttt{git rm}, \texttt{git reset}}
-  \begin{tabu}{>{\ttfamily}l X[,L]}
+  \begin{tblr}{
+      colspec = {l X[l]},
+      column{1} = {font=\ttfamily}, 
+    }
     git add \textit{file} … & fügt Dateien/Verzeichnisse zum Staging-Bereich hinzu \\
     git add -p …            & fügt Teile einer Datei zum Staging-Bereich hinzu \\
     git add -u …            & fügt \emph{alle} von Git getrackten und vom User veränderten Dateien zum Staging-Bereich hinzu\\
     git mv                  & wie \texttt{mv} (automatisch in Staging)\\
     git rm                  & wie \texttt{rm} (automatisch in Staging) \\
     git reset \textit{file} & entfernt Dateien/Verzeichnisse aus Staging
-  \end{tabu}
+  \end{tblr}
 \end{frame}
 
 \begin{frame}{\texttt{git diff}}
-  \begin{tabu}{>{\ttfamily}l X[,L]}
+  \begin{tblr}{
+      colspec = {l X[l]},
+      column{1} = {font=\ttfamily}, 
+    }
     git diff                                   & zeigt Unterschiede zwischen Staging und Arbeitsverzeichnis \\
     git diff --staged                          & zeigt Unterschiede zwischen letzten Commit und Staging \\
     git diff \textit{commit1} \textit{commit2} & zeigt Unterschiede zwischen zwei Commits
-  \end{tabu}
+  \end{tblr}
 \end{frame}
 
 \begin{frame}{\texttt{git commit}}
-  \begin{tabu}{>{\ttfamily}l X[,L]}
+  \begin{tblr}{
+      colspec = {l X[l]},
+      column{1} = {font=\ttfamily}, 
+    }
     git commit                       & erzeugt Commit aus jetzigem Staging-Bereich, öffnet Editor für Commit-Message \\
     git commit -m "\textit{message}" & Commit mit \texttt{\textit{message}} als Message \\
     git commit --amend               & letzten Commit ändern (fügt aktuellen Staging hinzu, Message bearbeitbar) \\
     & \alert{\bfseries Niemals commits ändern, die schon in den \texttt{main} branch gepusht sind!}
-  \end{tabu}
+  \end{tblr}
 
   \begin{itemize}
     \item Wichtig: Sinnvolle Commit-Messages
@@ -342,10 +353,13 @@
 \end{frame}
 
 \begin{frame}{Mit der remote History (dem Server) interagieren}
-  \begin{tabu}{>{\ttfamily}l X[,L]}
+  \begin{tblr}{
+      colspec = {l X[l]},
+      column{1} = {font=\ttfamily}, 
+    }
     git pull          & Commits herunterladen \\
     git push          & Commits hochladen
-  \end{tabu}
+  \end{tblr}
 \end{frame}
 
 \begin{frame}[fragile]{Achtung: Merge conflicts}
@@ -378,17 +392,23 @@
 \end{frame}
 
 \begin{frame}{Zu früheren Versionen zurückkehren}
-  \begin{tabu}{>{\ttfamily}l X[,L]}
+  \begin{tblr}{
+      colspec = {l X[l]},
+      column{1} = {font=\ttfamily}, 
+    }
     git checkout \textit{commit} & Commit ins Arbeitsverzeichnis laden \\
     git restore \textit{filename} & Änderungen an Dateien verwerfen (zum letzten Commit zurückkehren)
-  \end{tabu}
+  \end{tblr}
 \end{frame}
 
 \begin{frame}{Kurz an was anderem Arbeiten}
-  \begin{tabu}{>{\ttfamily}l X[,L]}
+  \begin{tblr}{
+      colspec = {l X[l]},
+      column{1} = {font=\ttfamily}, 
+    }
     git stash     & Änderungen kurz zur Seite schieben \\
     git stash pop & Änderungen zurückholen aus Stash
-  \end{tabu}
+  \end{tblr}
 \end{frame}
 
 \begin{frame}[fragile]{\texttt{.gitignore}}
@@ -415,7 +435,10 @@
 
 
 \begin{frame}{Hoster}
-  \begin{tabu}{@{} X[,C] @{} X[,C] @{} X[,C] @{}}
+  \begin{tblr}{
+      colspec = {X[c] X[c] X[c]},
+      measure=vbox,
+    }
     \href{https://github.com}{\includegraphics[width=0.75\linewidth]{figures/github.png}} &
     \href{https://bitbucket.org}{\includegraphics[width=0.75\linewidth]{figures/bitbucket.png}} &
     \href{https://gitlab.com}{\includegraphics[width=0.75\linewidth]{figures/gitlab.png}} \\
@@ -436,8 +459,8 @@
       \item open-source
       \item keine Begrenzungen an privaten Repos
       \item kann man selbst auf einem eigenen Server betreiben
-    \end{itemize}
-  \end{tabu}
+    \end{itemize}\\
+  \end{tblr}
 
   Weitere Open Source Optionen, auch zum selbst hosten: Gitea, Forgejo
 

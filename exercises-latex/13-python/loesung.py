@@ -55,25 +55,27 @@ U1, U2 = np.array_split(U * 1e-3, 2)
 
 
 table_header = r"""
-  \begin{tabular}{
-    S[table-format=1.3]
-    S[table-format=-1.2]
-    @{${}\pm{}$}
-    S[table-format=1.2]
-    @{\hspace*{3em}\hspace*{\tabcolsep}}
-    S[table-format=1.3]
-    S[table-format=-1.2]
-    @{${}\pm{}$}
-    S[table-format=1.2]
+  \begin{tblr}{
+    colspec = {
+        S[table-format=1.3]
+        S[table-format=-1.2]
+        S[table-format=1.2]
+        S[table-format=1.3]
+        S[table-format=-1.2]
+        S[table-format=1.2]
+    },
+    row{1} = {guard, mode=math},
+    vline{3,6} = {2}{-}{text=\clap{$\pm$}},
+    column{3} = {rightsep=3em},
   }
     \toprule
-    {$t \mathbin{/} \unit{\milli\second}$} & \multicolumn{2}{c}{$U \:/\: \unit{\kilo\volt}$\hspace*{3em}} &
-    {$t \mathbin{/} \unit{\milli\second}$} & \multicolumn{2}{c}{$U \:/\: \unit{\kilo\volt}$} \\
+    t \mathbin{/} \unit{\milli\second} & \SetCell[c=2]{c} U \mathbin{/} \unit{\kilo\volt} & &
+    t \mathbin{/} \unit{\milli\second} & \SetCell[c=2]{c} U \mathbin{/} \unit{\kilo\volt} & \\
     \midrule
 """
 
 table_footer = r"""    \bottomrule
-  \end{tabular}
+  \end{tblr}
 """
 row_template = (
     r"    {0:1.3f} & {1.n:1.2f} & {1.s:1.2f} & {2:1.3f} & {3.n:1.2f} & {3.s:1.2f} \\"
