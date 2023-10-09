@@ -1,6 +1,6 @@
 # Read Write
 
-Aufgabe: 
+Aufgabe:
 
 Öffne die Python-Dokumentation unter
 
@@ -17,7 +17,7 @@ Aufgabe:
 Schreibe ein Python-Skript, welches den Inhalt der Datei "test.txt" ausgibt.
 Teste dein Skript mit einer Beispieldatei.
 
-Bonus: 
+Bonus:
 Ändere das Skript so, dass die zu lesende Datei in der Kommandozeile
 angegeben werden kann. Tipp: Schaue in die Dokumentation für das Modul `sys`.
 
@@ -25,7 +25,7 @@ angegeben werden kann. Tipp: Schaue in die Dokumentation für das Modul `sys`.
 Schreibe ein Python-Skript, welches die Zahl "42" in die Datei "test.txt"
 schreibt und nutze das Skript aus 1. um dein Programm zu testen.
 
-Bonus: 
+Bonus:
 Wie kann man die Datei nach Benutzung wieder schließen? Warum ist es bei
 dieser Aufgabe nicht wichtig, ob die Datei geschlossen wird? Wann ist es
 wichtig?

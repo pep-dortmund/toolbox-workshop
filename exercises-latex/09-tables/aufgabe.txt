@@ -10,4 +10,5 @@ Aufgabe 2:
 
 Tipp:
   Ein guter Texteditor macht die Aufgabe viel leichter. Finde heraus, wie dein
-  Editor z.B. eine Spalte aus & einfügen kann.
+  Editor z.B. eine Spalte aus & einfügen kann. Eine geschickte Suche, z.B. nach
+  "Multi-line editing" oder "Multi-cursor editing", kann dabei helfen.

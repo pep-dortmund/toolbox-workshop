@@ -2,7 +2,7 @@
 
 Aufgabe:
 
-Ziel ist es, die Abstandsabhängigkeit der Intensität einer LED zu bestimmen. 
+Ziel ist es, die Abstandsabhängigkeit der Intensität einer LED zu bestimmen.
 U muss vor der Rechnung durch die Parameter PA, LI und LP geteilt werden; sie
 sind Verstärkungsfaktoren des Lock-In-Verstärkers.
 
