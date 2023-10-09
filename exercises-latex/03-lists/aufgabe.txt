@@ -1,10 +1,9 @@
 Aufgabe 1:
-  Erstelle eine unnummerierte Liste der
-  Vorlesungen, die du nächstes Semester hörst.
+  Erstelle eine unnummerierte Liste der Vorlesungen, die du nächstes Semester
+  hörst.
 
 Aufgabe 2:
-  Erstelle eine nummerierte Liste der Top-3 deiner
-  Lieblingsfilme.
+  Erstelle eine nummerierte Liste der Top-3 deiner Lieblingsfilme.
 
 Aufgabe 3:
   Beschreibe kurz drei Personen deiner Wahl.

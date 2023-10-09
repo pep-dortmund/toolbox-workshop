@@ -2,10 +2,10 @@
 
 Aufgabe:
 
-Schreibe eine Funktion histogram(), die eine Liste von ganzen Zahlen als Parameter erhält.
-Gib für jede Zahl eine Zeile mit Sternen ("*") aus, deren Länge der Zahl entspricht.
-Bei negativen Werten soll einfach ein "X" ausgegeben werden.
-Die Ausgabe für histogram([3, 6, 4, -2, 8, 2]) sollte dann so aussehen:
+Schreibe eine Funktion histogram(), die eine Liste von ganzen Zahlen als
+Parameter erhält. Gib für jede Zahl eine Zeile mit Sternen ("*") aus, deren
+Länge der Zahl entspricht. Bei negativen Werten soll einfach ein "X" ausgegeben
+werden. Die Ausgabe für histogram([3, 6, 4, -2, 8, 2]) sollte dann so aussehen:
 
 ***
 ******
@@ -14,5 +14,5 @@ X
 ********
 **
 
-Tipp: Wenn man einen String mit einer Zahl n multipliziert, erhält man einen neuen String,
-der den alten n mal enthält.
+Tipp: Wenn man einen String mit einer Zahl n multipliziert, erhält man einen
+neuen String, der den alten n mal enthält.

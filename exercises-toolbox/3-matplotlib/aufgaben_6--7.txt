@@ -1,4 +1,6 @@
-6. Verwende eine for-Schleife, um die Funktion x^n für n von 1 bis 10 im Bereich (x) von 0 bis 1 zu plotten.
-Gib dabei jedem Plot ein Label, das n anzeigt.
+6. Verwende eine for-Schleife, um die Funktion x^n für n von 1 bis 10 im
+   Bereich (x) von 0 bis 1 zu plotten. Gib dabei jedem Plot ein Label, das n
+   anzeigt.
 
-7. Plotte die Funktion A * cos(x) für A = -1, -.5, .5, 1 in dasselbe Koordinatensystem und denke an die Labels.
+7. Plotte die Funktion A * cos(x) für A = -1, -.5, .5, 1 in dasselbe
+   Koordinatensystem und denke an die Labels.

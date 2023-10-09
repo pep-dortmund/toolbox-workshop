@@ -1,6 +1,5 @@
 Aufgabe 1:
-  Lade das Paket siunitx in deiner Präambel
-  ohne Einstellungen.
+  Lade das Paket siunitx in deiner Präambel ohne Einstellungen.
 
 Aufgabe 2:
   a) Erzeuge Ausgaben für
@@ -12,13 +11,13 @@ Aufgabe 2:
       \qty{27.23(1)e3}{\meter\per\second}
     \end{equation}
 
-  b) Lade nun die Option "locale=DE", wie ändert sich die Ausgabe?
-     Tipp: Mit \sisetup{} lassen sich Optionen auch nach dem Laden
-     des Pakets einstellen.
-  c) Lade zusätzlich die Option "separate-uncertainty=true",
-	   wie verändert sich die Ausgabe?
-  d) Lade zusätzlich die Option "per-mode=symbol-or-fraction",
-     wie ändert sich die Ausgabe?
+  b) Lade nun die Option "locale=DE". Wie ändert sich die Ausgabe? 
+     Tipp: Mit \sisetup{} lassen sich Optionen auch nach dem Laden des Pakets
+     einstellen.
+  c) Lade zusätzlich die Option "separate-uncertainty=true". Wie verändert sich
+     die Ausgabe?
+  d) Lade zusätzlich die Option "per-mode=symbol-or-fraction". Wie ändert sich
+     die Ausgabe?
 
 Aufgabe 3:
   Vergleiche die Ausgaben von:

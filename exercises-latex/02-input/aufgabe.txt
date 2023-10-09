@@ -1,7 +1,7 @@
 Aufgabe 1:
-  Lagere den Text und die Präambel deiner Hello-World-Übung
-  in einzelne `.tex`-Dateien aus.
-  Zum Beispiel eine Datei `header.tex` und eine Datei `content.tex`.
+  Lagere den Text und die Präambel deiner Hello-World-Übung in einzelne
+  `.tex`-Dateien aus. Zum Beispiel eine Datei `header.tex` und eine Datei
+  `content.tex`.
 
 Aufgabe 2:
   Lade sie wieder in ein Dokument, sodass die PDF-Datei identisch ist.

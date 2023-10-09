@@ -9,8 +9,8 @@ Tipps:
 Male das Haus vom Nikolaus ohne „den Stift abzusetzen“.
 
 ## Aufgabe 2
-Erstelle DIN A4 Millimeter Papier (1cm Rand)
-Setze unterschiedliche Markierungen für 10 mm, 5 mm und 1 mm.
+Erstelle DIN A4 Millimeter Papier (1cm Rand). Setze unterschiedliche
+Markierungen für 10 mm, 5 mm und 1 mm.
 
 Tipps:
 * das Paket `geometry` und seine `margin` option
@@ -19,9 +19,9 @@ Tipps:
 
 ## Aufgabe 3
 
-Schaue dir auch die Doku von `circuitikz` an,
-und baue den Schaltplan für einen gedämpften Schwingkreis
-mit
+Schaue dir auch die Doku von `circuitikz` an, und baue den Schaltplan für einen
+gedämpften Schwingkreis mit
+
 C = 1 µF
 R = 50 Ω
 L = 1 H

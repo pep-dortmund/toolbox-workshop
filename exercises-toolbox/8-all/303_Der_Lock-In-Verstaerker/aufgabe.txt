@@ -2,9 +2,9 @@
 
 Aufgabe:
 
-Ziel ist es, die Abstandsabhängigkeit der Intensität einer LED zu bestimmen.
-U muss vor der Rechnung durch die Parameter PA, LI und LP geteilt werden;
-sie sind Verstärkungsfaktoren des Lock-In-Verstärkers.
+Ziel ist es, die Abstandsabhängigkeit der Intensität einer LED zu bestimmen. 
+U muss vor der Rechnung durch die Parameter PA, LI und LP geteilt werden; sie
+sind Verstärkungsfaktoren des Lock-In-Verstärkers.
 
 Nutze curve_fit oder das mitgelieferte ucurve_fit (aus 4-uncertainties/3-curve_fit),
 um folgende Funktion zu fitten:

@@ -6,8 +6,8 @@ Aufgabe:
 
 https://docs.python.org/3/
 
-Versuche herauszufinden, wie man eine Datei in Python öffnet.
-Schlage außerdem nach, wie man Text aus einer Datei ausliest oder in eine Datei schreibt.
+Versuche herauszufinden, wie man eine Datei in Python öffnet. Schlage außerdem
+nach, wie man Text aus einer Datei ausliest oder in eine Datei schreibt.
 
 Tipp: Suche nach Informationen zur Funktion "open()".
 
@@ -17,21 +17,21 @@ Aufgabe:
 Schreibe ein Python-Skript, welches den Inhalt der Datei "test.txt" ausgibt.
 Teste dein Skript mit einer Beispieldatei.
 
-Bonus:
-Ändere das Skript so, dass die zu lesende Datei in der Kommandozeile angegeben werden kann.
-Tipp:
-Schaue in die Dokumentation für das Modul `sys`.
+Bonus: 
+Ändere das Skript so, dass die zu lesende Datei in der Kommandozeile
+angegeben werden kann. Tipp: Schaue in die Dokumentation für das Modul `sys`.
 
 2. Schreiben
-Schreibe ein Python-Skript, welches die Zahl "42" in die Datei "test.txt" schreibt
-und nutze das Skript aus 1. um dein Programm zu testen.
+Schreibe ein Python-Skript, welches die Zahl "42" in die Datei "test.txt"
+schreibt und nutze das Skript aus 1. um dein Programm zu testen.
 
-Bonus:
-Wie kann man die Datei nach Benutzung wieder schließen?
-Warum ist es bei dieser Aufgabe nicht wichtig, ob die Datei geschlossen wird?
-Wann ist es wichtig?
+Bonus: 
+Wie kann man die Datei nach Benutzung wieder schließen? Warum ist es bei
+dieser Aufgabe nicht wichtig, ob die Datei geschlossen wird? Wann ist es
+wichtig?
 
-Um nicht zu vergessen, eine Datei zu schließen, bietet Python die folgende Syntax:
+Um nicht zu vergessen, eine Datei zu schließen, bietet Python die folgende
+Syntax:
 
 with open('test.txt') as f:
     # f verwenden

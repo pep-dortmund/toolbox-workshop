@@ -1,74 +1,83 @@
 # f-strings
 
 1. Aufgabe:
-Öffne die Datei "fstrings.py".
-In dieser befinden sich der Titel eines Versuchs, das Datum an dem der
-Versuch durchgeführt wurde und zwei Listen mit Messwerten.
-Ziel ist es zunächst die Ausgabe einer Überschrift mit dem 
+Öffne die Datei "fstrings.py". In dieser befinden sich der Titel eines
+Versuchs, das Datum an dem der Versuch durchgeführt wurde und zwei Listen mit
+Messwerten. Ziel ist es zunächst die Ausgabe einer Überschrift mit dem
 Versuchstitel und dem Datum zu erzeugen:
 
     Versuch: Wiegen von Metallen durchgeführt am 24.09.2018
 
 Alternative Ausgabe mit Anführungszeichen als kleine Steigerung:
+ 
     Versuch: 'Wiegen von Metallen' durchgeführt am 24.09.2018
 
 Natürlich kann man hier einfach den Text kopieren und ausgeben,
 Ziel ist es aber die Variablen `title` und `date` zu verwenden.
 
 Tipp:
-Die Funktion print() kann mehrere (unbegrenzt viele) Argumente verarbeiten.
-Die einzelnen Argumente werden mit Leerzeichen dazwischen aneinander gehangen.
-Zum Beispiel:
+Die Funktion print() kann mehrere (unbegrenzt viele) Argumente verarbeiten. Die
+einzelnen Argumente werden mit Leerzeichen dazwischen aneinander gehangen. 
+ZumBeispiel:
+
 print("a", "b", "c")
+
 Ausgabe:
 a b c
 
 Genau wie Strings, kann man auch Variablen als Argument verwenden.
 Zum Beispiel:
+
 x = "a"
 print(x, "b", "c")
+
 Ausgabe:
 a b c
 
 2. Aufgabe:
-Vor allem mit vielen Variablen werden die print() Argumente oft lang und unverständlich.
-Extras wie Anführungszeichen sind eine zusätzliche Komplikation.
-Daher bietet Python mehrere Möglichkeiten zur String-Formatierung an.
-String-Formatierung bedeutet, dass man in einem einzelnen String vorgibt, wo und wie
-die Werte von Variablen eingesetzt werden sollen. Man gibt also die Formatierung der Ausgabe vor.
-Die neuste Möglichkeit zur String-Formatierung sind sogenannte f-strings.
+Vor allem mit vielen Variablen werden die print() Argumente oft lang und
+unverständlich. Extras wie Anführungszeichen sind eine zusätzliche
+Komplikation. Daher bietet Python mehrere Möglichkeiten zur String-Formatierung
+an. String-Formatierung bedeutet, dass man in einem einzelnen String vorgibt,
+wo und wie die Werte von Variablen eingesetzt werden sollen. Man gibt also die
+Formatierung der Ausgabe vor. Die neuste Möglichkeit zur String-Formatierung
+sind sogenannte f-strings.
 
-Ersetze die vorherigen Argumente der Funktion print() durch einen f-string, der dieselbe Ausgabe
-erzeugt. Ein leerer f-string ist bereits in fstrings.py eingetragen, Änderungen müssen nur zwischen den 
-Anführungszeichen eingetragen werden.
+Ersetze die vorherigen Argumente der Funktion print() durch einen f-string, der
+dieselbe Ausgabe erzeugt. Ein leerer f-string ist bereits in fstrings.py
+eingetragen, Änderungen müssen nur zwischen den Anführungszeichen eingetragen
+werden.
 
 Tipp:
-Variablen werden in f-strings automatisch durch ihren Wert ersetzt, wenn man diese in geschweifte
-Klammern schreibt.
+Variablen werden in f-strings automatisch durch ihren Wert ersetzt, wenn man
+diese in geschweifte Klammern schreibt.
 Zum Beispiel:
+
 x = "a"
 print(f"{x} b c")
+
 Ausgabe:
 a b c
 
 3. Aufgabe:
-Nun zu den Messergebnissen. Verwende einen f-string, um das Metall und die jeweilige
-Masse auszugeben.
+Nun zu den Messergebnissen. Verwende einen f-string, um das Metall und die
+jeweilige Masse auszugeben.
 
 4. Aufgabe:
-Neben der Ausgabe von Werten ist es mit f-strings auch möglich,
-die Werte selbst vor der Ausgabe zu formatieren.
-So lassen sich beispielsweise Dezimalzahlen auf eine angegebene Stelle runden.
+Neben der Ausgabe von Werten ist es mit f-strings auch möglich, die Werte
+selbst vor der Ausgabe zu formatieren. So lassen sich beispielsweise
+Dezimalzahlen auf eine angegebene Stelle runden.
 
 Runde die Massen der Metalle vor dem Ausgeben auf zwei Nachkommastellen.
 
 Tipp:
-Formatierung für Variablenwerte gibt man nach einem Doppelpunkt an.
-Die Formatierung auf 5 Nachkommastellen sieht beispielsweise so aus, :.5f.
+Formatierung für Variablenwerte gibt man nach einem Doppelpunkt an. Die
+Formatierung auf 5 Nachkommastellen sieht beispielsweise so aus, :.5f.
+Zum Beispiel:
 
-Beispiel:
 x = 123.456789
 print(f"{x:.5f}"
+
 Ausgabe:
 123.45679
 

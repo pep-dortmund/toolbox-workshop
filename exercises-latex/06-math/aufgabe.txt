@@ -1,47 +1,43 @@
-Hinweis: Falls du die hier benötigten Gesetze
-         und Gleichungen nicht mehr weißt,
-         kannst du einen Blick in die PDF der Musterlösung werfen.
-         [Nicht in die .tex ;)]
+Hinweis: Falls du die hier benötigten Gesetze und Gleichungen nicht mehr weißt,
+         kannst du einen Blick in die PDF der Musterlösung werfen. 
+         [Nicht in die .tex;)]
 
 Aufgabe 1:
-  Erstelle ein neues LaTeX Dokument.
-  Lade zusätzlich zum Gerüst in `geruest.tex` die benötigten Pakete
-  für Mathematik und nimm die empfohlenen Einstellungen
-  vor.
+  Erstelle ein neues LaTeX Dokument. Lade zusätzlich zum Gerüst in
+  `geruest.tex` die benötigten Pakete für Mathematik und nimm die empfohlenen
+  Einstellungen vor.
 
 Aufgabe 2:
-  Setze das Biot–Savart-Gesetz.
-  Erkläre darunter im Fließtext die darin vorkommenden Größen und Konstanten.
-  Versuche dafür die $-Umgebung und weitere Umgebungen zu verwenden,
-  die du kennengelernt hast.
+  Setze das Biot–Savart-Gesetz. Erkläre darunter im Fließtext die darin
+  vorkommenden Größen und Konstanten. Versuche dafür die $-Umgebung und weitere
+  Umgebungen zu verwenden, die du kennengelernt hast.
 
 Aufgabe 3:
   Setze die Formel für die gaußsche Fehlerfortpflanzung.
 
 Aufgabe 4:
-  Setze die vier differentiellen Maxwellgleichungen.
-  Dabei sollen jeweils die homogenen bzw. die inhomogen
-  Gleichungen in einer Zeile stehen und die Gleichungen für
-  E bzw. B untereinander.
-  Richte die Gleichungen jeweils vertikal am Gleichheitszeichen aus.
+  Setze die vier differentiellen Maxwellgleichungen. Dabei sollen jeweils die
+  homogenen bzw. die inhomogen Gleichungen in einer Zeile stehen und die
+  Gleichungen für E bzw. B untereinander. Richte die Gleichungen jeweils
+  vertikal am Gleichheitszeichen aus.
 
 Aufgabe 5:
-  Leite aus den Maxwellgleichungen im Vakuum die Wellengleichung
-  für E oder B her.
+  Leite aus den Maxwellgleichungen im Vakuum die Wellengleichung für E oder B
+  her.
 
 Aufgabe 6:
-  Setze die Gleichung für eine ebene Welle sowie eine mögliche
-  Lösung derselben. Setze zusätzlich die Definitionen von
-  Phasen- und Gruppengeschwindigkeit.
+  Setze die Gleichung für eine ebene Welle sowie eine mögliche Lösung
+  derselben. Setze zusätzlich die Definitionen von Phasen- und
+  Gruppengeschwindigkeit.
 
 Aufgabe 7:
-  Setze die Multipolentwicklung für das elektrische Potential
-  einer Ansammlung von Punktladungen. Definiere dabei den
-  Quadrupoltensor in einer unnummerierten Gleichung.
+  Setze die Multipolentwicklung für das elektrische Potential einer Ansammlung
+  von Punktladungen. Definiere dabei den Quadrupoltensor in einer
+  unnummerierten Gleichung.
 
 Aufgabe 8:
-  Setze die Jacobi-Matrix einer allgemeinen m-komponentigen
-  Funktion mit n Parametern.
+  Setze die Jacobi-Matrix einer allgemeinen m-komponentigen Funktion mit n
+  Parametern.
 
 Aufgabe 9:
   Setze die DGL für den gedämpften harmonischen Oszillator sowie ihre Lösung.
