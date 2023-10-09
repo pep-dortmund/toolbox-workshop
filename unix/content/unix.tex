@@ -229,8 +229,13 @@
     find . & Rekursiv alle Dateien und Ordner im aktuellen Verzeichnis listen \\
     find . -type f & Nur Dateien anzeigen \\
     find . -name '*.py' & Alle Dateien, die mit \texttt{.py} enden \\
-    find . -exec <befehl> \textbackslash{}; & Befehl für jede gefundene Datei ausführen, \texttt{\{\}} wird durch den Dateinamen ersetzt \\
+    find . -exec <befehl> \textbackslash{}; & Befehl für jede gefundene Datei ausführen, wird dabei \texttt{\{\}} eingesetzt wird dies durch den Dateinamen ersetzt \\
   \end{tabu}
+  Beispiel: Schreibe eine Nachricht zu den gefundenen Dateien (hier exemplarisch in einem Verzeichnis, das nur die Datei \texttt{example.py} enthält):
+  \begin{minted}{bash}
+     $ find *.py -exec echo "Found file: {}" \;
+     Found file: example.py
+  \end{minted}
 \end{frame}
 
 \begin{frame}{Ein- und Ausgabe}
