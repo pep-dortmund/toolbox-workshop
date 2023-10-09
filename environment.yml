@@ -14,5 +14,9 @@ dependencies:
   - jupyter
   - notebook
   - ipython
+  - pre-commit
+  - nbstripout
+  - black
+  - black-jupyter
   - pip:
     - ./pygments_style
