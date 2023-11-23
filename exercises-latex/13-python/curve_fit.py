@@ -12,15 +12,17 @@ def ucurve_fit(f, x, y, **kwargs):
     """
     if np.any(unp.std_devs(y) == 0):
         sigma = None
+        abs_sigma = False
     else:
         sigma = unp.std_devs(y)
+        abs_sigma = True
 
     popt, pcov = scipy.optimize.curve_fit(
         f,
         x,
         unp.nominal_values(y),
         sigma=sigma,
-        absolute_sigma=True,
+        absolute_sigma=abs_sigma,
         **kwargs,
     )
 
