@@ -34,7 +34,7 @@ jobs:
       - name: Setup
         run: |
           sudo apt-get install --yes poppler-utils
-          pip install https://github.com/maxnoe/texlive-batch-installation/archive/v0.3.5.tar.gz
+          pip install install-texlive
           python -m install_texlive -p $HOME/texlive -t $TEXLIVE_VERSION --collections='-a' --package-file tex-packages.txt --update -v
 
           # add to path for following steps
