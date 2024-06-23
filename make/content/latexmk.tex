@@ -1,0 +1,89 @@
+\headlineframe{\LaTeX{} noch besser integrieren}
+
+\begin{frame}[fragile]{\texttt{nonstopmode}}
+  In Makefiles will man keine Interaktion.
+
+  \begin{block}{Keine Interaktion}
+    \begin{minted}{text}
+      lualatex --interaction=nonstopmode file.tex
+    \end{minted}
+  \end{block}
+
+  \begin{block}{Beim ersten Fehler abbrechen}
+    \begin{minted}{text}
+      lualatex --interaction=nonstopmode --halt-on-error file.tex
+    \end{minted}
+  \end{block}
+
+  Neben \texttt{nonstopmode} gibt es auch \texttt{batchmode}, was die Ausgabe nur in der \texttt{.log}-Datei speichert, aber nicht ausgibt.
+
+  \begin{block}{Log schöner machen}
+    \begin{minted}{text}
+     max_print_line=1048576 lualatex file.tex
+    \end{minted}
+  \end{block}
+\end{frame}
+
+\begin{frame}[fragile]{
+  \texttt{latexmk}
+  \hfill
+  \doc{http://mirrors.ctan.org/support/latexmk/latexmk.pdf}{latexmk}
+}
+  \begin{itemize}
+    \item Problem: Mehrfaches Kompilieren von Dokumenten ist aufwändig und fehleranfällig
+    \item \texttt{latexmk} ist ein Kommandozeilenwerkzeug, das automatisch \texttt{tex} (und andere Programme wie \texttt{biber}) oft genug aufruft
+    \item Bei TeXLive mitgeliefert
+    \item Auswahl von \LuaLaTeX\ durch Parameter \texttt{--lualatex}
+    \item Versteht auch viele \texttt{tex}-Argumente wie \texttt{--interaction} und \texttt{--halt-on-error}
+  \end{itemize}
+
+  \begin{block}{Aufruf auf der Kommandozeile}
+    \begin{minted}{latex}
+      latexmk --lualatex --output-directory=build --interaction=nonstopmode --halt-on-error file.tex
+    \end{minted}
+  \end{block}
+
+  \begin{itemize}
+    \item Noch mehr Kontrolle durch Konfigurationsdatei \texttt{latexmkrc}
+    \item Siehe dazu \href{http://mirrors.ctan.org/support/latexmk/latexmk.pdf}{Dokumentation}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{\texttt{latexmk} im \texttt{Makefile}}
+  \begin{block}{Im \texttt{Makefile}}
+    \begin{minted}{make}
+      build/file.pdf: FORCE plots... tabellen...
+          TEXINPUTS=build: \
+          max_print_line=1048576 \
+          latexmk \
+            --lualatex \
+            --output-directory=build \
+            --interaction=nonstopmode \
+            --halt-on-error \
+          file.tex
+
+      FORCE:
+
+      .PHONY: FORCE all clean
+    \end{minted}
+  \end{block}
+
+  \begin{itemize}
+    \item \texttt{latexmk} bestimmt Abhängigkeiten selbst
+    \item Sollte also immer ausgeführt werden
+      \begin{itemize}
+        \item \texttt{FORCE:} definiert eine niemals erfüllte Abhängigkeit, sodass immer ausgeführt wird
+      \end{itemize}
+  \end{itemize}
+\end{frame}
+\begin{frame}{Kontinuierliche Updates}
+  \begin{center}
+    \texttt{latexmk \alert{-pvc} --interaction=nonstopmode … document.tex}
+  \end{center}
+  \begin{itemize}
+    \item \texttt{latexmk} merkt, wenn ihr eure Dateien ändert
+    \item Kompiliert automatisch neu
+    \item Öffnet den Standard-PDF-Betrachter
+    \item Einfach im Hintergrund laufen lassen
+  \end{itemize}
+\end{frame}

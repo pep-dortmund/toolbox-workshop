@@ -1,0 +1,58 @@
+\begin{frame}{Funktionsweise}
+  \begin{center}
+    \begin{tikzpicture}
+      \graph [
+        grow down,
+        branch right sep,
+        nodes={
+          node font=\ttfamily,
+        },
+      ] {
+        "all" [x=3.5] -> "report.pdf" [x=3] -> {
+          "report.tex",
+          "plot.pdf" -> {
+            "plot.py", "data.txt"
+          },
+          "plot2.pdf" -> {
+            "plot2.py", "data.txt", "data2.txt"
+          },
+        },
+      };
+    \end{tikzpicture}
+  \end{center}
+
+  \begin{itemize}
+    \item Abhängigkeiten bilden einen DAG (directed acyclic graph/gerichteter azyklischer Graph)
+    \item Dateien werden neu erstellt, falls sie nicht existieren oder älter als ihre Prerequisites sind
+    \item Prerequisites werden zuerst erstellt
+    \item top-down Vorgehen
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Argumente für \texttt{make}}
+  \begin{tblr}{
+      colspec = {l X[l]},
+      column{1} = {font=\ttfamily},
+    }
+    make \textit{target} & statt des ersten in der \texttt{Makefile} genannten Targets (meist \texttt{all}) nur \texttt{target} erstellen \\
+    make -n              & dry run: Befehle anzeigen aber nicht ausführen \\
+    make -B              & Force: ausführen aller Schritte, ignorieren des Alters aller Dateien \\
+    make -p              & Datenbank aller Abhängigkeiten ausgeben
+  \end{tblr}
+  \begin{itemize}
+    \item Nützlich, wenn man einen Plot bearbeitet: \texttt{make plot.pdf}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{\texttt{make clean}}
+  (Nützliche) Konvention: \texttt{make clean} löscht alle vom \texttt{Makefile} erstellten Dateien/Ordner.
+
+  \begin{center}
+    \begin{minted}{make}
+      clean:
+          rm plot.pdf report.pdf
+    \end{minted}
+  \end{center}
+
+  Das Projekt sollte dann so aussehen, wie vor dem ersten Ausführen von \texttt{make}.
+\end{frame}
