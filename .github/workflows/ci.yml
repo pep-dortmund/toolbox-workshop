@@ -9,7 +9,7 @@ on:
   pull_request:
 
 env:
-  TEXLIVE_VERSION: 2023
+  TEXLIVE_VERSION: 2024
   TERM: xterm
   # silences warnings from jupyter about not being able to debug the stdlib
   PYDEVD_DISABLE_FILE_VALIDATION: 1
@@ -34,7 +34,7 @@ jobs:
       - name: Setup
         run: |
           sudo apt-get install --yes poppler-utils
-          pip install https://github.com/maxnoe/texlive-batch-installation/archive/v0.3.2.tar.gz
+          pip install install-texlive
           python -m install_texlive -p $HOME/texlive -t $TEXLIVE_VERSION --collections='-a' --package-file tex-packages.txt --update -v
 
           # add to path for following steps
