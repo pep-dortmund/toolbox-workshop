@@ -1,3 +1,69 @@
 \section{Ordnerstruktur}
 
 \headlineframe{Ordnerstruktur}
+
+\begin{frame}{Orientierung am Studium}
+  % Erst an der Tafel entwickeln
+  \centering
+  \begin{tikzpicture}
+    [edge from parent fork down,
+    sibling distance=10em,
+    level distance=5em,
+    every node/.style={fill=blue!30, rounded corners},
+    edge from parent/.style={draw, -latex, thick},
+    level 1/.style={sibling distance=12em},
+    level 2/.style={sibling distance=6em}]
+
+    \node {Studium}
+      child {node {1. Semester}
+        child {node {HöMa I}
+          child {node {Folien}}
+          child {node {Übungsblätter}
+            child {node {01}}
+            child {node {02}}
+          }
+        }
+        child {node {Physik I}}
+      }
+      child {node {2. Semester}}
+      child {node {3. Semester}};
+  \end{tikzpicture}
+\end{frame}
+
+\begin{frame}
+  % Gerne schicker machen
+  \begin{minipage}{.45\textwidth}
+  \begin{forest}
+    for tree={grow'=0,folder,draw}
+    [Studium
+      [1. Semester
+        [HöMa I
+          [Folien]
+          [Übungsblätter]
+        ]
+        [Physik I]
+      ]
+      [2. Semester]
+    ]
+  \end{forest}
+  \end{minipage}
+  \hfill
+  \pause
+  \begin{minipage}{.45\textwidth}
+    Anpassung der Namen:
+
+    \begin{forest}
+      for tree={grow'=0,folder,draw}
+      [Studium
+        [01\_Semester
+          [HoeMa\_I
+            [Folien]
+            [Übungsblaetter]
+          ]
+          [Physik\_I]
+        ]
+        [02\_Semester]
+      ]
+    \end{forest}
+  \end{minipage}
+\end{frame}
