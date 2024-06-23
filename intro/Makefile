@@ -5,7 +5,7 @@ FIGURES := $(addprefix build/figures/, $(addsuffix .pdf, os programming interest
 
 build/intro.pdf: $(FIGURES) $(addprefix build/figures/, \
 	vim.png nano.png real_programmers.png code.png windows.png macos.png tux.jpg\
-	fedora.png archlinux.png ubuntu.png debian.pdf \
+	fedora.png archlinux.png ubuntu.png debian-openlogo.png \
 	)
 
 build/figures/os.pdf: script/answers.py data/toolbox2023.json ../common/matplotlibrc ../common/header-matplotlib.tex
@@ -28,10 +28,6 @@ build/figures/real_programmers.png: | build/figures
 build/figures/windows.png: | build/figures
 	wget https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Windows_logo_and_wordmark_-_2021.svg/1024px-Windows_logo_and_wordmark_-_2021.svg.png -O $@ --no-use-server-timestamps
 
-
-build/figures/macos.png: | build/figures
-	wget https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/MacOS_logo.svg/768px-MacOS_logo.svg.png -O $@ --no-use-server-timestamps
-
 build/figures/macos.png: | build/figures
 	wget https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/MacOS_logo.svg/768px-MacOS_logo.svg.png -O $@ --no-use-server-timestamps
 
@@ -39,7 +35,7 @@ build/figures/tux.jpg: | build/figures
 	wget https://upload.wikimedia.org/wikipedia/commons/d/dd/Linux_logo.jpg -O build/figures/tux-original.jpg --no-use-server-timestamps
 	convert build/figures/tux-original.jpg -trim $@
 
-build/figures/debian.pdf: | build/figures
+build/figures/debian-openlogo.png: | build/figures
 	wget https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Debian-OpenLogo.svg/581px-Debian-OpenLogo.svg.png -O build/figures/debian-openlogo.png
 
 build/figures/ubuntu.png: build/figures
