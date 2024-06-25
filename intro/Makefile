@@ -2,8 +2,9 @@ include ../common/common.mk
 include ../common/document.mk
 
 FIGURES := $(addprefix build/figures/, $(addsuffix .pdf, os programming interest))
+EXAMPLE_PLOT := build/example_plot.pdf
 
-build/intro.pdf: $(FIGURES) $(addprefix build/figures/, \
+build/intro.pdf: $(FIGURES) $(EXAMPLE_PLOT) $(addprefix build/figures/, \
 	vim.png nano.png real_programmers.png code.png windows.png macos.png tux.jpg\
 	fedora.png archlinux.png ubuntu.png debian-openlogo.png \
 	)
@@ -46,3 +47,6 @@ build/figures/fedora.png: build/figures
 
 build/figures/archlinux.png: build/figures
 	wget -O $@ --no-use-server-timestamps https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Archlinux-logo-standard-version.png/1024px-Archlinux-logo-standard-version.png
+
+build/example_plot.pdf: script/example_plot.py | build/figures
+	MATPLOTLIBRC=../common/matplotlibrc TEXINPUTS=$$(pwd)/../common: python3 $<
