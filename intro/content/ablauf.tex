@@ -7,6 +7,7 @@
           arrow/.style={line width=2pt, ->}
         ]
         %% Data table
+        \node at (0, 2.5) {Daten};
         \node (data) at (0, 0) {
           \sffamily
           \sisetup{table-format=1.2, detect-family}
@@ -27,18 +28,23 @@
             \bottomrule
           \end{tblr}
         };
+        \pause
+        %% Plot
+        \node at (6, 2.5) {Plots und Ergebnisse};
         \node [anchor=west, align=center] (plot) at (3, 0) {
           \includegraphics[width=5cm]{build/example_plot.pdf}\\
           \(I_0 = \qty{26.9 \pm 0.5}{\micro\ampere}\)
         };
-
+        \draw [arrow] (data)
+          -- node[above, midway] {\includegraphics[width=1.5cm]{../common/logos/python.pdf}}
+          (plot);
+        \pause
         %% Protocol
         \node [anchor=west] (protocol) at (10, 0) {
           \begin{tikzpicture}[
               scale=2,
               protocol text/.style={line width=2pt, line cap=round, color=gray}
             ]
-
             \draw (0,0) -- ++(1.41, 0) -- ++(0, 2)
               -- ++(-1.21, 0) -- (0, 1.8) -- cycle;
             \draw (0, 1.8) -- ++(0.2,0) -- ++(0, 0.2);
@@ -66,17 +72,7 @@
             \draw [protocol text] (0.9, 0.2) -- +(0.4, 0);
           \end{tikzpicture}
         };
-
-
-        %% Arrows
-        \draw [arrow] (data)
-          -- node[above, midway] {\includegraphics[width=1.5cm]{../common/logos/python.pdf}}
-          (plot);
         \draw [arrow] (plot) -- node[above, midway] {\LaTeX} (protocol);
-
-        %% Annotations
-        \node at (0, 2.5) {Data};
-        \node at (6, 2.5) {Plots und Ergebnisse};
         \node at (11.5, 2.5) {Protokoll (PDF)};
       \end{tikzpicture}
     \end{center}
