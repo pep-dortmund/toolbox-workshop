@@ -1,6 +1,6 @@
 Unter der URL
 
-https://opendata.dortmund.de/OpenDataConverter/download/Gesundheit/FB53-Coronafallzahlen.csv
+https://open-data.dortmund.de/api/explore/v2.1/catalog/datasets/fb53-coronafallzahlen/exports/csv?lang=en&timezone=Europe%2FBerlin&use_labels=true&delimiter=%3B
 
 können die Verlaufszahlen der Coronafälle der Stadt Dortmund als csv-Datei
 heruntergeladen werden.
