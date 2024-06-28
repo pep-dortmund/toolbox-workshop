@@ -11,7 +11,7 @@ build/loesung-insgesamt.pdf: build/loesung-faelle-pro-tag.pdf
 build/loesung-aktuell.pdf: build/loesung-faelle-pro-tag.pdf
 
 FB53-Coronafallzahlen.csv:
-	wget https://open-data.dortmund.de/api/explore/v2.1/catalog/datasets/fb53-coronafallzahlen/exports/csv?lang=en&timezone=Europe%2FBerlin&use_labels=true&delimiter=%3B
+	curl -L -o FB53-Coronafallzahlen.csv https://open-data.dortmund.de/api/explore/v2.1/catalog/datasets/fb53-coronafallzahlen/exports/csv?lang=en
 
 clean:
 	rm -f FB53-Coronafallzahlen.csv
