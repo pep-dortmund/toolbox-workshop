@@ -1,5 +1,18 @@
 \headlineframe{Projekte \enquote{sauber} halten}
 
+\begin{frame}[fragile]{\texttt{make clean}}
+  (Nützliche) Konvention: \texttt{make clean} löscht alle vom \texttt{Makefile} erstellten Dateien/Ordner.
+
+  \begin{center}
+    \begin{minted}{make}
+      clean:
+          rm plot.pdf report.pdf
+    \end{minted}
+  \end{center}
+
+  Das Projekt sollte dann so aussehen, wie vor dem ersten Ausführen von \texttt{make}.
+\end{frame}
+
 \begin{frame}[fragile]{\texttt{build}-Ordner}
   \texttt{build}-Ordner: Projekt sauber halten
 
