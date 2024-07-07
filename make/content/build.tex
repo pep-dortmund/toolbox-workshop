@@ -1,0 +1,75 @@
+\headlineframe{Projekte \enquote{sauber} halten}
+
+\begin{frame}[fragile]{\texttt{make clean}}
+  (Nützliche) Konvention: \texttt{make clean} löscht alle vom \texttt{Makefile} erstellten Dateien/Ordner.
+
+  \begin{center}
+    \begin{minted}{make}
+      clean:
+          rm plot.pdf report.pdf
+    \end{minted}
+  \end{center}
+
+  Das Projekt sollte dann so aussehen, wie vor dem ersten Ausführen von \texttt{make}.
+\end{frame}
+
+\begin{frame}[fragile]{\texttt{build}-Ordner}
+  \texttt{build}-Ordner: Projekt sauber halten
+
+  \begin{center}
+    \begin{minted}{make}
+      all: build/report.pdf
+
+      build/plot.pdf: plot.py data.txt | build
+          python plot.py  # savefig('build/plot.pdf')
+
+      build/report.pdf: report.tex build/plot.pdf | build
+          lualatex --output-directory=build report.tex
+
+      build:
+          mkdir -p build
+
+      clean:
+          rm -rf build
+
+      .PHONY: all clean
+    \end{minted}
+  \end{center}
+
+  \begin{itemize}
+    \item \texttt{| build} ist ein order-only Prerequisite: Alter wird ignoriert
+    \item Targets, die bei \texttt{.PHONY} genannt werden, erzeugen keine Dateien (guter Stil).
+        Bsp: \textbf{\texttt{clean}} löscht Dateien, wird versehentlich eine Datei clean erstellt,
+        soll trotzdem \textbf{\texttt{clean}} ausgeführt werden.
+        Nennung hier hebt die Verwirrung von \texttt{make} auf, beugt vor.
+  \end{itemize}
+\end{frame}
+
+
+\begin{frame}[fragile]{\texttt{build}-Ordner}
+  \LuaTeX\ und \texttt{biber} bieten Optionen an, um einen \texttt{build}-Ordner zu benutzen.
+  \begin{block}{Aufrufe}
+    \begin{minted}{text}
+      lualatex --output-directory=build file.tex
+      biber build/file.bcf
+    \end{minted}
+  \end{block}
+
+  Um Dateien aus dem \texttt{build}-Ordner zu finden (Plots, Tabellen):
+  \begin{block}{Aufrufe}
+    \begin{minted}{text}
+      TEXINPUTS=build: lualatex --output-directory=build file.tex
+      biber build/file.bcf
+    \end{minted}
+  \end{block}
+  \vspace*{-0.5em}
+  \begin{itemize}
+    \item \texttt{TEXINPUTS}, \texttt{BIBINPUTS}: Suchpfade für \TeX- und \texttt{.bib}-Dateien
+    \item Elemente getrennt mit \texttt{:}, der erste Treffer wird genommen (wie \texttt{PATH})
+    \item Hilfreich um z.\,B.\ den Header nur einmal für alle Protokolle abzuspeichern. (Siehe latex-template)
+    \item \texttt{TEXINPUTS} auch für \mintinline{latex}+\includegraphics+
+    \item \texttt{:} am Ende der Liste: Standardsuchpfade anhängen (wichtig!)
+    \item \texttt{.} (der aktuelle Ordner) ist am Anfang der Standardliste, braucht man also nicht selbst angeben
+    \item Endet ein Element mit \texttt{//}, werden auch alle Unterordner durchsucht
+  \end{itemize}
+\end{frame}

@@ -1,4 +1,28 @@
-\section{\texttt{latexmk}}
+\headlineframe{\LaTeX{} noch besser integrieren}
+
+\begin{frame}[fragile]{\texttt{nonstopmode}}
+  In Makefiles will man keine Interaktion.
+
+  \begin{block}{Keine Interaktion}
+    \begin{minted}{text}
+      lualatex --interaction=nonstopmode file.tex
+    \end{minted}
+  \end{block}
+
+  \begin{block}{Beim ersten Fehler abbrechen}
+    \begin{minted}{text}
+      lualatex --interaction=nonstopmode --halt-on-error file.tex
+    \end{minted}
+  \end{block}
+
+  Neben \texttt{nonstopmode} gibt es auch \texttt{batchmode}, was die Ausgabe nur in der \texttt{.log}-Datei speichert, aber nicht ausgibt.
+
+  \begin{block}{Log schöner machen}
+    \begin{minted}{text}
+     max_print_line=1048576 lualatex file.tex
+    \end{minted}
+  \end{block}
+\end{frame}
 
 \begin{frame}[fragile]{
   \texttt{latexmk}
@@ -21,7 +45,7 @@
 
   \begin{itemize}
     \item Noch mehr Kontrolle durch Konfigurationsdatei \texttt{latexmkrc}
-    \item Siehe dazu Dokumentation
+    \item Siehe dazu \href{http://mirrors.ctan.org/support/latexmk/latexmk.pdf}{Dokumentation}
   \end{itemize}
 \end{frame}
 

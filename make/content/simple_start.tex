@@ -1,0 +1,70 @@
+\begin{frame}[fragile]{Makefile}
+  \begin{itemize}
+    \item Von \texttt{make} benutzte Datei heißt \texttt{Makefile} (keine Endung)
+      \begin{itemize}
+        \item bei Windows Dateiendungen einschalten, siehe
+          \url{http://techmixx.de/windows-10-dateiendungen-anzeigen-oder-ausblenden/}
+      \end{itemize}
+    \item \texttt{Makefile} besteht aus Regeln (Rules):
+  \end{itemize}
+  \begin{block}{Rule}
+    \centering
+    \begin{minted}{make}
+      target: prerequisites
+          recipe
+    \end{minted}
+  \end{block}
+  \begin{description}
+    \item[\texttt{\hphantom{prerequisites}\llap{target}}] Datei(en), die von dieser Rule erzeugt werden
+    \item[\texttt{prerequisites}]                         Dateien, von denen diese Rule abhängt
+    \item[\texttt{\hphantom{prerequisites}\llap{recipe}}] Befehle, um vom \texttt{prerequisites} zu \texttt{target} zu kommen
+    \begin{itemize}
+      \item wird mit Tab unter \texttt{target: prerequisites} eingerückt
+    \end{itemize}
+  \end{description}
+\end{frame}
+
+\begin{frame}[fragile]{Einfachstes Beispiel}
+  \begin{center}
+    \begin{minted}{make}
+      plot.pdf: plot.py data.txt
+          python plot.py
+    \end{minted}
+  \end{center}
+  \begin{itemize}
+    \item Wir wollen \texttt{plot.pdf} erzeugen (\texttt{target})
+    \begin{itemize}
+      \item \texttt{plot.pdf} hängt von \texttt{plot.py} und \texttt{data.txt} ab (\texttt{prerequisites})
+      \item Der Befehl, um \texttt{plot.pdf} aus den \texttt{prerequisites} zu erhalten ist \texttt{python plot.py}
+    \end{itemize}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Beispiel}
+  \begin{center}
+    \begin{minted}{make}
+      all: report.pdf  # convention
+
+      plot.pdf: plot.py data.txt
+          python plot.py
+
+      report.pdf: report.tex
+          lualatex report.tex
+
+      report.pdf: plot.pdf  # add prerequisite
+    \end{minted}
+  \end{center}
+  \vspace{1em}
+
+  \texttt{make} eingeben:
+  \begin{itemize}
+    \item \texttt{all} braucht \texttt{report.pdf}
+      \begin{itemize}
+        \item \texttt{report.pdf} braucht \texttt{plot.pdf}
+          \begin{itemize}
+            \item \texttt{python plot.py}
+          \end{itemize}
+        \item \texttt{lualatex report.tex}
+    \end{itemize}
+  \end{itemize}
+\end{frame}

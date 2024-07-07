@@ -1,0 +1,59 @@
+\headlineframe{Is the cake a lie?}
+
+\begin{frame}[fragile]{Vergleich: Kuchen backen}
+  \begin{center}
+    \begin{minted}{make}
+    Kuchen: Teig Backofen
+        Ofen auf 140°C vorheizen
+        Teig in Backform geben und in den Ofen schieben
+        Kuchen nach 40 min herausnehmen
+
+    Teig: Eier Mehl Zucker Milch Rumrosinen | Schüssel
+        Eier schlagen
+        Mehl, Zucker und Milch hinzugeben
+        Rumrosinen unterrühren
+
+    Rumrosinen: Rum Rosinen
+        Rosinen in Rum einlegen
+        Vier Wochen stehen lassen
+
+    Schüssel:
+        Rührschüssel auf den Tisch stellen, wenn nicht vorhanden
+
+    clean:
+        Kuchen essen
+        Küche sauber machen und aufräumen
+    \end{minted}
+  \end{center}
+\end{frame}
+
+\begin{frame}[fragile]{Expert}
+  Können mehrere unabhängige Auswertungen parallel ausgeführt werden? \\
+  → Ja: \;\texttt{make -j4}\; (nutzt 4 Prozesse (\texttt{j}: jobs) gleichzeitig, Anzahl beliebig)
+
+  Problem: Manchmal führt \texttt{make} Skripte gleichzeitig zweimal aus (hier \texttt{plot.py})
+  \begin{center}
+    \begin{minted}{make}
+      all: report.txt
+
+      report.txt: plot1.pdf plot2.pdf
+        touch report.txt
+
+      plot1.pdf plot2.pdf: plot.py data.txt
+        python plot.py  # plot.py produziert sowohl plot1.pdf als auch plot2.pdf
+    \end{minted}
+  \end{center}
+
+  Lösung: manuell synchronisieren
+  \begin{center}
+    $\vdots$ \\
+    \begin{minted}{make}
+      plot1.pdf: plot.py data.txt
+          python plot.py
+
+      plot2.pdf: plot1.pdf
+    \end{minted}
+  \end{center}
+
+  Wenn man \texttt{plot2.pdf} aber nicht \texttt{plot1.pdf} löscht, kann \texttt{make} nicht mehr \texttt{plot2.pdf} erstellen.
+\end{frame}
