@@ -2,9 +2,9 @@
 
 1. Aufgabe:
 
-Öffne die Datei "greetings.py". Eine Liste von Strings wurde bereits
+Öffne die Datei "vorlage.py". Eine Liste von Strings wurde bereits
 vorbereitet. Füge deinen Namen an einer beliebigen Stelle der Liste ein. Prüfe,
-ob du alles richtig gemacht hast, indem du das Programm mit "python greetings.py"
+ob du alles richtig gemacht hast, indem du das Programm mit "python vorlage.py"
 laufen lässt. Es sollten keinerlei Fehlermeldungen erscheinen.
 
 2. Aufgabe:

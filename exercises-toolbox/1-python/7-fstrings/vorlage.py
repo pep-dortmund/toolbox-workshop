@@ -16,7 +16,7 @@ print()
 # Versuch 'Wiegen von Metallen' durchgeführt am 24.09.2018
 
 # Für die 2.Aufgabe
-print(f"")
+# print(f"")
 
 # Für die 3. Aufgabe
 
