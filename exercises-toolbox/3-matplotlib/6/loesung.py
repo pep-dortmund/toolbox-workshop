@@ -1,3 +1,4 @@
+# begin solution
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -11,3 +12,4 @@ for n in range(1, 11):
 ax.legend(loc="upper left")
 ax.set_xlabel("$x$")
 fig.savefig("loesung.pdf")
+# end solution

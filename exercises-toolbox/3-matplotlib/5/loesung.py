@@ -1,3 +1,4 @@
+# begin solution
 import matplotlib.pyplot as plt
 import numpy as np
 
@@ -25,3 +26,4 @@ ax.set_xticks(
 
 ax.legend()
 fig.savefig("loesung.pdf")
+# end solution

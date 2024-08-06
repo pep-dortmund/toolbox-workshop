@@ -1,3 +1,4 @@
+# begin solution
 import matplotlib.pyplot as plt
 import numpy as np
 
@@ -12,3 +13,4 @@ ax.legend(loc="best")
 ax.set_xlabel(r"$x$")
 
 fig.savefig("loesung.pdf")
+# end solution
