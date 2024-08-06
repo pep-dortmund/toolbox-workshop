@@ -1,3 +1,4 @@
+# begin solution
 import matplotlib.pyplot as plt
 import numpy as np
 import uncertainties as unc
@@ -44,16 +45,15 @@ if __name__ == "__main__":
     print(params)
 
     for i, param in enumerate(params):
-        # for ufloat formatting see https://pythonhosted.org/uncertainties/user_guide.html
+        # for ufloat formatting see
+        # https://pythonhosted.org/uncertainties/user_guide.html
         print(f"p_{i} = {param:P}")
 
     x_plot = np.linspace(-0.1, 2 * np.pi + 0.1, 100)
 
     fig, ax = plt.subplots(1, 1, layout="constrained")
 
-    ax.errorbar(
-        x, unp.nominal_values(y), yerr=unp.std_devs(y), fmt="k+", label="Daten"
-    )
+    ax.errorbar(x, unp.nominal_values(y), yerr=unp.std_devs(y), fmt="k+", label="Daten")
     ax.plot(
         x_plot,
         unp.nominal_values(linear_combination(x_plot, functions, params)),
@@ -64,3 +64,4 @@ if __name__ == "__main__":
     ax.set_xlim(-0.1, 2 * np.pi + 0.1)
     ax.legend()
     fig.savefig("loesung.pdf")
+# end solution

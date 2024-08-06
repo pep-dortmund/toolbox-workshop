@@ -1,3 +1,4 @@
+# begin solution
 import numpy as np
 import uncertainties.unumpy as unp
 
@@ -24,3 +25,10 @@ def linregress(x, y):
 def ulinregress(x, y):
     A, A_error, B, B_error = linregress(x, y)
     return unp.uarray([A, B], [A_error, B_error])
+
+
+# end solution
+# def ulinregress(x, y):
+#     …
+#     … = linregress(x, y)
+#     …

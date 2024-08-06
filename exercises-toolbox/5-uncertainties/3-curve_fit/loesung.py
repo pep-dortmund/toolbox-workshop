@@ -1,3 +1,4 @@
+# begin solution
 import matplotlib.pyplot as plt
 import numpy as np
 import scipy.optimize
@@ -48,3 +49,8 @@ ax.plot(x, f(x, *unp.nominal_values(params)), label="Fit")
 ax.set_xticks([0, np.pi, 2 * np.pi, 3 * np.pi], [0, "π", "2π", "3π"])
 ax.legend()
 plt.savefig("loesung.pdf")
+# end solution
+# def ucurve_fit(f, x, y, **kwargs):
+#     …
+#     … = scipy.optimize.curve_fit(…, **kwargs)
+#     …

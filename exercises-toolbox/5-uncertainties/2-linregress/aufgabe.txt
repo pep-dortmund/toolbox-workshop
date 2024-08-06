@@ -8,9 +8,4 @@ Ausgabe durch Verwendung von uncertainties vereinfacht.
 Dabei sollte ein Array aus A und B zurückgegeben werden, wobei A und B ufloats
 sind.
 
-Nutze folgendes Gerüst:
-
-def ulinregress(x, y):
-    …
-    … = linregress(x, y)
-    …
+Nutze das gegebene Gerüst aus der Datei vorlage.py:
