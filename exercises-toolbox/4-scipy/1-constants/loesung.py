@@ -1,6 +1,8 @@
-from scipy.constants import find, physical_constants
+# begin solution
+from scipy.constants import physical_constants
 
 # Found using find() in IPython:
+# from scipy.constants import find
 
 for name in [
     "Planck constant",
@@ -10,3 +12,4 @@ for name in [
     "electron g factor",
 ]:
     print(name, physical_constants[name])
+# end solution

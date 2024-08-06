@@ -3,6 +3,8 @@ from scipy.optimize import curve_fit
 from scipy.signal import find_peaks
 import matplotlib.pyplot as plt
 
+# begin solution
+
 
 def e(x, a, b, c):
     return a * np.exp(b * x) + c
@@ -19,17 +21,22 @@ print(parameters_max, np.sqrt(np.diag(pcov_max)), sep="\n")
 
 parameters_min, pcov_min = curve_fit(e, t[mins], U[mins])
 print(parameters_min, np.sqrt(np.diag(pcov_min)), sep="\n")
+# end solution
 
+# parameters_max = #
+# parameters_min = #
+
+# Dieser Code erzeugt den Plot
 fig, ax = plt.subplots(1, 1, layout="constrained")
 
 x = np.linspace(0, ax.get_xlim()[1], 500)
 
 ax.plot(t, U, "k-", label="Gedämpfte Schwingung")
 
-ax.plot(x, e(x, *parameters_max), label="Obere Einhüllende")
+ax.plot(x, e(x, *parameters_max), "g-", label="Obere Einhüllende")
 ax.plot(t[maxs], U[maxs], "o", color="C0", label="Maxima")
 
-ax.plot(x, e(x, *parameters_min), label="Untere Einhüllende")
+ax.plot(x, e(x, *parameters_min), "y-", label="Untere Einhüllende")
 ax.plot(t[mins], U[mins], "o", color="C1", label="Minima")
 
 ax.set_xlabel(r"$t \ / \ \mathrm{ms}$")

@@ -1,3 +1,4 @@
+# begin solution
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -14,14 +15,14 @@ x, y, e_y = np.genfromtxt("daten.txt", unpack=True)
 
 
 def f(x, a, b, c):
-    return a * (x + b)**2 + c
+    return a * (x + b) ** 2 + c
 
 
 parameters, covariance_matrix = np.polyfit(x, y, deg=2, cov=True)
 uncertainties = np.sqrt(np.diag(covariance_matrix))
 
-for name, value, unc in zip('abc', parameters, uncertainties):
-    print(f'{name} = {value:.3f} ± {unc:.3f}')
+for name, value, unc in zip("abc", parameters, uncertainties):
+    print(f"{name} = {value:.3f} ± {unc:.3f}")
 
 fig = plt.figure(layout="constrained")
 ax = fig.add_subplot()
@@ -38,3 +39,4 @@ ax.set_ylabel(r"$f(t)$")
 ax.legend()
 
 plt.savefig("loesung.pdf")
+# end solution
