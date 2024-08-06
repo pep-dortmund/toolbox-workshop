@@ -10,6 +10,7 @@ data = np.genfromtxt(
     missing_values="-",  # missing value indicator
 )
 
+# begin solution
 spalten = data.dtype.names
 
 dortmund = 6.03609
@@ -124,3 +125,4 @@ ax.set_xlim(-1, data["datum"].size)
 ax.set_ylim(0, np.max(data["aktuell_erkrankte_personen"]) * 1.05)
 fig.savefig("build/loesung-aktuell.pdf")
 fig.clf()
+# end solution

@@ -1,3 +1,4 @@
+# begin solution
 import numpy as np
 from uncertainties.unumpy import nominal_values as noms
 import matplotlib.pyplot as plt
@@ -27,3 +28,4 @@ ax.set_xlabel(r"$r \,/\, \mathrm{m}$")
 ax.set_ylabel(r"$U \,/\, \mathrm{V}$")
 ax.legend(loc="upper right")
 fig.savefig("loesung.pdf")
+# end solution

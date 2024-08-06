@@ -1,10 +1,11 @@
+from linregress import ulinregress
+
+# begin solution
 import numpy as np
 import uncertainties as unc
 import uncertainties.unumpy as unp
 from uncertainties.unumpy import nominal_values as noms, std_devs as stds
 import matplotlib.pyplot as plt
-
-from linregress import ulinregress
 
 Delta_t_0 = np.genfromtxt("Delta_t_0.txt")
 N_0 = np.genfromtxt("N_0.txt")
@@ -34,3 +35,4 @@ ax.set_ylim(8e2, 3e3)
 ax.set_yticks([8e2, 1e3, 3e3], [r"$8 \cdot 10^2$", r"$10^3$", r"$3 \cdot 10^3$"])
 ax.legend(loc="upper right")
 fig.savefig("loesung.pdf")
+# end solution
