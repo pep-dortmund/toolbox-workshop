@@ -28,8 +28,8 @@
             \bottomrule
           \end{tblr}
         };
-        \pause
         %% Plot
+        \uncover<2->{
         \node at (6, 2.5) {Plots und Ergebnisse};
         \node [anchor=west, align=center] (plot) at (3, 0) {
           \includegraphics[width=5cm]{build/example_plot.pdf}\\
@@ -38,8 +38,9 @@
         \draw [arrow] (data)
           -- node[above, midway] {\includegraphics[width=1.5cm]{../common/logos/python.pdf}}
           (plot);
-        \pause
+        }
         %% Protocol
+        \uncover<3->{
         \node [anchor=west] (protocol) at (10, 0) {
           \begin{tikzpicture}[
               scale=2,
@@ -74,6 +75,7 @@
         };
         \draw [arrow] (plot) -- node[above, midway] {\LaTeX} (protocol);
         \node at (11.5, 2.5) {Protokoll (PDF)};
+        }
       \end{tikzpicture}
     \end{center}
 \end{frame}
