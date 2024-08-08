@@ -1,3 +1,4 @@
+# begin solution
 from collections import Counter
 
 with open("text.txt") as f:
@@ -7,3 +8,4 @@ counts = Counter(words)
 
 for key, count in counts.most_common(20):
     print("{}: {}".format(key, count))
+# end solution

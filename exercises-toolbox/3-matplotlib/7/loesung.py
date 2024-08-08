@@ -1,3 +1,4 @@
+# begin solution
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -13,3 +14,4 @@ ax.set_xlim(0, 2 * np.pi)
 ax.set_xlabel("$x$")
 ax.set_ylabel(r"$A \cos(x)$")
 fig.savefig("loesung.pdf")
+# end solution

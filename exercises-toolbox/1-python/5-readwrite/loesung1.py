@@ -1,3 +1,4 @@
+# begin solution
 import sys
 
 if len(sys.argv) > 1:
@@ -7,3 +8,4 @@ else:
 
 with open(filename, "r") as f:
     print(f.read())
+# end solution

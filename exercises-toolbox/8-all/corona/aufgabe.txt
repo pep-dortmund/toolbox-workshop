@@ -5,7 +5,7 @@ https://open-data.dortmund.de/api/explore/v2.1/catalog/datasets/fb53-coronafallz
 können die Verlaufszahlen der Coronafälle der Stadt Dortmund als csv-Datei
 heruntergeladen werden.
 
-In `geruest.py` ist ein Vorschlag wie die Daten eingelesen werden können.
+In der Datei `vorlage.py` ist ein Vorschlag wie die Daten eingelesen werden können.
 Schaut in der Dokumentation nach, was die einzelnen Punkte bedeuten.
 
 Erstellt mit den Werten 3 Balkendiagramme mit den folgenden Inhalten:

@@ -1,3 +1,4 @@
+# begin solution
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -52,3 +53,4 @@ ax.set_thetagrids(
 ax.grid(True)
 ax.legend(bbox_to_anchor=(0.45, 0.8, 0, 0))
 fig.savefig("loesung-polar.pdf")
+# end solution

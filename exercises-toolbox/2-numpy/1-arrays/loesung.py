@@ -1,5 +1,6 @@
 import numpy as np
 
+# begin solution
 # Aufgabe 1)
 
 a = np.zeros(shape=3)
@@ -29,33 +30,40 @@ for name, array in zip(array_names, arrays):
     print(f"\t {name}.shape: {array.shape}")
 
 # Aufgabe 3)
-# Nur Array e) und f) lassen sich addieren, bei allen anderen passen die Größen nicht zusammen.
+# Nur Array e) und f) lassen sich addieren, bei allen
+# anderen passen die Größen nicht zusammen.
 print("\nAufgabe 3)")
 print(f"Array d + f: {e + f}")
 
 
 # Aufgabe 4)
 print("\nAufgabe 4)")
-# Anzahl der Zeilen ist die Anzahl der Elemente in f (ein Element pro Zeile), Anzahl der Spalten ist damit 1
-# Das Produkt aus den Argumenten von reshape muss immer der Anzahl an Elementen entsprechen.
+# Anzahl der Zeilen ist die Anzahl der Elemente in f (ein Element
+# pro Zeile), Anzahl der Spalten ist damit 1
+# Das Produkt aus den Argumenten von reshape muss immer der Anzahl
+# an Elementen entsprechen.
 e_2d = e.reshape(1, len(e))
 print(f"Array e.reshape(1, len(e)):\n{e_2d}")
-# Man kann eine Dimension mit einer -1 versehen, diese wird dann automatisch ausgerechnet.
+# Man kann eine Dimension mit einer -1 versehen, diese wird dann
+# automatisch ausgerechnet.
 e_2d = e.reshape(1, -1)
 print(f"Array e.reshape(1, -1):\n{e_2d}")
 
 f_2d = f.reshape(len(f), 1)
 print(f"Array f.reshape(len(f), 1):\n{f_2d}")
-# Man kann eine Dimension mit einer -1 versehen, diese wird dann automatisch ausgerechnet.
+# Man kann eine Dimension mit einer -1 versehen, diese wird dann
+# automatisch ausgerechnet.
 f_2d = f.reshape(-1, 1)
 print(f"Array f.reshape(-1, 1):\n{f_2d}")
 
 
 # Aufgabe 5)
-# Das, was hier passiert nennt sich 'numpy-broadcasting' und ist eine sehr 'mächtiges' feature von numpy arrays.
-# Es ist nicht notwendig dieses Feature von Anfang an zu verstehen, es erweist sich nur irgendwann als
-# sehr nützlich.
-# Details findest du in der Dokumentation: https://numpy.org/doc/stable/user/basics.broadcasting.html
+# Das, was hier passiert nennt sich 'numpy-broadcasting' und ist eine
+# sehr 'mächtiges' feature von numpy arrays.
+# Es ist nicht notwendig dieses Feature von Anfang an zu verstehen, es
+# erweist sich nur irgendwann als sehr nützlich.
+# Details findest du in der Dokumentation:
+# https://numpy.org/doc/stable/user/basics.broadcasting.html
 
 print("\nAufgabe 5*)")
 print("Zum Vergleich noch mal die beiden Summanden:")
@@ -64,3 +72,4 @@ print(f"e_2d.shape: {e_2d.shape}")
 print(f"Array f_2d:\n{f_2d}")
 print(f"f_2d.shape: {f_2d.shape}")
 print(f"Array e_2d + f_2d:\n{e_2d + f_2d}")
+# end solution

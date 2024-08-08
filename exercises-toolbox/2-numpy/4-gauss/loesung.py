@@ -1,3 +1,4 @@
+# begin solution
 import numpy as np
 
 rng = np.random.default_rng()
@@ -7,3 +8,4 @@ x_old = np.random.normal(1, 2, size=1000)
 
 print("Summe, neu: ", np.sum(x_new))
 print("Summe, alt:  ", np.sum(x_old))
+# end solution

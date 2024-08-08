@@ -1,3 +1,4 @@
+# begin solution
 import matplotlib.pyplot as plt
 import numpy as np
 
@@ -20,3 +21,4 @@ ax2.set_ylabel(r"$y$")
 ax2.set_yscale("log")
 
 fig.savefig("loesung.pdf")
+# end solution

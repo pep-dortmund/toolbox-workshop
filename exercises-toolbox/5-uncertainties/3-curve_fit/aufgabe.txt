@@ -17,12 +17,7 @@ Die Rückgabe sollte als Array von ufloats erfolgen.
 Die Dokumentation von curve_fit könnte nützlich sein:
 http://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.curve_fit.html
 
-Nutze dazu folgendes Gerüst:
-
-def ucurve_fit(f, x, y, **kwargs):
-    …
-    … = scipy.optimize.curve_fit(…, **kwargs)
-    …
+Nutze dazu das gegebene Gerüst in der Datei vorlage.py.
 
 Überprüfe deine Wrapper-Implementation an den Daten in daten.txt und fitte
 diese an

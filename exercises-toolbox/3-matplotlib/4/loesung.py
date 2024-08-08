@@ -1,3 +1,4 @@
+# begin solution
 import matplotlib.pyplot as plt
 import numpy as np
 
@@ -29,3 +30,4 @@ ax.set_ylabel(r"$f(t)$")
 
 ax.legend()
 fig.savefig("loesung.pdf")
+# end solution

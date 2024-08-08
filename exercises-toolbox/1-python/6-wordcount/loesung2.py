@@ -1,3 +1,4 @@
+# begin solution
 with open("text.txt") as f:
     words = f.read().split()
 
@@ -19,3 +20,4 @@ result = sorted(counts.items(), key=get_count, reverse=True)
 
 for key, count in result[:20]:
     print(f"{key}: {count}")
+# end solution

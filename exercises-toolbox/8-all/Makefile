@@ -1,4 +1,5 @@
 include ../../common/common.mk
+include ../../common/generate_vorlage.mk
 
 DIRS := $(sort $(wildcard *))
 BUILDS := $(addsuffix _build, $(DIRS))

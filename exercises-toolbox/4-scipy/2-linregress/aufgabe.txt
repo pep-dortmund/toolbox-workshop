@@ -15,10 +15,4 @@ B = (Σ(x²) * (Σy) - (Σx) * (Σx * y)) / Δ
 A_error = σ_y * sqrt(N / Δ)
 B_error = σ_y * sqrt((Σx²) / Δ)
 
-Nutze folgendes Gerüst:
-
-import numpy as np
-
-def linregress(x, y):
-    …
-    return A, A_error, B, B_error
+Nutze das Gerüst in der Datei vorlage.py.

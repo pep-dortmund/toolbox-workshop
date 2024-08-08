@@ -1,3 +1,4 @@
+# begin solution
 import matplotlib.pyplot as plt
 import numpy as np
 
@@ -11,3 +12,4 @@ ax.set_xlabel(r"$x$")
 ax.set_ylabel(r"$x^2$")
 
 fig.savefig("loesung.pdf")
+# end solution
