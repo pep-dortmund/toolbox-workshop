@@ -25,6 +25,7 @@ firamath-otf
 float
 fontawesome5
 fontspec
+forest
 framed
 fvextra
 hyph-utf8
