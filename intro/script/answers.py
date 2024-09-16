@@ -1,10 +1,29 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 import json
-from pprint import pprint
 
 plt.style.use("ggplot")
 plt.rcParams["font.family"] = "sans-serif"
+
+
+def study(answers):
+    liste = []
+    for participant in answers:
+        if participant["toolbox"] is True:
+            liste.append(participant["study"])
+    study = pd.Series(liste).value_counts()
+    study /= study.sum()
+
+    fig = plt.figure(figsize=(5.0, 3.3), layout="none")
+    ax = fig.add_axes([0, 0, 1, 1], aspect=1)
+    ax.pie(
+        study.values,
+        labels=study.keys(),
+        startangle=35,
+        radius=1,
+    )
+    ax.set_xlim(-1.3, 2)
+    fig.savefig("build/figures/study.pdf")
 
 
 def operating_system(answers):
@@ -37,13 +56,20 @@ def programming(answers):
 
     programming = programming.value_counts()
     programming /= programming.sum()
+    programming.rename(
+        {
+            "Habe den Grundlagen wissenschaftlicher Datenverarbeitung am Computer Kurs \
+            besucht.": "Datenverarbeitungskurs\nbesucht"
+        },
+        inplace=True,
+    )
 
-    fig = plt.figure(figsize=(5.5, 3.3), layout="none")
+    fig = plt.figure(figsize=(6.2, 3.3), layout="none")
     ax = fig.add_axes([0, 0, 1, 1], aspect=1)
     ax.pie(
         programming.values,
         labels=programming.keys(),
-        startangle=-30,
+        startangle=120,
         radius=1,
         normalize=False,
     )
@@ -52,13 +78,14 @@ def programming(answers):
 
 def languages(answers):
     liste = []
+    print("Languages: Remarks at other:")
     for participant in answers:
         if participant["toolbox"] is True:
             for language, answer in participant["languages"].items():
                 if answer and language == "other":
                     answer = answer.replace(", ", ";")
-                    answer = answer.replace("#", "\#")
-                    liste.append(answer)
+                    print(answer)
+                    # liste.append(answer)
                 if answer:
                     liste.append(language)
     languages = pd.Series(liste)
@@ -77,7 +104,7 @@ def languages(answers):
     )
     counts = pd.Series(languages.str.split(";").sum()).value_counts()
 
-    fig = plt.figure(figsize=(5.5, 3.3), layout="constrained")
+    fig = plt.figure(figsize=(5.5, 3.3), layout="none")
     ax = fig.add_subplot(1, 1, 1)
 
     counts.sort_values(ascending=True).plot.barh(ax=ax, color="C1")
@@ -112,9 +139,10 @@ def interests(answers):
 
 
 if __name__ == "__main__":
-    with open("data/toolbox2023.json", "r") as read_file:
+    with open("data/toolbox2024.json", "r") as read_file:
         data = json.load(read_file)
-    languages(data)
+    study(data)
     operating_system(data)
     programming(data)
+    languages(data)
     interests(data)

@@ -4,7 +4,7 @@ import requests
 import pandas as pd
 
 r = requests.get(
-    "https://registration.pep-dortmund.org/events/16/participants",
+    "https://registration.pep-dortmund.org/events/21/participants",
     headers={"accept": "application/json"},
     auth=(input("Username: "), getpass()),
 )
@@ -22,12 +22,13 @@ def get_data(p):
     del data["email"]
     if data["remarks"] != "":
         remarks.append(data["remarks"])
-    if data["other_interesets"] != "":
-        other_interests.append(data["other_interesets"])
+    if data["other_interests"] != "":
+        other_interests.append(data["other_interests"])
     del data["remarks"]
-    del data["other_interesets"]
+    del data["other_interests"]
 
     return data
+
 
 part_status = []
 for p in data["participants"]:
@@ -37,7 +38,7 @@ for p in data["participants"]:
 
 participants = [get_data(p) for p in part_status]
 
-with open("data/toolbox2023.json", "w") as f:
+with open("data/toolbox2024.json", "w") as f:
     json.dump(participants, f, indent=2)
 
 
