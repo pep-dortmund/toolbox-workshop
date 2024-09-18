@@ -14,6 +14,7 @@ from uncertainties.unumpy import (
 from curve_fit import ucurve_fit
 from latex_formatting import make_qty
 
+
 # Load all data files
 camera = np.genfromtxt("data/Messwerte_Kamera.txt",  names=True, delimiter=",")
 track = np.genfromtxt("data/Messwerte_Bahn.txt",  names=True, delimiter=",")
@@ -46,11 +47,10 @@ print(measurements_cylinder)
 print("-"*70,end="\n\n")
 
 
-
 # create data with uncertainties and SI-Units
 
 framerate = camera["fps"] # frame/s
-L = track_length = unc.ufloat(track["l"],track["sigma_l"]) / 100 # m
+L = track_length = unc.ufloat(track["l"],track["sigma_l"])/100 # m
 
 m_B = ball_mass = unc.ufloat(ball["m"],ball["sigma_m"])/1000 # kg
 U_B = ball_perimeter = unc.ufloat(ball["U"],ball["sigma_U"])/100 #m
@@ -66,7 +66,6 @@ t_B = durations_ball = (ff_B - fi_B) / framerate #s
 
 
 # each height was measured 3 times => calculating the mean of these measurments 
-
 # selecting each height once 
 h_B = h_B.reshape(-1, 3)[:,0]
 t_B = t_B.reshape(-1, 3).mean(axis=1)
@@ -96,7 +95,7 @@ t_C = t_C.reshape(-1, 3).mean(axis=1)
 
 # fitting theoretical curve to data
 def fit_g_ball(h, g, t0):
-     return np.sqrt(7/10 * 1/h * 4 * noms(L)**2/g) + t0
+     return np.sqrt(7/5 * 1/h * 2* noms(L)**2/g) + t0
 
 params = ucurve_fit(fit_g_ball, noms(h_B), t_B, p0=[10, 0])
 
@@ -135,7 +134,7 @@ with open("build/parameter-t0-g_ball.tex", "w") as f:
 
 # fitting theoretical curve to data
 def fit_g_cylinder(h, g, t0):
-     return np.sqrt((2 + noms(Ri_C**2 + Ro_C**2))/4 * 1/h * 4 * noms(L)**2/g) + t0
+    return np.sqrt((3 + noms(Ri_C**2/Ro_C**2)) * noms(L)**2/(g*h)) + t0
 
 params = ucurve_fit(fit_g_cylinder, noms(h_C), t_C, p0=[10, 0])
 
