@@ -1,12 +1,121 @@
 \section{Auswertung}
 \label{sec:Auswertung}
 
+
+Die für diesen Versuch relevanten physikalischen Größen für Kugel und Zylinder sind 
+
+\begin{align}
+  \label{eq:physical-properties}
+  m_\text{Z} &= \input{mass_ball.tex} & m_\text{K} &= \input{mass_ball.tex}\nonumber\\
+  r_{\text{Z},\text{i}} &= \input{../build/radius-inner_cylinder.tex} & r_\text{K} &= \input{radius_ball.tex}\\
+  r_{\text{Z},\text{a}} &= \input{../build/radius-outer_cylinder.tex} &&\nonumber
+\end{align}
+
+Berechnet wurde aus diesen Größen das jeweilige, theoretiche Trägheitsmoment
+
+\begin{align}
+  \label{eq:moments-inertia}
+  I_\text{Z} &= \input{./../build/theoretical-I_cylinder.tex} && I_\text{K} = \input{./../build/theoretical-I_ball.tex}.
+\end{align}
+
+
+
+Aus den aufgenommenen Videos der Versuche wurden die in \autoref{tab:all-measurements} folgenden Frameindizes extrahiert.
+Die ebenfalls aufgeführte Zeitdauer $t$ wurde dann jeweils aus der aus dem Startframeindex $F_\text{i}$,
+dem Endframeindex $F_\text{f}$ und der Kameraframerate $\symup{fps}=\input{framerate.tex}$ wie folgt 
+berechnet
+\begin{equation*}
+  t = (F_\text{f} - F_\text{i})\cdot\symup{fps}^{-1}
+\end{equation*}
+
+\begin{table}
+  \centering
+  \input{build/table_all-measurements.tex}
+  \caption{Alle aufgenommenen Werte, das heißt mit dreifach wiederholter Messungen je Höhe.}
+  \label{tab:all-measurements}
+\end{table}
+
+Durch Mittelung der Messwerte für die selbe Höhe $h$ ergeben sich die in 
+\autoref{tab:averaged-measurements} berechnet und werden für die folgenden
+Auswertungsschritte verwendet.
+
+
+\begin{table}
+  \centering
+  \input{build/table_averaged-measurements.tex}
+  \caption{Für gleiche Starthöhe $h$ gemittelte Messwerte der Zeit $t$.}
+  \label{tab:averaged-measurements}
+\end{table}
+
+
+\subsection{Bestimmung der Fallbeschleunigung $g$}
+
+Für die bestimmung der Fallbeschleunigung wurden eine Ausgleichsfunktion der Form 
+\eqref{eq:fit-function-g-ball} respektive \eqref{eq:fit-function-g-cylinder} an die  Messwerte aus \autoref{tab:averaged-measurements}
+angepasst. Die Daten und Ausgleichsfunktion sind für die Kugel in \autoref{fig:fit-g-ball} 
+und für den Zylinder in \autoref{fig:fit-g-cylinder} graphisch dargestellt.
+
 \begin{figure}
   \centering
-  \includegraphics{plot.pdf}
-  \caption{Plot.}
-  \label{fig:plot}
+  \includegraphics{plot-g_ball.pdf}
+  \caption{Dargestellt sind die für je eine Höhe gemittelten Messwerte aus \autoref{tab:averaged-measurements} für die Kugel, zusammen mit einer Ausgleichsfunktion der Form \eqref{eq:fit-function-g-ball}.
+  Die Parameter der Ausgleichsrechnung sind in \eqref{eq:parameters-g_ball} angegeben.}
+  \label{fig:fit-g-ball}
+\end{figure}
+
+\begin{figure}
+  \centering
+  \includegraphics{plot-g_cylinder.pdf}
+  \caption{Dargestellt sind die für je eine Höhe gemittelten Messwerte aus \autoref{tab:averaged-measurements} für den Zylinder, zusammen mit einer Ausgleichsfunktion der Form \eqref{eq:fit-function-g-cylinder}.
+  Die Parameter der Ausgleichsrechnung sind in \eqref{eq:parameters-g_cylinder} angegeben.}
+  \label{fig:fit-g-cylinder}
+\end{figure}
+
+Die Parameter der Ausgleichsrechnung ergeben sich für die Kugel zu
+
+\begin{align}
+  \label{eq:parameters-g_ball}
+  g_\text{K} = \input{parameter-g_ball.tex} && t_{0,\text{K}} = \input{parameter-t0_ball.tex}
+\intertext{und für den Zylinder}
+  \label{eq:parameters-g_cylinder}
+  g_\text{Z} = \input{parameter-g_cylinder.tex} && t_{0,\text{Z}} = \input{parameter-t0_cylinder.tex}.
+\end{align}
+
+
+\subsection{Bestimmung der Trägheitsmomente $I$}
+
+Für die bestimmung der Fallbeschleunigung wurden eine Ausgleichsfunktion der Form 
+\eqref{eq:fit-function-I} an die Messwerte aus \autoref{tab:averaged-measurements}
+angepasst. Die Daten und Ausgleichsfunktion sind für die Kugel in \autoref{fig:fit-I-ball} 
+und für den Zylinder in \autoref{fig:fit-I-cylinder} graphisch dargestellt.
+
+
+\begin{figure}
+  \centering
+  \includegraphics{plot-I_ball.pdf}
+  \caption{Dargestellt sind die für je eine Höhe gemittelten Messwerte aus \autoref{tab:averaged-measurements} für den Kugel, zusammen mit einer Ausgleichsfunktion der Form \eqref{eq:fit-function-I}.
+  Die Parameter der Ausgleichsrechnung sind in \eqref{eq:parameters-I_ball} angegeben.}
+  \label{fig:fit-I-ball}
 \end{figure}
 
 
-Siehe \autoref{fig:plot}!
+\begin{figure}
+  \centering
+  \includegraphics{plot-I_cylinder.pdf}
+  \caption{Dargestellt sind die für je eine Höhe gemittelten Messwerte aus \autoref{tab:averaged-measurements} für den Zylinder, zusammen mit einer Ausgleichsfunktion der Form \eqref{eq:fit-function-I}.
+  Die Parameter der Ausgleichsrechnung sind in \eqref{eq:parameters-I_cylinder} angegeben.}
+  \label{fig:fit-I-cylinder}
+\end{figure}
+
+Die Parameter der Ausgleichsrechnung ergeben sich für die Kugel zu
+
+\begin{align}
+  \label{eq:parameters-I_ball}
+  I_\text{K} &= \input{parameter-I_ball.tex} &t_{0,\text{K}} &= \input{parameter-t0-I_ball.tex}
+  \intertext{und für den Zylinder}
+  \label{eq:parameters-I_cylinder}
+  I_\text{Z} &= \input{parameter-I_cylinder.tex} & t_{0,\text{Z}} &= \input{parameter-t0-I_cylinder.tex}.
+\end{align}
+
+
+
