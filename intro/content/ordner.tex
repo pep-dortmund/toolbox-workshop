@@ -1,0 +1,110 @@
+\section{Ordnerstruktur}
+
+\headlineframe{Ordnerstruktur}
+
+\begin{frame}{Orientierung am Studium}
+  % Erst an der Tafel entwickeln
+  \centering
+  \begin{tikzpicture}[
+      edge from parent fork down,
+      sibling distance=10em,
+      level distance=5em,
+      every node/.style={
+        % fill=treeblue,
+        rounded corners=8pt,
+        minimum height=1.7em,
+        outer sep=2pt,
+        inner xsep=5pt,
+        text=white,
+        shade,
+        shading=axis,
+        left color=treeblue,
+        right color=treeblue!90!black,
+        shading angle=30,
+      },
+      edge from parent/.style={draw, -latex, thick},
+      level 1/.style={sibling distance=12em},
+      level 2/.style={sibling distance=6em}
+    ]
+    \xdefinecolor{treeblue}{HTML}{659df7}
+
+    \node {Studium}
+      child {node {1. Semester}
+        child {node {HöMa I}
+          child {node {Folien}}
+          child {node {Übungsblätter}
+            child {node {01}}
+            child {node {02}}
+          }
+        }
+        child {node {Physik I}}
+      }
+      child {node {2. Semester}
+        child {node [fill=none, shade=none] {$\vdots$}}
+      }
+      child {node {3. Semester}
+        child {node [fill=none, shade=none] {$\vdots$}}
+      };
+  \end{tikzpicture}
+\end{frame}
+
+\begin{frame}{Beispiel einer typischen Ordnerstruktur}
+  \xdefinecolor{dircolor}{HTML}{f0c481}
+  \forestset{
+    file/.style = {
+      execute at begin node=\textcolor{vertexDarkRed}{\faFilePdf}\space
+    },
+    opened/.style = {execute at begin node=\textcolor{dircolor}{\faFolderOpen}\space},
+    closed/.style = {execute at begin node=\textcolor{dircolor}{\faFolder}\space},
+    dir tree/.style = {
+      grow'=0,
+      font=\ttfamily,
+      folder,
+      fit=band,
+      s sep=10pt,
+      before computing xy={l=20pt},
+      edge={rounded corners=2pt},
+    }
+  }
+
+  \begin{minipage}{.45\textwidth}
+  \begin{forest}
+    for tree={dir tree}
+    [Studium, opened
+      [1. Semester, opened
+        [HöMa I, opened
+          [Folien, closed]
+            [Übungsblätter, opened
+              [Übungsblatt 1, file]
+              [Übungsblatt 2, file]
+            ]
+          ]
+        [Physik I, closed]
+      ]
+      [2. Semester, closed]
+    ]
+  \end{forest}
+  \end{minipage}
+  \hfill
+  \pause
+  \begin{minipage}{.45\textwidth}
+    Anpassung der Namen:
+
+    \begin{forest}
+      for tree={dir tree}
+      [Studium, opened
+        [01\_Semester, opened
+          [HoeMa\_I, opened
+            [Folien, closed]
+            [Uebungsblaetter, opened
+              [Uebungsblatt\_01, file]
+              [Uebungsblatt\_02, file]
+            ]
+          ]
+          [Physik\_I, closed]
+        ]
+        [02\_Semester, closed]
+      ]
+    \end{forest}
+  \end{minipage}
+\end{frame}
