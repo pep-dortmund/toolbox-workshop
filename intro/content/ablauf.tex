@@ -1,0 +1,111 @@
+\section{Ablauf}
+
+\begin{frame}{Roadmap}
+    \begin{center}
+      \begin{tikzpicture}[
+          >=latex,
+          arrow/.style={line width=2pt, ->}
+        ]
+        %% Data table
+        \node at (0, 2.5) {Daten};
+        \node (data) at (0, 0) {
+          \sffamily
+          \sisetup{table-format=1.0, detect-family}
+          \begin{tblr}{
+              colspec = {S S[table-format=1.3]},
+              row{1} = {guard, mode=math},
+              row{7} = {guard, mode=math}
+            }
+            \toprule
+            x \mathbin{/} \unit{\milli\metre} & I \mathbin{/} \unit{\micro\ampere} \\
+            \midrule
+            0 & 0.000 \\
+            1 & 0.060 \\
+            2 & 0.530 \\
+            3 & 1.520 \\
+            4 & 5.100 \\
+            \vdots & \vdots \\
+            \bottomrule
+          \end{tblr}
+        };
+        %% Plot
+        \uncover<2->{
+        \node at (6, 2.5) {Plots und Ergebnisse};
+        \node [anchor=west, align=center] (plot) at (3, 0) {
+          \includegraphics[width=5cm]{build/example_plot.pdf}\\
+          \(I_0 = \qty{26.9 \pm 0.5}{\micro\ampere}\)
+        };
+        \draw [arrow] (data)
+          -- node[above, midway] {\includegraphics[width=1.5cm]{../common/logos/python.pdf}}
+          (plot);
+        }
+        %% Protocol
+        \uncover<3->{
+        \node [anchor=west] (protocol) at (10, 0) {
+          \begin{tikzpicture}[
+              scale=2,
+              protocol text/.style={line width=2pt, line cap=round, color=gray}
+            ]
+            \draw (0,0) -- ++(1.41, 0) -- ++(0, 2)
+              -- ++(-1.21, 0) -- (0, 1.8) -- cycle;
+            \draw (0, 1.8) -- ++(0.2,0) -- ++(0, 0.2);
+            \draw [protocol text] (0.1, 1.7) -- +(1, 0);
+            \draw [protocol text] (1.2, 1.7) -- +(0.1, 0);
+            \draw [protocol text] (0.1, 1.6) -- +(0.3, 0);
+            \draw [protocol text] (0.5, 1.6) -- +(0.5, 0);
+            \draw [protocol text] (1.1, 1.6) -- +(0.2, 0);
+            \draw [protocol text] (0.1, 1.5) -- +(0.2, 0);
+            \draw [protocol text] (0.4, 1.5) -- +(0.9, 0);
+            \draw [protocol text] (0.1, 1.4) -- +(0.9, 0);
+            \draw [protocol text] (1.1, 1.4) -- +(0.2, 0);
+            \draw [protocol text] (0.1, 1.3) -- +(0.5, 0);
+            \draw [protocol text] (0.7, 1.3) -- +(0.6, 0);
+            \node [anchor=north west] at (0.19, 1.2) {
+              \includegraphics[width=1.7cm]{build/example_plot.pdf}
+            };
+            \draw [protocol text] (0.1, 0.4) -- +(0.6, 0);
+            \draw [protocol text] (0.8, 0.4) -- +(0.2, 0);
+            \draw [protocol text] (1.1, 0.4) -- +(0.2, 0);
+            \draw [protocol text] (0.1, 0.3) -- +(0.3, 0);
+            \draw [protocol text] (0.5, 0.3) -- +(0.5, 0);
+            \draw [protocol text] (1.1, 0.3) -- +(0.2, 0);
+            \draw [protocol text] (0.1, 0.2) -- +(0.7, 0);
+            \draw [protocol text] (0.9, 0.2) -- +(0.4, 0);
+          \end{tikzpicture}
+        };
+        \draw [arrow] (plot) -- node[above, midway] {\LaTeX} (protocol);
+        \node at (11.5, 2.5) {Protokoll (PDF)};
+        }
+      \end{tikzpicture}
+    \end{center}
+\end{frame}
+
+\begin{frame}{Ablauf}
+  \begin{description}[Nächste Woche]
+    \item[Montag] Programmieren mit Python
+    \item[Dienstag] Datenhandhabung / Erstellen von Plots
+      \begin{itemize}
+        \item NumPy
+        \item matplotlib
+      \end{itemize}
+    \item[Mittwoch] Datenauswertung / Fehlerrechnung
+      \begin{itemize}
+        \item scipy
+        \item uncertainties
+      \end{itemize}
+    \item[Donnerstag] Kommandozeile und Versionskontrolle
+      \begin{itemize}
+        \item Unix
+        \item git
+      \end{itemize}
+    \item[Freitag] Einstieg in \LaTeX
+    \item[Nächste Woche] Verfassen wissenschaftlicher Texte mit \LaTeX{}
+      \begin{itemize}
+        \item Fließtext \& Mathematik
+        \item Referenzen \& Literaturverzeichnis
+      \end{itemize}
+      \item Automatisierung mit make
+      \item Kombination aller gezeigten Tools
+      \item Protokollvorlage und abschließende Übungen
+  \end{description}
+\end{frame}
