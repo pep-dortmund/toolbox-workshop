@@ -53,17 +53,8 @@ def programming(answers):
             liste.append(participant["skill"])
     programming = pd.Series(liste)
     programming = programming.str.replace(",", ",\n")
-
     programming = programming.value_counts()
     programming /= programming.sum()
-    programming.rename(
-        {
-            "Habe den Grundlagen wissenschaftlicher Datenverarbeitung am Computer Kurs \
-            besucht.": "Datenverarbeitungskurs\nbesucht"
-        },
-        inplace=True,
-    )
-
     fig = plt.figure(figsize=(6.2, 3.3), layout="none")
     ax = fig.add_axes([0, 0, 1, 1], aspect=1)
     ax.pie(

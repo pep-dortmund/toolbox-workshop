@@ -9,7 +9,8 @@ build/intro.pdf: $(FIGURES) $(EXAMPLE_PLOT) $(addprefix build/figures/, \
 	fedora.png archlinux.png ubuntu.png debian-openlogo.png \
 	)
 
-build/figures/os.pdf: script/answers.py data/toolbox2023.json ../common/matplotlibrc ../common/header-matplotlib.tex
+build/figures/os.pdf: script/answers.py data/toolbox2024.json ../common/matplotlibrc ../common/header-matplotlib.tex
+	sed -i 's/Habe den Grundlagen wissenschaftlicher Datenverarbeitung am Computer Kurs besucht./Datenverarbeitungskurs,besucht./g' data/toolbox2024.json
 	MATPLOTLIBRC=../common/matplotlibrc TEXINPUTS=$$(pwd)/../common: python3 $<
 
 $(addprefix build/figures/, programming.pdf interest.pdf): build/figures/os.pdf
