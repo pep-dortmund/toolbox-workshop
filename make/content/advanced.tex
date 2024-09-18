@@ -62,4 +62,36 @@
    → Alle \texttt{targets} werden durch eine einzigen Durchlauf der \texttt{recipe} (gebündelt) erzeugt.
 \end{frame}
 
+\begin{frame}[fragile]{Expert}
+  Wenn ein Skript sehr viele Dateien erzeugt kann die Liste der \texttt{targets} unübersichtlich lang werden.\\
+  Diese \texttt{targets} werden außerdem in der Regel als \texttt{prerequisites} verwendet,
+  z.~B. für die \texttt{recipe} der Berichtdatei  → Die Liste befindet sich sogar zweimal im \texttt{Makefile}
+
+  \begin{center}
+    \small
+    \begin{minted}{make}
+      all: report.txt
+
+      report.txt: plot1.pdf plot2.pdf plot3.pdf plot4.pdf plot5.pdf
+        touch report.txt
+
+      plot1.pdf plot2.pdf plot3.pdf plot4.pdf plot5.pdf: plot.py data.txt
+        python plot.py  # plot.py produziert alle plot{i}.pdf 
+    \end{minted}
+  \end{center}
+  Lösung: Ein weiteres \texttt{make}-Feature: \emph{variables}
+  \begin{center}
+    \small
+    \begin{minted}{make}
+      all: report.txt
+
+      script_targets = plot1.pdf plot2.pdf plot3.pdf plot4.pdf plot5.pdf #Variablen Definition
+
+      report.txt: $(script_targets) #Variablen Verwendung
+        touch report.txt
+      
+      $(script_targets): plot.py data.txt #Variablen Verwendung
+          python plot.py
+    \end{minted}
+  \end{center}
 \end{frame}
