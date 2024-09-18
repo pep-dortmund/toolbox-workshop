@@ -15,7 +15,7 @@ def study(answers):
     study /= study.sum()
 
     fig = plt.figure(figsize=(5.0, 3.3), layout="none")
-    ax = fig.add_axes([0, 0, 1, 1], aspect=1)
+    ax = fig.add_axes((0, 0, 1, 1), aspect=1)
     ax.pie(
         study.values,
         labels=study.keys(),
@@ -35,7 +35,7 @@ def operating_system(answers):
     os /= os.sum()
 
     fig = plt.figure(figsize=(5.5, 3.3), layout="none")
-    ax = fig.add_axes([0, 0, 1, 1], aspect=1)
+    ax = fig.add_axes((0, 0, 1, 1), aspect=1)
     ax.pie(
         os.values,
         labels=os.keys(),
@@ -51,12 +51,18 @@ def programming(answers):
     for participant in answers:
         if participant["toolbox"] is True:
             liste.append(participant["skill"])
+
     programming = pd.Series(liste)
-    programming = programming.str.replace(",", ",\n")
+
+    mask = programming.str.contains("Datenverarbeitungskurs")
+    programming.loc[mask] = programming.loc[mask].str.replace(",", "\n")
+    programming.loc[~mask] = programming.loc[~mask].str.replace(",", ",\n")
+
     programming = programming.value_counts()
     programming /= programming.sum()
+
     fig = plt.figure(figsize=(6.2, 3.3), layout="none")
-    ax = fig.add_axes([0, 0, 1, 1], aspect=1)
+    ax = fig.add_axes((0, 0, 1, 1), aspect=1)
     ax.pie(
         programming.values,
         labels=programming.keys(),
