@@ -113,7 +113,7 @@ ax.errorbar(
      noms(t_B),
      yerr=stds(t_B),
      fmt="k_",
-     label="Daten",
+    label="Daten: Kugel",
 )
 ax.plot(h_plot, fit_g_ball(h_plot, *noms(params)), "-", label="Fit")
 ax.set_xlim(h_plot[0], h_plot[-1])
@@ -151,7 +151,7 @@ ax.errorbar(
      noms(t_C),
      yerr=stds(t_C),
      fmt="k_",
-     label="Daten",
+    label="Daten: Zylinder",
 )
 ax.plot(h_plot, fit_g_cylinder(h_plot, *noms(params)), "-", label="Fit")
 ax.set_xlim(h_plot[0], h_plot[-1])
@@ -195,7 +195,7 @@ ax.errorbar(
      noms(t_B),
      yerr=stds(t_B),
      fmt="k_",
-     label="Daten",
+    label="Daten: Kugel",
 )
 ax.plot(h_plot, fit_I_ball(h_plot, *noms(params)), "-", label="Fit")
 ax.set_xlim(h_plot[0], h_plot[-1])
@@ -234,7 +234,7 @@ ax.errorbar(
      noms(t_C),
      yerr=stds(t_C),
      fmt="k_",
-     label="Daten",
+    label="Daten: Zylinder",
 )
 ax.plot(h_plot, fit_I_cylinder(h_plot, *noms(params)), "-", label="Fit")
 ax.set_xlim(h_plot[0], h_plot[-1])
