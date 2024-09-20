@@ -208,7 +208,7 @@ fig.savefig("build/plot-I_ball.pdf")
 parameter_I, parameter_t0 = params
 
 with open("build/parameter-I_ball.tex", "w") as f:
-    f.write(make_qty(parameter_I, r"\kilo\gram\meter\squared"))
+    f.write(make_qty(parameter_I*10000, r"\kilo\gram\centi\meter\squared"))# change units: kg cm²
 
 with open("build/parameter-t0-I_ball.tex", "w") as f:
     f.write(make_qty(parameter_t0, r"\second"))
@@ -248,7 +248,7 @@ fig.savefig("build/plot-I_cylinder.pdf")
 parameter_I, parameter_t0 = params
 
 with open("build/parameter-I_cylinder.tex", "w") as f:
-    f.write(make_qty(parameter_I, r"\kilo\gram\meter\squared"))
+    f.write(make_qty(parameter_I*10000, r"\kilo\gram\centi\meter\squared"))# change units: kg cm²
 
 with open("build/parameter-t0-I_cylinder.tex", "w") as f:
     f.write(make_qty(parameter_t0, r"\second"))
@@ -256,15 +256,17 @@ with open("build/parameter-t0-I_cylinder.tex", "w") as f:
 
 # exporting non tabular data
 
+with open("build/theoretical-g.tex", "w") as f:
+    f.write(make_qty(g,r"\meter\per\second\squared", figures=2, formatting="per-mode=reciprocal"))
 
 with open("build/framerate.tex", "w") as f:
-    f.write(make_qty(framerate, r"\per\second", figures=1))
+    f.write(make_qty(framerate, r"\per\second", figures=0, formatting="per-mode=reciprocal"))
 
 with open("build/theoretical-I_ball.tex", "w") as f:
-    f.write(make_qty(I_B,r"\kilo\gram\meter\squared"))
+    f.write(make_qty(I_B*10000,r"\kilo\gram\centi\meter\squared")) # change units: kg cm²
 
 with open("build/theoretical-I_cylinder.tex", "w") as f:
-    f.write(make_qty(I_C,r"\kilo\gram\meter\squared"))
+    f.write(make_qty(I_C*10000,r"\kilo\gram\centi\meter\squared"))# change units: kg cm²
 
 with open("build/tracklength.tex", "w") as f:
     f.write(make_qty(L,r"\meter"))
