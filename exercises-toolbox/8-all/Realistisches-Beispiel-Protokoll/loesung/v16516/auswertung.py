@@ -75,9 +75,9 @@ t_B = t_B.reshape(-1, 3).mean(axis=1)
 m_C = cylinder_mass = unc.ufloat(cylinder["m"],cylinder["sigma_m"])/1000 # kg
 U_C = cylinder_perimeter = unc.ufloat(cylinder["U"],cylinder["sigma_U"])/100 #m
 d_C = cylinder_thickness = unc.ufloat(cylinder["d"],cylinder["sigma_d"])/1000 #m
-Ri_C = cylinder_radius_inner = cylinder_perimeter / (2 * np.pi)
-Ro_C = cylinder_radius_outer = cylinder_radius_inner + cylinder_thickness
-I_C = ball_momentinertia = 1/2 * m_C * (Ro_C**2 + Ri_C**2)
+Ro_C = cylinder_radius_outer = cylinder_perimeter / (2 * np.pi)
+Ri_C = cylinder_radius_inner = cylinder_radius_outer - cylinder_thickness
+I_C = cylinder_momentinertia = 1/2 * m_C * (Ro_C**2 + Ri_C**2)
 
 h_C = heights_cylinder = unp.uarray(measurements_cylinder["h"], measurements_cylinder["sigma_h"])/100 # m
 fi_C = initalframes_cylinder = unp.uarray(measurements_cylinder["Fi"], measurements_cylinder["sigma_Fi"]) # 1  
