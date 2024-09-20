@@ -3,16 +3,21 @@ from uncertainties.unumpy import (
     std_devs as stds,
 )
 
-def make_qty(num, unit, exp="", figures=None):
+def make_qty(num, unit, exp="", figures=None, formatting=None):
     """Format an uncertainties ufloat as a \qty quantity"""
     if np.any(stds([num])):
         if figures is None:
             figures = ""
-        x = "{0:.{1:}uf}".format(num, figures).replace("/", "")
+        x = f"{num:.{figures:}uf}".replace("/", "")
     else:
-        x = "{0:.{1:}f}".format(num, figures)
+        x = f"{num:.{figures:}f}"
+    if exp and not str(exp).startswith('e'):
+        exp = 'e' + str(exp) 
+    if formatting:
+        return rf"\qty[{formatting}]{{{x}{exp}}}{{{unit}}}"
 
-    return r"\qty{{{}{}}}{{{}}}".format(x, exp, unit)
+    return rf"\qty{{{x}{exp}}}{{{unit}}}"
+
 
 
 
