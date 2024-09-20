@@ -1,25 +1,17 @@
 \section{Auswertung}
 \label{sec:Auswertung}
-
-
-Die für diesen Versuch relevanten physikalischen Größen für Kugel und Zylinder sind 
-
+Die für diesen Versuch relevanten physikalischen Größen für Kugel und Zylinder sind:
 \begin{align}
   \label{eq:physical-properties}
   m_\text{Z} &= \input{mass_ball.tex} & m_\text{K} &= \input{mass_ball.tex}\nonumber\\
   r_{\text{Z},\text{i}} &= \input{../build/radius-inner_cylinder.tex} & r_\text{K} &= \input{radius_ball.tex}\\
   r_{\text{Z},\text{a}} &= \input{../build/radius-outer_cylinder.tex} &&\nonumber
 \end{align}
-
-Berechnet wurde aus diesen Größen das jeweilige, theoretiche Trägheitsmoment
-
+Berechnet wurde aus diesen Größen das jeweilige, theoretische Trägheitsmoment
 \begin{align}
   \label{eq:moments-inertia}
   I_\text{Z} &= \input{./../build/theoretical-I_cylinder.tex}\quad\text{ und } & I_\text{K} = \input{./../build/theoretical-I_ball.tex}.
 \end{align}
-
-
-
 Aus den aufgenommenen Videos der Versuche wurden die in \autoref{tab:all-measurements} folgenden Frameindizes extrahiert.
 Die ebenfalls aufgeführte Zeitdauer $t$ wurde dann jeweils aus der aus dem Startframeindex $F_\text{i}$,
 dem Endframeindex $F_\text{f}$ und der Kameraframerate $\symup{fps}=\input{framerate.tex}$ wie folgt 
@@ -35,10 +27,9 @@ berechnet
   \input{build/table_all-measurements.tex}
 \end{table}
 
-Durch Mittelung der Messwerte für die selbe Höhe $h$ ergeben sich die in 
-\autoref{tab:averaged-measurements} berechnet und werden für die folgenden
+Durch Mittelung der Messwerte für die selbe Höhe $h$ ergeben sich die Werte
+in \autoref{tab:averaged-measurements}. Diese Werte werden für die folgenden
 Auswertungsschritte verwendet.
-
 
 \begin{table}
   \centering
@@ -46,7 +37,6 @@ Auswertungsschritte verwendet.
   \label{tab:averaged-measurements}
   \input{build/table_averaged-measurements.tex}
 \end{table}
-
 
 \subsection{Bestimmung der Fallbeschleunigung $g$}
 
@@ -74,7 +64,6 @@ und für den Zylinder in \autoref{fig:fit-g-cylinder} graphisch dargestellt.
 \end{figure}
 
 Die Parameter der Ausgleichsrechnung ergeben sich für die Kugel zu
-
 \begin{align}
   \label{eq:parameters-g_ball}
   g_\text{K} &= \input{parameter-g_ball.tex}\quad\text{ und } & t_{0,\text{K}} &= \input{parameter-t0-g_ball.tex}
@@ -82,7 +71,6 @@ Die Parameter der Ausgleichsrechnung ergeben sich für die Kugel zu
   \label{eq:parameters-g_cylinder}
   g_\text{Z} &= \input{parameter-g_cylinder.tex}\quad\text{ und } & t_{0,\text{Z}} &= \input{parameter-t0-g_cylinder.tex}.
 \end{align}
-
 
 \subsection{Bestimmung der Trägheitsmomente $I$}
 
@@ -112,7 +100,6 @@ und für den Zylinder in \autoref{fig:fit-I-cylinder} graphisch dargestellt.
 \end{figure}
 
 Die Parameter der Ausgleichsrechnung ergeben sich für die Kugel zu
-
 \begin{align}
   \label{eq:parameters-I_ball}
   I_\text{K} &= \input{parameter-I_ball.tex}\quad\text{ und } &t_{0,\text{K}} &= \input{parameter-t0-I_ball.tex}
