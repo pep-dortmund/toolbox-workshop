@@ -1,0 +1,30 @@
+# Realistisches-Beispiel-Protokoll
+
+Einleitung: 
+
+Wie der Name der Aufgabe schon verspricht, werdet ihr im Zuge dieser Aufgabe ein vollständiges 
+und realistisches Versuchsprotokoll erstellen. Diesem Ziel werdet ihr Tag für Tag etwas näher kommen
+können, in dem die Themen des jeweiligen Tages integriert werden.
+
+Um zu wissen wo es hingeht, findet ihr auch in diesem Ordner schon das vollständige Protokoll zum ansehen.
+
+Aufgabe:
+
+Heute fällt diese Aufgabe noch nicht zu umfangreich aus. Es geht zunächst nur um das Kopieren
+des Ordners in dem ihr diese Aufgabe immer weiter ergänzt. Dieser Ordner heißt 'v16516' und befindet sich
+im Ordner 'vorlage'. Kopiert den Ordner 'v16516' in einen Ordner, in dem ihr diesen im Lauf des 
+Workshops wieder findet, z.B. '~/Documents/Toolbox-Workshop'.
+
+Das wars schon, morgen gehts weiter.
+
+Erklärung:
+
+Im Ordner 'v16516' befindet sich noch nicht viel, nur eine leere Pythondatei und ein Ordner 'data' in dem sich 
+die Textdateien mit den Messwerten befinden, die ihr für die Auswertung verwenden werdet. Das spaßige abtippen 
+der Messwerte aus dem Laborbuch, haben wir euch schomal abgenommen. ;)
+
+
+
+
+
+

@@ -1,0 +1,4 @@
+# l,sigma_l
+80,0.5
+# Länge der Bahn 
+# cm (l / cm)

@@ -1,0 +1,4 @@
+# fps,sigma_fps
+30,0
+# Framerate der Videoaufnahmen
+# Frames per second (fps / 1/s)
