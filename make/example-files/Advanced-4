@@ -1,0 +1,9 @@
+all: report.txt
+
+plots = $(addprefix build/, $(addsuffix .pdf, plot1 plot2 plot3 plot4))  # Definition
+
+report.txt: $(plots)  # Verwendung
+  touch report.txt
+
+$(plots) & : plot.py data.txt  # Verwendung
+  python plot.py

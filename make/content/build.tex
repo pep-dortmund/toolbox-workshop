@@ -4,10 +4,7 @@
   (Nützliche) Konvention: \texttt{make clean} löscht alle vom \texttt{Makefile} erstellten Dateien/Ordner.
 
   \begin{center}
-    \begin{minted}{make}
-      clean:
-          rm plot.pdf report.pdf
-    \end{minted}
+    \inputminted{make}{example-files/Simple-clean}
   \end{center}
 
   Das Projekt sollte dann so aussehen, wie vor dem ersten Ausführen von \texttt{make}.
@@ -17,23 +14,7 @@
   \texttt{build}-Ordner: Projekt sauber halten
 
   \begin{center}
-    \begin{minted}{make}
-      all: build/report.pdf
-
-      build/plot.pdf: plot.py data.txt | build
-          python plot.py  # savefig('build/plot.pdf')
-
-      build/report.pdf: report.tex build/plot.pdf | build
-          lualatex --output-directory=build report.tex
-
-      build:
-          mkdir -p build
-
-      clean:
-          rm -rf build
-
-      .PHONY: all clean
-    \end{minted}
+    \inputminted{make}{example-files/First-build-dir}
   \end{center}
 
   \begin{itemize}
