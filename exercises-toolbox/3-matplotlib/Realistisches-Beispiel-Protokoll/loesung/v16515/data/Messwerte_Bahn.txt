@@ -1,0 +1,4 @@
+# l
+80
+# Länge der Bahn 
+# cm (l / cm)
