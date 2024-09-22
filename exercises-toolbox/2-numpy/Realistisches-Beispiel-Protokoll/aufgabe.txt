@@ -17,3 +17,5 @@ einzulesen und zu verarbeiten.
   - Trägheitsmoment I von Ball und Zylinder
   - Zeitdauern t des herabrollens für die beiden Messreihen
 4. Gebt auch diese berechneten Werte auf das Terminal aus, um diese zu überprüfen
+5. Die Messung wurde für jede Höhe dreifach durchgeführt. Berechnet für jede Höhe 
+   jeweils den zugehörigen Mittelwert der Zeitdauern

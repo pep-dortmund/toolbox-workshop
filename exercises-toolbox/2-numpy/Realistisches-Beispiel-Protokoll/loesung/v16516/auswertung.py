@@ -86,18 +86,76 @@ print(I_c)
 t_b = (Ff_b - Fi_b)/fps
 t_c = (Ff_c - Fi_c)/fps
 
-print("Messwerte (Ball)")
-print("Zeit")
-print(t_b)
+# Berechnung des Mittelwerts für die Zeitdauer t für jede (dreifach gemessene) Höhe 
 
-print("Höhe")
+# Kommentar:
+# Es ist ein neuer Name (t_b_mean) notwendig, wenn die alten Werte in t_b
+# noch verfügbar bleiben sollen
+#
+# Hieran sieht man (schon im Kleinen) die Nützlichkeit der numpy arrays 
+# und der möglichen Manipulationen:
+# reshape(-1,3):
+# Im array t_b liegen die zu mittelnden Werte immer genau hintereinander
+# durch reshape(-1,3) wird aus t_b ein 2D array erzeugt, das in jeder 
+# Zeile 3 Spalten hat. Das bedeutet: Nach jeweils 3 Werten in t_b wird eine neue
+# Zeile begonnen, damit sind in jeder Zeile genau die Werte die gemittelt werden sollen.
+# Die -1 als Anzahl der Zeilen ist gibt numpy die Anweisungs, diese Anzahl
+# selbst zu berechnen.
+#
+# mean(axis=1):
+# Bei einem 2D array bezeichnet axis=0 die Zeilen und axis=1 die Spalten.
+# Berechnet den Mittelwert "entlang der axis 1", d.h. die axis 1 ist die "Dimension"
+# des arrays, über die summiert wird (die danach nur noch einen Wert enthält).
+# Da jede Zeile genau die drei Werte enthält die zu mitteln sind, enthält jede 
+# Zeile danach genau den jeweiligen Mittelwert.
+
+t_b_mean = t_b.reshape(-1,3).mean(axis=1)
+
+
+
+# Kommentar:
+# Das Array h_b enthält jede Höhe dreifach, auch die Auswahl
+# der einzelnen Höhen kann durch array Manipulation geschehen.
+#
+# Die Benennung der Variable (h_b_mean) wurde so gewählt,
+# dass diese zur zugehörigen Variable für die Zeitdauern passt
+#
+# reshape(-1, 3): 
+# analog zur Manipulation von t_b
+# [:,0]
+# Aus jeder Zeile (= erster Index ist ':') wird die 'nullte' Spalte (= zweiter Index ist '0')
+# ausgewählt, d.h. in jeder Zeile bleibt genau eine Höhe erhalten.
+
+h_b_mean = h_b.reshape(-1,3)[:,0]
+
+
+
+# Kommentar:
+# analog für die andere Messreihe
+
+t_c_mean = t_c.reshape(-1,3).mean(axis=1)
+h_c_mean = h_c.reshape(-1,3)[:,0]
+
+# Ausgabe verarbeiteten der Messwerte
+
+print("Messwerte (Kugel)")
+print("alle Zeiten")
+print(t_b)
+print("alle Höhen")
 print(h_b)
+print("Höhe")
+print(h_b_mean)
+print("gemittlelte Zeit")
+print(t_b_mean)
 print("\n")
+
+
 print("Messwerte (Zylinder)")
-print("Zeit")
+print("alle Höhen")
+print(h_c)
+print("alle Zeiten")
 print(t_c)
 print("Höhe")
-print(h_c)
-
-
-
+print(h_c_mean)
+print("gemittlelte Zeit")
+print(t_c_mean)
