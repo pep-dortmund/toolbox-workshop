@@ -107,7 +107,7 @@ print("\n")
 # "fit_g_ball" als Abkürzung für "Fitfunktion für den Parameter g aus den Messwerten für die Kugel"
 
 def fit_g_ball(h, g, t0):
-    return np.sqrt(7/5 * 1/h * 2* l/g) + t0
+    return np.sqrt(7/5 * 1/h * 2* l**2/g) + t0
 
 def fit_g_cylinder(h, g, t0):
     return np.sqrt((3 + ri_c**2/ro_c**2) * l**2/g * 1/h) + t0

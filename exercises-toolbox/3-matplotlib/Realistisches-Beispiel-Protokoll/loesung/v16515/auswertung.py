@@ -1,6 +1,6 @@
 import numpy as np
 # Kommentar:
-# Importiere matplotlib.pyplot dem Namen plt
+# Importiere matplotlib.pyplot unter dem Namen plt
 
 import matplotlib.pyplot as plt
 
@@ -101,7 +101,7 @@ print(t_c_mean)
 # es ist also zumindest Vorsicht geboten
 
 def theory_t_ball(h):
-     return np.sqrt(7/5 * 1/h * 2* l/9.81)
+     return np.sqrt(7/5 * 1/h * 2* l**2/9.81)
 
 def theory_t_cylinder(h):
     return np.sqrt((3 + ri_c**2/ro_c**2) * l**2/9.81 * 1/h)
