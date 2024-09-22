@@ -105,7 +105,7 @@ print(params)
 
 
 # plotting data an fit
-h_plot = np.linspace(0.01,0.35, 1000) 
+h_plot = np.linspace(0.03,0.33, 1000) 
 fig, ax = plt.subplots(1, 1, layout="constrained")
 
 ax.errorbar(
@@ -143,7 +143,7 @@ print(params)
 
 
 # plotting data an fit
-h_plot = np.linspace(0.01,0.35, 1000) 
+h_plot = np.linspace(0.03,0.33, 1000) 
 fig, ax = plt.subplots(1, 1, layout="constrained")
 
 ax.errorbar(
@@ -187,7 +187,7 @@ print("Fit Parameter (Kugel):")
 print(params)
 
 # plotting data an fit
-h_plot = np.linspace(0.01,0.35, 1000) 
+h_plot = np.linspace(0.03,0.33, 1000) 
 fig, ax = plt.subplots(1, 1, layout="constrained")
 
 ax.errorbar(
@@ -226,7 +226,7 @@ print(params)
 
 
 # plotting data an fit
-h_plot = np.linspace(0.01,0.35, 1000) 
+h_plot = np.linspace(0.03,0.33, 1000) 
 fig, ax = plt.subplots(1, 1, layout="constrained")
 
 ax.errorbar(
