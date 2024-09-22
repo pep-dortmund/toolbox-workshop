@@ -186,7 +186,7 @@ ax.set_ylabel("$t$ / s")
 
 
 
-ax.errorbar(noms(h_b_mean), noms(t_b_mean), yerr=stds(h_b_mean), fmt="k+", label="Daten: Kugel")
+ax.errorbar(noms(h_b_mean), noms(t_b_mean), yerr=stds(t_b_mean), fmt="k+", label="Daten: Kugel")
 ax.plot(h_plot, fit_g_ball(h_plot, *params),  label="Fit")
 ax.legend()
 fig.savefig("plot-g_kugel.pdf")
@@ -211,7 +211,7 @@ ax.set_xlabel("$h$ / m")
 ax.set_ylabel("$t$ / s")
 
 
-ax.errorbar(noms(h_c_mean), noms(t_c_mean), yerr=stds(h_c_mean), fmt="k+", label="Daten: Zylinder")
+ax.errorbar(noms(h_c_mean), noms(t_c_mean), yerr=stds(t_c_mean), fmt="k+", label="Daten: Zylinder")
 ax.plot(h_plot, fit_g_cylinder(h_plot, *params),  label="Fit")
 ax.legend()
 fig.savefig("plot-g_zylinder.pdf")
@@ -250,7 +250,7 @@ ax.set_xlabel("$h$ / m")
 ax.set_ylabel("$t$ / s")
 
 
-ax.errorbar(noms(h_b_mean), noms(t_b_mean), yerr=stds(h_b_mean), fmt="k+", label="Daten: Kugel")
+ax.errorbar(noms(h_b_mean), noms(t_b_mean), yerr=stds(t_b_mean), fmt="k+", label="Daten: Kugel")
 ax.plot(h_plot, fit_I_cylinder(h_plot, *params),  label="Fit")
 ax.legend()
 fig.savefig("plot-I_kugel.pdf")
@@ -278,7 +278,7 @@ ax.set_xlabel("$h$ / m")
 ax.set_ylabel("$t$ / s")
 
 
-ax.errorbar(noms(h_c_mean), noms(t_c_mean), yerr=stds(h_c_mean), fmt="k+", label="Daten: Zylinder")
+ax.errorbar(noms(h_c_mean), noms(t_c_mean), yerr=stds(t_c_mean), fmt="k+", label="Daten: Zylinder")
 ax.plot(h_plot, fit_I_cylinder(h_plot, *params),  label="Fit")
 ax.legend()
 fig.savefig("plot-I_zylinder.pdf")
