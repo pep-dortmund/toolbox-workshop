@@ -16,7 +16,7 @@ mit Unsicherheiten zu haben. Die alten Dateien könnt ihr überschreiben oder vo
 
 2. Importiert uncertainties und uncertainties.unumpy in eurer auswertung.py
 
-3. Ergänzt das Einlesen der Messdaten um die zusätzlichen Spalten mit unsicherheiten,
+3. Ergänzt das Einlesen der Messdaten um die zusätzlichen Spalten mit Unsicherheiten,
    eine Benennung der Form l_unc für "Unsicherheit des Messwerts l" ist hier sinnvoll
 
 4. Die eingelesenen Messwerte und Unsicherheiten müssen jetzt zu unsicherheitbehafteten
@@ -27,13 +27,13 @@ mit Unsicherheiten zu haben. Die alten Dateien könnt ihr überschreiben oder vo
    die dafür nötige Funktion heißt nominal_values und es bietet sich an diese in 
    abgekürzter Form zu importieren (genauso wie die Funktion std_devs):
    from uncertainties.unumpy import (nominal_values as noms, std_devs as stds)
-   Dann kann die Funktion noms() verwendet werden, um die Unsicherheit eines Wertes
+   dann kann die Funktion noms() verwendet werden, um die Unsicherheit eines Wertes
    zu entfernen.
 
 6. curve_fit kann mit Unsicherheiten nicht direkt umgehen, die unabhängige Variable
    darf keine Unsicherheiten haben und den Wert bzw. die Unsicherheit 
-   der abhängige Varialbe müssen getrennt übergeben werden.
+   der abhängige Variable müssen getrennt übergeben werden.
 
-7. matplotlib kann auch nicht mit den unsicherheiten umgehen: 
+7. matplotlib kann auch nicht mit den Unsicherheiten umgehen: 
    Verwendet statt ax.plot die Funktion ax.errorbar um die Messwerte mit ihren 
    Unsicherheiten darzustellen.

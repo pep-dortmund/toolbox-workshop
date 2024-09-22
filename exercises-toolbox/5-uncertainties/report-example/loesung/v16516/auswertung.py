@@ -18,15 +18,15 @@ from uncertainties.unumpy import (nominal_values as noms, std_devs as stds)
 
 
 # Kommentar:
-# Die Dateien im Ordner data enthalten jetzt auch spalten  mit den Unsicherheiten
-# für die meisten Messwerte
+# Die Dateien im Ordner data enthalten jetzt auch Spalten mit den Unsicherheiten
+# für die meisten Messwerte.
 # Beim Importieren der Daten muss beachtet werden, dass:
 # (1) Messgröße und Unsicherheit jeweils eine eigene Variablennamen brauchen.
 # Auch hier ist eine konsistente Benennung sinnvoll 
 # z.B. l (Messwerte) und l_unc (zugehörige Unsicherheiten)
 #
 # (2) die Unsicherheitbehafteten Messwerte noch erstellt werden müssen,
-# entweder durch unc.ufloat oder druch das unp.uarray
+# entweder durch unc.ufloat oder durch das unp.uarray
 
 
 # Länge der schiefen Ebene
@@ -64,7 +64,7 @@ Ff_c = unp.uarray(Ff_c, Ff_c_unc)
 
 
 # Kommentar:
-# Die folgenden Berechnungen funktionieren alle weiterhin, nur jetzt mit automatischen Fehlerrechnung
+# Die folgenden Berechnungen funktionieren alle weiterhin, nur jetzt mit automatischer Fehlerrechnung
 
 
 # Berechnung der benötigten Größen: Radius und Trägheitsmoment
@@ -137,21 +137,21 @@ print("\n")
 # Messwerten umgehen.
 # Folgendes muss dafür geändert werden:
 #
-# (1) in der Fitfunktien müssen mit der Funktion noms() 
+# (1) in der Fitfunktion müssen mit der Funktion noms() 
 # die Unsicherheiten von Konstanten entfernt werden
 #
 # (2) mit Unsicherheiten der unabhängigen Variable kann curve_fit nicht umgehen,
 # diese müssen mit noms() entfernt werden.
 # 
-# (3) die Werte und  Unsicherheiten der abhängigen Variable (gemessene Funktionswerte)
+# (3) die Werte und Unsicherheiten der abhängigen Variable (gemessene Funktionswerte)
 # müssen getrennt übergeben werden: noms() und stds()
 #
 # (4) die Darstellung der Messwerte im Plot wird durch errorbar() ersetzt, 
 # um die Unsicherheiten anzeigen zu können
 #
 # In der Aufgabe 3-curve_fit muss eine Funktion ucurve_fit geschrieben werden, 
-# die die scipy funktion curve_fit verwendet, die aber den umgang mit den 
-# Unsicherheiten abstrahiert, sodass man das nicht jedes mal aufs neue machen muss.
+# die die scipy Funktion curve_fit verwendet, die aber den Umgang mit den 
+# Unsicherheiten abstrahiert, sodass man das nicht jedes Mal aufs neue machen muss.
 
 
 
@@ -175,7 +175,7 @@ print("\n")
 h_plot = np.linspace(0.03, 0.33, 205)
 
 
-# Fit Parameter für den Zylinder
+# Fitparameter für den Zylinder
 
 
 fig, ax = plt.subplots(1, 1, layout="constrained")

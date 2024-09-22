@@ -65,7 +65,7 @@ ff_B = finalframes_ball = unp.uarray(measurements_ball["Ff"], measurements_ball[
 t_B = durations_ball = (ff_B - fi_B) / framerate #s
 
 
-# each height was measured 3 times => calculating the mean of these measurments 
+# each height was measured 3 times => calculating the mean of these measurements 
 # selecting each height once 
 h_B = h_B.reshape(-1, 3)[:,0]
 t_B = t_B.reshape(-1, 3).mean(axis=1)
@@ -85,7 +85,7 @@ ff_C = finalframes_cylinder = unp.uarray(measurements_cylinder["Ff"], measuremen
 
 t_C = durations_cylinder = (ff_C - fi_C) / framerate #s
 
-# each height was measured 3 times => calculating the mean of these measurments 
+# each height was measured 3 times => calculating the mean of these measurements 
 # selecting each height once 
 h_C = h_C.reshape(-1, 3)[:,0]
 t_C = t_C.reshape(-1, 3).mean(axis=1)

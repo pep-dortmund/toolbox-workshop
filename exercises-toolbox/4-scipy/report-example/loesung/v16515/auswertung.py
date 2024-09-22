@@ -98,7 +98,7 @@ print("\n")
 
 
 # Kommentar:
-# Umwandeln der Theorie-Funktion zu einer Fitfunktion:
+# Umwandeln der Theorie-Funktion zu einer Fit-Funktion:
 # Die Funktion erhält ein zusätzliches Argument für jeden Fitparameter, hier: g und t0
 # diese müssen auch in der Funktion verwendet werden.
 #
@@ -154,8 +154,8 @@ fig.savefig("plot-g_kugel.pdf")
 
 # Kommentar:
 # Analog für die Messreihe des Zylinders
-# Achtung! Copy und Paste ist natürlich gängige Praxis,
-# aber alle Varialben müssen angepasst werden.
+# Achtung! Copy-and-paste ist natürlich gängige Praxis,
+# aber alle Variablen müssen angepasst werden.
 
 # Berechnung der Fitparameter für den Zylinder
 params, covariance_matrix = curve_fit(fit_g_cylinder, h_c_mean, t_c_mean)
@@ -210,8 +210,8 @@ def fit_I_cylinder(h, I, t0):
 # bounds=([0,-np.inf],[+np.inf,+np.inf])
 # als zusätzliches Argument für curve_fit ergänzt werden.
 # bounds gibt den minimalen und den maximalen Wert für alle Parameter an,
-# und zwar zuerst alle Minimima und dann alle Maxima, 
-# in diesem konkrete Beispiel steht bounds also für: 0 < I < +np.inf und -np.inf < t0 < +np.inf
+# und zwar zuerst alle Minima und dann alle Maxima, 
+# in diesem konkreten Beispiel steht bounds also für: 0 < I < +np.inf und -np.inf < t0 < +np.inf
 
 
 # Berechnung der Fitparameter für die Kugel

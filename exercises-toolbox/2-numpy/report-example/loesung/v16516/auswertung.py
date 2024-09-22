@@ -5,7 +5,7 @@ import numpy as np
 
 # Kommentar:
 # Die Daten liegen im Ordner 'data'. Um die Dateien einlesen
-# zu können reicht es deswegen nicht den Dateinamen anzugeben
+# zu können, reicht es deswegen nicht den Dateinamen anzugeben,
 # es muss der gesamte Pfad ('Orderabfolge') angegeben werden: 
 # 
 # Für die Datei: Messwerte_Bahn.txt also data/Messwerte_Bahn.txt
@@ -15,7 +15,7 @@ import numpy as np
 # nicht nur einbuchstabige Abkürzungen zu verwenden, um nicht die Übersicht zu verlieren.
 # Also beispielsweise track_length statt L. Ein Kommentar zur erklären sollte aber drin sein.
 #
-# Es bietet sich an die Daten direkt beim einlesen in eine sinnvolle Einheit umzuwandeln
+# Es bietet sich an die Daten direkt beim Einlesen in eine sinnvolle Einheit umzuwandeln
 # (falls nötig) und diese mit einem Kommentar zu vermerken
 
 # Länge der schiefen Ebene
@@ -46,8 +46,8 @@ h_c, Fi_c, Ff_c = np.genfromtxt("data/Messwerte_Frames_Zylinder.txt", delimiter=
 h_c = h_c/100 # m
 
 # Kommentar:
-# Eine gewisses Maß an Struktur in der Benennung von Variablen hilft bei der Orientierung,
-# garade in der Zusammenarbeit mit euren jeweiligen Partnern.
+# Ein gewisses Maß an Struktur in der Benennung von Variablen hilft bei der Orientierung,
+# gerade in der Zusammenarbeit mit euren jeweiligen Partnern.
 # Man muss es aber auch nicht übertreiben. Gerade ein Sprachenmix aus deutsch und englisch
 # ist nicht besonders tragisch: z.B. steht m_b für mass_ball aber u_b für umfang_ball,
 # aber das p_b für perimeter_ball würde mir persönlich nicht so klar werden. 
@@ -99,14 +99,14 @@ t_c = (Ff_c - Fi_c)/fps
 # durch reshape(-1,3) wird aus t_b ein 2D array erzeugt, das in jeder 
 # Zeile 3 Spalten hat. Das bedeutet: Nach jeweils 3 Werten in t_b wird eine neue
 # Zeile begonnen, damit sind in jeder Zeile genau die Werte die gemittelt werden sollen.
-# Die -1 als Anzahl der Zeilen ist gibt numpy die Anweisungs, diese Anzahl
+# Die -1 als Anzahl der Zeilen ist gibt numpy die Anweisung, diese Anzahl
 # selbst zu berechnen.
 #
 # mean(axis=1):
 # Bei einem 2D array bezeichnet axis=0 die Zeilen und axis=1 die Spalten.
 # Berechnet den Mittelwert "entlang der axis 1", d.h. die axis 1 ist die "Dimension"
 # des arrays, über die summiert wird (die danach nur noch einen Wert enthält).
-# Da jede Zeile genau die drei Werte enthält die zu mitteln sind, enthält jede 
+# Da jede Zeile genau die drei Werte enthält, die zu mitteln sind, enthält jede 
 # Zeile danach genau den jeweiligen Mittelwert.
 
 t_b_mean = t_b.reshape(-1,3).mean(axis=1)
