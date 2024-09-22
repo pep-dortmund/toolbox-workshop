@@ -10,8 +10,8 @@ all: $(BUILDS)
 	@cp -r 1-python build/exercises-toolbox-1
 	@cp -r 2-numpy 3-matplotlib build/exercises-toolbox-2
 	@cp -r 4-scipy 5-uncertainties build/exercises-toolbox-3
-	@cp -r 6-make build/exercises-toolbox-4
-	@cp -r 7-git 8-all build/exercises-toolbox-5
+	@cp -r 6-git build/exercises-toolbox-4
+	@cp -r 7-make 8-all build/exercises-toolbox-5
 	@rm -rf build/exercises-toolbox-{1,2,3,4,5}/*/{,*/}{Makefile,.gitignore,__pycache__,*.dummy}
 	@cd build ; \
 	for day in 1 2 3 4 5 ; do \
