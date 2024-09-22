@@ -14,16 +14,15 @@ Erstellt für jede Messreihe (Kugel, Zylinder) jeweils eine Abbildung:
 2. Erstellt jeweils eine Abbildung mit einem subplot, in dem die Messwerte (die berechneten Mittelwerte)
    als schwarze '+' dargestellt werden.
 
-Zusatzaufgabe:
 Die Berechnung von Ausgleichskurven wird erst durch eine weitere Bibliothek (scipy) möglich. 
 Jedoch könnt ihr den Verlauf der theoretischen Kurven bereits in die Plots einzeichnen.
 
-1. Schreibt jeweils eine Python-Funktion für die Gleichungen t_B(h) und t_Z(h) (Gleichungen 4 und 5 im Protokoll)
+3. Schreibt jeweils eine Python-Funktion für die Gleichungen t_B(h) und t_Z(h) (Gleichungen 4 und 5 im Protokoll)
    Als Wert für g könnt ihr 9.81 verwenden (auch dafür wird scipy noch eine bessere Lösung sein)
-2. Erstellt mit np.linspace ein array mit vielen Werten die für den Plot der Theoriekurven verwendert werden können.
+4. Erstellt mit np.linspace ein array mit vielen Werten die für den Plot der Theoriekurven verwendert werden können.
    (da matplotlib im Prinzip einzelne Punkte zeichnet bzw. diese mit Geraden verbindet, braucht man für Theoriekurven 
     sehr viele Punkte und kann nicht einfach nur die Messwerte für h verwenden.)
-3. Ergänzt die Theoriekurven im jeweiligen plot der Messwerte.
+5. Ergänzt die Theoriekurven im jeweiligen plot der Messwerte.
 
 
 

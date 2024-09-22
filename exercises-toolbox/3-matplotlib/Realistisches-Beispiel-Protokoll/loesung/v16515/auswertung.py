@@ -94,6 +94,27 @@ print(t_c_mean)
 # Erstelle Plots der Messwerte t_._mean und h_._mean
 
 # Kommentar:
+# Funktionen für die Funktionsgleichungen der Theoriekurven
+# In Funktionen können Variablen verwendet werden, die außerhalb (global) definiert wurden
+# wie hier: l, ri_c und ro_c 
+# Solche golbalen Variablen können bei größeren Skripten/Programmen zu einem Problem werden
+# es ist also zumindest Vorsicht geboten
+
+def theory_t_ball(h):
+     return np.sqrt(7/5 * 1/h * 2* l/9.81)
+
+def theory_t_cylinder(h):
+    return np.sqrt((3 + ri_c**2/ro_c**2) * l**2/9.81 * 1/h)
+
+# Kommentar:
+# Die Werte für h die im Plot der Theoriekurven verwendet werden, damit diese 
+# auch tatsächlich aussieht wie eine differenzierbare Funktion
+# Der Bereich in dem diese Werte liegen entspricht aber dem der Messwerte ca. [0.03, 0.33]
+
+h_plot = np.linspace(0.03, 0.33, 205)
+
+
+# Kommentar:
 # Erstellen einer figure mit einem subplot darin (1 Zeile x 1 Spalte an subplots)
 
 fig, ax = plt.subplots(1, 1, layout="constrained")
@@ -104,10 +125,11 @@ fig, ax = plt.subplots(1, 1, layout="constrained")
 ax.set_xlabel("$h$ / m")
 ax.set_ylabel("$t$ / s")
 
-# Kommentar:
-# Darstellen der Messwerte mit Legendeneintrag
 
 ax.plot(h_b_mean, t_b_mean, "k+", label="Daten: Kugel")
+# Kommentar:
+# Darstellen der Messwerte mit Legendeneintrag
+ax.plot(h_plot, theory_t_ball(h_plot),  label="Theorie")
 ax.legend()
 fig.savefig("plot_kugel.pdf")
 
@@ -128,69 +150,7 @@ ax.set_ylabel("$t$ / s")
 # Darstellen der Messwerte mit Legendeneintrag
 
 ax.plot(h_c_mean, t_c_mean, "k+", label="Daten: Zylinder")
-ax.legend()
-fig.savefig("plot_zylinder.pdf")
-
-
-# (Zusatzaufgabe) Erstelle Plots der Messwerte t_._mean und h_._mean mit Theoriekurve
-
-
-
-
-# Kommentar:
-# Funktionen für die Funktionsgleichungen der Theoriekurven
-# In Funktionen können Variablen verwendet werden, die außerhalb (global) definiert wurden
-# wie hier: l, ri_c und ro_c 
-# Solche golbalen Variablen können bei größeren Skripten/Programmen zu einem Problem werden
-# es ist also zumindest Vorsicht geboten
-
-def theory_t_ball(h):
-     return np.sqrt(7/5 * 1/h * 2* l/9.81)
-
-def theory_t_cylinder(h):
-    return np.sqrt((3 + ri_c**2/ro_c**2) * l**2/9.81 * 1/h)
-
-# Kommentar:
-# Die Werte für h die im Plot der Theoriekurven verwendet werden, damit diese 
-# auch tatsächlich aussieht wie eine differenzierbare Funktion
-# Der Bereich in dem diese Werte liegen entspricht aber dem der Messwerte ca. [0.03, 0.33]
-
-h_plot = np.linspace(0.03, 0.33, 205)
-
-fig, ax = plt.subplots(1, 1, layout="constrained")
-
-# Kommentar:
-# Einstellung der Achsenbeschriftungen
-
-ax.set_xlabel("$h$ / m")
-ax.set_ylabel("$t$ / s")
-
-
-ax.plot(h_b_mean, t_b_mean, "k+", label="Daten: Kugel")
-# Kommentar:
-# Darstellen der Messwerte mit Legendeneintrag
-ax.plot(h_plot, theory_t_ball(h_plot),  label="Theorie")
-ax.legend()
-fig.savefig("plot_kugel_zusatz.pdf")
-
-
-
-# Kommentar:
-# Erstellen einer figure mit einem subplot darin (1 Zeile x 1 Spalte an subplots)
-
-fig, ax = plt.subplots(1, 1, layout="constrained")
-
-# Kommentar:
-# Einstellung der Achsenbeschriftungen
-
-ax.set_xlabel("$h$ / m")
-ax.set_ylabel("$t$ / s")
-
-# Kommentar:
-# Darstellen der Messwerte mit Legendeneintrag
-
-ax.plot(h_c_mean, t_c_mean, "k+", label="Daten: Zylinder")
 ax.plot(h_plot, theory_t_cylinder(h_plot),  label="Theorie")
 ax.legend()
-fig.savefig("plot_zylinder_zusatz.pdf")
+fig.savefig("plot_zylinder.pdf")
 
