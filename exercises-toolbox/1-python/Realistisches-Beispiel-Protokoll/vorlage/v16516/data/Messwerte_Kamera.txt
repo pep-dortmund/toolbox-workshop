@@ -1,2 +1,4 @@
 # fps
 30
+# Framerate der Videoaufnahmen
+# Frames per second (fps / 1/s)

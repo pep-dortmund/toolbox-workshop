@@ -17,3 +17,5 @@
 30,642,664
 30,739,760
 30,900,922
+# Messreihe: Zylinder
+# Höhe(h/cm), Startframe(Fi/1), Endframe(Ff/1)

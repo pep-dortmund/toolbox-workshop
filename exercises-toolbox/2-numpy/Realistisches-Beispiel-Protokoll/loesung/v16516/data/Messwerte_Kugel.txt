@@ -1,3 +1,5 @@
 #m,U
 216,30.5
 
+# Messdaten der Kugel: Vollkugel
+# Umfang (U/cm), Masse (m/g)

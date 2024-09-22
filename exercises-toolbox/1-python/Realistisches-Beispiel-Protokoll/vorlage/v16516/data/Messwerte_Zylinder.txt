@@ -1,3 +1,5 @@
 #m,U,d
 186,24.3,3
 
+# Messdaten des Zylinders: Hohlzylinder mit Boden aber ohne Deckel
+# Umfang (U/cm), Masse (m/g), Wanddicke (Differenz zwischen Innen- und Außenradius) (d/mm)

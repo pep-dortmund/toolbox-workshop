@@ -17,3 +17,5 @@
 30,219,238
 30,319,338
 30,391,412
+# Messreihe: Kugel
+# Höhe(h/cm), Startframe(Fi/1), Endframe(Ff/1)
