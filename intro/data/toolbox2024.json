@@ -1563,5 +1563,39 @@
       "python": true,
       "uncertainties": true
     }
+  },
+  {
+    "installieren": false,
+    "languages": {
+      "cpp": true,
+      "fortran": false,
+      "java": true,
+      "matlab": false,
+      "other": "",
+      "python": false
+    },
+    "latex": false,
+    "latex_interests": {
+      "beamer": false,
+      "bib": false,
+      "math": false,
+      "text": false,
+      "tikz": false,
+      "toc": false
+    },
+    "latex_level": "Noch nie geh\u00f6rt",
+    "os": "Windows 10",
+    "skill": "Schon mal programmiert, aber noch nicht in Python.",
+    "study": "Physik",
+    "submit": true,
+    "toolbox": false,
+    "toolbox_interests": {
+      "cli": false,
+      "git": false,
+      "make": false,
+      "plotting": true,
+      "python": true,
+      "uncertainties": false
+    }
   }
 ]
