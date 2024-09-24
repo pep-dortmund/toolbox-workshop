@@ -33,6 +33,7 @@ infwarerr
 koma-script
 latex
 latex-bin
+latex2pydata
 latexmk
 lineno
 luacode
