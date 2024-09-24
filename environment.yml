@@ -5,7 +5,7 @@ dependencies:
   - python=3.12
   - pip
   - matplotlib
-  - numpy
+  - numpy>=2.0
   - pandas
   - requests
   - scipy
