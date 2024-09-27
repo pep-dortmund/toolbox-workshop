@@ -5,11 +5,6 @@ from collections import defaultdict
 
 STEPRANGEREGEX = re.compile(r"(?:#|%)\s<(\d*)(-(\d*)|)>")
 
-def parse_int_tuple(tuple_str):
-    values = tuple_str.split(",")
-    return (int(values[0]), int(values[1]))
-
-
 def setup_arg_parser():
     parser = argparse.ArgumentParser(
                     prog="generate-step-scripts",
@@ -17,7 +12,8 @@ def setup_arg_parser():
                     epilog='')
 
     parser.add_argument('-v', '--verbose', action='store_true') 
-    parser.add_argument('-r', '--map-from-range',type=parse_int_tuple)
+    parser.add_argument('-n', '--dry-run', action='store_true') 
+    parser.add_argument('-s', '--start-step', type=int)
     parser.add_argument('-t','--template_filepath', dest='template_filepath')           
     parser.add_argument('-o', '--output_filepaths', dest='output_filepaths', action="append")
     return parser                    
@@ -46,11 +42,10 @@ def extract_stepranges(lines, max_upper_limit):
 
 def generate_step_file_lines(template_lines, num_output_files):
     step_ranges, script_lines = extract_stepranges(template_lines, num_output_files)
-     
+
     files_lines = defaultdict(list)
     for sl, line in zip(step_ranges, script_lines):
-        
-        print(f"sl: {sl}: {line}")
+         
         for step in sl:
             files_lines[step].append(line)
     
@@ -64,10 +59,16 @@ def main():
     template_filepath = args.template_filepath
     output_filepaths = args.output_filepaths
     if args.verbose:
-        print(f"Templatefile: {template_filepath}")
-        print(f"Outputfiles: {output_filepaths}")
-        print(f"range: {args.map_from_range}")
+        print("Input:")
+        print(' '.join(sys.argv))
+        print("Parsed:")
+        print(f" - Templatefile: {template_filepath}")
+        print(f" - Outputfiles: {output_filepaths}")
+        print(f" - Start step: {args.start_step}")
 
+    map_step = lambda step: step 
+    if args.start_step:
+        map_step = lambda step: step - (args.start_step - 1)
     
     
 
@@ -80,10 +81,12 @@ def main():
     if args.verbose:
         print(f"Found steps: {files_lines.keys()}")
 
+    if args.dry_run:
+        for step,lines in files_lines.items():
+            print(f"\nOutputfile '{output_filepaths[map_step(step)-1]}' (Step: {step}) would contain:")
+            print(f"{"\n".join(lines)}")
+        return 
 
-    map_step = lambda step: step 
-    if args.map_from_range:
-        map_step = lambda step: step - args.map_from_range[0]
 
     try:
         for step, lines in files_lines.items():
