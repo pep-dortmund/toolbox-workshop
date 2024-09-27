@@ -2,7 +2,7 @@ import re
 import sys
 from collections import defaultdict
 
-STEPRANGEREGEX = re.compile(r"#\s<(\d)*(-(\d*)|)>")
+STEPRANGEREGEX = re.compile(r"(?:#|%)\s<(\d*)(-(\d*)|)>")
 
 
 
