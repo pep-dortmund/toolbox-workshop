@@ -20,7 +20,7 @@ Die Fit parameter                                                               
 \eqref{eq:parameters-g_ball}                                                              % <8-10>
 \eqref{eq:parameters-g_cylinder}                                                          % <8-10>
                                                                                           % <7-10>
-passen zum theoretischen Wert $\num{9.81}{\meter\per\second\squared}$                     % <8-10>
+passen zum theoretischen Wert $\qty{9.81}{\meter\per\second\squared}$                     % <8-10>
 passen zum theoretischen Wert \input{theoretical-g.tex}                                   % <10-10>
 => TODO: Abweichungen berechnen                                                           % <7-10>
                                                                                           % <7-10>
