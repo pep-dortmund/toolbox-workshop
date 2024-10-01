@@ -6,16 +6,16 @@ in einer Höhe $h$ auf der schiefen Ebene in vollkommener Ruhe.                 
                                                                                                                                           % <7-10>
 \begin{figure}                                                                                                                            % <9-10>
   \centering                                                                                                                              % <9-10>
-  \begin{tikzpicture}[scale=3]                                                                                                            % <9-10>
-    \draw (0,0) -- (3,0) --node[below, near end]{$l$} (0,1) -- cycle;                                                                     % <9-10>
-    \draw (0.25,1.19)node[below]{$m$} circle (0.25cm);                                                                                    % <9-10>
-    \draw[->] (0.25,1.19) -- (0.90, 0.94) node[above] {\small$\vec{v}$};                                                                  % <9-10>
-    \draw[|-|] (-0.15,0.95) -- node[left]{$h$} (-0.15, 0);                                                                                % <9-10>
-    \draw[dashed,opacity=0.65] (0.94,0.96) circle (0.25cm);                                                                               % <9-10>
-    \draw[dashed,opacity=0.40] (1.75,0.68) circle (0.25cm);                                                                               % <9-10>
-    \draw[dashed,opacity=0.25] (3.,0.26) circle (0.25cm);                                                                                 % <9-10>
-    \draw[->] (0.25, 1.03)  arc (270:50:0.16) node[below]{\small$\omega$};                                                                % <9-10>
-  \end{tikzpicture}                                                                                                                       % <9-10>
+  \begin{tikzpicture}[scale=3]                                                                                                            % <10-10>
+    \draw (0,0) -- (3,0) --node[below, near end]{$l$} (0,1) -- cycle;                                                                     % <10-10>
+    \draw (0.25,1.19)node[below]{$m$} circle (0.25cm);                                                                                    % <10-10>
+    \draw[->] (0.25,1.19) -- (0.90, 0.94) node[above] {\small$\vec{v}$};                                                                  % <10-10>
+    \draw[|-|] (-0.15,0.95) -- node[left]{$h$} (-0.15, 0);                                                                                % <10-10>
+    \draw[dashed,opacity=0.65] (0.94,0.96) circle (0.25cm);                                                                               % <10-10>
+    \draw[dashed,opacity=0.40] (1.75,0.68) circle (0.25cm);                                                                               % <10-10>
+    \draw[dashed,opacity=0.25] (3.,0.26) circle (0.25cm);                                                                                 % <10-10>
+    \draw[->] (0.25, 1.03)  arc (270:50:0.16) node[below]{\small$\omega$};                                                                % <10-10>
+  \end{tikzpicture}                                                                                                                       % <10-10>
   \caption{Schematische Darstellung des Versuchsaufbaus. Das runde Objekt (Kugel oder Zylinder) wird in der Höhe $h$                      % <9-10>
   auf eine schiefe Ebene gelegt, sodass es aus der Ruhe herabrollt. Die Bewegung ist beschleunigt, sodass sowohl                          % <9-10>
   die Geschwindigkeit $\vec{v}(t)$ sowie die Winkelgeschwindigkeit $\omega(t)$ nicht konstant sind.}                                      % <9-10>
@@ -37,7 +37,7 @@ beschleunigten Bewegung (in der Zeit $t$, entlang einer Strecke $l$) $v = \frac{
 Es gilt also}                                                                                                                             % <8-10>
 1 &= \left(\frac{2l}{t}\right)^2 \frac{1}{2gh} \left(1 + \frac{I}{mr^2} \right)\quad\big|\, \cdot t^2 \\                                  % <8-10>
 \addtocounter{equation}{1}                                                                                                                % <8-10>
-t^2 &= \frac{2l^2}{gh} \left(1 + \frac{I}{mr^2} \right)\label{eq:tsquared}\tag{\theequation}                                              % <8-10>
+t^2 &= \frac{2l^2}{gh} \left(1 + \frac{I}{mr^2} \right)                                                                                   % <8-10>
 \label{eq:tsquared}\tag{\theequation}                                                                                                     % <9-10>
 \end{align*}                                                                                                                              % <8-10>
                                                                                                                                           % <7-10>
