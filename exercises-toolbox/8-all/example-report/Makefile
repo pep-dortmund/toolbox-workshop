@@ -48,6 +48,7 @@ target_bibfiles = $(addsuffix lit.bib, $(wordlist 3,4,$(solution_dirs_with_latex
 
 
 
+
 all: \
 $(target_datafiles) \
 $(target_taskfiles) \
@@ -60,27 +61,6 @@ $(target_texfiles_auswertung) \
 $(target_texfiles_diskussion) \
 $(target_bibfiles)\
 
-
-tests = test1 test2 test3
-test-%: | build
-	# @echo " "
-	# @echo $@
-	# @echo " "
-	# @echo $<
-	@echo " "
-	@echo $(target_pythonfiles)
-	@echo ""
-	@echo ""
-	@echo $(target_texfiles_v16516)
-	@echo ""
-	@echo $(target_datafiles) 
-	@echo ""
-	@echo $(foreach step, $(steps), $(addprefix $(word $(step), $(solution_dirs))data/, $(datafilenames)))	
-	@echo ""
-	@echo $(target_taskfiles) 
-	@echo ""
-	@echo $(addsuffix lit.bib, $(wordlist 3,4,$(solution_dirs_with_latex)))
-	@echo ""
 
 build/report-example-step-%/aufgabe.txt &: $(template_taskfiles) | $(solution_dirs)
 	cp $(word $*, $(template_taskfiles)) build/report-example-step-$*/aufgabe.txt
