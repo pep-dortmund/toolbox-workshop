@@ -31,8 +31,13 @@ datafiles_template_step-1 = $(addprefix build/report-example-step-1/data/, $(dat
 datafiles_template_step-5 = $(addprefix build/report-example-step-5/data/, $(datafilenames)) 
 
 
+target_taskfiles = $(addsuffix aufgabe.txt, $(step_dirs))
+target_datafiles = $(datafiles_template_step-1) $(datafiles_template_step-5) $(foreach step, $(steps), $(addprefix $(word $(step), $(solution_dirs))data/, $(datafilenames)))
+
 target_makefiles = $(addsuffix Makefile-loesung, $(step_dirs))
-target_scriptfiles = $(addsuffix auswertung.py, $(solution_dirs))
+
+target_pythonfiles = $(addsuffix auswertung.py, $(solution_dirs))
+
 target_texfiles_v16516 = $(addsuffix v16516.tex, $(solution_dirs_with_latex))
 target_texfiles_header = $(addsuffix header.tex, $(solution_dirs_with_latex))
 target_texfiles_durchfuehrung = $(addsuffix content/durchfuehrung.tex, $(solution_dirs_with_latex))
@@ -40,15 +45,13 @@ target_texfiles_theorie = $(addsuffix content/theorie.tex, $(solution_dirs_with_
 target_texfiles_auswertung = $(addsuffix content/auswertung.tex, $(solution_dirs_with_latex))
 target_texfiles_diskussion = $(addsuffix content/diskussion.tex, $(solution_dirs_with_latex))
 target_bibfiles = $(addsuffix lit.bib, $(wordlist 3,4,$(solution_dirs_with_latex))) $(addsuffix programme.bib, $(wordlist 3,4,$(solution_dirs_with_latex)))
-target_taskfiles = $(addsuffix aufgabe.txt, $(step_dirs))
-target_datafiles = $(datafiles_template_step-1) $(datafiles_template_step-5) $(foreach step, $(steps), $(addprefix $(word $(step), $(solution_dirs))data/, $(datafilenames)))
 
 
 
 all: \
 $(target_datafiles) \
 $(target_taskfiles) \
-$(target_scriptfiles) \
+$(target_pythonfiles) \
 $(target_texfiles_header) \
 $(target_texfiles_v16516) \
 $(target_texfiles_durchfuehrung) \
@@ -65,7 +68,7 @@ test-%: | build
 	# @echo " "
 	# @echo $<
 	@echo " "
-	@echo $(target_scriptfiles)
+	@echo $(target_pythonfiles)
 	@echo ""
 	@echo ""
 	@echo $(target_texfiles_v16516)
@@ -79,10 +82,10 @@ test-%: | build
 	@echo $(addsuffix lit.bib, $(wordlist 3,4,$(solution_dirs_with_latex)))
 	@echo ""
 
-build/report-example-step-%/aufgabe.txt &: $(taskfiles) | $(solution_dirs)
-	cp $(word $*, $(taskfiles)) build/report-example-step-$*/aufgabe.txt
+build/report-example-step-%/aufgabe.txt &: $(template_taskfiles) | $(solution_dirs)
+	cp $(word $*, $(template_taskfiles)) build/report-example-step-$*/aufgabe.txt
 
-$(target_bibfiles) &: $(taskfiles) | $(solution_dirs_with_latex)
+$(target_bibfiles) &: $(template_bibfiles) | $(solution_dirs_with_latex)
 	cp templates/lit.bib $(word 1, $(target_bibfiles))
 	cp templates/lit.bib $(word 2, $(target_bibfiles))
 	cp templates/programme.bib $(word 3, $(target_bibfiles))
@@ -107,9 +110,9 @@ $(target_texfiles_auswertung) &: generate-step-scripts.py templates/latex/auswer
 $(target_texfiles_diskussion) &: generate-step-scripts.py templates/latex/diskussion_template | $(content_dirs_with_latex)
 	python generate-step-scripts.py -t templates/latex/diskussion_template $(addprefix -o=,$(target_texfiles_diskussion)) -s 7
 
-$(target_scriptfiles) &: generate-step-scripts.py templates/latex/auswertung_template | $(solution_dirs)
-	touch $(word 1, $(target_scriptfiles))
-	python generate-step-scripts.py -t templates/auswertung_template $(addprefix -o=, $(target_scriptfiles))
+$(target_pythonfiles) &: generate-step-scripts.py templates/latex/auswertung_template | $(solution_dirs)
+	touch $(word 1, $(target_pythonfiles))
+	python generate-step-scripts.py -t templates/auswertung_template $(addprefix -o=, $(target_pythonfiles))
 
 $(datafiles_template_step-1) &: | build/report-example-step-1
 	cp -r templates/data_without_uncertainties build/report-example-step-1/data 
