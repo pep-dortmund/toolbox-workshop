@@ -75,24 +75,24 @@ $(target_bibfiles) &: $(template_bibfiles) | $(solution_dirs_with_latex)
 build/report-example-step-%/Makefile-loesung &: templates/Makefile-loesung | $(solution_dirs)
 	cp templates/Makefile-loesung build/report-example-step-$*/Makefile-loesung
 
-$(target_texfiles_v16516) &: generate-step-scripts.py templates/latex/v16516_template | $(solution_dirs_with_latex)
-	python generate-step-scripts.py -t templates/latex/v16516_template $(addprefix -o=,$(target_texfiles_v16516)) -s 7
+$(target_texfiles_v16516) &: generate-step-scripts.py templates/latex/v16516_tex_template | $(solution_dirs_with_latex)
+	python generate-step-scripts.py -t templates/latex/v16516_tex_template $(addprefix -o=,$(target_texfiles_v16516)) -s 7
 
-$(target_texfiles_header) &: generate-step-scripts.py templates/latex/header_template | $(solution_dirs_with_latex)
-	python generate-step-scripts.py -t templates/latex/header_template $(addprefix -o=,$(target_texfiles_header)) -s 7
+$(target_texfiles_header) &: generate-step-scripts.py templates/latex/header_tex_template | $(solution_dirs_with_latex)
+	python generate-step-scripts.py -t templates/latex/header_tex_template $(addprefix -o=,$(target_texfiles_header)) -s 7
 
-$(target_texfiles_durchfuehrung) &: generate-step-scripts.py templates/latex/durchfuehrung_template | $(content_dirs_with_latex)
-	python generate-step-scripts.py -t templates/latex/durchfuehrung_template $(addprefix -o=,$(target_texfiles_durchfuehrung)) -s 7
-$(target_texfiles_theorie) &: generate-step-scripts.py templates/latex/theorie_template | $(content_dirs_with_latex)
-	python generate-step-scripts.py -t templates/latex/theorie_template $(addprefix -o=,$(target_texfiles_theorie)) -s 7
-$(target_texfiles_auswertung) &: generate-step-scripts.py templates/latex/auswertung_template | $(content_dirs_with_latex)
-	python generate-step-scripts.py -t templates/latex/auswertung_template $(addprefix -o=,$(target_texfiles_auswertung)) -s 7
-$(target_texfiles_diskussion) &: generate-step-scripts.py templates/latex/diskussion_template | $(content_dirs_with_latex)
-	python generate-step-scripts.py -t templates/latex/diskussion_template $(addprefix -o=,$(target_texfiles_diskussion)) -s 7
+$(target_texfiles_durchfuehrung) &: generate-step-scripts.py templates/latex/durchfuehrung_tex_template | $(content_dirs_with_latex)
+	python generate-step-scripts.py -t templates/latex/durchfuehrung_tex_template $(addprefix -o=,$(target_texfiles_durchfuehrung)) -s 7
+$(target_texfiles_theorie) &: generate-step-scripts.py templates/latex/theorie_tex_template | $(content_dirs_with_latex)
+	python generate-step-scripts.py -t templates/latex/theorie_tex_template $(addprefix -o=,$(target_texfiles_theorie)) -s 7
+$(target_texfiles_auswertung) &: generate-step-scripts.py templates/latex/auswertung_tex_template | $(content_dirs_with_latex)
+	python generate-step-scripts.py -t templates/latex/auswertung_tex_template $(addprefix -o=,$(target_texfiles_auswertung)) -s 7
+$(target_texfiles_diskussion) &: generate-step-scripts.py templates/latex/diskussion_tex_template | $(content_dirs_with_latex)
+	python generate-step-scripts.py -t templates/latex/diskussion_tex_template $(addprefix -o=,$(target_texfiles_diskussion)) -s 7
 
-$(target_pythonfiles) &: generate-step-scripts.py templates/latex/auswertung_template | $(solution_dirs)
+$(target_pythonfiles) &: generate-step-scripts.py templates/auswertung_py_template | $(solution_dirs)
 	touch $(word 1, $(target_pythonfiles))
-	python generate-step-scripts.py -t templates/auswertung_template $(addprefix -o=, $(target_pythonfiles))
+	python generate-step-scripts.py -t templates/auswertung_py_template $(addprefix -o=, $(target_pythonfiles))
 
 $(datafiles_template_step-1) &: | build/report-example-step-1
 	cp -r templates/data_without_uncertainties build/report-example-step-1/data 
@@ -167,6 +167,7 @@ test_step_scripts: all
 	set -- $(solution_dirs); \
 	for i do\
 		cd "$$i"; \
+		echo "$$PWD"; \
 		echo "Output of '$$i/auswertung.py':" >> ../../python_output.txt; \
 		echo "" >> ../../python_output.txt; \
 		python auswertung.py >> ../../python_output.txt  2>&1;\
