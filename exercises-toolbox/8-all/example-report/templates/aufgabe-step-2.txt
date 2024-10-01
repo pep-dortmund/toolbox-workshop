@@ -1,0 +1,21 @@
+# Realistisches Beispiel Protokoll
+
+Einleitung:
+Um dieser Aufgabe sinnvoll folgen zu können sollte diese von Anfang an bearbeitet werden. Folgt den 
+Anweisungen in den 'aufgabe.txt' Dateien im Ordner 'Realistisches-Beispiel-Protokoll', beginnend 
+im Aufgabenordner '1-python'.
+
+Aufgabe:
+Mit den Informationen zu numpy habt ihr nun die Möglichkeit die Messwerte aus dem Ordner 'data'
+einzulesen und zu verarbeiten.
+
+1. Importiert numpy in der Datei 'auswertung.py', lest die Messwerte in den Dateien im Ordner 'data' ein
+   (achtet auf die Angabe der Einheiten zu den Messwerten)
+2. Gebt diese auf das Terminal aus um zu sehen ob, die Werte richtig geladen wurden
+3. Berechnet mit den Daten folgende Werte (die Gleichungen stehen im fertigen Beispiel-Protokoll)
+  - Radius r von Ball und Zylinder
+  - Trägheitsmoment I von Ball und Zylinder
+  - Zeitdauern t für das Herabrollen beider Objekte
+4. Gebt auch diese berechneten Werte auf das Terminal aus, um diese zu überprüfen
+5. Die Messung wurde für jede Höhe dreifach durchgeführt. Berechnet für jede Höhe 
+   jeweils den zugehörigen Mittelwert der Zeitdauern

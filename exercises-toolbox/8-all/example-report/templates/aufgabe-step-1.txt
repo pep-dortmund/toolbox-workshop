@@ -1,0 +1,31 @@
+# Realistisches-Beispiel-Protokoll
+
+Einleitung: 
+
+Wie der Name der Aufgabe schon verspricht, werdet ihr im Zuge dieser Aufgabe ein vollständiges 
+und realistisches Versuchsprotokoll erstellen. Diesem Ziel werdet ihr Aufgabe für Aufgabe etwas
+näher kommen können, indem ihr jeweils ein Thema des Workshops pro Aufgabe integriert.
+
+Um zu wissen, wo es hingeht, findet ihr auch in diesem Ordner schon das vollständige Protokoll zum Ansehen.
+
+Aufgabe:
+Heute fällt diese Aufgabe noch nicht zu umfangreich aus. Es geht zunächst nur um das erstellen 
+des Ordners in dem ihr diese Aufgabe immer weiter ergänzt. 
+
+1) Erstellt (z.B. in einem Ordner unter ~/Documents) einen neuen Ordner mit dem Namem v16516.
+
+2) Kopiert den Ordner data aus diesem Aufgabenordner in den Ordner v16516.
+
+Das war es schon, morgen gehts weiter.
+
+Erklärung:
+
+Im Ordner 'v16516' befindet sich noch nicht viel, nur eine leere Pythondatei und ein Ordner 'data' in dem sich 
+die Textdateien mit den Messwerten befinden, die ihr für die Auswertung verwenden werdet. Das spaßige Abtippen 
+der Messwerte aus dem Laborbuch, haben wir euch schonmal abgenommen. ;)
+
+
+
+
+
+
