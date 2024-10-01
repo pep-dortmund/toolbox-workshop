@@ -38,7 +38,6 @@ berechnet                                                                       
         S[table-format=1.0]                                                                                                                            % <9-10>
         S[table-format=1.3]                                                                                                                            % <9-10>
         S[table-format=1.3]                                                                                                                            % <9-10>
-                                                                                                                                                       % <9-10>
         S[table-format=4.0]                                                                                                                            % <9-10>
         S[table-format=1.0]                                                                                                                            % <9-10>
         S[table-format=4.0]                                                                                                                            % <9-10>
@@ -136,7 +135,7 @@ und für den Zylinder in \autoref{fig:fit-g-cylinder} graphisch dargestellt.    
                                                                                                                                                        % <7-10>
 \begin{figure}                                                                                                                                         % <9-10>
   \centering                                                                                                                                           % <9-10>
-  \includegraphics{plot-g_ball.pdf}                                                                                                                    % <9-10>
+  \includegraphics{plot-g_kugel.pdf}                                                                                                                    % <9-10>
   \caption{Dargestellt sind die für je eine Höhe gemittelten Messwerte aus \autoref{tab:averaged-measurements} für die Kugel,                          % <9-10>
   zusammen mit einer Ausgleichsfunktion der Form \eqref{eq:fit-function-g-ball} für die Bestimmung der Fallbeschleunigung $g$.                         % <9-10>
   Die Parameter der Ausgleichsrechnung sind in \eqref{eq:parameters-g_ball} angegeben.}                                                                % <9-10>
@@ -145,7 +144,7 @@ und für den Zylinder in \autoref{fig:fit-g-cylinder} graphisch dargestellt.    
                                                                                                                                                        % <9-10>
 \begin{figure}                                                                                                                                         % <9-10>
   \centering                                                                                                                                           % <9-10>
-  \includegraphics{plot-g_cylinder.pdf}                                                                                                                % <9-10>
+  \includegraphics{plot-g_zylinder.pdf}                                                                                                                % <9-10>
   \caption{Dargestellt sind die für je eine Höhe gemittelten Messwerte aus \autoref{tab:averaged-measurements} für den Zylinder,                       % <9-10>
   zusammen mit einer Ausgleichsfunktion der Form \eqref{eq:fit-function-g-cylinder} für die Bestimmung der Fallbeschleunigung $g$.                     % <9-10>
   Die Parameter der Ausgleichsrechnung sind in \eqref{eq:parameters-g_cylinder} angegeben.}                                                            % <9-10>
@@ -172,7 +171,7 @@ und für den Zylinder in \autoref{fig:fit-I-cylinder} graphisch dargestellt.    
                                                                                                                                                        % <7-10>
 \begin{figure}                                                                                                                                         % <9-10>
   \centering                                                                                                                                           % <9-10>
-  \includegraphics{plot-I_ball.pdf}                                                                                                                    % <9-10>
+  \includegraphics{plot-I_kugel.pdf}                                                                                                                    % <9-10>
   \caption{Dargestellt sind die für je eine Höhe gemittelten Messwerte aus \autoref{tab:averaged-measurements} für den Kugel,                          % <9-10>
   zusammen mit einer Ausgleichsfunktion der Form \eqref{eq:fit-function-I} für die Bestimmung des Trägheitsmoments $I_\text{K}$.                       % <9-10>
   Die Parameter der Ausgleichsrechnung sind in \eqref{eq:parameters-I_ball} angegeben.}                                                                % <9-10>
@@ -182,7 +181,7 @@ und für den Zylinder in \autoref{fig:fit-I-cylinder} graphisch dargestellt.    
                                                                                                                                                        % <7-10>
 \begin{figure}                                                                                                                                         % <9-10>
   \centering                                                                                                                                           % <9-10>
-  \includegraphics{plot-I_cylinder.pdf}                                                                                                                % <9-10>
+  \includegraphics{plot-I_zylinder.pdf}                                                                                                                % <9-10>
   \caption{Dargestellt sind die für je eine Höhe gemittelten Messwerte aus \autoref{tab:averaged-measurements} für den Zylinder,                       % <9-10>
   zusammen mit einer Ausgleichsfunktion der Form \eqref{eq:fit-function-I} für die Bestimmung des Trägheitsmoments $I_\text{Z}$.                       % <9-10>
   Die Parameter der Ausgleichsrechnung sind in \eqref{eq:parameters-I_cylinder} angegeben.}                                                            % <9-10>
