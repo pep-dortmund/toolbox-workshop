@@ -318,13 +318,11 @@ ax.set_ylabel("$t$ / s")                                                        
 # Erklärung:                                                                                                                      # <3-3>
 # Darstellen der Messwerte mit Legendeneintrag                                                                                    # <3-3>
 ax.plot(h_b_mean, t_b_mean, "k+", label="Daten: Kugel")                                                                           # <3-4>
-ax.plot(h_plot, theory_t_ball(h_plot),  label="Theorie")                                                                          # <3-3>
+ax.errorbar(noms(h_b_mean), noms(t_b_mean), yerr=stds(t_b_mean), fmt="k+", label="Daten: Kugel")                                  # <5-10>
                                                                                                                                   # <2-10>
 # Erklärung:                                                                                                                      # <4-4>
 # Theorie-Funktion durch Fit-Funktion mit Fit-Parametern ersetzen                                                                 # <4-4>
-ax.plot(h_plot, fit_g_ball(h_plot, *params),  label="Fit")                                                                        # <4-10>
-                                                                                                                                  # <2-10>
-ax.errorbar(noms(h_b_mean), noms(t_b_mean), yerr=stds(t_b_mean), fmt="k+", label="Daten: Kugel")                                  # <5-10>
+ax.plot(h_plot, theory_t_ball(h_plot),  label="Theorie")                                                                          # <3-3>
 ax.plot(h_plot, fit_g_ball(h_plot, *params),  label="Fit")                                                                        # <4-10>
 ax.legend()                                                                                                                       # <3-10>
 fig.savefig("plot_kugel.pdf")                                                                                                     # <3-3>
