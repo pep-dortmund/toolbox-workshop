@@ -170,7 +170,7 @@ test_step_scripts: all
 		echo "$$PWD"; \
 		echo "Output of '$$i/auswertung.py':" >> ../../python_output.txt; \
 		echo "" >> ../../python_output.txt; \
-		python auswertung.py >> ../../python_output.txt  2>&1;\
+		python auswertung.py >> ../../python_output.txt;\
 		cd - >> /dev/null; \
 	done;\
 	diff -u templates/output_snapshot.txt build/python_output.txt  && echo "Test Passed!: No changes in output of scripts"
