@@ -1,9 +1,7 @@
 
 Output of 'build/report-example-step-1/loesung//auswertung.py':
 
-
 Output of 'build/report-example-step-2/loesung//auswertung.py':
-
 
 Trägheitsmoment (Kugel)
 0.000203588707139895
@@ -38,7 +36,6 @@ gemittlelte Zeit
 
 
 Output of 'build/report-example-step-3/loesung//auswertung.py':
-
 
 qt.qpa.theme.dbus: Session DBus not running.
 qt.qpa.theme.dbus: Application will not react to setting changes.
@@ -77,13 +74,12 @@ gemittlelte Zeit
 
 Output of 'build/report-example-step-4/loesung//auswertung.py':
 
-
 qt.qpa.theme.dbus: Session DBus not running.
 qt.qpa.theme.dbus: Application will not react to setting changes.
  Check your DBus installation.
-/home/luckyjosh/Documents/Toolbox/branch_example-report-exercise-steps/exercises-toolbox/8-all/example-report/build/report-example-step-4/loesung/auswertung.py:219: RuntimeWarning: invalid value encountered in sqrt
+/home/luckyjosh/Documents/Toolbox/branch_example-report-exercise-steps/exercises-toolbox/8-all/example-report/build/report-example-step-4/loesung/auswertung.py:217: RuntimeWarning: invalid value encountered in sqrt
   return np.sqrt(2/g * 1/h * l**2 * (1 + I/(m_b * r_b**2)) ) + t0
-/home/luckyjosh/Documents/Toolbox/branch_example-report-exercise-steps/exercises-toolbox/8-all/example-report/build/report-example-step-4/loesung/auswertung.py:224: RuntimeWarning: invalid value encountered in sqrt
+/home/luckyjosh/Documents/Toolbox/branch_example-report-exercise-steps/exercises-toolbox/8-all/example-report/build/report-example-step-4/loesung/auswertung.py:222: RuntimeWarning: invalid value encountered in sqrt
   return np.sqrt(2/g * 1/h * l**2 * (1 + I/(m_c * ro_c**2) )) + t0
 Trägheitsmoment (Kugel)
 0.000203588707139895
@@ -139,13 +135,12 @@ t =   -0.135 ± 0.031
 
 Output of 'build/report-example-step-5/loesung//auswertung.py':
 
-
 qt.qpa.theme.dbus: Session DBus not running.
 qt.qpa.theme.dbus: Application will not react to setting changes.
  Check your DBus installation.
-/home/luckyjosh/Documents/Toolbox/branch_example-report-exercise-steps/exercises-toolbox/8-all/example-report/build/report-example-step-5/loesung/auswertung.py:240: RuntimeWarning: invalid value encountered in sqrt
+/home/luckyjosh/Documents/Toolbox/branch_example-report-exercise-steps/exercises-toolbox/8-all/example-report/build/report-example-step-5/loesung/auswertung.py:238: RuntimeWarning: invalid value encountered in sqrt
   return np.sqrt(2/g * 1/h * noms(l)**2 * (1 + I/(noms(m_b * r_b)**2)) ) + t0
-/home/luckyjosh/Documents/Toolbox/branch_example-report-exercise-steps/exercises-toolbox/8-all/example-report/build/report-example-step-5/loesung/auswertung.py:245: RuntimeWarning: invalid value encountered in sqrt
+/home/luckyjosh/Documents/Toolbox/branch_example-report-exercise-steps/exercises-toolbox/8-all/example-report/build/report-example-step-5/loesung/auswertung.py:243: RuntimeWarning: invalid value encountered in sqrt
   return np.sqrt(2/g * 1/h * noms(l)**2 * (1 + I/(noms(m_c * ro_c**2)) )) + t0
 Trägheitsmoment (Kugel)
 0.000204+/-0.000013
@@ -235,13 +230,12 @@ t =   -0.135 ± 0.031
 
 Output of 'build/report-example-step-6/loesung//auswertung.py':
 
-
 qt.qpa.theme.dbus: Session DBus not running.
 qt.qpa.theme.dbus: Application will not react to setting changes.
  Check your DBus installation.
-/home/luckyjosh/Documents/Toolbox/branch_example-report-exercise-steps/exercises-toolbox/8-all/example-report/build/report-example-step-6/loesung/auswertung.py:240: RuntimeWarning: invalid value encountered in sqrt
+/home/luckyjosh/Documents/Toolbox/branch_example-report-exercise-steps/exercises-toolbox/8-all/example-report/build/report-example-step-6/loesung/auswertung.py:238: RuntimeWarning: invalid value encountered in sqrt
   return np.sqrt(2/g * 1/h * noms(l)**2 * (1 + I/(noms(m_b * r_b)**2)) ) + t0
-/home/luckyjosh/Documents/Toolbox/branch_example-report-exercise-steps/exercises-toolbox/8-all/example-report/build/report-example-step-6/loesung/auswertung.py:245: RuntimeWarning: invalid value encountered in sqrt
+/home/luckyjosh/Documents/Toolbox/branch_example-report-exercise-steps/exercises-toolbox/8-all/example-report/build/report-example-step-6/loesung/auswertung.py:243: RuntimeWarning: invalid value encountered in sqrt
   return np.sqrt(2/g * 1/h * noms(l)**2 * (1 + I/(noms(m_c * ro_c**2)) )) + t0
 Trägheitsmoment (Kugel)
 0.000204+/-0.000013
@@ -331,13 +325,12 @@ t =   -0.135 ± 0.031
 
 Output of 'build/report-example-step-7/loesung//auswertung.py':
 
-
 qt.qpa.theme.dbus: Session DBus not running.
 qt.qpa.theme.dbus: Application will not react to setting changes.
  Check your DBus installation.
-/home/luckyjosh/Documents/Toolbox/branch_example-report-exercise-steps/exercises-toolbox/8-all/example-report/build/report-example-step-7/loesung/auswertung.py:240: RuntimeWarning: invalid value encountered in sqrt
+/home/luckyjosh/Documents/Toolbox/branch_example-report-exercise-steps/exercises-toolbox/8-all/example-report/build/report-example-step-7/loesung/auswertung.py:238: RuntimeWarning: invalid value encountered in sqrt
   return np.sqrt(2/g * 1/h * noms(l)**2 * (1 + I/(noms(m_b * r_b)**2)) ) + t0
-/home/luckyjosh/Documents/Toolbox/branch_example-report-exercise-steps/exercises-toolbox/8-all/example-report/build/report-example-step-7/loesung/auswertung.py:245: RuntimeWarning: invalid value encountered in sqrt
+/home/luckyjosh/Documents/Toolbox/branch_example-report-exercise-steps/exercises-toolbox/8-all/example-report/build/report-example-step-7/loesung/auswertung.py:243: RuntimeWarning: invalid value encountered in sqrt
   return np.sqrt(2/g * 1/h * noms(l)**2 * (1 + I/(noms(m_c * ro_c**2)) )) + t0
 Trägheitsmoment (Kugel)
 0.000204+/-0.000013
@@ -427,13 +420,12 @@ t =   -0.135 ± 0.031
 
 Output of 'build/report-example-step-8/loesung//auswertung.py':
 
-
 qt.qpa.theme.dbus: Session DBus not running.
 qt.qpa.theme.dbus: Application will not react to setting changes.
  Check your DBus installation.
-/home/luckyjosh/Documents/Toolbox/branch_example-report-exercise-steps/exercises-toolbox/8-all/example-report/build/report-example-step-8/loesung/auswertung.py:240: RuntimeWarning: invalid value encountered in sqrt
+/home/luckyjosh/Documents/Toolbox/branch_example-report-exercise-steps/exercises-toolbox/8-all/example-report/build/report-example-step-8/loesung/auswertung.py:238: RuntimeWarning: invalid value encountered in sqrt
   return np.sqrt(2/g * 1/h * noms(l)**2 * (1 + I/(noms(m_b * r_b)**2)) ) + t0
-/home/luckyjosh/Documents/Toolbox/branch_example-report-exercise-steps/exercises-toolbox/8-all/example-report/build/report-example-step-8/loesung/auswertung.py:245: RuntimeWarning: invalid value encountered in sqrt
+/home/luckyjosh/Documents/Toolbox/branch_example-report-exercise-steps/exercises-toolbox/8-all/example-report/build/report-example-step-8/loesung/auswertung.py:243: RuntimeWarning: invalid value encountered in sqrt
   return np.sqrt(2/g * 1/h * noms(l)**2 * (1 + I/(noms(m_c * ro_c**2)) )) + t0
 Trägheitsmoment (Kugel)
 0.000204+/-0.000013
@@ -523,13 +515,12 @@ t =   -0.135 ± 0.031
 
 Output of 'build/report-example-step-9/loesung//auswertung.py':
 
-
 qt.qpa.theme.dbus: Session DBus not running.
 qt.qpa.theme.dbus: Application will not react to setting changes.
  Check your DBus installation.
-/home/luckyjosh/Documents/Toolbox/branch_example-report-exercise-steps/exercises-toolbox/8-all/example-report/build/report-example-step-9/loesung/auswertung.py:240: RuntimeWarning: invalid value encountered in sqrt
+/home/luckyjosh/Documents/Toolbox/branch_example-report-exercise-steps/exercises-toolbox/8-all/example-report/build/report-example-step-9/loesung/auswertung.py:238: RuntimeWarning: invalid value encountered in sqrt
   return np.sqrt(2/g * 1/h * noms(l)**2 * (1 + I/(noms(m_b * r_b)**2)) ) + t0
-/home/luckyjosh/Documents/Toolbox/branch_example-report-exercise-steps/exercises-toolbox/8-all/example-report/build/report-example-step-9/loesung/auswertung.py:245: RuntimeWarning: invalid value encountered in sqrt
+/home/luckyjosh/Documents/Toolbox/branch_example-report-exercise-steps/exercises-toolbox/8-all/example-report/build/report-example-step-9/loesung/auswertung.py:243: RuntimeWarning: invalid value encountered in sqrt
   return np.sqrt(2/g * 1/h * noms(l)**2 * (1 + I/(noms(m_c * ro_c**2)) )) + t0
 Trägheitsmoment (Kugel)
 0.000204+/-0.000013
@@ -619,13 +610,12 @@ t =   -0.135 ± 0.031
 
 Output of 'build/report-example-step-10/loesung//auswertung.py':
 
-
 qt.qpa.theme.dbus: Session DBus not running.
 qt.qpa.theme.dbus: Application will not react to setting changes.
  Check your DBus installation.
-/home/luckyjosh/Documents/Toolbox/branch_example-report-exercise-steps/exercises-toolbox/8-all/example-report/build/report-example-step-10/loesung/auswertung.py:240: RuntimeWarning: invalid value encountered in sqrt
+/home/luckyjosh/Documents/Toolbox/branch_example-report-exercise-steps/exercises-toolbox/8-all/example-report/build/report-example-step-10/loesung/auswertung.py:238: RuntimeWarning: invalid value encountered in sqrt
   return np.sqrt(2/g * 1/h * noms(l)**2 * (1 + I/(noms(m_b * r_b)**2)) ) + t0
-/home/luckyjosh/Documents/Toolbox/branch_example-report-exercise-steps/exercises-toolbox/8-all/example-report/build/report-example-step-10/loesung/auswertung.py:245: RuntimeWarning: invalid value encountered in sqrt
+/home/luckyjosh/Documents/Toolbox/branch_example-report-exercise-steps/exercises-toolbox/8-all/example-report/build/report-example-step-10/loesung/auswertung.py:243: RuntimeWarning: invalid value encountered in sqrt
   return np.sqrt(2/g * 1/h * noms(l)**2 * (1 + I/(noms(m_c * ro_c**2)) )) + t0
 Trägheitsmoment (Kugel)
 0.000204+/-0.000013
