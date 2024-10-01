@@ -15,7 +15,8 @@ steps_with_latex = 7 8 9 10
 
 steps = $(steps_without_unc) $(steps_with_unc)
 
-taskfiles = $(foreach step, $(steps), $(addprefix templates/, aufgabe-step-$(step).txt))
+template_taskfiles = $(foreach step, $(steps), $(addprefix templates/, aufgabe-step-$(step).txt))
+template_bibfiles = $(addprefix templates/, lit.bib programme.bib)
 
 step_dirs = $(foreach step, $(steps),build/report-example-step-$(step)/)
 solution_dirs = $(addsuffix loesung/, $(step_dirs))
