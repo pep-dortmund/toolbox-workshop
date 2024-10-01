@@ -1,0 +1,204 @@
+\section{Auswertung}                                                                                                                         % <7-10>
+\label{sec:Auswertung}                                                                                                                       % <9-10>
+Die für diesen Versuch relevanten physikalischen Größen für Kugel und Zylinder sind:                                                         % <7-10>
+\begin{align}                                                                                                                                % <8-10>
+  \label{eq:physical-properties}                                                                                                             % <9-10>
+  m_\text{Z} &= \input{mass_ball.tex} & m_\text{K} &= \input{mass_ball.tex}\nonumber\\                                                       % <8-10>
+  r_{\text{Z},\text{i}} &= \input{../build/radius-inner_cylinder.tex} & r_\text{K} &= \input{radius_ball.tex}\\                              % <8-10>
+  r_{\text{Z},\text{a}} &= \input{../build/radius-outer_cylinder.tex} &&\nonumber                                                            % <8-10>
+
+
+\qty{0.2160+-0.0010}{\kilo\gram}
+\qty{0.2160+-0.0010}{\kilo\gram}
+
+
+  m_\text{Z} &= \input{mass_ball.tex} & m_\text{K} &= \input{mass_ball.tex}\nonumber\\                                                       % <10-10>
+  r_{\text{Z},\text{i}} &= \input{../build/radius-inner_cylinder.tex} & r_\text{K} &= \input{radius_ball.tex}\\                              % <10-10>
+  r_{\text{Z},\text{a}} &= \input{../build/radius-outer_cylinder.tex} &&\nonumber                                                            % <10-10>
+\end{align}                                                                                                                                  % <8-10>
+Berechnet wurde aus diesen Größen das jeweilige, theoretische Trägheitsmoment                                                                % <7-10>
+\begin{align}                                                                                                                                % <8-10>
+  \label{eq:moments-inertia}                                                                                                                 % <8-10>
+  I_\text{Z} &= \input{./../build/theoretical-I_cylinder.tex}\quad\text{ und } & I_\text{K} = \input{./../build/theoretical-I_ball.tex}.     % <8-10>
+\end{align}                                                                                                                                  % <8-10>
+Aus den aufgenommenen Videos der Versuche wurden die in \autoref{tab:all-measurements} folgenden Frameindizes extrahiert.                    % <9-10>
+Die ebenfalls aufgeführte Zeitdauer $t$ wurde dann jeweils aus der aus dem Startframeindex $F_\text{i}$,                                     % <8-10>
+dem Endframeindex $F_\text{f}$ und der Kameraframerate $\operatorname{fps}=\qty[per-mode=reciprocal]{30}{\per\second}$ wie folgt             % <9-9>
+dem Endframeindex $F_\text{f}$ und der Kameraframerate $\operatorname{fps}=\input{framerate.tex}$ wie folgt                                  % <10-10>
+berechnet                                                                                                                                    % <7-10>
+\begin{equation*}                                                                                                                            % <8-10>
+  t = (F_\text{f} - F_\text{i})\cdot\operatorname{fps}^{-1}                                                                                  % <8-10>
+\end{equation*}                                                                                                                              % <8-10>
+                                                                                                                                             % <7-10>
+\begin{table}                                                                                                                                % <9-10>
+  \centering                                                                                                                                 % <9-10>
+  \caption{Alle aufgenommenen Werte, das heißt mit dreifach wiederholter Messungen je Höhe.}                                                 % <9-10>
+  \label{tab:all-measurements}                                                                                                               % <9-10>
+  \begin{tblr}{                                                                                                                              % <9-10>
+    colspec = {                                                                                                                              % <9-10>
+        S[table-format=1.3]                                                                                                                  % <9-10>
+        S[table-format=4.0]                                                                                                                  % <9-10>
+        S[table-format=1.0]                                                                                                                  % <9-10>
+        S[table-format=4.0]                                                                                                                  % <9-10>
+        S[table-format=1.0]                                                                                                                  % <9-10>
+        S[table-format=1.3]                                                                                                                  % <9-10>
+        S[table-format=1.3]                                                                                                                  % <9-10>
+                                                                                                                                             % <9-10>
+        S[table-format=4.0]                                                                                                                  % <9-10>
+        S[table-format=1.0]                                                                                                                  % <9-10>
+        S[table-format=4.0]                                                                                                                  % <9-10>
+        S[table-format=1.0]                                                                                                                  % <9-10>
+        S[table-format=1.3]                                                                                                                  % <9-10>
+        S[table-format=1.3]                                                                                                                  % <9-10>
+    },                                                                                                                                       % <9-10>
+    row{1} = {guard},                                                                                                                        % <9-10>
+    row{2} = {guard, mode=math},                                                                                                             % <9-10>
+    vline{3,5,7,9,11,13} = {2}{-}{text=\clap{\pm}},                                                                                          % <9-10>
+  }                                                                                                                                          % <9-10>
+    \toprule                                                                                                                                 % <9-10>
+    &                                                                                                                                        % <9-10>
+    \SetCell[c=6]{c} Messung: Kugel & & & & & &                                                                                              % <9-10>
+    \SetCell[c=6]{c} Messung: Zylinder & & & & & \\                                                                                          % <9-10>
+    \cmidrule[lr]{2-7}\cmidrule[lr]{8-14}                                                                                                    % <9-10>
+    h \mathbin{/} \unit{\meter} &%                                                                                                           % <9-10>
+    \SetCell[c=2]{c} F_\text{i} \mathbin{/} 1 & &%                                                                                           % <9-10>
+    \SetCell[c=2]{c} F_\text{f} \mathbin{/} 1 & &%                                                                                           % <9-10>
+    \SetCell[c=2]{c} t \mathbin{/} \unit{\second} & &%                                                                                       % <9-10>
+    \SetCell[c=2]{c} F_\text{i} & &%                                                                                                         % <9-10>
+    \SetCell[c=2]{c} F_\text{f} & &%                                                                                                         % <9-10>
+    \SetCell[c=2]{c} t \mathbin{/} \unit{\second}& \\                                                                                        % <9-10>
+    \midrule                                                                                                                                 % <9-10>
+        0.045 & 436 & 1 &  492 & 1&  1.867 & 0.047  &  1018 & 1&  1083 & 1&  2.167 & 0.047   \\                                              % <9-10>
+        0.045 & 555 & 1 &  610 & 1&  1.833 & 0.047  &  1189 & 1&  1248 & 1&  1.967 & 0.047   \\                                              % <9-10>
+        0.045 & 672 & 1 &  729 & 1&  1.900 & 0.047  &  1340 & 1&  1404 & 1&  2.133 & 0.047   \\                                              % <9-10>
+        0.100 & 95 & 1 &  130 & 1&  1.167 & 0.047  &  596 & 1&  636 & 1&  1.333 & 0.047   \\                                                 % <9-10>
+        0.100 & 199 & 1 &  235 & 1&  1.200 & 0.047  &  762 & 1&  801 & 1&  1.300 & 0.047   \\                                                % <9-10>
+        0.100 & 303 & 1 &  338 & 1&  1.167 & 0.047  &  882 & 1&  921 & 1&  1.300 & 0.047   \\                                                % <9-10>
+        0.150 & 91 & 1 &  119 & 1&  0.933 & 0.047  &  574 & 1&  605 & 1&  1.033 & 0.047   \\                                                 % <9-10>
+        0.150 & 201 & 1 &  229 & 1&  0.933 & 0.047  &  766 & 1&  798 & 1&  1.067 & 0.047   \\                                                % <9-10>
+        0.150 & 335 & 1 &  362 & 1&  0.900 & 0.047  &  863 & 1&  896 & 1&  1.100 & 0.047   \\                                                % <9-10>
+        0.200 & 232 & 1 &  256 & 1&  0.800 & 0.047  &  679 & 1&  707 & 1&  0.933 & 0.047   \\                                                % <9-10>
+        0.200 & 323 & 1 &  347 & 1&  0.800 & 0.047  &  810 & 1&  838 & 1&  0.933 & 0.047   \\                                                % <9-10>
+        0.200 & 397 & 1 &  421 & 1&  0.800 & 0.047  &  930 & 1&  959 & 1&  0.967 & 0.047   \\                                                % <9-10>
+        0.250 & 153 & 1 &  174 & 1&  0.700 & 0.047  &  650 & 1&  674 & 1&  0.800 & 0.047   \\                                                % <9-10>
+        0.250 & 239 & 1 &  260 & 1&  0.700 & 0.047  &  892 & 1&  917 & 1&  0.833 & 0.047   \\                                                % <9-10>
+        0.250 & 322 & 1 &  343 & 1&  0.700 & 0.047  &  804 & 1&  827 & 1&  0.767 & 0.047   \\                                                % <9-10>
+        0.300 & 219 & 1 &  238 & 1&  0.633 & 0.047  &  642 & 1&  664 & 1&  0.733 & 0.047   \\                                                % <9-10>
+        0.300 & 319 & 1 &  338 & 1&  0.633 & 0.047  &  739 & 1&  760 & 1&  0.700 & 0.047   \\                                                % <9-10>
+        0.300 & 391 & 1 &  412 & 1&  0.700 & 0.047  &  900 & 1&  922 & 1&  0.733 & 0.047   \\                                                % <9-10>
+    \bottomrule                                                                                                                              % <9-10>
+  \end{tblr}                                                                                                                                 % <9-10>
+  \input{build/table_all-measurements.tex}                                                                                                   % <10-10>
+\end{table}                                                                                                                                  % <9-10>
+                                                                                                                                             % <7-10>
+Durch Mittelung der Messwerte für die selbe Höhe $h$ ergeben sich die Werte                                                                  % <9-10>
+in \autoref{tab:averaged-measurements}. Diese Werte werden für die folgenden                                                                 % <9-10>
+Auswertungsschritte verwendet.                                                                                                               % <9-10>
+                                                                                                                                             % <7-10>
+\begin{table}                                                                                                                                % <9-10>
+  \centering                                                                                                                                 % <9-10>
+  \caption{Für gleiche Starthöhe $h$ gemittelte Messwerte der Zeit $t$.}                                                                     % <9-10>
+  \label{tab:averaged-measurements}                                                                                                          % <9-10>
+                                                                                                                                             % <9-10>
+  \begin{tblr}{                                                                                                                              % <9-9>
+    colspec = {                                                                                                                              % <9-9>
+        S[table-format=1.3]                                                                                                                  % <9-9>
+        S[table-format=2.3]                                                                                                                  % <9-9>
+        S[table-format=1.4]                                                                                                                  % <9-9>
+        S[table-format=3.3]                                                                                                                  % <9-9>
+        S[table-format=1.5]                                                                                                                  % <9-9>
+    },                                                                                                                                       % <9-9>
+    row{1} = {guard},                                                                                                                        % <9-9>
+    row{2} = {guard, mode=math},                                                                                                             % <9-9>
+    vline{3,5,7,9} = {2}{-}{text=\clap{\pm}},                                                                                                % <9-9>
+  }                                                                                                                                          % <9-9>
+    \toprule                                                                                                                                 % <9-9>
+    &                                                                                                                                        % <9-9>
+    \SetCell[c=2]{c} Messung: Kugel & &                                                                                                      % <9-9>
+    \SetCell[c=2]{c} Messung: Zylinder &\\                                                                                                   % <9-9>
+    \cmidrule[lr]{2-3}\cmidrule[lr]{4-5}                                                                                                     % <9-9>
+    h \mathbin{/} \unit{\meter} &%                                                                                                           % <9-9>
+    \SetCell[c=2]{c} t \mathbin{/} \unit{\second} & &%                                                                                       % <9-9>
+    \SetCell[c=2]{c} t \mathbin{/} \unit{\second}& \\                                                                                        % <9-9>
+    \midrule                                                                                                                                 % <9-9>
+      0.045 & 1.867 & 0.027 &  2.089 & 0.027   \\                                                                                            % <9-9>
+      0.100 & 1.178 & 0.027 &  1.311 & 0.027   \\                                                                                            % <9-9>
+      0.150 & 0.922 & 0.027 &  1.067 & 0.027   \\                                                                                            % <9-9>
+      0.200 & 0.800 & 0.027 &  0.944 & 0.027   \\                                                                                            % <9-9>
+      0.250 & 0.700 & 0.027 &  0.800 & 0.027   \\                                                                                            % <9-9>
+      0.300 & 0.656 & 0.027 &  0.722 & 0.027   \\                                                                                            % <9-9>
+    \bottomrule                                                                                                                              % <9-9>
+  \end{tblr}                                                                                                                                 % <9-9>
+  \input{build/table_averaged-measurements.tex}                                                                                              % <10-10>
+\end{table}                                                                                                                                  % <9-10>
+                                                                                                                                             % <7-10>
+\subsection{Bestimmung der Fallbeschleunigung}                                                                                               % <7-10>
+                                                                                                                                             % <7-10>
+Für die Bestimmung der Fallbeschleunigung wurden eine Ausgleichsfunktion der Form                                                            % <7-10>
+\eqref{eq:fit-function-g-ball} respektive \eqref{eq:fit-function-g-cylinder} an die  Messwerte aus \autoref{tab:averaged-measurements}       % <9-10>
+angepasst. Die Daten und Ausgleichsfunktion sind für die Kugel in \autoref{fig:fit-g-ball}                                                   % <9-10>
+und für den Zylinder in \autoref{fig:fit-g-cylinder} graphisch dargestellt.                                                                  % <9-10>
+                                                                                                                                             % <7-10>
+\begin{figure}                                                                                                                               % <9-10>
+  \centering                                                                                                                                 % <9-10>
+  \includegraphics{plot-g_ball.pdf}                                                                                                          % <9-10>
+  \caption{Dargestellt sind die für je eine Höhe gemittelten Messwerte aus \autoref{tab:averaged-measurements} für die Kugel,                % <9-10>
+  zusammen mit einer Ausgleichsfunktion der Form \eqref{eq:fit-function-g-ball} für die Bestimmung der Fallbeschleunigung $g$.               % <9-10>
+  Die Parameter der Ausgleichsrechnung sind in \eqref{eq:parameters-g_ball} angegeben.}                                                      % <9-10>
+  \label{fig:fit-g-ball}                                                                                                                     % <9-10>
+\end{figure}                                                                                                                                 % <9-10>
+                                                                                                                                             % <9-10>
+\begin{figure}                                                                                                                               % <9-10>
+  \centering                                                                                                                                 % <9-10>
+  \includegraphics{plot-g_cylinder.pdf}                                                                                                      % <9-10>
+  \caption{Dargestellt sind die für je eine Höhe gemittelten Messwerte aus \autoref{tab:averaged-measurements} für den Zylinder,             % <9-10>
+  zusammen mit einer Ausgleichsfunktion der Form \eqref{eq:fit-function-g-cylinder} für die Bestimmung der Fallbeschleunigung $g$.           % <9-10>
+  Die Parameter der Ausgleichsrechnung sind in \eqref{eq:parameters-g_cylinder} angegeben.}                                                  % <9-10>
+  \label{fig:fit-g-cylinder}                                                                                                                 % <9-10>
+\end{figure}                                                                                                                                 % <9-10>
+                                                                                                                                             % <7-10>
+Die Parameter der Ausgleichsrechnung ergeben sich für die Kugel zu                                                                           % <7-10>
+\begin{align}                                                                                                                                % <8-10>
+  \label{eq:parameters-g_ball}                                                                                                               % <8-10>
+  g_\text{K} &= \input{parameter-g_ball.tex}\quad\text{ und } & t_{0,\text{K}} &= \input{parameter-t0-g_ball.tex}                            % <8-10>
+\intertext{und für den Zylinder}                                                                                                             % <8-10>
+  \label{eq:parameters-g_cylinder}                                                                                                           % <8-10>
+  g_\text{Z} &= \input{parameter-g_cylinder.tex}\quad\text{ und } & t_{0,\text{Z}} &= \input{parameter-t0-g_cylinder.tex}.                   % <8-10>
+\end{align}                                                                                                                                  % <8-10>
+                                                                                                                                             % <7-10>
+\subsection{Bestimmung der Trägheitsmomente von Kugel und Zylinder}                                                                          % <7-10>
+                                                                                                                                             % <7-10>
+Für die bestimmung der Fallbeschleunigung wurden eine Ausgleichsfunktion der Form                                                            % <7-10>
+\eqref{eq:fit-function-I} an die Messwerte aus \autoref{tab:averaged-measurements}                                                           % <9-10>
+angepasst. Die Daten und Ausgleichsfunktion sind für die Kugel in \autoref{fig:fit-I-ball}                                                   % <9-10>
+und für den Zylinder in \autoref{fig:fit-I-cylinder} graphisch dargestellt.                                                                  % <9-10>
+                                                                                                                                             % <7-10>
+\begin{figure}                                                                                                                               % <9-10>
+  \centering                                                                                                                                 % <9-10>
+  \includegraphics{plot-I_ball.pdf}                                                                                                          % <9-10>
+  \caption{Dargestellt sind die für je eine Höhe gemittelten Messwerte aus \autoref{tab:averaged-measurements} für den Kugel,                % <9-10>
+  zusammen mit einer Ausgleichsfunktion der Form \eqref{eq:fit-function-I} für die Bestimmung des Trägheitsmoments $I_\text{K}$.             % <9-10>
+  Die Parameter der Ausgleichsrechnung sind in \eqref{eq:parameters-I_ball} angegeben.}                                                      % <9-10>
+  \label{fig:fit-I-ball}                                                                                                                     % <9-10>
+\end{figure}                                                                                                                                 % <9-10>
+                                                                                                                                             % <7-10>
+                                                                                                                                             % <7-10>
+\begin{figure}                                                                                                                               % <9-10>
+  \centering                                                                                                                                 % <9-10>
+  \includegraphics{plot-I_cylinder.pdf}                                                                                                      % <9-10>
+  \caption{Dargestellt sind die für je eine Höhe gemittelten Messwerte aus \autoref{tab:averaged-measurements} für den Zylinder,             % <9-10>
+  zusammen mit einer Ausgleichsfunktion der Form \eqref{eq:fit-function-I} für die Bestimmung des Trägheitsmoments $I_\text{Z}$.             % <9-10>
+  Die Parameter der Ausgleichsrechnung sind in \eqref{eq:parameters-I_cylinder} angegeben.}                                                  % <9-10>
+  \label{fig:fit-I-cylinder}                                                                                                                 % <9-10>
+\end{figure}                                                                                                                                 % <9-10>
+                                                                                                                                             % <7-10>
+Die Parameter der Ausgleichsrechnung ergeben sich für die Kugel zu                                                                           % <7-10>
+\begin{align}                                                                                                                                % <8-10>
+  \label{eq:parameters-I_ball}                                                                                                               % <8-10>
+  I_\text{K} &= \input{parameter-I_ball.tex}\quad\text{ und } &t_{0,\text{K}} &= \input{parameter-t0-I_ball.tex}                             % <8-10>
+  \intertext{und für den Zylinder}                                                                                                           % <8-10>
+  \label{eq:parameters-I_cylinder}                                                                                                           % <8-10>
+  I_\text{Z} &= \input{parameter-I_cylinder.tex}\quad\text{ und } & t_{0,\text{Z}} &= \input{parameter-t0-I_cylinder.tex}.                   % <8-10>
+\end{align}                                                                                                                                  % <8-10>
+
+

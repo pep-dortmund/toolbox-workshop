@@ -1,0 +1,44 @@
+\section{Diskussion}                                                                      % <7-10>
+\label{sec:Diskussion}                                                                    % <9-10>
+                                                                                          % <7-10>
+TODO: Diskussion fertig machen ;-)                                                        % <7-10>
+                                                                                          % <7-10>
+Notizen:                                                                                  % <7-10>
+                                                                                          % <7-10>
+Bestimmung von g:                                                                         % <7-10>
+                                                                                          % <7-10>
+Fits                                                                                      % <7-10>
+                                                                                          % <7-10>
+\autoref{fig:fit-g-ball}                                                                  % <9-10>
+                                                                                          % <7-10>
+\autoref{fig:fit-g-cylinder}                                                              % <9-10>
+                                                                                          % <7-10>
+passen zu den Messwerten.                                                                 % <7-10>
+                                                                                          % <7-10>
+                                                                                          % <7-10>
+Die Fit parameter                                                                         % <7-10>
+\eqref{eq:parameters-g_ball}                                                              % <8-10>
+\eqref{eq:parameters-g_cylinder}                                                          % <8-10>
+                                                                                          % <7-10>
+passen zum theoretischen Wert $\num{9.81}{\meter\per\second\squared}$                     % <8-10>
+passen zum theoretischen Wert \input{theoretical-g.tex}                                   % <10-10>
+=> TODO: Abweichungen berechnen                                                           % <7-10>
+                                                                                          % <7-10>
+Die übereinstimmung der Fitparameter t0, weist auf eine systematische Unsicherheit        % <7-10>
+=> TODO: Berechnung des Offsets in Frames                                                 % <7-10>
+                                                                                          % <7-10>
+Analog für die Bestimmung von I:                                                          % <7-10>
+                                                                                          % <7-10>
+Fits:                                                                                     % <7-10>
+                                                                                          % <7-10>
+\autoref{fig:fit-I-ball}                                                                  % <9-10>
+                                                                                          % <7-10>
+\autoref{fig:fit-I-cylinder}                                                              % <9-10>
+                                                                                          % <7-10>
+\eqref{eq:parameters-I_ball}                                                              % <9-10>
+                                                                                          % <9-10>
+\eqref{eq:parameters-I_cylinder}                                                          % <9-10>
+                                                                                          % <9-10>
+\eqref{eq:moments-inertia}                                                                % <9-10>
+                                                                                          % <7-10>
+=> TODO: Abweichungen berechnen                                                           % <7-10>
