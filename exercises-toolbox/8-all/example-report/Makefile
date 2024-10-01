@@ -38,6 +38,7 @@ target_texfiles_durchfuehrung = $(addsuffix content/durchfuehrung.tex, $(solutio
 target_texfiles_theorie = $(addsuffix content/theorie.tex, $(solution_dirs_with_latex))
 target_texfiles_auswertung = $(addsuffix content/auswertung.tex, $(solution_dirs_with_latex))
 target_texfiles_diskussion = $(addsuffix content/diskussion.tex, $(solution_dirs_with_latex))
+target_bibfiles = $(addsuffix lit.bib, $(wordlist 3,4,$(solution_dirs_with_latex))) $(addsuffix programme.bib, $(wordlist 3,4,$(solution_dirs_with_latex)))
 target_taskfiles = $(addsuffix aufgabe.txt, $(step_dirs))
 target_datafiles = $(datafiles_template_step-1) $(datafiles_template_step-5) $(foreach step, $(steps), $(addprefix $(word $(step), $(solution_dirs))data/, $(datafilenames)))
 
@@ -53,6 +54,7 @@ $(target_texfiles_durchfuehrung) \
 $(target_texfiles_theorie) \
 $(target_texfiles_auswertung) \
 $(target_texfiles_diskussion) \
+$(target_bibfiles)\
 
 
 tests = test1 test2 test3
@@ -61,7 +63,7 @@ test-%: | build
 	# @echo $@
 	# @echo " "
 	# @echo $<
-	# @echo " "
+	@echo " "
 	@echo $(target_scriptfiles)
 	@echo ""
 	@echo $(subst STEP,1, $(target_datafiles_paths)) 
@@ -73,9 +75,18 @@ test-%: | build
 	@echo $(foreach step, $(steps), $(addprefix $(word $(step), $(solution_dirs))data/, $(datafilenames)))	
 	@echo ""
 	@echo $(target_taskfiles) 
+	@echo ""
+	@echo $(addsuffix lit.bib, $(wordlist 3,4,$(solution_dirs_with_latex)))
+	@echo ""
 
 build/report-example-step-%/aufgabe.txt &: $(taskfiles) | $(solution_dirs)
 	cp $(word $*, $(taskfiles)) build/report-example-step-$*/aufgabe.txt
+
+$(target_bibfiles) &: $(taskfiles) | $(solution_dirs_with_latex)
+	cp templates/lit.bib $(word 1, $(target_bibfiles))
+	cp templates/lit.bib $(word 2, $(target_bibfiles))
+	cp templates/programme.bib $(word 3, $(target_bibfiles))
+	cp templates/programme.bib $(word 4, $(target_bibfiles))
 
 
 build/report-example-step-%/Makefile-loesung &: templates/Makefile-loesung | $(solution_dirs)
@@ -167,19 +178,24 @@ clean:
 test_step_scripts: all
 	@echo 
 	@echo Testing: 
-	@echo $(target_scriptfiles)
+	@echo "auswertung.py"
+	@echo "v16516.tex"
 	@echo ""
 	echo "" > build/output.txt 
 	set -- $(solution_dirs); \
 	for i do\
 		cd "$$i"; \
-		echo "Output of '$$i/auswertung.py':" >> ../../output.txt; \
-		echo >> ../../output.txt; \
-		echo "" >> ../../output.txt; \
+		echo "Output of '$$i/auswertung.py':" >> ../../python_output.txt; \
+		echo "" >> ../../python_output.txt; \
 		python auswertung.py >> ../../output.txt  2>&1;\
+		echo "Output of compilation of '$$i/v16516.tex':" >> ../../lualatex_output.txt; \
+		echo "" >> ../../lualatex_output.txt; \
+		lualatex v16516.tex >> ../../lualatex_output.txt  2>&1;\
 		cd - >> /dev/null ;\
 	done;\
-	diff -u templates/output_snapshot.txt build/output.txt && echo "Test Passed!: No changes in output of scripts"
+	diff -u templates/output_snapshot.txt build/output.txt  && echo "Test Passed!: No changes in output of scripts"
+
+#diff -u templates/output_snapshot.txt build/output.txt || diff -u templates/output_snapshot.txt build/output.txt   && echo "Test Passed!: No changes in output of scripts"
 
 
 
