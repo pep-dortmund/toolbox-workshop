@@ -182,21 +182,17 @@ test_step_scripts: all
 	@echo 
 	@echo Testing: 
 	@echo "auswertung.py"
-	@echo "v16516.tex"
 	@echo ""
-	echo "" > build/output.txt 
+	echo "" > build/python_output.txt 
 	set -- $(solution_dirs); \
 	for i do\
 		cd "$$i"; \
 		echo "Output of '$$i/auswertung.py':" >> ../../python_output.txt; \
 		echo "" >> ../../python_output.txt; \
-		python auswertung.py >> ../../output.txt  2>&1;\
-		echo "Output of compilation of '$$i/v16516.tex':" >> ../../lualatex_output.txt; \
-		echo "" >> ../../lualatex_output.txt; \
-		lualatex v16516.tex >> ../../lualatex_output.txt  2>&1;\
-		cd - >> /dev/null ;\
+		python auswertung.py >> ../../python_output.txt  2>&1;\
+		cd - >> /dev/null; \
 	done;\
-	diff -u templates/output_snapshot.txt build/output.txt  && echo "Test Passed!: No changes in output of scripts"
+	diff -u templates/output_snapshot.txt build/python_output.txt  && echo "Test Passed!: No changes in output of scripts"
 
 #diff -u templates/output_snapshot.txt build/output.txt || diff -u templates/output_snapshot.txt build/output.txt   && echo "Test Passed!: No changes in output of scripts"
 
