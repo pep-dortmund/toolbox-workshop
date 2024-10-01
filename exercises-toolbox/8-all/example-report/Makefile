@@ -26,7 +26,7 @@ step_dirs_with_latex = $(foreach step, $(steps_with_latex),build/report-example-
 solution_dirs_with_latex = $(addsuffix loesung/, $(step_dirs_with_latex))
 content_dirs_with_latex = $(addsuffix content/, $(solution_dirs_with_latex))
 
-target_datafiles_paths = $(addprefix build/report-example-step-STEP/loesung/data/, $(datafilenames))
+target_datafiles_paths = $(addprefix build/report-example-step-$(1)/loesung/data/, $(datafilenames))
 datafiles_template_step-1 = $(addprefix build/report-example-step-1/data/, $(datafilenames)) 
 datafiles_template_step-5 = $(addprefix build/report-example-step-5/data/, $(datafilenames)) 
 
@@ -67,7 +67,6 @@ test-%: | build
 	@echo " "
 	@echo $(target_scriptfiles)
 	@echo ""
-	@echo $(subst STEP,1, $(target_datafiles_paths)) 
 	@echo ""
 	@echo $(target_texfiles_v16516)
 	@echo ""
@@ -118,34 +117,34 @@ $(datafiles_template_step-1) &: | build/report-example-step-1
 $(datafiles_template_step-5) &: | build/report-example-step-5
 	cp -r templates/data_with_uncertainties build/report-example-step-5/data 
 
-$(subst STEP,1, $(target_datafiles_paths)) &: $(datafiles_without_unc) | $(word 1, $(solution_dirs))
+$(call target_datafiles_paths,1) &: $(datafiles_without_unc) | $(word 1, $(solution_dirs))
 	cp -r templates/data_without_uncertainties $(word 1, $(data_dirs))
 
-$(subst STEP,2, $(target_datafiles_paths)) &: $(datafiles_without_unc) | $(word 2, $(solution_dirs))
+$(call target_datafiles_paths,2) &: $(datafiles_without_unc) | $(word 2, $(solution_dirs))
 	cp -r templates/data_without_uncertainties $(word 2, $(data_dirs))
 
-$(subst STEP,3, $(target_datafiles_paths)) &: $(datafiles_without_unc) | $(word 3, $(solution_dirs))
+$(call target_datafiles_paths,3) &: $(datafiles_without_unc) | $(word 3, $(solution_dirs))
 	cp -r templates/data_without_uncertainties $(word 3, $(data_dirs))
 
-$(subst STEP,4, $(target_datafiles_paths)) &: $(datafiles_without_unc) | $(word 4, $(solution_dirs))
+$(call target_datafiles_paths,4) &: $(datafiles_without_unc) | $(word 4, $(solution_dirs))
 	cp -r templates/data_without_uncertainties $(word 4, $(data_dirs))
 
-$(subst STEP,5, $(target_datafiles_paths)) &: $(datafiles_with_unc) | $(word 5, $(solution_dirs))
+$(call target_datafiles_paths,5) &: $(datafiles_with_unc) | $(word 5, $(solution_dirs))
 	cp -r templates/data_with_uncertainties $(word 5, $(data_dirs))
 
-$(subst STEP,6, $(target_datafiles_paths)) &: $(datafiles_with_unc) | $(word 6, $(solution_dirs))
+$(call target_datafiles_paths,6) &: $(datafiles_with_unc) | $(word 6, $(solution_dirs))
 	cp -r templates/data_with_uncertainties $(word 6, $(data_dirs))
 
-$(subst STEP,7, $(target_datafiles_paths)) &: $(datafiles_with_unc) | $(word 7, $(solution_dirs))
+$(call target_datafiles_paths,7) &: $(datafiles_with_unc) | $(word 7, $(solution_dirs))
 	cp -r templates/data_with_uncertainties $(word 7, $(data_dirs))
 
-$(subst STEP,8, $(target_datafiles_paths)) &: $(datafiles_with_unc) | $(word 8, $(solution_dirs))
+$(call target_datafiles_paths,8) &: $(datafiles_with_unc) | $(word 8, $(solution_dirs))
 	cp -r templates/data_with_uncertainties $(word 8, $(data_dirs))
 
-$(subst STEP,9, $(target_datafiles_paths)) &: $(datafiles_with_unc) | $(word 9, $(solution_dirs))
+$(call target_datafiles_paths,9) &: $(datafiles_with_unc) | $(word 9, $(solution_dirs))
 	cp -r templates/data_with_uncertainties $(word 9, $(data_dirs))
 
-$(subst STEP,10, $(target_datafiles_paths)) &: $(datafiles_with_unc) | $(word 10, $(solution_dirs))
+$(call target_datafiles_paths,10) &: $(datafiles_with_unc) | $(word 10, $(solution_dirs))
 	cp -r templates/data_with_uncertainties $(word 10, $(data_dirs))
 
 build/report-example-step-7/loesung/content &:  | $(solution_dirs) 
