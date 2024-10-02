@@ -11,13 +11,14 @@ STEPRANGEREGEX = re.compile(r"(?:#|%)\s*<(\d*)(-(\d*)|)>")
 class Templateline:
     linenumber: int
     line: str
-    outputfile_index_range: Iterable
+    output_file_indices: Iterable
     pattern: str
     
     def __str__(self):
         pattern_length = len(self.pattern)
+        indicies =  f"{self.output_file_indices[0]},...,{self.output_file_indices[-1]}"
         # magic number 10: the amount of padding necessary to print a pattern with two two-digit numbers
-        return f"({self.pattern}) {" "*(10-pattern_length)} {self.linenumber:>3} {self.line}"
+        return f"({self.pattern} -> {indicies}) {" "*(10-pattern_length)} {self.linenumber:>3} {self.line}"
 
 
 def setup_arg_parser():
@@ -47,7 +48,7 @@ def parse_lines_and_stepranges(lines, start_step, end_step):
         
         # a line containing no pattern will not be saved to any output file, hence 'removed'
         if found is None: 
-            removed_lines.append(Templateline(i,l, (None,  None), ""))
+            removed_lines.append(Templateline(i,l, [], ""))
             continue
         groups = found.groups()
         
@@ -89,7 +90,7 @@ def parse_lines_and_stepranges(lines, start_step, end_step):
         
         # remove the steprange pattern and spaces between line content and pattern 
         line_content = STEPRANGEREGEX.sub("", l).rstrip() 
-        template_lines.append(Templateline(i, line_content, range(*step_limits), found.group()))
+        template_lines.append(Templateline(i, line_content, list(range(*step_limits)), found.group()))
 
     return template_lines, removed_lines
 
@@ -98,7 +99,8 @@ def split_stepfile_lines(template_lines, output_filepaths):
 
     lines_per_stepfile = defaultdict(list)
     for line in template_lines:
-        for step in line.outputfile_index_range:
+        print(line.output_file_indices)
+        for step in line.output_file_indices:
             lines_per_stepfile[output_filepaths[step]].append(line)
 
     return lines_per_stepfile
