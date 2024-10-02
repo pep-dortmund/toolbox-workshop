@@ -1,26 +1,27 @@
-\input{header.tex}                                                                                       % <7-10> 
-\usepackage{tikz}                                                                                        % <10-10> 
-                                                                                                         % <7-10> 
-\subject{V16516}                                                                                         % <7-10> 
-\title{Die schiefe Ebene}                                                                                % <7-10> 
-\date{%                                                                                                  % <7-10> 
-  Durchführung: 29.09.2023                                                                               % <7-10> 
-  \hspace{3em}                                                                                           % <7-10> 
-  Abgabe: 23.09.2024                                                                                     % <7-10> 
-}                                                                                                        % <7-10> 
-                                                                                                         % <7-10> 
-\begin{document}                                                                                         % <7-10> 
-                                                                                                         % <7-10> 
-\maketitle                                                                                               % <7-10> 
-\thispagestyle{empty}                                                                                    % <7-10> 
-\tableofcontents                                                                                         % <7-10> 
-\newpage                                                                                                 % <7-10> 
-                                                                                                         % <7-10> 
-\input{content/theorie.tex}                                                                              % <7-10> 
-\input{content/durchfuehrung.tex}                                                                        % <7-10> 
-\input{content/auswertung.tex}                                                                           % <7-10> 
-\input{content/diskussion.tex}                                                                           % <7-10> 
-                                                                                                         % <7-10> 
-\printbibliography{}                                                                                     % <9-10> 
-                                                                                                         % <9-10> 
-\end{document}                                                                                           % <7-10> 
+\input{header.tex}                                                                                       % <7-> 
+
+\usepackage{tikz}                                                                                        % <10-> 
+                                                                                                         % <7-> 
+\subject{V16516}                                                                                         % <7-> 
+\title{Die schiefe Ebene}                                                                                % <7-> 
+\date{%                                                                                                  % <7-> 
+  Durchführung: 29.09.2023                                                                               % <7-> 
+  \hspace{3em}                                                                                           % <7-> 
+  Abgabe: 23.09.2024                                                                                     % <7-> 
+}                                                                                                        % <7-> 
+                                                                                                         % <7-> 
+\begin{document}                                                                                         % <7-> 
+                                                                                                         % <7-> 
+\maketitle                                                                                               % <7-> 
+\thispagestyle{empty}                                                                                    % <7-> 
+\tableofcontents                                                                                         % <7-> 
+\newpage                                                                                                 % <7-> 
+                                                                                                         % <7-> 
+\input{content/theorie.tex}                                                                              % <7-> 
+\input{content/durchfuehrung.tex}                                                                        % <7-> 
+\input{content/auswertung.tex}                                                                           % <7-> 
+\input{content/diskussion.tex}                                                                           % <7-> 
+                                                                                                         % <7-> 
+\printbibliography{}                                                                                     % <9-> 
+                                                                                                         % <9-> 
+\end{document}                                                                                           % <7-> 

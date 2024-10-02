@@ -1,139 +1,139 @@
-\documentclass[                                                                                   % <7-10>
-  bibliography=totoc,     % Literatur im Inhaltsverzeichnis                                       % <9-10>
-  captions=tableheading,  % Tabellenüberschriften                                                 % <9-10>
-  titlepage=firstiscover, % Titelseite ist Deckblatt                                              % <7-10>
-]{scrartcl}                                                                                       % <7-10>
-                                                                                                  % <7-10>
-% Paket float verbessern                                                                          % <7-10>
-\usepackage{scrhack}                                                                              % <9-10>
-                                                                                                  % <7-10>
-% Warnung, falls nochmal kompiliert werden muss                                                   % <7-10>
-\usepackage[aux]{rerunfilecheck}                                                                  % <7-10>
-                                                                                                  % <7-10>
-% unverzichtbare Mathe-Befehle                                                                    % <7-10>
-\usepackage{amsmath}                                                                              % <7-10>
-% viele Mathe-Symbole                                                                             % <7-10>
-\usepackage{amssymb}                                                                              % <7-10>
-% Erweiterungen für amsmath                                                                       % <7-10>
-\usepackage{mathtools}                                                                            % <7-10>
-                                                                                                  % <7-10>
-% Fonteinstellungen                                                                               % <7-10>
-\usepackage{fontspec}                                                                             % <7-10>
-% Latin Modern Fonts werden automatisch geladen                                                   % <7-10>
-% Alternativ zum Beispiel:                                                                        % <7-10>
-%\setromanfont{Libertinus Serif}                                                                  % <7-10>
-%\setsansfont{Libertinus Sans}                                                                    % <7-10>
-%\setmonofont{Libertinus Mono}                                                                    % <7-10>
-                                                                                                  % <7-10>
-% Wenn man andere Schriftarten gesetzt hat,                                                       % <7-10>
-% sollte man das Seiten-Layout neu berechnen lassen                                               % <7-10>
-\recalctypearea{}                                                                                 % <7-10>
-                                                                                                  % <7-10>
-% deutsche Spracheinstellungen                                                                    % <7-10>
-\usepackage[ngerman]{babel}                                                                       % <7-10>
-                                                                                                  % <7-10>
-                                                                                                  % <7-10>
-\usepackage[                                                                                      % <7-10>
-  math-style=ISO,    % ┐                                                                          % <7-10>
-  bold-style=ISO,    % │                                                                          % <7-10>
-  sans-style=italic, % │ ISO-Standard folgen                                                      % <7-10>
-  nabla=upright,     % │                                                                          % <7-10>
-  partial=upright,   % │                                                                          % <7-10>
-  mathrm=sym,        % ┘                                                                          % <7-10>
-  warnings-off={           % ┐                                                                    % <7-10>
-    mathtools-colon,       % │ unnötige Warnungen ausschalten                                     % <7-10>
-    mathtools-overbracket, % │                                                                    % <7-10>
-  },                       % ┘                                                                    % <7-10>
-]{unicode-math}                                                                                   % <7-10>
-                                                                                                  % <7-10>
-% traditionelle Fonts für Mathematik                                                              % <7-10>
-\setmathfont{Latin Modern Math}                                                                   % <7-10>
-% Alternativ zum Beispiel:                                                                        % <7-10>
-%\setmathfont{Libertinus Math}                                                                    % <7-10>
-                                                                                                  % <7-10>
-\setmathfont{XITS Math}[range={scr, bfscr}]                                                       % <7-10>
-\setmathfont{XITS Math}[range={cal, bfcal}, StylisticSet=1]                                       % <7-10>
-                                                                                                  % <7-10>
-% Zahlen und Einheiten                                                                            % <8-10>
-\usepackage[                                                                                      % <8-10>
-  locale=DE,                   % deutsche Einstellungen                                           % <8-10>
-  separate-uncertainty=true,   % immer Unsicherheit mit \pm                                       % <8-10>
-  per-mode=symbol-or-fraction, % / in inline math, fraction in display math                       % <8-10>
-]{siunitx}                                                                                        % <8-10>
-                                                                                                  % <7-10>
-% chemische Formeln                                                                               % <8-10>
-\usepackage[                                                                                      % <8-10>
-  version=4,                                                                                      % <8-10>
-  math-greek=default, % ┐ mit unicode-math zusammenarbeiten                                       % <8-10>
-  text-greek=default, % ┘                                                                         % <8-10>
-]{mhchem}                                                                                         % <8-10>
-                                                                                                  % <7-10>
-% richtige Anführungszeichen                                                                      % <7-10>
-\usepackage[autostyle]{csquotes}                                                                  % <7-10>
-                                                                                                  % <7-10>
-% schöne Brüche im Text                                                                           % <7-10>
-\usepackage{xfrac}                                                                                % <8-10>
-                                                                                                  % <7-10>
-% Standardplatzierung für Floats einstellen                                                       % <9-10>
-\usepackage{float}                                                                                % <9-10>
-\floatplacement{figure}{htbp}                                                                     % <9-10>
-\floatplacement{table}{htbp}                                                                      % <9-10>
-                                                                                                  % <7-10>
-% Floats innerhalb einer Section halten                                                           % <9-10>
-\usepackage[                                                                                      % <9-10>
-  section, % Floats innerhalb der Section halten                                                  % <9-10>
-  below,   % unterhalb der Section aber auf der selben Seite ist ok                               % <9-10>
-]{placeins}                                                                                       % <9-10>
-                                                                                                  % <7-10>
-% Seite drehen für breite Tabellen: landscape Umgebung                                            % <9-10>
-\usepackage{pdflscape}                                                                            % <9-10>
-                                                                                                  % <7-10>
-% Captions schöner machen.                                                                        % <9-10>
-\usepackage[                                                                                      % <9-10>
-  labelfont=bf,        % Tabelle x: Abbildung y: ist jetzt fett                                   % <9-10>
-  font=small,          % Schrift etwas kleiner als Dokument                                       % <9-10>
-  width=0.9\textwidth, % maximale Breite einer Caption schmaler                                   % <9-10>
-]{caption}                                                                                        % <9-10>
-% subfigure, subtable, subref                                                                     % <9-10>
-\usepackage{subcaption}                                                                           % <9-10>
-                                                                                                  % <7-10>
-                                                                                                  % <7-10>
-% Grafiken können eingebunden werden                                                              % <7-10>
-\usepackage{graphicx}                                                                             % <9-10>
-                                                                                                  % <9-10>
-% schöne Tabellen                                                                                 % <9-10>
-\usepackage{tabularray}                                                                           % <9-10>
-\UseTblrLibrary{booktabs,siunitx}                                                                 % <9-10>
-                                                                                                  % <7-10>
-% Verbesserungen am Schriftbild                                                                   % <7-10>
-\usepackage{microtype}                                                                            % <10-10>
-                                                                                                  % <7-10>
-% Literaturverzeichnis                                                                            % <9-10>
-\usepackage[                                                                                      % <9-10>
-  backend=biber,                                                                                  % <9-10>
-]{biblatex}                                                                                       % <9-10>
-% Quellendatenbank                                                                                % <9-10>
-\addbibresource{lit.bib}                                                                          % <9-10>
-\addbibresource{programme.bib}                                                                    % <9-10>
-                                                                                                  % <7-10>
-% Hyperlinks im Dokument                                                                          % <7-10>
-\usepackage[                                                                                      % <7-10>
-  german,                                                                                         % <7-10>
-  unicode,        % Unicode in PDF-Attributen erlauben                                            % <7-10>
-  pdfusetitle,    % Titel, Autoren und Datum als PDF-Attribute                                    % <7-10>
-  pdfcreator={},  % ┐ PDF-Attribute säubern                                                       % <7-10>
-  pdfproducer={}, % ┘                                                                             % <7-10>
-]{hyperref}                                                                                       % <7-10>
-% erweiterte Bookmarks im PDF                                                                     % <7-10>
-\usepackage{bookmark}                                                                             % <7-10>
-                                                                                                  % <7-10>
-% Trennung von Wörtern mit Strichen                                                               % <7-10>
-\usepackage[shortcuts]{extdash}                                                                   % <7-10>
-                                                                                                  % <7-10>
-\author{%                                                                                         % <7-10>
-  Joshua Luckey\\%                                                                                % <7-10>
-  \href{mailto:joshua.luckey@udo.edu}{joshua.luckey@udo.edu}%                                     % <7-10>
-  \and%                                                                                           % <7-10>
-  PeP et al.: Toolbox Workshop\\%                                                                 % <7-10>
-  \href{mailto:pep-toolbox.physik@lists.tu-dortmund.de}{pep-toolbox.physik@lists.tu-dortmund.de}  % <7-10>
-}                                                                                                 % <7-10>
+\documentclass[                                                                                   % <7->
+  bibliography=totoc,     % Literatur im Inhaltsverzeichnis                                       % <9->
+  captions=tableheading,  % Tabellenüberschriften                                                 % <9->
+  titlepage=firstiscover, % Titelseite ist Deckblatt                                              % <7->
+]{scrartcl}                                                                                       % <7->
+                                                                                                  % <7->
+% Paket float verbessern                                                                          % <7->
+\usepackage{scrhack}                                                                              % <9->
+                                                                                                  % <7->
+% Warnung, falls nochmal kompiliert werden muss                                                   % <7->
+\usepackage[aux]{rerunfilecheck}                                                                  % <7->
+                                                                                                  % <7->
+% unverzichtbare Mathe-Befehle                                                                    % <7->
+\usepackage{amsmath}                                                                              % <7->
+% viele Mathe-Symbole                                                                             % <7->
+\usepackage{amssymb}                                                                              % <7->
+% Erweiterungen für amsmath                                                                       % <7->
+\usepackage{mathtools}                                                                            % <7->
+                                                                                                  % <7->
+% Fonteinstellungen                                                                               % <7->
+\usepackage{fontspec}                                                                             % <7->
+% Latin Modern Fonts werden automatisch geladen                                                   % <7->
+% Alternativ zum Beispiel:                                                                        % <7->
+%\setromanfont{Libertinus Serif}                                                                  % <7->
+%\setsansfont{Libertinus Sans}                                                                    % <7->
+%\setmonofont{Libertinus Mono}                                                                    % <7->
+                                                                                                  % <7->
+% Wenn man andere Schriftarten gesetzt hat,                                                       % <7->
+% sollte man das Seiten-Layout neu berechnen lassen                                               % <7->
+\recalctypearea{}                                                                                 % <7->
+                                                                                                  % <7->
+% deutsche Spracheinstellungen                                                                    % <7->
+\usepackage[ngerman]{babel}                                                                       % <7->
+                                                                                                  % <7->
+                                                                                                  % <7->
+\usepackage[                                                                                      % <7->
+  math-style=ISO,    % ┐                                                                          % <7->
+  bold-style=ISO,    % │                                                                          % <7->
+  sans-style=italic, % │ ISO-Standard folgen                                                      % <7->
+  nabla=upright,     % │                                                                          % <7->
+  partial=upright,   % │                                                                          % <7->
+  mathrm=sym,        % ┘                                                                          % <7->
+  warnings-off={           % ┐                                                                    % <7->
+    mathtools-colon,       % │ unnötige Warnungen ausschalten                                     % <7->
+    mathtools-overbracket, % │                                                                    % <7->
+  },                       % ┘                                                                    % <7->
+]{unicode-math}                                                                                   % <7->
+                                                                                                  % <7->
+% traditionelle Fonts für Mathematik                                                              % <7->
+\setmathfont{Latin Modern Math}                                                                   % <7->
+% Alternativ zum Beispiel:                                                                        % <7->
+%\setmathfont{Libertinus Math}                                                                    % <7->
+                                                                                                  % <7->
+\setmathfont{XITS Math}[range={scr, bfscr}]                                                       % <7->
+\setmathfont{XITS Math}[range={cal, bfcal}, StylisticSet=1]                                       % <7->
+                                                                                                  % <7->
+% Zahlen und Einheiten                                                                            % <8->
+\usepackage[                                                                                      % <8->
+  locale=DE,                   % deutsche Einstellungen                                           % <8->
+  separate-uncertainty=true,   % immer Unsicherheit mit \pm                                       % <8->
+  per-mode=symbol-or-fraction, % / in inline math, fraction in display math                       % <8->
+]{siunitx}                                                                                        % <8->
+                                                                                                  % <7->
+% chemische Formeln                                                                               % <8->
+\usepackage[                                                                                      % <8->
+  version=4,                                                                                      % <8->
+  math-greek=default, % ┐ mit unicode-math zusammenarbeiten                                       % <8->
+  text-greek=default, % ┘                                                                         % <8->
+]{mhchem}                                                                                         % <8->
+                                                                                                  % <7->
+% richtige Anführungszeichen                                                                      % <7->
+\usepackage[autostyle]{csquotes}                                                                  % <7->
+                                                                                                  % <7->
+% schöne Brüche im Text                                                                           % <7->
+\usepackage{xfrac}                                                                                % <8->
+                                                                                                  % <7->
+% Standardplatzierung für Floats einstellen                                                       % <9->
+\usepackage{float}                                                                                % <9->
+\floatplacement{figure}{htbp}                                                                     % <9->
+\floatplacement{table}{htbp}                                                                      % <9->
+                                                                                                  % <7->
+% Floats innerhalb einer Section halten                                                           % <9->
+\usepackage[                                                                                      % <9->
+  section, % Floats innerhalb der Section halten                                                  % <9->
+  below,   % unterhalb der Section aber auf der selben Seite ist ok                               % <9->
+]{placeins}                                                                                       % <9->
+                                                                                                  % <7->
+% Seite drehen für breite Tabellen: landscape Umgebung                                            % <9->
+\usepackage{pdflscape}                                                                            % <9->
+                                                                                                  % <7->
+% Captions schöner machen.                                                                        % <9->
+\usepackage[                                                                                      % <9->
+  labelfont=bf,        % Tabelle x: Abbildung y: ist jetzt fett                                   % <9->
+  font=small,          % Schrift etwas kleiner als Dokument                                       % <9->
+  width=0.9\textwidth, % maximale Breite einer Caption schmaler                                   % <9->
+]{caption}                                                                                        % <9->
+% subfigure, subtable, subref                                                                     % <9->
+\usepackage{subcaption}                                                                           % <9->
+                                                                                                  % <7->
+                                                                                                  % <7->
+% Grafiken können eingebunden werden                                                              % <7->
+\usepackage{graphicx}                                                                             % <9->
+                                                                                                  % <9->
+% schöne Tabellen                                                                                 % <9->
+\usepackage{tabularray}                                                                           % <9->
+\UseTblrLibrary{booktabs,siunitx}                                                                 % <9->
+                                                                                                  % <7->
+% Verbesserungen am Schriftbild                                                                   % <7->
+\usepackage{microtype}                                                                            % <10->
+                                                                                                  % <7->
+% Literaturverzeichnis                                                                            % <9->
+\usepackage[                                                                                      % <9->
+  backend=biber,                                                                                  % <9->
+]{biblatex}                                                                                       % <9->
+% Quellendatenbank                                                                                % <9->
+\addbibresource{lit.bib}                                                                          % <9->
+\addbibresource{programme.bib}                                                                    % <9->
+                                                                                                  % <7->
+% Hyperlinks im Dokument                                                                          % <7->
+\usepackage[                                                                                      % <7->
+  german,                                                                                         % <7->
+  unicode,        % Unicode in PDF-Attributen erlauben                                            % <7->
+  pdfusetitle,    % Titel, Autoren und Datum als PDF-Attribute                                    % <7->
+  pdfcreator={},  % ┐ PDF-Attribute säubern                                                       % <7->
+  pdfproducer={}, % ┘                                                                             % <7->
+]{hyperref}                                                                                       % <7->
+% erweiterte Bookmarks im PDF                                                                     % <7->
+\usepackage{bookmark}                                                                             % <7->
+                                                                                                  % <7->
+% Trennung von Wörtern mit Strichen                                                               % <7->
+\usepackage[shortcuts]{extdash}                                                                   % <7->
+                                                                                                  % <7->
+\author{%                                                                                         % <7->
+  Joshua Luckey\\%                                                                                % <7->
+  \href{mailto:joshua.luckey@udo.edu}{joshua.luckey@udo.edu}%                                     % <7->
+  \and%                                                                                           % <7->
+  PeP et al.: Toolbox Workshop\\%                                                                 % <7->
+  \href{mailto:pep-toolbox.physik@lists.tu-dortmund.de}{pep-toolbox.physik@lists.tu-dortmund.de}  % <7->
+}                                                                                                 % <7->
