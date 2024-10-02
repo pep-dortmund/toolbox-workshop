@@ -12,9 +12,12 @@ class Templateline:
     linenumber: int
     line: str
     outputfile_index_range: Iterable
+    pattern: str
     
     def __str__(self):
-        return f"{self.linenumber:>3} {self.line}"
+        pattern_length = len(self.pattern)
+        # magic number 10: the amount of padding necessary to print a pattern with two two-digit numbers
+        return f"({self.pattern}) {" "*(10-pattern_length)} {self.linenumber:>3} {self.line}"
 
 
 def setup_arg_parser():
@@ -44,7 +47,7 @@ def parse_lines_and_stepranges(lines, start_step, end_step):
         
         # a line containing no pattern will not be saved to any output file, hence 'removed'
         if found is None: 
-            removed_lines.append(Templateline(i,l, (None,  None)))
+            removed_lines.append(Templateline(i,l, (None,  None), ""))
             continue
         groups = found.groups()
         
@@ -83,7 +86,7 @@ def parse_lines_and_stepranges(lines, start_step, end_step):
         
         # remove the steprange pattern and spaces between line content and pattern 
         line_content = STEPRANGEREGEX.sub("", l).rstrip() 
-        template_lines.append(Templateline(i, line_content, range(*step_limits)))
+        template_lines.append(Templateline(i, line_content, range(*step_limits), found.group()))
 
     return template_lines, removed_lines
 
