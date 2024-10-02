@@ -97,7 +97,6 @@ def parse_lines_and_stepranges(lines, start_step, end_step):
 
 
 def split_stepfile_lines(template_lines, output_filepaths, start_step):
-    # mapping the start_step to the first given output file
 
     lines_per_stepfile = defaultdict(list)
     for line in template_lines:
