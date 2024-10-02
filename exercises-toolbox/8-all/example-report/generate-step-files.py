@@ -11,7 +11,7 @@ STEPRANGEREGEX = re.compile(r"(?:#|%)\s*<(\d*)(-(\d*)|)>")
 class Templateline:
     linenumber: int
     line: str
-    step_range: Iterable
+    outputfile_index_range: Iterable
     
     def __str__(self):
         return f"{self.linenumber:>3} {self.line}"
@@ -36,8 +36,7 @@ def setup_arg_parser():
                         help="Filepaths to the output files (you need to use one Option -o <file> for each file). Hint: use -o=file{1,2,3} for example, to generate the multiple options.)")
     return parser                    
 
-def parse_lines_and_stepranges(lines, max_upper_limit):
-    #step_ranges = []
+def parse_lines_and_stepranges(lines, start_step, end_step):
     template_lines = []
     removed_lines = []
     for i,l in enumerate(lines, start=1):
@@ -52,27 +51,35 @@ def parse_lines_and_stepranges(lines, max_upper_limit):
         try: 
             lower_limit = int(groups[0])
         except ValueError:
-            raise ValueError(f"The pattern in line {i} of the template file has not starting step")
-        
+            raise ValueError(f"The pattern ({found.group()}) in line {i} of the template file has not starting step")
+       
+
+
         # The dash and second number can be omitted:
         # e.g. <4> is equivalent to <4-4>
         if (not groups[1]) and (groups[2] is None):
-            # The upper limit has to be increased by one to be inclusive as a range 
-            step_limits = (lower_limit, lower_limit + 1)
+            # Since the end_step is calculated from the number of output files given
+            # the lower limit has to be changed to be less then the upper limit
+            step_limits = (lower_limit - start_step, lower_limit - start_step)
 
         # If the second number is omitted but the dash is not, the upper limit is the last step: 
         # e.g. <4-> is equivalent to <4-10> if 10 output files are generated
         elif not groups[2]:
-            step_limits = (lower_limit, max_upper_limit + 1)
+            step_limits = (lower_limit - start_step, end_step)
 
         # both numbers are present in the pattern
         else:
-            step_limits = (lower_limit, int(groups[2]) + 1)
+            upper_limit = int(groups[2])
+            # if upper and lower step are the same, both have to be reduced by start_step
+            if upper_limit == lower_limit:
+                upper_limit -= start_step
 
-        num_files_with_line = step_limits[1] - step_limits[0]
-        if num_files_with_line > max_upper_limit:
-            raise ValueError(f"The number of given output files is {max_upper_limit},"
-            f" but line {i} of the template file is expected to appear in {num_files_with_line} output files (pattern: {found.group()}).") 
+            step_limits = (lower_limit - start_step, upper_limit)
+
+        num_files_with_current_line = (step_limits[1] - step_limits[0])
+        if num_files_with_current_line > end_step:
+            raise ValueError(f"The number of given output files is {end_step},"
+            f" but line {i} of the template file is expected to appear in {num_files_with_current_line} output files (pattern: {found.group()}).") 
         
         # remove the steprange pattern and spaces between line content and pattern 
         line_content = STEPRANGEREGEX.sub("", l).rstrip() 
@@ -83,12 +90,11 @@ def parse_lines_and_stepranges(lines, max_upper_limit):
 
 def split_stepfile_lines(template_lines, output_filepaths, start_step):
     # mapping the start_step to the first given output file
-    map_first_step = lambda step: step - (start_step - 1)
 
     lines_per_stepfile = defaultdict(list)
     for line in template_lines:
-        for step in line.step_range:
-            lines_per_stepfile[output_filepaths[map_first_step(step)-1]].append(line)
+        for step in line.outputfile_index_range:
+            lines_per_stepfile[output_filepaths[step]].append(line)
 
     return lines_per_stepfile
 
@@ -113,7 +119,7 @@ def main():
     with open(template_filepath) as fh:
         template_lines = fh.readlines()
 
-    template_lines, removed_lines = parse_lines_and_stepranges(template_lines, len(output_filepaths)) 
+    template_lines, removed_lines = parse_lines_and_stepranges(template_lines, args.start_step, len(output_filepaths)) 
 
     lines_per_stepfiles = split_stepfile_lines(template_lines, output_filepaths, args.start_step)
 
