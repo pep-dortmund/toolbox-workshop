@@ -52,32 +52,37 @@ def parse_lines_and_stepranges(lines, start_step, end_step):
         groups = found.groups()
         
         try: 
-            lower_limit = int(groups[0])
+            lower_step_limit = int(groups[0])
         except ValueError:
-            raise ValueError(f"The pattern ({found.group()}) in line {i} of the template file has not starting step")
+            raise ValueError(f"The pattern ({found.group()}) in line {i} of the template file has not starting step.")
+        if lower_step_limit > end_step:
+            raise ValueError(f"The number of output filepaths ({end_step}) is lower then the lower limit in the pattern '{found.group()}' in line {i} of the template file.")
        
-
-
+        # Since the end_step is calculated from the number of output files given
+        # the lower index has to be changed to be less then the upper index
+        lower_index = lower_step_limit - start_step
+        if lower_index < 0:
+            raise ValueError(f"The given star_step {start_step} is higher then the lower limit in the pattern '{found.group()}' in line {i} of the template file.")
+        
         # The dash and second number can be omitted:
         # e.g. <4> is equivalent to <4-4>
         if (not groups[1]) and (groups[2] is None):
-            # Since the end_step is calculated from the number of output files given
-            # the lower limit has to be changed to be less then the upper limit
-            step_limits = (lower_limit - start_step, lower_limit - start_step)
+            # To include anything the upper index has to be increased by 1
+            step_limits = (lower_index, lower_index + 1)
 
         # If the second number is omitted but the dash is not, the upper limit is the last step: 
         # e.g. <4-> is equivalent to <4-10> if 10 output files are generated
         elif not groups[2]:
-            step_limits = (lower_limit - start_step, end_step)
+            # the number of files given is used for the upper index (it is already 1 greater then the highest possible index)
+            upper_index = end_step
+            step_limits = (lower_index, upper_index)
 
         # both numbers are present in the pattern
         else:
-            upper_limit = int(groups[2])
-            # if upper and lower step are the same, both have to be reduced by start_step
-            if upper_limit == lower_limit:
-                upper_limit -= start_step
+            upper_step_limit = int(groups[2])
+            upper_index = upper_step_limit - start_step
 
-            step_limits = (lower_limit - start_step, upper_limit)
+            step_limits = (lower_index, upper_index)
 
         num_files_with_current_line = (step_limits[1] - step_limits[0])
         if num_files_with_current_line > end_step:
