@@ -9,14 +9,16 @@ datafiles_without_unc = $(addprefix templates/data_without_uncertainties/, $(dat
 datafiles_with_unc = $(addprefix templates/data_with_uncertainties/, $(datafilenames))
 
 
-steps_without_unc = 1 2 3 4
+steps_without_unc = 1 2 3 4 
 steps_with_unc = 5 6 7 8 9 10
 steps_with_latex = 7 8 9 10
+
 
 steps = $(steps_without_unc) $(steps_with_unc)
 
 template_taskfiles = $(foreach step, $(steps), $(addprefix templates/, aufgabe-step-$(step).txt))
 template_bibfiles = $(addprefix templates/, lit.bib programme.bib)
+template_setup_image = templates/experimental-setup.png
 
 step_dirs = $(foreach step, $(steps),build/report-example-step-$(step)/)
 solution_dirs = $(addsuffix loesung/, $(step_dirs))
@@ -45,7 +47,7 @@ target_texfiles_theorie = $(addsuffix content/theorie.tex, $(solution_dirs_with_
 target_texfiles_auswertung = $(addsuffix content/auswertung.tex, $(solution_dirs_with_latex))
 target_texfiles_diskussion = $(addsuffix content/diskussion.tex, $(solution_dirs_with_latex))
 target_bibfiles = $(addsuffix lit.bib, $(wordlist 3,4,$(solution_dirs_with_latex))) $(addsuffix programme.bib, $(wordlist 3,4,$(solution_dirs_with_latex)))
-
+target_setup_image = build/report-example-step-9/loesung/experimental-setup.png
 
 
 
@@ -60,10 +62,14 @@ $(target_texfiles_theorie) \
 $(target_texfiles_auswertung) \
 $(target_texfiles_diskussion) \
 $(target_bibfiles)\
+$(target_setup_image)
 
 
 build/report-example-step-%/aufgabe.txt &: $(template_taskfiles) | $(solution_dirs)
 	cp $(word $*, $(template_taskfiles)) build/report-example-step-$*/aufgabe.txt
+
+$(target_setup_image) : $(template_setup_image) |$(solution_dirs_with_latex)
+	cp $(template_setup_image) $(target_setup_image)
 
 $(target_bibfiles) &: $(template_bibfiles) | $(solution_dirs_with_latex)
 	cp templates/lit.bib $(word 1, $(target_bibfiles))
