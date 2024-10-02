@@ -5,7 +5,7 @@ from collections import defaultdict
 from dataclasses import dataclass
 from collections.abc import Iterable
 
-STEPRANGEREGEX = re.compile(r"(?:#|%)\s<(\d*)(-(\d*)|)>")
+STEPRANGEREGEX = re.compile(r"(?:#|%)\s*<(\d*)(-(\d*)|)>")
 
 @dataclass    
 class Templateline:
