@@ -168,7 +168,7 @@ test_step_scripts: all
 	for i do\
 		cd "$$i"; \
 		echo "$$PWD"; \
-		echo "Output of '$$i/auswertung.py':" >> ../../python_output.txt; \
+		echo "Output of '$${i}auswertung.py':" >> ../../python_output.txt; \
 		echo "" >> ../../python_output.txt; \
 		python auswertung.py >> ../../python_output.txt;\
 		cd - >> /dev/null; \
