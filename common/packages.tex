@@ -111,7 +111,11 @@
   shapes,
 }
 
-\usepackage[siunitx]{circuitikz}
+\usepackage[
+  europeanresistors, % follow DIN EN 60617-4
+  americaninductors, % follow DIN EN 60617-4
+  siunitx
+]{circuitikz}
 
 \usegdlibrary{trees}
 \usepackage[compat=1.1.0]{tikz-feynman}
