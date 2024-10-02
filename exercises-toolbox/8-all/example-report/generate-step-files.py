@@ -55,8 +55,6 @@ def parse_lines_and_stepranges(lines, start_step, end_step):
             lower_step_limit = int(groups[0])
         except ValueError:
             raise ValueError(f"The pattern ({found.group()}) in line {i} of the template file has not starting step.")
-        if lower_step_limit > end_step:
-            raise ValueError(f"The number of output filepaths ({end_step}) is lower then the lower limit in the pattern '{found.group()}' in line {i} of the template file.")
        
         # Since the end_step is calculated from the number of output files given
         # the lower index has to be changed to be less then the upper index
@@ -80,9 +78,9 @@ def parse_lines_and_stepranges(lines, start_step, end_step):
         # both numbers are present in the pattern
         else:
             upper_step_limit = int(groups[2])
-            upper_index = upper_step_limit - start_step
+            upper_index = upper_step_limit - start_step + 1
 
-            step_limits = (lower_index, upper_index)
+            step_limits = (lower_index, upper_index) 
 
         num_files_with_current_line = (step_limits[1] - step_limits[0])
         if num_files_with_current_line > end_step:
