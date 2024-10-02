@@ -84,6 +84,82 @@
   \end{CodeExample}
 \end{frame}
 
+%% CircuiTikZ
+\begin{frame}[fragile]{%
+  CircuiTi\textit{k}Z
+  \hfill
+  \doc{http://mirrors.ctan.org/graphics/pgf/contrib/circuitikz/doc/circuitikzmanual.pdf}{circuitikz}
+}
+  \begin{Packages}
+    \begin{minted}{latex}
+      \usepackage[
+        europeanresistors, % DIN EN 60617-4 folgen
+        americaninductors, % DIN EN 60617-4 folgen
+        siunitx
+      ]{circuitikz}
+    \end{minted}
+  \end{Packages}
+  \begin{CodeExample}{0.65}[Einfacher Schaltkreis]
+    \begin{minted}{latex}
+      \begin{circuitikz}
+        \draw (0,0) -- (0, 1.3)
+          to[open, o-o, l=$U$] (0, 1.8)
+          -- (0,3)
+          -- (2,3)
+          to[R] (2,0)
+          -- (0,0);
+      \end{circuitikz}
+    \end{minted}
+  \CodeResult
+    \begin{circuitikz}
+      \draw (0,0) -- (0, 1.3)
+          to[open, o-o, l=$U$] (0, 1.8)
+          -- (0,3) -- (2,3)
+          to[R=$R$] (2,0)
+          -- (0,0);
+      \end{circuitikz}
+  \end{CodeExample}
+\end{frame}
+
+\begin{frame}[fragile]{CircuiTi\textit{k}Z}
+  \begin{CodeExample}{0.68}[Komplexerer Schwingkreis]
+    \begin{minted}{latex}
+      \begin{circuitikz}
+        \ctikzset{bipoles/cuteswitch/thickness=0.5}
+        \draw (0, 0) -- (0, 3)
+          to[R, l=$R$, a=\qty{14.0}{\ohm}] (2, 3)
+          to[battery2, v^<=\qty{34.0}{\volt}] (3, 3)
+          -- (4, 3);
+        \draw (0, 1.5) -- (2, 1.5)
+          to[C=\qty{6.20}{\micro\farad}] (3, 1.5)
+          -- (3.35, 1.5) node[right, cute spdt mid] (S) {};
+        \draw (4, 3) -- (S.out 1) node[right] {$a$};
+        \draw (0, 0) -- (1.8, 0)
+          to[L=\qty{54.0}{\milli\henry}] (3.2, 0)
+          -- (4, 0)
+          -- (S.out 2) node[right] {$b$};
+      \end{circuitikz}
+    \end{minted}
+  \CodeResult
+    \begin{circuitikz}
+        \ctikzset{bipoles/cuteswitch/thickness=0.5}
+        \draw (0, 0) -- (0, 3)
+          to[R, l=$R$, a=\qty{14.0}{\ohm}] (2, 3)
+          to[battery2, v^<=\qty{34.0}{\volt}] (3, 3)
+          -- (4, 3);
+        \draw (0, 1.5) -- (2, 1.5)
+          to[C=\qty{6.20}{\micro\farad}] (3, 1.5)
+          -- (3.35, 1.5) node[right, cute spdt mid] (S) {};
+        \draw (4, 3) -- (S.out 1) node[right] {$a$};
+        \draw (0, 0) -- (1.8, 0)
+          to[L=\qty{54.0}{\milli\henry}] (3.2, 0)
+          -- (4, 0)
+          -- (S.out 2) node[right] {$b$};
+     \end{circuitikz}
+  \end{CodeExample}
+\end{frame}
+
+%% Tikz-Feynman
 \begin{frame}[fragile]{%
   Tikz-Feynman
   \hfill
@@ -128,73 +204,5 @@
       a -- [photon, edge label=$\symup{γ}$] b,
       f2 [particle=$\symup{μ}^+$] -- [fermion] b -- [fermion] f1 [particle=$\symup{μ}^-$],
     };
-  \end{CodeExample}
-\end{frame}
-
-\begin{frame}[fragile]{%
-  CircuiTi\textit{k}Z
-  \hfill
-  \doc{http://mirrors.ctan.org/graphics/pgf/contrib/circuitikz/doc/circuitikzmanual.pdf}{circuitikz}
-}
-  \begin{Packages}
-    \mintinline{latex}+\usepackage[siunitx]{circuitikz}+
-  \end{Packages}
-  \begin{CodeExample}{0.65}[Einfacher Schaltkreis]
-    \begin{minted}{latex}
-      \begin{circuitikz}
-        \draw (0,0) -- (0, 1.3)
-          to[open, o-o, l=$U$] (0, 1.8)
-          -- (0,3)
-          -- (2,3)
-          to[R] (2,0)
-          -- (0,0);
-      \end{circuitikz}
-    \end{minted}
-  \CodeResult
-    \begin{circuitikz}
-      \draw (0,0) -- (0, 1.3)
-          to[open, o-o, l=$U$] (0, 1.8)
-          -- (0,3) -- (2,3)
-          to[R=$R$] (2,0)
-          -- (0,0);
-      \end{circuitikz}
-  \end{CodeExample}
-\end{frame}
-
-\begin{frame}[fragile]{CircuiTi\textit{k}Z}
-  \begin{CodeExample}{0.65}[Komplexerer Schwingkreis]
-    \begin{minted}{latex}
-      \begin{circuitikz}
-        \ctikzset{bipoles/cuteswitch/thickness=0.5}
-        \draw (0, 0) -- (0, 3)
-          to[R=\qty{14.0}{\ohm}] (2, 3)
-          to[battery2, v^<=\qty{34.0}{\volt}] (3, 3)
-          -- (4, 3);
-        \draw (0, 1.5) -- (2, 1.5)
-          to[C=\qty{6.20}{\micro\farad}] (3, 1.5)
-          -- (3.35, 1.5) node[right, cute spdt up] (S2) {};
-        \draw (4, 3) -- (S2.out 1);
-        \draw (S2.out 2) -- (4, 0)
-          -- (3, 0)
-          to[L=\qty{54.0}{\milli\henry}] (2, 0)
-          -- (0,0);
-      \end{circuitikz}
-    \end{minted}
-  \CodeResult
-    \begin{circuitikz}
-        \ctikzset{bipoles/cuteswitch/thickness=0.5}
-        \draw (0, 0) -- (0, 3)
-          to[R=\qty{14.0}{\ohm}] (2, 3)
-          to[battery2, v^<=\qty{34.0}{\volt}] (3, 3)
-          -- (4, 3);
-        \draw (0, 1.5) -- (2, 1.5)
-          to[C=\qty{6.20}{\micro\farad}] (3, 1.5)
-          -- (3.35, 1.5) node[right, cute spdt up] (S2) {};
-        \draw (4, 3) -- (S2.out 1) node[right] {$a$};
-        \draw (S2.out 2) node[right] {$b$} -- (4, 0)
-          -- (3, 0)
-          to[L=\qty{54.0}{\milli\henry}] (2, 0)
-          -- (0,0);
-     \end{circuitikz}
   \end{CodeExample}
 \end{frame}
