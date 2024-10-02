@@ -96,7 +96,7 @@ def parse_lines_and_stepranges(lines, start_step, end_step):
     return template_lines, removed_lines
 
 
-def split_stepfile_lines(template_lines, output_filepaths, start_step):
+def split_stepfile_lines(template_lines, output_filepaths):
 
     lines_per_stepfile = defaultdict(list)
     for line in template_lines:
@@ -128,7 +128,7 @@ def main():
 
     template_lines, removed_lines = parse_lines_and_stepranges(template_lines, args.start_step, len(output_filepaths)) 
 
-    lines_per_stepfiles = split_stepfile_lines(template_lines, output_filepaths, args.start_step)
+    lines_per_stepfiles = split_stepfile_lines(template_lines, output_filepaths)
 
     if args.verbose:
         print("Removed lines:")
