@@ -6,6 +6,7 @@ in einer Höhe $h$ auf der schiefen Ebene in vollkommener Ruhe.                 
                                                                                                                                           % <7->
 \begin{figure}                                                                                                                            % <9->
   \centering                                                                                                                              % <9->
+  \includegraphics[width=0.5\textwidth]{experimental-setup.png}                                                                          % <9-9>
   \begin{tikzpicture}[scale=3]                                                                                                            % <10->
     \draw (0,0) -- (3,0) --node[below, near end]{$l$} (0,1) -- cycle;                                                                     % <10->
     \draw (0.25,1.19)node[below]{$m$} circle (0.25cm);                                                                                    % <10->
