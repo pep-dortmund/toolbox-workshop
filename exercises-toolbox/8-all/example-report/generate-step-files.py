@@ -99,7 +99,6 @@ def split_stepfile_lines(template_lines, output_filepaths):
 
     lines_per_stepfile = defaultdict(list)
     for line in template_lines:
-        print(line.output_file_indices)
         for step in line.output_file_indices:
             lines_per_stepfile[output_filepaths[step]].append(line)
 
