@@ -92,7 +92,7 @@ $(target_texfiles_diskussion) &: generate-step-files.py templates/latex/diskussi
 
 $(target_pythonfiles) &: generate-step-files.py templates/auswertung_py_template | $(solution_dirs)
 	touch $(word 1, $(target_pythonfiles))
-	python generate-step-files.py -t templates/auswertung_py_template $(addprefix -o=, $(target_pythonfiles))
+	python generate-step-files.py -t templates/auswertung_py_template $(addprefix -o=, $(wordlist 2,10,$(target_pythonfiles))) -s 2
 
 $(datafiles_template_step-1) &: | build/report-example-step-1
 	cp -r templates/data_without_uncertainties build/report-example-step-1/data 
