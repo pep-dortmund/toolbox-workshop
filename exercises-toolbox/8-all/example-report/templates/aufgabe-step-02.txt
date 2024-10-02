@@ -1,9 +1,8 @@
-# Realistisches Beispiel Protokoll
+# Beispiel Protokoll
 
 Einleitung:
 Um dieser Aufgabe sinnvoll folgen zu können sollte diese von Anfang an bearbeitet werden. Folgt den 
-Anweisungen in den 'aufgabe.txt' Dateien im Ordner 'Realistisches-Beispiel-Protokoll', beginnend 
-im Aufgabenordner '1-python'.
+Anweisungen in den 'aufgabe.txt' Dateien in den Unterordnern des Ordners 'example-report'.
 
 Aufgabe:
 Mit den Informationen zu numpy habt ihr nun die Möglichkeit die Messwerte aus dem Ordner 'data'
