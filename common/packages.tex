@@ -87,7 +87,7 @@
 \usepackage{pdflscape}
 
 \usepackage{fancyvrb}
-\usepackage[outputdir=build]{minted}
+\usepackage[outputdir=build]{minted2}
 \setminted{
   autogobble,
   breaklines,
@@ -110,6 +110,12 @@
   shadows,
   shapes,
 }
+
+\usepackage[
+  europeanresistors, % follow DIN EN 60617-4
+  americaninductors, % follow DIN EN 60617-4
+  siunitx
+]{circuitikz}
 
 \usegdlibrary{trees}
 \usepackage[compat=1.1.0]{tikz-feynman}
