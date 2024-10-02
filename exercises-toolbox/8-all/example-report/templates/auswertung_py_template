@@ -420,7 +420,7 @@ ax.set_ylabel("$t$ / s")                                                        
                                                                                                                                   # <2->
 ax.plot(h_c_mean, t_c_mean, "k+", label="Daten: Kugel")                                                                           # <4-4>
 ax.errorbar(noms(h_b_mean), noms(t_b_mean), yerr=stds(t_b_mean), fmt="k+", label="Daten: Kugel")                                  # <5->
-ax.plot(h_plot, fit_I_cylinder(h_plot, *params),  label="Fit")                                                                    # <4->
+ax.plot(h_plot, fit_I_ball(h_plot, *params),  label="Fit")                                                                    # <4->
 ax.legend()                                                                                                                       # <4->
 fig.savefig("plot-I_kugel.pdf")                                                                                                   # <4->
                                                                                                                                   # <2->
