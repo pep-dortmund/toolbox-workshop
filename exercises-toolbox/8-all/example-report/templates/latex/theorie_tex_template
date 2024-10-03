@@ -44,7 +44,7 @@ t^2 &= \frac{2l^2}{gh} \left(1 + \frac{I}{mr^2} \right)                         
                                                                                                                                           % <7->
 Aus \eqref{eq:tsquared} ergeben sich dann die jeweiligen Ausgleichsfunktionen für beide Versuchsteile.                                    % <9->
                                                                                                                                           % <7->
-Für die Bestimmung der Trägheitsmomente wird nur noch die Quadratwurzel von \eqref{eq:tsquared}                                           % <7->
+Für die Bestimmung der Trägheitsmomente wird nur noch die Quadratwurzel von \eqref{eq:tsquared}                                           % <9->
 berechnet und ein Startzeit als Parameter hinzugefügt,                                                                                    % <7->
                                                                                                                                           % <7->
 \begin{equation}                                                                                                                          % <8->
