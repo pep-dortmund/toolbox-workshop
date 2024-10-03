@@ -53,7 +53,7 @@ t(h) = \sqrt{\frac{2l^2}{gh} \left(1 + \frac{I}{mr^2} \right)} + t_0.           
 \end{equation}                                                                                                                            % <8->
                                                                                                                                           % <7->
 Dabei sind das Trägheitsmoment $I$ und die Startzeit $t_0$ die Parameter für die Ausgleichsrechnung.                                      % <7->
-Die notwendigen physikalischen Größen der Objekte sind in \autoref{sec:Auswertung} angegeben.                                             % <7->
+Die notwendigen physikalischen Größen der Objekte sind in \autoref{sec:Auswertung} angegeben.                                             % <9->
                                                                                                                                           % <7->
 Für die Bestimmung der Gravitationsbeschleunigung $g$ unter Annahme der theoretischen Trägheitsmomente                                    % <7->
 für Kugel $I_\text{K}$ und Hohlzylinder $I_\text{Z}$                                                                                      % <7->
