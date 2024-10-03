@@ -1,0 +1,7 @@
+all: report.txt
+
+report.txt: plot1.pdf plot2.pdf plot3.pdf plot4.pdf plot5.pdf
+  touch report.txt
+
+plot1.pdf plot2.pdf plot3.pdf plot4.pdf plot5.pdf & : plot.py data.txt
+  python plot.py  # plot.py produziert alle plot{i}.pdf

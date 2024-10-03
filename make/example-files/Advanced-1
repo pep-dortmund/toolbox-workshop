@@ -1,0 +1,7 @@
+all: report.txt
+
+report.txt: plot1.pdf plot2.pdf
+  touch report.txt
+
+plot2.pdf plot1.pdf &: plot.py data.txt  # das &: definiert die targets als group
+    python plot.py

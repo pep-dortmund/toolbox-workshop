@@ -2,28 +2,7 @@
 
 \begin{frame}[fragile]{Vergleich: Kuchen backen}
   \begin{center}
-    \begin{minted}{make}
-    Kuchen: Teig Backofen
-        Ofen auf 140°C vorheizen
-        Teig in Backform geben und in den Ofen schieben
-        Kuchen nach 40 min herausnehmen
-
-    Teig: Eier Mehl Zucker Milch Rumrosinen | Schüssel
-        Eier schlagen
-        Mehl, Zucker und Milch hinzugeben
-        Rumrosinen unterrühren
-
-    Rumrosinen: Rum Rosinen
-        Rosinen in Rum einlegen
-        Vier Wochen stehen lassen
-
-    Schüssel:
-        Rührschüssel auf den Tisch stellen, wenn nicht vorhanden
-
-    clean:
-        Kuchen essen
-        Küche sauber machen und aufräumen
-    \end{minted}
+    \inputminted{make}{example-files/Cake}
   \end{center}
 \end{frame}
 
@@ -33,27 +12,41 @@
 
   Problem: Manchmal führt \texttt{make} Skripte gleichzeitig zweimal aus (hier \texttt{plot.py})
   \begin{center}
-    \begin{minted}{make}
-      all: report.txt
-
-      report.txt: plot1.pdf plot2.pdf
-        touch report.txt
-
-      plot1.pdf plot2.pdf: plot.py data.txt
-        python plot.py  # plot.py produziert sowohl plot1.pdf als auch plot2.pdf
-    \end{minted}
+    \small
+    \inputminted{make}{example-files/Advanced-0}
   \end{center}
 
-  Lösung: manuell synchronisieren
+  Lösung: Ein \texttt{make}-Feature (\texttt{v4.3}): \emph{grouped targets}
   \begin{center}
-    $\vdots$ \\
-    \begin{minted}{make}
-      plot1.pdf: plot.py data.txt
-          python plot.py
-
-      plot2.pdf: plot1.pdf
-    \end{minted}
+    \small
+    \inputminted{make}{example-files/Advanced-1}
   \end{center}
+   → Alle \texttt{targets} werden durch eine einzigen Durchlauf der \texttt{recipe} (gebündelt) erzeugt.
+\end{frame}
 
-  Wenn man \texttt{plot2.pdf} aber nicht \texttt{plot1.pdf} löscht, kann \texttt{make} nicht mehr \texttt{plot2.pdf} erstellen.
+\begin{frame}[fragile]{Expert}
+  Wenn ein Skript sehr viele Dateien erzeugt kann die Liste der \texttt{targets} unübersichtlich lang werden.\\
+  Diese \texttt{targets} werden außerdem in der Regel als \texttt{prerequisites} verwendet,
+  z.~B. für die \texttt{recipe} der Berichtdatei  → Die Liste befindet sich sogar zweimal im \texttt{Makefile}
+
+  \begin{center}
+    \small
+    \inputminted{make}{example-files/Advanced-2}
+  \end{center}
+  Lösung: Ein weiteres \texttt{make}-Feature: \emph{variables}
+  \begin{center}
+    \small
+    \inputminted{make}{example-files/Advanced-3}
+  \end{center}
+\end{frame}
+
+\begin{frame}[fragile]{Expert}
+  Die Variablenliste kann auch weiter bearbeitet werden.
+  Mit \texttt{addprefix build/} wird in diesem Beispiel der \texttt{build} Ordner
+  an den Anfang jedes Dateipfades geschrieben.
+  \texttt{addsuffix .pdf} hängt an jeden Dateinamen die Endung \texttt{.pdf} an.
+  \begin{center}
+    \small
+    \inputminted{make}{example-files/Advanced-4}
+  \end{center}
 \end{frame}

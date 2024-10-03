@@ -1,0 +1,7 @@
+all: report.txt
+
+report.txt: plot1.pdf plot2.pdf
+  touch report.txt
+
+plot1.pdf plot2.pdf: plot.py data.txt
+  python plot.py  # plot.py produziert sowohl plot1.pdf als auch plot2.pdf

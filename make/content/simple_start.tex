@@ -8,11 +8,7 @@
     \item \texttt{Makefile} besteht aus Regeln (Rules):
   \end{itemize}
   \begin{block}{Rule}
-    \centering
-    \begin{minted}{make}
-      target: prerequisites
-          recipe
-    \end{minted}
+    \inputminted{make}{example-files/Basic-block}
   \end{block}
   \begin{description}
     \item[\texttt{\hphantom{prerequisites}\llap{target}}] Datei(en), die von dieser Rule erzeugt werden
@@ -26,10 +22,7 @@
 
 \begin{frame}[fragile]{Einfachstes Beispiel}
   \begin{center}
-    \begin{minted}{make}
-      plot.pdf: plot.py data.txt
-          python plot.py
-    \end{minted}
+    \inputminted{make}{example-files/Basic-block-example}
   \end{center}
   \begin{itemize}
     \item Wir wollen \texttt{plot.pdf} erzeugen (\texttt{target})
@@ -42,17 +35,7 @@
 
 \begin{frame}[fragile]{Beispiel}
   \begin{center}
-    \begin{minted}{make}
-      all: report.pdf  # convention
-
-      plot.pdf: plot.py data.txt
-          python plot.py
-
-      report.pdf: report.tex
-          lualatex report.tex
-
-      report.pdf: plot.pdf  # add prerequisite
-    \end{minted}
+    \inputminted{make}{example-files/First-report}
   \end{center}
   \vspace{1em}
 
