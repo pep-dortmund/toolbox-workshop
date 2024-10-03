@@ -89,8 +89,11 @@ tex_files = $(header_tex_files) \
 						$(advanced_mpl_files) 
 
 ### Makefiles
-makefile_files = $(addsuffix v16516/Makefile, $(wordlist 10,11,$(solution_dirs)))
+solution_makefile_files = $(addsuffix Makefile-loesung, $(wordlist 2,5,$(solution_dirs))) \
+													$(addsuffix v16516/Makefile-loesung, $(wordlist 6,9,$(solution_dirs)))
 
+target_makefile_files = $(addsuffix v16516/Makefile, $(wordlist 10,11,$(solution_dirs)))
+makefile_files = $(solution_makefile_files) $(target_makefile_files)
 
 
 
@@ -106,41 +109,28 @@ all:$(task_files) \
 build/example-report-step-%/aufgabe.txt &: $(template_task_files) | $(step_dirs)
 	cp templates/aufgabe-step-$*.txt build/example-report-step-$*/aufgabe.txt
 
-$(makefile_files) &: templates/Makefile | $(report_dirs)
-	set -- $(makefile_files); \
-	for i do\
-		cp -r $< $$i; \
-	done
+copy_file_loop=set -- $(2); for i do cp $(1) $$i; done
+
+$(solution_makefile_files) &: templates/Makefile-loesung_template | $(solution_dirs) $(report_dirs)
+	python generate-step-files.py -t $< -s 2 $(addprefix -o=,$(solution_makefile_files))
+
+$(target_makefile_files) &: templates/Makefile | $(report_dirs)
+	$(call copy_file_loop, $<, $(target_makefile_files))
 
 $(matplotlibrc_files) &: templates/matplotlibrc | $(solution_dirs)
-	set -- $(matplotlibrc_files); \
-	for i do\
-		cp -r $< $$i; \
-	done
+	$(call copy_file_loop, $<,$(matplotlibrc_files))
 
 $(programms_bib_files) &: templates/programme.bib | $(solution_dirs)
-	set -- $(programms_bib_files); \
-	for i do\
-		cp -r $< $$i; \
-	done
-
-$(setup_image_files) &: templates/versuchsaufbau.png | $(graphics_dirs)
-	set -- $(setup_image_files); \
-	for i do\
-		cp -r $< $$i; \
-	done
+	$(call copy_file_loop, $<, $(programms_bib_files))
 
 $(lit_bib_files) &: templates/lit.bib | $(solution_dirs)
-	set -- $(lit_bib_files); \
-	for i do\
-		cp -r $< $$i; \
-	done
+	$(call copy_file_loop, $<, $(lit_bib_files))
+
+$(setup_image_files) &: templates/versuchsaufbau.png | $(graphics_dirs)
+	$(call copy_file_loop, $<, $(setup_image_files))
 
 $(header_matplotlib_files) &: templates/header-matplotlib.tex | $(solution_dirs)
-	set -- $(header_matplotlib_files); \
-	for i do\
-		cp -r $< $$i; \
-	done
+	$(call copy_file_loop, $<, $(header_matplotlib_files))
 
 $(header_tex_files) &: templates/latex/header_tex_template | $(solution_dirs)
 	python generate-step-files.py -t $< -s 7 $(addprefix -o=,$(header_tex_files))
@@ -160,27 +150,19 @@ $(evaluation_tex_files) &: templates/latex/auswertung_tex_template | $(content_d
 $(discussion_tex_files) &: templates/latex/diskussion_tex_template | $(content_dirs)
 	python generate-step-files.py -t $< -s 7 $(addprefix -o=,$(discussion_tex_files))
 
-
-#$() &: templates/latex/_tex_template | $(step_dirs)
-
 $(python_files) &: templates/auswertung_py_template | $(solution_dirs) $(report_dirs)
-	python generate-step-files.py -t templates/auswertung_py_template -s 2 $(addprefix -o=,$(python_files))
+	python generate-step-files.py -t templates/auswertung_py_template $(addprefix -o=,$(python_files))
 
+
+copy_dir_loop=set -- $(2); for i do cp -r $(1) $$i; done
 $(data_files_without_unc) &: templates/data_without_uncertainties/* | $(solution_dirs) $(report_dirs)
-	set -- $(data_dirs_without_unc); \
-	for i do\
-		cp -r templates/data_without_uncertainties $$i; \
-	done
-
+	$(call copy_dir_loop, templates/data_without_uncertainties, $(data_dirs_without_unc))
+	
 $(data_files_with_unc) &: templates/data_with_uncertainties/* | $(solution_dirs) $(report_dirs)
-	set -- $(data_dirs_with_unc); \
-	for i do\
-		cp -r templates/data_with_uncertainties $$i; \
-	done
+	$(call copy_dir_loop, templates/data_with_uncertainties, $(data_dirs_with_unc))
 
 $(content_dirs) &:|$(report_dirs)
 	mkdir -p $(content_dirs) 	
-
 
 $(graphics_dirs)&: |$(report_dirs)
 	mkdir -p $(graphics_dirs)
@@ -200,4 +182,5 @@ build:
 clean:
 	rm -r build
 
+.PHONY: all clean
 
