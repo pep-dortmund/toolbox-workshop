@@ -167,6 +167,7 @@ $(discussion_tex_files) &: templates/latex/diskussion_tex_template | $(content_d
 	python generate-step-files.py -t $< -s 7 $(addprefix -o=,$(discussion_tex_files))
 
 $(python_files) &: templates/auswertung_py_template | $(solution_dirs) $(report_dirs)
+	touch build/example-report-step-01/loesung/auswertung.py 
 	python generate-step-files.py -t templates/auswertung_py_template $(addprefix -o=,$(python_files))
 
 
