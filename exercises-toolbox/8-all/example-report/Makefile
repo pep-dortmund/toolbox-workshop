@@ -95,15 +95,9 @@ solution_makefile_files = $(addsuffix Makefile-loesung, $(wordlist 2,5,$(solutio
 target_makefile_files = $(addsuffix v16516/Makefile, $(wordlist 10,11,$(solution_dirs)))
 makefile_files = $(solution_makefile_files) $(target_makefile_files)
 
-all: run
+python_libs = $(addprefix build/example-report-step-11/loesung/v16516/, curve_fit.py latex_formatting.py)
 
-run:$(task_files) \
-		$(python_files) \
-		$(data_files) \
-		$(tex_files) \
-		$(setup_image_files) \
-		$(makefile_files)
-
+run: all
 	# Run all Makefile-loesung
 	set -- $(wordlist 1, 5,$(solution_dirs)); \
 	for i do\
@@ -119,7 +113,23 @@ run:$(task_files) \
 	for i do\
 		make -C $$i -f Makefile; \
 	done
-		
+	# copy the final report into the first step_dir
+	cp $(addsuffix v16516/build/v16516.pdf,$(word 11, $(solution_dirs))) $(addsuffix v16516.pdf,$(word 1, $(solution_dirs)))
+	
+
+all: $(task_files) \
+$(python_files) \
+$(data_files) \
+$(tex_files) \
+$(setup_image_files) \
+$(makefile_files)\
+$(python_libs)
+	
+$(word 1, $(python_libs)): templates/curve_fit.py | $(report_dirs)
+	cp $< $@
+
+$(word 2, $(python_libs)): templates/latex_formatting.py | $(report_dirs)
+	cp $< $@
 
 
 build/example-report-step-%/aufgabe.txt &: $(template_task_files) | $(step_dirs)
