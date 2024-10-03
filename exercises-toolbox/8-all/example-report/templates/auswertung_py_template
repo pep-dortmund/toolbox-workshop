@@ -29,16 +29,16 @@ from uncertainties.unumpy import (nominal_values as noms, std_devs as stds)     
 # es muss der gesamte Pfad ('Orderabfolge') angegeben werden:                                                                     # <2-2>
 #                                                                                                                                 # <2->
 # Für die Datei: Messwerte_Bahn.txt also data/Messwerte_Bahn.txt                                                                  # <2-2>
-#                                                                                                                                 # <2->
+#                                                                                                                                 # <2-2>
 # Der Name der Variable in der die eingelesenen Werte gespeichert werden                                                          # <2-2>
 # ist frei wählbar, es bietet sich bei 'langen' Skripten an (im Gegensatz zur Mathematik)                                         # <2-2>
 # nicht nur einbuchstabige Abkürzungen zu verwenden, um nicht die Übersicht zu verlieren.                                         # <2-2>
 # Also beispielsweise track_length statt L. Ein Kommentar zur erklären sollte aber drin sein.                                     # <2-2>
-#                                                                                                                                 # <2->
+#                                                                                                                                 # <2-2>
 # Es bietet sich an die Daten direkt beim Einlesen in eine sinnvolle Einheit umzuwandeln                                          # <2-2>
 # (falls nötig) und diese mit einem Kommentar zu vermerken                                                                        # <2-2>
-                                                                                                                                  # <2->
-                                                                                                                                  # <2->
+                                                                                                                                  # <2-2>
+                                                                                                                                  # <2-2>
 # Erklärung:                                                                                                                      # <5->
 # Die Dateien im Ordner data enthalten jetzt auch Spalten mit den Unsicherheiten                                                  # <5->
 # für die meisten Messwerte.                                                                                                      # <5->
