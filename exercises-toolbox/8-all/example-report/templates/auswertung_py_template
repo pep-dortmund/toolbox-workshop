@@ -326,7 +326,8 @@ ax.plot(h_plot, theory_t_ball(h_plot),  label="Theorie")                        
 ax.plot(h_plot, fit_g_ball(h_plot, *params),  label="Fit")                                                                        # <4->
 ax.legend()                                                                                                                       # <3->
 fig.savefig("plot_kugel.pdf")                                                                                                     # <3-3>
-fig.savefig("plot-g_kugel.pdf")                                                                                                   # <4->
+fig.savefig("plot-g_kugel.pdf")                                                                                                   # <4-9>
+fig.savefig("build/plot-g_kugel.pdf")                                                                                                   # <10->
                                                                                                                                   # <2->
                                                                                                                                   # <2->
 # Erklärung:                                                                                                                      # <4-4>
@@ -358,7 +359,8 @@ ax.plot(h_plot, theory_t_cylinder(h_plot),  label="Theorie")                    
 ax.plot(h_plot, fit_g_cylinder(h_plot, *params),  label="Fit")                                                                    # <4->
 ax.legend()                                                                                                                       # <3->
 fig.savefig("plot_zylinder.pdf")                                                                                                  # <3-3>
-fig.savefig("plot-g_zylinder.pdf")                                                                                                # <4->
+fig.savefig("plot-g_zylinder.pdf")                                                                                                # <4-9>
+fig.savefig("build/plot-g_zylinder.pdf")                                                                                                # <10->
                                                                                                                                   # <2->
                                                                                                                                   # <2->
 # Erklärung:                                                                                                                      # <4-4>
@@ -420,9 +422,10 @@ ax.set_ylabel("$t$ / s")                                                        
                                                                                                                                   # <2->
 ax.plot(h_c_mean, t_c_mean, "k+", label="Daten: Kugel")                                                                           # <4-4>
 ax.errorbar(noms(h_b_mean), noms(t_b_mean), yerr=stds(t_b_mean), fmt="k+", label="Daten: Kugel")                                  # <5->
-ax.plot(h_plot, fit_I_ball(h_plot, *params),  label="Fit")                                                                    # <4->
+ax.plot(h_plot, fit_I_ball(h_plot, *params),  label="Fit")                                                                        # <4->
 ax.legend()                                                                                                                       # <4->
-fig.savefig("plot-I_kugel.pdf")                                                                                                   # <4->
+fig.savefig("plot-I_kugel.pdf")                                                                                                   # <4-9>
+fig.savefig("build/plot-I_kugel.pdf")                                                                                                   # <10-11>
                                                                                                                                   # <2->
                                                                                                                                   # <2->
 # Berechnung der Fitparameter für den Zylinder                                                                                    # <4->
@@ -452,4 +455,5 @@ ax.plot(h_c_mean, t_c_mean, "k+", label="Daten: Zylinder")                      
 ax.errorbar(noms(h_c_mean), noms(t_c_mean), yerr=stds(t_c_mean), fmt="k+", label="Daten: Zylinder")                               # <5->
 ax.plot(h_plot, fit_I_cylinder(h_plot, *params),  label="Fit")                                                                    # <4->
 ax.legend()                                                                                                                       # <4->
-fig.savefig("plot-I_zylinder.pdf")                                                                                                # <4->
+fig.savefig("plot-I_zylinder.pdf")                                                                                                # <4-9>
+fig.savefig("build/plot-I_zylinder.pdf")                                                                                                # <10->
