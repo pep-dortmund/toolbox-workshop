@@ -14,8 +14,8 @@
         \item Baupläne, CAD-Zeichnungen
         \item ...
       \end{itemize}
-    \item Ein \emph{Schnappschuss} eines Projektes nennt man \emph{Revision}
-    \item Alle Revisionen zusammen bilden die \emph{Geschichte} des Projekts
+    \item Ein \emph{Schnappschuss} eines Projektes nennt man \emph{Revision}.
+    \item Alle Revisionen zusammen bilden die \emph{Geschichte} des Projekts.
   \end{itemize}
 \end{frame}
 
@@ -23,7 +23,7 @@
   \begin{itemize}
     \item Erlaubt, an eine beliebige Revision zurückzukehren
     \item Kann die Unterschiede zwischen Revisionen anzeigen
-    \item Macht Zusammenarbeit an Projekten einfacher
+    \item Erleichtert die Zusammenarbeit an Projekten
     \item Dient auch als Backup
   \end{itemize}
 \end{frame}
@@ -119,7 +119,7 @@
     \item Kann die meisten Änderungen automatisch zusammenfügen
     \item Wirkt nebenbei auch als Backup
   \end{itemize}
-  Einzige Herausforderung: Man muss lernen, damit umzugehen
+  Einzige Herausforderung: Man muss lernen, damit umzugehen.
 \end{frame}
 
 \begin{frame}{Zentrales Konzept: Das Repository}
@@ -293,7 +293,7 @@
 \begin{frame}{Was passiert in Git: \texttt{git status}, \texttt{git log}}
   \begin{tblr}{
       colspec = {l X[l]},
-      column{1} = {font=\ttfamily}, 
+      column{1} = {font=\ttfamily},
     }
     git status    & zeigt Status des Repos (welche Dateien sind neu, gelöscht, verschoben, bearbeitet) \\
     git status -s & Kurzform von \texttt{git status}, zeigt Liste von geänderten Dateien \\
@@ -304,7 +304,7 @@
 \begin{frame}{Staging Bereich: \texttt{git add}, \texttt{git mv}, \texttt{git rm}, \texttt{git reset}}
   \begin{tblr}{
       colspec = {l X[l]},
-      column{1} = {font=\ttfamily}, 
+      column{1} = {font=\ttfamily},
     }
     git add \textit{file} … & fügt Dateien/Verzeichnisse zum Staging-Bereich hinzu \\
     git add -p …            & fügt Teile einer Datei zum Staging-Bereich hinzu \\
@@ -318,7 +318,7 @@
 \begin{frame}{\texttt{git diff}}
   \begin{tblr}{
       colspec = {l X[l]},
-      column{1} = {font=\ttfamily}, 
+      column{1} = {font=\ttfamily},
     }
     git diff                                   & zeigt Unterschiede zwischen Staging und Arbeitsverzeichnis \\
     git diff --staged                          & zeigt Unterschiede zwischen letzten Commit und Staging \\
@@ -329,7 +329,7 @@
 \begin{frame}{\texttt{git commit}}
   \begin{tblr}{
       colspec = {l X[l]},
-      column{1} = {font=\ttfamily}, 
+      column{1} = {font=\ttfamily},
     }
     git commit                       & erzeugt Commit aus jetzigem Staging-Bereich, öffnet Editor für Commit-Message \\
     git commit -m "\textit{message}" & Commit mit \texttt{\textit{message}} als Message \\
@@ -355,7 +355,7 @@
 \begin{frame}{Mit der remote History (dem Server) interagieren}
   \begin{tblr}{
       colspec = {l X[l]},
-      column{1} = {font=\ttfamily}, 
+      column{1} = {font=\ttfamily},
     }
     git pull          & Commits herunterladen \\
     git push          & Commits hochladen
@@ -394,7 +394,7 @@
 \begin{frame}{Zu früheren Versionen zurückkehren}
   \begin{tblr}{
       colspec = {l X[l]},
-      column{1} = {font=\ttfamily}, 
+      column{1} = {font=\ttfamily},
     }
     git checkout \textit{commit} & Commit ins Arbeitsverzeichnis laden \\
     git restore \textit{filename} & Änderungen an Dateien verwerfen (zum letzten Commit zurückkehren)
@@ -404,7 +404,7 @@
 \begin{frame}{Kurz an was anderem Arbeiten}
   \begin{tblr}{
       colspec = {l X[l]},
-      column{1} = {font=\ttfamily}, 
+      column{1} = {font=\ttfamily},
     }
     git stash     & Änderungen kurz zur Seite schieben \\
     git stash pop & Änderungen zurückholen aus Stash
