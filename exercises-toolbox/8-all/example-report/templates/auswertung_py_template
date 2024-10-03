@@ -23,6 +23,9 @@ import uncertainties as unc                                                     
 import uncertainties.unumpy as unp                                                                                                # <5->
 from uncertainties.unumpy import (nominal_values as noms, std_devs as stds)                                                       # <5->
                                                                                                                                   # <2->
+from curve_fit import ucurve_fit                                                                                                  # <11->
+from latex_formatting import make_qty                                                                                             # <11->
+                                                                                                                                  # <11->
 # Erklärung:                                                                                                                      # <2-2>
 # Die Daten liegen im Ordner 'data'. Um die Dateien einlesen                                                                      # <2-2>
 # zu können, reicht es deswegen nicht den Dateinamen anzugeben,                                                                   # <2-2>
@@ -212,6 +215,55 @@ print("gemittlelte Zeit")                                                       
 print(t_c_mean)                                                                                                                   # <2->
 print("\n")                                                                                                                       # <2->
                                                                                                                                   # <2->
+# Erklärung:                                                                                                                      # <11->
+# Alle Ergebnisse die dieses Python-Script berechnet sollten                                                                      # <11->
+# für eine noch umfangreichere Automatisierung nicht mehr                                                                         # <11->
+# per Hand in das Protokoll geschrieben werden.                                                                                   # <11->
+# Neben der Automatisierung verhindert dies auch Fehler                                                                           # <11->
+# beim Abtippen oder durch vergessene Aktualisierungen,                                                                           # <11->
+# falls sich die Werte im Verlauf der Bearbeitungszeit                                                                            # <11->
+# nocheinmal ändern.                                                                                                              # <11->
+#                                                                                                                                 # <11->
+# Die Ausgabe der Werte aufs Terminal erspart das nachschauen                                                                     # <11->
+# in den Dateien. Es ist aber zu empfehlen, die Speicherung                                                                       # <11->
+# in die Dateien  unter der Ausgabe zu machen, um Veränderungen                                                                   # <11->
+# der Werte zwischen Ausgabe aufs Terminal und Speichern vorzubeugen.                                                             # <11->
+# nocheinmal ändern.                                                                                                              # <11->
+# Ausgenommen davon die Tabellen, weil der Code recht viel Platz einnimmt,                                                        # <11->
+# werden diese am Ende der Datei exportiert.                                                                                      # <11->
+#                                                                                                                                 # <11->
+                                                                                                                                  # <11->
+g = physical_constants["standard acceleration of gravity"][0]                                                                     # <11->
+with open("build/theoretical-g.tex", "w") as f:                                                                                   # <11->
+    f.write(make_qty(g,r"\meter\per\second\squared", figures=2, formatting="per-mode=reciprocal"))                                # <11->
+                                                                                                                                  # <11->
+with open("build/framerate.tex", "w") as f:                                                                                       # <11->
+    f.write(make_qty(fps, r"\per\second", figures=0, formatting="per-mode=reciprocal"))                                     # <11->
+                                                                                                                                  # <11->
+with open("build/theoretical-I_ball.tex", "w") as f:                                                                              # <11->
+    f.write(make_qty(I_b*10000,r"\kilo\gram\centi\meter\squared")) # change units: kg cm²                                         # <11->
+                                                                                                                                  # <11->
+with open("build/theoretical-I_cylinder.tex", "w") as f:                                                                          # <11->
+    f.write(make_qty(I_c*10000,r"\kilo\gram\centi\meter\squared"))# change units: kg cm²                                          # <11->
+                                                                                                                                  # <11->
+with open("build/tracklength.tex", "w") as f:                                                                                     # <11->
+    f.write(make_qty(l,r"\meter"))                                                                                                # <11->
+                                                                                                                                  # <11->
+with open("build/mass_ball.tex", "w") as f:                                                                                       # <11->
+    f.write(make_qty(m_b,r"\kilo\gram"))                                                                                          # <11->
+                                                                                                                                  # <11->
+with open("build/mass_cylinder.tex", "w") as f:                                                                                   # <11->
+    f.write(make_qty(m_b,r"\kilo\gram"))                                                                                          # <11->
+                                                                                                                                  # <11->
+with open("build/radius_ball.tex", "w") as f:                                                                                     # <11->
+    f.write(make_qty(r_b, r"\meter"))                                                                                             # <11->
+                                                                                                                                  # <11->
+with open("build/radius-inner_cylinder.tex", "w") as f:                                                                           # <11->
+    f.write(make_qty(ri_c,r"\meter"))                                                                                             # <11->
+                                                                                                                                  # <11->
+with open("build/radius-outer_cylinder.tex", "w") as f:                                                                           # <11->
+    f.write(make_qty(ro_c,r"\meter"))                                                                                             # <11->
+                                                                                                                                  # <11->
 # Erstelle Plots der Messwerte t_._mean und h_._mean                                                                              # <3->
                                                                                                                                   # <2->
 # Erklärung:                                                                                                                      # <3-3>
@@ -281,17 +333,32 @@ def fit_g_cylinder(h, g, t0):                                                   
 # Berechnung der Fitparameter für die Kugel                                                                                       # <4->
                                                                                                                                   # <2->
 params, covariance_matrix = curve_fit(fit_g_ball, h_b_mean, t_b_mean)                                                             # <4-4>
-params, covariance_matrix = curve_fit(fit_g_ball, noms(h_b_mean), noms(t_b_mean), sigma=stds(t_b_mean))                           # <5->
-param_uncertainties = np.sqrt(np.diag(covariance_matrix))                                                                         # <4->
-                                                                                                                                  # <2->
-                                                                                                                                  # <2->
+params, covariance_matrix = curve_fit(fit_g_ball, noms(h_b_mean), noms(t_b_mean), sigma=stds(t_b_mean))                           # <5-10>
+param_uncertainties = np.sqrt(np.diag(covariance_matrix))                                                                         # <4-10>
+                                                                                                                                  # <11->
+# Erklärung:                                                                                                                      # <11->
+# Wir verwenden hier den 'Wrapper' für curve_fit, aus Aufgabe 5-uncertainties/3-curve_fit,                                        # <11->
+# um die Arbeit mit unsicherheitbehafteten Werten für Fits wiederverwendbar auszulagern.                                          # <11->
+params = ucurve_fit(fit_g_ball, noms(h_b_mean), t_b_mean)                                                                        # <11->
+                                                                                                                                  # <11->
 # Erklärung:                                                                                                                      # <4-4>
 # Ansehnliche Ausgabe der Parameter aufs Terminal                                                                                 # <4-4>
 print("Fitparameter (Kugel)")                                                                                                     # <4->
-for name, value, uncertainty in zip("gt", params, param_uncertainties):                                                           # <4->
-    print(f"{name} = {value:8.3f} ± {uncertainty:.3f}")                                                                           # <4->
-print("\n")                                                                                                                       # <4->
+for name, value, uncertainty in zip("gt", params, param_uncertainties):                                                           # <5-10>
+    print(f"{name} = {value:8.3f} ± {uncertainty:.3f}")                                                                           # <4-10>
+for name, param in zip("gt", params):                                                                                             # <11->
+    print(f"{name} = {param.n:8.3f} ± {param.s:.3f}")                                                                             # <11->
+print("\n")                                                                                                                       # <4-10>
                                                                                                                                   # <2->
+# exporting fit parameters                                                                                                       # <11->
+parameter_g, parameter_t0 = params                                                                                               # <11->
+                                                                                                                                  # <11->
+with open("build/parameter-g_kugel.tex", "w") as f:                                                                              # <11->
+     f.write(make_qty(parameter_g, r"\meter\per\second\squared"))                                                                 # <11->
+                                                                                                                                  # <11->
+with open("build/parameter-t0-g_kugel.tex", "w") as f:                                                                           # <11->
+     f.write(make_qty(parameter_t0, r"\second"))                                                                                  # <11->
+                                                                                                                                  # <11->
 # Erklärung:                                                                                                                      # <3-3>
 # Die Werte für h die im Plot der Theorie-Funktionen verwendet werden, damit diese                                                # <3-3>
 # auch tatsächlich aussieht wie eine differenzierbare Funktion.                                                                   # <3-3>
@@ -323,7 +390,8 @@ ax.errorbar(noms(h_b_mean), noms(t_b_mean), yerr=stds(t_b_mean), fmt="k+", label
 # Erklärung:                                                                                                                      # <4-4>
 # Theorie-Funktion durch Fit-Funktion mit Fit-Parametern ersetzen                                                                 # <4-4>
 ax.plot(h_plot, theory_t_ball(h_plot),  label="Theorie")                                                                          # <3-3>
-ax.plot(h_plot, fit_g_ball(h_plot, *params),  label="Fit")                                                                        # <4->
+ax.plot(h_plot, fit_g_ball(h_plot, *params),  label="Fit")                                                                        # <4-10>
+ax.plot(h_plot, fit_g_ball(h_plot, *noms(params)),  label="Fit")                                                                  # <11->
 ax.legend()                                                                                                                       # <3->
 fig.savefig("plot_kugel.pdf")                                                                                                     # <3-3>
 fig.savefig("plot-g_kugel.pdf")                                                                                                   # <4-9>
@@ -337,15 +405,26 @@ fig.savefig("build/plot-g_kugel.pdf")                                           
                                                                                                                                   # <2->
 # Berechnung der Fitparameter für den Zylinder                                                                                    # <4->
 params, covariance_matrix = curve_fit(fit_g_cylinder, h_c_mean, t_c_mean)                                                         # <4-4>
-params, covariance_matrix = curve_fit(fit_g_cylinder, noms(h_c_mean), noms(t_c_mean), sigma=stds(t_c_mean))                       # <5->
-param_uncertainties = np.sqrt(np.diag(covariance_matrix))                                                                         # <4->
+params, covariance_matrix = curve_fit(fit_g_cylinder, noms(h_c_mean), noms(t_c_mean), sigma=stds(t_c_mean))                       # <5-10>
+param_uncertainties = np.sqrt(np.diag(covariance_matrix))                                                                         # <4-10>
                                                                                                                                   # <2->
+params = ucurve_fit(fit_g_cylinder, noms(h_c_mean), t_c_mean)                                                                     # <11->
                                                                                                                                   # <2->
 print("Fitparameter (Zylinder)")                                                                                                  # <4->
-for name, value, uncertainty in zip("gt", params, param_uncertainties):                                                           # <4->
-    print(f"{name} = {value:8.3f} ± {uncertainty:.3f}")                                                                           # <4->
+for name, value, uncertainty in zip("gt", params, param_uncertainties):                                                           # <4-10>
+    print(f"{name} = {value:8.3f} ± {uncertainty:.3f}")                                                                           # <4-10>
+for name, param in zip("gt", params):                                                                                             # <11->
+    print(f"{name} = {param.n:8.3f} ± {param.s:.3f}")                                                                             # <11->
 print("\n")                                                                                                                       # <4->
                                                                                                                                   # <2->
+ # exporting fit parameters                                                                                                       # <11->
+parameter_g, parameter_t0 = params                                                                                               # <11->
+                                                                                                                                  # <11->
+with open("build/parameter-g_zylinder.tex", "w") as f:                                                                           # <11->
+     f.write(make_qty(parameter_g, r"\meter\per\second\squared"))                                                                 # <11->
+                                                                                                                                  # <11->
+with open("build/parameter-t0-g_zylinder.tex", "w") as f:                                                                        # <11->
+     f.write(make_qty(parameter_t0, r"\second"))                                                                                  # <11->
                                                                                                                                   # <2->
 fig, ax = plt.subplots(1, 1, layout="constrained")                                                                                # <3->
                                                                                                                                   # <2->
@@ -356,7 +435,8 @@ ax.set_ylabel("$t$ / s")                                                        
 ax.plot(h_c_mean, t_c_mean, "k+", label="Daten: Zylinder")                                                                        # <3-4>
 ax.errorbar(noms(h_c_mean), noms(t_c_mean), yerr=stds(t_c_mean), fmt="k+", label="Daten: Zylinder")                               # <5->
 ax.plot(h_plot, theory_t_cylinder(h_plot),  label="Theorie")                                                                      # <3-3>
-ax.plot(h_plot, fit_g_cylinder(h_plot, *params),  label="Fit")                                                                    # <4->
+ax.plot(h_plot, fit_g_cylinder(h_plot, *params),  label="Fit")                                                                    # <4-10>
+ax.plot(h_plot, fit_g_cylinder(h_plot, *noms(params)),  label="Fit")                                                                    # <11->
 ax.legend()                                                                                                                       # <3->
 fig.savefig("plot_zylinder.pdf")                                                                                                  # <3-3>
 fig.savefig("plot-g_zylinder.pdf")                                                                                                # <4-9>
@@ -400,20 +480,34 @@ def fit_I_cylinder(h, I, t0):                                                   
                                                                                                                                   # <2->
 # Berechnung der Fitparameter für die Kugel                                                                                       # <4->
 params, covariance_matrix = curve_fit(fit_I_ball, h_b_mean, t_b_mean)                                                             # <4-4>
-params, covariance_matrix = curve_fit(fit_I_ball, noms(h_b_mean), noms(t_b_mean), sigma=stds(t_b_mean))                           # <5->
-param_uncertainties = np.sqrt(np.diag(covariance_matrix))                                                                         # <4->
+params, covariance_matrix = curve_fit(fit_I_ball, noms(h_b_mean), noms(t_b_mean), sigma=stds(t_b_mean))                           # <5-10>
+param_uncertainties = np.sqrt(np.diag(covariance_matrix))                                                                         # <4-10>
                                                                                                                                   # <2->
+params = ucurve_fit(fit_I_ball, noms(h_b_mean), t_b_mean, bounds=([0,-np.inf],[+np.inf,+np.inf]))                                                                         # <11->
                                                                                                                                   # <2->
 print("Fitparameter (Kugel)")                                                                                                     # <4->
-for name, value, uncertainty in zip("It", params, param_uncertainties):                                                           # <4->
+for name, value, uncertainty in zip("It", params, param_uncertainties):                                                           # <4-10>
+for name, param in zip("It", params):                                                                                             # <11->
     # in kg*m² sehr klein, umwandlung zu kg*cm²                                                                                   # <4->
     if name == "I":                                                                                                               # <4->
-        value *= 10000                                                                                                            # <4->
-        uncertainty *= 10000                                                                                                      # <4->
-    print(f"{name} = {value:8.3f} ± {uncertainty:.3f}")                                                                           # <4->
+        value *= 10000                                                                                                            # <4-10>
+        uncertainty *= 10000                                                                                                      # <4-10>
+        param *= 10000                                                                                                            # <11->
+    print(f"{name} = {value:8.3f} ± {uncertainty:.3f}")                                                                           # <4-10>
+    print(f"{name} = {param.n:8.3f} ± {param.s:.3f}")                                                                             # <11->
 print("\n")                                                                                                                       # <4->
-                                                                                                                                  # <2->
-                                                                                                                                  # <2->
+ 
+ # exporting fit parameters                                                                                                       # <11->
+parameter_I, parameter_t0 = params                                                                                               # <11->
+                                                                                                                                  # <11->
+with open("build/parameter-I_kugel.tex", "w") as f:                                                                              # <11->
+     # in kg*m² sehr klein, umwandlung zu kg*cm²                                                                                  # <11->
+     f.write(make_qty(parameter_I*10000, r"\kilo\gram\centi\meter\squared"))                                                      # <11->
+                                                                                                                                  # <11->
+with open("build/parameter-t0-I_kugel.tex", "w") as f:                                                                           # <11->
+     f.write(make_qty(parameter_t0, r"\second"))                                                                                  # <11->
+                                                                                                                                  # <11->
+                                                                                                                                  # <2->                                                                                                                            # <2->
 fig, ax = plt.subplots(1, 1, layout="constrained")                                                                                # <4->
                                                                                                                                   # <2->
 ax.set_xlabel("$h$ / m")                                                                                                          # <4->
@@ -422,7 +516,8 @@ ax.set_ylabel("$t$ / s")                                                        
                                                                                                                                   # <2->
 ax.plot(h_c_mean, t_c_mean, "k+", label="Daten: Kugel")                                                                           # <4-4>
 ax.errorbar(noms(h_b_mean), noms(t_b_mean), yerr=stds(t_b_mean), fmt="k+", label="Daten: Kugel")                                  # <5->
-ax.plot(h_plot, fit_I_ball(h_plot, *params),  label="Fit")                                                                        # <4->
+ax.plot(h_plot, fit_I_ball(h_plot, *params),  label="Fit")                                                                        # <4-10>
+ax.plot(h_plot, fit_I_ball(h_plot, *noms(params)),  label="Fit")                                                                  # <11->
 ax.legend()                                                                                                                       # <4->
 fig.savefig("plot-I_kugel.pdf")                                                                                                   # <4-9>
 fig.savefig("build/plot-I_kugel.pdf")                                                                                                   # <10-11>
@@ -430,19 +525,32 @@ fig.savefig("build/plot-I_kugel.pdf")                                           
                                                                                                                                   # <2->
 # Berechnung der Fitparameter für den Zylinder                                                                                    # <4->
 params, covariance_matrix = curve_fit(fit_I_cylinder, h_c_mean, t_c_mean)                                                         # <4-4>
-params, covariance_matrix = curve_fit(fit_I_cylinder, noms(h_c_mean), noms(t_c_mean), sigma=stds(t_c_mean))                       # <5->
-param_uncertainties = np.sqrt(np.diag(covariance_matrix))                                                                         # <4->
+params, covariance_matrix = curve_fit(fit_I_cylinder, noms(h_c_mean), noms(t_c_mean), sigma=stds(t_c_mean))                       # <5-10>
+param_uncertainties = np.sqrt(np.diag(covariance_matrix))                                                                         # <4-10>
                                                                                                                                   # <2->
+params = ucurve_fit(fit_I_cylinder, noms(h_c_mean), t_c_mean, bounds=([0,-np.inf],[+np.inf,+np.inf]))                                                                                  # <11->
                                                                                                                                   # <2->
-print("Fitparameter (Zylinder)")                                                                                                  # <4->
-for name, value, uncertainty in zip("It", params, param_uncertainties):                                                           # <4->
+print("Fitparameter (Zylinder)")                                                                                                  # <4-10>
+for name, value, uncertainty in zip("It", params, param_uncertainties):                                                           # <4-10>
+for name, param in zip("It", params):                                                                                             # <11->
     # in kg*m² sehr klein, umwandlung zu kg*cm²                                                                                   # <4->
     if name == "I":                                                                                                               # <4->
-        value *= 10000                                                                                                            # <4->
-        uncertainty *= 10000                                                                                                      # <4->
-    print(f"{name} = {value:8.3f} ± {uncertainty:.3f}")                                                                           # <4->
+        value *= 10000                                                                                                            # <4-10>
+        uncertainty *= 10000                                                                                                      # <4-10>
+        param *= 10000                                                                                                            # <11->
+    print(f"{name} = {value:8.3f} ± {uncertainty:.3f}")                                                                           # <4-10>
+    print(f"{name} = {param.n:8.3f} ± {param.s:.3f}")                                                                             # <11->
 print("\n")                                                                                                                       # <4->
                                                                                                                                   # <2->
+# exporting fit parameters                                                                                                       # <11->
+parameter_I, parameter_t0 = params                                                                                               # <11->
+                                                                                                                                  # <11->
+with open("build/parameter-I_zylinder.tex", "w") as f:                                                                           # <11->
+     # in kg*m² sehr klein, umwandlung zu kg*cm²                                                                                  # <11->
+     f.write(make_qty(parameter_I*10000, r"\kilo\gram\centi\meter\squared"))                                                      # <11->
+                                                                                                                                  # <11->
+with open("build/parameter-t0-I_zylinder.tex", "w") as f:                                                                        # <11->
+     f.write(make_qty(parameter_t0, r"\second"))                                                                                  # <11->
                                                                                                                                   # <2->
                                                                                                                                   # <2->
 fig, ax = plt.subplots(1, 1, layout="constrained")                                                                                # <4->
@@ -453,7 +561,151 @@ ax.set_ylabel("$t$ / s")                                                        
                                                                                                                                   # <2->
 ax.plot(h_c_mean, t_c_mean, "k+", label="Daten: Zylinder")                                                                        # <4-4>
 ax.errorbar(noms(h_c_mean), noms(t_c_mean), yerr=stds(t_c_mean), fmt="k+", label="Daten: Zylinder")                               # <5->
-ax.plot(h_plot, fit_I_cylinder(h_plot, *params),  label="Fit")                                                                    # <4->
+ax.plot(h_plot, fit_I_cylinder(h_plot, *params),  label="Fit")                                                                    # <4-10>
+ax.plot(h_plot, fit_I_cylinder(h_plot, *noms(params)),  label="Fit")                                                              # <11->
 ax.legend()                                                                                                                       # <4->
 fig.savefig("plot-I_zylinder.pdf")                                                                                                # <4-9>
-fig.savefig("build/plot-I_zylinder.pdf")                                                                                                # <10->
+fig.savefig("build/plot-I_zylinder.pdf")                                                                                          # <10->
+
+# writing latex tables                                                                                                            # <11->
+# first: writing all measured values not just the averages                                                                        # <11->
+# heights_ball, durations_ball, durations_cylinder                                                                                # <11->
+# have not been reduced to 6 values each                                                                                          # <11->
+                                                                                                                                  # <11->
+# Erklärung:                                                                                                                                                                                                                                 # <11->
+# Die Erstellung der Tabellen wird hier nicht zu 100% automatisiert, aber                                                                                                                                                                    # <11->
+# zumindest das abtippen der Werte ist hiermit nicht mehr nötig.                                                                                                                                                                             # <11->
+# Das ist auch bei Weitem nicht nur ein Ausdruck von Faulheit,                                                                                                                                                                               # <11->
+# sondern wieder ein wichtiger Schritt zu guter wissenschaftlicher                                                                                                                                                                           # <11->
+# Praxis: Messwerte per Hand abtippen ist fehleranfällig und nur                                                                                                                                                                             # <11->
+# mäßig reproduzierbar.                                                                                                                                                                                                                      # <11->
+# Es steht euch frei das noch etwas mehr zu automatisieren.                                                                                                                                                                                  # <11->
+#                                                                                                                                                                                                                                            # <11->
+# Jede Tabelle besteht aus drei Teilen, dem                                                                                                                                                                                                  # <11->
+# i) table_header: Beginn der Latexumgebung tblr und alle Spalten/Zeileneinstellungen                                                                                                                                                        # <11->
+# sowie die Kopfzeilen der Tabelle                                                                                                                                                                                                           # <11->
+#                                                                                                                                                                                                                                            # <11->
+# iii) table_footer: \bottomrule und das Ende der Latexumgebung tblr                                                                                                                                                                         # <11->
+#                                                                                                                                                                                                                                            # <11->
+# ii) row_template: Ein string mit Format angaben für die Werte in jeder Spalte,                                                                                                                                                             # <11->
+# (die Formatangaben stimmen nur hinter dem . mit denen für tblr überein                                                                                                                                                                     # <11->
+#  z.B. Spalte 2: table-format=4.0 aber {1.n: 0.0f})                                                                                                                                                                                         # <11->
+# Die Zahl am Anfang der Formatangabe legt die Reihenfolge fest,                                                                                                                                                                             # <11->
+# das .n bzw. .s bezeichnet bei unsicherheitbehafteten Werten die                                                                                                                                                                            # <11->
+# nominalen Werte respektive die Standardabweichung.                                                                                                                                                                                         # <11->
+# .n und .s Formatangaben mit der selben Zahl davor sollten immer aufeinander folgen.                                                                                                                                                        # <11->
+#                                                                                                                                                                                                                                            # <11->
+# Die drei Teile werden dann in einer Datei zusammen gesetzt:                                                                                                                                                                                # <11->
+# Zuerst wird der table_header in die Datei geschrieben                                                                                                                                                                                      # <11->
+# dann werden die Daten, mit Hilfe einer for-loop über alle Spalten                                                                                                                                                                          # <11->
+# (beachtet die Verwendung von zip) und dem row_template,                                                                                                                                                                                    # <11->
+# Zeile für Zeile in die Datei geschrieben.                                                                                                                                                                                                  # <11->
+# Danach muss mit f.write('\n') dafür gesorgt werden, dass in der Datei eine                                                                                                                                                                 # <11->
+# neue Zeile angefangen wird.                                                                                                                                                                                                                # <11->
+# Und am Ende wird noch der table_footer in die Datei geschrieben.                                                                                                                                                                           # <11->
+#                                                                                                                                                                                                                                            # <11->
+                                                                                                                                                                                                                                             # <11->
+table_header = r"""                                                                                                                                                                                                                          # <11->
+  \begin{tblr}{                                                                                                                                                                                                                              # <11->
+    colspec = {                                                                                                                                                                                                                              # <11->
+        S[table-format=1.3]                                                                                                                                                                                                                  # <11->
+        S[table-format=4.0]                                                                                                                                                                                                                  # <11->
+        S[table-format=1.0]                                                                                                                                                                                                                  # <11->
+        S[table-format=4.0]                                                                                                                                                                                                                  # <11->
+        S[table-format=1.0]                                                                                                                                                                                                                  # <11->
+        S[table-format=1.3]                                                                                                                                                                                                                  # <11->
+        S[table-format=1.3]                                                                                                                                                                                                                  # <11->
+        S[table-format=4.0]                                                                                                                                                                                                                  # <11->
+        S[table-format=1.0]                                                                                                                                                                                                                  # <11->
+        S[table-format=4.0]                                                                                                                                                                                                                  # <11->
+        S[table-format=1.0]                                                                                                                                                                                                                  # <11->
+        S[table-format=1.3]                                                                                                                                                                                                                  # <11->
+        S[table-format=1.3]                                                                                                                                                                                                                  # <11->
+    },                                                                                                                                                                                                                                       # <11->
+    row{1} = {guard},                                                                                                                                                                                                                        # <11->
+    row{2} = {guard, mode=math},                                                                                                                                                                                                             # <11->
+    vline{3,5,7,9,11,13} = {2}{-}{text=\clap{\pm}},                                                                                                                                                                                          # <11->
+  }                                                                                                                                                                                                                                          # <11->
+    \toprule                                                                                                                                                                                                                                 # <11->
+    &                                                                                                                                                                                                                                        # <11->
+    \SetCell[c=6]{c} Messung: Kugel & & & & & &                                                                                                                                                                                              # <11->
+    \SetCell[c=6]{c} Messung: Zylinder & & & & & \\                                                                                                                                                                                          # <11->
+    \cmidrule[lr]{2-7}\cmidrule[lr]{8-14}                                                                                                                                                                                                    # <11->
+    h \mathbin{/} \unit{\meter} &%                                                                                                                                                                                                           # <11->
+    \SetCell[c=2]{c} F_\text{i} \mathbin{/} 1 & &%                                                                                                                                                                                           # <11->
+    \SetCell[c=2]{c} F_\text{f} \mathbin{/} 1 & &%                                                                                                                                                                                           # <11->
+    \SetCell[c=2]{c} t \mathbin{/} \unit{\second} & &%                                                                                                                                                                                       # <11->
+    \SetCell[c=2]{c} F_\text{i} \mathbin{/} 1 & &%                                                                                                                                                                                                         # <11->
+    \SetCell[c=2]{c} F_\text{f} \mathbin{/} 1 & &%                                                                                                                                                                                                         # <11->
+    \SetCell[c=2]{c} t \mathbin{/} \unit{\second}& \\                                                                                                                                                                                        # <11->
+    \midrule                                                                                                                                                                                                                                 # <11->
+"""                                                                                                                                                                                                                                          # <11->
+                                                                                                                                                                                                                                             # <11->
+                                                                                                                                                                                                                                             # <11->
+table_footer = r"""    \bottomrule                                                                                                                                                                                                           # <11->
+  \end{tblr}                                                                                                                                                                                                                                 # <11->
+"""                                                                                                                                                                                                                                          # <11->
+                                                                                                                                                                                                                                             # <11->
+                                                                                                                                                                                                                                             # <11->
+row_template = (                                                                                                                                                                                                                             # <11->
+    r"{0.n:1.3f} & {1.n:0.0f} & {1.s:0.0f} &  {2.n:0.0f} & {2.s:0.0f}&  {3.n:1.3f} & {3.s:1.3f}  &  {4.n:0.0f} &  {4.s:0.0f}&  {5.n:0.0f} & {5.s:0.0f}&  {6.n:1.3f} & {6.s:1.3f}   \\"                                                       # <11->
+)                                                                                                                                                                                                                                            # <11->
+                                                                                                                                                                                                                                             # <11->
+                                                                                                                                                                                                                                             # <11->
+                                                                                                                                                                                                                                             # <11->
+with open("build/table_all-measurements.tex", "w") as f:                                                                                                                                                                                     # <11->
+    f.write(table_header)                                                                                                                                                                                                                    # <11->
+    for row in zip(h_b, Fi_b, Ff_b, t_b, Fi_c, Ff_c, t_c):                                                                                                                                                                                   # <11->
+        f.write(row_template.format(*row))                                                                                                                                                                                                   # <11->
+        f.write("\n")                                                                                                                                                                                                                        # <11->
+    f.write(table_footer)                                                                                                                                                                                                                    # <11->
+                                                                                                                                                                                                                                             # <11->
+                                                                                                                                                                                                                                             # <11->
+# second: writing the averaged values and leaving out the frames                                                                                                                                                                             # <11->
+# heights_ball, durations_ball, durations_cylinder                                                                                                                                                                                           # <11->
+# have not been reduced to 6 values each                                                                                                                                                                                                     # <11->
+                                                                                                                                                                                                                                             # <11->
+                                                                                                                                                                                                                                             # <11->
+table_header = r"""                                                                                                                                                                                                                          # <11->
+  \begin{tblr}{                                                                                                                                                                                                                              # <11->
+    colspec = {                                                                                                                                                                                                                              # <11->
+        S[table-format=1.3]                                                                                                                                                                                                                  # <11->
+        S[table-format=2.3]                                                                                                                                                                                                                  # <11->
+        S[table-format=1.4]                                                                                                                                                                                                                  # <11->
+        S[table-format=3.3]                                                                                                                                                                                                                  # <11->
+        S[table-format=1.5]                                                                                                                                                                                                                  # <11->
+    },                                                                                                                                                                                                                                       # <11->
+    row{1} = {guard},                                                                                                                                                                                                                        # <11->
+    row{2} = {guard, mode=math},                                                                                                                                                                                                             # <11->
+    vline{3,5,7,9} = {2}{-}{text=\clap{\pm}},                                                                                                                                                                                                # <11->
+  }                                                                                                                                                                                                                                          # <11->
+    \toprule                                                                                                                                                                                                                                 # <11->
+    &                                                                                                                                                                                                                                        # <11->
+    \SetCell[c=2]{c} Messung: Kugel & &                                                                                                                                                                                                      # <11->
+    \SetCell[c=2]{c} Messung: Zylinder &\\                                                                                                                                                                                                   # <11->
+    \cmidrule[lr]{2-3}\cmidrule[lr]{4-5}                                                                                                                                                                                                     # <11->
+    h \mathbin{/} \unit{\meter} &%                                                                                                                                                                                                           # <11->
+    \SetCell[c=2]{c} t \mathbin{/} \unit{\second} & &%                                                                                                                                                                                       # <11->
+    \SetCell[c=2]{c} t \mathbin{/} \unit{\second}& \\                                                                                                                                                                                        # <11->
+    \midrule                                                                                                                                                                                                                                 # <11->
+"""                                                                                                                                                                                                                                          # <11->
+                                                                                                                                                                                                                                             # <11->
+                                                                                                                                                                                                                                             # <11->
+table_footer = r"""    \bottomrule                                                                                                                                                                                                           # <11->
+  \end{tblr}                                                                                                                                                                                                                                 # <11->
+"""                                                                                                                                                                                                                                          # <11->
+                                                                                                                                                                                                                                             # <11->
+                                                                                                                                                                                                                                             # <11->
+row_template = (                                                                                                                                                                                                                             # <11->
+    r"{0.n:1.3f} & {1.n:1.3f} & {1.s:1.3f} &  {2.n:1.3f} & {2.s:1.3f}   \\"                                                                                                                                                                  # <11->
+)                                                                                                                                                                                                                                            # <11->
+                                                                                                                                                                                                                                             # <11->
+                                                                                                                                                                                                                                             # <11->
+with open("build/table_averaged-measurements.tex", "w") as f:                                                                                                                                                                                # <11->
+    f.write(table_header)                                                                                                                                                                                                                    # <11->
+    for row in zip(h_b_mean, t_b_mean, t_c_mean):                                                                                                                                                                                            # <11->
+        f.write(row_template.format(*row))                                                                                                                                                                                                   # <11->
+        f.write("\n")                                                                                                                                                                                                                        # <11->
+    f.write(table_footer)                                                                                                                                                                                                                    # <11->
+                                                                                                                                                                                                                                             # <11->
+
