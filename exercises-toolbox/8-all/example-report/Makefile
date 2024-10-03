@@ -5,203 +5,188 @@ Messwerte_Kamera.txt \
 Messwerte_Kugel.txt \
 Messwerte_Zylinder.txt 
 
-datafiles_without_unc = $(addprefix templates/data_without_uncertainties/, $(datafilenames))
-datafiles_with_unc = $(addprefix templates/data_with_uncertainties/, $(datafilenames))
+advanced_mpl_filenames = matplotlibrc header-matplotlib.tex
 
+steps = 01 02 03 04 05 06 07 08 09 10 11
 
-steps_without_unc = 01 02 03 04 
-steps_with_unc = 05 06 07 08 09 10
-steps_with_latex = 07 08 09 10
+### Directories 
 
-
-steps = $(steps_without_unc) $(steps_with_unc)
-
-template_taskfiles = $(foreach step, $(steps), $(addprefix templates/, aufgabe-step-$(step).txt))
-template_bibfiles = $(addprefix templates/, lit.bib programme.bib)
-template_setup_image = templates/experimental-setup.png
-
+# build/example-report-step-{01,...,11}/
 step_dirs = $(foreach step, $(steps),build/example-report-step-$(step)/)
+
+# build/example-report-step-{01,...,11}/loesung
 solution_dirs = $(addsuffix loesung/, $(step_dirs))
-data_dirs = $(addsuffix data, $(solution_dirs))
-
-step_dirs_with_latex = $(foreach step, $(steps_with_latex),build/example-report-step-$(step)/)
-solution_dirs_with_latex = $(addsuffix loesung/, $(step_dirs_with_latex))
-content_dirs_with_latex = $(addsuffix content/, $(solution_dirs_with_latex))
-
-target_datafiles_paths = $(addprefix build/example-report-step-$(1)/loesung/data/, $(datafilenames))
-datafiles_template_step-01 = $(addprefix build/example-report-step-01/data/, $(datafilenames)) 
-datafiles_template_step-05 = $(addprefix build/example-report-step-05/data/, $(datafilenames)) 
 
 
-target_taskfiles = $(addsuffix aufgabe.txt, $(step_dirs))
-target_datafiles = $(datafiles_template_step-01) $(datafiles_template_step-05) $(foreach step, $(steps), $(addprefix $(word $(step), $(solution_dirs))data/, $(datafilenames)))
+# build/example-report-step-{06,...,11}/loesung/v16516/
+report_dirs = $(addsuffix v16516/, $(wordlist 6,11,$(solution_dirs)))
 
-target_makefiles = $(addsuffix Makefile-loesung, $(step_dirs))
+# build/example-report-step-{01,05}/data/
+step_data_dirs = $(addsuffix data/, $(word 1,$(step_dirs)) $(word 5,$(step_dirs)))
 
-target_pythonfiles = $(addsuffix auswertung.py, $(solution_dirs))
+# build/example-report-step-{01,...,05}/loesung/data/
+solution_data_dirs = $(addsuffix data/, $(wordlist 1,5,$(solution_dirs)))
 
-target_texfiles_v16516 = $(addsuffix v16516.tex, $(solution_dirs_with_latex))
-target_texfiles_header = $(addsuffix header.tex, $(solution_dirs_with_latex))
-target_texfiles_durchfuehrung = $(addsuffix content/durchfuehrung.tex, $(solution_dirs_with_latex))
-target_texfiles_theorie = $(addsuffix content/theorie.tex, $(solution_dirs_with_latex))
-target_texfiles_auswertung = $(addsuffix content/auswertung.tex, $(solution_dirs_with_latex))
-target_texfiles_diskussion = $(addsuffix content/diskussion.tex, $(solution_dirs_with_latex))
-target_bibfiles = $(addsuffix lit.bib, $(wordlist 3,4,$(solution_dirs_with_latex))) $(addsuffix programme.bib, $(wordlist 3,4,$(solution_dirs_with_latex)))
-target_setup_image = build/example-report-step-09/loesung/experimental-setup.png
+# build/example-report-step-{06,...,11}/loesung/v16516/data
+report_data_dirs = $(addsuffix data/, $(report_dirs))
 
+# all */data  dirs
+data_dirs = $(solution_data_dirs) $(report_data_dirs) $(step_data_dirs)
+data_dirs_without_unc = $(wordlist 1,4,$(data_dirs)) $(word 12,$(data_dirs))
+data_dirs_with_unc = $(wordlist 5,11,$(data_dirs)) $(word 13,$(data_dirs))
 
-all: \
-$(target_datafiles) \
-$(target_taskfiles) \
-$(target_pythonfiles) \
-$(target_texfiles_header) \
-$(target_texfiles_v16516) \
-$(target_texfiles_durchfuehrung) \
-$(target_texfiles_theorie) \
-$(target_texfiles_auswertung) \
-$(target_texfiles_diskussion) \
-$(target_bibfiles)\
-$(target_setup_image)
+# build/example-report-step-{09,...,10}/loesung/v16516/graphics/
+graphics_dirs = $(addsuffix v16516/graphics/, $(wordlist 9,10,$(solution_dirs)))
 
-test:
-	@echo "Test variables:"
-	@echo "---------------"
-	@echo templates/data_without_uncertainties $(word 1, $(data_dirs)) 
-	@echo "---------------"
-	@echo 
-	@echo "---------------"
-	@echo 
-	@echo "---------------"
-	@echo 
-	@echo "---------------"
-	@echo 
-	@echo "---------------"
-	@echo 
+# solution_dirs containing tex files
+solution_dirs_with_tex = $(wordlist 7,11,$(solution_dirs))
+#build/example-report-step-{07,...,11}/loesung/v16516/content/
+content_dirs = $(addsuffix v16516/content/, $(solution_dirs_with_tex))
 
+### Datafiles
 
-build/example-report-step-%/aufgabe.txt &: $(template_taskfiles) | $(solution_dirs)
-	cp $(word $*, $(template_taskfiles)) build/example-report-step-$*/aufgabe.txt
+append_datafilenames = $(foreach filename,$(datafilenames),$(addsuffix $(filename), $(1)))
 
-$(target_setup_image) : $(template_setup_image) |$(solution_dirs_with_latex)
-	cp $(template_setup_image) $(target_setup_image)
+data_files_without_unc =  $(call append_datafilenames,$(data_dirs_without_unc))
+data_files_with_unc = $(call append_datafilenames, $(data_dirs_with_unc))
+data_files = $(data_files_without_unc) $(data_files_with_unc)
 
-$(target_bibfiles) &: $(template_bibfiles) | $(solution_dirs_with_latex)
-	cp templates/lit.bib $(word 1, $(target_bibfiles))
-	cp templates/lit.bib $(word 2, $(target_bibfiles))
-	cp templates/programme.bib $(word 3, $(target_bibfiles))
-	cp templates/programme.bib $(word 4, $(target_bibfiles))
+### Python files 
+solution_python_files = $(addsuffix auswertung.py, $(wordlist 1,5,$(solution_dirs)))
+report_python_files = $(addsuffix auswertung.py, $(report_dirs))
+python_files = $(solution_python_files) $(report_python_files)
 
+### LaTeX Files
+header_tex_files=$(addsuffix header.tex, $(solution_dirs_with_tex))
+main_tex_files= $(addsuffix v16516/v16516.tex, $(solution_dirs_with_tex))
+implementation_tex_files=$(addsuffix durchfuehrung.tex, $(content_dirs))
+theory_tex_files=$(addsuffix theorie.tex, $(content_dirs))
+evaluation_tex_files=$(addsuffix auswertung.tex, $(content_dirs))
+discussion_tex_files=$(addsuffix diskussion.tex, $(content_dirs))
 
-build/example-report-step-%/Makefile-loesung &: templates/Makefile-loesung | $(solution_dirs)
-	cp templates/Makefile-loesung build/example-report-step-$*/Makefile-loesung
+setup_image_files = $(addsuffix versuchsaufbau.png, $(graphics_dirs))
 
-$(target_texfiles_v16516) &: generate-step-files.py templates/latex/v16516_tex_template | $(solution_dirs_with_latex)
-	python generate-step-files.py -t templates/latex/v16516_tex_template $(addprefix -o=,$(target_texfiles_v16516)) -s 7
+lit_bib_files = $(addsuffix lit.bib, $(wordlist 9,11,$(solution_dirs)))
+programms_bib_files = $(addsuffix programme.bib, $(wordlist 9,11,$(solution_dirs)))
+bib_files = $(lit_bib_files) $(programms_bib_files)
 
-$(target_texfiles_header) &: generate-step-files.py templates/latex/header_tex_template | $(solution_dirs_with_latex)
-	python generate-step-files.py -t templates/latex/header_tex_template $(addprefix -o=,$(target_texfiles_header)) -s 7
+matplotlibrc_files= $(addsuffix matplotlibrc, $(wordlist 10,11,$(solution_dirs)))
+header_matplotlib_files = $(addsuffix header-matplotlib.tex, $(wordlist 10,11,$(solution_dirs)))
 
-$(target_texfiles_durchfuehrung) &: generate-step-files.py templates/latex/durchfuehrung_tex_template | $(content_dirs_with_latex)
-	python generate-step-files.py -t templates/latex/durchfuehrung_tex_template $(addprefix -o=,$(target_texfiles_durchfuehrung)) -s 7
-$(target_texfiles_theorie) &: generate-step-files.py templates/latex/theorie_tex_template | $(content_dirs_with_latex)
-	python generate-step-files.py -t templates/latex/theorie_tex_template $(addprefix -o=,$(target_texfiles_theorie)) -s 7
-$(target_texfiles_auswertung) &: generate-step-files.py templates/latex/auswertung_tex_template | $(content_dirs_with_latex)
-	python generate-step-files.py -t templates/latex/auswertung_tex_template $(addprefix -o=,$(target_texfiles_auswertung)) -s 7
-$(target_texfiles_diskussion) &: generate-step-files.py templates/latex/diskussion_tex_template | $(content_dirs_with_latex)
-	python generate-step-files.py -t templates/latex/diskussion_tex_template $(addprefix -o=,$(target_texfiles_diskussion)) -s 7
+advanced_mpl_files = $(matplotlibrc_files) $(header_matplotlib_files)
 
-$(target_pythonfiles) &: generate-step-files.py templates/auswertung_py_template | $(solution_dirs)
-	touch $(word 1, $(target_pythonfiles))
-	python generate-step-files.py -t templates/auswertung_py_template $(addprefix -o=, $(wordlist 2,10,$(target_pythonfiles))) -s 2
-
-$(datafiles_template_step-01) &: | build/example-report-step-01
-	cp -r templates/data_without_uncertainties build/example-report-step-01/data 
-
-$(datafiles_template_step-05) &: | build/example-report-step-05
-	cp -r templates/data_with_uncertainties build/example-report-step-05/data 
-
-$(call target_datafiles_paths,01) &: $(datafiles_without_unc) | $(word 1, $(solution_dirs))
-	cp -r templates/data_without_uncertainties $(word 1, $(data_dirs))
-
-$(call target_datafiles_paths,02) &: $(datafiles_without_unc) | $(word 2, $(solution_dirs))
-	cp -r templates/data_without_uncertainties $(word 2, $(data_dirs))
-
-$(call target_datafiles_paths,03) &: $(datafiles_without_unc) | $(word 3, $(solution_dirs))
-	cp -r templates/data_without_uncertainties $(word 3, $(data_dirs))
-
-$(call target_datafiles_paths,04) &: $(datafiles_without_unc) | $(word 4, $(solution_dirs))
-	cp -r templates/data_without_uncertainties $(word 4, $(data_dirs))
-
-$(call target_datafiles_paths,05) &: $(datafiles_with_unc) | $(word 5, $(solution_dirs))
-	cp -r templates/data_with_uncertainties $(word 5, $(data_dirs))
-
-$(call target_datafiles_paths,06) &: $(datafiles_with_unc) | $(word 6, $(solution_dirs))
-	cp -r templates/data_with_uncertainties $(word 6, $(data_dirs))
-
-$(call target_datafiles_paths,07) &: $(datafiles_with_unc) | $(word 7, $(solution_dirs))
-	cp -r templates/data_with_uncertainties $(word 7, $(data_dirs))
-
-$(call target_datafiles_paths,08) &: $(datafiles_with_unc) | $(word 8, $(solution_dirs))
-	cp -r templates/data_with_uncertainties $(word 8, $(data_dirs))
-
-$(call target_datafiles_paths,09) &: $(datafiles_with_unc) | $(word 9, $(solution_dirs))
-	cp -r templates/data_with_uncertainties $(word 9, $(data_dirs))
-
-$(call target_datafiles_paths,10) &: $(datafiles_with_unc) | $(word 10, $(solution_dirs))
-	cp -r templates/data_with_uncertainties $(word 10, $(data_dirs))
-
-build/example-report-step-07/loesung/content &:  | $(solution_dirs) 
-	mkdir -p build/example-report-step-07/loesung/content
-
-build/example-report-step-08/loesung/content &:  | $(solution_dirs) 
-	mkdir -p build/example-report-step-08/loesung/content
-
-build/example-report-step-09/loesung/content &:  | $(solution_dirs) 
-	mkdir -p build/example-report-step-09/loesung/content
-
-build/example-report-step-10/loesung/content &:  | $(solution_dirs) 
-	mkdir -p build/example-report-step-10/loesung/content
-
-build/example-report-step-%/loesung &:  | $(step_dirs) 
-	mkdir -p build/example-report-step-$*/loesung
+### Makefiles
+makefile_files = $(addsuffix v16516/Makefile, $(wordlist 10,11,$(solution_dirs)))
 
 
-build/example-report-step-% : | build
-	mkdir -p build/example-report-step-$*	
+
+
+tex_files = $(header_tex_files) \
+						$(main_tex_files) \
+						$(implementation_tex_files) \
+						$(theory_tex_files) \
+						$(evaluation_tex_files) \
+						$(discussion_tex_files) \
+						$(setup_image_files) \
+						$(bib_files) \
+						$(advanced_mpl_files) \
+						$(makefile_files)
+
+
+all: $(tex_files) $(python_files) $(data_files)
+
+$(makefile_files) &: templates/Makefile | $(report_dirs)
+	set -- $(makefile_files); \
+	for i do\
+		cp -r $< $$i; \
+	done
+
+$(matplotlibrc_files) &: templates/matplotlibrc | $(solution_dirs)
+	set -- $(matplotlibrc_files); \
+	for i do\
+		cp -r $< $$i; \
+	done
+
+$(programms_bib_files) &: templates/programme.bib | $(solution_dirs)
+	set -- $(programms_bib_files); \
+	for i do\
+		cp -r $< $$i; \
+	done
+
+$(setup_image_files) &: templates/versuchsaufbau.png | $(graphics_dirs)
+	set -- $(setup_image_files); \
+	for i do\
+		cp -r $< $$i; \
+	done
+
+$(lit_bib_files) &: templates/lit.bib | $(solution_dirs)
+	set -- $(lit_bib_files); \
+	for i do\
+		cp -r $< $$i; \
+	done
+
+$(header_matplotlib_files) &: templates/header-matplotlib.tex | $(solution_dirs)
+	set -- $(header_matplotlib_files); \
+	for i do\
+		cp -r $< $$i; \
+	done
+
+$(header_tex_files) &: templates/latex/header_tex_template | $(solution_dirs)
+	python generate-step-files.py -t $< -s 7 $(addprefix -o=,$(header_tex_files))
+
+$(main_tex_files) &: templates/latex/v16516_tex_template | $(content_dirs)
+	python generate-step-files.py -t $< -s 7 $(addprefix -o=,$(main_tex_files))
+
+$(theory_tex_files) &: templates/latex/theorie_tex_template | $(content_dirs)
+	python generate-step-files.py -t $< -s 7 $(addprefix -o=,$(theory_tex_files))
+
+$(implementation_tex_files) &: templates/latex/durchfuehrung_tex_template | $(content_dirs)
+	python generate-step-files.py -t $< -s 7 $(addprefix -o=,$(implementation_tex_files))
+
+$(evaluation_tex_files) &: templates/latex/auswertung_tex_template | $(content_dirs)
+	python generate-step-files.py -t $< -s 7 $(addprefix -o=,$(evaluation_tex_files))
+
+$(discussion_tex_files) &: templates/latex/diskussion_tex_template | $(content_dirs)
+	python generate-step-files.py -t $< -s 7 $(addprefix -o=,$(discussion_tex_files))
+
+
+#$() &: templates/latex/_tex_template | $(step_dirs)
+
+$(python_files) &: templates/auswertung_py_template | $(solution_dirs) $(report_dirs)
+	python generate-step-files.py -t templates/auswertung_py_template -s 2 $(addprefix -o=,$(python_files))
+
+$(data_files_without_unc) &: templates/data_without_uncertainties/* | $(solution_dirs) $(report_dirs)
+	set -- $(data_dirs_without_unc); \
+	for i do\
+		cp -r templates/data_without_uncertainties $$i; \
+	done
+
+$(data_files_with_unc) &: templates/data_with_uncertainties/* | $(solution_dirs) $(report_dirs)
+	set -- $(data_dirs_with_unc); \
+	for i do\
+		cp -r templates/data_with_uncertainties $$i; \
+	done
+
+$(content_dirs) &:|$(report_dirs)
+	mkdir -p $(content_dirs) 	
+
+
+$(graphics_dirs)&: |$(report_dirs)
+	mkdir -p $(graphics_dirs)
+
+$(report_dirs)&: | $(solution_dirs) 
+	mkdir -p $(report_dirs)
+
+$(solution_dirs) &: | $(step_dirs)
+	mkdir -p $(solution_dirs)
+
+$(step_dirs): | build
+	mkdir -p $(step_dirs)
 
 build:
 	mkdir -p build
 
 clean:
 	rm -r build
-
-
-# development rules
-
-test_step_scripts: all
-	@echo 
-	@echo Testing: 
-	@echo "auswertung.py"
-	@echo ""
-	echo "" > build/python_output.txt 
-	set -- $(solution_dirs); \
-	for i do\
-		cd "$$i"; \
-		echo "$$PWD"; \
-		echo "Output of '$${i}auswertung.py':" >> ../../python_output.txt; \
-		echo "" >> ../../python_output.txt; \
-		python auswertung.py >> ../../python_output.txt;\
-		cd - >> /dev/null; \
-	done;\
-	diff -u templates/output_snapshot.txt build/python_output.txt  && echo "Test Passed!: No changes in output of scripts"
-
-#diff -u templates/output_snapshot.txt build/output.txt || diff -u templates/output_snapshot.txt build/output.txt   && echo "Test Passed!: No changes in output of scripts"
-
-
-
-.PHONY: all clean
-
-
-
 
 
