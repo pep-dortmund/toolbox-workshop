@@ -21,7 +21,7 @@ Die Fit parameter                                                               
 \eqref{eq:parameters-g_cylinder}                                                          % <8->
                                                                                           % <7->
 passen zum theoretischen Wert $\qty{9.81}{\meter\per\second\squared}$                     % <8->
-passen zum theoretischen Wert \input{theoretical-g.tex}                                   % <10->
+passen zum theoretischen Wert \input{theoretical-g.tex}                                   % <11->
 => TODO: Abweichungen berechnen                                                           % <7->
                                                                                           % <7->
 Die übereinstimmung der Fitparameter t0, weist auf eine systematische Unsicherheit        % <7->

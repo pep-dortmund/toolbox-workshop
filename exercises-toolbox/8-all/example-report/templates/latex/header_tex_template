@@ -106,7 +106,7 @@
 \UseTblrLibrary{booktabs,siunitx}                                                                 % <9->
                                                                                                   % <7->
 % Verbesserungen am Schriftbild                                                                   % <7->
-\usepackage{microtype}                                                                            % <10->
+\usepackage{microtype}                                                                            % <11->
                                                                                                   % <7->
 % Literaturverzeichnis                                                                            % <9->
 \usepackage[                                                                                      % <9->

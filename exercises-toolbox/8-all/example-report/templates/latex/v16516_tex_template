@@ -1,13 +1,13 @@
-\input{header.tex}                                                                                       % <7-> 
+\input{../header.tex}                                                                                    % <7-> 
 
-\usepackage{tikz}                                                                                        % <10-> 
+\usepackage{tikz}                                                                                        % <11-> 
                                                                                                          % <7-> 
 \subject{V16516}                                                                                         % <7-> 
 \title{Die schiefe Ebene}                                                                                % <7-> 
 \date{%                                                                                                  % <7-> 
   Durchführung: 29.09.2023                                                                               % <7-> 
   \hspace{3em}                                                                                           % <7-> 
-  Abgabe: 23.09.2024                                                                                     % <7-> 
+  Abgabe: 04.10.2024                                                                                     % <7-> 
 }                                                                                                        % <7-> 
                                                                                                          % <7-> 
 \begin{document}                                                                                         % <7-> 
