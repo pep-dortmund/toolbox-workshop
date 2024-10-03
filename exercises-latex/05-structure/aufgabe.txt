@@ -13,4 +13,4 @@ Aufgabe 1:
     4 Diskussion
 
 Aufgabe 2:
-  Erstelle das Inhaltsverzeichnis und kompiliere die PDF.
+  Erstelle das Inhaltsverzeichnis und kompiliere das PDF.
