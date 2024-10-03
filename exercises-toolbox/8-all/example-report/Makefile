@@ -95,15 +95,31 @@ solution_makefile_files = $(addsuffix Makefile-loesung, $(wordlist 2,5,$(solutio
 target_makefile_files = $(addsuffix v16516/Makefile, $(wordlist 10,11,$(solution_dirs)))
 makefile_files = $(solution_makefile_files) $(target_makefile_files)
 
+all: run
 
-
-
-all:$(task_files) \
+run:$(task_files) \
 		$(python_files) \
 		$(data_files) \
 		$(tex_files) \
 		$(setup_image_files) \
 		$(makefile_files)
+
+	# Run all Makefile-loesung
+	set -- $(wordlist 1, 5,$(solution_dirs)); \
+	for i do\
+		make -C $$i -f Makefile-loesung; \
+	done
+	# Run all Makefile-loesung in the additional subdir v16516	
+	set -- $(addsuffix v16516/, $(wordlist 6, 9,$(solution_dirs))); \
+	for i do\
+		make -C $$i -f Makefile-loesung; \
+	done
+	# Run the Makefile in the last two steps
+	set -- $(addsuffix v16516/, $(wordlist 10, 11,$(solution_dirs))); \
+	for i do\
+		make -C $$i -f Makefile; \
+	done
+		
 
 
 build/example-report-step-%/aufgabe.txt &: $(template_task_files) | $(step_dirs)
