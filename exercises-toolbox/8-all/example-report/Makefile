@@ -43,6 +43,10 @@ solution_dirs_with_tex = $(wordlist 7,11,$(solution_dirs))
 #build/example-report-step-{07,...,11}/loesung/v16516/content/
 content_dirs = $(addsuffix v16516/content/, $(solution_dirs_with_tex))
 
+### Taskfiles
+
+task_files = $(addsuffix aufgabe.txt,$(step_dirs))
+
 ### Datafiles
 
 append_datafilenames = $(foreach filename,$(datafilenames),$(addsuffix $(filename), $(1)))
@@ -75,25 +79,32 @@ header_matplotlib_files = $(addsuffix header-matplotlib.tex, $(wordlist 10,11,$(
 
 advanced_mpl_files = $(matplotlibrc_files) $(header_matplotlib_files)
 
-### Makefiles
-makefile_files = $(addsuffix v16516/Makefile, $(wordlist 10,11,$(solution_dirs)))
-
-
-
-
 tex_files = $(header_tex_files) \
 						$(main_tex_files) \
 						$(implementation_tex_files) \
 						$(theory_tex_files) \
 						$(evaluation_tex_files) \
 						$(discussion_tex_files) \
-						$(setup_image_files) \
 						$(bib_files) \
-						$(advanced_mpl_files) \
-						$(makefile_files)
+						$(advanced_mpl_files) 
+
+### Makefiles
+makefile_files = $(addsuffix v16516/Makefile, $(wordlist 10,11,$(solution_dirs)))
 
 
-all: $(tex_files) $(python_files) $(data_files)
+
+
+
+all:$(task_files) \
+		$(python_files) \
+		$(data_files) \
+		$(tex_files) \
+		$(setup_image_files) \
+		$(makefile_files)
+
+
+build/example-report-step-%/aufgabe.txt &: $(template_task_files) | $(step_dirs)
+	cp templates/aufgabe-step-$*.txt build/example-report-step-$*/aufgabe.txt
 
 $(makefile_files) &: templates/Makefile | $(report_dirs)
 	set -- $(makefile_files); \
