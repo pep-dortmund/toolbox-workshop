@@ -1,6 +1,6 @@
 # functions
 
-In dieser Aufgabe machen wir uns mit NumPy-Funktionen vertraut die man auf
+In dieser Aufgabe machen wir uns mit NumPy-Funktionen vertraut, die man auf
 NumPy-Arrays anwenden kann. Im Einzelnen sind dies:
 
 np.sum
@@ -18,7 +18,7 @@ tippen. Es geht hier nicht darum, die Lösung 1 zu 1 nachzuarbeiten, es geht nur
 darum, ein Gefühl dafür zu bekommen, wie die numpy Funktionen in
 unterschiedlichen Dimensionen funktionieren. Es reicht also auch vollkommen,
 die ganze Aufgabe nur mit einer (z.B. nur np.sum) der obigen Funktionen
-durchzuarbeiten, wenn du das Gefühl hast verstanden zu haben, wie das ganze
+durchzuarbeiten, wenn du das Gefühl hast verstanden zu haben, wie das Ganze
 funktioniert.
 
 
@@ -30,7 +30,7 @@ funktioniert.
    angewendet werden. Bei mehrdimensionalen Arrays gibt es unter anderem ein
    weiteres Argument für die obigen Funktionen. Dieses keywordargument heißt
    'axis' und kann bei 2D Arrays wie folgt verwendet werden:
-   
+
    np.sum(B, axis=0)
    np.sum(B, axis=1)
    np.sum(B, axis=(0, 1))
@@ -41,10 +41,10 @@ funktioniert.
    funktioniert 'axis=(0, 1)' für diese Funktion nicht.)
 
 3) In der Datei einkauf.txt sind die Kosten für die Einkäufe einer Studenten-WG
-   eingetragen. Jeder der fünf Mitbewohner hält darin für jeden Tag des Monats
-   fest, wie viel er ausgegeben hat.
+   eingetragen. Jede*r der fünf Mitbewohner*innen hält darin für jeden Tag des
+   Monats fest, wie viel sie/er ausgegeben hat.
 
-   a) Wie viel hat jeder Mitbewohner in diesem Monat insgesamt (im Mittel)
+   a) Wie viel hat jede Person in diesem Monat insgesamt (im Mittel)
       ausgegeben? Wie viel haben alle fünf zusammen in diesem Monat ausgegeben?
 
    b) Wie viel wurde an jedem Tag in diesem Monat insgesamt (im Mittel)
@@ -53,11 +53,11 @@ funktioniert.
    c) Was war die höchste (niedrigste) Einzelausgabe jeder Person? Was war die
       höchste (niedrigste) Einzelausgabe an jedem Tag?
 
-   d) Es gibt noch ein keywordargument für die meisten dieser Funktionen
+   d) Es gibt noch ein keywordargument für die meisten dieser Funktionen:
       'keepdims'. Für dieses gibt es nur zwei mögliche Werte.
 
       np.sum(B, axis=1, keepdims=False) -> Das hier ist der Standardwert und
       np.sum(B, axis=1, keepdims=True)     muss nicht extra ausprobiert werden.
-      
+
       Probiere dieses keywordargument nach Belieben an einigen der bereits
       berechneten arrays aus.
