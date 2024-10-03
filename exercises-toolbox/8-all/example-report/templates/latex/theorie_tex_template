@@ -58,7 +58,7 @@ Die notwendigen physikalischen Größen der Objekte sind in \autoref{sec:Auswert
 Für die Bestimmung der Gravitationsbeschleunigung $g$ unter Annahme der theoretischen Trägheitsmomente                                    % <7->
 für Kugel $I_\text{K}$ und Hohlzylinder $I_\text{Z}$                                                                                      % <7->
 \begin{align*}                                                                                                                            % <7->
-  I_{\text{K}} = \frac{2}{5}mr_{\text{K}}^2 && I_{\text{Z}} = \frac{m}{2}(r_{\text{Z},\text{innen}}^2  + r_{\text{Z},\text{außen}}^2),    % <7->
+  I_{\text{K}} = \frac{2}{5}mr_{\text{K}}^2 && I_{\text{Z}} = \frac{m}{2}\left(r_{\text{Z},\text{innen}}^2  + r_{\text{Z},\text{außen}}^2)\right),    % <7->
 \end{align*}                                                                                                                              % <7->
 ergeben sich die folgenden Ausgleichsfunktionen                                                                                           % <7->
                                                                                                                                           % <7->
