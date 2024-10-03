@@ -18,7 +18,7 @@ class Templateline:
         pattern_length = len(self.pattern)
         indicies =  f"{self.output_file_indices[0]},...,{self.output_file_indices[-1]}"
         # magic number 10: the amount of padding necessary to print a pattern with two two-digit numbers
-        return f"({self.pattern} -> {indicies}) {" "*(10-pattern_length)} {self.linenumber:>3} {self.line}"
+        return f"({self.pattern} → [{indicies}]) {" "*(10-pattern_length)} {self.linenumber:>3} {self.line}"
 
 
 def setup_arg_parser():
@@ -137,7 +137,8 @@ def main():
 
     if args.dry_run:
         for stepfile, lines in lines_per_stepfiles.items():
-            print(f"\nOutput file '{stepfile}' would these lines from the template file:")
+            print(f"\nOutput file '{stepfile}' with index ({output_filepaths.index(stepfile)})  would contain these lines from the template file:")
+            print(f"pattern → indicies{" "*9}ln  line")
             print(f"{"\n".join(str(l) for l in lines)}")
         return 
 
