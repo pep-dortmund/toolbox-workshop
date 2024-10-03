@@ -15,4 +15,4 @@ X
 **
 
 Tipp: Wenn man einen String mit einer Zahl n multipliziert, erhält man einen
-neuen String, der den alten n mal enthält.
+neuen String, der den alten n-mal enthält.

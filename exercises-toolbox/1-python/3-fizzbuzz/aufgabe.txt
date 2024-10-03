@@ -10,4 +10,4 @@ Zahlen, die durch 5 teilbar sind, durch "Buzz" ersetzt. Ist eine Zahl sowohl
 durch 3 als auch durch 5 teilbar, so gib stattdessen "Fizzbuzz" aus.
 
 Tipp: Eine Zahl n ist durch eine andere Zahl x teilbar, wenn ihr Divisionsrest
-0 ist: n % x == 0
+0 ist: n % x == 0.

@@ -2,23 +2,23 @@
 
 1. Aufgabe:
 Öffne die Datei "fstrings.py". In dieser befinden sich der Titel eines
-Versuchs, das Datum an dem der Versuch durchgeführt wurde und zwei Listen mit
-Messwerten. Ziel ist es zunächst die Ausgabe einer Überschrift mit dem
+Versuchs, das Datum, an dem der Versuch durchgeführt wurde, und zwei Listen mit
+Messwerten. Ziel ist es zunächst, die Ausgabe einer Überschrift mit dem
 Versuchstitel und dem Datum zu erzeugen:
 
     Versuch: Wiegen von Metallen durchgeführt am 24.09.2018
 
 Alternative Ausgabe mit Anführungszeichen als kleine Steigerung:
- 
+
     Versuch: 'Wiegen von Metallen' durchgeführt am 24.09.2018
 
 Natürlich kann man hier einfach den Text kopieren und ausgeben,
-Ziel ist es aber die Variablen `title` und `date` zu verwenden.
+Ziel ist es aber, die Variablen `title` und `date` zu verwenden.
 
 Tipp:
 Die Funktion print() kann mehrere (unbegrenzt viele) Argumente verarbeiten. Die
-einzelnen Argumente werden mit Leerzeichen dazwischen aneinander gehangen. 
-ZumBeispiel:
+einzelnen Argumente werden mit Leerzeichen dazwischen aneinander gehangen.
+Zum Beispiel:
 
 print("a", "b", "c")
 
