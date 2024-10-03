@@ -1,14 +1,14 @@
 all: build/v16516.pdf
 
 # hier Python-Skripte:
-plot-I_kugel.pdf plot-I_zylinder.pdf plot-g_kugel.pdf plot-g_zylinder.pdf: auswertung.py ../matplotlibrc ../header-matplotlib.tex | build
+build/plot-I_kugel.pdf build/plot-I_zylinder.pdf build/plot-g_kugel.pdf build/plot-g_zylinder.pdf: auswertung.py ../matplotlibrc ../header-matplotlib.tex | build
 	# so that matplotlib can find the tex header when running
 	# LaTeX in the tmp directory
 	# and set the matplotlibrc
 	TEXINPUTS=$$(pwd)/..: MATPLOTLIBRC=../matplotlibrc python auswertung.py
 
 # hier weitere Abhängigkeiten für build/vXXX.pdf deklarieren:
-build/v16516.pdf: plot-I_kugel.pdf plot-I_zylinder.pdf plot-g_kugel.pdf plot-g_zylinder.pdf
+build/v16516.pdf: build/plot-I_kugel.pdf build/plot-I_zylinder.pdf build/plot-g_kugel.pdf build/plot-g_zylinder.pdf
 
 build/v16516.pdf: FORCE | build
 	# to find header and bib files in the main directory
