@@ -1,0 +1,39 @@
+# Realistisches-Beispiel-Protokoll
+
+Einleitung:
+Um dieser Aufgabe sinnvoll folgen zu können, sollte diese von Anfang an bearbeitet werden. Folgt den
+Anweisungen in den 'aufgabe.txt' Dateien in den Unterordnern des Ordners 'example-report'.
+
+Aufgabe:
+Mit den Informationen zu uncertainties könnt ihr jetzt den Umgang mit Messunsicherheiten 
+in die Auswertung aufnehmen. Die Messdaten im Ordner data haben jetzt 
+zusätzliche Spalten mit den jeweiligen Unsicherheiten.
+
+1. Kopiert diese neuen Messwertdateien in euren eigenen Ordner data, um die Messwerte 
+mit Unsicherheiten verwenden zu können. Die alten Dateien könnt ihr überschreiben oder vorher löschen.
+
+2. Importiert uncertainties und uncertainties.unumpy in eurer auswertung.py.
+
+3. Ergänzt das Einlesen der Messdaten um die zusätzlichen Spalten mit Unsicherheiten,
+   eine Benennung der Form l_unc für "Unsicherheit des Messwerts l" ist hier sinnvoll.
+
+4. Die eingelesenen Messwerte und Unsicherheiten müssen jetzt zu unsicherheitbehafteten
+   Messwerten zusammengefügt werden. Nutzt dafür ufloat (aus uncertainties) für einzelne Werte 
+   und uarray (aus uncertainties.unumpy) für Messreihen.
+
+5. In den Fit-Funktionen müsst ihr von allen Konstanten die Unsicherheiten entfernen,
+   die dafür nötige Funktion heißt nominal_values und es bietet sich an, diese in 
+   abgekürzter Form zu importieren (genauso wie die Funktion std_devs):
+
+   from uncertainties.unumpy import (nominal_values as noms, std_devs as stds)
+   
+   dann kann die Funktion noms() verwendet werden, um die Unsicherheit eines Wertes
+   zu entfernen.
+
+6. curve_fit kann mit Unsicherheiten nicht direkt umgehen, die unabhängige Variable
+   darf keine Unsicherheiten haben und den Wert bzw. die Unsicherheit 
+   der abhängige Variable müssen getrennt übergeben werden.
+
+7. matplotlib kann auch nicht mit den Unsicherheiten umgehen: 
+   Verwendet statt ax.plot die Funktion ax.errorbar, um die Messwerte mit ihren 
+   Unsicherheiten darzustellen.

@@ -1,0 +1,5 @@
+#m,sigma_m,U,sigma_U
+216,1,30.5,0.1
+
+# Messdaten der Kugel: Vollkugel
+# Umfang (U/cm), Masse (m/g)

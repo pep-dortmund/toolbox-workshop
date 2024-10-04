@@ -1,0 +1,51 @@
+all: auswertung.py                                                                                                                                    # <2-2> 
+	python auswertung.py                                                                                                                                # <2-2> 
+
+all: plot_kugel.pdf plot_zylinder.pdf                                                                                                                 # <3-3> 
+                                                                                                                                                      # <3-3> 
+plot_kugel.pdf plot_zylinder.pdf : auswertung.py                                                                                                      # <3-3> 
+	python auswertung.py                                                                                                                                # <3-3> 
+
+clean:                                                                                                                                                # <3-3> 
+	rm plot_kugel.pdf plot_zylinder.pdf                                                                                                                 # <3-3> 
+
+all: plot-I_kugel.pdf plot-I_zylinder.pdf plot-g_kugel.pdf plot-g_zylinder.pdf                                                                        # <4-6> 
+                                                                                                                                                      # <4-6> 
+plot-I_kugel.pdf plot-I_zylinder.pdf plot-g_kugel.pdf plot-g_zylinder.pdf: auswertung.py                                                              # <4-6> 
+	python auswertung.py                                                                                                                                # <4-6> 
+
+clean:                                                                                                                                                # <4-6> 
+	rm plot-I_kugel.pdf plot-I_zylinder.pdf plot-g_kugel.pdf plot-g_zylinder.pdf                                                                        # <4-6> 
+
+all: v16516.pdf plot-I_kugel.pdf plot-I_zylinder.pdf plot-g_kugel.pdf plot-g_zylinder.pdf                                                             # <7-8> 
+                                                                                                                                                      # <7-8> 
+v16516.pdf: FORCE                                                                                                                                     # <7-8> 
+	latexmk --lualatex --interaction=nonstopmode --halt-on-error v16516.tex                                                                             # <7-8> 
+	                                                                                                                                                    # <7-8> 
+plot-I_kugel.pdf plot-I_zylinder.pdf plot-g_kugel.pdf plot-g_zylinder.pdf: auswertung.py                                                              # <7-8> 
+	python auswertung.py                                                                                                                                # <7-8> 
+
+all: v16516.pdf                                                                                                                                       # <9-9> 
+                                                                                                                                                      # <9-9> 
+v16516.pdf: plot-I_kugel.pdf plot-I_zylinder.pdf plot-g_kugel.pdf plot-g_zylinder.pdf                                                                 # <9-9> 
+                                                                                                                                                      # <9-9> 
+v16516.pdf: FORCE                                                                                                                                     # <9-9> 
+	TEXINPUTS=..: BIBINPUTS=..: latexmk --lualatex --interaction=nonstopmode --halt-on-error v16516.tex                                                 # <9-9> 
+	                                                                                                                                                    # <9-9> 
+plot-I_kugel.pdf plot-I_zylinder.pdf plot-g_kugel.pdf plot-g_zylinder.pdf: auswertung.py                                                              # <9-9> 
+	python auswertung.py                                                                                                                                # <9-9> 
+
+                                                                                                                                                      # <7-9> 
+FORCE:                                                                                                                                                # <7-9> 
+                                                                                                                                                      # <7-9> 
+clean:                                                                                                                                                # <7-9> 
+	rm v16516.pdf v16516.aux v16516.log v16516.fdb_latexmk v16516.fls v16516.toc \                                                                      # <7-9> 
+	plot-I_kugel.pdf plot-I_zylinder.pdf plot-g_kugel.pdf plot-g_zylinder.pdf                                                                           # <7-9> 
+
+                                                                                                                                                      # <2->
+.PHONY: all clean                                                                                                                                     # <2->
+
+
+
+
+

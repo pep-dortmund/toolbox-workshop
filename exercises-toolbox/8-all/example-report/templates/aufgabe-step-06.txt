@@ -1,0 +1,34 @@
+# Realistisches-Beispiel-Protokoll
+
+Einleitung:
+Um dieser Aufgabe sinnvoll folgen zu können, sollte diese von Anfang an bearbeitet werden. Folgt den
+Anweisungen in den 'aufgabe.txt' Dateien in den Unterordnern des Ordners 'example-report'.
+
+Aufgabe:
+Diesmal arbeitet ihr nicht am Protokoll weiter. Das Ziel soll es sein, euren bisherigen (und zukünftigen) Fortschritt am Beispielprotokoll in einem Git-Repository zu speichern und auf Github hochzuladen.
+Die ersten zwei Schritte könnt ihr überspringen, falls ihr keinen Github-Account anlegen wollt.
+
+1) Erstellt euch einen Github-Account und einen ssh-key für die Authentifikation (siehe git-Foliensatz).
+
+2) Erstellt unter eurem Github-Account ein neues Repository 'Beispiel-Praktikum'. 
+Das Repository könnt ihr nach Abschluss dieser Aufgabenreihe auch wieder löschen.
+Readme und Lizenz (MIT) könnt ihr trotzdem mit anlegen, um gute Angewohnheiten einzuüben.
+
+3) Mit Github: Klont das Repository an einen Ort eurer Wahl (z.B. ~/Documents/Uni/Toolbox).
+
+Ohne Github: Erstellt an einem Ort eurer Wahl (z.B. ~/Documents/Uni/Toolbox) einen neuen Ordner 'Beispiel-Praktikum'. Navigiert mit dem Terminal in den Ordner 'Beispiel-Praktikum' und initialisiert in diesem ein Git-Repository.
+
+4) Kopiert den Ordner v16516, in dem ihr bisher diese Aufgabenreihe bearbeitet habt, in den neuen Ordner 'Beispiel-Praktikum'
+
+5) Erstellt in dem neuen Ordner 'Beispiel-Praktikum' eine neue Datei mit dem Namen '.gitignore'.
+   Schreibt in die erste Zeile dieser neuen Datei '*.pdf', damit git alle pdf-Dateien ignoriert.
+   Verschafft euch einen Überblick über die Dateien im git-Repository (git status) 
+   und fügt dem Repository alle notwendigen Dateien hinzu (git add, git commit).
+   
+   Mit Github: Ladet die Änderungen auf Github hoch. 
+
+6) Mit Github (Optional): Ihr könntet die nächsten Schritte in dieser Aufgabenreihe im Team machen
+   (z.B. abwechselnd) und so noch etwas Erfahrung im gemeinsamen Umgang mit git und Github sammeln.
+
+
+

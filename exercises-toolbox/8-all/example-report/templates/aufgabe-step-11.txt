@@ -1,0 +1,36 @@
+# Realistisches-Beispiel-Protokoll
+
+Einleitung:
+Um dieser Aufgabe sinnvoll folgen zu können, sollte diese von Anfang an bearbeitet werden. Folgt den
+Anweisungen in den 'aufgabe.txt' Dateien in den Unterordnern des Ordners 'example-report'.
+
+Aufgabe:
+
+Die Änderung von Schritt 10 zu diesem sind etwas fortgeschrittener. Es ist bei weitem nicht notwendig,
+diese von Tag Eins an im Praktikum zu verwenden. Die Änderungen sind aber nicht nur sinnvoll für die 
+gute wissenschaftliche Praxis (weniger manuelle Eingaben) sondern sogar etwas entlastend (weniger 
+manuelle Eingaben).
+
+Folgendes wird in diesem letzten Schritt ergänzt. Ihr könnt es selbst probieren oder einfach 
+den Ordner loesung ansehen, um einen Überblick zu bekommen.
+
+1) Python-Code der regelmäßig wiederverwendet wird lässt sich in eine Datei auslagern.
+   Dies wurde mit zwei Funktionen aus anderen Übungen getan: ucurve_fit und make_qty.
+   Diese liegen jetzt jeweils in einer zusätzlichen Pythondatei im Ordner v16516
+   und werden in auswertung.py importiert.
+
+2) ucurve_fit vereinfacht den Umgang von curve_fit mit Unsicherheiten.
+
+3) make_qty hilft dabei berechnete Werte, als siunitx \qty zu formatieren.
+   Dies wird vor allem dafür verwendet berechnete Werte direkt in eine Datei 
+   im build-Ordner zu schreiben. Diese Dateien können dann mit \input direkt 
+   im LaTeX-Protokoll importiert werden, dadurch ist weniger manuelles Abtippen nötig
+   und das Protokoll wird reproduzierbarer.
+   Auch die Fit-Parameter werden auf diese Weise exportiert.
+
+4) Die Erstellung von Tabellen wurde halb automatisiert. Auch hier müssen die 
+   Messwerte jetzt nicht mehr in das LaTeX-Tabellenformat abgetippt werden.
+   Die Spalteneinstellungen müssen jedoch weiterhin für jede Tabelle vorgenommen werden.
+   Als letzte Aufgabe dieser Reihe (deren Lösung beliebig komplex werden kann):
+   Wie könnte man die Tabellen noch weiter automatisieren?
+

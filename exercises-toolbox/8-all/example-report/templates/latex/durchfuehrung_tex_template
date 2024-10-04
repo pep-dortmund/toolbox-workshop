@@ -1,0 +1,22 @@
+\section{Durchführung}                                                                                  % <7->
+\label{sec:Durchführung}                                                                                % <9->
+                                                                                                        % <7->
+Wie in der Anleitung~\cite{V16516} beschrieben, wird der Versuch wie folgt durchgeführt.                % <9->
+                                                                                                        % <9->
+Wie einst von Galileo Galilei \cite[232]{galilei1623} persönlich, wurden im hier beschriebenen Versuch  % <9->
+Objekte (eine Kugel und  Holzylinder in Form eines Glases) eine schiefe Ebene hinab gerollt.            % <9->
+                                                                                                        % <9->
+Notiert wird dabei die Starthöhen $h$. Der Prozess des Herabrollens wird mit einer Kamera               % <8->
+aufgezeichnet, um aus der Zeit $t$ bis zum erreichen des Endes der schiefen Ebene möglichst genau       % <8->
+aus den Einzelbildern (frames) des Films ablesen zu können.                                             % <8->
+                                                                                                        % <7->
+Die aufgenommenen Messdaten werden für zwei unabhängige Zwecke verwendet:                               % <7->
+                                                                                                        % <7->
+\begin{enumerate}                                                                                       % <7->
+  \item {Bestimmung der Fallbeschleunigung $g$, dafür werden                                            % <7->
+        die theoretischen Trägheitsmomente angenommen.}                                                 % <7->
+      \item {Bestimmung der Trägheitsmomente $I$ der beiden Objekte unter Annahme der theoretischen     % <7->
+        Fallbeschleunigung.}                                                                            % <7->
+\end{enumerate}                                                                                         % <7->
+
+
