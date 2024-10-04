@@ -29,12 +29,12 @@ Aufgabe:
 Es geht zunächst nur um das Erstellen des Ordners in dem ihr diese Aufgabe immer weiter ergänzt. 
 
 1) Erstellt (z.B. in einem Ordner unter ~/Documents) einen neuen Ordner mit dem Namen v16516.
+   Oder nutzt unsere Protokollvorlage: https://github.com/pep-dortmund/toolbox-workshop-protocol-template
+   In dieser Vorlage sind einige der nächsten Schritt bereits getan, lasst euch davon nicht verwirren.
 
 2) Kopiert den Ordner data aus diesem Aufgabenordner in den Ordner v16516.
 
 3) Erstellt in dem Ordner v16516 eine leere Pythondatei 'auswertung.py'.
-
-
 
 
 

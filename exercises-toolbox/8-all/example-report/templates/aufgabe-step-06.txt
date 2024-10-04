@@ -1,9 +1,8 @@
-# Beispiel Protokoll
+# Realistisches-Beispiel-Protokoll
 
 Einleitung:
-Um dieser Aufgabe sinnvoll folgen zu können sollte diese von Anfang an bearbeitet werden. Folgt den 
+Um dieser Aufgabe sinnvoll folgen zu können, sollte diese von Anfang an bearbeitet werden. Folgt den
 Anweisungen in den 'aufgabe.txt' Dateien in den Unterordnern des Ordners 'example-report'.
-
 
 Aufgabe:
 Diesmal arbeitet ihr nicht am Protokoll weiter. Das Ziel soll es sein, euren bisherigen (und zukünftigen) Fortschritt am Beispielprotokoll in einem Git-Repository zu speichern und auf Github hochzuladen.
@@ -22,7 +21,7 @@ Ohne Github: Erstellt an einem Ort eurer Wahl (z.B. ~/Documents/Uni/Toolbox) ein
 4) Kopiert den Ordner v16516, in dem ihr bisher diese Aufgabenreihe bearbeitet habt, in den neuen Ordner 'Beispiel-Praktikum'
 
 5) Erstellt in dem neuen Ordner 'Beispiel-Praktikum' eine neue Datei mit dem Namen '.gitignore'.
-   Schreibt in die erste Zeile dieser neuen Datei '*.pdf', damit git alle pdf-Dateien zu ignorieren.
+   Schreibt in die erste Zeile dieser neuen Datei '*.pdf', damit git alle pdf-Dateien ignoriert.
    Verschafft euch einen Überblick über die Dateien im git-Repository (git status) 
    und fügt dem Repository alle notwendigen Dateien hinzu (git add, git commit).
    

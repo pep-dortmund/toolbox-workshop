@@ -1,9 +1,8 @@
-# Beispiel Protokoll
+# Realistisches-Beispiel-Protokoll
 
 Einleitung:
-Um dieser Aufgabe sinnvoll folgen zu können sollte diese von Anfang an bearbeitet werden. Folgt den 
+Um dieser Aufgabe sinnvoll folgen zu können, sollte diese von Anfang an bearbeitet werden. Folgt den
 Anweisungen in den 'aufgabe.txt' Dateien in den Unterordnern des Ordners 'example-report'.
-
 
 Aufgabe:
 Mit den Informationen zu scipy könnt ihr nun die Theorie-Funktionen aus der letzten Aufgabe
@@ -12,8 +11,8 @@ zu Fit-Funktionen abändern und so physikalische Größen als Fit-Parameter best
 1. Ändert die Theorie-Funktionen aus der letzten Aufgabe zu Fit-Funktionen, diese benötigen
    zusätzliche Argumente für die Fit-Parameter und diese Fit-Parameter müssen auch in der 
    Funktion verwendet werden. Konkret:
-   - Die Fallbeschleunigung g die in der letzten Aufgabe als 9.81 angenommen wurde, ist jetzt ein
-   Fit-Parameter g.
+   - Die Fallbeschleunigung g, die in der letzten Aufgabe als 9.81 m/s² angenommen wurde,
+      ist jetzt ein Fit-Parameter g.
    - Außerdem ist noch ein weiterer Parameter t0 nötig, wie ihr dem finalen Beispielprotokoll entnehmen könnt.
 
 2. Importiert die Funktion curve_fit aus scipy.optimize.
@@ -29,6 +28,6 @@ zu Fit-Funktionen abändern und so physikalische Größen als Fit-Parameter best
 
 6. Im finalen Beispielprotokoll wurden auch das Trägheitsmoment der Objekte durch einen weiteren 
    Fit bestimmt (dabei ist dann der theoretische Wert von g anzunehmen).
-   Ergänzt die notwendigen Fit-Funktionen und Plots für diesen Auswertungsschritt in dem ihr die
+   Ergänzt die notwendigen Fit-Funktionen und Plots für diesen Auswertungsschritt, in dem ihr die
    vorangegangenen Schritte für diesen Fit wiederholt.
 
