@@ -7,16 +7,16 @@ Anweisungen in den 'aufgabe.txt' Dateien in den Unterordnern des Ordners 'exampl
 
 Aufgabe:
 Mit den Informationen zu uncertainties könnt ihr jetzt den Umgang mit Messunsicherheiten 
-in die Auswertung aufnehmen. Die Messdaten im Ordner vorlage/v16516/data haben jetzt 
+in die Auswertung aufnehmen. Die Messdaten im Ordner data haben jetzt 
 zusätzliche Spalten mit den jeweiligen Unsicherheiten.
 
 1. Kopiert diese neuen Messwertdateien in euren eigenen Ordner data, um die Messwerte 
-mit Unsicherheiten zu haben. Die alten Dateien könnt ihr überschreiben oder vorher löschen.
+mit Unsicherheiten verwenden zu können. Die alten Dateien könnt ihr überschreiben oder vorher löschen.
 
 2. Importiert uncertainties und uncertainties.unumpy in eurer auswertung.py
 
 3. Ergänzt das Einlesen der Messdaten um die zusätzlichen Spalten mit Unsicherheiten,
-   eine Benennung der Form l_unc für "Unsicherheit des Messwerts l" ist hier sinnvoll
+   eine Benennung der Form l_unc für "Unsicherheit des Messwerts l" ist hier sinnvoll.
 
 4. Die eingelesenen Messwerte und Unsicherheiten müssen jetzt zu unsicherheitbehafteten
    Messwerten zusammengefügt werden. Nutzt dafür ufloat (aus uncertainties) für einzelne Werte 
@@ -25,7 +25,9 @@ mit Unsicherheiten zu haben. Die alten Dateien könnt ihr überschreiben oder vo
 5. In den Fit-Funktionen müsst ihr von allen Konstanten die Unsicherheiten entfernen,
    die dafür nötige Funktion heißt nominal_values und es bietet sich an diese in 
    abgekürzter Form zu importieren (genauso wie die Funktion std_devs):
+
    from uncertainties.unumpy import (nominal_values as noms, std_devs as stds)
+   
    dann kann die Funktion noms() verwendet werden, um die Unsicherheit eines Wertes
    zu entfernen.
 

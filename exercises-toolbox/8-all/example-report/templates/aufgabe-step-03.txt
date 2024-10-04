@@ -17,10 +17,8 @@ Die Berechnung von Ausgleichskurven wird erst durch eine weitere Bibliothek (sci
 Jedoch könnt ihr den Verlauf der theoretischen Funktionen bereits in die Plots einzeichnen.
 
 3. Schreibt jeweils eine Python-Funktion für die Gleichungen t_B(h) und t_Z(h) (Gleichungen 4 und 5 im Protokoll).
-   Lls Wert für g könnt ihr 9.81 verwenden (auch dafür wird scipy noch eine bessere Lösung sein)
-4. Erstellt mit np.linspace ein array mit vielen Werten die für den Plot der Theorie-Funktion verwendet werden können.
-   (da matplotlib im Prinzip einzelne Punkte zeichnet bzw. diese mit Geraden verbindet, braucht man für Theorie-Funktion 
-    sehr viele Punkte und kann nicht einfach nur die Messwerte für h verwenden.)
+   Als Wert für g könnt ihr 9.81 verwenden (auch dafür wird scipy noch eine bessere Lösung sein)
+4. Erstellt mit np.linspace ein array mit vielen Werten, die für den Plot der Theorie-Funktion verwendet werden können. (Da matplotlib im Prinzip einzelne Punkte zeichnet bzw. diese mit Geraden verbindet, braucht man für Theorie-Funktion sehr viele Punkte und kann nicht einfach nur die Messwerte für h verwenden.)
 5. Ergänzt die Theorie-Funktion im jeweiligen plot der Messwerte.
 
 

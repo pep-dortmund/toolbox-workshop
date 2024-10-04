@@ -10,7 +10,7 @@ Mit den Informationen zu scipy könnt ihr nun die Theorie-Funktionen aus der let
 zu Fit-Funktionen abändern und so physikalische Größen als Fit-Parameter bestimmen.
 
 1. Ändert die Theorie-Funktionen aus der letzten Aufgabe zu Fit-Funktionen, diese benötigen
-   zusätzliche Argumente für die Fit-Parameter. Und diese Fit-Parameter müssen auch in der 
+   zusätzliche Argumente für die Fit-Parameter und diese Fit-Parameter müssen auch in der 
    Funktion verwendet werden. Konkret:
    - Die Fallbeschleunigung g die in der letzten Aufgabe als 9.81 angenommen wurde, ist jetzt ein
    Fit-Parameter g.
@@ -28,7 +28,7 @@ zu Fit-Funktionen abändern und so physikalische Größen als Fit-Parameter best
    mit den berechneten Parametern hinzu.
 
 6. Im finalen Beispielprotokoll wurden auch das Trägheitsmoment der Objekte durch einen weiteren 
-   Fit bestimmt (dabei ist dann der Theoriewert von g anzunehmen).
+   Fit bestimmt (dabei ist dann der theoretische Wert von g anzunehmen).
    Ergänzt die notwendigen Fit-Funktionen und Plots für diesen Auswertungsschritt in dem ihr die
    vorangegangenen Schritte für diesen Fit wiederholt.
 

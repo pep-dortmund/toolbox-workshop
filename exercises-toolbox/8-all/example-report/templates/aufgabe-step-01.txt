@@ -1,28 +1,38 @@
-# Realistisches-Beispiel-Protokoll
+# Beispiel Protokoll
 
 Einleitung: 
-
-Wie der Name der Aufgabe schon verspricht, werdet ihr im Zuge dieser Aufgabe ein vollständiges 
+Wie der Name der Aufgabe schon verspricht, werdet ihr im Zuge dieser Aufgabenreihe ein vollständiges 
 und realistisches Versuchsprotokoll erstellen. Diesem Ziel werdet ihr Aufgabe für Aufgabe etwas
 näher kommen können, indem ihr jeweils ein Thema des Workshops pro Aufgabe integriert.
 
+Diese Aufgabenreihe hat 11 Schritte:
+01) Erstellen eines neuen Ordners für das Protokoll
+02) Daten mit numpy einlesen und verarbeiten
+03) Daten und Funktionen mit Matplotlib plotten
+04) Ausgleichsrechnung mit scipy durchführen und plotten
+05) Unsicherheiten mit uncertainties in die Auswertung integrieren
+06) Ein git-Repository erstellen 
+07) Struktur des LaTeX-Dokuments erstellen
+08) Mathematik im LaTeX-Dokument ergänzen
+09) Ergänzen von Bildern, Tabellen, einem Literaturverzeichnis und Referenzen
+10) TeX und Matplotlib Einstellungen und Makefile hinzufügen
+11) Noch etwas mehr Automatisierung
+
 Um zu wissen, wo es hingeht, findet ihr auch in diesem Ordner schon das vollständige Protokoll zum Ansehen.
+Außerdem könnt ihr aus diesem die Texte kopieren, damit ihr diese nicht vollständig abtippen müsst.
+
+Der Ordner loesung ist immer auf dem Stand auf dem euer Ordner nach Bearbeitung der 
+Aufgabe sein sollte.
+
 
 Aufgabe:
-Heute fällt diese Aufgabe noch nicht zu umfangreich aus. Es geht zunächst nur um das erstellen 
-des Ordners in dem ihr diese Aufgabe immer weiter ergänzt. 
+Es geht zunächst nur um das Erstellen des Ordners in dem ihr diese Aufgabe immer weiter ergänzt. 
 
-1) Erstellt (z.B. in einem Ordner unter ~/Documents) einen neuen Ordner mit dem Namem v16516.
+1) Erstellt (z.B. in einem Ordner unter ~/Documents) einen neuen Ordner mit dem Namen v16516.
 
 2) Kopiert den Ordner data aus diesem Aufgabenordner in den Ordner v16516.
 
-Das war es schon, morgen gehts weiter.
-
-Erklärung:
-
-Im Ordner 'v16516' befindet sich noch nicht viel, nur eine leere Pythondatei und ein Ordner 'data' in dem sich 
-die Textdateien mit den Messwerten befinden, die ihr für die Auswertung verwenden werdet. Das spaßige Abtippen 
-der Messwerte aus dem Laborbuch, haben wir euch schonmal abgenommen. ;)
+3) Erstellt in dem Ordner v16516 eine leere Pythondatei 'auswertung.py'.
 
 
 

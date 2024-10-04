@@ -3,3 +3,17 @@
 Einleitung:
 Um dieser Aufgabe sinnvoll folgen zu können sollte diese von Anfang an bearbeitet werden. Folgt den 
 Anweisungen in den 'aufgabe.txt' Dateien in den Unterordnern des Ordners 'example-report'.
+
+Aufgaben:
+
+1) Je nachdem welche header.tex ihr verwendet kann es nötig sein, diese um weiter Pakete zu ergänzen.
+Schaut z.B. im Ordner loesung nach. 
+
+2) Ergänzt alle mathematischen Gleichungen und Symbole. Dafür könnt ihr das finale Protokoll aus Schritt 1
+   oder die Lösung für diese Aufgabe in loesung/v16516/v16516.pdf als Vorlage nehmen.
+
+3) Im Ordner loesung/v16516 findet ihr die Datei v16516.pdf. Ergänzt die übrigen Texte aus dieser Datei,
+   sodass euer aktuelles Protokoll genauso aussieht wie die Lösung.
+
+4) Nicht vergessen: Haltet euren Fortschritt mit git nach. 
+

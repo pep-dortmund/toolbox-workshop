@@ -3,3 +3,27 @@
 Einleitung:
 Um dieser Aufgabe sinnvoll folgen zu können sollte diese von Anfang an bearbeitet werden. Folgt den 
 Anweisungen in den 'aufgabe.txt' Dateien in den Unterordnern des Ordners 'example-report'.
+
+
+Aufgaben:
+
+1) Je nachdem welche header.tex ihr verwendet kann es nötig sein, diese um weiter Pakete zu ergänzen.
+Schaut z.B. im Ordner loesung nach. 
+
+2) Fügt eurem Order v16516 den Ordner graphics mit der enthaltenen Bilddatei hinzu.
+   Ergänzt das Bild für den Versuchsaufbau im Protokoll.
+
+3) Ergänzt die beiden Messwert-Tabellen.
+
+4) Fügt eurem Git-Repository die bib-Dateien lit.bib und programme.bib hinzu und ladet diese 
+   in header.tex falls noch nicht geschehen.
+
+6) Ergänzt die Referenzen auf die drei Quellen. 
+
+7) Schaut im finalen Protokoll nach welche Objekte Referenziert werden und ergänzt entsprechende 
+   \label und Referenzen mit \autoref und \eqref
+
+8) Im Ordner loesung/v16516 findet ihr die Datei v16516.pdf. Ergänzt die übrigen Texte aus dieser Datei,
+   sodass euer aktuelles Protokoll genauso aussieht wie die Lösung.
+
+9) Nicht vergessen: Haltet euren Fortschritt mit git nach. 
