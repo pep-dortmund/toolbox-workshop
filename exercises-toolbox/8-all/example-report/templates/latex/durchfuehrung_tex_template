@@ -12,11 +12,11 @@ aus den Einzelbildern (frames) des Films ablesen zu können.                    
                                                                                                         % <7->
 Die aufgenommenen Messdaten werden für zwei unabhängige Zwecke verwendet:                               % <7->
                                                                                                         % <7->
-\begin{enumerate}                                                                                       % <8->
-  \item {Bestimmung der Fallbeschleunigung $g$, dafür werden                                            % <8->
-        die theoretischen Trägheitsmomente angenommen.}                                                 % <8->
-      \item {Bestimmung der Trägheitsmomente $I$ der beiden Objekte unter Annahme der theoretischen     % <8->
-        Fallbeschleunigung.}                                                                            % <8->
-\end{enumerate}                                                                                         % <8->
+\begin{enumerate}                                                                                       % <7->
+  \item {Bestimmung der Fallbeschleunigung $g$, dafür werden                                            % <7->
+        die theoretischen Trägheitsmomente angenommen.}                                                 % <7->
+      \item {Bestimmung der Trägheitsmomente $I$ der beiden Objekte unter Annahme der theoretischen     % <7->
+        Fallbeschleunigung.}                                                                            % <7->
+\end{enumerate}                                                                                         % <7->
 
 
