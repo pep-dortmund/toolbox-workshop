@@ -1,0 +1,2 @@
+plot.pdf: plot.py data.txt
+	python plot.py

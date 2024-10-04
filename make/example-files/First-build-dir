@@ -1,0 +1,15 @@
+all: build/report.pdf
+
+build/plot.pdf: plot.py data.txt | build
+  python plot.py  # savefig('build/plot.pdf')
+
+build/report.pdf: report.tex build/plot.pdf | build
+  lualatex --output-directory=build report.tex
+
+build:
+  mkdir -p build
+
+clean:
+  rm -rf build
+
+.PHONY: all clean

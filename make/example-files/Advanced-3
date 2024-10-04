@@ -1,0 +1,9 @@
+all: report.txt
+
+script_targets = plot1.pdf plot2.pdf plot3.pdf plot4.pdf plot5.pdf  # Variablen Definition
+
+report.txt: $(script_targets)  # Variablen Verwendung
+  touch report.txt
+
+$(script_targets) & : plot.py data.txt  # Variablen Verwendung
+  python plot.py

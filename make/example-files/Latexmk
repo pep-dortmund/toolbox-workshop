@@ -1,0 +1,13 @@
+build/file.pdf: FORCE plots... tabellen...
+  TEXINPUTS=build: \
+  max_print_line=1048576 \
+  latexmk \
+    --lualatex \
+    --output-directory=build \
+    --interaction=nonstopmode \
+    --halt-on-error \
+  file.tex
+
+FORCE:
+
+.PHONY: FORCE all clean
