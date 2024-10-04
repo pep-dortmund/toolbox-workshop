@@ -36,7 +36,7 @@ data_dirs_without_unc = $(wordlist 1,4,$(data_dirs)) $(word 12,$(data_dirs))
 data_dirs_with_unc = $(wordlist 5,11,$(data_dirs)) $(word 13,$(data_dirs))
 
 # build/example-report-step-{09,...,10}/loesung/v16516/graphics/
-graphics_dirs = $(addsuffix v16516/graphics/, $(wordlist 9,10,$(solution_dirs)))
+graphics_dirs = $(addsuffix v16516/graphics/, $(wordlist 9,10,$(solution_dirs))) $(addsuffix graphics/, $(word 9,$(step_dirs)))
 
 # solution_dirs containing tex files
 solution_dirs_with_tex = $(wordlist 7,11,$(solution_dirs))
@@ -70,12 +70,12 @@ discussion_tex_files=$(addsuffix diskussion.tex, $(content_dirs))
 
 setup_image_files = $(addsuffix versuchsaufbau.png, $(graphics_dirs))
 
-lit_bib_files = $(addsuffix lit.bib, $(wordlist 9,11,$(solution_dirs)))
-programms_bib_files = $(addsuffix programme.bib, $(wordlist 9,11,$(solution_dirs)))
+lit_bib_files = $(addsuffix lit.bib, $(wordlist 9,11,$(solution_dirs)) $(word 9,$(step_dirs)))
+programms_bib_files = $(addsuffix programme.bib, $(wordlist 9,11,$(solution_dirs)) $(word 9,$(step_dirs)))
 bib_files = $(lit_bib_files) $(programms_bib_files)
 
-matplotlibrc_files= $(addsuffix matplotlibrc, $(wordlist 10,11,$(solution_dirs)))
-header_matplotlib_files = $(addsuffix header-matplotlib.tex, $(wordlist 10,11,$(solution_dirs)))
+matplotlibrc_files= $(addsuffix matplotlibrc, $(wordlist 10,11,$(solution_dirs)) $(word 10,$(step_dirs)))
+header_matplotlib_files = $(addsuffix header-matplotlib.tex, $(wordlist 10,11,$(solution_dirs)) $(word 10,$(step_dirs)))
 
 advanced_mpl_files = $(matplotlibrc_files) $(header_matplotlib_files)
 
