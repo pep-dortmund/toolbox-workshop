@@ -43,6 +43,7 @@ jobs:
           tlmgr install --with-doc tex-overview
 
           curl -LO https://www.wfonts.com/download/data/2014/06/05/comic-sans-ms/comic-sans-ms.zip
+          mkdir -p $HOME/.local/share/fonts
           unzip comic-sans-ms.zip -d $HOME/.local/share/fonts
           rm comic-sans-ms.zip
           fc-cache
