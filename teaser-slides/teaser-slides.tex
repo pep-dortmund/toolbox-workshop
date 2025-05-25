@@ -1,8 +1,8 @@
 \input{header.tex}
 
-\title[Toolbox 2024]{Toolbox Workshop 2024}
+\title[Toolbox 2024]{Toolbox Workshop 2025}
 \subtitle{Python, Unix, Make, Git, \LaTeX{}}
-\date{23.~September – 04.~Oktober 2024}
+\date{29.~September – 10.~Oktober 2025}
 \institute[Pep et al.\ e.V.]{\includegraphics[height=2cm]{logos/pep.pdf}}
 \author[Toolbox Workshop Team]{}
 
@@ -13,63 +13,99 @@
 \begin{frame}{Ziel}
   \setlength\parskip{3ex}
   \huge
-  Wir machen euch das Praktikum so einfach, wie möglich.
+  Wir machen euch die Praktikumsprotokolle so einfach, wie möglich.
 
   Auswerten mit modernen Methoden.
 
   Von Anfang an ein bewährter Weg.
 
-  Auch für die Bachelorarbeit wichtig.
+  Auch für die Bachelor-, Masterarbeit wichtig.
 \end{frame}
 
-\begin{frame}
-  \vspace{0.7cm}
-  \begin{center}
-    \huge Praktikums-Versuche richtig auswerten!\\
-    23.~September – 26.~September 2024, 13 - 17~Uhr\\%,
-    Ort: Bio- \& Chemieingenieurwesen HS ZE 01
-  \end{center}
-  \begin{tikzpicture}[remember picture, overlay]
-    \tikzset{shift={(current page.center)}}
-    \node[anchor=center] at (-3,2) {%
-      \includegraphics[height=1.5cm]{logos/python.pdf}%
-    };
-    \node[anchor=center] at (3,2) {%
-      \includegraphics[height=1.25cm]{logos/git.png}%
-    };
-    \node[anchor=center] at (6,-2) {%
-      \includegraphics[height=1.5cm]{logos/numpy.png}%
-    };
-    \node[anchor=center] at (-4,-2.4) {%
-      \includegraphics[height=1cm]{logos/matplotlib.png}%
-    };
-    \node[anchor=center] at (0,-3.5) {%
-      \includegraphics[height=0.75cm]{logos/uncertainties.png}%
-    };
-  \end{tikzpicture}
+\begin{frame}{Roadmap}
+    \begin{center}
+      \begin{tikzpicture}[
+          >=latex,
+          arrow/.style={line width=2pt, ->}
+        ]
+        %% Data table
+        \node at (0, 2.5) {Daten};
+        \node (data) at (0, 0) {
+          \sffamily
+          \sisetup{table-format=1.0, detect-family}
+          \begin{tblr}{
+              colspec = {S S[table-format=1.3]},
+              row{1} = {guard, mode=math},
+              row{7} = {guard, mode=math}
+            }
+            \toprule
+            x \mathbin{/} \unit{\milli\metre} & I \mathbin{/} \unit{\micro\ampere} \\
+            \midrule
+            0 & 0.000 \\
+            1 & 0.060 \\
+            2 & 0.530 \\
+            3 & 1.520 \\
+            4 & 5.100 \\
+            \vdots & \vdots \\
+            \bottomrule
+          \end{tblr}
+        };
+        %% Plot
+        \node at (6, 2.5) {Plots und Ergebnisse};
+        \node [anchor=west, align=center] (plot) at (3, 0) {
+          \includegraphics[width=5cm]{../intro/build/example_plot.pdf}\\
+          \(I_0 = \qty{26.9 \pm 0.5}{\micro\ampere}\)
+        };
+        \draw [arrow] (data)
+          -- node[above, midway] {\includegraphics[width=1.5cm]{../common/logos/python.pdf}}
+          (plot);
+        %% Protocol
+        \node [anchor=west] (protocol) at (10, 0) {
+          \begin{tikzpicture}[
+              scale=2,
+              protocol text/.style={line width=2pt, line cap=round, color=gray}
+            ]
+            \draw (0,0) -- ++(1.41, 0) -- ++(0, 2)
+              -- ++(-1.21, 0) -- (0, 1.8) -- cycle;
+            \draw (0, 1.8) -- ++(0.2,0) -- ++(0, 0.2);
+            \draw [protocol text] (0.1, 1.7) -- +(1, 0);
+            \draw [protocol text] (1.2, 1.7) -- +(0.1, 0);
+            \draw [protocol text] (0.1, 1.6) -- +(0.3, 0);
+            \draw [protocol text] (0.5, 1.6) -- +(0.5, 0);
+            \draw [protocol text] (1.1, 1.6) -- +(0.2, 0);
+            \draw [protocol text] (0.1, 1.5) -- +(0.2, 0);
+            \draw [protocol text] (0.4, 1.5) -- +(0.9, 0);
+            \draw [protocol text] (0.1, 1.4) -- +(0.9, 0);
+            \draw [protocol text] (1.1, 1.4) -- +(0.2, 0);
+            \draw [protocol text] (0.1, 1.3) -- +(0.5, 0);
+            \draw [protocol text] (0.7, 1.3) -- +(0.6, 0);
+            \node [anchor=north west] at (0.19, 1.2) {
+              \includegraphics[width=1.7cm]{../intro/build/example_plot.pdf}
+            };
+            \draw [protocol text] (0.1, 0.4) -- +(0.6, 0);
+            \draw [protocol text] (0.8, 0.4) -- +(0.2, 0);
+            \draw [protocol text] (1.1, 0.4) -- +(0.2, 0);
+            \draw [protocol text] (0.1, 0.3) -- +(0.3, 0);
+            \draw [protocol text] (0.5, 0.3) -- +(0.5, 0);
+            \draw [protocol text] (1.1, 0.3) -- +(0.2, 0);
+            \draw [protocol text] (0.1, 0.2) -- +(0.7, 0);
+            \draw [protocol text] (0.9, 0.2) -- +(0.4, 0);
+          \end{tikzpicture}
+        };
+        \draw [arrow] (plot) -- node[above, midway] {\LaTeX} (protocol);
+        \node at (11.5, 2.5) {Protokoll (PDF)};
+      \end{tikzpicture}
+    \end{center}
 \end{frame}
 
-\begin{frame}[plain]
-  \centering
-  \includegraphics[width=.97\textwidth]{../python/build/muon_plot.png}
-\end{frame}
-
-\begin{frame}
-  \begin{center}
-    \huge Wissenschaftliche Arbeiten verfassen mit \\[0.5\baselineskip]
-    \textrm{\fontsize{80}{120}\selectfont\LaTeX{}}\\[0.5\baselineskip]
-    27.~September. – 02.~Oktober 2024, 13 - 17~Uhr,\\
-    Ort: Bio- \& Chemieingenieurwesen HS ZE 01
-  \end{center}
-\end{frame}
-
-\begin{frame}
-  \begin{center}
-    \huge Automatisierung mit \texttt{make}\\[0.5\baselineskip]
-    und \textbf{üben}, \textbf{üben}, \textbf{üben}\\[0.5\baselineskip]
-    04.~Oktober 2024, 13 - 17~Uhr,\\
-    Ort: Bio- \& Chemieingenieurwesen HS ZE 01
-  \end{center}
+\begin{frame}{Termine}
+  \huge
+  \begin{description}
+    \item[Wann:] 29.\ September - 10.\ Oktober
+    \item[~] täglich von 13:00 - 17:00 Uhr
+    \vspace{1em}
+    \item[Wo:] Bio- \& Chemieingenieurwesen HS ZE 01
+  \end{description}
 \end{frame}
 
 \begin{frame}{Vorbereitung}
@@ -78,7 +114,7 @@
     Auf der Fachschaftsmailingliste eintragen \\
     →~\href{https://mailman.tu-dortmund.de/mailman/listinfo/stud.physik}{mailman.tu-dortmund.de/mailman/listinfo/stud.physik}\\[0.5\baselineskip]
     Anmeldung ausfüllen\\
-    →~\textcolor{blue!70!black}{\href{https://registration.pep-dortmund.org/events/toolbox24/registration/}{registration.pep-dortmund.org/events/toolbox24/registration}}\\[0.5\baselineskip]
+    →~\textcolor{blue!70!black}{\href{https://registration.pep-dortmund.org/events/toolbox25/registration/}{registration.pep-dortmund.org/events/toolbox25/registration}}\\[0.5\baselineskip]
     Software installieren\\
     →~\textcolor{blue!70!black}{\href{https://toolbox.pep-dortmund.org/install/install/}{toolbox.pep-dortmund.org/install}}\\[0.5\baselineskip]
     Laptops/Rechner vorbereiten + mitbringen/uns ansprechen
@@ -107,7 +143,7 @@
   \begin{itemize}
     \item In der Anmeldung mit angeben
     \item zusätzlich gerne eine Mail an \href{mailto:pep-toolbox.physik@lists.tu-dortmund.de}{pep-toolbox.physik@lists.tu-dortmund.de}
-    \item Donnerstag 19.09.2024: ab 10:00 Uhr, Ort: CP-03-123
+    \item Donnerstag 25.09.2025: ab 10:00 Uhr, Ort: CP-03-123
   \end{itemize}
 \end{frame}
 \begin{frame}
@@ -119,7 +155,7 @@
     \centering
     \includegraphics[width=.8\textwidth]{../qrcode/toolbox_qrcode.png}
     \Large
-    \url{toolbox.pep-dortmund.org}
+    \href{https://toolbox.pep-dortmund.org}{\textcolor{darkgray}{\texttt{toolbox.pep-dortmund.org}}}
   \end{minipage}
 \end{frame}
 \end{document}
