@@ -4,9 +4,6 @@
   titlepage=firstiscover, % Titelseite ist Deckblatt                                              % <7->
 ]{scrartcl}                                                                                       % <7->
                                                                                                   % <7->
-% Paket float verbessern                                                                          % <7->
-\usepackage{scrhack}                                                                              % <9->
-                                                                                                  % <7->
 % Warnung, falls nochmal kompiliert werden muss                                                   % <7->
 \usepackage[aux]{rerunfilecheck}                                                                  % <7->
                                                                                                   % <7->
