@@ -35,7 +35,7 @@ build/figures/macos.png: | build/figures
 
 build/figures/tux.jpg: | build/figures
 	wget https://upload.wikimedia.org/wikipedia/commons/d/dd/Linux_logo.jpg -O build/figures/tux-original.jpg --no-use-server-timestamps
-	convert build/figures/tux-original.jpg -trim $@
+	magick build/figures/tux-original.jpg -trim $@
 
 build/figures/debian-openlogo.png: | build/figures
 	wget https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Debian-OpenLogo.svg/581px-Debian-OpenLogo.svg.png -O build/figures/debian-openlogo.png
