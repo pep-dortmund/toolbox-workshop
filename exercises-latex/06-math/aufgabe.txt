@@ -1,5 +1,5 @@
 Hinweis: Falls du die hier benötigten Gesetze und Gleichungen nicht mehr weißt,
-         kannst du einen Blick in die PDF der Musterlösung werfen. 
+         kannst du einen Blick in die PDF der Musterlösung werfen.
          (Nicht in die .tex)
 
 Aufgabe 1:
@@ -41,3 +41,10 @@ Aufgabe 8:
 
 Aufgabe 9:
   Setze die DGL für den gedämpften harmonischen Oszillator sowie ihre Lösung.
+
+Aufgabe 10:
+  Versuche die Gleichungsnummern so zu setzen, wie sie in `build/loesung-2.pdf`
+  gesetzt sind. Das ist nicht einfach, ein paar Stichpunkte sind:
+  - minipage,
+  - align tag,
+  - setcounter.

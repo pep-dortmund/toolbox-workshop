@@ -1,0 +1,74 @@
+\section{Theorie}                                                                                                                         % <7->
+\label{sec:Theorie}                                                                                                                       % <9->
+                                                                                                                                          % <7->
+Wie in der Abbildung \autoref{fig:experimental-setup} veranschaulicht, beginnen die Objekte                                               % <9->
+in einer Höhe $h$ auf der schiefen Ebene in vollkommener Ruhe.                                                                            % <9->
+                                                                                                                                          % <7->
+\begin{figure}                                                                                                                            % <9->
+  \centering                                                                                                                              % <9->
+  \includegraphics[width=0.5\textwidth]{graphics/versuchsaufbau.png}                                                                      % <9-10>
+  \begin{tikzpicture}[scale=3]                                                                                                            % <11->
+    \draw (0,0) -- (3,0) --node[below, near end]{$l$} (0,1) -- cycle;                                                                     % <11->
+    \draw (0.25,1.19)node[below]{$m$} circle (0.25cm);                                                                                    % <11->
+    \draw[->] (0.25,1.19) -- (0.90, 0.94) node[above] {\small$\vec{v}$};                                                                  % <11->
+    \draw[|-|] (-0.15,0.95) -- node[left]{$h$} (-0.15, 0);                                                                                % <11->
+    \draw[dashed,opacity=0.65] (0.94,0.96) circle (0.25cm);                                                                               % <11->
+    \draw[dashed,opacity=0.40] (1.75,0.68) circle (0.25cm);                                                                               % <11->
+    \draw[dashed,opacity=0.25] (3.,0.26) circle (0.25cm);                                                                                 % <11->
+    \draw[->] (0.25, 1.03)  arc (270:50:0.16) node[below]{\small$\omega$};                                                                % <11->
+  \end{tikzpicture}                                                                                                                       % <11->
+  \caption{Schematische Darstellung des Versuchsaufbaus. Das runde Objekt (Kugel oder Zylinder) wird in der Höhe $h$                      % <9->
+  auf eine schiefe Ebene gelegt, sodass es aus der Ruhe herabrollt. Die Bewegung ist beschleunigt, sodass sowohl                          % <9->
+  die Geschwindigkeit $\vec{v}(t)$ sowie die Winkelgeschwindigkeit $\omega(t)$ nicht konstant sind.}                                      % <9->
+  \label{fig:experimental-setup}                                                                                                          % <9->
+\end{figure}                                                                                                                              % <9->
+                                                                                                                                          % <7->
+Zwischen Ebene und Objekten wirkt eine nicht zu vernachlässigende Reibung, wodurch die                                                    % <7->
+Objekte nach dem loslassen in Rotation versetzt werden, also tatsächlich herabrollen.                                                     % <7->
+Thermische Reibungsverluste werden jedoch vernächlässigt, sodass Energieerhaltung                                                         % <7->
+angenommen werden kann. Nach dieser gilt                                                                                                  % <7->
+                                                                                                                                          % <7->
+\begin{align*}                                                                                                                            % <8->
+E^\text{pot}_\text{i}  &= E^\text{kin}_\text{f} +  E^\text{rot}_\text{f} \\                                                               % <8->
+mgh &= \frac{m}{2}v^2 + \frac{I}{2}\omega^2 \quad\big|\,\omega = \frac{v}{r} \\                                                           % <8->
+mgh &= \frac{m}{2}v^2 + \frac{I}{2}\frac{v^2}{r^2}\quad\big|\, :mgh \\                                                                    % <8->
+1 &= \frac{v^2}{2gh} \left(1 + \frac{I}{mr^2} \right)\\                                                                                   % <8->
+  \intertext{aus der Kinematik~\cite{kuypers2016klassische} ist bekannt, dass die Endgeschwindigkeit einer                                % <8->
+beschleunigten Bewegung (in der Zeit $t$, entlang einer Strecke $l$) $v = \frac{2l}{t}$ ist.                                              % <8->
+Es gilt also}                                                                                                                             % <8->
+1 &= \left(\frac{2l}{t}\right)^2 \frac{1}{2gh} \left(1 + \frac{I}{mr^2} \right)\quad\big|\, \cdot t^2 \\                                  % <8->
+\addtocounter{equation}{1}                                                                                                                % <8->
+t^2 &= \frac{2l^2}{gh} \left(1 + \frac{I}{mr^2} \right)                                                                                   % <8->
+\label{eq:tsquared}\tag{\theequation}                                                                                                     % <9->
+\end{align*}                                                                                                                              % <8->
+                                                                                                                                          % <7->
+Aus \eqref{eq:tsquared} ergeben sich dann die jeweiligen Ausgleichsfunktionen für beide Versuchsteile.                                    % <9->
+                                                                                                                                          % <7->
+Für die Bestimmung der Trägheitsmomente wird nur noch die Quadratwurzel von \eqref{eq:tsquared}                                           % <9->
+berechnet und ein Startzeit als Parameter hinzugefügt,                                                                                    % <7->
+                                                                                                                                          % <7->
+\begin{equation}                                                                                                                          % <8->
+t(h) = \sqrt{\frac{2l^2}{gh} \left(1 + \frac{I}{mr^2} \right)} + t_0.                                                                     % <8->
+\label{eq:fit-function-I}                                                                                                                 % <9->
+\end{equation}                                                                                                                            % <8->
+                                                                                                                                          % <7->
+Dabei sind das Trägheitsmoment $I$ und die Startzeit $t_0$ die Parameter für die Ausgleichsrechnung.                                      % <8->
+                                                                                                                                          % <7->
+Für die Bestimmung der Gravitationsbeschleunigung $g$ unter Annahme der theoretischen Trägheitsmomente                                    % <8->
+für Kugel $I_\text{K}$ und Hohlzylinder $I_\text{Z}$                                                                                      % <8->
+\begin{align*}                                                                                                                            % <8->
+  I_{\text{K}} = \frac{2}{5}mr_{\text{K}}^2 && I_{\text{Z}} = \frac{m}{2}\left(r_{\text{Z},\text{innen}}^2  + r_{\text{Z},\text{außen}}^2)\right),    % <8->
+\end{align*}                                                                                                                              % <8->
+ergeben sich die folgenden Ausgleichsfunktionen                                                                                           % <7->
+                                                                                                                                          % <7->
+\begin{align}                                                                                                                             % <8->
+t_\text{K}(h) &= \sqrt{\frac{2l^2}{gh} \left(\frac{7}{5}\right)} + t_0                                                                    % <8->
+\label{eq:fit-function-g-ball}                                                                                                            % <9->
+%                                                                                                                                         % <8->
+\intertext{und}                                                                                                                           % <8->
+%                                                                                                                                         % <8->
+t_\text{Z}(h) &= \sqrt{\frac{l^2}{gh} \left(3 + \left(\frac{r_{\text{Z},\text{innen}}}{r_{\text{Z},\text{außen}}}\right)^2 \right)} + t_0.% <8->
+\label{eq:fit-function-g-cylinder}                                                                                                        % <9->
+\end{align}                                                                                                                               % <8->
+Dabei sind in diesen Gleichungen $g$ und $t_0$ die Ausgleichsparameter.                                                                   % <8->
+

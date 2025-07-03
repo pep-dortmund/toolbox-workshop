@@ -1,0 +1,155 @@
+\documentclass{scrartcl}
+
+\usepackage[aux]{rerunfilecheck}
+
+\usepackage{fontspec}
+
+\usepackage[ngerman]{babel}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathtools}
+
+\usepackage[
+  math-style=ISO,
+  bold-style=ISO,
+  sans-style=italic,
+  nabla=upright,
+  partial=upright,
+  mathrm=sym,
+]{unicode-math}
+
+\usepackage[unicode]{hyperref}
+\usepackage{bookmark}
+
+\begin{document}
+
+\section{Biot--Savart}
+
+Das Magnetfeld $\symbf{B}$ am Ort $\symbf{r}$ eines stromdurchflossenen Leiters
+ergibt sich zu
+\begin{equation*}
+  \symbf{B}(\symbf{r}) = \frac{\mu_0}{4 \symup{\pi}}
+    \int_V \symbf{j}(\symbf{r}') \times
+      \frac{\symbf{r} - \symbf{r}'}{\lvert \symbf{r} - \symbf{r}' \rvert^3}
+      \, \symup{d}V' \, .
+\end{equation*}
+Hierbei bezeichnet $\symbf{j}$ die Stromdichte am Ort $\symbf{r}'$ und $\mu_0$
+die magnetische Feldkonstante.
+
+\section{Fehlerfortpflanzung}
+
+\begin{equation*}
+  \sigma_f = \sqrt{
+    \sum_{i = 1}^N
+      \left( \frac{\partial f}{\partial x_i} \sigma_i \right)^{\!\! 2}
+  }
+\end{equation*}
+
+\section{Die vier Maxwellgleichungen}
+
+\begin{minipage}{.48\textwidth}
+  \begin{align}
+    \nabla \cdot \symbf{E} &= \frac{\rho}{\varepsilon_0} \\
+    \addtocounter{equation}{+1}
+    \nabla \times \symbf{E} &= - \partial_t \symbf{B}
+  \end{align}
+\end{minipage}
+\hfill
+\begin{minipage}{.48\textwidth}
+  \begin{align}
+    \addtocounter{equation}{-2}
+    \nabla \cdot \symbf{B} &= 0 \\
+    \addtocounter{equation}{+1}
+    \nabla \times \symbf{B} &= \mu_0 \symbf{j} + \mu_0 \varepsilon_0 \partial_t \symbf{E}
+  \end{align}
+\end{minipage}
+
+\section{Wellengleichung}
+
+Im Vakuum gelten $\rho = 0$ und $\symbf{j} = 0$, womit sich die Maxwellgleichungen zu
+\begin{align*}
+    \nabla \cdot \symbf{E} = 0 \label{eqn:max1} \stepcounter{equation}\tag{\theequation} \\
+    \nabla \cdot \symbf{B} &= 0 \\
+    \nabla \times \symbf{E} &= - \partial_t \symbf{B}
+      \label{eqn:max3} \stepcounter{equation}\tag{\theequation} \\
+    \nabla \times \symbf{B} &= \mu_0 \varepsilon_0 \partial_t \symbf{E}
+      \label{eqn:max4} \stepcounter{equation}\tag{\theequation}
+    \intertext{reduzieren.
+      Nach erneuter Anwendung der Rotation auf~\eqref{eqn:max3} ergibt sich}
+    \nabla \times \left( \nabla \times \symbf{E} \right)
+      &= \nabla \times \left( - \partial_t \symbf{B} \right) \, .
+    \intertext{Nach dem Satz von Schwarz lassen sich die partiellen Ableitungen vertauschen,
+      was zu}
+    \nabla \times \left( \nabla \times \symbf{E} \right)
+      &= - \partial_t \! \left( \nabla \times \symbf{B} \right)
+    \intertext{führt. Wir setzen auf der rechten Seite~\eqref{eqn:max4} ein:}
+    \nabla \times \left( \nabla \times \symbf{E} \right)
+      &= - \mu_0 \varepsilon_0 \partial_t^2 \symbf{E} \, .
+    \intertext{Aus der linken Seite wird mit}
+    \nabla \times \left( \nabla \times \symbf{E} \right)
+      &= \nabla \cdot \left( \nabla \cdot \symbf{E} \right) - \increment \symbf{E}
+    \shortintertext{und Ausnutzen von~\eqref{eqn:max1}}
+    - \increment\symbf{E} &= -\mu_0 \varepsilon_0 \partial_t^2 \symbf{E} .
+    \intertext{Dies ist die Wellengleichung für das elektrische Feld,
+      in der sich die Lichtgeschwindigkeit}
+    \symup{c} &= \frac{1}{\sqrt{\mu_0 \varepsilon_0}}
+    \intertext{identifizieren lässt.
+      Damit können wir}
+    \left(\increment - \frac{1}{\symup{c}^2} \frac{\partial^2}{\partial t^2} \right)
+      \! \symbf{E} &= 0
+\end{align*}
+schreiben.
+
+\section{Wellengleichung}
+
+Ebene Welle:
+\begin{equation}
+  \nabla^2 A - \frac{1}{\symup{c}^2} \frac{\partial^2}{\partial t^2} A = 0
+\end{equation}
+Eine Lösung:
+\begin{equation}
+  A = A_0 \exp(\mathrm{i} (\symbf{k} \symbf{x} - \omega t))
+\end{equation}
+Gruppen- und Phasengeschwindigkeit:
+\begin{align}
+  v_\text{Gr} &= \frac{\partial \omega}{\partial k} &
+  v_\text{Ph} &= \frac{\omega}{k}
+\end{align}
+
+\section{Multipolentwicklung}
+
+\begin{align*}
+  \Phi(\symbf{r}) &= \frac{1}{4 \symup{\pi} \varepsilon_0} \left(
+    \frac{Q}{r} + \frac{\symbf{r} \cdot \symbf{p}}{r^3}
+    + \frac{1}{2} \sum_{k, l} Q_{k l} \frac{r_k r_l}{r^5} + \dotsb
+  \right) \, ,
+  \shortintertext{wobei}
+  Q_{k l} &= \sum_{i\,=\,1}^n q_i
+  \left( 3 r_{i k} r_{i l} - r_i^2 \symup{\delta}_{k l} \right) \, .
+\end{align*}
+
+\section{Jacobi-Matrix}
+
+\begin{equation}
+  \symbf{J} =
+  \begin{pmatrix}
+    \frac{\partial f_1}{\partial x_1} & \cdots & \frac{\partial f_1}{\partial x_n} \\
+    \vdots                            & \ddots & \vdots                            \\
+    \frac{\partial f_m}{\partial x_1} & \cdots & \frac{\partial f_m}{\partial x_n}
+  \end{pmatrix}
+\end{equation}
+
+\section{Harmonischer Oszillator}
+
+\begin{equation}
+  \ddot{x} + 2 \gamma \dot{x} + \omega_0^2 x = 0
+\end{equation}
+Reelle Lösung:
+\begin{align}
+  x(t) &= \symup{e}^{-\gamma t} (A \cos(\omega t) + B \sin(\omega t)) \, ,
+  \shortintertext{mit}
+  \omega &= \sqrt{\omega_0^2 - \gamma^2} \, .
+\end{align}
+
+\end{document}
