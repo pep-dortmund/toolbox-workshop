@@ -344,7 +344,7 @@ params = ucurve_fit(fit_g_ball, noms(h_b_mean), t_b_mean)                       
 # Erklärung:                                                                                                                      # <4-4>
 # Ansehnliche Ausgabe der Parameter aufs Terminal                                                                                 # <4-4>
 print("Fitparameter (Kugel)")                                                                                                     # <4->
-for name, value, uncertainty in zip("gt", params, param_uncertainties):                                                           # <5-10>
+for name, value, uncertainty in zip("gt", params, param_uncertainties):                                                           # <4-10>
     print(f"{name} = {value:8.3f} ± {uncertainty:.3f}")                                                                           # <4-10>
 for name, param in zip("gt", params):                                                                                             # <11->
     print(f"{name} = {param.n:8.3f} ± {param.s:.3f}")                                                                             # <11->
