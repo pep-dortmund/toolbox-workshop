@@ -25,7 +25,7 @@ jobs:
 
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - uses: mamba-org/setup-micromamba@v1
         with:
@@ -33,7 +33,7 @@ jobs:
 
       - name: Setup
         run: |
-          sudo apt-get install --yes poppler-utils
+          sudo apt-get install --yes poppler-utils imagemagick 
           pip install install-texlive
           python -m install_texlive -p $HOME/texlive -t $TEXLIVE_VERSION --collections='-a' --package-file tex-packages.txt --update -v
 
@@ -42,6 +42,7 @@ jobs:
           export PATH="$HOME/texlive/$TEXLIVE_VERSION/bin/x86_64-linux:$PATH"
           tlmgr install --with-doc tex-overview
 
+          mkdir -p $HOME/.local/share/fonts
           curl -LO https://www.wfonts.com/download/data/2014/06/05/comic-sans-ms/comic-sans-ms.zip
           unzip comic-sans-ms.zip -d $HOME/.local/share/fonts
           rm comic-sans-ms.zip
@@ -85,7 +86,7 @@ jobs:
           cp python/build/*.html toolbox-material
           ls -lh toolbox-material
 
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         name: Upload Material
         with:
           name: Toolbox Material
