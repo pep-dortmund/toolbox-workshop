@@ -6,13 +6,10 @@ Benutze dazu ucurve_fit aus der Datei `curve_fit.py`. Geeignete Startwerte sind
 a=1e3, b=1e3, c=d=0.
 
 Plotte die Daten und die gefittete Funktion. Verwende das pgf-Backend und eine
-matplotlibrc sowie die nötigen LaTeX-Pakete, um die Beschriftung schön zu
-machen.
+matplotlibrc sowie die nötigen LaTeX-Pakete, um die Beschriftung schönzumachen.
 
-
-Teile die Daten dabei in zwei Spalten auf, damit die Tabelle nicht zu lang
-wird.
-
+Erstelle mit den Daten eine Tabelle, teile sie dabei in zwei Spalten auf,
+damit die Tabelle nicht zu lang wird.
 
 Schreibe auch die Ergebnisse für die Fitparameter in .tex-Dateien in der Form
 
@@ -27,7 +24,6 @@ Nutze dazu die Funktion
 Dabei gibt num den Wert (mit Fehler) an. unit ist die Einheit in der Form eines
 Strings mit siunitx-Einheitenbefehlen. exp ist optional und gibt einen
 Exponenten in der Form 'e3' an.
-
 
 Schreibe ein Protokoll, in dem du den Plot, die Tabelle und die Fitergebnisse
 (als Formeln) einbindest.

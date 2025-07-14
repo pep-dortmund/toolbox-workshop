@@ -14,4 +14,4 @@ log(N) = A * t + B
 Erstelle einen halblogarithmischen Plot von N gegen t, der die Messpunkte mit
 Fehlerbalken und die Regressionsgerade beinhaltet. Benutze für die lineare
 Regression die Funktion ulinregress aus der mitgelieferten Datei linregress.py.
-Diese kann in eine python Datei eingebunden werden, wie in der Datei vorlage.py gezeigt.
+Diese kann in eine python-Datei eingebunden werden, wie in der Datei vorlage.py gezeigt.

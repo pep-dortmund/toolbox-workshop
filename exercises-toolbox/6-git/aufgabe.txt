@@ -4,7 +4,8 @@ Aufgabe 1:
 
 Lade mittels "git clone https://github.com/pep-dortmund/toolbox-workshop" die
 Materialien für diesen Workshop herunter und schaue dir mittels "git log" die
-Vergangenheit des Repositories an.
+Vergangenheit des Repositories an. Kannst du erkennen, welcher der Helfenden als
+Letztes am Material gearbeitet hat?
 
 Aufgabe 2:
 

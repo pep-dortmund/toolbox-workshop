@@ -9,6 +9,6 @@ Aufgabe 2:
   besprochen.
 
 Tipp:
-  Ein guter Texteditor macht die Aufgabe viel leichter. Finde heraus, wie dein
+  Ein guter Texteditor erleichtert die Aufgabe. Finde heraus, wie dein
   Editor z.B. eine Spalte aus & einfügen kann. Eine geschickte Suche, z.B. nach
   "Multi-line editing" oder "Multi-cursor editing", kann dabei helfen.

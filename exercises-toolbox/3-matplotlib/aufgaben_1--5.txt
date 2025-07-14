@@ -4,6 +4,6 @@ Aufgabe:
 Schreibe in jedem Ordner ein Skript, welches den entsprechenden Plot erzeugt.
 In der Datei 'loesung.py' liegt jeweils die Musterlösung.
 
-Manchmal befinden sich .txt-Dateien im Ordner. Diese enthalten entweder die 
-x- und y-Koordinaten als Spalten, oder die Koordinaten mit jeweils ihren 
-Fehlern.
+Manchmal befinden sich .txt-Dateien im Ordner. Diese enthalten entweder die
+x- und y-Koordinaten als Spalten, oder die Koordinaten mit jeweils ihren
+Unsicherheiten.

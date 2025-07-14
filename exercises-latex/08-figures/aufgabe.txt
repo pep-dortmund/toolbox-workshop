@@ -7,16 +7,16 @@ Aufgabe 2:
   Erstelle eine Abbildung, die "plot2.pdf" und "plot3.pdf" nebeneinander
   enthält. Dabei soll jeder Plot eine eigene Abbildungsunterschrift und ein
   eigenes Label bekommen, sowie die ganze Abbildung eine gemeinsame. Beziehe
-  dich im Text sowohl auf die ganze Abbildung, als auch auf einen Teil.
+  dich im Text sowohl auf die ganze Abbildung als auch auf einen Teil.
 
   Warum ist es nicht gut, die beiden Plots auf diese Weise einzubinden?
 
 Aufgabe 3:
   Ändere das Erscheinungsbild der Abbildungsunterschriften. Schlage dazu in der
   "caption"-Dokumentation nach, wie du:
-    1. Das Label "Abbildung x:" fett setzt
-    2. Die Schriftgröße verkleinert
-    3. Die Breite für Abbildungsunterschriften schmaler als die Breite des
+    1. das Label "Abbildung x:" fett setzt,
+    2. die Schriftgröße verkleinerst,
+    3. die Breite für Abbildungsunterschriften schmaler als die Breite des
        Fließtextes macht.
   Dies sorgt dafür, dass sich Abbildungsunterschriften
   (und Tabellenüberschriften) deutlicher vom Fließtext abheben.

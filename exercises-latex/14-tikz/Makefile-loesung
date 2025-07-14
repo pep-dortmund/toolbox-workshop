@@ -6,7 +6,7 @@ all: \
 	build/loesung-nikolaus.pdf \
 	build/loesung-bragg.pdf \
 	build/loesung-circuitikz.pdf \
-	build/loesung-mm-paper.pdf 
+	build/loesung-mm-paper.pdf
 
 
 build/loesung-pythagoras.pdf: loesung-pythagoras.tex | build
@@ -36,12 +36,14 @@ build/loesung-nikolaus.pdf: loesung-nikolaus.tex | build
 		--halt-on-error \
 		loesung-nikolaus.tex
 
+
 build/loesung-bragg.pdf: loesung-bragg.tex | build
 	lualatex \
 		--output-directory=build \
 		--interaction=${INTERACTION} \
 		--halt-on-error \
 		loesung-bragg.tex
+
 
 build/loesung-circuitikz.pdf: loesung-circuitikz.tex | build
 	lualatex \
@@ -52,6 +54,7 @@ build/loesung-circuitikz.pdf: loesung-circuitikz.tex | build
 
 build:
 	mkdir -p build
+
 
 clean:
 	rm -rf build

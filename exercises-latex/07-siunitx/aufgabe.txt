@@ -3,14 +3,12 @@ Aufgabe 1:
 
 Aufgabe 2:
   a) Erzeuge Ausgaben für
-    \qty{27.23(1)e3}{\meter\per\second}
-
-    und
-
-    \begin{equation}
       \qty{27.23(1)e3}{\meter\per\second}
-    \end{equation}
-
+    und
+      \begin{equation}
+        \qty{27.23(1)e3}{\meter\per\second}
+      \end{equation}
+    .
   b) Lade nun die Option "locale=DE". Wie ändert sich die Ausgabe?
      Tipp: Mit \sisetup{} lassen sich Optionen auch nach dem Laden des Pakets
      einstellen.

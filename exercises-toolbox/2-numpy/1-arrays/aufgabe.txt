@@ -9,7 +9,7 @@ geforderte Gestalt haben.
 
 1) Erzeuge Arrays mit folgenden Werten und gib sie auf das Terminal aus. Für
    einige Arrays gibt es eingebaute Numpy-Funktionen, die einem die Sache
-   einfacher machen.
+   erleichtern.
 
     a) Erzeuge ein Array mit 3 Einträgen gleich 0.
     b) Erzeuge ein Array mit 4 Einträgen gleich 1.
@@ -35,7 +35,7 @@ geforderte Gestalt haben.
    Array mit einem Eintrag in jeder Zeile, indem du die 'reshape' Methode
    verwendest. Gib die Ergebnisse auf das Terminal aus.
 
-   Informationen zu reshape: 
+   Informationen zu reshape:
    https://docs.scipy.org/doc/numpy/reference/generated/numpy.reshape.html
 
 5*) Zusatzaufgabe:

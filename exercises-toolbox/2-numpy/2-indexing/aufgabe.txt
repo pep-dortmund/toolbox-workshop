@@ -6,11 +6,11 @@ diesem Fall die waagerechten, bzw. senkrechten Gruppen von Zahlen großer als
 Null (die Nullen stehen für das Wasser). Die Zahlen, die die Schiffe bilden,
 stehen dabei für die Länge der Schiffe. Es gibt folgende Schiffe:
 
-6 1er-Schiffe
-4 2er-Schiffe
-3 3er-Schiffe
-2 4er-Schiffe
-1 5er-Schiff
+6 x 1er-Schiff
+4 x 2er-Schiff
+3 x 3er-Schiff
+2 x 4er-Schiff
+1 x 5er-Schiff
 
 Die Datei 'vorlage.py' enthält bereits den notwendigen code und muss nur noch
 um die Lösung ergänzt werden. Durch das Ausführen dieser Datei kann auch
@@ -23,7 +23,6 @@ Aufgaben:
 1) Für 2er-, 3er-, 4er- und 5er-Schiffe:
    Versuche, mithilfe von Array Indexing und Slicing, jeweils ein Schiff auf
    einmal zu treffen, indem du die entsprechenden Elemente auf -1 setzt.
-
 
 2) Für 1er-Schiffe:
    Versuche alle 1er-Schiffe auf einmal zu treffen.

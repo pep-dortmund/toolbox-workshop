@@ -1,23 +1,23 @@
 Hinweis: Falls du die hier benötigten Gesetze und Gleichungen nicht mehr weißt,
-         kannst du einen Blick in die PDF der Musterlösung werfen.
+         kannst du einen Blick in `loesung.pdf`, die Musterlösung, werfen.
          (Nicht in die .tex)
 
 Aufgabe 1:
-  Erstelle ein neues LaTeX Dokument. Lade zusätzlich zum Gerüst in
+  Erstelle ein neues LaTeX-Dokument. Lade zusätzlich zum Gerüst in
   `geruest.tex` die benötigten Pakete für Mathematik und nimm die empfohlenen
   Einstellungen vor.
 
 Aufgabe 2:
   Setze das Biot–Savart-Gesetz. Erkläre darunter im Fließtext die darin
-  vorkommenden Größen und Konstanten. Versuche dafür die $-Umgebung und weitere
+  vorkommenden Größen und Konstanten. Versuche dafür, die $-Umgebung und weitere
   Umgebungen zu verwenden, die du kennengelernt hast.
 
 Aufgabe 3:
-  Setze die Formel für die gaußsche Fehlerfortpflanzung.
+  Setze die Formel für die Gaußsche Fehlerfortpflanzung.
 
 Aufgabe 4:
   Setze die vier differentiellen Maxwellgleichungen. Dabei sollen jeweils die
-  homogenen bzw. die inhomogen Gleichungen in einer Zeile stehen und die
+  homogenen bzw. die inhomogenen Gleichungen in einer Zeile stehen und die
   Gleichungen für E bzw. B untereinander. Richte die Gleichungen jeweils
   vertikal am Gleichheitszeichen aus.
 
