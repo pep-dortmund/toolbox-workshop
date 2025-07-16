@@ -1,6 +1,6 @@
 # begin solution
-import numpy as np
 import matplotlib.pyplot as plt
+import numpy as np
 
 # Generate data
 rng = np.random.default_rng(210)
@@ -21,7 +21,7 @@ def f(x, a, b, c):
 parameters, covariance_matrix = np.polyfit(x, y, deg=2, cov=True)
 uncertainties = np.sqrt(np.diag(covariance_matrix))
 
-for name, value, unc in zip("abc", parameters, uncertainties):
+for name, value, unc in zip("abc", parameters, uncertainties, strict=False):
     print(f"{name} = {value:.3f} ± {unc:.3f}")
 
 fig = plt.figure(layout="constrained")
