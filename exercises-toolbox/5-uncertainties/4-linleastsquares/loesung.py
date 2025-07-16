@@ -28,7 +28,7 @@ def linleastsquares(functions, x_values, y_values):
 
 
 def linear_combination(x, functions, params):
-    return np.sum([p * f(x) for p, f in zip(params, functions)], axis=0)
+    return np.sum([p * f(x) for p, f in zip(params, functions, strict=False)], axis=0)
 
 
 if __name__ == "__main__":
