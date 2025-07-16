@@ -1,7 +1,8 @@
-from getpass import getpass
 import json
-import requests
+from getpass import getpass
+
 import pandas as pd
+import requests
 
 r = requests.get(
     "https://registration.pep-dortmund.org/events/21/participants",
