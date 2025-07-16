@@ -1,12 +1,13 @@
 import matplotlib.pyplot as plt
 import numpy as np
 import uncertainties.unumpy as unp
+from curve_fit import ucurve_fit
 from uncertainties.unumpy import (
     nominal_values as noms,
+)
+from uncertainties.unumpy import (
     std_devs as stds,
 )
-
-from curve_fit import ucurve_fit
 
 
 def make_qty(num, unit, exp="", figures=None):
@@ -18,7 +19,7 @@ def make_qty(num, unit, exp="", figures=None):
     else:
         x = "{0:.{1:}f}".format(num, figures)
 
-    return r"\qty{{{}{}}}{{{}}}".format(x, exp, unit)
+    return rf"\qty{{{x}{exp}}}{{{unit}}}"
 
 
 t, U, U_err = np.genfromtxt("data.txt", unpack=True)
@@ -72,7 +73,7 @@ table_header = r"""
     t \mathbin{/} \unit{\milli\second} & \SetCell[c=2]{c} U \mathbin{/} \unit{\kilo\volt} & &
     t \mathbin{/} \unit{\milli\second} & \SetCell[c=2]{c} U \mathbin{/} \unit{\kilo\volt} & \\
     \midrule
-"""
+"""  # noqa: E501
 
 table_footer = r"""    \bottomrule
   \end{tblr}
@@ -84,7 +85,7 @@ row_template = (
 
 with open("build/loesung-table.tex", "w") as f:
     f.write(table_header)
-    for row in zip(t1, U1, t2, U2):
+    for row in zip(t1, U1, t2, U2, strict=False):
         f.write(row_template.format(*row))
         f.write("\n")
     f.write(table_footer)
