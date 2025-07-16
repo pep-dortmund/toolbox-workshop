@@ -58,6 +58,7 @@ pdflscape
 pgfopts
 pict2e
 placeins
+qrcode
 siunitx
 standalone
 standalone
