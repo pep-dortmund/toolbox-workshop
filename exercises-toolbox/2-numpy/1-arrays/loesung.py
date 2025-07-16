@@ -18,13 +18,13 @@ array_names = ["a", "b", "c", "d", "e", "f", "g0", "g1", "h"]
 arrays = [a, b, c, d, e, f, g0, g1, h]
 
 print("Aufgabe 1)")
-for name, array in zip(array_names, arrays):
+for name, array in zip(array_names, arrays, strict=False):
     print(f"Array {name}: {array}")
 
 
 # Aufgabe 2)
 print("\nAufgabe 2)")
-for name, array in zip(array_names, arrays):
+for name, array in zip(array_names, arrays, strict=False):
     print(f"Array {name}")
     print(f"\t len({name}): {len(array)}")
     print(f"\t {name}.shape: {array.shape}")
