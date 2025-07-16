@@ -18,6 +18,7 @@ environ
 epstopdf-pkg
 eso-pic
 extsizes
+fancyqr
 fancyvrb
 fira
 firamath
