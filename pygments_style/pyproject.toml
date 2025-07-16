@@ -7,7 +7,7 @@ name = "toobox_style"
 version = "v1.0.0"
 
 [tool.hatch.build.targets.wheel]
-include = ["toolbox_style"]
+packages = ["toolbox_style.py"]
 
 [project.entry-points."pygments.styles"]
 toolbox = "toolbox_style:Toolbox"
