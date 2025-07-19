@@ -18,6 +18,7 @@ environ
 epstopdf-pkg
 eso-pic
 extsizes
+fancyqr
 fancyvrb
 fira
 firamath
@@ -55,7 +56,9 @@ pdfcol
 pdfcrop
 pdflscape
 pgfopts
+pict2e
 placeins
+qrcode
 siunitx
 standalone
 standalone

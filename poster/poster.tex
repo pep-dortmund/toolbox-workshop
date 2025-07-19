@@ -1,86 +1,120 @@
-\documentclass[paper=landscape]{scrartcl}
+\documentclass[paper=a4]{scrartcl}
 
-\usepackage[margin=1cm]{geometry}
+\usepackage{xparse}
+\usepackage{xstring}
+
 \usepackage{fontspec}
-\setsansfont{Fira Sans}
-\renewcommand{\familydefault}{\sfdefault}
+\setmainfont{Fira Sans}
+\setmonofont{Fira Mono}
 
 \usepackage{tikz}
 
 \usepackage{xcolor}
-\usepackage[colorlinks=true, urlcolor=blue!60!black]{hyperref}
+\xdefinecolor{tugreen}{HTML}{83B818}
+\definecolor{pepgray}{HTML}{565656}
+\definecolor{pepgreen}{HTML}{d7dca1}
+
+\usepackage{graphicx}
+\usepackage{fancyqr}
+
 
 \begin{document}
+    \thispagestyle{empty}
+    \begin{tikzpicture}[remember picture, overlay]
+      \newdimen\marg
+      \marg=0.5cm
+      \fill [pepgreen!70!white] ([xshift=\marg, yshift=-3.8cm]current page.west)
+      rectangle ([xshift=-\marg, yshift=-\marg]current page.north east);
 
-  \begin{minipage}{0.25\textwidth}%
-    \includegraphics[width=\textwidth]{logos/pep.pdf}%
-  \end{minipage}%
-  \begin{minipage}{0.75\textwidth}%
-    \centering\fontsize{50}{60}\bfseries\selectfont Toolbox Workshop 2024%
-  \end{minipage}%
+      %% TITLE
+      \node [
+        anchor=north west,
+        font=\fontsize{2cm}{2cm}\selectfont,
+        align=left,
+        color=pepgray,
+      ] (pep) at ([xshift=1cm, yshift=-1cm]current page.north west) {
+        \raisebox{-.25ex}{\includegraphics[height=2cm]{logos/schwingung_negativ.pdf}}\,\textbf{PeP et al.~e.\kern-0.1333em V\kern-0.1333em.}
+      };
+      \node [
+        anchor=north west,
+        font=\bfseries\fontsize{4.1cm}{3.5cm}\selectfont,
+        align=left,
+      ] (tbw) at ([yshift=-0.5cm]pep.south west) {Toolbox\\Workshop};
 
-  \vspace{0.3cm}
+      %% DATE
+      \node [
+        anchor=north west,
+        font=\bfseries\fontsize{1cm}{1cm}\selectfont,
+        align=left,
+      ] (date) at ([xshift=0.5cm,yshift=0.7cm]tbw.south west) {29.09.2025 -- 10.10.2025};
 
-  \begin{center}
-    \Huge Ihr müsst im nächsten Semester Praktikums-Versuche machen? \\[0.3\baselineskip]
-    Wir machen es euch einfach(er)!
-  \end{center}
+      %% LAB COURSES, BACHELOR, MASTER
+      \node [
+        anchor=north west,
+        font=\itshape\bfseries\fontsize{2cm}{2cm}\selectfont,
+        align=left,
+        color=pepgray,
+      ](prak) at ([yshift=-1cm]tbw.south west) {Praktikum?};
+      \node [
+        anchor=north west,
+        font=\itshape\bfseries\fontsize{2cm}{2cm}\selectfont,
+        align=left,
+        color=pepgray!80!black,
+      ] (ba) at (prak.south west) {Bachelorarbeit?};
+      \node [
+        anchor=north west,
+        font=\itshape\bfseries\fontsize{2cm}{2cm}\selectfont,
+        align=left,
+        color=pepgray!60!black,
+      ] (ma) at (ba.south west) {Masterarbeit?};
 
- \vspace{0.1cm}
+      \node [
+        anchor=north west,
+        font=\bfseries\fontsize{1cm}{1cm}\selectfont,
+        align=left,
+        color=black,
+        text width=0.8\pagewidth,
+      ] (msg) at ([yshift=-0.5cm]ma.south west) {Wir zeigen euch, wie ihr diese Teile des Studiums meistern könnt!};
 
-  \begin{center}
-    \huge \textbf{Praktikums-Versuche richtig auswerten!} \\[0.3\baselineskip]
-    23.~–~26.~September 2024, 13\,-\,17~Uhr
-  \end{center}
-  \vspace{0.1cm}
-  \begin{center}
-    \huge \textbf{Wissenschaftliche Arbeiten verfassen mit} \textrm{\LaTeX}\\[0.3\baselineskip]
-    27.~September~–~02.~Oktober~2024, 13\,-\,17~Uhr
-  \end{center}
-  \vspace{0.1cm}
-  \begin{center}
-    \huge \textbf{Automatisieren und üben}\\[0.3\baselineskip]
-    04.~Oktober~2024, 13\,-\,17~Uhr
-  \end{center}
-  \vspace{0.1cm}
-  \begin{center}
-    \huge \textbf{Wo?}
-    Bio- \& Chemieingenieurwesen HS ZE 01 %\\
-  \end{center}
-  \vspace{0.1cm}
-  \begin{center}
-    \large Software installieren und \textbf{Anmelden}: \\
-    \Huge \href{https://toolbox.pep-dortmund.org}{toolbox.pep-dortmund.org}
-  \end{center}
+      %% TOPICS
+      \node [
+        anchor=north west,
+        font=\bfseries\fontsize{0.7cm}{0.7cm}\selectfont,
+        align=left,
+        color=pepgray,
+        text width=0.8\pagewidth,
+      ] (python) at ([xshift=0.5cm,yshift=-1.5cm]msg.south west) {•\,Auswertung mit \raisebox{-0.5ex}{\includegraphics[height=0.8cm]{logos/python.pdf}}};
+      \node [
+        anchor=north west,
+        font=\bfseries\fontsize{0.7cm}{0.7cm}\selectfont,
+        align=left,
+        color=pepgray,
+        text width=0.8\pagewidth,
+      ] (make) at ([yshift=-0.5cm]python.south west) {•\,Automatisierung durch \normalfont\texttt{Make}};
+      \node [
+        anchor=north west,
+        font=\bfseries\fontsize{0.7cm}{0.7cm}\selectfont,
+        align=left,
+        color=pepgray,
+        text width=0.8\pagewidth,
+      ] (git) at ([yshift=-0.5cm]make.south west) {•\,Zusammenarbeit via \raisebox{-0.3ex}{\includegraphics[height=0.7cm]{logos/git.pdf}}};
+      \node [
+        anchor=north west,
+        font=\bfseries\fontsize{0.7cm}{0.7cm}\selectfont,
+        align=left,
+        color=pepgray,
+        text width=0.8\pagewidth,
+      ] (latex) at ([yshift=-0.5cm]git.south west) {•\,Schreiben in \LaTeX};
 
-  \begin{tikzpicture}[remember picture, overlay, shift=(current page.south)]
-    \node[anchor=center] at (-10.5, 13) {%
-      \includegraphics[height=1.5cm]{logos/python.pdf}%
-    };
-    \node[anchor=center] at (10.5, 13) {%
-      \includegraphics[height=1.5cm]{logos/git.png}%
-    };
-    \node[anchor=center] at (-9, 1.2) {%
-      \includegraphics[height=1.3cm]{logos/matplotlib.png}%
-    };
-    \node[anchor=center] at (-10.5, 9) {%
-      \includegraphics[height=1.5cm]{logos/numpy.png}%
-    };
-    \node[anchor=center] at (3, 1) {%
-      \includegraphics[width=6cm]{logos/uncertainties.png}%
-    };
-    \node[anchor=center] at (10, 7) {%
-      \includegraphics[height=1.7cm]{logos/scipy.png}%
-    };
-    \node[anchor=center] at (11.5, 10) {%
-      \fontsize{40}{43}\selectfont\texttt{make}%
-    };
-    \node[anchor=center] at (-11, 5) {%
-      \fontsize{50}{70}\selectfont\rmfamily\LaTeX
-    };
-    \node[anchor=center] at (12.5, 2.5) {%
-      \includegraphics[height=4cm]{../qrcode/toolbox_qrcode.png}%
-    };
-  \end{tikzpicture}
+      \node [anchor=south east] (QR) at ([xshift=-1.5cm, yshift=2cm]current page.south east) {
+        \fancyqr[
+          height=6cm,
+          color=black!90!gray
+        ]{https://toolbox.pep-dortmund.org/}
+      };
+      \node [anchor=north, align=center] at (QR.south) {%
+        \textit{Alle Informationen und Anmeldung}\\\texttt{toolbox.pep-dortmund.org}
+      };
 
+    \end{tikzpicture}
 \end{document}
