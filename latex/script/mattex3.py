@@ -1,8 +1,10 @@
 import matplotlib as mpl
-mpl.use("pgf")                                   # <-- Use LaTeX Backend
+
+mpl.use("pgf")  # <-- Use LaTeX Backend
 import matplotlib.pyplot as plt
 import numpy as np
-mpl.rcParams.update(                             # <-- Set matplotlib options
+
+mpl.rcParams.update(  # <-- Set matplotlib options
     {
         "font.family": "serif",
         "text.usetex": True,

@@ -60,8 +60,9 @@ mamba activate toolbox
 
 
 ## Working with git
-We are using `black` and `nbqa-black` as auto-formatters to ensure code quality.
-To make sure these tools are running every time you make a commit, set up our
+We are using `ruff` as auto-formatter and linter, and `nbqa-ruff-format` as auto-formatter
+for notebooks to ensure code quality. To make sure these tools are running every
+time you make a commit, set up our
 ``pre-commit hook`` via
 ```
 $ pre-commit install
@@ -71,10 +72,10 @@ reject a commit if any of the checks fail. Any failing checks can then be solved
 by fixing the issues reported by the `pre-commit hook`.
 
 
-We use the github workflow in this repository, see <https://guides.github.com/introduction/flow/>.
+We use the GitHub workflow in this repository, see <https://guides.github.com/introduction/flow/>.
 In short, to contribute:
 
 1. Create a new branch and switch to it using `git switch -c <name>`
 1. Make changes and commit
 1. Push the Branch using `git push -u origin <name>`
-1. Open a Pull Request on github.
+1. Open a Pull Request on GitHub.

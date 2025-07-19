@@ -6,6 +6,6 @@ if len(sys.argv) > 1:
 else:
     filename = "test.txt"
 
-with open(filename, "r") as f:
+with open(filename) as f:
     print(f.read())
 # end solution

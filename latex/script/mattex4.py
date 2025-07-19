@@ -1,7 +1,9 @@
 import matplotlib as mpl
+
 mpl.use("pgf")
 import matplotlib.pyplot as plt
 import numpy as np
+
 mpl.rcParams.update(
     {
         "font.family": "serif",

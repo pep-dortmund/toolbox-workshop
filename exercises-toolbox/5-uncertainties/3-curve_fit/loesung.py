@@ -39,7 +39,7 @@ x, y_0, y_err = np.genfromtxt("daten.txt", unpack=True)
 y = unp.uarray(y_0, y_err)
 params = ucurve_fit(f, x, y)
 print("a * cos(x * b) + c")
-for char, p in zip("abc", params):
+for char, p in zip("abc", params, strict=False):
     print(f"{char} = {p}")
 
 fig = plt.figure(layout="constrained")

@@ -1,11 +1,12 @@
-from linregress import ulinregress
+import matplotlib.pyplot as plt
 
 # begin solution
 import numpy as np
 import uncertainties as unc
 import uncertainties.unumpy as unp
-from uncertainties.unumpy import nominal_values as noms, std_devs as stds
-import matplotlib.pyplot as plt
+from linregress import ulinregress
+from uncertainties.unumpy import nominal_values as noms
+from uncertainties.unumpy import std_devs as stds
 
 Delta_t_0 = np.genfromtxt("Delta_t_0.txt")
 N_0 = np.genfromtxt("N_0.txt")

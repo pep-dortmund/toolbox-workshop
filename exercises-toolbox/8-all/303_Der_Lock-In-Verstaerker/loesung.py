@@ -1,9 +1,8 @@
 # begin solution
-import numpy as np
-from uncertainties.unumpy import nominal_values as noms
 import matplotlib.pyplot as plt
-
+import numpy as np
 from curve_fit import ucurve_fit
+from uncertainties.unumpy import nominal_values as noms
 
 
 def Ur(r, A, B, C):

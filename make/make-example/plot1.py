@@ -1,5 +1,5 @@
-import numpy as np
 import matplotlib.pyplot as plt
+import numpy as np
 
 data = np.genfromtxt("data.txt", unpack=True)
 

@@ -1,9 +1,9 @@
 import matplotlib.pyplot as plt
 import numpy as np
+import uncertainties.unumpy as unp
+from matplotlib.patches import Rectangle
 from scipy.optimize import curve_fit
 from uncertainties import correlated_values
-from matplotlib.patches import Rectangle
-import uncertainties.unumpy as unp
 
 nom = unp.nominal_values
 std = unp.std_devs
