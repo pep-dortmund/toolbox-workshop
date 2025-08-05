@@ -9,18 +9,18 @@ Letztes am Material gearbeitet hat?
 
 Aufgabe 2:
 
-Mache dich mit git vertraut. Dazu haben wir ein Beispiel-Repository in Form eines
-templates vorbereitet. Wir werden es verwenden, um den Einstieg in das template für
-die Versuchsprotokolle zu vereinfachen.
+Mache dich mit git vertraut. Dazu haben wir ein Beispiel-Repository (repo)
+vorbereitet. Wir werden es anstelle eines Repositories auf gitlab.com oder
+github.com verwenden.
 
-1. Gehe auf die website: "https://github.com/pep-dortmund/git-exercise-template" und
-   erstelle mit dem grün hinterlegten Knopf ein eigenes Repo mithilfe der
-   Template-Funktion.
-   Eine ausführliche Anleitung, wie das ganz genau funkioniert, findest du auch noch
-   einmal hier: "https://toolbox.pep-dortmund.org/introduction/toolbox/" am Beispiel
-   des Praktikum-Templates, das wir später noch verwenden werden.
-   Danach clone das Repository von GitHub auf deinen Laptop, um im folgenden die
-   git-Funktionen besser kennenzulernen.
+1. Erzeuge mittels "git clone" eine Kopie von "repo" Dazu kannst du z.B. in
+   einen anderen Ordner gehen oder mittels "git clone repo <name>" eine Kopie
+   mit anderem Namen erzeugen. Dieser Teil würde völlig analog mit einem
+   Repository im Internet funktionieren, wenn man "repo" durch die
+   entsprechende URL ersetzen würde. Wir haben "repo" lediglich beigelegt,
+   damit ihr jetzt keine Accounts erstellen müsst. Später werden wir mit dem
+   "repo" so kommunizieren als wäre es ein externes Repository (git pull/git
+   push).
 
 2. Schaue dir die Dateien im Repository an. Erzeuge 2 Plots, indem du "make" in
    deiner Kopie des Repositories ausführst; weiteres zu make kommt am Ende des
@@ -37,12 +37,11 @@ die Versuchsprotokolle zu vereinfachen.
 5. Füge die Änderungen zum Index hinzu (git add ...) und speichere den Index
    als neuen commit in der History ab (git commit -m "...").
 
-6. Übertrage deinen commit mittels "git push" in das Repository.
+6. Übertrage deinen commit mittels "git push" in das "repo"-Repository.
 
-7. Mache mittels "git clone" eine weitere Kopie deines Repository. Diese Kopie sollte
+7. Mache mittels "git clone" eine weitere Kopie von "repo". Diese Kopie sollte
    deine letzten Änderungen enthalten. Prüfe mittels "git log", ob das der Fall
-   ist. Schaue dir auch die Dateien auf GitHub an und prüfe, ob deine Änderungen
-   enthalten sind.
+   ist.
 
 8. Wiederhole Schritte 4. bis 7. in der zweiten Kopie. Hier wollen wir
    simulieren, dass mehrere Leute am selben Repository arbeiten.
@@ -54,7 +53,3 @@ die Versuchsprotokolle zu vereinfachen.
 10. Bonus: Versuche einen merge conflict herbeizuführen, indem du in beiden
     deiner Kopien dieselbe Zeile änderst und 9. wiederholst. Kannst du den
     merge conflict lösen?
-
-11. Bonus: Wiederhole Teile der Aufgabe, indem du mit einer weiteren Person im Workshop
-    zusammen an deinem git-exercise Repository arbeitest. Könnt ihr gemeinsam ein
-    zusammenarbeiten an diesem Projekt nachvollziehen?
