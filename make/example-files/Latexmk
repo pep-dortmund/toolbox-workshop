@@ -1,5 +1,6 @@
-build/file.pdf: FORCE plots... tabellen...
+build/file.pdf: FORCE plots... tabellen... | build
   TEXINPUTS=build: \
+  BIBINPUTS=.: \
   max_print_line=1048576 \
   latexmk \
     --lualatex \
