@@ -1,0 +1,50 @@
+# Kurzaufgaben
+
+Hier fassen wir einmal alle Kurzaufgaben aus dem
+Python-Notebook zusammen.
+
+
+1. Definiere die folgenden Variablen mit den angegebenen Werten
+  - Variable t, Wert: 0.5 s
+  - Variable h_i, Wert: 10 m
+  - Variable v_i, Wert: 0.75 m/s
+  - Variable a_i, Wert: -9.81 m/s^2
+2. Berechne mit den obigen Werten die Höhe h, Geschwindigkeit v
+  und Beschleunigung a zum Zeitpunkt t = 0.5 s eines fallenden Objekts.
+  Speicher die Ergebnisse in entsprechenden Variablen h, v, a.
+3. Prüfe, ob das Objekt bereits über einen Meter gefallen ist.
+4. Nutze die print-Funktion, um die gegebenen Startwerte
+  und die Ergebnisse der letzten Kurzaufgabe mit Überschriften
+  zu versehen und auszugeben.
+5. Definiere eine Liste mit Namen T,
+  die die 3 Werte 0.5, 1 und 1.5 enthält.
+  Definiere drei leere Listen mit den Namen H, V und A.
+  Berechne dann für jede der drei Zeiten wie zuvor die Höhe,
+  Geschwindigkeit und Strecke, jedoch indem du
+  a) die Werte aus der Liste T verwendest (T[i] für das entsprechende i),
+  b) die Ergebnisse an die zugehörige Liste anhängst.
+  Gib die Listen H, V, A mit der print-Funktion aus.
+6. Speichere die zuvor erstellten Listen in einem Dictionary
+  mit dem Namen data und den keys t, h, v und a.
+  Gib das Dictionary mit der print-Funktion aus.
+7. Greife auf die folgenden Werte im Dictionary zu:
+  - der zweite Wert von t
+  - der erste Wert von v
+  - der letzte Wert von h
+8. Definiere jeweils eine Funktion für die Berechnung von h, v und a
+  zu einem beliebigen Zeitpunkt t.
+9. Erstelle eine neue Liste T mit den Werten
+  0.25, 0.5, 0.75, 1.0, 1.25 und 1.5.
+  Und erstelle das Dictionary data erneut für alle Zeitpunkte in T.
+  Verwende dafür die in 8. erstellten Funktionen.
+Zusatz: Du kannst auch die Listen H, V und A neu erstellen
+  und dafür eine Schleife verwenden.
+  Gib data mit der `print`-Funktion aus.
+10. Nutze eine Schleife über das Dictionary data,
+  um die Daten in Tabellenform auszugeben.
+    t   0.25   0.50   0.75   1.00    1.25    1.50
+    h   9.88   9.15   7.80   5.84    3.27    0.09
+    v  -2.27  -4.53  -6.79  -9.06  -11.33  -13.59
+    a  -9.81  -9.81  -9.81  -9.81   -9.81   -9.81
+  Jede Zeile der Tabelle kann dabei durch Verwendung
+  eines f-Strings formatiert werden.
