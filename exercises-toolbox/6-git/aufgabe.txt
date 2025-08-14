@@ -13,19 +13,20 @@ Mache dich mit git vertraut. Dazu haben wir ein Beispiel-Repository in Form eine
 templates vorbereitet. Wir werden es verwenden, um den Einstieg in das template für
 die Versuchsprotokolle zu vereinfachen.
 Diese Aufgabe eignet sich optimal als Einstieg, um zu zweit Aufgaben bzw. Code zu
-bearbeiten. Daher empfehlen wir, dass ihr die folgenden Aufgabenteile mit min. einer
-weiteren Person aus dem Workshop zusammen bearbeitet.
+bearbeiten. Daher empfehlen wir, dass du die folgenden Aufgabenteile mit min. einer
+weiteren Person aus dem Workshop zusammen bearbeitest.
 
-1. Gehe auf die Website: "https://github.com/pep-dortmund/git-exercise-template" und
+1. Eine ausführliche Anleitung, wie das Erstellen eines neuen Repository ausgehend von
+   einem Template ganz genau funkioniert, findest du auch noch einmal hier:
+   "https://toolbox.pep-dortmund.org/introduction/toolbox/" am Beispiel des
+   Praktikum-Templates, das wir später noch verwenden werden.
+   Gehe auf die Website: "https://github.com/pep-dortmund/git-exercise-template" und
    erstelle mit dem grün hinterlegten Knopf ein eigenes Repo mithilfe der
    Template-Funktion.
-   Eine ausführliche Anleitung, wie das ganz genau funkioniert, findest du auch noch
-   einmal hier: "https://toolbox.pep-dortmund.org/introduction/toolbox/" am Beispiel
-   des Praktikum-Templates, das wir später noch verwenden werden.
    Wichtig: Diesen Teil muss nur eine Person von euch aktiv bearbeiten. Macht diesen
    Schritt trotzdem gemeinsam, damit beide wissen, wie man aus einem Template ein eigenes
    Repository erstellt. Ab hier arbeitet ihr zusammen an diesem neu erstellten
-   Aufgaben-Repository.
+   git-Aufgaben-Repository.
 
 2. Danach clone das Repository (jeder ein Mal) von GitHub auf deinen Laptop, um im
    folgenden die git-Funktionen besser kennenzulernen.
