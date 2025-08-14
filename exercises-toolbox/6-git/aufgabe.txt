@@ -42,8 +42,8 @@ weiteren Person aus dem Workshop zusammen bearbeitet.
 
 5. Mache beliebige Änderungen an den Dateien "plot1.py" oder "plot2.py" (Ändere
    z.B. die Farben der eingezeichneten Linien) und erzeuge die Plots durch
-   Ausführen von "make". Hier empfiehlt es sich an, dass zunächst eine Person an
-   dem File "plot1.py" und die andere an "plot2.py" arbeitet. So simuliert ihr ein
+   Ausführen von "make". Hier empfiehlt es sich, dass zunächst eine Person an dem File
+   "plot1.py" und die andere an "plot2.py" arbeitet. So simuliert ihr ein
    zusammenarbeiten an einem Projekt.
 
 6. Führe erneut "git status" aus, um dir anzusehen, welche Dateien du geändert hast.
@@ -62,6 +62,6 @@ weiteren Person aus dem Workshop zusammen bearbeitet.
    aus der git history angucken. Da findest du den commit deines/deiner Partner:in
    einfach durch den Namen und die E-Mail Adresse gekennzeichnet.
 
-10. Bonus: Versuche einen merge conflict herbeizuführen, indem ihr in beiden Versionen
+10. Bonus: Versucht einen merge conflict herbeizuführen, indem ihr in beiden Versionen
     der Repositories dieselbe Zeile ändert und ihr Schritte 8. und 9. wiederholt.
     Könnt ihr den merge conflict lösen?
