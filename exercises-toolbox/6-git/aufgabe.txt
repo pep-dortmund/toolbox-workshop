@@ -12,49 +12,56 @@ Aufgabe 2:
 Mache dich mit git vertraut. Dazu haben wir ein Beispiel-Repository in Form eines
 templates vorbereitet. Wir werden es verwenden, um den Einstieg in das template für
 die Versuchsprotokolle zu vereinfachen.
+Diese Aufgabe eignet sich optimal als Einstieg, um zu zweit Aufgaben bzw. Code zu
+bearbeiten. Daher empfehlen wir, dass ihr die folgenden Aufgabenteile mit min. einer
+weiteren Person aus dem Workshop zusammen bearbeitet.
 
-1. Gehe auf die website: "https://github.com/pep-dortmund/git-exercise-template" und
+1. Gehe auf die Website: "https://github.com/pep-dortmund/git-exercise-template" und
    erstelle mit dem grün hinterlegten Knopf ein eigenes Repo mithilfe der
    Template-Funktion.
    Eine ausführliche Anleitung, wie das ganz genau funkioniert, findest du auch noch
    einmal hier: "https://toolbox.pep-dortmund.org/introduction/toolbox/" am Beispiel
    des Praktikum-Templates, das wir später noch verwenden werden.
-   Danach clone das Repository von GitHub auf deinen Laptop, um im folgenden die
-   git-Funktionen besser kennenzulernen.
+   Wichtig: Diesen Teil muss nur eine Person von euch aktiv bearbeiten. Macht diesen
+   Schritt trotzdem gemeinsam, damit beide wissen, wie man aus einem Template ein eigenes
+   Repository erstellt. Ab hier arbeitet ihr zusammen an diesem neu erstellten
+   Aufgaben-Repository.
 
-2. Schaue dir die Dateien im Repository an. Erzeuge 2 Plots, indem du "make" in
+2. Danach clone das Repository (jeder ein Mal) von GitHub auf deinen Laptop, um im
+   folgenden die git-Funktionen besser kennenzulernen.
+   Wichtig: Ab hier arbeitet ihr jeweils an euren eigenen Laptops, allerdings zusammen
+   an dem gleichen Repository. Achtet daher darauf, dass die andere Person in den
+   Einstellungen eingeladen wird, in dem Repository mitzuarbeiten.
+
+3. Schaue dir die Dateien im Repository an. Erzeuge 2 Plots, indem du "make" in
    deiner Kopie des Repositories ausführst; weiteres zu make kommt am Ende des
    Workshops.
 
-3. Mache beliebige Änderungen an den Dateien "plot1.py" und "plot2.py" (Ändere
+4. Probiere nun mit den neu erstellten Dateien einmal "git status" aus. Was beobachtest
+   du? Was beobachten deine Übungspartner:innen? Welches File ist dafür verantwortlich?
+
+5. Mache beliebige Änderungen an den Dateien "plot1.py" oder "plot2.py" (Ändere
    z.B. die Farben der eingezeichneten Linien) und erzeuge die Plots durch
-   Ausführen von "make".
+   Ausführen von "make". Hier empfiehlt es sich an, dass zunächst eine Person an
+   dem File "plot1.py" und die andere an "plot2.py" arbeitet. So simuliert ihr ein
+   zusammenarbeiten an einem Projekt.
 
-4. Führe "git status" aus, um dir anzusehen, welche Dateien du geändert hast.
-   Führe "git diff" aus, um dir die Änderungen Zeile für Zeile anzeigen zu
-   lassen.
+6. Führe erneut "git status" aus, um dir anzusehen, welche Dateien du geändert hast.
+   Führe "git diff" aus, um dir die Änderungen Zeile für Zeile anzeigen zu lassen.
 
-5. Füge die Änderungen zum Index hinzu (git add ...) und speichere den Index
+7. Füge die Änderungen zum Index hinzu ("git add" ...) und speichere den Index
    als neuen commit in der History ab (git commit -m "...").
 
-6. Übertrage deinen commit mittels "git push" in das Repository.
+8. Übertrage deinen commit anschließend mittels "git push" in das Repository.
 
-7. Mache mittels "git clone" eine weitere Kopie deines Repository. Diese Kopie sollte
-   deine letzten Änderungen enthalten. Prüfe mittels "git log", ob das der Fall
-   ist. Schaue dir auch die Dateien auf GitHub an und prüfe, ob deine Änderungen
-   enthalten sind.
+9. Betrachte nun die Änderungen der jeweils anderen Person in eurem Repository, indem
+   du mittles "git pull" den Index vom Server auf deine lokale Kopie des Repositories
+   übernimmst. Gucke dir diese Modifikationen auch mittels "git diff" und dem commit
+   hash genau an. Baut ggf. die plots mit einem "make"-Befehl neu.
+   An dieser Stelle kannst du dir den commit hash auch sehr gut mithilfe von "git log"
+   aus der git history angucken. Da findest du den commit deines/deiner Partner:in
+   einfach durch den Namen und die E-Mail Adresse gekennzeichnet.
 
-8. Wiederhole Schritte 4. bis 7. in der zweiten Kopie. Hier wollen wir
-   simulieren, dass mehrere Leute am selben Repository arbeiten.
-
-9. Immer wenn du Änderungen aus dem einen Repository mit "git push"
-    hochgeladen hast, kannst du sie mit "git pull" im anderen herunterladen.
-    Teste, ob das reibungslos funktioniert.
-
-10. Bonus: Versuche einen merge conflict herbeizuführen, indem du in beiden
-    deiner Kopien dieselbe Zeile änderst und 9. wiederholst. Kannst du den
-    merge conflict lösen?
-
-11. Bonus: Wiederhole Teile der Aufgabe, indem du mit einer weiteren Person im Workshop
-    zusammen an deinem git-exercise Repository arbeitest. Könnt ihr gemeinsam ein
-    zusammenarbeiten an diesem Projekt nachvollziehen?
+10. Bonus: Versuche einen merge conflict herbeizuführen, indem ihr in beiden Versionen
+    der Repositories dieselbe Zeile ändert und ihr Schritte 8. und 9. wiederholt.
+    Könnt ihr den merge conflict lösen?
