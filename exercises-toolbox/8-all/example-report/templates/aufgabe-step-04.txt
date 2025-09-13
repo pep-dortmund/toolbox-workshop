@@ -1,33 +1,32 @@
 # Realistisches-Beispiel-Protokoll
 
 Einleitung:
-Um dieser Aufgabe sinnvoll folgen zu können, sollte diese von Anfang an bearbeitet werden. Folgt den
+Um dieser Aufgabe sinnvoll folgen zu können, sollte diese von Anfang an bearbeitet werden. Folge den
 Anweisungen in den 'aufgabe.txt' Dateien in den Unterordnern des Ordners 'example-report'.
 
 Aufgabe:
-Mit den Informationen zu scipy könnt ihr nun die Theorie-Funktionen aus der letzten Aufgabe
+Mit den Informationen zu scipy kannst du nun die Theorie-Funktionen aus der letzten Aufgabe
 zu Fit-Funktionen abändern und so physikalische Größen als Fit-Parameter bestimmen.
 
-1. Ändert die Theorie-Funktionen aus der letzten Aufgabe zu Fit-Funktionen, diese benötigen
-   zusätzliche Argumente für die Fit-Parameter und diese Fit-Parameter müssen auch in der 
+1. Ändere die Theorie-Funktionen aus der letzten Aufgabe zu Fit-Funktionen um, diese benötigen
+   zusätzliche Argumente für die Fit-Parameter und diese Fit-Parameter müssen auch in der
    Funktion verwendet werden. Konkret:
    - Die Fallbeschleunigung g, die in der letzten Aufgabe als 9.81 m/s² angenommen wurde,
       ist jetzt ein Fit-Parameter g.
-   - Außerdem ist noch ein weiterer Parameter t0 nötig, wie ihr dem finalen Beispielprotokoll entnehmen könnt.
+   - Außerdem ist noch ein weiterer Parameter t0 nötig, wie du dem finalen Beispielprotokoll entnehmen kannst.
 
-2. Importiert die Funktion curve_fit aus scipy.optimize.
+2. Importiere die Funktion curve_fit aus scipy.optimize.
 
 3. Für jede der beiden Messreihen:
-   Verwendet curve_fit, um aus den gemittelten Messwerten für Höhe und Zeit die beiden Fit-Parameter
+   Verwende curve_fit, um aus den gemittelten Messwerten für Höhe und Zeit die beiden Fit-Parameter
    zu berechnen.
 
-4. Gebt die Parameter mit ihrer zugehörigen Unsicherheit auf das Terminal aus.
+4. Gib die Parameter mit ihrer zugehörigen Unsicherheit auf das Terminal aus.
 
-5. Entfernt die Theorie-Funktionen aus den Plots und fügt stattdessen die Fit-Funktionen
+5. Entferne die Theorie-Funktionen aus den Plots und füge stattdessen die Fit-Funktionen
    mit den berechneten Parametern hinzu.
 
-6. Im finalen Beispielprotokoll wurden auch das Trägheitsmoment der Objekte durch einen weiteren 
+6. Im finalen Beispielprotokoll wurden auch die Trägheitsmomente der Objekte durch einen weiteren
    Fit bestimmt (dabei ist dann der theoretische Wert von g anzunehmen).
-   Ergänzt die notwendigen Fit-Funktionen und Plots für diesen Auswertungsschritt, in dem ihr die
+   Ergänze die notwendigen Fit-Funktionen und Plots für diesen Auswertungsschritt, indem du die
    vorangegangenen Schritte für diesen Fit wiederholt.
-

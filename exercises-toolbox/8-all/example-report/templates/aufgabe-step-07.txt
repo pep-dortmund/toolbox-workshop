@@ -1,36 +1,35 @@
 # Realistisches-Beispiel-Protokoll
 
 Einleitung:
-Um dieser Aufgabe sinnvoll folgen zu können, sollte diese von Anfang an bearbeitet werden. Folgt den
+Um dieser Aufgabe sinnvoll folgen zu können, sollte diese von Anfang an bearbeitet werden. Folge den
 Anweisungen in den 'aufgabe.txt' Dateien in den Unterordnern des Ordners 'example-report'.
 
 
 Aufgabe:
-Die Auswertung mit python ist nun erst einmal abgeschlossen. Nun wenden wir uns
+Die Auswertung mit python ist nun erst einmal abgeschlossen. Jetzt wenden wir uns
 dem LaTeX-Dokument zu:
 
-1) Erstellt im Ordner v16516 den folgenden Ordner und die folgenden Dateien.
-   Ordner: 
+1) Erstelle im Ordner v16516 den folgenden Ordner und die folgenden Dateien.
+   Ordner:
    - content
    Dateien:
-   - v16516.tex 
+   - v16516.tex
    - content/durchfuehrung.tex
    - content/theorie.tex
    - content/auswertung.tex
    - content/diskussion.tex
 
-2) Erstellt in dem Git-Respository (das euren Ordner v16516) enthält
+2) Erstelle in dem Git-Respository (das deinen Ordner v16516) enthält
    eine Datei header.tex
 
-3) Ergänzt die zu diesem Zeitpunkt notwendigen Pakete in der Datei header.tex.
-   (Ihr könnt diese Datei auch aus dem Ordner loesung kopieren, aber ändert die Information zu den Autoren am Ende der Datei.)
-   
+3) Ergänze die zu diesem Zeitpunkt notwendigen Pakete in der Datei header.tex.
+   (Du kannst diese Datei auch aus dem Ordner loesung kopieren, aber ändere dann die Information zu den Autoren am Ende der Datei.)
 
-4) Verwendet den Befehl \input, um die anderen tex-Dateien in die Datei v16516.tex einzufügen.
+4) Verwende den Befehl \input, um die anderen tex-Dateien in die Datei v16516.tex einzufügen.
 
-5) Ergänzt die Überschriften für die Abschnitte in den jeweiligen tex-Dateien im Ordner content.
+5) Ergänze die Überschriften für die Abschnitte in den jeweiligen tex-Dateien im Ordner content.
 
-6) Im Ordner loesung/v16516 findet ihr die Datei v16516.pdf. Ergänzt die übrigen Texte aus dieser Datei,
-   sodass euer aktuelles Protokoll genauso aussieht wie die Lösung.
+6) Im Ordner loesung/v16516 findest du die Datei v16516.pdf. Ergänze die übrigen Texte aus dieser Datei,
+   sodass dein aktuelles Protokoll genauso aussieht wie die Lösung.
 
-7) Nicht vergessen: Haltet euren Fortschritt mit git nach. 
+7) Nicht vergessen: Halte deinen Fortschritt mit git nach.
