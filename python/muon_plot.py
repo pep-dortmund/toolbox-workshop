@@ -2,7 +2,6 @@ import matplotlib.pyplot as plt
 import numpy as np
 from scipy.optimize import curve_fit
 from uncertainties import correlated_values
-from matplotlib.patches import Rectangle
 import uncertainties.unumpy as unp
 
 nom = unp.nominal_values
@@ -35,10 +34,9 @@ print("τ=", 1 / Lamb)
 t_plot = np.linspace(0, 11, 1000)
 y_plot = u_decay_with_background(t_plot, N0, Lamb, U)
 
-fig = plt.figure(figsize=(15 / 2.54, 10 / 2.54), layout="constrained")
-ax = fig.add_subplot(1, 1, 1)
+fig, ax = plt.subplots(figsize=(15 / 2.54, 10 / 2.54), layout="constrained")
 
-data = ax.errorbar(
+ax.errorbar(
     t,
     N,
     yerr=N_err,
@@ -48,7 +46,7 @@ data = ax.errorbar(
     ls="",
     lw=1,
 )
-(fit,) = ax.plot(t_plot, nom(y_plot), "r-", label="Fit", lw=1)
+ax.plot(t_plot, nom(y_plot), "r-", label="Fit", lw=1)
 
 ax.fill_between(
     t_plot,
@@ -57,6 +55,7 @@ ax.fill_between(
     color="r",
     alpha=0.3,
     lw=0,
+    label=r"$1\sigma$-Umgebung ($\times 10$)",
 )
 
 ax.set_title("Plot: matplotlib")
@@ -82,13 +81,7 @@ ax.annotate(
     alpha=0.3,
 )
 
-proxy = Rectangle((0, 0), 0, 0, color="r", alpha=0.3, linewidth=0)
-
-ax.legend(
-    [data, fit, proxy],
-    ["Messwerte", "Fit", r"$1\sigma$-Umgebung ($\times 10$)"],
-    loc="best",
-)
+ax.legend()
 ax.set_xlabel(r"$t \mathbin{/} \unit{\micro\second}$")
 ax.set_ylabel(r"Zählrate")
 ax.set_xlim(0, 11)
