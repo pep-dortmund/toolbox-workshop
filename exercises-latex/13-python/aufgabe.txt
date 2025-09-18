@@ -3,7 +3,7 @@ Fitte die Daten aus `daten.txt` (t, U, U_err) mit der Funktion
         f(x) = a * sin(b * x + c) + d .
 
 Benutze dazu ucurve_fit aus der Datei `curve_fit.py`. Geeignete Startwerte sind
-a=1e3, b=1e3, c=d=0.
+a=1e3, b=1e3, c=0 & d=1e2.
 
 Plotte die Daten und die gefittete Funktion. Verwende das pgf-Backend und eine
 matplotlibrc sowie die nötigen LaTeX-Pakete, um die Beschriftung schönzumachen.

@@ -10,7 +10,7 @@ from curve_fit import ucurve_fit
 
 
 def make_qty(num, unit, exp="", figures=None):
-    """Format an uncertainties ufloat as a \qty quantity"""
+    r"""Format an uncertainties ufloat as a \qty quantity"""
     if np.any(stds([num])):
         if figures is None:
             figures = ""
@@ -30,7 +30,10 @@ def f(t, a, b, c, d):
     return a * np.sin(b * t + c) + d
 
 
-params = ucurve_fit(f, t, U, p0=[1e3, 1e3, 0, 0])
+params = ucurve_fit(f, t, U, p0=[1e3, 1e3, 0, 1e2])
+
+for name, param in zip("abcd", params):
+    print(f"{name} = {param}")
 
 t_plot = np.linspace(-0.5, 2 * np.pi + 0.5, 1000) * 1e-3
 
@@ -69,8 +72,8 @@ table_header = r"""
     column{3} = {rightsep=3em},
   }
     \toprule
-    t \mathbin{/} \unit{\milli\second} & \SetCell[c=2]{c} U \mathbin{/} \unit{\kilo\volt} & &
-    t \mathbin{/} \unit{\milli\second} & \SetCell[c=2]{c} U \mathbin{/} \unit{\kilo\volt} & \\
+    t \mathbin{/} \unit{\milli\s} & \SetCell[c=2]{c} U \mathbin{/} \unit{\kilo\V} & &
+    t \mathbin{/} \unit{\milli\s} & \SetCell[c=2]{c} U \mathbin{/} \unit{\kilo\V} & \\
     \midrule
 """
 
@@ -81,11 +84,31 @@ row_template = (
     r"    {0:1.3f} & {1.n:1.2f} & {1.s:1.2f} & {2:1.3f} & {3.n:1.2f} & {3.s:1.2f} \\"
 )
 
-
+# version with .format
 with open("build/loesung-table.tex", "w") as f:
     f.write(table_header)
     for row in zip(t1, U1, t2, U2):
         f.write(row_template.format(*row))
+        f.write("\n")
+    f.write(table_footer)
+
+
+def write_row(f, row):
+    f.write(
+        f"\t\t{row[0]:1.3f} "
+        + rf"& {row[1].n:1.2f} "
+        + rf"& {row[1].s:1.2f} "
+        + rf"& {row[2]:1.3f} "
+        + rf"& {row[3].n:1.2f} "
+        + rf"& {row[3].s:1.2f} \\"
+    )
+
+
+# version with f-strings
+with open("build/loesung-table_f-string.tex", "w") as f:
+    f.write(table_header)
+    for row in zip(t1, U1, t2, U2):
+        write_row(f, row)
         f.write("\n")
     f.write(table_footer)
 
