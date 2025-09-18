@@ -84,11 +84,31 @@ row_template = (
     r"    {0:1.3f} & {1.n:1.2f} & {1.s:1.2f} & {2:1.3f} & {3.n:1.2f} & {3.s:1.2f} \\"
 )
 
-
+# version with .format
 with open("build/loesung-table.tex", "w") as f:
     f.write(table_header)
     for row in zip(t1, U1, t2, U2):
         f.write(row_template.format(*row))
+        f.write("\n")
+    f.write(table_footer)
+
+
+def write_row(f, row):
+    f.write(
+        f"\t\t{row[0]:1.3f} "
+        + rf"& {row[1].n:1.2f} "
+        + rf"& {row[1].s:1.2f} "
+        + rf"& {row[2]:1.3f} "
+        + rf"& {row[3].n:1.2f} "
+        + rf"& {row[3].s:1.2f} \\"
+    )
+
+
+# version with f-strings
+with open("build/loesung-table_f-string.tex", "w") as f:
+    f.write(table_header)
+    for row in zip(t1, U1, t2, U2):
+        write_row(f, row)
         f.write("\n")
     f.write(table_footer)
 
