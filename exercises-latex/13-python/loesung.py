@@ -10,7 +10,7 @@ from curve_fit import ucurve_fit
 
 
 def make_qty(num, unit, exp="", figures=None):
-    """Format an uncertainties ufloat as a \qty quantity"""
+    r"""Format an uncertainties ufloat as a \qty quantity"""
     if np.any(stds([num])):
         if figures is None:
             figures = ""
@@ -30,7 +30,10 @@ def f(t, a, b, c, d):
     return a * np.sin(b * t + c) + d
 
 
-params = ucurve_fit(f, t, U, p0=[1e3, 1e3, 0, 0])
+params = ucurve_fit(f, t, U, p0=[1e3, 1e3, 0, 1e2])
+
+for name, param in zip("abcd", params):
+    print(f"{name} = {param}")
 
 t_plot = np.linspace(-0.5, 2 * np.pi + 0.5, 1000) * 1e-3
 
@@ -69,8 +72,8 @@ table_header = r"""
     column{3} = {rightsep=3em},
   }
     \toprule
-    t \mathbin{/} \unit{\milli\second} & \SetCell[c=2]{c} U \mathbin{/} \unit{\kilo\volt} & &
-    t \mathbin{/} \unit{\milli\second} & \SetCell[c=2]{c} U \mathbin{/} \unit{\kilo\volt} & \\
+    t \mathbin{/} \unit{\milli\s} & \SetCell[c=2]{c} U \mathbin{/} \unit{\kilo\V} & &
+    t \mathbin{/} \unit{\milli\s} & \SetCell[c=2]{c} U \mathbin{/} \unit{\kilo\V} & \\
     \midrule
 """
 
