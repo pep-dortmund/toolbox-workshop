@@ -1,0 +1,1124 @@
+[
+  {
+    "installieren": false,
+    "languages": {
+      "cpp": false,
+      "fortran": false,
+      "java": true,
+      "matlab": false,
+      "other": "",
+      "python": true
+    },
+    "latex": true,
+    "latex_interests": {
+      "beamer": false,
+      "bib": false,
+      "math": true,
+      "text": false,
+      "tikz": true,
+      "toc": true
+    },
+    "latex_level": "Schon mal ausprobiert",
+    "os": "Windows 11",
+    "skill": "Schon mal programmiert, auch in Python.",
+    "study": "Medizinphysik",
+    "submit": true,
+    "toolbox": true,
+    "toolbox_interests": {
+      "cli": true,
+      "git": true,
+      "make": false,
+      "plotting": false,
+      "python": true,
+      "uncertainties": false
+    }
+  },
+  {
+    "installieren": false,
+    "languages": {
+      "cpp": true,
+      "fortran": false,
+      "java": true,
+      "matlab": false,
+      "other": "Rust, C",
+      "python": true
+    },
+    "latex": true,
+    "latex_interests": {
+      "beamer": true,
+      "bib": true,
+      "math": false,
+      "text": false,
+      "tikz": true,
+      "toc": false
+    },
+    "latex_level": "TeXpert",
+    "os": "Debian/Ubuntu/Mint",
+    "skill": "Habe den 'Grundlagen wissenschaftlicher Datenverarbeitung' Kurs besucht.",
+    "study": "Physik",
+    "submit": true,
+    "toolbox": true,
+    "toolbox_interests": {
+      "cli": false,
+      "git": true,
+      "make": true,
+      "plotting": true,
+      "python": false,
+      "uncertainties": true
+    }
+  },
+  {
+    "installieren": false,
+    "languages": {
+      "cpp": true,
+      "fortran": false,
+      "java": false,
+      "matlab": false,
+      "other": "",
+      "python": false
+    },
+    "latex": true,
+    "latex_interests": {
+      "beamer": true,
+      "bib": true,
+      "math": true,
+      "text": true,
+      "tikz": true,
+      "toc": true
+    },
+    "latex_level": "Noch nie geh\u00f6rt",
+    "os": "macOS",
+    "skill": "Schon mal programmiert, aber noch nicht in Python.",
+    "study": "Physik",
+    "submit": true,
+    "toolbox": true,
+    "toolbox_interests": {
+      "cli": true,
+      "git": true,
+      "make": true,
+      "plotting": true,
+      "python": true,
+      "uncertainties": true
+    }
+  },
+  {
+    "installieren": false,
+    "languages": {
+      "cpp": false,
+      "fortran": false,
+      "java": false,
+      "matlab": false,
+      "other": "",
+      "python": false
+    },
+    "latex": true,
+    "latex_interests": {
+      "beamer": false,
+      "bib": true,
+      "math": true,
+      "text": false,
+      "tikz": false,
+      "toc": true
+    },
+    "latex_level": "Schon mal ein Dokument mit verfasst (z.B. Facharbeit)",
+    "os": "Debian/Ubuntu/Mint",
+    "skill": "Noch nie programmiert.",
+    "study": "Medizinphysik",
+    "submit": true,
+    "toolbox": true,
+    "toolbox_interests": {
+      "cli": false,
+      "git": true,
+      "make": false,
+      "plotting": false,
+      "python": true,
+      "uncertainties": false
+    }
+  },
+  {
+    "installieren": false,
+    "languages": {
+      "cpp": true,
+      "fortran": false,
+      "java": false,
+      "matlab": true,
+      "other": "",
+      "python": true
+    },
+    "latex": true,
+    "latex_interests": {
+      "beamer": true,
+      "bib": true,
+      "math": true,
+      "text": false,
+      "tikz": true,
+      "toc": true
+    },
+    "latex_level": "Schon mal ausprobiert",
+    "os": "Windows 11",
+    "skill": "Habe den 'Grundlagen wissenschaftlicher Datenverarbeitung' Kurs besucht.",
+    "study": "Physik",
+    "submit": true,
+    "toolbox": true,
+    "toolbox_interests": {
+      "cli": true,
+      "git": true,
+      "make": true,
+      "plotting": true,
+      "python": true,
+      "uncertainties": true
+    }
+  },
+  {
+    "installieren": false,
+    "languages": {
+      "cpp": false,
+      "fortran": false,
+      "java": true,
+      "matlab": false,
+      "other": "",
+      "python": false
+    },
+    "latex": true,
+    "latex_interests": {
+      "beamer": false,
+      "bib": true,
+      "math": true,
+      "text": true,
+      "tikz": true,
+      "toc": false
+    },
+    "latex_level": "Noch nie geh\u00f6rt",
+    "os": "Windows 11",
+    "skill": "Noch nie programmiert.",
+    "study": "Medizinphysik",
+    "submit": true,
+    "toolbox": true,
+    "toolbox_interests": {
+      "cli": true,
+      "git": false,
+      "make": false,
+      "plotting": true,
+      "python": true,
+      "uncertainties": false
+    }
+  },
+  {
+    "installieren": false,
+    "languages": {
+      "cpp": false,
+      "fortran": false,
+      "java": true,
+      "matlab": false,
+      "other": "",
+      "python": false
+    },
+    "latex": true,
+    "latex_interests": {
+      "beamer": false,
+      "bib": false,
+      "math": true,
+      "text": true,
+      "tikz": false,
+      "toc": true
+    },
+    "latex_level": "Noch nie geh\u00f6rt",
+    "os": "macOS",
+    "skill": "Schon mal programmiert, aber noch nicht in Python.",
+    "study": "Medizinphysik",
+    "submit": true,
+    "toolbox": true,
+    "toolbox_interests": {
+      "cli": true,
+      "git": false,
+      "make": false,
+      "plotting": false,
+      "python": true,
+      "uncertainties": true
+    }
+  },
+  {
+    "installieren": false,
+    "languages": {
+      "cpp": true,
+      "fortran": false,
+      "java": true,
+      "matlab": false,
+      "other": "",
+      "python": true
+    },
+    "latex": true,
+    "latex_interests": {
+      "beamer": false,
+      "bib": false,
+      "math": true,
+      "text": true,
+      "tikz": false,
+      "toc": false
+    },
+    "latex_level": "Schon mal ausprobiert",
+    "os": "Windows 11",
+    "skill": "Habe den 'Grundlagen wissenschaftlicher Datenverarbeitung' Kurs besucht.",
+    "study": "Physik",
+    "submit": true,
+    "toolbox": true,
+    "toolbox_interests": {
+      "cli": false,
+      "git": false,
+      "make": false,
+      "plotting": true,
+      "python": true,
+      "uncertainties": false
+    }
+  },
+  {
+    "installieren": true,
+    "languages": {
+      "cpp": true,
+      "fortran": false,
+      "java": true,
+      "matlab": true,
+      "other": "",
+      "python": true
+    },
+    "latex": true,
+    "latex_interests": {
+      "beamer": false,
+      "bib": false,
+      "math": true,
+      "text": false,
+      "tikz": false,
+      "toc": false
+    },
+    "latex_level": "Schon mal ausprobiert",
+    "os": "Windows 10",
+    "skill": "Habe den 'Grundlagen wissenschaftlicher Datenverarbeitung' Kurs besucht.",
+    "study": "Physik",
+    "submit": true,
+    "toolbox": true,
+    "toolbox_interests": {
+      "cli": false,
+      "git": false,
+      "make": false,
+      "plotting": true,
+      "python": true,
+      "uncertainties": true
+    }
+  },
+  {
+    "installieren": false,
+    "languages": {
+      "cpp": true,
+      "fortran": false,
+      "java": false,
+      "matlab": false,
+      "other": "",
+      "python": false
+    },
+    "latex": true,
+    "latex_interests": {
+      "beamer": true,
+      "bib": true,
+      "math": false,
+      "text": false,
+      "tikz": true,
+      "toc": true
+    },
+    "latex_level": "Schon mal ein Dokument mit verfasst (z.B. Facharbeit)",
+    "os": "Debian/Ubuntu/Mint",
+    "skill": "Schon mal programmiert, auch in Python.",
+    "study": "Physik",
+    "submit": true,
+    "toolbox": true,
+    "toolbox_interests": {
+      "cli": false,
+      "git": true,
+      "make": true,
+      "plotting": true,
+      "python": true,
+      "uncertainties": true
+    }
+  },
+  {
+    "installieren": false,
+    "languages": {
+      "cpp": true,
+      "fortran": false,
+      "java": false,
+      "matlab": false,
+      "other": "Python in Grundlagen wissenschaftlicher Datenverarbeitung, C++ in EidP",
+      "python": false
+    },
+    "latex": true,
+    "latex_interests": {
+      "beamer": true,
+      "bib": true,
+      "math": false,
+      "text": false,
+      "tikz": true,
+      "toc": true
+    },
+    "latex_level": "Schon mal ein Dokument mit verfasst (z.B. Facharbeit)",
+    "os": "Windows 11",
+    "skill": "Habe den 'Grundlagen wissenschaftlicher Datenverarbeitung' Kurs besucht.",
+    "study": "Physik",
+    "submit": true,
+    "toolbox": true,
+    "toolbox_interests": {
+      "cli": true,
+      "git": false,
+      "make": true,
+      "plotting": false,
+      "python": false,
+      "uncertainties": false
+    }
+  },
+  {
+    "installieren": false,
+    "languages": {
+      "cpp": true,
+      "fortran": false,
+      "java": false,
+      "matlab": false,
+      "other": "",
+      "python": true
+    },
+    "latex": true,
+    "latex_interests": {
+      "beamer": true,
+      "bib": true,
+      "math": true,
+      "text": true,
+      "tikz": true,
+      "toc": true
+    },
+    "latex_level": "Schon mal ausprobiert",
+    "os": "Windows 11",
+    "skill": "Habe den 'Grundlagen wissenschaftlicher Datenverarbeitung' Kurs besucht.",
+    "study": "Physik",
+    "submit": true,
+    "toolbox": true,
+    "toolbox_interests": {
+      "cli": true,
+      "git": true,
+      "make": true,
+      "plotting": true,
+      "python": true,
+      "uncertainties": true
+    }
+  },
+  {
+    "installieren": false,
+    "languages": {
+      "cpp": true,
+      "fortran": false,
+      "java": true,
+      "matlab": false,
+      "other": "",
+      "python": true
+    },
+    "latex": true,
+    "latex_interests": {
+      "beamer": false,
+      "bib": false,
+      "math": false,
+      "text": false,
+      "tikz": false,
+      "toc": true
+    },
+    "latex_level": "Schon mal ausprobiert",
+    "os": "Windows 10",
+    "skill": "Habe den 'Grundlagen wissenschaftlicher Datenverarbeitung' Kurs besucht.",
+    "study": "Physik",
+    "submit": true,
+    "toolbox": true,
+    "toolbox_interests": {
+      "cli": true,
+      "git": false,
+      "make": false,
+      "plotting": true,
+      "python": false,
+      "uncertainties": false
+    }
+  },
+  {
+    "installieren": false,
+    "languages": {
+      "cpp": true,
+      "fortran": false,
+      "java": true,
+      "matlab": false,
+      "other": "",
+      "python": true
+    },
+    "latex": true,
+    "latex_interests": {
+      "beamer": false,
+      "bib": false,
+      "math": true,
+      "text": false,
+      "tikz": false,
+      "toc": true
+    },
+    "latex_level": "Noch nie geh\u00f6rt",
+    "os": "Windows 11",
+    "skill": "Habe den 'Grundlagen wissenschaftlicher Datenverarbeitung' Kurs besucht.",
+    "study": "Physik",
+    "submit": true,
+    "toolbox": true,
+    "toolbox_interests": {
+      "cli": false,
+      "git": false,
+      "make": false,
+      "plotting": true,
+      "python": true,
+      "uncertainties": true
+    }
+  },
+  {
+    "installieren": false,
+    "languages": {
+      "cpp": true,
+      "fortran": false,
+      "java": true,
+      "matlab": false,
+      "other": "",
+      "python": true
+    },
+    "latex": true,
+    "latex_interests": {
+      "beamer": false,
+      "bib": true,
+      "math": true,
+      "text": true,
+      "tikz": true,
+      "toc": true
+    },
+    "latex_level": "Noch nie geh\u00f6rt",
+    "os": "Windows 11",
+    "skill": "Habe den 'Grundlagen wissenschaftlicher Datenverarbeitung' Kurs besucht.",
+    "study": "Physik",
+    "submit": true,
+    "toolbox": false,
+    "toolbox_interests": {
+      "cli": false,
+      "git": false,
+      "make": false,
+      "plotting": true,
+      "python": true,
+      "uncertainties": false
+    }
+  },
+  {
+    "installieren": true,
+    "languages": {
+      "cpp": false,
+      "fortran": false,
+      "java": false,
+      "matlab": false,
+      "other": "",
+      "python": false
+    },
+    "latex": true,
+    "latex_interests": {
+      "beamer": false,
+      "bib": false,
+      "math": false,
+      "text": false,
+      "tikz": false,
+      "toc": true
+    },
+    "latex_level": "Noch nie geh\u00f6rt",
+    "os": "macOS",
+    "skill": "Noch nie programmiert.",
+    "study": "Medizinphysik",
+    "submit": true,
+    "toolbox": true,
+    "toolbox_interests": {
+      "cli": false,
+      "git": false,
+      "make": false,
+      "plotting": false,
+      "python": true,
+      "uncertainties": false
+    }
+  },
+  {
+    "installieren": false,
+    "languages": {
+      "cpp": true,
+      "fortran": false,
+      "java": true,
+      "matlab": false,
+      "other": "",
+      "python": true
+    },
+    "latex": false,
+    "latex_interests": {
+      "beamer": false,
+      "bib": false,
+      "math": false,
+      "text": false,
+      "tikz": false,
+      "toc": false
+    },
+    "latex_level": "Schon mal ein Dokument mit verfasst (z.B. Facharbeit)",
+    "os": "Windows 10",
+    "skill": "Schon mal programmiert, auch in Python.",
+    "study": "Physik",
+    "submit": true,
+    "toolbox": false,
+    "toolbox_interests": {
+      "cli": false,
+      "git": false,
+      "make": false,
+      "plotting": false,
+      "python": false,
+      "uncertainties": false
+    }
+  },
+  {
+    "installieren": false,
+    "languages": {
+      "cpp": true,
+      "fortran": false,
+      "java": true,
+      "matlab": false,
+      "other": "",
+      "python": false
+    },
+    "latex": true,
+    "latex_interests": {
+      "beamer": false,
+      "bib": true,
+      "math": true,
+      "text": false,
+      "tikz": true,
+      "toc": false
+    },
+    "latex_level": "Noch nie geh\u00f6rt",
+    "os": "Windows 11",
+    "skill": "Schon mal programmiert, aber noch nicht in Python.",
+    "study": "Physik",
+    "submit": true,
+    "toolbox": true,
+    "toolbox_interests": {
+      "cli": false,
+      "git": false,
+      "make": false,
+      "plotting": true,
+      "python": true,
+      "uncertainties": true
+    }
+  },
+  {
+    "installieren": false,
+    "languages": {
+      "cpp": true,
+      "fortran": false,
+      "java": true,
+      "matlab": false,
+      "other": "",
+      "python": true
+    },
+    "latex": true,
+    "latex_interests": {
+      "beamer": false,
+      "bib": true,
+      "math": true,
+      "text": true,
+      "tikz": false,
+      "toc": true
+    },
+    "latex_level": "Schon mal ausprobiert",
+    "os": "ArchLinux",
+    "skill": "Schon mal programmiert, auch in Python.",
+    "study": "Physik",
+    "submit": true,
+    "toolbox": true,
+    "toolbox_interests": {
+      "cli": false,
+      "git": false,
+      "make": true,
+      "plotting": true,
+      "python": true,
+      "uncertainties": true
+    }
+  },
+  {
+    "installieren": false,
+    "languages": {
+      "cpp": true,
+      "fortran": false,
+      "java": false,
+      "matlab": true,
+      "other": "",
+      "python": false
+    },
+    "latex": true,
+    "latex_interests": {
+      "beamer": false,
+      "bib": true,
+      "math": true,
+      "text": true,
+      "tikz": false,
+      "toc": true
+    },
+    "latex_level": "Noch nie geh\u00f6rt",
+    "os": "Windows 11",
+    "skill": "Schon mal programmiert, aber noch nicht in Python.",
+    "study": "Physik",
+    "submit": true,
+    "toolbox": true,
+    "toolbox_interests": {
+      "cli": true,
+      "git": false,
+      "make": true,
+      "plotting": true,
+      "python": true,
+      "uncertainties": true
+    }
+  },
+  {
+    "installieren": false,
+    "languages": {
+      "cpp": true,
+      "fortran": false,
+      "java": true,
+      "matlab": false,
+      "other": "",
+      "python": true
+    },
+    "latex": true,
+    "latex_interests": {
+      "beamer": true,
+      "bib": true,
+      "math": true,
+      "text": true,
+      "tikz": true,
+      "toc": true
+    },
+    "latex_level": "Noch nie geh\u00f6rt",
+    "os": "Windows 11",
+    "skill": "Schon mal programmiert, auch in Python.",
+    "study": "Physik",
+    "submit": true,
+    "toolbox": true,
+    "toolbox_interests": {
+      "cli": true,
+      "git": true,
+      "make": true,
+      "plotting": false,
+      "python": true,
+      "uncertainties": true
+    }
+  },
+  {
+    "installieren": false,
+    "languages": {
+      "cpp": true,
+      "fortran": false,
+      "java": true,
+      "matlab": true,
+      "other": "scratch",
+      "python": true
+    },
+    "latex": true,
+    "latex_interests": {
+      "beamer": false,
+      "bib": true,
+      "math": true,
+      "text": false,
+      "tikz": false,
+      "toc": false
+    },
+    "latex_level": "Noch nie geh\u00f6rt",
+    "os": "macOS",
+    "skill": "Habe den 'Grundlagen wissenschaftlicher Datenverarbeitung' Kurs besucht.",
+    "study": "Physik",
+    "submit": true,
+    "toolbox": true,
+    "toolbox_interests": {
+      "cli": true,
+      "git": false,
+      "make": false,
+      "plotting": false,
+      "python": true,
+      "uncertainties": true
+    }
+  },
+  {
+    "installieren": true,
+    "languages": {
+      "cpp": false,
+      "fortran": false,
+      "java": true,
+      "matlab": false,
+      "other": "",
+      "python": true
+    },
+    "latex": true,
+    "latex_interests": {
+      "beamer": false,
+      "bib": false,
+      "math": false,
+      "text": false,
+      "tikz": false,
+      "toc": false
+    },
+    "latex_level": "Noch nie geh\u00f6rt",
+    "os": "macOS",
+    "skill": "Habe den 'Grundlagen wissenschaftlicher Datenverarbeitung' Kurs besucht.",
+    "study": "Medizinphysik",
+    "submit": true,
+    "toolbox": true,
+    "toolbox_interests": {
+      "cli": false,
+      "git": false,
+      "make": false,
+      "plotting": false,
+      "python": false,
+      "uncertainties": false
+    }
+  },
+  {
+    "installieren": false,
+    "languages": {
+      "cpp": false,
+      "fortran": false,
+      "java": false,
+      "matlab": false,
+      "other": "Latex",
+      "python": true
+    },
+    "latex": true,
+    "latex_interests": {
+      "beamer": true,
+      "bib": false,
+      "math": false,
+      "text": false,
+      "tikz": true,
+      "toc": false
+    },
+    "latex_level": "Schon mal ein Dokument mit verfasst (z.B. Facharbeit)",
+    "os": "macOS",
+    "skill": "Habe den 'Grundlagen wissenschaftlicher Datenverarbeitung' Kurs besucht.",
+    "study": "Physik",
+    "submit": true,
+    "toolbox": true,
+    "toolbox_interests": {
+      "cli": true,
+      "git": false,
+      "make": false,
+      "plotting": true,
+      "python": true,
+      "uncertainties": true
+    }
+  },
+  {
+    "installieren": true,
+    "languages": {
+      "cpp": true,
+      "fortran": false,
+      "java": true,
+      "matlab": false,
+      "other": "",
+      "python": true
+    },
+    "latex": true,
+    "latex_interests": {
+      "beamer": true,
+      "bib": true,
+      "math": true,
+      "text": true,
+      "tikz": true,
+      "toc": true
+    },
+    "latex_level": "Noch nie geh\u00f6rt",
+    "os": "macOS",
+    "skill": "Habe den 'Grundlagen wissenschaftlicher Datenverarbeitung' Kurs besucht.",
+    "study": "Physik",
+    "submit": true,
+    "toolbox": true,
+    "toolbox_interests": {
+      "cli": true,
+      "git": true,
+      "make": true,
+      "plotting": true,
+      "python": true,
+      "uncertainties": true
+    }
+  },
+  {
+    "installieren": true,
+    "languages": {
+      "cpp": true,
+      "fortran": false,
+      "java": false,
+      "matlab": false,
+      "other": "",
+      "python": false
+    },
+    "latex": true,
+    "latex_interests": {
+      "beamer": false,
+      "bib": false,
+      "math": false,
+      "text": false,
+      "tikz": false,
+      "toc": false
+    },
+    "latex_level": "Noch nie geh\u00f6rt",
+    "os": "Debian/Ubuntu/Mint",
+    "skill": "Schon mal programmiert, aber noch nicht in Python.",
+    "study": "Physik",
+    "submit": true,
+    "toolbox": true,
+    "toolbox_interests": {
+      "cli": false,
+      "git": false,
+      "make": false,
+      "plotting": false,
+      "python": false,
+      "uncertainties": false
+    }
+  },
+  {
+    "installieren": false,
+    "languages": {
+      "cpp": true,
+      "fortran": false,
+      "java": true,
+      "matlab": true,
+      "other": "",
+      "python": false
+    },
+    "latex": true,
+    "latex_interests": {
+      "beamer": true,
+      "bib": true,
+      "math": true,
+      "text": true,
+      "tikz": true,
+      "toc": true
+    },
+    "latex_level": "Noch nie geh\u00f6rt",
+    "os": "macOS",
+    "skill": "Schon mal programmiert, aber noch nicht in Python.",
+    "study": "Physik",
+    "submit": true,
+    "toolbox": true,
+    "toolbox_interests": {
+      "cli": true,
+      "git": true,
+      "make": true,
+      "plotting": true,
+      "python": true,
+      "uncertainties": true
+    }
+  },
+  {
+    "installieren": true,
+    "languages": {
+      "cpp": false,
+      "fortran": false,
+      "java": false,
+      "matlab": false,
+      "other": "",
+      "python": true
+    },
+    "latex": true,
+    "latex_interests": {
+      "beamer": false,
+      "bib": false,
+      "math": false,
+      "text": false,
+      "tikz": false,
+      "toc": false
+    },
+    "latex_level": "Noch nie geh\u00f6rt",
+    "os": "Windows 11",
+    "skill": "Noch nie programmiert.",
+    "study": "Medizinphysik",
+    "submit": true,
+    "toolbox": true,
+    "toolbox_interests": {
+      "cli": false,
+      "git": true,
+      "make": true,
+      "plotting": true,
+      "python": true,
+      "uncertainties": false
+    }
+  },
+  {
+    "installieren": true,
+    "languages": {
+      "cpp": false,
+      "fortran": false,
+      "java": false,
+      "matlab": false,
+      "other": "",
+      "python": false
+    },
+    "latex": true,
+    "latex_interests": {
+      "beamer": false,
+      "bib": true,
+      "math": false,
+      "text": false,
+      "tikz": false,
+      "toc": false
+    },
+    "latex_level": "Noch nie geh\u00f6rt",
+    "os": "Windows 11",
+    "skill": "Noch nie programmiert.",
+    "study": "Medizinphysik",
+    "submit": true,
+    "toolbox": true,
+    "toolbox_interests": {
+      "cli": false,
+      "git": false,
+      "make": false,
+      "plotting": true,
+      "python": true,
+      "uncertainties": false
+    }
+  },
+  {
+    "installieren": false,
+    "languages": {
+      "cpp": true,
+      "fortran": false,
+      "java": false,
+      "matlab": false,
+      "other": "",
+      "python": true
+    },
+    "latex": true,
+    "latex_interests": {
+      "beamer": false,
+      "bib": true,
+      "math": true,
+      "text": false,
+      "tikz": true,
+      "toc": true
+    },
+    "latex_level": "Schon mal ausprobiert",
+    "os": "macOS",
+    "skill": "Habe den 'Grundlagen wissenschaftlicher Datenverarbeitung' Kurs besucht.",
+    "study": "Physik",
+    "submit": true,
+    "toolbox": true,
+    "toolbox_interests": {
+      "cli": true,
+      "git": false,
+      "make": false,
+      "plotting": true,
+      "python": true,
+      "uncertainties": true
+    }
+  },
+  {
+    "installieren": false,
+    "languages": {
+      "cpp": true,
+      "fortran": false,
+      "java": false,
+      "matlab": false,
+      "other": "",
+      "python": false
+    },
+    "latex": true,
+    "latex_interests": {
+      "beamer": false,
+      "bib": false,
+      "math": true,
+      "text": false,
+      "tikz": false,
+      "toc": false
+    },
+    "latex_level": "Noch nie geh\u00f6rt",
+    "os": "Windows 11",
+    "skill": "Schon mal programmiert, aber noch nicht in Python.",
+    "study": "Physik",
+    "submit": true,
+    "toolbox": true,
+    "toolbox_interests": {
+      "cli": false,
+      "git": false,
+      "make": false,
+      "plotting": false,
+      "python": true,
+      "uncertainties": false
+    }
+  },
+  {
+    "installieren": false,
+    "languages": {
+      "cpp": true,
+      "fortran": false,
+      "java": false,
+      "matlab": true,
+      "other": "",
+      "python": false
+    },
+    "latex": true,
+    "latex_interests": {
+      "beamer": false,
+      "bib": false,
+      "math": true,
+      "text": true,
+      "tikz": false,
+      "toc": true
+    },
+    "latex_level": "Noch nie geh\u00f6rt",
+    "os": "Windows 10",
+    "skill": "Schon mal programmiert, aber noch nicht in Python.",
+    "study": "Physik",
+    "submit": true,
+    "toolbox": true,
+    "toolbox_interests": {
+      "cli": false,
+      "git": false,
+      "make": false,
+      "plotting": false,
+      "python": true,
+      "uncertainties": false
+    }
+  },
+  {
+    "installieren": true,
+    "languages": {
+      "cpp": true,
+      "fortran": false,
+      "java": false,
+      "matlab": false,
+      "other": "",
+      "python": true
+    },
+    "latex": true,
+    "latex_interests": {
+      "beamer": false,
+      "bib": true,
+      "math": true,
+      "text": true,
+      "tikz": false,
+      "toc": true
+    },
+    "latex_level": "Noch nie geh\u00f6rt",
+    "os": "macOS",
+    "skill": "Schon mal programmiert, auch in Python.",
+    "study": "Lehramt",
+    "submit": true,
+    "toolbox": true,
+    "toolbox_interests": {
+      "cli": false,
+      "git": true,
+      "make": true,
+      "plotting": false,
+      "python": true,
+      "uncertainties": true
+    }
+  }
+]
