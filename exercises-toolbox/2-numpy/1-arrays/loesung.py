@@ -24,10 +24,12 @@ for name, array in zip(array_names, arrays):
 
 # Aufgabe 2)
 print("\nAufgabe 2)")
+
 for name, array in zip(array_names, arrays):
     print(f"Array {name}")
     print(f"\t len({name}): {len(array)}")
     print(f"\t {name}.shape: {array.shape}")
+
 
 # Aufgabe 3)
 # Nur Array e) und f) lassen sich addieren, bei allen
@@ -38,12 +40,14 @@ print(f"Array d + f: {e + f}")
 
 # Aufgabe 4)
 print("\nAufgabe 4)")
+
 # Anzahl der Zeilen ist die Anzahl der Elemente in f (ein Element
-# pro Zeile), Anzahl der Spalten ist damit 1
+# pro Zeile), die Anzahl der Spalten ist damit 1.
 # Das Produkt aus den Argumenten von reshape muss immer der Anzahl
 # an Elementen entsprechen.
 e_2d = e.reshape(1, len(e))
 print(f"Array e.reshape(1, len(e)):\n{e_2d}")
+
 # Man kann eine Dimension mit einer -1 versehen, diese wird dann
 # automatisch ausgerechnet.
 e_2d = e.reshape(1, -1)
