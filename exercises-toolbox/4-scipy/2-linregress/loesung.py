@@ -4,20 +4,21 @@ import numpy as np
 def linregress(x, y):
     # …
     # begin solution
-    assert len(x) == len(y)
+    if not len(x) == len(y):
+        raise ValueError("shape mismatch: x and y must have the same length")
 
     x, y = np.array(x), np.array(y)
 
     N = len(y)
-    Delta = N * np.sum(x**2) - (np.sum(x)) ** 2
+    delta = N * np.sum(x**2) - (np.sum(x)) ** 2
 
-    A = (N * np.sum(x * y) - np.sum(x) * np.sum(y)) / Delta
-    B = (np.sum(x**2) * np.sum(y) - np.sum(x) * np.sum(x * y)) / Delta
+    A = (N * np.sum(x * y) - np.sum(x) * np.sum(y)) / delta
+    B = (np.sum(x**2) * np.sum(y) - np.sum(x) * np.sum(x * y)) / delta
 
     sigma_y = np.sqrt(np.sum((y - A * x - B) ** 2) / (N - 2))
 
-    A_error = sigma_y * np.sqrt(N / Delta)
-    B_error = sigma_y * np.sqrt(np.sum(x**2) / Delta)
+    A_error = sigma_y * np.sqrt(N / delta)
+    B_error = sigma_y * np.sqrt(np.sum(x**2) / delta)
 
     # end solution
     return A, A_error, B, B_error
