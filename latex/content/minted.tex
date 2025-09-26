@@ -5,8 +5,9 @@
   \begin{itemize}
     \item Im Praktikum sollen auch die Auswertungsskripte abgegeben werden.
     \item \texttt{minted} kann Code in \LaTeX\ darstellen, wie z.\,B.\ in diesen Folien
-    \item und auch Skripte einbinden: \mintinline{latex}+\inputminted{python3}{plot.py}+
+    \item es kann komplette Skripte einbinden: \mintinline{latex}+\inputminted{python3}{plot.py}+
     \item Einstellungen über \mintinline{latex}+\setminted{+\dots\mintinline{latex}+}+
+    \item Basiert auf \href{https://pygments.org/}{Pygments}, es gibt vordefinierte \href{https://pygments.org/styles/}{Stile} 
   \end{itemize}
 \end{frame}
 
@@ -16,7 +17,6 @@
   \begin{tblr}{colspec={r l}}
     \mintinline{latex}+autogobble+ & Entfernt Leerzeichen am Anfang von Zeilen, wenn nicht benötigt \\
     \mintinline{latex}+breaklines+ & Lange Zeilen werden umgebrochen um auf die Seite zu passen \\
-    \mintinline{latex}+linenos+ & Zeilennummern \\
     \mintinline{latex}+stripnl=true+ & Entfernt leere Zeilen am Anfang und Ende \\
     \mintinline{latex}+style=tango+ & Vorgefertigte Stilvorlage zum Highlighting \\
     \mintinline{latex}+baselinestretch=1.2+ & Etwas erhöhter Abstand zwischen den Zeilen \\
