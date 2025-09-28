@@ -1,0 +1,21 @@
+# Myon Plot
+
+Aufgabe:
+
+Am Anfang vom Python Notebook haben wir einen Plot über eine Myonen Messung gezeigt.
+Jetzt kannst du ihn selber nachbauen.
+
+Lies die Daten aus muon_data.txt ein.
+Nutze von den eingelesenen Zählwerten vom fünften bis zum fünftletzten jeden zweiten.
+Die Unsicherheit jedes Wertes ist die Wurzel.
+
+Fitte die gegebenen Zeiten t und die Zählwerte an
+N_0 * exp(-λ * t) + underground
+Gib dann die Werte und Unsicherheiten von N_0, λ und U aus.
+Als Initialwerte kannst du N_0 = 400, λ = 1 & U = 5 nehmen.
+
+Plotte dann die Daten mit Errorbars,
+den Fit als Linienplot und die Unsicherheit des Fits.
+Erstelle dir für Letzteres ein uarray, basierend auf den Fitergebnissen.
+Schlage nach, wie du fill_between in matplotlib verwendest
+und plotte den Bereich von Nominalwerten des Fits +/- 10 * der Standardabweichung.

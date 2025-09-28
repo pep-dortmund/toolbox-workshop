@@ -1,0 +1,12 @@
+all: build/loesung.pdf
+
+build/loesung.pdf: loesung.py muon_data.txt | build
+	TEXINPUTS=$$(pwd): MATPLOTLIBRC=matplotlibrc_muon python3 $<
+
+build:
+	mkdir -p build
+
+clean:
+	rm -rf build
+
+.PHONY: all clean
