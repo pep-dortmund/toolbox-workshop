@@ -67,13 +67,16 @@ def unc_band(
 
 def plot_fit(
     x: np.ndarray,
-    func: Callable,
+    func: Callable | np.ndarray,
     params: np.ndarray,
     unc: np.ndarray = None,
     label="",
     **kwargs,
 ) -> None:
     """Plots the fit."""
+    if isinstance(func, Callable):
+        func = func(x, *params)
+
     text = (
         f"{label} ("
         + ", ".join(
@@ -84,7 +87,8 @@ def plot_fit(
         )
         + ")"
     )
-    ax.plot(x_lin, exponential(x_lin, *params_poly), label=text, **kwargs)
+
+    ax.plot(x, func, label=text, **kwargs)
 
 
 x_lin = np.linspace(0, 5, 1000)
