@@ -29,6 +29,8 @@ for name, value, uncertainty in zip("ab", params_poly, unc_poly):
     print(f"{name} = {value:.3f} ± {uncertainty:.3f}")
 
 # end solution
+
+
 # Hier polyfit Fit ergänzen
 # params_poly, cov_poly = #
 # unc_poly = #
