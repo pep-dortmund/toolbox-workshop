@@ -1,23 +1,22 @@
 # Realistisches-Beispiel-Protokoll
 
 Einleitung:
-Um dieser Aufgabe sinnvoll folgen zu können, sollte diese von Anfang an bearbeitet werden. Folgt den
+Um dieser Aufgabe sinnvoll folgen zu können, sollte diese von Anfang an bearbeitet werden. Folge den
 Anweisungen in den 'aufgabe.txt' Dateien in den Unterordnern des Ordners 'example-report'.
 
-
 Aufgaben:
-1) Fügt eurem Git-Repository die Dateien matplotlibrc und header-matplotlib.tex hinzu.
 
-2) Fügt eurem Ordner v16516 ein Makefile hinzu. Und ergänzt die notwendigen Regeln für dieses Protokoll. 
-   (Versucht es erst selbst bevor ihr in die Lösung schaut, ihr könnt euch dabei an den Folien orientieren.)
+1) Füge deinem Git-Repository die Dateien matplotlibrc und header-matplotlib.tex hinzu.
 
-3) Ändert die Datei auswertung.py so ab, dass die Plots in einem Unterordner build erstellt werden.
+2) Füge deinem Ordner v16516 auch ein Makefile hinzu. Und ergänze die notwendigen Regeln für dieses Protokoll.
+   (Versuche es erst selbst bevor du in die Lösung schaust, du kannst dich dabei an den Folien orientieren.)
 
-4) Ändert die Stellen im Protokoll an denen die Bilddateien geladen werden ebenfalls so ab,
-   das diese Dateien jetzt im Ordner build/ gesucht werden.
+3) Ändere die Datei auswertung.py so ab, dass die Plots in einem Unterordner build erstellt werden.
 
-5) Im Ordner loesung/v16516 findet ihr die Datei v16516.pdf. Ergänzt die übrigen Texte aus dieser Datei,
-   sodass euer aktuelles Protokoll genauso aussieht wie die Lösung.
+4) Ändere die Stellen im Protokoll, an denen die Bilddateien geladen werden, ebenfalls so ab,
+   dass diese Dateien jetzt im Ordner build/ gesucht werden.
 
-6) Nicht vergessen: Haltet euren Fortschritt mit git nach. 
+5) Im Ordner loesung/v16516 findest du die Datei v16516.pdf. Ergänze die übrigen Texte aus dieser Datei,
+   sodass dein aktuelles Protokoll genauso aussieht wie die Lösung.
 
+6) Nicht vergessen: Halte deinen Fortschritt mit git nach.
