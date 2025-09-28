@@ -113,29 +113,22 @@ for ax in axs.values():
         color="C2",
     )
 
-    # Continue plotting if uncertainty is undefined
-    try:
-        unc_band(
-            x_lin,
-            params_poly,
-            unc_poly,
-            hatch=r"\\\\\\",
-            facecolor="none",
-            edgecolor="C1",
-            alpha=0.4,
-        )
-    except NameError:
-        continue
-    try:
-        unc_band(
-            x_lin,
-            params_curve,
-            unc_curve,
-            color="C2",
-            alpha=0.4,
-        )
-    except NameError:
-        continue
+    unc_band(
+        x_lin,
+        params_poly,
+        unc_poly,
+        hatch=r"\\\\\\",
+        facecolor="none",
+        edgecolor="C1",
+        alpha=0.4,
+    )
+    unc_band(
+        x_lin,
+        params_curve,
+        unc_curve,
+        color="C2",
+        alpha=0.4,
+    )
 
     ax.set(
         xlabel="x",
