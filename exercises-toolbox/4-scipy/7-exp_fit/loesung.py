@@ -58,9 +58,9 @@ def unc_band(
 ) -> None:
     """Visualize uncertainty."""
     ax.fill_between(
-        x_lin,
-        exponential(x_lin, *(params - unc)),
-        exponential(x_lin, *(params + unc)),
+        x,
+        exponential(x, *(params - unc)),
+        exponential(x, *(params + unc)),
         **kwargs,
     )
 
