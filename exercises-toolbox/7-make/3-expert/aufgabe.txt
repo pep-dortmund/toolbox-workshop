@@ -1,0 +1,18 @@
+# build
+
+Aufgabe:
+
+1. Kopiere die Dateien
+  - auswertung.py
+  - I.txt
+  - L.txt
+  - lambda.txt
+  - Makefile
+  aus 2-build in diesen Ordner.
+  Schaffst du es mit dem Terminal?
+
+2. Schreibe dein Makefile und die auswertung.py um, sodass
+  - die prerequisite-txt-Dateien in einem data-Ordner liegen
+  - und sie im Makefile mit einer Variable zusammengefasst werden?
+  - Die targets eine grouped-Variable sind?
+  - Die Variablendefinition(-en) `addprefix` und `addsuffix`nutzen.
