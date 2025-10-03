@@ -23,41 +23,53 @@ jobs:
         # We need login shells (-l) for micromamba to work.
         shell: bash -leo pipefail {0}
 
-
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout Code
+        uses: actions/checkout@v5
 
-      - uses: mamba-org/setup-micromamba@v1
+      - name: Setup Mamba
+        uses: mamba-org/setup-micromamba@v2
         with:
           environment-file: environment.yml
+          post-cleanup: 'all'
 
-      - name: Setup
+      - name: Apt installs
         run: |
-          sudo apt-get install --yes poppler-utils imagemagick
-          pip install install-texlive
-          python -m install_texlive -p $HOME/texlive -t $TEXLIVE_VERSION --collections='-a' --package-file tex-packages.txt --update -v
+          sudo apt update
+          sudo apt install --yes poppler-utils imagemagick
 
+      - name: Pip install^2-texlive
+        run: pip install install-texlive
+
+      - name: Install TeXlive
+        run: python -m install_texlive -p $HOME/texlive -t $TEXLIVE_VERSION --collections='-a' --package-file tex-packages.txt --update -v
+
+      - name: Setup TeXLive
+        run: |
           # add to path for following steps
           echo "$HOME/texlive/$TEXLIVE_VERSION/bin/x86_64-linux" >> $GITHUB_PATH
           export PATH="$HOME/texlive/$TEXLIVE_VERSION/bin/x86_64-linux:$PATH"
           tlmgr install --with-doc tex-overview
 
+      - name: Install Comic Sans
+        run: |
           mkdir -p $HOME/.local/share/fonts
           curl -LO https://www.wfonts.com/download/data/2014/06/05/comic-sans-ms/comic-sans-ms.zip
           unzip comic-sans-ms.zip -d $HOME/.local/share/fonts
           rm comic-sans-ms.zip
           fc-cache
           fc-list 'Comic Sans MS' | grep Comic
-
-
           # generate the lualatex font cache, otherwise it is done in parallel when calling make
           luaotfload-tool --update --force
 
+      - name: latexmkrc
+        run: |
           # copy latexmkrc to make sure its used also for vXXX
           mkdir -p ~/.config/latexmk
           cp common/latexmkrc ~/.config/latexmk/
 
-          # add pre-commit to CI workflow
+      - name: pre-commit
+        run: |
           pre-commit install
           pre-commit
 
