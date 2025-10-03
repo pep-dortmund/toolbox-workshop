@@ -11,14 +11,14 @@ L = np.genfromtxt("L.txt")
 L *= 1e-2
 lambda_ = np.genfromtxt("lambda.txt")
 lambda_ *= 1e-9
-zeta, I = np.genfromtxt("I.txt", unpack=True)
+zeta, I_A = np.genfromtxt("I.txt", unpack=True, delimiter=",")
 zeta *= 1e-3
-I *= 1e-9
+I_A *= 1e-9
 
-zeta_0 = zeta[np.argmax(I)]
+zeta_0 = zeta[np.argmax(I_A)]
 phi = (zeta - zeta_0) / L
 
-popt, pcov = curve_fit(theory, phi, I, p0=[np.sqrt(np.max(I)) / 1e-4, 1e-4])
+popt, pcov = curve_fit(theory, phi, I_A, p0=[np.sqrt(np.max(I_A)) / 1e-4, 1e-4])
 print(popt, np.sqrt(np.diag(pcov)), sep="\n")
 
 np.savetxt("parameter.txt", np.column_stack([popt, np.sqrt(np.diag(pcov))]))
@@ -28,7 +28,7 @@ x = np.linspace(-0.03, 0.03, 100)
 fig, ax = plt.subplots(1, 1, layout="constrained")
 
 ax.plot(x, theory(x, *popt), "-", label="Fit")
-ax.plot(phi, I, "k.", label="Daten")
+ax.plot(phi, I_A, "k.", label="Daten")
 ax.set_xlabel(r"$\varphi \,\, / \,\, \mathrm{rad}$")
 ax.set_ylabel(r"$I \,\, / \,\, \mathrm{A}$")
 ax.legend(loc="best")
