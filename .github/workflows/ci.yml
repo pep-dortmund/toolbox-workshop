@@ -33,7 +33,7 @@ jobs:
 
       - name: Setup
         run: |
-          sudo apt-get install --yes poppler-utils imagemagick 
+          sudo apt-get install --yes poppler-utils imagemagick
           pip install install-texlive
           python -m install_texlive -p $HOME/texlive -t $TEXLIVE_VERSION --collections='-a' --package-file tex-packages.txt --update -v
 
@@ -72,7 +72,7 @@ jobs:
 
       - name: Build
         run: |
-          make -j 2
+          make -j 4
 
       - name: check for errors
         if: always()
