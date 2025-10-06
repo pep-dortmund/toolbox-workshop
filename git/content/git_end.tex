@@ -1,0 +1,30 @@
+\begin{frame}{Extra Slide für sauberere Projekt Historien: \texttt{git pull --rebase} (optional)}
+    Vielfaches Merging und Merge Konflikte erzeugen eine etwas nichtlineare Projekt-Historie, denn:\\
+    \texttt{git pull} entspricht \texttt{git fetch origin; git merge …} (\to\;gemergter Branch bleibt erhalten)
+
+    Alternativ kann man \texttt{\textbf{git pull --rebase}} ausführen, welches (in etwa) äquivalent ist zu\\\texttt{git fetch origin; git rebase …} (\to\;lokale Commits werden auf neue Commits angewendet).
+
+    {\color{red} Achtung: Um einen Merge Konflikt bei \texttt{git pull --rebase} abzuschließen, muss \texttt{\textbf{git~rebase~--continue}} \emph{anstelle} von \texttt{git commit -m "..."} ausgeführt werden! Also einfach genau lesen was Git empfiehlt ;)}
+
+    Dies hat Vorteile:
+    \begin{itemize}
+        \item Die Projekt-Historie ist linearer
+        \item Es gibt weniger merge-commits
+    \end{itemize}
+    aber auch (kleinere) Nachteile:
+    \begin{itemize}
+        \item Es ist hinterher nicht mehr sichtbar, wer einen Merge Konflikt wie behoben hat
+        \item Die Abfolge der Commits entspricht nicht mehr der wahren Entwicklungshistorie
+    \end{itemize}
+    Entscheidet man sich für pulls mit Rebase als Standard, muss Git anders konfiguriert werden:\\
+    \texttt{\textbf{git config --global pull.rebase true}}, dann wird bei allen folgenden \texttt{git pull} Befehlen ein Rebase gemacht
+\end{frame}
+
+\begin{frame}{Video-Aufzeichnung}
+  Im Rahmen einer Schulung ist 2021 eine Videoaufzeichnung einer ausführlicheren Git-Einführung angefertigt worden, die auf diesem Kurs basiert:
+
+  \begin{description}
+    \item[Teil 1] \url{https://www.youtube.com/watch?v=R2BCOtPwtXc}
+    \item[Teil 2] \url{https://www.youtube.com/watch?v=ZEcklfIp6Og}
+  \end{description}
+\end{frame}

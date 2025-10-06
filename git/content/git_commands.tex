@@ -1,0 +1,83 @@
+\begin{frame}{Der Start: \texttt{git init}, \texttt{git clone}}
+  \begin{tblr}{
+      colspec = {l X[l]},
+      column{1} = {font=\ttfamily},
+      row{3} = {font=\color{lightgray}},
+    }
+    git init               & initialisiert ein \texttt{git}-Repo im jetzigen Verzeichnis \\
+    git clone \textit{url} & klont das Repo aus \texttt{\textit{url}} \\
+    rm -rf .git            & löscht alle Spuren von \texttt{git} aus dem Repository, nicht reversibel ohne Backup, wird eigentlich nie gebraucht
+  \end{tblr}
+\end{frame}
+
+\begin{frame}{Was passiert in Git: \texttt{git status}, \texttt{git log}}
+  \begin{tblr}{
+      colspec = {l X[l]},
+      column{1} = {font=\ttfamily},
+    }
+    git status    & zeigt Status des Repos (welche Dateien sind neu, gelöscht, verschoben, bearbeitet) \\
+    git status -s & Kurzform von \texttt{git status}, zeigt Liste von geänderten Dateien \\
+    git log      & listet Commits in aktuellem Branch. Hat viele Optionen.
+  \end{tblr}
+\end{frame}
+
+\begin{frame}{Staging Bereich: \texttt{git add}, \texttt{git mv}, \texttt{git rm}, \texttt{git reset}}
+  \begin{tblr}{
+      colspec = {l X[l]},
+      column{1} = {font=\ttfamily},
+    }
+    git add \textit{file} … & fügt Dateien/Verzeichnisse zum Staging-Bereich hinzu \\
+    git add -p …            & fügt Teile einer Datei zum Staging-Bereich hinzu \\
+    git add -u …            & fügt \emph{alle} von Git getrackten und vom User veränderten Dateien zum Staging-Bereich hinzu\\
+    git mv                  & wie \texttt{mv} (automatisch in Staging)\\
+    git rm                  & wie \texttt{rm} (automatisch in Staging) \\
+    git reset \textit{file} & entfernt Dateien/Verzeichnisse aus Staging
+  \end{tblr}
+\end{frame}
+
+\begin{frame}{\texttt{git diff}}
+  \begin{tblr}{
+      colspec = {l X[l]},
+      column{1} = {font=\ttfamily},
+    }
+    git diff                                   & zeigt Unterschiede zwischen Staging und Arbeitsverzeichnis \\
+    git diff --staged                          & zeigt Unterschiede zwischen letzten Commit und Staging \\
+    git diff \textit{commit1} \textit{commit2} & zeigt Unterschiede zwischen zwei Commits
+  \end{tblr}
+\end{frame}
+
+\begin{frame}{\texttt{git commit}}
+  \begin{tblr}{
+      colspec = {l X[l]},
+      column{1} = {font=\ttfamily},
+    }
+    git commit                       & erzeugt Commit aus jetzigem Staging-Bereich, öffnet Editor für Commit-Message \\
+    git commit -m "\textit{message}" & Commit mit \texttt{\textit{message}} als Message \\
+    git commit --amend               & letzten Commit ändern (fügt aktuellen Staging hinzu, Message bearbeitbar) \\
+    & \alert{\bfseries Niemals commits ändern, die schon in den \texttt{main} branch gepusht sind!}
+  \end{tblr}
+
+  \begin{itemize}
+    \item Wichtig: Sinnvolle Commit-Messages
+      \begin{itemize}
+        \item Erster Satz ist Zusammenfassung (ideal < 50 Zeichen)
+        \item Danach eine leere Zeile lassen
+        \item Dann längere Erläuterung des commits
+      \end{itemize}
+    \item Logische Commits erstellen, für jede logische Einheit ein Commit
+      \begin{itemize}
+        \item \texttt{git add -p} ist hier nützlich
+      \end{itemize}
+    \item Hochgeladene Commits sollte man nicht mehr ändern
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Mit der remote History (dem Server) interagieren}
+  \begin{tblr}{
+      colspec = {l X[l]},
+      column{1} = {font=\ttfamily},
+    }
+    git pull          & Commits herunterladen \\
+    git push          & Commits hochladen
+  \end{tblr}
+\end{frame}

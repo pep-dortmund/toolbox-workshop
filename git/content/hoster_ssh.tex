@@ -1,0 +1,72 @@
+\begin{frame}{Hoster}
+  \begin{tblr}{
+      colspec = {X[c] X[c] X[c]},
+      measure=vbox,
+    }
+    \href{https://github.com}{\includegraphics[width=0.75\linewidth]{figures/github.png}} &
+    \href{https://bitbucket.org}{\includegraphics[width=0.75\linewidth]{figures/bitbucket.png}} &
+    \href{https://gitlab.com}{\includegraphics[width=0.75\linewidth]{figures/gitlab.png}} \\
+    \begin{itemize}
+      \item größter Hoster
+      \item viele open-source Projekte
+      \item Unbegrenzt private Repositories für Studenten und Forscher:  \newline
+        \href{http://education.github.com}{education.github.com}
+    \end{itemize}
+    &
+    \begin{itemize}
+      \item kostenlose private Repos mit höchstens fünf Leuten
+      \item keine Speicherbegrenzungen
+      \item Hängt was Oberfläche und Funktionen angeht, den beiden anderen weit hinterher
+    \end{itemize}
+    &
+    \begin{itemize}
+      \item open-source
+      \item keine Begrenzungen an privaten Repos
+      \item kann man selbst auf einem eigenen Server betreiben
+    \end{itemize}\\
+  \end{tblr}
+
+  Weitere Open Source Optionen, auch zum selbst hosten: Gitea, Forgejo
+
+  \begin{center}
+    \onslide<2->{%
+      \Large%
+      \enquote{Now, everybody sort of gets born with a GitHub account}
+      – Guido van Rossum
+    }
+  \end{center}
+\end{frame}
+
+\begin{frame}[fragile]{SSH-Keys}
+  Git kann auf mehrere Arten mit einem Server kommunizieren:
+  \begin{description}
+    \item[HTTPS]
+      \begin{itemize}
+        \item Mit Nutzername / Passwort:
+          War lange die einfachste Möglichkeit. Wird aber von GitHub aus Sicherheitsgründen nicht mehr einfach unterstützt.
+        \item Mit \enquote{Personal Access Token}. Neues Verfahren für GitHub über HTTPS.
+      \end{itemize}
+    \item[SSH]: Keys müssen erzeugt und eingestellt werden, Passwort für den Key muss, wenn ein \enquote{SSH-Agent} verwendet wird, nur einmal pro Session eingegeben werden.
+  \end{description}
+
+  SSH-Keys:
+  \begin{enumerate}
+    \item \mintinline{text}+ssh-keygen -t ed25519 -C "your_email@example.com"+
+    \item Namen wählen, z.\,B.\ \mintinline{text}+~/.ssh/github_key_ed25519+;
+      Passwort wählen
+    \item \mintinline{text}+cat ~/.ssh/github_key_ed25519.pub+
+      \qquad (Public-Key ausgeben)
+    \item Ausgabe ist Public-Key, beim Server eintragen (im Browser)
+    \item \mintinline{text}+ssh-add ~/.ssh/github_key_ed25519+
+      \qquad (Schlüssel zum Schlüsselring hinzufügen)
+  \end{enumerate}
+
+  Für den Agent, falls noch nicht vom Betriebsystem eingerichtet (z.\,B.\ Windows mit WSL):
+  \begin{enumerate}
+    \setcounter{enumi}{4}
+    \item \mintinline{text}+echo 'eval $(ssh-agent -s)' >> ~/.bashrc+
+    \item \mintinline{text}+echo 'AddKeysToAgent yes' >> ~/.ssh/config+
+  \end{enumerate}
+
+  Doku: \url{https://docs.github.com/en/authentication/connecting-to-github-with-ssh}
+\end{frame}
