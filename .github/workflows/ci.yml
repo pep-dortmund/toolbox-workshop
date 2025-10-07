@@ -101,5 +101,5 @@ jobs:
       - uses: actions/upload-artifact@v4
         name: Upload Material
         with:
-          name: Toolbox Material
+          name: Toolbox_Material
           path: toolbox-material/*
