@@ -12,7 +12,8 @@ def Ur(r, A, B, C):
 
 r, U, PA, LI, LP = np.genfromtxt("LED.txt", unpack=True)
 r *= 1e-2
-U /= PA * LI * LP
+gainParameters = PA * LI * LP
+U /= gainParameters
 
 A, B, C = ucurve_fit(Ur, r, U)
 print(A, B, C, sep="\n")
