@@ -13,8 +13,7 @@ import numpy as np
 x = np.linspace(0, 10, 1000)
 y = x ** np.sin(x)
 # set figure size and use constrained_layout
-fig = plt.figure(figsize=(6.022, 3.39), layout="constrained")
-ax = fig.add_subplot(111)
+fig, ax = plt.subplots(figsize=(6.022, 3.39), layout="constrained")
 ax.plot(x, y)
 ax.set_xlabel(r"$\alpha / \Omega$")
 
