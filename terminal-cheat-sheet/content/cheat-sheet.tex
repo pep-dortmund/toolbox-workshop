@@ -1,16 +1,24 @@
 \begin{frame}{Cheat-Sheet}
   \begin{tblr}{
-      colspec = {rl},
-      column{1} = {font=\ttfamily, fg=vertexDarkRed}
+      colspec = {rll},
+      column{1} = {font=\footnotesize\itshape},
+      column{2} = {font=\ttfamily, fg=vertexDarkRed},
     }
-    ls & \enquote{list}: Zeigt den Inhalt eines Verzeichnisses \\
-    cd <dirname> & \enquote{change directory} wechselt in das Verzeichnis <dirname> \\
-    cd .. & wechselt in das Oberverzeichnis \\
-    cd - & wechselt in das vorherige Verzeichnis \\
-    mamba activate toolbox & lädt die installierten \texttt{python} Pakete \\
-    codium . & öffnet VSCodium im aktuellen Verzeichnis (Linux/Mac)\\
-    code . & öffnet VSCode im aktuellen Verzeichnis (Windows) \\
-    python vorlage.py & führt \enquote{vorlage.py} mit python aus \\
-    lualatex main.tex & führt \enquote{main.tex} mit \LaTeX{} aus \\
+    manual & man ls & gibt die Anleitung vom Programm aus, z.\,B.\ \texttt{ls} \\
+    list & ls & Zeigt den Inhalt eines Verzeichnisses \\
+    change directory & cd <dir> & wechselt in das angegebene Verzeichnis \\
+    & cd .. & wechselt in das Oberverzeichnis \\
+    & cd - & wechselt in das vorherige Verzeichnis \\
+    print working directory & pwd & gibt den aktuellen, absoluten Pfad zurück \\
+    make directory & mkdir <dir> & erstellt den genannten Ordner \\
+    & touch <file> & erstellt eine Datei mit dem gegebenen Namen \\
+    copy & cp <a> <b> & kopiert \texttt{a} nach \texttt{b}, auch mit Pfad; \texttt{-r} für Ordner \\
+    move & mv <a> <b> & verschiebt \texttt{a} nach \texttt{b}, auch für \textit{Umbenennung} \\
+    remove & rm <a> & löscht eine Datei, \texttt{-r} für Ordner \\
+    & codium . & öffnet VSCodium im aktuellen Verzeichnis (Linux/Mac) \\
+    & code . & öffnet VSCode im aktuellen Verzeichnis (Windows) \\
+    & mamba activate toolbox & lädt die installierten \texttt{python} Pakete \\
+    & python vorlage.py & führt \enquote{vorlage.py} mit python aus \\
+    & lualatex main.tex & führt \enquote{main.tex} mit \LaTeX{} aus \\
   \end{tblr}
 \end{frame}
