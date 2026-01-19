@@ -61,7 +61,6 @@ placeins
 qrcode
 siunitx
 standalone
-standalone
 tabularray
 tcolorbox
 texdoc
