@@ -9,7 +9,7 @@ on:
   pull_request:
 
 env:
-  TEXLIVE_VERSION: 2025
+  TEXLIVE_VERSION: 2026
   TERM: xterm
   # silences warnings from jupyter about not being able to debug the stdlib
   PYDEVD_DISABLE_FILE_VALIDATION: 1
@@ -25,10 +25,10 @@ jobs:
 
     steps:
       - name: Checkout Code
-        uses: actions/checkout@v5
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
 
       - name: Setup Mamba
-        uses: mamba-org/setup-micromamba@v2
+        uses: mamba-org/setup-micromamba@f457c30a868e4760d3a6fcea5f25dc655b8edf39 # v3.2.1
         with:
           environment-file: environment.yml
           post-cleanup: 'all'
@@ -98,7 +98,7 @@ jobs:
           cp python/build/*.html toolbox-material
           ls -lh toolbox-material
 
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
         name: Upload Material
         with:
           name: Toolbox_Material
