@@ -1,6 +1,6 @@
 # begin solution
-import numpy as np
 import matplotlib.pyplot as plt
+import numpy as np
 
 # Generate data
 rng = np.random.default_rng(210)

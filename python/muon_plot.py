@@ -1,8 +1,8 @@
 import matplotlib.pyplot as plt
 import numpy as np
+import uncertainties.unumpy as unp
 from scipy.optimize import curve_fit
 from uncertainties import correlated_values
-import uncertainties.unumpy as unp
 
 nom = unp.nominal_values
 std = unp.std_devs

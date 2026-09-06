@@ -1,12 +1,7 @@
-import matplotlib.pyplot as plt
 import numpy as np
-import uncertainties.unumpy as unp
 from uncertainties.unumpy import (
-    nominal_values as noms,
     std_devs as stds,
 )
-
-from curve_fit import ucurve_fit
 
 
 def make_qty(num, unit, exp="", figures=None):
@@ -18,4 +13,4 @@ def make_qty(num, unit, exp="", figures=None):
     else:
         x = "{0:.{1:}f}".format(num, figures)
 
-    return r"\qty{{{}{}}}{{{}}}".format(x, exp, unit)
+    return rf"\qty{{{x}{exp}}}{{{unit}}}"
