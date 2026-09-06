@@ -1,6 +1,21 @@
+
+
 import matplotlib.pyplot as plt
 import numpy as np
 
+# START-BLOCK1
+# fmt: off
+# END-BLOCK1
+
+
+
+
+
+
+
+# START-BLOCK2
+# fmt: on
+# END-BLOCK2
 x = np.linspace(0, 10, 1000)
 y = x ** np.sin(x)
 # set figure size and use constrained_layout

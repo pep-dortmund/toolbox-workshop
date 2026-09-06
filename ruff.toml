@@ -19,7 +19,7 @@ ignore = ["E203", "E741", "B905"]
 
 [lint.per-file-ignores]
 "exercises-toolbox/8-all/702_Aktivierung_mit_Neutronen/loesung.py" = ["I001"]
-"**/mattex*.py" = [
+"latex/script/mattex*.py" = [
     "E302",  # Expected 2 blank lines, found X
     "E303",  # Too many blank lines
     "E305",  # Expected 2 blank lines after class or function definition
@@ -34,3 +34,4 @@ indent-style = "space"
 line-ending = "auto"
 skip-magic-trailing-comma = false
 docstring-code-format = true
+exclude = ["latex/script/mattex*.py"]
