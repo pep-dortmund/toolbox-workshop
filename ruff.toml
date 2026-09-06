@@ -19,7 +19,6 @@ ignore = ["E203", "E741", "B905"]
 
 [lint.per-file-ignores]
 "exercises-toolbox/8-all/702_Aktivierung_mit_Neutronen/loesung.py" = ["I001"]
-"latex/script/mattex4.py" = ["I001"]
 "latex/script/mattex*.py" = ["I001", "E302", "E303", "E305"]
 
 fixable = ["ALL"]
