@@ -19,5 +19,4 @@ fig = plt.figure(figsize=(6.022, 3.39), layout="constrained")
 ax = fig.add_subplot(111)
 ax.plot(x, y)
 ax.set_xlabel(r"$\alpha \mathbin{/} \unit{\ohm}$")  # We can use siunitx now!
-
 fig.savefig("build/figures/mattex3.pdf", bbox_inches="tight", pad_inches=0)
