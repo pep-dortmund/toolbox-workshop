@@ -24,7 +24,7 @@ def f(x, a, b, c):
 parameters, covariance_matrix = np.polyfit(x, y, deg=2, cov=True)
 uncertainties = np.sqrt(np.diag(covariance_matrix))
 
-for name, value, unc in zip("abc", parameters, uncertainties, strict=False):
+for name, value, unc in zip("abc", parameters, uncertainties):
     print(f"{name} = {value:.3f} ± {unc:.3f}")
 
 # end solution

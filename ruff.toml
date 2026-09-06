@@ -15,7 +15,15 @@ select = [
     # isort
     "I",
 ]
-ignore = ["E203", "E741"]
+ignore = ["E203", "E741", "B905"]
+
+[lint.per-file-ignores]
+"exercises-toolbox/8-all/702_Aktivierung_mit_Neutronen/loesung.py" = ["I001"]
+"**/mattex*.py" = [
+    "E302",  # Expected 2 blank lines, found X
+    "E303",  # Too many blank lines
+    "E305",  # Expected 2 blank lines after class or function definition
+]
 
 fixable = ["ALL"]
 unfixable = []

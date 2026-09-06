@@ -13,7 +13,8 @@ a = a_i
 # end solution
 # 3.
 # begin solution
-h < 9
+print("Die gefallen Höhe ist")
+print(h_i - h, " m")
 # end solution
 # 4.
 # begin solution

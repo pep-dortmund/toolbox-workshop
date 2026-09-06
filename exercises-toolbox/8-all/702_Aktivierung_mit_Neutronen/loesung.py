@@ -1,10 +1,10 @@
-import matplotlib.pyplot as plt
+from linregress import ulinregress
 
 # begin solution
+import matplotlib.pyplot as plt
 import numpy as np
 import uncertainties as unc
 import uncertainties.unumpy as unp
-from linregress import ulinregress
 from uncertainties.unumpy import nominal_values as noms
 from uncertainties.unumpy import std_devs as stds
 

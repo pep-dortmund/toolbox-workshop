@@ -33,7 +33,7 @@ def f(t, a, b, c, d):
 
 params = ucurve_fit(f, t, U, p0=[1e3, 1e3, 0, 1e2])
 
-for name, param in zip("abcd", params, strict=False):
+for name, param in zip("abcd", params):
     print(f"{name} = {param}")
 
 t_plot = np.linspace(-0.5, 2 * np.pi + 0.5, 1000) * 1e-3
@@ -76,7 +76,7 @@ table_header = r"""
     t \mathbin{/} \unit{\milli\s} & \SetCell[c=2]{c} U \mathbin{/} \unit{\kilo\V} & &
     t \mathbin{/} \unit{\milli\s} & \SetCell[c=2]{c} U \mathbin{/} \unit{\kilo\V} & \\
     \midrule
-"""  # noqa: E501
+"""
 
 table_footer = r"""    \bottomrule
   \end{tblr}
@@ -88,7 +88,7 @@ row_template = (
 # version with .format
 with open("build/loesung-table.tex", "w") as f:
     f.write(table_header)
-    for row in zip(t1, U1, t2, U2, strict=False):
+    for row in zip(t1, U1, t2, U2):
         f.write(row_template.format(*row))
         f.write("\n")
     f.write(table_footer)
@@ -108,7 +108,7 @@ def write_row(f, row):
 # version with f-strings
 with open("build/loesung-table_f-string.tex", "w") as f:
     f.write(table_header)
-    for row in zip(t1, U1, t2, U2, strict=False):
+    for row in zip(t1, U1, t2, U2):
         write_row(f, row)
         f.write("\n")
     f.write(table_footer)
