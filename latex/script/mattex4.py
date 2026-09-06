@@ -8,7 +8,7 @@ mpl.rcParams.update(
         "text.usetex": True,
         "pgf.rcfonts": False,
         "pgf.texsystem": "lualatex",
-        "pgf.preamble": r"\input{header-matplotlib.tex}",  # <-- move header to file
+        "pgf.preamble": r"\input{header-matplotlib.tex}",  # move header to file
     }
 )
 
