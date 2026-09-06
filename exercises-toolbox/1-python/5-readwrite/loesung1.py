@@ -6,6 +6,6 @@ if len(sys.argv) > 1:  # check if a document name is given
 else:
     filename = "test.txt"
 
-with open(filename, "r") as f:  # open the filename in read-mode
+with open(filename) as f:  # open the file given by the filename
     print(f.read())  # read the file and print it
 # end solution

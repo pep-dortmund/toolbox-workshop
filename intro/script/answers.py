@@ -1,6 +1,7 @@
-import pandas as pd
-import matplotlib.pyplot as plt
 import json
+
+import matplotlib.pyplot as plt
+import pandas as pd
 
 plt.style.use("ggplot")
 plt.rcParams["font.family"] = "sans-serif"
@@ -139,7 +140,7 @@ def interests(answers):
 
 
 if __name__ == "__main__":
-    with open("data/toolbox2026.json", "r") as read_file:
+    with open("data/toolbox2026.json") as read_file:
         data = json.load(read_file)
     study(data)
     operating_system(data)

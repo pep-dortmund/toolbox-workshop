@@ -1,7 +1,7 @@
 # begin solution
+from sympy import sin, var
 from uncertainties import ufloat
 from uncertainties.unumpy import sin as usin
-from sympy import var, sin
 
 x = ufloat(4.56, 0.2)
 y = ufloat(2.11, 0.3)

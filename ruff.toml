@@ -1,0 +1,33 @@
+target-version = "py313"
+line-length = 88
+extend-exclude = ["python/*.ipynb"]  # let nbqa handle notebooks
+
+[lint]
+select = [
+    # pycodestyle
+    "E",
+    # Pyflakes
+    "F",
+    # pyupgrade
+    "UP",
+    # flake8-bugbear
+    "B",
+    # isort
+    "I",
+]
+ignore = ["E203", "E741", "B905"]
+
+[lint.per-file-ignores]
+"exercises-toolbox/8-all/702_Aktivierung_mit_Neutronen/loesung.py" = ["I001"]
+"latex/script/mattex*.py" = ["I001", "E302", "E303", "E305"]
+
+fixable = ["ALL"]
+unfixable = []
+
+[format]
+quote-style = "double"
+indent-style = "space"
+line-ending = "auto"
+skip-magic-trailing-comma = false
+docstring-code-format = true
+exclude = ["latex/script/mattex*.py"]

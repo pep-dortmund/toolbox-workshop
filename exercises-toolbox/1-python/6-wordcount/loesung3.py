@@ -7,5 +7,5 @@ with open("text.txt") as f:
 counts = Counter(words)
 
 for key, count in counts.most_common(20):
-    print("{}: {}".format(key, count))
+    print(f"{key}: {count}")
 # end solution
