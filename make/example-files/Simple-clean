@@ -1,2 +1,2 @@
 clean:
-  rm plot.pdf report.pdf
+  rm plot{1,2}.pdf report.pdf

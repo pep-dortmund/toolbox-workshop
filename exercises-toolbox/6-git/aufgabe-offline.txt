@@ -1,0 +1,55 @@
+# git
+
+Aufgabe 1:
+
+Lade mittels "git clone https://github.com/pep-dortmund/toolbox-workshop" die
+Materialien für diesen Workshop herunter und schaue dir mittels "git log" die
+Vergangenheit des Repositories an. Kannst du erkennen, welcher der Helfenden als
+Letztes am Material gearbeitet hat?
+
+Aufgabe 2:
+
+Mache dich mit git vertraut. Dazu haben wir ein Beispiel-Repository (repo)
+vorbereitet. Wir werden es anstelle eines Repositories auf gitlab.com oder
+github.com verwenden.
+
+1. Erzeuge mittels "git clone" eine Kopie von "repo" Dazu kannst du z.B. in
+   einen anderen Ordner gehen oder mittels "git clone repo <name>" eine Kopie
+   mit anderem Namen erzeugen. Dieser Teil würde völlig analog mit einem
+   Repository im Internet funktionieren, wenn man "repo" durch die
+   entsprechende URL ersetzen würde. Wir haben "repo" lediglich beigelegt,
+   damit ihr jetzt keine Accounts erstellen müsst. Später werden wir mit dem
+   "repo" so kommunizieren als wäre es ein externes Repository (git pull/git
+   push).
+
+2. Schaue dir die Dateien im Repository an. Erzeuge 2 Plots, indem du "make" in
+   deiner Kopie des Repositories ausführst; weiteres zu make kommt am Ende des
+   Workshops.
+
+3. Mache beliebige Änderungen an den Dateien "plot1.py" und "plot2.py" (Ändere
+   z.B. die Farben der eingezeichneten Linien) und erzeuge die Plots durch
+   Ausführen von "make".
+
+4. Führe "git status" aus, um dir anzusehen, welche Dateien du geändert hast.
+   Führe "git diff" aus, um dir die Änderungen Zeile für Zeile anzeigen zu
+   lassen.
+
+5. Füge die Änderungen zum Index hinzu (git add ...) und speichere den Index
+   als neuen commit in der History ab (git commit -m "...").
+
+6. Übertrage deinen commit mittels "git push" in das "repo"-Repository.
+
+7. Mache mittels "git clone" eine weitere Kopie von "repo". Diese Kopie sollte
+   deine letzten Änderungen enthalten. Prüfe mittels "git log", ob das der Fall
+   ist.
+
+8. Wiederhole Schritte 4. bis 7. in der zweiten Kopie. Hier wollen wir
+   simulieren, dass mehrere Leute am selben Repository arbeiten.
+
+9. Immer wenn du Änderungen aus dem einen Repository mit "git push"
+    hochgeladen hast, kannst du sie mit "git pull" im anderen herunterladen.
+    Teste, ob das reibungslos funktioniert.
+
+10. Bonus: Versuche einen merge conflict herbeizuführen, indem du in beiden
+    deiner Kopien dieselbe Zeile änderst und 9. wiederholst. Kannst du den
+    merge conflict lösen?

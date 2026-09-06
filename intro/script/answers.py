@@ -15,7 +15,7 @@ def study(answers):
     study = pd.Series(liste).value_counts()
     study /= study.sum()
 
-    fig = plt.figure(figsize=(5.0, 3.3), layout="none")
+    fig = plt.figure(figsize=(5.0, 3.3), layout="constrained")
     ax = fig.add_axes((0, 0, 1, 1), aspect=1)
     ax.pie(
         study.values,
@@ -35,7 +35,7 @@ def operating_system(answers):
     os = pd.Series(liste).value_counts()
     os /= os.sum()
 
-    fig = plt.figure(figsize=(5.5, 3.3), layout="none")
+    fig = plt.figure(figsize=(5.5, 3.3), layout="constrained")
     ax = fig.add_axes((0, 0, 1, 1), aspect=1)
     ax.pie(
         os.values,
@@ -62,12 +62,12 @@ def programming(answers):
     programming = programming.value_counts()
     programming /= programming.sum()
 
-    fig = plt.figure(figsize=(6.2, 3.3), layout="none")
+    fig = plt.figure(figsize=(6, 3.3), layout="constrained")
     ax = fig.add_axes((0, 0, 1, 1), aspect=1)
     ax.pie(
         programming.values,
         labels=programming.keys(),
-        startangle=120,
+        startangle=100,
         radius=1,
         normalize=False,
     )
@@ -102,7 +102,7 @@ def languages(answers):
     )
     counts = pd.Series(languages.str.split(";").sum()).value_counts()
 
-    fig = plt.figure(figsize=(5.5, 3.3), layout="none")
+    fig = plt.figure(figsize=(6, 3), layout="constrained")
     ax = fig.add_subplot(1, 1, 1)
 
     counts.sort_values(ascending=True).plot.barh(ax=ax, color="C1")
@@ -129,7 +129,7 @@ def interests(answers):
         inplace=True,
     )
     interest = interest.value_counts()
-    fig, ax = plt.subplots(1, 1, figsize=(5.5, 3.3), layout="constrained")
+    fig, ax = plt.subplots(1, 1, figsize=(6, 3.3), layout="constrained")
 
     interest.plot.barh(ax=ax)
 
@@ -137,7 +137,7 @@ def interests(answers):
 
 
 if __name__ == "__main__":
-    with open("data/toolbox2024.json") as read_file:
+    with open("data/toolbox2025.json") as read_file:
         data = json.load(read_file)
     study(data)
     operating_system(data)

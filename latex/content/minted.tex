@@ -1,0 +1,26 @@
+\section{\texttt{Python} in \TeX}
+
+\begin{frame}[fragile]{Code-Highlighting\hfill
+  \doc{http://mirrors.ctan.org/macros/latex/contrib/minted/minted.pdf}{minted}}
+  \begin{itemize}
+    \item Im Praktikum sollen auch die Auswertungsskripte abgegeben werden.
+    \item \texttt{minted} kann Code in \LaTeX\ darstellen, wie z.\,B.\ in diesen Folien
+    \item es kann komplette Skripte einbinden: \mintinline{latex}+\inputminted{python3}{plot.py}+
+    \item Einstellungen über \mintinline{latex}+\setminted{+\dots\mintinline{latex}+}+
+    \item Basiert auf \href{https://pygments.org/}{Pygments}, es gibt vordefinierte \href{https://pygments.org/styles/}{Stile} 
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Minted-Einstellungen}
+  Folgende Einstellungen haben wir in der Protokoll-Vorlage gesetzt:
+
+  \begin{tblr}{colspec={r l}}
+    \mintinline{latex}+autogobble+ & Entfernt Leerzeichen am Anfang von Zeilen, wenn nicht benötigt \\
+    \mintinline{latex}+breaklines+ & Lange Zeilen werden umgebrochen um auf die Seite zu passen \\
+    \mintinline{latex}+stripnl=true+ & Entfernt leere Zeilen am Anfang und Ende \\
+    \mintinline{latex}+style=tango+ & Vorgefertigte Stilvorlage zum Highlighting \\
+    \mintinline{latex}+baselinestretch=1.2+ & Etwas erhöhter Abstand zwischen den Zeilen \\
+    \mintinline{latex}+bgcolor=LightGray+ & Hintegrundfarbe des Code-Bereichs \\
+    \mintinline{latex}+fontsize=\footnotesize+ & Textgröße des Codes \\
+  \end{tblr}
+\end{frame}

@@ -20,25 +20,18 @@
 \end{frame}
 
 \begin{frame}[c]{Textdateien und Unicode}
-%    \textcolor{red}{Findet im SS24 schon die Data Literacy Veranstaltung statt?}
-%    Dann können die nächsten beiden Folien raus.
-
   Was ist eigentlich eine Textdatei?
 
   \begin{itemize}
     \item In einer Datei stehen immer Binärdaten in Bytes, 1 Byte = 8 Bit, 0-255
     \item Es gibt (gab) viele Varianten, Text in Binärdaten umzuwandeln (Encoding)
     \item Heute sollte immer Unicode enkodiert als \texttt{utf-8} verwendet werden
-    \item Es gibt viele standardisierte Dateiformate, die auf Textdateien basieren\\
-      json, yaml, toml, ecsv, ...
-    \item Und weniger standardisierte aber trotzdem verbreitete Formate: \\
-      csv, fixed width table, ...
   \end{itemize}
 
   \begin{description}
     \item[Unicode]
       \begin{itemize}
-        \item Sammlung von Schriftzeichen, Buchstaben, Akzente, Emojis, ...
+        \item Sammlung von Schriftzeichen, Buchstaben, Akzente, Emojis, \dots
         \item Aus allen Sprachen.
         \item Ordnet Zeichen \enquote{Codepoints} zu
         \item Beispiele: \texttt{LATIN SMALL LETTER A}: 97, \texttt{PILE OF POO}: 128169
@@ -78,7 +71,6 @@
     
     \vspace{.4\textheight}
   \end{minipage}
-  \pause
   \begin{minipage}{0.22\textwidth}
     Windows Notepad:
 
@@ -86,45 +78,12 @@
 
     \vspace{.5\textheight}
   \end{minipage}
-  \pause
   \begin{minipage}{0.3\textwidth}
     ~
     \vspace{.32\textheight}
     \flushright VS Codium: \flushleft \vspace{-1.5em}
     \includegraphics[height=0.52\textheight]{figures/vscodium_example_screenshot.png}
   \end{minipage}
-\end{frame}
-
-\begin{frame}{Nano, Vim, GUIs}
-  \begin{tblr}{
-      colspec = {X[c] X[c] X[c]},
-      measure=vbox,
-    }
-    \textbf{\large Nano} & \textbf{\Large (Neo)Vim} & \textbf{\Large Visual Studio Code} \\
-    \includegraphics[height=3cm]{figures/nano.png} &
-    \includegraphics[height=3cm]{figures/vim.png} &
-    \includegraphics[height=3cm]{figures/code.png} \\
-    \begin{itemize}
-      \item Einfacher Texteditor fürs Terminal
-      \item Auf fast jedem Unix-System vorhanden
-      \item Wenige Features, nicht erweiterbar
-    \end{itemize}
-    &
-    \begin{itemize}
-      \item Modi-basiert
-      \item Erweiterbar
-      \item Auf fast jedem Unix-System default
-      \item Harter Einstieg
-    \end{itemize}
-    &
-    \begin{itemize}
-      \item GUI Editor von Microsoft
-      \item Leichter zu bedienen
-      \item Batteries included
-      \item Viele nützliche Plugins
-    \end{itemize}
-    \\
-  \end{tblr}
 \end{frame}
 
 \begin{frame}{vi, Vim, NVim schließen}

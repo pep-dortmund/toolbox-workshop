@@ -1,0 +1,15 @@
+python_targets = $(addprefix build/, plot.pdf parameter.txt)
+python_prerequisites = $(addprefix data/, $(addsuffix .txt, I L lambda))
+
+all: $(python_targets)
+
+$(python_targets) & : auswertung-loesung.py $(python_prerequisites) | build
+	python auswertung-loesung.py
+
+build:
+	mkdir -p build
+
+clean:
+	rm -rf build
+
+.PHONY: all clean

@@ -6,7 +6,7 @@ import pandas as pd
 plt.style.use("ggplot")
 plt.rcParams["font.family"] = "sans-serif"
 
-with open("../intro/data/toolbox2024.json") as read_file:
+with open("../intro/data/toolbox2025.json") as read_file:
     answers = json.load(read_file)
 
 liste = []
@@ -16,7 +16,7 @@ for participant in answers:
 os = pd.Series(liste).value_counts()
 os /= os.sum()
 
-fig = plt.figure(figsize=(5.3, 3.3))
+fig = plt.figure(figsize=(5.3, 3.3), layout="constrained")
 ax = fig.add_axes([0, 0, 1, 1], aspect=1)
 ax.pie(
     os.values,
@@ -34,10 +34,13 @@ for participant in answers:
         liste.append(participant["latex_level"])
 experience = pd.Series(liste)
 
+mask = experience.str.contains("Facharbeit")
+experience.loc[mask] = experience.loc[mask].str.replace("(", "\n(")
+
 experience = experience.value_counts()
 experience /= experience.sum()
 
-fig = plt.figure(figsize=(5.3, 3.3))
+fig = plt.figure(figsize=(5.3, 3.3), layout="constrained")
 ax = fig.add_axes([0, 0, 1, 1], aspect=1)
 ax.pie(
     experience.values,
@@ -67,9 +70,8 @@ interest.replace(
 )
 interest = interest.value_counts()
 
-fig, ax = plt.subplots(1, 1, figsize=(5.5, 3.3))
+fig, ax = plt.subplots(1, 1, figsize=(5.5, 3.3), layout="constrained")
 
 interest.plot.barh(ax=ax)
 
-fig.tight_layout()
 fig.savefig("build/figures/interest.pdf")

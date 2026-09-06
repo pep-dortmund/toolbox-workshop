@@ -1,19 +1,18 @@
 # Realistisches-Beispiel-Protokoll
 
 Einleitung:
-Um dieser Aufgabe sinnvoll folgen zu können, sollte diese von Anfang an bearbeitet werden. Folgt den
+Um dieser Aufgabe sinnvoll folgen zu können, sollte diese von Anfang an bearbeitet werden. Folge den
 Anweisungen in den 'aufgabe.txt' Dateien in den Unterordnern des Ordners 'example-report'.
 
 Aufgaben:
 
-1) Je nachdem welche header.tex ihr verwendet kann es nötig sein, diese um weiter Pakete zu ergänzen.
-Schaut z.B. im Ordner loesung nach. 
+1) Je nachdem, welche header.tex du verwendest, kann es nötig sein, diese um weitere Pakete zu ergänzen.
+Schau z.B. im Ordner loesung nach, welche Pakete das sind.
 
-2) Ergänzt alle mathematischen Gleichungen und Symbole. Dafür könnt ihr das finale Protokoll aus Schritt 1
+2) Ergänze alle mathematischen Gleichungen und Symbole. Dafür kannst du das finale Protokoll aus Schritt 1,
    oder die Lösung für diese Aufgabe in loesung/v16516/v16516.pdf als Vorlage nehmen.
 
-3) Im Ordner loesung/v16516 findet ihr die Datei v16516.pdf. Ergänzt die übrigen Texte aus dieser Datei,
-   sodass euer aktuelles Protokoll genauso aussieht wie die Lösung.
+3) Im Ordner loesung/v16516 findest du die Datei v16516.pdf. Ergänze die übrigen Texte aus dieser Datei,
+   sodass dein aktuelles Protokoll genauso aussieht wie die Lösung.
 
-4) Nicht vergessen: Haltet euren Fortschritt mit git nach. 
-
+4) Nicht vergessen: Halte deinen Fortschritt mit git nach.

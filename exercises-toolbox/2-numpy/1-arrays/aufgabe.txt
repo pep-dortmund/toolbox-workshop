@@ -3,12 +3,12 @@
 Aufgabe:
 
 Ziel der Übung ist es, sich mit Numpy-Arrays vertraut zu machen. Die Ausgaben
-aufs Terminal müssen nicht genau so aussehen wie die, die durch die Datei
+im Terminal müssen nicht genau so aussehen wie die, die durch die Datei
 'loesung.py' erzeugt werden, es ist hauptsächlich wichtig, dass die Arrays die
 geforderte Gestalt haben.
 
-1) Erzeuge Arrays mit folgenden Werten und gib sie auf das Terminal aus. Für
-   einige Arrays gibt es eingebaute Numpy-Funktionen, die einem die Sache
+1) Erzeuge Arrays mit den folgenden Werten und gib sie auf das Terminal aus.
+   Für einige Arrays gibt es eingebaute Numpy-Funktionen, die einem die Sache
    erleichtern.
 
     a) Erzeuge ein Array mit 3 Einträgen gleich 0.

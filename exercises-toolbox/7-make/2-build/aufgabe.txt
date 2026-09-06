@@ -1,0 +1,15 @@
+# build
+
+Aufgabe:
+
+1. Kopiere die Dateien
+  - auswertung.py
+  - I.txt
+  - L.txt
+  - lambda.txt
+  - Makefile
+  aus 1-Makefile in diesen Ordner.
+  Schaffst du es mit dem Terminal?
+
+2. Schreibe dein Makefile und die auswertung.py um,
+  sodass ein `build`-Ordner verwendet wird.

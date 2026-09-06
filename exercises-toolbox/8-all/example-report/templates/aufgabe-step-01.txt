@@ -1,41 +1,37 @@
 # Beispiel Protokoll
 
-Einleitung: 
-Wie der Name der Aufgabe schon verspricht, werdet ihr im Zuge dieser Aufgabenreihe ein vollständiges 
-und realistisches Versuchsprotokoll erstellen. Diesem Ziel werdet ihr Aufgabe für Aufgabe etwas
-näher kommen können, indem ihr jeweils ein Thema des Workshops pro Aufgabe integriert.
+Einleitung:
+Wie der Name der Aufgabe schon verspricht, wirst du im Zuge dieser Aufgabenreihe ein vollständiges
+und realistisches Versuchsprotokoll erstellen. Diesem Ziel wirst du Aufgabe für Aufgabe etwas
+näherkommen können, indem du jeweils ein Thema des Workshops pro Aufgabe integrierst.
 
 Diese Aufgabenreihe hat 11 Schritte:
 01) Erstellen eines neuen Ordners für das Protokoll
-02) Daten mit numpy einlesen und verarbeiten
+02) Daten mit NumPy einlesen und verarbeiten
 03) Daten und Funktionen mit Matplotlib plotten
 04) Ausgleichsrechnung mit scipy durchführen und plotten
 05) Unsicherheiten mit uncertainties in die Auswertung integrieren
-06) Ein git-Repository erstellen 
+06) Ein git-Repository erstellen
 07) Struktur des LaTeX-Dokuments erstellen
 08) Mathematik im LaTeX-Dokument ergänzen
 09) Ergänzen von Bildern, Tabellen, einem Literaturverzeichnis und Referenzen
 10) TeX und Matplotlib Einstellungen und Makefile hinzufügen
 11) Noch etwas mehr Automatisierung
 
-Um zu wissen, wo es hingeht, findet ihr auch in diesem Ordner schon das vollständige Protokoll zum Ansehen.
-Außerdem könnt ihr aus diesem die Texte kopieren, damit ihr diese nicht vollständig abtippen müsst.
+Um zu wissen, wo es hingeht, findest du auch in diesem Ordner schon das vollständige Protokoll zum Ansehen.
+Außerdem kannst du aus diesem die Texte kopieren, damit du diese nicht vollständig abtippen musst.
 
-Der Ordner loesung ist immer auf dem Stand auf dem euer Ordner nach Bearbeitung der 
+Der Ordner loesung ist immer auf dem Stand, auf dem dein Ordner nach Bearbeitung der
 Aufgabe sein sollte.
 
 
 Aufgabe:
-Es geht zunächst nur um das Erstellen des Ordners in dem ihr diese Aufgabe immer weiter ergänzt. 
+Es geht zunächst nur um das Erstellen des Ordners, in dem du diese Aufgabe immer weiter ergänzst.
 
-1) Erstellt (z.B. in einem Ordner unter ~/Documents) einen neuen Ordner mit dem Namen v16516.
-   Oder nutzt unsere Protokollvorlage: https://github.com/pep-dortmund/toolbox-workshop-protocol-template
-   In dieser Vorlage sind einige der nächsten Schritt bereits getan, lasst euch davon nicht verwirren.
+1) Erstelle (z.B. in einem Ordner unter ~/Documents) einen neuen Ordner mit dem Namen v16516.
+   Oder nutze unsere Protokollvorlage: https://github.com/pep-dortmund/toolbox-workshop-protocol-template
+   In dieser Vorlage sind einige der nächsten Schritte bereits getan, lass dich davon nicht verwirren.
 
-2) Kopiert den Ordner data aus diesem Aufgabenordner in den Ordner v16516.
+2) Kopiere den Ordner data aus diesem Aufgabenordner in den Ordner v16516.
 
-3) Erstellt in dem Ordner v16516 eine leere Pythondatei 'auswertung.py'.
-
-
-
-
+3) Erstelle in dem Ordner v16516 eine leere Pythondatei 'auswertung.py'.

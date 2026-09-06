@@ -22,7 +22,7 @@ MATTEX := $(addprefix build/figures/mattex, $(addsuffix .pdf, 1 2 3 4 5))
 
 build/latex.pdf: $(MATTEX)
 
-$(FIGURES): script/answers.py ../intro/data/toolbox2023.json ${MATPLOTLIBRC} ${MPLHEADER}
+$(FIGURES): script/answers.py ../intro/data/toolbox2025.json ${MATPLOTLIBRC} ${MPLHEADER}
 	TEXINPUTS=$$(pwd)/../common: MATPLOTLIBRC=${MATPLOTLIBRC} python $<
 
 build/figures/mattex%.pdf: script/mattex%.py

@@ -1,0 +1,70 @@
+\begin{frame}[fragile]{Achtung: Merge conflicts}
+  \begin{center}
+    \huge Don't Panic
+  \end{center}
+
+  Entstehen, wenn \texttt{git} nicht automatisch mergen kann (selbe Zeile geändert, etc.)
+
+  \begin{enumerate}
+    \item Die betroffenen Dateien öffnen
+    \item Markierungen finden und die Stelle selbst mergen (meist wenige Zeilen)
+      \begin{verbatim}
+        <<<<<<< HEAD
+        foo
+        ||||||| merged common ancestors
+        bar
+        =======
+        baz
+        >>>>>>> Commit-Message
+\end{verbatim}
+    \item Merge abschließen:
+      \begin{enumerate}
+          \item \texttt{git add …} \quad (Files mit behobenen Konflikten)
+        \item \texttt{git commit} \quad\rightarrow\; Editor wird geöffnet
+        \item Vorgeschlagene Nachricht kann angenommen werden (In vim \texttt{":wq"} eintippen)
+      \end{enumerate}
+  \end{enumerate}
+  Nützlich: \texttt{git config --global merge.conflictstyle zdiff3}
+\end{frame}
+
+\begin{frame}{Zu früheren Versionen zurückkehren}
+  \begin{tblr}{
+      colspec = {l X[l]},
+      column{1} = {font=\ttfamily},
+    }
+    git checkout \textit{commit} & Commit ins Arbeitsverzeichnis laden \\
+    git restore \textit{filename} & Änderungen an Dateien verwerfen (zum letzten Commit zurückkehren)
+  \end{tblr}
+\end{frame}
+
+\begin{frame}{Kurz an was anderem Arbeiten}
+  \begin{tblr}{
+      colspec = {l X[l]},
+      column{1} = {font=\ttfamily},
+    }
+    git stash     & Änderungen kurz zur Seite schieben \\
+    git stash pop & Änderungen zurückholen aus Stash
+  \end{tblr}
+\end{frame}
+
+\begin{frame}[fragile]{\texttt{.gitignore}}
+    \begin{itemize}
+    \item Man möchte nicht alle Dateien von \texttt{git} beobachten lassen
+    \item z.B. \texttt{build}-Ordner
+    \end{itemize}
+    \begin{center}
+        \Large Lösung: \texttt{.gitignore}-Datei
+    \end{center}
+
+    \begin{itemize}
+    \item einfache Textdatei
+    \item enthält Regeln für Dateien, die nicht beobachtet werden sollen
+    \end{itemize}
+    Beispiel:
+    \vspace{1em}
+    \begin{minted}{text}
+      build/
+      *.pdf
+      **/__pycache__/  # recursion-trick
+    \end{minted}
+\end{frame}

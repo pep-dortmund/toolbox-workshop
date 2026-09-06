@@ -1,0 +1,21 @@
+# exp_fit
+
+In dieser Aufgabe soll noch einmal der Unterschied zwischen numpy.polyfit und
+scipy.optimize.curve_fit verdeutlicht werden. Hierbei soll die Ausgangsfunktion
+die Exponentialfunktion
+
+y(x) = a * exp(b * x)
+
+sein.
+
+
+1) Lese die Daten aus der Datei exp.text ein. Fitte diese zunächst mit numpy.polyfit.
+Beachte, dass du dafür die Exponentialfunktion so umformen musst, dass sie durch
+ein Polynom n-ten Grades beschrieben werden kann.
+
+
+2) Fitte nun die Exponentialfunktion einmal mit scipy.optimize.curve_fit.
+
+
+Gib bei beiden Aufgabenteilen auch die Unsicherheiten als unc_poly und unc_curve an.
+Was fällt dir auf? Was könnte ein Grund für die Unterschiede bei den Methoden sein?

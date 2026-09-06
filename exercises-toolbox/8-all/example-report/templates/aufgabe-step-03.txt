@@ -1,24 +1,24 @@
 # Realistisches-Beispiel-Protokoll
 
 Einleitung:
-Um dieser Aufgabe sinnvoll folgen zu können, sollte diese von Anfang an bearbeitet werden. Folgt den
+Um dieser Aufgabe sinnvoll folgen zu können, sollte diese von Anfang an bearbeitet werden. Folge den
 Anweisungen in den 'aufgabe.txt' Dateien in den Unterordnern des Ordners 'example-report'.
 
 Aufgabe:
-Mit den Informationen über matplotlib könnt ihr nun die zwei Plots aus den Daten erstellen,
-die ihr in der letzten Aufgabe verarbeitet habt.
+Mit den Informationen über matplotlib kannst du nun die zwei Plots aus den Daten erstellen,
+die du in der letzten Aufgabe verarbeitet hast.
 
-Erstellt für jede Messreihe (Kugel, Zylinder) jeweils eine Abbildung:
-1. Importiert matplotlib.pyplot in eure Datei auswertung.py 
-2. Erstellt jeweils eine Abbildung mit einem subplot, in dem die Messwerte (die berechneten Mittelwerte)
+Erstelle für jede Messreihe (Kugel, Zylinder) jeweils eine Abbildung:
+1. Importiere in deiner auswertung.py matplotlib.pyplot.
+2. Erstelle jeweils eine Abbildung mit einem subplot, in dem die Messwerte (die berechneten Mittelwerte)
    als schwarze '+' dargestellt werden.
 
-Die Berechnung von Ausgleichskurven wird erst durch eine weitere Bibliothek (scipy) möglich. 
-Jedoch könnt ihr den Verlauf der theoretischen Funktionen bereits in die Plots einzeichnen.
+Die Berechnung von Ausgleichskurven wird erst durch eine weitere Bibliothek (scipy) möglich.
+Jedoch kannst du den Verlauf der theoretischen Funktionen bereits in die Plots einzeichnen.
 
-3. Schreibt jeweils eine Python-Funktion für die Gleichungen t_B(h) und t_Z(h) (Gleichungen 4 und 5 im Protokoll).
-   Als Wert für g könnt ihr 9.81 m/s² verwenden (auch dafür wird scipy noch eine bessere Lösung sein).
-4. Erstellt mit np.linspace ein array mit vielen Werten, die für den Plot der Theorie-Funktion verwendet werden können.
-   (Da matplotlib im Prinzip einzelne Punkte zeichnet bzw. diese mit Geraden verbindet, braucht man für Theorie-Funktion 
-    sehr viele Punkte und kann nicht einfach nur die Messwerte für h verwenden.)
-5. Ergänzt die Theorie-Funktion im jeweiligen Plot der Messwerte.
+3. Schreibe jeweils eine Python-Funktion für die Gleichungen t_B(h) und t_Z(h) (Gleichungen 4 und 5 im Protokoll).
+   Als Wert für g kannst du 9.81 m/s² verwenden (auch dafür wird scipy noch eine bessere Lösung sein).
+4. Erstelle mit np.linspace ein array mit vielen Werten, die für den Plot der Theorie-Funktion verwendet werden können.
+   (Da matplotlib im Prinzip einzelne Punkte zeichnet bzw. diese mit Geraden verbindet, braucht man für die Theorie-
+    Funktion sehr viele Punkte und kann nicht einfach nur die Messwerte für h verwenden.)
+5. Ergänze die Theorie-Funktion im jeweiligen Plot der Messwerte.

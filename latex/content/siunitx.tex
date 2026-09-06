@@ -55,7 +55,7 @@
         separate-uncertainty=true,  % Immer Unsicherheit mit ±
         per-mode=symbol-or-fraction, % m/s im Text, sonst \frac
         % alternativ:
-        % per-mode=reciprocal,      % m s^{-1}
+        % per-mode=power,      % m s^{-1}
         % output-decimal-marker=.,         % . statt , für Dezimalzahlen
       ]{siunitx}
     \end{minted}
@@ -105,7 +105,7 @@
       \unit{\meter\per\second}
       \unit[per-mode=fraction]{\meter\per\second}
       \unit{\meter\per\second\squared}
-      \unit[per-mode=reciprocal]{\gram\per\cubic\centi\meter}
+      \unit[per-mode=power]{\gram\per\cubic\centi\meter}
       \unit{\kelvin\tothe{4}}
     \end{minted}
   \CodeResult
@@ -113,7 +113,7 @@
     \unit{\meter\per\second} \\
     \unit[per-mode=fraction]{\meter\per\second} \\
     \unit{\meter\per\second\squared} \\
-    \unit[per-mode=reciprocal]{\gram\per\cubic\centi\meter} \\
+    \unit[per-mode=power]{\gram\per\cubic\centi\meter} \\
     \unit{\kelvin\tothe{4}}
   \end{CodeExample}
   \begin{CodeExample}{0.74}[\texttt{per-mode=symbol-or-fraction}]

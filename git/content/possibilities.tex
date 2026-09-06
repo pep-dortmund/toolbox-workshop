@@ -1,0 +1,48 @@
+\headlineframe{Wie arbeitet man am besten an einem Protokoll zusammen?}
+
+\headlineframe{Idee: Austausch über Mails / Messenger}
+
+\begin{frame}{Mails / Messenger: Probleme}
+  \centering
+  \begin{tikzpicture}
+    \node (alice) at (0, 0) {\includegraphics[width=0.2\textwidth]{figures/text.pdf}};
+    \node (bob) at (8, 0) {\includegraphics[width=0.2\textwidth]{figures/text.pdf}};
+    \draw[arr] (alice) -- node {\mail} (bob);
+  \end{tikzpicture}
+  \begin{itemize}
+    \item Risiko, dass Änderungen vergessen werden, ist groß
+    \item Bei jedem Abgleich muss jemand anders aktiv werden
+      \begin{itemize}
+        \item Stört
+        \item Es kommt zu Verzögerungen
+      \end{itemize}
+  \end{itemize}
+  \textbf{\Large Fazit: Eine sehr unbequeme / riskante Lösung}
+\end{frame}
+
+\headlineframe{%
+  Idee: Austausch über Cloud Speicher\\[\baselineskip]
+  Dropbox, Google Drive, OneDrive, Nextcloud, iCloud, ...%
+}
+
+\begin{frame}{Cloud Speicher: Probleme}
+  \centering
+  \begin{tikzpicture}
+    \node (alice) at (0, 0) {\includegraphics[width=0.2\textwidth]{figures/text.pdf}};
+    \node[align=center,fill=blue!20,rounded corners=1em] (dropbox) at (4, 0.5) {
+      \includegraphics[width=0.1\textwidth]{logos/dropbox.pdf}\\
+      \includegraphics[width=0.2\textwidth]{figures/text.pdf}
+    };
+    \node (bob) at (8, 0) {\includegraphics[width=0.2\textwidth]{figures/text.pdf}};
+    \draw[arr,triangle 45-triangle 45] (0.8, 0) -- (dropbox);
+    \draw[arr,triangle 45-triangle 45] (dropbox) -- (7.2, 0);
+  \end{tikzpicture}
+
+  \begin{itemize}
+    \item Man merkt nichts von Änderungen der Anderen
+    \item Gleichzeitige Änderungen führen zu \enquote{In Konflikt stehende Kopie}-Dateien
+    \item Änderungen werden nicht zusammengeführt
+    \item Keine echte Historie des Projekts
+  \end{itemize}
+  \textbf{\Large Fazit: Besser, aber hat deutliche Probleme}
+\end{frame}

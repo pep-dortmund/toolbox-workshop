@@ -28,14 +28,14 @@ funktioniert.
 2) Was geben diese Funktionen zurück, wenn sie auf das Array
    B = np.array([[2, 1, 2, 1, 2], [1, 2, 1, 2, 1], [3, 1, 3, 1, 3]])
    angewendet werden. Bei mehrdimensionalen Arrays gibt es unter anderem ein
-   weiteres Argument für die obigen Funktionen. Dieses keywordargument heißt
+   weiteres Argument für die obigen Funktionen. Dieses keyword argument heißt
    'axis' und kann bei 2D Arrays wie folgt verwendet werden:
 
    np.sum(B, axis=0)
    np.sum(B, axis=1)
    np.sum(B, axis=(0, 1))
 
-   Man kann das keywordargument aber auch weiterhin weglassen. Probiere alle
+   Man kann das keyword argument aber auch weiterhin weglassen. Probiere alle
    vier Möglichkeiten mit allen obigen Funktionen aus. (Hinweis: Die Funktion
    np.diff funktioniert etwas anders als die anderen Funktionen. Zum Beispiel
    funktioniert 'axis=(0, 1)' für diese Funktion nicht.)
@@ -53,11 +53,11 @@ funktioniert.
    c) Was war die höchste (niedrigste) Einzelausgabe jeder Person? Was war die
       höchste (niedrigste) Einzelausgabe an jedem Tag?
 
-   d) Es gibt noch ein keywordargument für die meisten dieser Funktionen:
+   d) Es gibt noch ein keyword argument für die meisten dieser Funktionen:
       'keepdims'. Für dieses gibt es nur zwei mögliche Werte.
 
       np.sum(B, axis=1, keepdims=False) -> Das hier ist der Standardwert und
       np.sum(B, axis=1, keepdims=True)     muss nicht extra ausprobiert werden.
 
-      Probiere dieses keywordargument nach Belieben an einigen der bereits
+      Probiere dieses keyword argument nach Belieben an einigen der bereits
       berechneten arrays aus.
