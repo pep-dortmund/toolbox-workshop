@@ -54,7 +54,10 @@ jobs:
       - name: Install Comic Sans
         run: |
           mkdir -p $HOME/.local/share/fonts
-          curl -sSfLO https://www.wfonts.com/download/data/2014/06/05/comic-sans-ms/comic-sans-ms.zip
+
+          # password protected nextcloud share requires to steps, first get a session cookie, then download
+          curl -fsSL -o /dev/null -c cookies.txt -X POST -d "password=${COMIC_SHARE_PASSWORD}" "${COMIC_SHARE_URL}/authenticate"
+          curl -sSfL -o comic-sans-ms.zip -b cookies.txt "${COMIC_SHARE_URL}"
           unzip comic-sans-ms.zip -d $HOME/.local/share/fonts
           rm comic-sans-ms.zip
           fc-cache
