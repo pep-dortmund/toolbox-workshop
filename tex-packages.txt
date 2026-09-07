@@ -78,3 +78,4 @@ xits
 xkeyval
 xpatch
 xstring
+hyphen-german

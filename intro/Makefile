@@ -3,10 +3,14 @@ include ../common/document.mk
 
 FIGURES := $(addprefix build/figures/, $(addsuffix .pdf, os programming interest))
 EXAMPLE_PLOT := build/example_plot.pdf
+USERAGENT = ToolboxWorkshop/1.0 (toolbox.pep-dortmund.org; pep-toolbox.physik@lists.tu-dortmund.de)
+WGET_OPTIONS = --user-agent="${USERAGENT}" --no-use-server-timestamps
+
+# on newer system "convert" is deprecated, Ubuntu 24.04 in CI does not have it though
+MAGICK = $(shell command -v magick || command -v convert)
 
 build/intro.pdf: $(FIGURES) $(EXAMPLE_PLOT) $(addprefix build/figures/, \
-	vim.png nano.png real_programmers.png code.png windows.png macos.png tux.jpg\
-	fedora.png archlinux.png ubuntu.png debian-openlogo.png \
+	windows.png macos.png tux.jpg\
 	)
 
 build/figures/os.pdf: script/answers.py data/toolbox2025.json ../common/matplotlibrc ../common/header-matplotlib.tex
@@ -15,39 +19,15 @@ build/figures/os.pdf: script/answers.py data/toolbox2025.json ../common/matplotl
 
 $(addprefix build/figures/, programming.pdf interest.pdf): build/figures/os.pdf
 
-build/figures/nano.png: | build/figures
-	wget https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Gnu-nano.svg/500px-Gnu-nano.svg.png -O $@ --no-use-server-timestamps
-
-build/figures/code.png: | build/figures
-	wget https://code.visualstudio.com/assets/branding/code-stable.png -O $@ --no-use-server-timestamps
-
-build/figures/vim.png: | build/figures
-	wget https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/Vimlogo.svg/500px-Vimlogo.svg.png -O $@ --no-use-server-timestamps
-
-build/figures/real_programmers.png: | build/figures
-	wget http://imgs.xkcd.com/comics/real_programmers.png -O $@ --no-use-server-timestamps
-
 build/figures/windows.png: | build/figures
-	wget https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Windows_logo_and_wordmark_-_2021.svg/1280px-Windows_logo_and_wordmark_-_2021.svg.png -O $@ --no-use-server-timestamps
+	wget -O $@  ${WGET_OPTIONS} https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Windows_logo_and_wordmark_-_2021.svg/1280px-Windows_logo_and_wordmark_-_2021.svg.png
 
 build/figures/macos.png: | build/figures
-	wget https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/MacOS_logo.svg/960px-MacOS_logo.svg.png -O $@ --no-use-server-timestamps
+	wget -O $@  ${WGET_OPTIONS} https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/MacOS_logo.svg/960px-MacOS_logo.svg.png
 
 build/figures/tux.jpg: | build/figures
-	wget https://upload.wikimedia.org/wikipedia/commons/d/dd/Linux_logo.jpg -O build/figures/tux-original.jpg --no-use-server-timestamps
-	magick build/figures/tux-original.jpg -trim $@
-
-build/figures/debian-openlogo.png: | build/figures
-	wget https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Debian-OpenLogo.svg/500px-Debian-OpenLogo.svg.png -O build/figures/debian-openlogo.png
-
-build/figures/ubuntu.png: build/figures
-	wget -O $@ --no-use-server-timestamps https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Ubuntu_logo.svg/960px-Ubuntu_logo.svg.png?utm_source=commons.wikimedia.org
-
-build/figures/fedora.png: build/figures
-	wget -O $@ --no-use-server-timestamps https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Fedora_logo_and_wordmark.svg/1280px-Fedora_logo_and_wordmark.svg.png
-
-build/figures/archlinux.png: build/figures
-	wget -O $@ --no-use-server-timestamps https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Archlinux-logo-standard-version.svg/1280px-Archlinux-logo-standard-version.svg.png
+	wget ${WGET_OPTIONS} https://upload.wikimedia.org/wikipedia/commons/d/dd/Linux_logo.jpg -O build/figures/tux-original.jpg 
+	${MAGICK} build/figures/tux-original.jpg -trim $@
 
 build/example_plot.pdf: script/example_plot.py | build/figures
 	MATPLOTLIBRC=../common/matplotlibrc TEXINPUTS=$$(pwd)/../common: python3 $<
