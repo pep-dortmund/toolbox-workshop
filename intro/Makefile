@@ -40,13 +40,13 @@ build/figures/tux.jpg: | build/figures
 build/figures/debian-openlogo.png: | build/figures
 	wget https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Debian-OpenLogo.svg/581px-Debian-OpenLogo.svg.png -O build/figures/debian-openlogo.png
 
-build/figures/ubuntu.png: build/figures
+build/figures/ubuntu.png: | build/figures
 	wget -O $@ --no-use-server-timestamps https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Ubuntu_logo.svg/600px-Ubuntu_logo.svg.png
 
-build/figures/fedora.png: build/figures
+build/figures/fedora.png: | build/figures
 	wget -O $@ --no-use-server-timestamps https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Fedora-logo.svg/480px-Fedora-logo.svg.png
 
-build/figures/archlinux.png: build/figures
+build/figures/archlinux.png: | build/figures
 	wget -O $@ --no-use-server-timestamps https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Archlinux-logo-standard-version.png/1024px-Archlinux-logo-standard-version.png
 
 build/example_plot.pdf: script/example_plot.py | build/figures

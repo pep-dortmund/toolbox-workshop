@@ -87,6 +87,16 @@ jobs:
           echo "conda list"
           conda list
 
+      - name: Cache external images
+        uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: |
+            intro/build/figures/*.png
+            intro/build/figures/*.jpg
+            git/build/figures/*.png
+          # Invalidate when download URLs or image recipes change.
+          key: external-images-v1-${{ runner.os }}-${{ hashFiles('intro/Makefile', 'git/Makefile') }}
+
       - name: Build
         run: |
           make -j 4
