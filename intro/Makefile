@@ -6,7 +6,7 @@ EXAMPLE_PLOT := build/example_plot.pdf
 WGET_OPTIONS = --user-agent=ToolboxWorkshop/1.0 --no-use-server-timestamps
 
 build/intro.pdf: $(FIGURES) $(EXAMPLE_PLOT) $(addprefix build/figures/, \
-	real_programmers.png windows.png macos.png tux.jpg\
+	windows.png macos.png tux.jpg\
 	)
 
 build/figures/os.pdf: script/answers.py data/toolbox2025.json ../common/matplotlibrc ../common/header-matplotlib.tex
@@ -14,9 +14,6 @@ build/figures/os.pdf: script/answers.py data/toolbox2025.json ../common/matplotl
 	MATPLOTLIBRC=../common/matplotlibrc TEXINPUTS=$$(pwd)/../common: python3 $<
 
 $(addprefix build/figures/, programming.pdf interest.pdf): build/figures/os.pdf
-
-build/figures/real_programmers.png: | build/figures
-	wget -O $@ ${WGET_OPTIONS} http://imgs.xkcd.com/comics/real_programmers.png
 
 build/figures/windows.png: | build/figures
 	wget -O $@  ${WGET_OPTIONS} https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Windows_logo_and_wordmark_-_2021.svg/1280px-Windows_logo_and_wordmark_-_2021.svg.png
