@@ -3,7 +3,8 @@ include ../common/document.mk
 
 FIGURES := $(addprefix build/figures/, $(addsuffix .pdf, os programming interest))
 EXAMPLE_PLOT := build/example_plot.pdf
-WGET_OPTIONS = --user-agent=ToolboxWorkshop/1.0 --no-use-server-timestamps
+USERAGENT = ToolboxWorkshop/1.0 (toolbox.pep-dortmund.org; pep-toolbox.physik@lists.tu-dortmund.de)
+WGET_OPTIONS = --user-agent="${USERAGENT}" --no-use-server-timestamps
 
 build/intro.pdf: $(FIGURES) $(EXAMPLE_PLOT) $(addprefix build/figures/, \
 	windows.png macos.png tux.jpg\
