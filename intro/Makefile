@@ -16,7 +16,7 @@ build/figures/os.pdf: script/answers.py data/toolbox2025.json ../common/matplotl
 $(addprefix build/figures/, programming.pdf interest.pdf): build/figures/os.pdf
 
 build/figures/nano.png: | build/figures
-	wget https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Gnu-nano.svg/480px-Gnu-nano.svg.png -O $@ --no-use-server-timestamps
+	wget https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Gnu-nano.svg/500px-Gnu-nano.svg.png -O $@ --no-use-server-timestamps
 
 build/figures/code.png: | build/figures
 	wget https://code.visualstudio.com/assets/images/code-stable.png -O $@ --no-use-server-timestamps
