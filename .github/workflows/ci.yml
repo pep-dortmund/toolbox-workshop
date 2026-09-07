@@ -38,6 +38,21 @@ jobs:
           sudo apt update
           sudo apt install --yes poppler-utils imagemagick
 
+      - name: Install Comic Sans
+        env:
+          COMIC_SHARE_URL: ${{ secrets.COMIC_SHARE_URL }}
+          COMIC_SHARE_PASSWORD: ${{ secrets.COMIC_SHARE_PASSWORD }}
+        run: |
+          mkdir -p $HOME/.local/share/fonts
+
+          # password protected nextcloud share requires to steps, first get a session cookie, then download
+          curl -fsSL -o /dev/null -c cookies.txt -X POST -d "password=${COMIC_SHARE_PASSWORD}" "${COMIC_SHARE_URL}/authenticate"
+          curl -sSfL -o comic-sans-ms.zip -b cookies.txt "${COMIC_SHARE_URL}/download"
+          unzip comic-sans-ms.zip -d $HOME/.local/share/fonts
+          rm comic-sans-ms.zip
+          fc-cache
+          fc-list 'Comic Sans MS' | grep Comic
+
       - name: Pip install^2-texlive
         run: pip install install-texlive
 
@@ -50,18 +65,6 @@ jobs:
           echo "$HOME/texlive/$TEXLIVE_VERSION/bin/x86_64-linux" >> $GITHUB_PATH
           export PATH="$HOME/texlive/$TEXLIVE_VERSION/bin/x86_64-linux:$PATH"
           tlmgr install --with-doc tex-overview
-
-      - name: Install Comic Sans
-        run: |
-          mkdir -p $HOME/.local/share/fonts
-
-          # password protected nextcloud share requires to steps, first get a session cookie, then download
-          curl -fsSL -o /dev/null -c cookies.txt -X POST -d "password=${COMIC_SHARE_PASSWORD}" "${COMIC_SHARE_URL}/authenticate"
-          curl -sSfL -o comic-sans-ms.zip -b cookies.txt "${COMIC_SHARE_URL}"
-          unzip comic-sans-ms.zip -d $HOME/.local/share/fonts
-          rm comic-sans-ms.zip
-          fc-cache
-          fc-list 'Comic Sans MS' | grep Comic
           # generate the lualatex font cache, otherwise it is done in parallel when calling make
           luaotfload-tool --update --force
 
