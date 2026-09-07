@@ -46,7 +46,9 @@ jobs:
           mkdir -p $HOME/.local/share/fonts
 
           # password protected nextcloud share requires to steps, first get a session cookie, then download
+          echo "Getting cookie for nextcloud download"
           curl -fsSL -o /dev/null -c cookies.txt -X POST -d "password=${COMIC_SHARE_PASSWORD}" "${COMIC_SHARE_URL}/authenticate"
+          curl "Downloading zipfile"
           curl -sSfL -o comic-sans-ms.zip -b cookies.txt "${COMIC_SHARE_URL}/download"
           unzip comic-sans-ms.zip -d $HOME/.local/share/fonts
           rm comic-sans-ms.zip
