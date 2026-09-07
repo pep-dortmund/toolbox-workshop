@@ -38,6 +38,20 @@ jobs:
           sudo apt update
           sudo apt install --yes poppler-utils imagemagick
 
+      - name: Install Comic Sans
+        env:
+          COMIC_SHARE_TOKEN: ${{ secrets.COMIC_SHARE_TOKEN }}
+          COMIC_SHARE_PASSWORD: ${{ secrets.COMIC_SHARE_PASSWORD }}
+        run: |
+          mkdir -p $HOME/.local/share/fonts
+
+          # COMIC_SHARE_TOKEN is the hash in the share link
+          curl -fsSL -OJ -u "anonymous:${COMIC_SHARE_PASSWORD}"  "https://nextcloud.pep-dortmund.org/public.php/dav/files/${COMIC_SHARE_TOKEN}/"
+          unzip comic-sans-ms.zip -d $HOME/.local/share/fonts
+          rm comic-sans-ms.zip
+          fc-cache
+          fc-list 'Comic Sans MS' | grep Comic
+
       - name: Pip install^2-texlive
         run: pip install install-texlive
 
@@ -50,15 +64,6 @@ jobs:
           echo "$HOME/texlive/$TEXLIVE_VERSION/bin/x86_64-linux" >> $GITHUB_PATH
           export PATH="$HOME/texlive/$TEXLIVE_VERSION/bin/x86_64-linux:$PATH"
           tlmgr install --with-doc tex-overview
-
-      - name: Install Comic Sans
-        run: |
-          mkdir -p $HOME/.local/share/fonts
-          curl -LO https://www.wfonts.com/download/data/2014/06/05/comic-sans-ms/comic-sans-ms.zip
-          unzip comic-sans-ms.zip -d $HOME/.local/share/fonts
-          rm comic-sans-ms.zip
-          fc-cache
-          fc-list 'Comic Sans MS' | grep Comic
           # generate the lualatex font cache, otherwise it is done in parallel when calling make
           luaotfload-tool --update --force
 
@@ -81,6 +86,16 @@ jobs:
           python --version
           echo "conda list"
           conda list
+
+      - name: Cache external images
+        uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: |
+            intro/build/figures/*.png
+            intro/build/figures/*.jpg
+            git/build/figures/*.png
+          # Invalidate when download URLs or image recipes change.
+          key: external-images-v1-${{ runner.os }}-${{ hashFiles('intro/Makefile', 'git/Makefile') }}
 
       - name: Build
         run: |
