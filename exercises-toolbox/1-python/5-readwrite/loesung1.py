@@ -6,6 +6,9 @@ if len(sys.argv) > 1:  # check if a document name is given
 else:
     filename = "test.txt"
 
-with open(filename) as f:  # open the file given by the filename
+# the file, given by `filename`` is open inside of the `with` block
+# inside of the block, it can be accessed with `f`
+# after the block, the file is closed (`f.close()`)
+with open(filename) as f:
     print(f.read())  # read the file and print it
 # end solution
