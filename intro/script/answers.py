@@ -55,8 +55,11 @@ def programming(answers):
 
     programming = pd.Series(liste)
 
-    mask = programming.str.contains("Datenverarbeitungskurs")
-    programming.loc[mask] = programming.loc[mask].str.replace(",", "\n")
+    mask = programming.str.contains("Datenverarbeitung")
+    programming.loc[mask] = programming.loc[mask].str.replace(
+        "Habe den 'Grundlagen wissenschaftlicher Datenverarbeitung' Kurs besucht.",
+        "'Grundlagen wissenschaftlicher\n Datenverarbeitung' Kurs besucht",
+    )
     programming.loc[~mask] = programming.loc[~mask].str.replace(",", ",\n")
 
     programming = programming.value_counts()
@@ -137,7 +140,7 @@ def interests(answers):
 
 
 if __name__ == "__main__":
-    with open("data/toolbox2025.json") as read_file:
+    with open("data/toolbox2026.json") as read_file:
         data = json.load(read_file)
     study(data)
     operating_system(data)
