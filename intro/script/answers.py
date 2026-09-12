@@ -15,8 +15,9 @@ def study(answers):
     study = pd.Series(liste).value_counts()
     study /= study.sum()
 
-    fig = plt.figure(figsize=(5.0, 3.3), layout="constrained")
-    ax = fig.add_axes((0, 0, 1, 1), aspect=1)
+    fig, ax = plt.subplots(
+        figsize=(5.0, 3.3), layout="constrained", subplot_kw={"aspect": 1}
+    )
     ax.pie(
         study.values,
         labels=study.keys(),
@@ -35,8 +36,9 @@ def operating_system(answers):
     os = pd.Series(liste).value_counts()
     os /= os.sum()
 
-    fig = plt.figure(figsize=(5.5, 3.3), layout="constrained")
-    ax = fig.add_axes((0, 0, 1, 1), aspect=1)
+    fig, ax = plt.subplots(
+        figsize=(5.5, 3.3), layout="constrained", subplot_kw={"aspect": 1}
+    )
     ax.pie(
         os.values,
         labels=os.keys(),
@@ -65,8 +67,9 @@ def programming(answers):
     programming = programming.value_counts()
     programming /= programming.sum()
 
-    fig = plt.figure(figsize=(6, 3.3), layout="constrained")
-    ax = fig.add_axes((0, 0, 1, 1), aspect=1)
+    fig, ax = plt.subplots(
+        figsize=(6.0, 3.3), layout="constrained", subplot_kw={"aspect": 1}
+    )
     ax.pie(
         programming.values,
         labels=programming.keys(),
@@ -105,8 +108,7 @@ def languages(answers):
     )
     counts = pd.Series(languages.str.split(";").sum()).value_counts()
 
-    fig = plt.figure(figsize=(6, 3), layout="constrained")
-    ax = fig.add_subplot(1, 1, 1)
+    fig, ax = plt.subplots(figsize=(6.0, 3.0), layout="constrained")
 
     counts.sort_values(ascending=True).plot.barh(ax=ax, color="C1")
     plt.savefig("build/figures/languages.pdf")

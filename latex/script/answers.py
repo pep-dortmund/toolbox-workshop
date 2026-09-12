@@ -16,8 +16,9 @@ for participant in answers:
 os = pd.Series(liste).value_counts()
 os /= os.sum()
 
-fig = plt.figure(figsize=(5.3, 3.3), layout="constrained")
-ax = fig.add_axes([0, 0, 1, 1], aspect=1)
+fig, ax = plt.subplots(
+    figsize=(5.3, 3.3), layout="constrained", subplot_kw={"aspect": 1}
+)
 ax.pie(
     os.values,
     labels=os.index,
@@ -27,6 +28,7 @@ ax.pie(
 )
 ax.set_xlim(-1, 2)
 fig.savefig("build/figures/os.pdf")
+plt.close(fig=fig)
 
 liste = []
 for participant in answers:
@@ -40,8 +42,9 @@ experience.loc[mask] = experience.loc[mask].str.replace("(", "\n(")
 experience = experience.value_counts()
 experience /= experience.sum()
 
-fig = plt.figure(figsize=(5.3, 3.3), layout="constrained")
-ax = fig.add_axes([0, 0, 1, 1], aspect=1)
+fig, ax = plt.subplots(
+    figsize=(5.3, 3.3), layout="constrained", subplot_kw={"aspect": 1}
+)
 ax.pie(
     experience.values,
     labels=experience.index,
@@ -49,6 +52,7 @@ ax.pie(
 )
 ax.set_xlim(-1, 2)
 fig.savefig("build/figures/experience.pdf")
+plt.close(fig=fig)
 
 liste = []
 for participant in answers:
@@ -70,8 +74,7 @@ interest.replace(
 )
 interest = interest.value_counts()
 
-fig, ax = plt.subplots(1, 1, figsize=(5.5, 3.3), layout="constrained")
-
+fig, ax = plt.subplots(figsize=(5.5, 3.3), layout="constrained")
 interest.plot.barh(ax=ax)
-
 fig.savefig("build/figures/interest.pdf")
+plt.close(fig=fig)
