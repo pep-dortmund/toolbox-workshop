@@ -47,6 +47,23 @@
   \end{tblr}
 \end{frame}
 
+\begin{frame}{Länger an was anderem Arbeiten}
+  \begin{tblr}{
+      colspec = {l X[l]},
+      column{1} = {font=\ttfamily},
+    }
+    git switch \textit{branch} & Auf einen anderen Branch wechseln \\
+    git switch -c \textit{branch} & Einen neuen Branch erstellen und auf ihn wechseln
+  \end{tblr}
+
+  \vspace{2em}
+  In vielen Projekten wird nur auf Branches gearbeitet, 
+  über Pull requests werden diese dann mit dem main-Branch zusammengeführt.
+  So ist der main-Branch immer in einem funktionieren Zustand.
+  
+  Für das Praktikum ist das nicht unbedingt notwendig.
+\end{frame}
+
 \begin{frame}[fragile]{\texttt{.gitignore}}
     \begin{itemize}
     \item Man möchte nicht alle Dateien von \texttt{git} beobachten lassen
