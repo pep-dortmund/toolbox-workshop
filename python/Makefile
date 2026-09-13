@@ -8,8 +8,11 @@ build/python.html: build/muon_plot.png
 build/%.html: %.ipynb
 	jupyter-nbconvert --output-dir=build --execute --allow-errors --to html --embed-images --template classic $<
 
-build/muon_plot.png: muon_plot.py data/muon_data.txt
+build/muon_plot.png: muon_plot.py data/muon_data.txt | build
 	TEXINPUTS=$$(pwd): MATPLOTLIBRC=matplotlibrc_muon python3 $<
+
+build:
+	mkdir -p build
 
 clean:
 	git clean -Xdf
