@@ -59,6 +59,7 @@ pgfopts
 pict2e
 placeins
 qrcode
+scrhack
 siunitx
 standalone
 tabularray
